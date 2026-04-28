@@ -10,6 +10,6 @@ export const metadata: Metadata = {
 
 export default async function AdminAdsPage() {
   await requireAdmin();
-  const ads = getAds();
+  const ads = await getAds();
   return <AdsAdminClient initial={ads} />;
 }

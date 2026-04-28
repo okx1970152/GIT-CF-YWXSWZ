@@ -5,8 +5,8 @@ import { getAds } from "@/lib/ads/store";
 type AdPage = "directory" | "reading" | "guide";
 type AdPosition = "top" | "mid" | "bottom";
 
-export function AdSlot(props: { page: AdPage; position: AdPosition }) {
-  const ads = getAds();
+export async function AdSlot(props: { page: AdPage; position: AdPosition }) {
+  const ads = await getAds();
   const cfg = ads[props.page][props.position];
   return <>{renderSlot(cfg)}</>;
 }

@@ -14,7 +14,7 @@ export async function GET() {
     return NextResponse.json({ error: "未登录" }, { status: 401 });
   }
 
-  return NextResponse.json(getAds());
+  return NextResponse.json(await getAds());
 }
 
 export async function POST(request: Request) {
