@@ -19,9 +19,11 @@ export async function commitAdsJsonToGithub(params: {
     .map((segment) => encodeURIComponent(segment))
     .join("/");
   const base = `https://api.github.com/repos/${repo}/contents/${encodedPath}`;
+  const authValue = token.startsWith("github_pat_") ? `token ${token}` : `Bearer ${token}`;
   const headers: Record<string, string> = {
-    Authorization: `Bearer ${token}`,
+    Authorization: authValue,
     Accept: "application/vnd.github+json",
+    "User-Agent": "novel-portal-cf-worker/1.0",
     "X-GitHub-Api-Version": "2022-11-28"
   };
 
