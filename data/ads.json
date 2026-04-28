@@ -1,0 +1,17 @@
+{
+  "directory": {
+    "top": { "enabled": false, "type": "empty" },
+    "mid": { "enabled": false, "type": "empty" },
+    "bottom": { "enabled": false, "type": "empty" }
+  },
+  "reading": {
+    "top": { "enabled": false, "type": "empty" },
+    "mid": { "enabled": false, "type": "empty" },
+    "bottom": { "enabled": false, "type": "empty" }
+  },
+  "guide": {
+    "top": { "enabled": false, "type": "empty" },
+    "mid": { "enabled": false, "type": "empty" },
+    "bottom": { "enabled": false, "type": "empty" }
+  }
+}

@@ -1,0 +1,30 @@
+node_modules
+.next
+.next/
+out
+
+# Cloudflare / OpenNext build output
+.open-next
+.wrangler
+.dev.vars
+.dev.vars.*
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Logs / debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
