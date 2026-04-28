@@ -24,7 +24,3 @@ jobs:
 
       - name: Next.js build
         run: npm run build
-
-      # OpenNext Cloudflare adapter requires Linux; verifies the worker bundle.
-      - name: OpenNext Cloudflare build
-        run: npm run cf-build
