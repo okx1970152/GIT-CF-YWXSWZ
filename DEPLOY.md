@@ -71,10 +71,10 @@ git push -u origin main
 | `CONTENT_REPO_NOVELS_PATH` | 内容仓中小说目录路径 | 双仓库建议填 `novels` |
 | `ADMIN_PASSWORD` | 后台 `/admin/login` 密码 | 只要用后台就要填 |
 | `ADMIN_SESSION_SECRET` | 给会话 Cookie 签名用的随机串（建议 32+ 字节） | 同上 |
-| `GITHUB_TOKEN` | 生产环境保存广告时用 GitHub Contents API 写 `data/ads.json` | 仅当你想在线上点「保存广告」时填 |
-| `GITHUB_REPO` | `owner/repo` 形式，例如 `myname/novel-portal` | 同上 |
-| `GITHUB_BRANCH` | 默认 `main` | 可选 |
-| `GITHUB_ADS_PATH` | 默认 `data/ads.json` | 可选 |
+| `APP_GH_TOKEN` | 生产环境保存广告时用 GitHub Contents API 写 `data/ads.json` | 仅当你想在线上点「保存广告」时填 |
+| `APP_GITHUB_REPO` | `owner/repo` 形式，例如 `myname/novel-portal` | 同上 |
+| `APP_GITHUB_BRANCH` | 默认 `main` | 可选 |
+| `APP_GITHUB_ADS_PATH` | 默认 `data/ads.json` | 可选 |
 
 设置位置：
 - Cloudflare → 你的 Worker 项目 → **Settings** → **Variables and Secrets** → 区分 **Production / Preview**。

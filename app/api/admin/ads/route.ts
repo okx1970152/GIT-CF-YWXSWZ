@@ -36,10 +36,12 @@ export async function POST(request: Request) {
     if (process.env.NODE_ENV !== "production") {
       writeAdsLocal(parsed);
     } else {
-      const token = process.env.GITHUB_TOKEN;
-      const repo = process.env.GITHUB_REPO;
-      const branch = process.env.GITHUB_BRANCH ?? "main";
-      const githubPath = process.env.GITHUB_ADS_PATH ?? "data/ads.json";
+      // 优先读取你当前在 GitHub 仓库中配置的 APP_* 变量名，同时兼容旧命名。
+      const token = process.env.APP_GH_TOKEN ?? process.env.GITHUB_TOKEN;
+      const repo = process.env.APP_GITHUB_REPO ?? process.env.GITHUB_REPO;
+      const branch = process.env.APP_GITHUB_BRANCH ?? process.env.GITHUB_BRANCH ?? "main";
+      const githubPath =
+        process.env.APP_GITHUB_ADS_PATH ?? process.env.GITHUB_ADS_PATH ?? "data/ads.json";
 
       if (!token || !repo) {
         return NextResponse.json(
