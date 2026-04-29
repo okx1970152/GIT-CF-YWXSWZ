@@ -1,0 +1,61 @@
+﻿2026-04-29T13:51:01.4090485Z ##[group]Run npx wrangler deploy
+2026-04-29T13:51:01.4090812Z [36;1mnpx wrangler deploy[0m
+2026-04-29T13:51:01.4113016Z shell: /usr/bin/bash -e {0}
+2026-04-29T13:51:01.4113275Z env:
+2026-04-29T13:51:01.4113504Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:51:01.4113812Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:51:01.4114082Z   CONTENT_REPO_REF: main
+2026-04-29T13:51:01.4114317Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:51:01.4114987Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:51:01.4115278Z   ADMIN_PASSWORD: ***
+2026-04-29T13:51:01.4115807Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:51:01.4116060Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:51:01.4116339Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:51:01.4116574Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:51:01.4117111Z   APP_GH_TOKEN: ***
+2026-04-29T13:51:01.4117463Z   CLOUDFLARE_API_TOKEN: ***
+2026-04-29T13:51:01.4117753Z   CLOUDFLARE_ACCOUNT_ID: ***
+2026-04-29T13:51:01.4117981Z ##[endgroup]
+2026-04-29T13:51:02.6369425Z 
+2026-04-29T13:51:02.6370470Z  ⛅️ wrangler 4.85.0
+2026-04-29T13:51:02.6370939Z ───────────────────
+2026-04-29T13:51:02.6734150Z OpenNext project detected, calling `opennextjs-cloudflare deploy`
+2026-04-29T13:51:04.9836116Z 
+2026-04-29T13:51:04.9837072Z ┌──────────────────────────────┐
+2026-04-29T13:51:04.9837590Z │ OpenNext — Cloudflare deploy │
+2026-04-29T13:51:04.9838032Z └──────────────────────────────┘
+2026-04-29T13:51:04.9838238Z 
+2026-04-29T13:51:05.2794305Z Incremental cache does not need populating
+2026-04-29T13:51:05.2795121Z Tag cache does not need populating
+2026-04-29T13:51:06.3001263Z 
+2026-04-29T13:51:06.3002302Z  ⛅️ wrangler 4.85.0 (update available 4.86.0)
+2026-04-29T13:51:06.3002964Z ─────────────────────────────────────────────
+2026-04-29T13:51:06.3077142Z 
+2026-04-29T13:51:06.3078854Z Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2026-04-29T13:51:07.8917444Z 🌀 Building list of assets...
+2026-04-29T13:51:07.8955647Z ✨ Read 59 files from the assets directory /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ/.open-next/assets
+2026-04-29T13:51:07.9869163Z 🌀 Starting asset upload...
+2026-04-29T13:51:09.9800414Z 🌀 Found 1 new or modified static asset to upload. Proceeding with upload...
+2026-04-29T13:51:09.9801388Z + /BUILD_ID
+2026-04-29T13:51:10.8208786Z Uploaded 1 of 1 asset
+2026-04-29T13:51:10.8211115Z ✨ Success! Uploaded 1 file (32 already uploaded) (0.84 sec)
+2026-04-29T13:51:10.8212058Z 
+2026-04-29T13:51:10.9778643Z Total Upload: 7042.36 KiB / gzip: 2275.50 KiB
+2026-04-29T13:51:14.8856110Z Worker Startup Time: 34 ms
+2026-04-29T13:51:14.8866662Z Your Worker has access to the following bindings:
+2026-04-29T13:51:14.8867411Z Binding            Resource      
+2026-04-29T13:51:14.8868031Z env.ASSETS         Assets        
+2026-04-29T13:51:14.8869556Z 
+2026-04-29T13:51:14.8887571Z Uploaded novel-portal (7.83 sec)
+2026-04-29T13:51:15.5740729Z Deployed novel-portal triggers (0.68 sec)
+2026-04-29T13:51:15.5741540Z   https://novel-portal.gpt1-b7e.workers.dev
+2026-04-29T13:51:15.5742337Z Current Version ID: fb63fb2b-fa9a-4322-bd2f-338f7af9429a
+2026-04-29T13:51:15.6519942Z [33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mUsing direct eval with a bundler is not recommended and may cause problems[0m [direct-eval]
+2026-04-29T13:51:15.6520815Z 
+2026-04-29T13:51:15.6521138Z     .open-next/server-functions/default/handler.mjs:141:8:
+2026-04-29T13:51:15.6522248Z [37m      141 │ }());`),[32meval[37m(str)||{}}catch(err){if(wrap!==!1&&/(unexpected|ident...
+2026-04-29T13:51:15.6523177Z           ╵         [32m~~~~[0m
+2026-04-29T13:51:15.6523493Z 
+2026-04-29T13:51:15.6524350Z   You can read more about direct eval and bundling here: [4mhttps://esbuild.github.io/link/direct-eval[0m
+2026-04-29T13:51:15.6524949Z 
+2026-04-29T13:51:15.6524956Z 

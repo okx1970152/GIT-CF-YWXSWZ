@@ -396,3 +396,72 @@
   - 小说目录页 metadata 已接入 `novel.json` 的 `summary/tags`。
   - 章节页 metadata 已接入 chapter meta 的 `chapter_seo_title/chapter_meta_description/chapter_keywords`。
 - 已完成 `npm run build` 验证通过，`/novels/[category]/[novelId]/chapters/[chapterNo]` 路由可正常收集页面数据。
+
+## 2026-04-29 21:15
+
+### 提问
+要求先把程序仓源码复制备份到 `YWXSWZ`，再用同一 token 直接上传到程序仓并告知结果。
+
+### 本次完成变更摘要
+- 已将当前程序源码重新镜像同步到 `YWXSWZ` 目录（排除 `node_modules/.next/.open-next` 等构建缓存）。
+- 已使用 token + 代理将 `YWXSWZ` 内容推送到程序仓 `okx1970152/GIT-CF-YWXSWZ` 的 `main` 分支（提交：`ec8f276`）。
+- 推送后发现误带入临时目录 gitlink（`_program_repo_upload` 与 `novel_publisher/runtime/_content_repo`），已立即清理并再次推送修复（提交：`26bf795`）。
+- 已复核程序仓 `main`：上述临时目录已移除，当前仓库状态干净。
+
+## 2026-04-29 21:28
+
+### 提问
+要求为上传与生产两个 Python 工作流改为 `.env` 管理密钥，移除代码硬编码 token/api key，避免后续触发 GitHub token 泄露判定。
+
+### 本次完成变更摘要
+- 已更新 `novel_publisher/publisher/config.py`：移除 token 硬编码，改为启动时自动加载 `novel_publisher/.env` 并读取 `GITHUB_TOKEN`。
+- 已更新 `novel_producer/producer/config.py`：启动时自动加载 `novel_producer/.env`，并从环境变量读取 `DEEPSEEK_API_KEY/DEEPSEEK_MODEL/DEEPSEEK_BASE_URL`。
+- 已创建本地配置文件：
+  - `novel_publisher/.env`（`CONTENT_REPO_URL`、`GITHUB_TOKEN`）
+  - `novel_producer/.env`（`DEEPSEEK_API_KEY` 等）
+- 已验证：
+  - 两个项目 `python -m compileall` 通过；
+  - `novel_publisher` 启动流程可直接读取 `.env` 配置并正常进入交互。
+
+## 2026-04-29 21:35
+
+### 提问
+要求执行一次内容仓触发部署测试：因内容仓手动删除了 `novels/xuanhuan/world-of-immortality/annotations/0003-The-Eight-Armed-Malignant-Dragon-guide.md`，要求再次整目录上传并确认触发部署。
+
+### 本次完成变更摘要
+- 已执行 `novel_publisher` 整目录上传并确认推送，成功提交到内容仓 `main`（提交：`5911d7e`）。
+- 上传过程已自动先拉取你手动删除后的远端状态，再用本地完整目录回填，目标章节导读文件已恢复。
+- 已验证内容仓 Actions 新 run 已触发（最新：`https://github.com/okx1970152/GIT-CF-YWXS/actions/runs/25112079879`，当前状态 queued）。
+- 已验证前端仓 hook 流水线也在运行队列/执行中（最新两条：`25112093109` in_progress、`25112117437` queued）。
+
+## 2026-04-29 21:44
+
+### 提问
+要求排查线上 `https://wx.0o0o.mom/` 仍无小说内容显示的问题。
+
+### 本次完成变更摘要
+- 已复核内容仓与程序仓最近部署记录，均显示成功；同时线上首页与分类页仍显示空数据，且小说目录 URL 返回 404。
+- 已下载并检查程序仓最新部署日志：`sync-content-repo.mjs` 确实执行且显示“内容同步完成”。
+- 为防止“同步成功但实际无有效小说”再次静默发生，已增强 `scripts/sync-content-repo.mjs`：
+  - 同步后自动统计有效小说数量（按 `info/index.md` 判定）；
+  - 日志输出“检测到 X 部有效小说”；
+  - 若为 0，立即 `exit 1` 中止构建，避免发布空站点。
+- 本地验证通过：当前同步结果检测到 `1` 部有效小说。
+
+## 2026-04-29 22:20
+
+### 提问
+要求在“硬防护”基础上增加可观测诊断：必须能在部署日志中看到具体错误原因，并能用于定位为何前端未显示小说内容。
+
+### 本次完成变更摘要
+- 新增 `scripts/diagnose-content.mjs`：
+  - 输出 `[diag][env|summary|errors]` 结构化日志；
+  - 生成 `diagnostics/content-diagnose.txt` 与 `diagnostics/content-diagnose.json`；
+  - 校验分类/小说数量、`info/index.md`、`chapters`、`annotations`、`meta/novel.json`、frontmatter 字段有效性；
+  - 有异常时直接失败并打印错误清单。
+- 增强 `scripts/sync-content-repo.mjs`：
+  - 增加部署时目录级诊断日志（cwd、目标路径、分类与小说数、样本小说关键文件存在性）；
+  - 继续保留“0有效小说即失败”的防护。
+- 更新 `package.json`：`cf-build` 变为 `sync + diagnose + build` 串联，确保诊断先于打包。
+- 更新 `deploy-to-cloudflare.yml`：新增 `Upload content diagnostics`（`if: always()`），部署失败也可下载诊断产物。
+- 已本地执行 `npm run sync:content` + `npm run diag:content` 验证通过，报告显示当前 `validNovels=1`、`invalidNovels=0`。

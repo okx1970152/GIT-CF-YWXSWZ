@@ -1,0 +1,36 @@
+﻿2026-04-29T13:49:54.5063511Z ##[group]Run npm ci
+2026-04-29T13:49:54.5063850Z [36;1mnpm ci[0m
+2026-04-29T13:49:54.5097121Z shell: /usr/bin/bash -e {0}
+2026-04-29T13:49:54.5097398Z env:
+2026-04-29T13:49:54.5097653Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:49:54.5097996Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:49:54.5098277Z   CONTENT_REPO_REF: main
+2026-04-29T13:49:54.5161269Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:49:54.5162117Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:49:54.5162472Z   ADMIN_PASSWORD: ***
+2026-04-29T13:49:54.5163074Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:49:54.5163348Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:49:54.5163645Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:49:54.5163889Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:49:54.5164443Z   APP_GH_TOKEN: ***
+2026-04-29T13:49:54.5164665Z ##[endgroup]
+2026-04-29T13:49:59.8554897Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-04-29T13:50:00.0300735Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2026-04-29T13:50:00.0483776Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-04-29T13:50:00.1910083Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2026-04-29T13:50:00.1959235Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-04-29T13:50:00.7773274Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2026-04-29T13:50:01.2941455Z npm warn deprecated glob@9.3.5: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-04-29T13:50:02.6355344Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-04-29T13:50:08.5653708Z 
+2026-04-29T13:50:08.5654792Z added 745 packages, and audited 746 packages in 14s
+2026-04-29T13:50:08.5655376Z 
+2026-04-29T13:50:08.5655697Z 256 packages are looking for funding
+2026-04-29T13:50:08.5657458Z   run `npm fund` for details
+2026-04-29T13:50:08.6035372Z 
+2026-04-29T13:50:08.6036082Z 4 moderate severity vulnerabilities
+2026-04-29T13:50:08.6036530Z 
+2026-04-29T13:50:08.6037029Z To address all issues (including breaking changes), run:
+2026-04-29T13:50:08.6037699Z   npm audit fix --force
+2026-04-29T13:50:08.6037970Z 
+2026-04-29T13:50:08.6038210Z Run `npm audit` for details.

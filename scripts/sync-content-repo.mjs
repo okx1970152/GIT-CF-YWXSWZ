@@ -46,9 +46,57 @@ function hasLocalNovels() {
   return fs.existsSync(targetNovelsDir) && fs.readdirSync(targetNovelsDir).length > 0;
 }
 
+function printDirectoryDiagnostics(rootDir) {
+  log(`[diag][env] cwd=${workspaceRoot}`);
+  log(`[diag][env] targetNovelsDir=${targetNovelsDir}`);
+  log(`[diag][env] contentRepoNovelsPath=${contentRepoNovelsPath}`);
+  if (!fs.existsSync(rootDir)) {
+    log(`[diag][sync] novels root missing: ${rootDir}`);
+    return;
+  }
+  const categories = fs
+    .readdirSync(rootDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort((a, b) => a.localeCompare(b));
+  log(`[diag][sync] categories=${categories.join(",") || "none"}`);
+  for (const category of categories) {
+    const categoryDir = path.join(rootDir, category);
+    const novels = fs
+      .readdirSync(categoryDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name)
+      .sort((a, b) => a.localeCompare(b));
+    log(`[diag][sync] ${category} novels=${novels.length}`);
+    if (novels.length > 0) {
+      const n = novels[0];
+      const base = path.join(categoryDir, n);
+      log(
+        `[diag][sync] sample=${category}/${n} info=${fs.existsSync(path.join(base, "info", "index.md"))} chapters=${fs.existsSync(path.join(base, "chapters"))} annotations=${fs.existsSync(path.join(base, "annotations"))} metaNovel=${fs.existsSync(path.join(base, "meta", "novel.json"))}`
+      );
+    }
+  }
+}
+
+function countValidNovels(rootDir) {
+  if (!fs.existsSync(rootDir)) return 0;
+  let count = 0;
+  const categories = fs.readdirSync(rootDir, { withFileTypes: true }).filter((d) => d.isDirectory());
+  for (const cat of categories) {
+    const catDir = path.join(rootDir, cat.name);
+    const novels = fs.readdirSync(catDir, { withFileTypes: true }).filter((d) => d.isDirectory());
+    for (const novel of novels) {
+      const infoPath = path.join(catDir, novel.name, "info", "index.md");
+      if (fs.existsSync(infoPath)) count += 1;
+    }
+  }
+  return count;
+}
+
 if (!contentRepoToken) {
   if (hasLocalNovels()) {
     log("未提供 CONTENT_REPO_TOKEN，使用本地 novels 目录继续构建。");
+    printDirectoryDiagnostics(targetNovelsDir);
     process.exit(0);
   }
   log("错误：未提供 CONTENT_REPO_TOKEN，且本地 novels 目录为空。");
@@ -76,8 +124,14 @@ try {
   fs.mkdirSync(targetNovelsDir, { recursive: true });
   clearDirectory(targetNovelsDir);
   copyDirRecursive(fetchedNovelsDir, targetNovelsDir);
+  printDirectoryDiagnostics(targetNovelsDir);
 
-  log("内容同步完成：novels 已更新。");
+  const novelCount = countValidNovels(targetNovelsDir);
+  log(`内容同步完成：novels 已更新，检测到 ${novelCount} 部有效小说。`);
+  if (novelCount === 0) {
+    log("错误：同步后未检测到有效小说（缺少 info/index.md），中止构建。");
+    process.exit(1);
+  }
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
 }

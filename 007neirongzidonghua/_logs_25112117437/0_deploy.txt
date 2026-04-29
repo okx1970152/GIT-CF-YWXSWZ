@@ -1,0 +1,382 @@
+﻿2026-04-29T13:36:32.4787806Z Current runner version: '2.334.0'
+2026-04-29T13:36:32.4824958Z ##[group]Runner Image Provisioner
+2026-04-29T13:36:32.4826348Z Hosted Compute Agent
+2026-04-29T13:36:32.4827370Z Version: 20260213.493
+2026-04-29T13:36:32.4828532Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-04-29T13:36:32.4829893Z Build Date: 2026-02-13T00:28:41Z
+2026-04-29T13:36:32.4831047Z Worker ID: {5c1c29e8-2298-419d-8582-f29577f0a3d5}
+2026-04-29T13:36:32.4832549Z Azure Region: northcentralus
+2026-04-29T13:36:32.4833445Z ##[endgroup]
+2026-04-29T13:36:32.4835080Z ##[group]Operating System
+2026-04-29T13:36:32.4835781Z Ubuntu
+2026-04-29T13:36:32.4836293Z 24.04.4
+2026-04-29T13:36:32.4836751Z LTS
+2026-04-29T13:36:32.4837283Z ##[endgroup]
+2026-04-29T13:36:32.4837831Z ##[group]Runner Image
+2026-04-29T13:36:32.4838456Z Image: ubuntu-24.04
+2026-04-29T13:36:32.4839080Z Version: 20260413.86.1
+2026-04-29T13:36:32.4840334Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260413.86/images/ubuntu/Ubuntu2404-Readme.md
+2026-04-29T13:36:32.4842184Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260413.86
+2026-04-29T13:36:32.4843174Z ##[endgroup]
+2026-04-29T13:36:32.4844416Z ##[group]GITHUB_TOKEN Permissions
+2026-04-29T13:36:32.4846517Z Contents: read
+2026-04-29T13:36:32.4847165Z Metadata: read
+2026-04-29T13:36:32.4847700Z Packages: read
+2026-04-29T13:36:32.4848270Z ##[endgroup]
+2026-04-29T13:36:32.4850471Z Secret source: Actions
+2026-04-29T13:36:32.4851885Z Prepare workflow directory
+2026-04-29T13:36:32.5542502Z Prepare all required actions
+2026-04-29T13:36:32.5599257Z Getting action download info
+2026-04-29T13:36:32.9318511Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-29T13:36:33.0612515Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-04-29T13:36:33.2413835Z Complete job name: deploy
+2026-04-29T13:36:33.3109449Z ##[group]Run actions/checkout@v4
+2026-04-29T13:36:33.3110392Z with:
+2026-04-29T13:36:33.3110892Z   repository: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:33.3111884Z   token: ***
+2026-04-29T13:36:33.3112352Z   ssh-strict: true
+2026-04-29T13:36:33.3112807Z   ssh-user: git
+2026-04-29T13:36:33.3113275Z   persist-credentials: true
+2026-04-29T13:36:33.3113794Z   clean: true
+2026-04-29T13:36:33.3114266Z   sparse-checkout-cone-mode: true
+2026-04-29T13:36:33.3114810Z   fetch-depth: 1
+2026-04-29T13:36:33.3115263Z   fetch-tags: false
+2026-04-29T13:36:33.3115728Z   show-progress: true
+2026-04-29T13:36:33.3116209Z   lfs: false
+2026-04-29T13:36:33.3116635Z   submodules: false
+2026-04-29T13:36:33.3117095Z   set-safe-directory: true
+2026-04-29T13:36:33.3117867Z env:
+2026-04-29T13:36:33.3118357Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:36:33.3118974Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:36:33.3119549Z   CONTENT_REPO_REF: main
+2026-04-29T13:36:33.3120111Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:36:33.3121236Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:36:33.3122068Z   ADMIN_PASSWORD: ***
+2026-04-29T13:36:33.3123113Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:36:33.3123661Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:33.3124251Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:36:33.3124760Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:36:33.3125807Z   APP_GH_TOKEN: ***
+2026-04-29T13:36:33.3126278Z ##[endgroup]
+2026-04-29T13:36:33.4231012Z Syncing repository: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:33.4233475Z ##[group]Getting Git version info
+2026-04-29T13:36:33.4234323Z Working directory is '/home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ'
+2026-04-29T13:36:33.4235577Z [command]/usr/bin/git version
+2026-04-29T13:36:33.4266907Z git version 2.53.0
+2026-04-29T13:36:33.4294018Z ##[endgroup]
+2026-04-29T13:36:33.4318923Z Temporarily overriding HOME='/home/runner/work/_temp/5f8568e4-d685-4f7c-a70f-914f563a4983' before making global git config changes
+2026-04-29T13:36:33.4322336Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-29T13:36:33.4326846Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ
+2026-04-29T13:36:33.4363517Z Deleting the contents of '/home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ'
+2026-04-29T13:36:33.4367585Z ##[group]Initializing the repository
+2026-04-29T13:36:33.4372831Z [command]/usr/bin/git init /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ
+2026-04-29T13:36:33.4466699Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-29T13:36:33.4469076Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-29T13:36:33.4470651Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-29T13:36:33.4472552Z hint: call:
+2026-04-29T13:36:33.4473358Z hint:
+2026-04-29T13:36:33.4474193Z hint: 	git config --global init.defaultBranch <name>
+2026-04-29T13:36:33.4475051Z hint:
+2026-04-29T13:36:33.4475678Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-29T13:36:33.4476667Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-29T13:36:33.4477439Z hint:
+2026-04-29T13:36:33.4477897Z hint: 	git branch -m <name>
+2026-04-29T13:36:33.4478405Z hint:
+2026-04-29T13:36:33.4479056Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-29T13:36:33.4480161Z Initialized empty Git repository in /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ/.git/
+2026-04-29T13:36:33.4483336Z [command]/usr/bin/git remote add origin https://github.com/okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:33.4518700Z ##[endgroup]
+2026-04-29T13:36:33.4519634Z ##[group]Disabling automatic garbage collection
+2026-04-29T13:36:33.4524513Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-29T13:36:33.4559526Z ##[endgroup]
+2026-04-29T13:36:33.4560332Z ##[group]Setting up auth
+2026-04-29T13:36:33.4569307Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-29T13:36:33.4601088Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-29T13:36:33.4896230Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-29T13:36:33.4932222Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-29T13:36:33.5171024Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-29T13:36:33.5217325Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-29T13:36:33.5464588Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-29T13:36:33.5502128Z ##[endgroup]
+2026-04-29T13:36:33.5503738Z ##[group]Fetching the repository
+2026-04-29T13:36:33.5513120Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +26bf79513bd09092ae57863bcffe530c24c2182d:refs/remotes/origin/main
+2026-04-29T13:36:34.3175851Z From https://github.com/okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:34.3178227Z  * [new ref]         26bf79513bd09092ae57863bcffe530c24c2182d -> origin/main
+2026-04-29T13:36:34.3205690Z ##[endgroup]
+2026-04-29T13:36:34.3207748Z ##[group]Determining the checkout info
+2026-04-29T13:36:34.3209956Z ##[endgroup]
+2026-04-29T13:36:34.3214391Z [command]/usr/bin/git sparse-checkout disable
+2026-04-29T13:36:34.3252524Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-29T13:36:34.3278894Z ##[group]Checking out the ref
+2026-04-29T13:36:34.3283344Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-29T13:36:34.4837956Z Switched to a new branch 'main'
+2026-04-29T13:36:34.4839789Z branch 'main' set up to track 'origin/main'.
+2026-04-29T13:36:34.4855007Z ##[endgroup]
+2026-04-29T13:36:34.4893461Z [command]/usr/bin/git log -1 --format=%H
+2026-04-29T13:36:34.4915957Z 26bf79513bd09092ae57863bcffe530c24c2182d
+2026-04-29T13:36:34.5237805Z ##[group]Run actions/setup-node@v4
+2026-04-29T13:36:34.5239061Z with:
+2026-04-29T13:36:34.5239958Z   node-version: 20
+2026-04-29T13:36:34.5240916Z   cache: npm
+2026-04-29T13:36:34.5241982Z   always-auth: false
+2026-04-29T13:36:34.5242961Z   check-latest: false
+2026-04-29T13:36:34.5244161Z   token: ***
+2026-04-29T13:36:34.5244981Z env:
+2026-04-29T13:36:34.5245877Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:36:34.5247197Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:36:34.5248382Z   CONTENT_REPO_REF: main
+2026-04-29T13:36:34.5249433Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:36:34.5252139Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:36:34.5253293Z   ADMIN_PASSWORD: ***
+2026-04-29T13:36:34.5255604Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:36:34.5256746Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:34.5257981Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:36:34.5259021Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:36:34.5261399Z   APP_GH_TOKEN: ***
+2026-04-29T13:36:34.5262452Z ##[endgroup]
+2026-04-29T13:36:34.7093108Z Found in cache @ /opt/hostedtoolcache/node/20.20.2/x64
+2026-04-29T13:36:34.7098928Z ##[group]Environment details
+2026-04-29T13:36:35.0224038Z node: v20.20.2
+2026-04-29T13:36:35.0225747Z npm: 10.8.2
+2026-04-29T13:36:35.0227319Z yarn: 1.22.22
+2026-04-29T13:36:35.0230315Z ##[endgroup]
+2026-04-29T13:36:35.0251165Z [command]/opt/hostedtoolcache/node/20.20.2/x64/bin/npm config get cache
+2026-04-29T13:36:35.1361220Z /home/runner/.npm
+2026-04-29T13:36:35.3410697Z Cache hit for: node-cache-Linux-x64-npm-030805d61b7e74d009af8b0cf5c0c125e5ce62ae49cf2b2d76737903d4f8751a
+2026-04-29T13:36:36.4766883Z Received 121634816 of 232998431 (52.2%), 115.9 MBs/sec
+2026-04-29T13:36:37.2186540Z Received 232998431 of 232998431 (100.0%), 127.5 MBs/sec
+2026-04-29T13:36:37.2187979Z Cache Size: ~222 MB (232998431 B)
+2026-04-29T13:36:37.2317951Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c51d8133-c987-423b-b3ce-fab28b0a6e82/cache.tzst -P -C /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ --use-compress-program unzstd
+2026-04-29T13:36:37.6562223Z Cache restored successfully
+2026-04-29T13:36:37.6672450Z Cache restored from key: node-cache-Linux-x64-npm-030805d61b7e74d009af8b0cf5c0c125e5ce62ae49cf2b2d76737903d4f8751a
+2026-04-29T13:36:37.6813376Z ##[group]Run npm ci
+2026-04-29T13:36:37.6813690Z [36;1mnpm ci[0m
+2026-04-29T13:36:37.6846472Z shell: /usr/bin/bash -e {0}
+2026-04-29T13:36:37.6846751Z env:
+2026-04-29T13:36:37.6847074Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:36:37.6847412Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:36:37.6847697Z   CONTENT_REPO_REF: main
+2026-04-29T13:36:37.6847944Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:36:37.6848783Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:36:37.6849105Z   ADMIN_PASSWORD: ***
+2026-04-29T13:36:37.6914149Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:36:37.6914727Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:37.6915339Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:36:37.6915845Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:36:37.6916947Z   APP_GH_TOKEN: ***
+2026-04-29T13:36:37.6917321Z ##[endgroup]
+2026-04-29T13:36:43.1024151Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-04-29T13:36:43.2638186Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2026-04-29T13:36:43.2783388Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-04-29T13:36:43.4012089Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2026-04-29T13:36:43.4065128Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-04-29T13:36:43.9150693Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2026-04-29T13:36:44.3931984Z npm warn deprecated glob@9.3.5: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-04-29T13:36:45.7295892Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-04-29T13:36:51.3856258Z 
+2026-04-29T13:36:51.3857349Z added 745 packages, and audited 746 packages in 14s
+2026-04-29T13:36:51.3857955Z 
+2026-04-29T13:36:51.3858322Z 256 packages are looking for funding
+2026-04-29T13:36:51.3859015Z   run `npm fund` for details
+2026-04-29T13:36:51.4247403Z 
+2026-04-29T13:36:51.4248188Z 4 moderate severity vulnerabilities
+2026-04-29T13:36:51.4248627Z 
+2026-04-29T13:36:51.4249117Z To address all issues (including breaking changes), run:
+2026-04-29T13:36:51.4249800Z   npm audit fix --force
+2026-04-29T13:36:51.4250098Z 
+2026-04-29T13:36:51.4250386Z Run `npm audit` for details.
+2026-04-29T13:36:51.5092112Z ##[group]Run npm run cf-build
+2026-04-29T13:36:51.5092465Z [36;1mnpm run cf-build[0m
+2026-04-29T13:36:51.5120987Z shell: /usr/bin/bash -e {0}
+2026-04-29T13:36:51.5121254Z env:
+2026-04-29T13:36:51.5121660Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:36:51.5122017Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:36:51.5122331Z   CONTENT_REPO_REF: main
+2026-04-29T13:36:51.5122600Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:36:51.5123354Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:36:51.5123646Z   ADMIN_PASSWORD: ***
+2026-04-29T13:36:51.5124266Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:36:51.5124558Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:36:51.5124874Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:36:51.5125150Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:36:51.5125763Z   APP_GH_TOKEN: ***
+2026-04-29T13:36:51.5125995Z ##[endgroup]
+2026-04-29T13:36:51.6345803Z 
+2026-04-29T13:36:51.6346517Z > novel-portal@0.1.0 cf-build
+2026-04-29T13:36:51.6347614Z > npm run sync:content && opennextjs-cloudflare build
+2026-04-29T13:36:51.6348171Z 
+2026-04-29T13:36:51.7449526Z 
+2026-04-29T13:36:51.7450288Z > novel-portal@0.1.0 sync:content
+2026-04-29T13:36:51.7451088Z > node ./scripts/sync-content-repo.mjs
+2026-04-29T13:36:51.7451751Z 
+2026-04-29T13:36:51.7813081Z [sync-content] 开始拉取内容仓 okx1970152/GIT-CF-YWXS@main ...
+2026-04-29T13:36:51.7848477Z Cloning into '/tmp/novel-content-5FEz0j/repo'...
+2026-04-29T13:36:52.5654884Z Your branch is up to date with 'origin/main'.
+2026-04-29T13:36:52.5718920Z [sync-content] 内容同步完成：novels 已更新。
+2026-04-29T13:36:54.1549459Z 
+2026-04-29T13:36:54.1550456Z ┌─────────────────────────────┐
+2026-04-29T13:36:54.1551231Z │ OpenNext — Cloudflare build │
+2026-04-29T13:36:54.1552262Z └─────────────────────────────┘
+2026-04-29T13:36:54.1552576Z 
+2026-04-29T13:36:54.2309326Z App directory: /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ
+2026-04-29T13:36:54.2310221Z Next.js version : 15.5.15
+2026-04-29T13:36:54.2322663Z @opennextjs/cloudflare version: 1.19.4
+2026-04-29T13:36:54.2323566Z @opennextjs/aws version: 3.10.4
+2026-04-29T13:36:54.2346061Z 
+2026-04-29T13:36:54.2346895Z ┌─────────────────────────────────┐
+2026-04-29T13:36:54.2349841Z │ OpenNext — Building Next.js app │
+2026-04-29T13:36:54.2351062Z └─────────────────────────────────┘
+2026-04-29T13:36:54.2352229Z 
+2026-04-29T13:36:54.3460211Z 
+2026-04-29T13:36:54.3460916Z > novel-portal@0.1.0 build
+2026-04-29T13:36:54.3461700Z > next build
+2026-04-29T13:36:54.3462015Z 
+2026-04-29T13:36:54.8642621Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-04-29T13:36:54.8784023Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-04-29T13:36:54.8786140Z This information is used to shape Next.js' roadmap and prioritize features.
+2026-04-29T13:36:54.8788299Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-04-29T13:36:54.8789568Z https://nextjs.org/telemetry
+2026-04-29T13:36:54.8789822Z 
+2026-04-29T13:36:54.9585508Z    ▲ Next.js 15.5.15
+2026-04-29T13:36:54.9592184Z 
+2026-04-29T13:36:56.1101753Z    Creating an optimized production build ...
+2026-04-29T13:37:10.4742900Z  ✓ Compiled successfully in 11.8s
+2026-04-29T13:37:10.4778831Z    Linting and checking validity of types ...
+2026-04-29T13:37:15.5263931Z    Collecting page data ...
+2026-04-29T13:37:17.5714115Z    Generating static pages (0/28) ...
+2026-04-29T13:37:18.3152826Z    Generating static pages (7/28) 
+2026-04-29T13:37:18.3182431Z    Generating static pages (14/28) 
+2026-04-29T13:37:18.4653713Z    Generating static pages (21/28) 
+2026-04-29T13:37:18.4656535Z  ✓ Generating static pages (28/28)
+2026-04-29T13:37:19.3522192Z    Finalizing page optimization ...
+2026-04-29T13:37:19.3522953Z    Collecting build traces ...
+2026-04-29T13:37:36.2017397Z 
+2026-04-29T13:37:36.2052927Z Route (app)                                                   Size  First Load JS  Revalidate  Expire
+2026-04-29T13:37:36.2054511Z ┌ ○ /                                                      1.65 kB         107 kB          1h      1y
+2026-04-29T13:37:36.2055678Z ├ ○ /_not-found                                              992 B         103 kB
+2026-04-29T13:37:36.2056667Z ├ ƒ /admin                                                   141 B         102 kB
+2026-04-29T13:37:36.2057580Z ├ ƒ /admin/ads                                              2.3 kB         104 kB
+2026-04-29T13:37:36.2058718Z ├ ƒ /admin/login                                           1.01 kB         107 kB
+2026-04-29T13:37:36.2059859Z ├ ƒ /api/admin/ads                                           141 B         102 kB
+2026-04-29T13:37:36.2061054Z ├ ƒ /api/admin/login                                         141 B         102 kB
+2026-04-29T13:37:36.2062505Z ├ ƒ /api/admin/logout                                        141 B         102 kB
+2026-04-29T13:37:36.2063819Z ├ ● /category/[category]                                   1.66 kB         107 kB          1h      1y
+2026-04-29T13:37:36.2065190Z ├   ├ /category/xuanhuan                                                                   1h      1y
+2026-04-29T13:37:36.2066516Z ├   ├ /category/wuxia                                                                      1h      1y
+2026-04-29T13:37:36.2067853Z ├   ├ /category/urban                                                                      1h      1y
+2026-04-29T13:37:36.2068672Z ├   └ [+7 more paths]
+2026-04-29T13:37:36.2069536Z ├ ○ /icon.png                                                  0 B            0 B
+2026-04-29T13:37:36.2070731Z ├ ● /novels/[category]/[novelId]                             165 B         106 kB
+2026-04-29T13:37:36.2072012Z ├   └ /novels/xuanhuan/world-of-immortality
+2026-04-29T13:37:36.2073190Z ├ ● /novels/[category]/[novelId]/chapters/[chapterNo]      2.46 kB         108 kB
+2026-04-29T13:37:36.2074317Z ├   ├ /novels/xuanhuan/world-of-immortality/chapters/0001
+2026-04-29T13:37:36.2075283Z ├   ├ /novels/xuanhuan/world-of-immortality/chapters/0002
+2026-04-29T13:37:36.2076417Z ├   └ /novels/xuanhuan/world-of-immortality/chapters/0003
+2026-04-29T13:37:36.2077147Z ├ ○ /robots.txt                                              141 B         102 kB
+2026-04-29T13:37:36.2078108Z ├ ƒ /search                                                  165 B         106 kB
+2026-04-29T13:37:36.2078686Z └ ○ /sitemap.xml                                             141 B         102 kB
+2026-04-29T13:37:36.2079336Z + First Load JS shared by all                               102 kB
+2026-04-29T13:37:36.2080306Z   ├ chunks/255-4f212684648fcab9.js                           46 kB
+2026-04-29T13:37:36.2081132Z   ├ chunks/4bd1b696-c023c6e3521b1417.js                    54.2 kB
+2026-04-29T13:37:36.2102301Z   └ other shared chunks (total)                            1.92 kB
+2026-04-29T13:37:36.2102647Z 
+2026-04-29T13:37:36.2102654Z 
+2026-04-29T13:37:36.2102894Z ○  (Static)   prerendered as static content
+2026-04-29T13:37:36.2103474Z ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+2026-04-29T13:37:36.2103998Z ƒ  (Dynamic)  server-rendered on demand
+2026-04-29T13:37:36.2104213Z 
+2026-04-29T13:37:36.2656761Z 
+2026-04-29T13:37:36.2657552Z ┌──────────────────────────────┐
+2026-04-29T13:37:36.2658023Z │ OpenNext — Generating bundle │
+2026-04-29T13:37:36.2658402Z └──────────────────────────────┘
+2026-04-29T13:37:36.2658579Z 
+2026-04-29T13:37:36.3243363Z Bundling middleware function...
+2026-04-29T13:37:36.3505202Z Bundling static assets...
+2026-04-29T13:37:36.3656432Z Bundling cache assets...
+2026-04-29T13:37:36.3898440Z Building server function: default...
+2026-04-29T13:37:40.2394333Z Applying code patches: 3.535s
+2026-04-29T13:37:40.4092405Z # copyPackageTemplateFiles
+2026-04-29T13:37:40.4123925Z [35m⚙️ Bundling the OpenNext server...
+2026-04-29T13:37:40.4124584Z [0m
+2026-04-29T13:37:41.9663328Z [35mWorker saved in `.open-next/worker.js` 🚀
+2026-04-29T13:37:41.9692209Z [0m
+2026-04-29T13:37:41.9746020Z OpenNext build complete.
+2026-04-29T13:37:42.1420842Z ##[group]Run npx wrangler deploy
+2026-04-29T13:37:42.1421182Z [36;1mnpx wrangler deploy[0m
+2026-04-29T13:37:42.1443026Z shell: /usr/bin/bash -e {0}
+2026-04-29T13:37:42.1443282Z env:
+2026-04-29T13:37:42.1443524Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:37:42.1443844Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:37:42.1444125Z   CONTENT_REPO_REF: main
+2026-04-29T13:37:42.1444373Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:37:42.1445064Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:37:42.1445339Z   ADMIN_PASSWORD: ***
+2026-04-29T13:37:42.1445960Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:37:42.1446229Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:37:42.1446525Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:37:42.1446774Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:37:42.1447341Z   APP_GH_TOKEN: ***
+2026-04-29T13:37:42.1447709Z   CLOUDFLARE_API_TOKEN: ***
+2026-04-29T13:37:42.1448021Z   CLOUDFLARE_ACCOUNT_ID: ***
+2026-04-29T13:37:42.1448292Z ##[endgroup]
+2026-04-29T13:37:43.2516576Z 
+2026-04-29T13:37:43.2517167Z  ⛅️ wrangler 4.85.0
+2026-04-29T13:37:43.2517573Z ───────────────────
+2026-04-29T13:37:43.2927733Z OpenNext project detected, calling `opennextjs-cloudflare deploy`
+2026-04-29T13:37:45.4032026Z 
+2026-04-29T13:37:45.4033583Z ┌──────────────────────────────┐
+2026-04-29T13:37:45.4034383Z │ OpenNext — Cloudflare deploy │
+2026-04-29T13:37:45.4035160Z └──────────────────────────────┘
+2026-04-29T13:37:45.4035509Z 
+2026-04-29T13:37:45.6807366Z Incremental cache does not need populating
+2026-04-29T13:37:45.6808080Z Tag cache does not need populating
+2026-04-29T13:37:46.6736865Z 
+2026-04-29T13:37:46.6737907Z  ⛅️ wrangler 4.85.0 (update available 4.86.0)
+2026-04-29T13:37:46.6738538Z ─────────────────────────────────────────────
+2026-04-29T13:37:46.6812796Z 
+2026-04-29T13:37:46.6814256Z Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2026-04-29T13:37:47.9168797Z 🌀 Building list of assets...
+2026-04-29T13:37:47.9204674Z ✨ Read 59 files from the assets directory /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ/.open-next/assets
+2026-04-29T13:37:48.0097707Z 🌀 Starting asset upload...
+2026-04-29T13:37:49.3640410Z 🌀 Found 1 new or modified static asset to upload. Proceeding with upload...
+2026-04-29T13:37:49.3641233Z + /BUILD_ID
+2026-04-29T13:37:50.3746889Z Uploaded 1 of 1 asset
+2026-04-29T13:37:50.3749801Z ✨ Success! Uploaded 1 file (32 already uploaded) (1.01 sec)
+2026-04-29T13:37:50.3750300Z 
+2026-04-29T13:37:50.5301986Z Total Upload: 7042.36 KiB / gzip: 2275.50 KiB
+2026-04-29T13:37:53.6978399Z Worker Startup Time: 20 ms
+2026-04-29T13:37:53.6989848Z Your Worker has access to the following bindings:
+2026-04-29T13:37:53.6990701Z Binding            Resource      
+2026-04-29T13:37:53.6991416Z env.ASSETS         Assets        
+2026-04-29T13:37:53.6991933Z 
+2026-04-29T13:37:53.7010010Z Uploaded novel-portal (6.59 sec)
+2026-04-29T13:37:54.2172541Z Deployed novel-portal triggers (0.52 sec)
+2026-04-29T13:37:54.2173569Z   https://novel-portal.gpt1-b7e.workers.dev
+2026-04-29T13:37:54.2179358Z Current Version ID: 2793e8e0-eb67-49f5-a68e-28e70c0df937
+2026-04-29T13:37:54.2731009Z [33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mUsing direct eval with a bundler is not recommended and may cause problems[0m [direct-eval]
+2026-04-29T13:37:54.2732268Z 
+2026-04-29T13:37:54.2732649Z     .open-next/server-functions/default/handler.mjs:141:8:
+2026-04-29T13:37:54.2733563Z [37m      141 │ }());`),[32meval[37m(str)||{}}catch(err){if(wrap!==!1&&/(unexpected|ident...
+2026-04-29T13:37:54.2734138Z           ╵         [32m~~~~[0m
+2026-04-29T13:37:54.2734330Z 
+2026-04-29T13:37:54.2734845Z   You can read more about direct eval and bundling here: [4mhttps://esbuild.github.io/link/direct-eval[0m
+2026-04-29T13:37:54.2735315Z 
+2026-04-29T13:37:54.2735321Z 
+2026-04-29T13:37:54.3576191Z Post job cleanup.
+2026-04-29T13:37:54.5160057Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-030805d61b7e74d009af8b0cf5c0c125e5ce62ae49cf2b2d76737903d4f8751a, not saving cache.
+2026-04-29T13:37:54.5291720Z Post job cleanup.
+2026-04-29T13:37:54.6280067Z [command]/usr/bin/git version
+2026-04-29T13:37:54.6316712Z git version 2.53.0
+2026-04-29T13:37:54.6360475Z Temporarily overriding HOME='/home/runner/work/_temp/2d1a3e4c-9455-4248-b007-41260ecd08d0' before making global git config changes
+2026-04-29T13:37:54.6362143Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-29T13:37:54.6375385Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ
+2026-04-29T13:37:54.6408627Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-29T13:37:54.6442813Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-29T13:37:54.6667793Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-29T13:37:54.6688598Z http.https://github.com/.extraheader
+2026-04-29T13:37:54.6700894Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-04-29T13:37:54.6731231Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-29T13:37:54.6948734Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-29T13:37:54.6979733Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-29T13:37:54.7330399Z Cleaning up orphan processes
+2026-04-29T13:37:54.7613072Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

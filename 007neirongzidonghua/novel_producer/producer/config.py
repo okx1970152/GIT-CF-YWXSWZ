@@ -19,6 +19,7 @@ class Settings:
 
 def get_settings() -> Settings:
     project_root = Path(__file__).resolve().parents[1]
+    _load_dotenv_file(project_root / ".env")
     source_root = project_root / "data" / "01-sucai"
     max_chapters = int(os.environ.get("PRODUCER_MAX_CHAPTERS", "0"))
     return Settings(
@@ -27,7 +28,21 @@ def get_settings() -> Settings:
         output_novels_root=project_root / "novels",
         runtime_root=project_root / "runtime",
         update_info_every_n_chapters=100,
-        deepseek_model="deepseek-v4-flash",
-        deepseek_base_url="https://api.deepseek.com",
+        deepseek_model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash").strip(),
+        deepseek_base_url=os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").strip(),
         max_chapters_per_run=max_chapters,
     )
+
+
+def _load_dotenv_file(env_path: Path) -> None:
+    if not env_path.exists():
+        return
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        text = line.strip()
+        if not text or text.startswith("#") or "=" not in text:
+            continue
+        key, value = text.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value

@@ -1,0 +1,17 @@
+[diag][env]
+cwd=D:\1CHATGPT\btc\Google-BoKe\999-英文小说网站
+novelsRoot=D:\1CHATGPT\btc\Google-BoKe\999-英文小说网站\novels
+
+[diag][summary]
+categories=10
+novels=1
+validNovels=1
+invalidNovels=0
+missingInfo=0
+missingChapters=0
+missingAnnotations=0
+missingMetaNovel=0
+schemaErrors=0
+
+[diag][errors]
+none

@@ -1,0 +1,71 @@
+{
+  "env": {
+    "cwd": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站",
+    "novelsRoot": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\novels"
+  },
+  "summary": {
+    "categories": 10,
+    "novels": 1,
+    "validNovels": 1,
+    "invalidNovels": 0,
+    "missingInfo": 0,
+    "missingChapters": 0,
+    "missingAnnotations": 0,
+    "missingMetaNovel": 0,
+    "schemaErrors": 0
+  },
+  "categories": [
+    {
+      "category": "completed",
+      "novels": []
+    },
+    {
+      "category": "female",
+      "novels": []
+    },
+    {
+      "category": "gaming",
+      "novels": []
+    },
+    {
+      "category": "historical",
+      "novels": []
+    },
+    {
+      "category": "hot-essays",
+      "novels": []
+    },
+    {
+      "category": "ranking",
+      "novels": []
+    },
+    {
+      "category": "sci-fi",
+      "novels": []
+    },
+    {
+      "category": "urban",
+      "novels": []
+    },
+    {
+      "category": "wuxia",
+      "novels": []
+    },
+    {
+      "category": "xuanhuan",
+      "novels": [
+        {
+          "category": "xuanhuan",
+          "novel": "world-of-immortality",
+          "basePath": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\novels\\xuanhuan\\world-of-immortality",
+          "hasInfo": true,
+          "hasMetaNovel": true,
+          "chapterCount": 5,
+          "annotationCount": 5,
+          "schemaErrors": []
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

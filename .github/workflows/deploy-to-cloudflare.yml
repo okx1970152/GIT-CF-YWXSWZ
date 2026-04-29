@@ -36,6 +36,14 @@ jobs:
       - name: Build OpenNext bundle
         run: npm run cf-build
 
+      - name: Upload content diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-diagnostics
+          path: diagnostics/
+          if-no-files-found: warn
+
       - name: Deploy to Cloudflare Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

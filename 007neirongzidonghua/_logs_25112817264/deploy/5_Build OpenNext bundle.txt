@@ -1,0 +1,116 @@
+﻿2026-04-29T13:50:08.6935331Z ##[group]Run npm run cf-build
+2026-04-29T13:50:08.6935663Z [36;1mnpm run cf-build[0m
+2026-04-29T13:50:08.6958239Z shell: /usr/bin/bash -e {0}
+2026-04-29T13:50:08.6958488Z env:
+2026-04-29T13:50:08.6958723Z   NEXT_PUBLIC_SITE_URL: https://wx.0o0o.mom
+2026-04-29T13:50:08.6959036Z   CONTENT_REPO: okx1970152/GIT-CF-YWXS
+2026-04-29T13:50:08.6959552Z   CONTENT_REPO_REF: main
+2026-04-29T13:50:08.6959824Z   CONTENT_REPO_NOVELS_PATH: novels
+2026-04-29T13:50:08.6960533Z   CONTENT_REPO_TOKEN: ***
+2026-04-29T13:50:08.6960821Z   ADMIN_PASSWORD: ***
+2026-04-29T13:50:08.6961362Z   ADMIN_SESSION_SECRET: ***
+2026-04-29T13:50:08.6961640Z   APP_GITHUB_REPO: okx1970152/GIT-CF-YWXSWZ
+2026-04-29T13:50:08.6961922Z   APP_GITHUB_BRANCH: main
+2026-04-29T13:50:08.6962160Z   APP_GITHUB_ADS_PATH: data/ads.json
+2026-04-29T13:50:08.6962720Z   APP_GH_TOKEN: ***
+2026-04-29T13:50:08.6962926Z ##[endgroup]
+2026-04-29T13:50:08.8065737Z 
+2026-04-29T13:50:08.8066287Z > novel-portal@0.1.0 cf-build
+2026-04-29T13:50:08.8067122Z > npm run sync:content && opennextjs-cloudflare build
+2026-04-29T13:50:08.8067673Z 
+2026-04-29T13:50:08.9160187Z 
+2026-04-29T13:50:08.9160670Z > novel-portal@0.1.0 sync:content
+2026-04-29T13:50:08.9161363Z > node ./scripts/sync-content-repo.mjs
+2026-04-29T13:50:08.9161632Z 
+2026-04-29T13:50:08.9500124Z [sync-content] 开始拉取内容仓 okx1970152/GIT-CF-YWXS@main ...
+2026-04-29T13:50:08.9535244Z Cloning into '/tmp/novel-content-G8vojF/repo'...
+2026-04-29T13:50:10.1323118Z Your branch is up to date with 'origin/main'.
+2026-04-29T13:50:10.1380982Z [sync-content] 内容同步完成：novels 已更新。
+2026-04-29T13:50:11.7278414Z 
+2026-04-29T13:50:11.7279822Z ┌─────────────────────────────┐
+2026-04-29T13:50:11.7280715Z │ OpenNext — Cloudflare build │
+2026-04-29T13:50:11.7281461Z └─────────────────────────────┘
+2026-04-29T13:50:11.7281796Z 
+2026-04-29T13:50:11.8062847Z App directory: /home/runner/work/GIT-CF-YWXSWZ/GIT-CF-YWXSWZ
+2026-04-29T13:50:11.8063569Z Next.js version : 15.5.15
+2026-04-29T13:50:11.8075911Z @opennextjs/cloudflare version: 1.19.4
+2026-04-29T13:50:11.8076710Z @opennextjs/aws version: 3.10.4
+2026-04-29T13:50:11.8098618Z 
+2026-04-29T13:50:11.8099611Z ┌─────────────────────────────────┐
+2026-04-29T13:50:11.8100436Z │ OpenNext — Building Next.js app │
+2026-04-29T13:50:11.8101240Z └─────────────────────────────────┘
+2026-04-29T13:50:11.8101572Z 
+2026-04-29T13:50:11.9241586Z 
+2026-04-29T13:50:11.9242308Z > novel-portal@0.1.0 build
+2026-04-29T13:50:11.9242865Z > next build
+2026-04-29T13:50:11.9243047Z 
+2026-04-29T13:50:12.4436413Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-04-29T13:50:12.4523390Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-04-29T13:50:12.4525759Z This information is used to shape Next.js' roadmap and prioritize features.
+2026-04-29T13:50:12.4528938Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-04-29T13:50:12.4531068Z https://nextjs.org/telemetry
+2026-04-29T13:50:12.4531711Z 
+2026-04-29T13:50:12.5361813Z    ▲ Next.js 15.5.15
+2026-04-29T13:50:12.5362174Z 
+2026-04-29T13:50:13.8217500Z    Creating an optimized production build ...
+2026-04-29T13:50:28.2159856Z  ✓ Compiled successfully in 12.0s
+2026-04-29T13:50:28.2203843Z    Linting and checking validity of types ...
+2026-04-29T13:50:33.3452973Z    Collecting page data ...
+2026-04-29T13:50:35.3199755Z    Generating static pages (0/28) ...
+2026-04-29T13:50:36.1410893Z    Generating static pages (7/28) 
+2026-04-29T13:50:36.1670819Z    Generating static pages (14/28) 
+2026-04-29T13:50:36.2177385Z    Generating static pages (21/28) 
+2026-04-29T13:50:36.2729912Z  ✓ Generating static pages (28/28)
+2026-04-29T13:50:37.2009692Z    Finalizing page optimization ...
+2026-04-29T13:50:37.2010454Z    Collecting build traces ...
+2026-04-29T13:50:55.0355558Z 
+2026-04-29T13:50:55.0393399Z Route (app)                                                   Size  First Load JS  Revalidate  Expire
+2026-04-29T13:50:55.0395338Z ┌ ○ /                                                      1.65 kB         107 kB          1h      1y
+2026-04-29T13:50:55.0396869Z ├ ○ /_not-found                                              992 B         103 kB
+2026-04-29T13:50:55.0397750Z ├ ƒ /admin                                                   141 B         102 kB
+2026-04-29T13:50:55.0398763Z ├ ƒ /admin/ads                                              2.3 kB         104 kB
+2026-04-29T13:50:55.0400748Z ├ ƒ /admin/login                                           1.01 kB         107 kB
+2026-04-29T13:50:55.0401681Z ├ ƒ /api/admin/ads                                           141 B         102 kB
+2026-04-29T13:50:55.0402584Z ├ ƒ /api/admin/login                                         141 B         102 kB
+2026-04-29T13:50:55.0403572Z ├ ƒ /api/admin/logout                                        141 B         102 kB
+2026-04-29T13:50:55.0404582Z ├ ● /category/[category]                                   1.66 kB         107 kB          1h      1y
+2026-04-29T13:50:55.0405634Z ├   ├ /category/xuanhuan                                                                   1h      1y
+2026-04-29T13:50:55.0406601Z ├   ├ /category/wuxia                                                                      1h      1y
+2026-04-29T13:50:55.0407587Z ├   ├ /category/urban                                                                      1h      1y
+2026-04-29T13:50:55.0408260Z ├   └ [+7 more paths]
+2026-04-29T13:50:55.0409146Z ├ ○ /icon.png                                                  0 B            0 B
+2026-04-29T13:50:55.0410323Z ├ ● /novels/[category]/[novelId]                             165 B         106 kB
+2026-04-29T13:50:55.0411110Z ├   └ /novels/xuanhuan/world-of-immortality
+2026-04-29T13:50:55.0411953Z ├ ● /novels/[category]/[novelId]/chapters/[chapterNo]      2.46 kB         108 kB
+2026-04-29T13:50:55.0412875Z ├   ├ /novels/xuanhuan/world-of-immortality/chapters/0001
+2026-04-29T13:50:55.0413389Z ├   ├ /novels/xuanhuan/world-of-immortality/chapters/0002
+2026-04-29T13:50:55.0413883Z ├   └ /novels/xuanhuan/world-of-immortality/chapters/0003
+2026-04-29T13:50:55.0414404Z ├ ○ /robots.txt                                              141 B         102 kB
+2026-04-29T13:50:55.0414940Z ├ ƒ /search                                                  165 B         106 kB
+2026-04-29T13:50:55.0415477Z └ ○ /sitemap.xml                                             141 B         102 kB
+2026-04-29T13:50:55.0416251Z + First Load JS shared by all                               102 kB
+2026-04-29T13:50:55.0420749Z   ├ chunks/255-4f212684648fcab9.js                           46 kB
+2026-04-29T13:50:55.0421493Z   ├ chunks/4bd1b696-c023c6e3521b1417.js                    54.2 kB
+2026-04-29T13:50:55.0422133Z   └ other shared chunks (total)                            1.92 kB
+2026-04-29T13:50:55.0422569Z 
+2026-04-29T13:50:55.0422714Z 
+2026-04-29T13:50:55.0423163Z ○  (Static)   prerendered as static content
+2026-04-29T13:50:55.0424065Z ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+2026-04-29T13:50:55.0424883Z ƒ  (Dynamic)  server-rendered on demand
+2026-04-29T13:50:55.0425211Z 
+2026-04-29T13:50:55.1098276Z 
+2026-04-29T13:50:55.1099122Z ┌──────────────────────────────┐
+2026-04-29T13:50:55.1099978Z │ OpenNext — Generating bundle │
+2026-04-29T13:50:55.1100375Z └──────────────────────────────┘
+2026-04-29T13:50:55.1100533Z 
+2026-04-29T13:50:55.1784945Z Bundling middleware function...
+2026-04-29T13:50:55.2056054Z Bundling static assets...
+2026-04-29T13:50:55.2228575Z Bundling cache assets...
+2026-04-29T13:50:55.2499694Z Building server function: default...
+2026-04-29T13:50:59.2955741Z Applying code patches: 3.710s
+2026-04-29T13:50:59.4919629Z # copyPackageTemplateFiles
+2026-04-29T13:50:59.4945651Z [35m⚙️ Bundling the OpenNext server...
+2026-04-29T13:50:59.4946031Z [0m
+2026-04-29T13:51:01.3321356Z [35mWorker saved in `.open-next/worker.js` 🚀
+2026-04-29T13:51:01.3322083Z [0m
+2026-04-29T13:51:01.3322576Z OpenNext build complete.
