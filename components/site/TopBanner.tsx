@@ -19,7 +19,10 @@ export function TopBanner() {
   }
 
   return (
-    <section className="mx-auto mt-3 w-full max-w-[1400px] px-3 sm:mt-4 sm:px-4" aria-label="Site hero banner">
+    <section
+      className="mx-auto mt-3 hidden w-full max-w-[1400px] px-3 sm:mt-4 sm:block sm:px-4"
+      aria-label="Site hero banner"
+    >
       <div className="group relative h-[220px] overflow-hidden rounded-2xl border border-[var(--border-soft)] sm:h-[240px]">
         <div
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-300 ease-out"
