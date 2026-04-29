@@ -2,15 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-page: #e8f3e8;
+  --bg-surface: #f5faf4;
+  --bg-card: #f9fcf8;
+  --text-deep: #243a2b;
+  --text-soft: #4d6654;
+  --text-muted: #718575;
+  --border-soft: #cfe3cf;
+  --accent-green: #07c160;
+}
+
 body {
   margin: 0;
-  background: #f3f6f1;
-  color: #111827;
+  background: var(--bg-page);
+  color: var(--text-deep);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 .scrollbar-hide {
@@ -20,4 +39,13 @@ a {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.reader-text :where(p) {
+  line-height: 1.82;
+  overflow-wrap: anywhere;
+}
+
+.reader-text :where(h1, h2, h3, h4, h5, h6, li, blockquote, a) {
+  overflow-wrap: anywhere;
 }

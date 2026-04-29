@@ -21,12 +21,12 @@ export function SearchBar({ className, defaultValue }: SearchBarProps) {
         type="search"
         defaultValue={defaultValue}
         placeholder="Search…"
-        className="w-full min-w-0 rounded-lg border border-emerald-800/20 bg-white/90 px-3 py-2 text-sm text-slate-800 shadow-sm outline-none ring-emerald-700/30 placeholder:text-slate-400 focus:ring-2"
+        className="w-full min-w-0 rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-deep)] shadow-sm outline-none ring-[var(--accent-green)]/40 placeholder:text-[var(--text-muted)] focus:ring-2"
         autoComplete="off"
       />
       <button
         type="submit"
-        className="shrink-0 rounded-lg bg-emerald-800 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-emerald-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
+        className="shrink-0 rounded-lg bg-[var(--accent-green)] px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
       >
         Search
       </button>

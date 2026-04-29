@@ -21,13 +21,15 @@ export function AnnotationAside({
   slotBottom
 }: AnnotationAsideProps) {
   const [open, setOpen] = useState(false);
+  const panelId = "essential-guide-panel";
 
   return (
     <div className="min-w-0">
       <button
         type="button"
-        className="mb-3 flex w-full items-center justify-between rounded-xl border border-emerald-900/15 bg-white/90 px-4 py-3 text-left font-serif text-base font-semibold text-emerald-950 shadow-sm lg:hidden"
+        className="mb-3 flex w-full items-center justify-between rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-3 text-left font-serif text-base font-semibold text-[var(--text-deep)] shadow-sm lg:hidden"
         aria-expanded={open}
+        aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
       >
         <span>Essential Guide</span>
@@ -35,16 +37,18 @@ export function AnnotationAside({
       </button>
 
       <aside
+        id={panelId}
         className={cn(
-          "annotation-box rounded-2xl border border-emerald-900/10 bg-white/95 p-4 shadow-sm lg:sticky lg:top-28 lg:block lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto",
-          open ? "block" : "hidden"
+          "annotation-box overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-4 shadow-sm transition-all duration-300 lg:sticky lg:top-28 lg:block lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto",
+          open ? "max-h-[2200px] opacity-100" : "max-h-0 border-transparent p-0 opacity-0",
+          "lg:max-h-[calc(100vh-7rem)] lg:opacity-100 lg:p-4 lg:border-[var(--border-soft)]"
         )}
         aria-label="Annotation track"
       >
         {slotTop}
-        <h2 className="font-serif text-xl font-semibold text-emerald-950">{title}</h2>
+        <h2 className="font-serif text-xl font-semibold text-[var(--text-deep)]">{title}</h2>
         <div
-          className="prose prose-sm mt-4 max-w-none prose-slate font-serif leading-relaxed text-inherit"
+          className="prose prose-sm mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)]"
           dangerouslySetInnerHTML={{ __html: guideHtml }}
         />
         {slotMid}

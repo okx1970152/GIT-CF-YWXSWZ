@@ -9,8 +9,8 @@ export function RelatedTopics({ topics }: RelatedTopicsProps) {
   if (!topics.length) return null;
 
   return (
-    <nav aria-label="Related topics" className="seo-topics mt-4 border-t border-emerald-900/10 pt-4">
-      <p className="mb-2 font-sans text-[10px] font-medium uppercase tracking-wide text-slate-400">
+    <nav aria-label="Related topics" className="seo-topics mt-4 border-t border-[var(--border-soft)] pt-4">
+      <p className="mb-2 font-sans text-[10px] font-medium uppercase tracking-wide text-[var(--text-muted)]">
         Related Topics
       </p>
       <div className="flex flex-wrap gap-x-3 gap-y-2 font-sans">
@@ -18,7 +18,7 @@ export function RelatedTopics({ topics }: RelatedTopicsProps) {
           <Link
             key={topic}
             href={`/search?q=${encodeURIComponent(topic)}`}
-            className="text-[10px] text-gray-500 underline decoration-gray-400/60 underline-offset-2 hover:text-emerald-800"
+            className="text-[10px] text-[var(--text-soft)] underline decoration-[var(--border-soft)]/80 underline-offset-2 hover:text-[#058c46]"
           >
             #{topic}
           </Link>

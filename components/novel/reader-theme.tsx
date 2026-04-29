@@ -103,7 +103,7 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
   return (
     <ReaderThemeContext.Provider value={value}>
       <div
-        className="reader-themed rounded-2xl border border-emerald-900/10 px-3 py-5 shadow-sm sm:px-6"
+        className="reader-themed rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-5 shadow-sm sm:px-6"
         style={{
           backgroundColor: bg || undefined,
           color: fg || undefined,
@@ -117,7 +117,8 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
 }
 
 const PRESET_BACKGROUNDS = [
-  { label: "Paper", value: "#f7f5f0" },
+  { label: "Willow", value: "#f5faf4" },
+  { label: "Page", value: "#f7f5f0" },
   { label: "Night", value: "#0f172a" },
   { label: "Sepia", value: "#f4ecd8" }
 ];
@@ -195,14 +196,14 @@ export function ReaderPreferences() {
         <span className="text-slate-600">Font size</span>
         <input
           type="range"
-          min={14}
-          max={24}
+          min={16}
+          max={26}
           step={1}
-          value={fontSize ?? 18}
+          value={fontSize ?? 20}
           onChange={(e) => setFontSize(Number.parseInt(e.target.value, 10))}
           className="w-36"
         />
-        <span className="tabular-nums text-slate-600">{fontSize ?? 18}px</span>
+        <span className="tabular-nums text-slate-600">{fontSize ?? 20}px</span>
       </label>
       <button
         type="button"

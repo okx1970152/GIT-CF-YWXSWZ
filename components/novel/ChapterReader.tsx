@@ -8,7 +8,7 @@ export function ChapterReader({ children }: { children: ReactNode }) {
     <div className="mx-auto max-w-[1400px] px-4 pb-16 pt-4">
       <ReaderThemeProvider>
         <ReaderPreferences />
-        {children}
+        <div className="mt-3">{children}</div>
       </ReaderThemeProvider>
     </div>
   );

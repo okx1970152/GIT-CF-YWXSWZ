@@ -1,46 +1,17 @@
 {
   "directory": {
-    "top": {
-      "enabled": false,
-      "type": "text",
-      "text": "xiaoshuo",
-      "link": "https://wx.0o0o.mom/admin/ads"
-    },
-    "mid": {
-      "enabled": false,
-      "type": "empty"
-    },
-    "bottom": {
-      "enabled": false,
-      "type": "empty"
-    }
+    "top": { "enabled": false, "type": "empty" },
+    "mid": { "enabled": false, "type": "empty" },
+    "bottom": { "enabled": false, "type": "empty" }
   },
   "reading": {
-    "top": {
-      "enabled": false,
-      "type": "empty"
-    },
-    "mid": {
-      "enabled": false,
-      "type": "empty"
-    },
-    "bottom": {
-      "enabled": false,
-      "type": "empty"
-    }
+    "top": { "enabled": false, "type": "empty" },
+    "mid": { "enabled": false, "type": "empty" },
+    "bottom": { "enabled": false, "type": "empty" }
   },
   "guide": {
-    "top": {
-      "enabled": false,
-      "type": "empty"
-    },
-    "mid": {
-      "enabled": false,
-      "type": "empty"
-    },
-    "bottom": {
-      "enabled": false,
-      "type": "empty"
-    }
+    "top": { "enabled": false, "type": "empty" },
+    "mid": { "enabled": false, "type": "empty" },
+    "bottom": { "enabled": false, "type": "empty" }
   }
 }

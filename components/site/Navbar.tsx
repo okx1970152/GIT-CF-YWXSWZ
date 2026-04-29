@@ -1,33 +1,59 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CATEGORY_NAV } from "@/lib/content/categories";
 import { cn } from "@/lib/cn";
 import { SearchBar } from "@/components/site/SearchBar";
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const segments = pathname.split("/").filter(Boolean);
+  const activeCategory =
+    segments[0] === "category"
+      ? segments[1]
+      : segments[0] === "novels"
+        ? segments[1]
+        : null;
+
   return (
-    <header className="sticky top-0 z-40 border-b border-emerald-900/10 bg-[#f3f6f1]/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--bg-surface)]/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
-        <nav
-          aria-label="Main"
-          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium text-slate-800"
-        >
+        <div className="flex items-center justify-between gap-4">
           <Link
             href="/"
-            className="rounded-md px-1 py-1 text-emerald-900 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
+            className={cn(
+              "rounded-lg border px-3 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]",
+              isHome
+                ? "border-[#9cd8b5] bg-[#e9f8ef] text-[#058c46]"
+                : "border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-deep)] hover:bg-[#ddeedd]"
+            )}
           >
             Home
           </Link>
-          {CATEGORY_NAV.map((cat) => (
+          <SearchBar className={cn("w-full lg:hidden")} />
+        </div>
+        <nav aria-label="Main" className="scrollbar-hide flex items-center gap-2 overflow-x-auto text-sm font-medium">
+          {CATEGORY_NAV.map((cat) => {
+            const active = activeCategory === cat.slug;
+            return (
             <Link
               key={cat.slug}
               href={`/category/${cat.slug}`}
-              className="rounded-md px-1 py-1 hover:text-emerald-900 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
+                className={cn(
+                  "shrink-0 rounded-full border px-3 py-1.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]",
+                  active
+                    ? "border-[#9cd8b5] bg-[#e9f8ef] text-[#058c46]"
+                    : "border-[var(--border-soft)] bg-[var(--bg-surface)] text-[var(--text-soft)] hover:bg-[#ddeedd] hover:text-[var(--text-deep)]"
+                )}
             >
               {cat.label}
             </Link>
-          ))}
+            );
+          })}
         </nav>
-        <SearchBar className={cn("lg:w-auto lg:max-w-[320px]", "w-full")} />
+        <SearchBar className={cn("hidden lg:flex lg:w-auto lg:max-w-[320px]")} />
       </div>
     </header>
   );

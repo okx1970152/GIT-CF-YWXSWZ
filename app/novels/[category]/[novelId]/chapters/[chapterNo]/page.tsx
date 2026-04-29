@@ -148,9 +148,9 @@ export default async function ChapterPage({ params }: Props) {
       <JsonLd id="ld-json-chapter-article" data={articleJsonLd} />
 
       <ChapterReader>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(320px,520px)] lg:gap-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
           <article className="novel-container min-w-0">
-            <h1 className="story-text font-serif text-3xl font-bold tracking-tight text-emerald-950">
+            <h1 className="story-text font-serif text-3xl font-bold tracking-tight text-[var(--text-deep)]">
               {chapter.title}
             </h1>
             <MainContent chapterHtml={chapterHtml} />
