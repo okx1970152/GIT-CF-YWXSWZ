@@ -20,7 +20,7 @@ export function TopBanner() {
 
   return (
     <section className="mx-auto mt-3 w-full max-w-[1400px] px-3 sm:mt-4 sm:px-4" aria-label="Site hero banner">
-      <div className="group relative h-[180px] overflow-hidden rounded-2xl border border-[var(--border-soft)] sm:h-[240px]">
+      <div className="group relative h-[220px] overflow-hidden rounded-2xl border border-[var(--border-soft)] sm:h-[240px]">
         <div
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-300 ease-out"
           style={{ backgroundImage: "url('/top-banner-1.png')" }}
@@ -32,11 +32,11 @@ export function TopBanner() {
           aria-hidden
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#e8f3e8]/35 via-transparent to-[#e8f3e8]/15" aria-hidden />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <h1 className="font-serif text-[50px] font-bold leading-tight text-[var(--text-deep)]">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6">
+          <h1 className="max-w-[12ch] text-balance font-serif text-[32px] font-bold leading-[1.08] text-[var(--text-deep)] sm:max-w-none sm:text-[50px] sm:leading-tight">
             Xianxia Unveiled - Fellow Daoist, Please Stay!
           </h1>
-          <p className="mt-2 font-serif text-[25px] leading-tight text-[var(--text-soft)]">
+          <p className="mt-2 max-w-[22ch] text-balance font-serif text-[16px] leading-[1.2] text-[var(--text-soft)] sm:max-w-none sm:text-[25px] sm:leading-tight">
             The Intelligence Hub for Eastern Wuxia &amp; Xianxia Worlds.
           </p>
         </div>

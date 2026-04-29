@@ -158,3 +158,13 @@
 ### 本次完成变更摘要
 - 已成功推送到远端 `main`：`a1cf78d..ad774a9`。
 - 该推送将触发仓库自动部署流程，可直接在 GitHub Actions 查看部署进度。
+
+## 2026-04-29 13:49
+
+### 提问
+将 `zb.png` 设为站标（浏览器地址栏图标），并推送到 `main` 触发部署；同时确认内容仓旧 deploy-hook yml 是否需要调整。
+
+### 本次完成变更摘要
+- 已将 `zb.png` 接入站点图标：新增 `app/icon.png` 与 `public/favicon.png`，并在 `app/layout.tsx` 配置 `icons` 元数据。
+- 已同步到 `YWXSWZ`，并使用 token 认证推送到仓库 `main`，提交号：`6fcae08`。
+- 该推送会自动触发当前应用仓部署流程。

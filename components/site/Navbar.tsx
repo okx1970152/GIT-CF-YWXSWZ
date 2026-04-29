@@ -34,7 +34,10 @@ export function Navbar() {
           </Link>
           <SearchBar className={cn("w-full lg:hidden")} />
         </div>
-        <nav aria-label="Main" className="scrollbar-hide flex items-center gap-2 overflow-x-auto text-sm font-medium">
+        <nav
+          aria-label="Main"
+          className="scrollbar-hide -mx-1 flex items-center gap-2 overflow-x-auto px-1 text-sm font-medium"
+        >
           {CATEGORY_NAV.map((cat) => {
             const active = activeCategory === cat.slug;
             return (
