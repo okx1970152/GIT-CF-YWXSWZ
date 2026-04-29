@@ -1,6 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
-import { getMetaDir } from "@/lib/content/paths";
+import { getIndexNovel } from "@/lib/content/content-index";
 
 export type NovelMeta = {
   title?: string;
@@ -24,19 +22,9 @@ export type ChapterMeta = {
   updated_at?: string;
 };
 
-function readJson<T>(filePath: string): T | null {
-  if (!fs.existsSync(filePath)) return null;
-  try {
-    const raw = fs.readFileSync(filePath, "utf8");
-    return JSON.parse(raw) as T;
-  } catch {
-    return null;
-  }
-}
-
 export function getNovelMeta(categorySlug: string, novelId: string): NovelMeta | null {
-  const metaDir = getMetaDir(categorySlug, novelId);
-  return readJson<NovelMeta>(path.join(metaDir, "novel.json"));
+  const novel = getIndexNovel(categorySlug, novelId);
+  return (novel?.metaNovel as NovelMeta | null) ?? null;
 }
 
 export function getChapterMetaByNo(
@@ -44,11 +32,8 @@ export function getChapterMetaByNo(
   novelId: string,
   chapterNo: string
 ): ChapterMeta | null {
-  const metaDir = getMetaDir(categorySlug, novelId);
-  if (!fs.existsSync(metaDir)) return null;
-  const prefix = `${chapterNo}-`;
-  const target = fs.readdirSync(metaDir).find((f) => f.startsWith(prefix) && f.endsWith(".json"));
-  if (!target) return null;
-  return readJson<ChapterMeta>(path.join(metaDir, target));
+  const novel = getIndexNovel(categorySlug, novelId);
+  if (!novel) return null;
+  return (novel.chapterMetaByChapterNo[chapterNo] as ChapterMeta | undefined) ?? null;
 }
 

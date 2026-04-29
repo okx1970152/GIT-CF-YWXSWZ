@@ -8,10 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "sync:content": "node ./scripts/sync-content-repo.mjs",
+    "generate:content-index": "node ./scripts/generate-content-index.mjs",
     "diag:content": "node ./scripts/diagnose-content.mjs",
     "preview": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-build": "npm run sync:content && npm run diag:content && opennextjs-cloudflare build"
+    "cf-build": "npm run sync:content && npm run generate:content-index && npm run diag:content && opennextjs-cloudflare build"
   },
   "dependencies": {
     "clsx": "^2.1.1",

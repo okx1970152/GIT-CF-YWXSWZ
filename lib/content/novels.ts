@@ -1,28 +1,22 @@
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
-import { NOVELS_ROOT, getNovelInfoPath } from "@/lib/content/paths";
+import { getIndexCategories, getIndexNovel, getIndexNovelsByCategory } from "@/lib/content/content-index";
 import { novelInfoSchema, type NovelInfo } from "@/lib/content/schema";
 import { getChapters } from "@/lib/content/chapters";
 import { getAnnotationByChapterNo } from "@/lib/content/annotations";
 
 export function getAllCategories(): string[] {
-  if (!fs.existsSync(NOVELS_ROOT)) return [];
-  return fs
-    .readdirSync(NOVELS_ROOT, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-    .sort((a, b) => a.localeCompare(b));
+  return getIndexCategories().sort((a, b) => a.localeCompare(b));
 }
 
 export function getNovelsByCategory(categorySlug: string): NovelInfo[] {
-  const categoryDir = path.join(NOVELS_ROOT, categorySlug);
-  if (!fs.existsSync(categoryDir)) return [];
-
-  return fs
-    .readdirSync(categoryDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => getNovel(categorySlug, entry.name))
+  return getIndexNovelsByCategory(categorySlug)
+    .map((entry) => {
+      try {
+        const parsed = novelInfoSchema.parse(entry.frontmatter);
+        return { ...parsed, categorySlug, novelId: entry.novelId };
+      } catch {
+        return null;
+      }
+    })
     .filter((item): item is NovelInfo => item !== null);
 }
 
@@ -68,18 +62,14 @@ export function getLatestContentUpdatedAt(): Date | undefined {
 }
 
 export function getNovel(categorySlug: string, novelId: string): NovelInfo | null {
-  const infoPath = getNovelInfoPath(categorySlug, novelId);
-  if (!fs.existsSync(infoPath)) return null;
-
-  const raw = fs.readFileSync(infoPath, "utf8");
-  const { data } = matter(raw);
-  const parsed = novelInfoSchema.parse(data);
-
-  return {
-    ...parsed,
-    categorySlug,
-    novelId
-  };
+  const entry = getIndexNovel(categorySlug, novelId);
+  if (!entry) return null;
+  try {
+    const parsed = novelInfoSchema.parse(entry.frontmatter);
+    return { ...parsed, categorySlug, novelId };
+  } catch {
+    return null;
+  }
 }
 
 export type SearchResult = {

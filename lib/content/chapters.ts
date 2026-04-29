@@ -1,10 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
-import { getChaptersDir } from "@/lib/content/paths";
-import { chapterSchema, type ChapterFrontmatter } from "@/lib/content/schema";
-
-const CHAPTER_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+\.md$/;
+import { getIndexNovel } from "@/lib/content/content-index";
 
 export type ChapterItem = {
   chapterNo: string;
@@ -22,42 +16,25 @@ export function padChapterNo(input: number | string): string {
 }
 
 export function parseChapterFileName(filename: string): { chapterNo: string; slug: string } {
-  if (!CHAPTER_FILE_PATTERN.test(filename)) {
-    throw new Error(`Invalid chapter filename: ${filename}`);
-  }
   const chapterNo = filename.slice(0, 4);
   const slug = filename.replace(/^\d{4}-/, "").replace(/\.md$/, "");
   return { chapterNo, slug };
 }
 
-function readChapterFile(filePath: string): ChapterItem {
-  const fileName = path.basename(filePath);
-  const { chapterNo, slug } = parseChapterFileName(fileName);
-  const raw = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(raw);
-  const meta = chapterSchema.parse(data) as ChapterFrontmatter;
-
-  return {
-    chapterNo,
-    slug,
-    title: meta.title,
-    content,
-    publishedAt: meta.published_at,
-    updatedAt: meta.updated_at,
-    fileName
-  };
-}
-
 export function getChapters(categorySlug: string, novelId: string): ChapterItem[] {
-  const dir = getChaptersDir(categorySlug, novelId);
-  if (!fs.existsSync(dir)) return [];
-
-  const files = fs
-    .readdirSync(dir)
-    .filter((name) => name.endsWith(".md"))
-    .sort((a, b) => a.localeCompare(b));
-
-  return files.map((name) => readChapterFile(path.join(dir, name)));
+  const novel = getIndexNovel(categorySlug, novelId);
+  if (!novel) return [];
+  return [...novel.chapters]
+    .sort((a, b) => a.chapterNo.localeCompare(b.chapterNo))
+    .map((c) => ({
+      chapterNo: c.chapterNo,
+      slug: c.slug,
+      title: c.title,
+      content: c.content,
+      publishedAt: c.publishedAt || undefined,
+      updatedAt: c.updatedAt || undefined,
+      fileName: c.fileName,
+    }));
 }
 
 export function getChapter(
