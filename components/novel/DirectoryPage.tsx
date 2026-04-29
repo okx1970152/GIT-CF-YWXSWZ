@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { NovelInfo } from "@/lib/content/schema";
 import type { ChapterItem } from "@/lib/content/chapters";
-import { Hero } from "@/components/site/Hero";
 import { AdSlot } from "@/components/ads/AdSlot";
 
 type DirectoryPageProps = {
@@ -15,12 +14,10 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
 
   return (
     <div className="mx-auto max-w-[1100px] px-4 pb-16 pt-6">
-      <Hero
-        title={novel.title}
-        subtitle={novel.desc}
-        imageSrc={novel.hero || undefined}
-        className="mb-10"
-      />
+      <section aria-label={`${novel.title} semantic summary`} className="sr-only">
+        <h1>{novel.title}</h1>
+        <p>{novel.desc}</p>
+      </section>
 
       <AdSlot page="directory" position="top" />
 

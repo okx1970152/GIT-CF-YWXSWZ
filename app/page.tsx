@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { Hero } from "@/components/site/Hero";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -52,20 +51,18 @@ export default function HomePage() {
     <>
       <JsonLd id="ld-json-website" data={websiteJsonLd} />
       <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
-        <Hero
-          title="A Calm Reading Room for Eastern Fantasy Worlds"
-          subtitle="Translated xianxia, wuxia, and cultivation novels with clean chapters, essential guides, and reader-friendly navigation."
-          actions={[
-            {
-              label: "Start Reading",
-              href: featured ? `/novels/${featured.categorySlug}/${featured.novelId}` : "/search",
-              primary: true
-            },
-            { label: "Browse Xuanhuan", href: "/category/xuanhuan" },
-            { label: "Latest Updates", href: "#section-latest" }
-          ]}
-          className="mb-8 sm:mb-12"
-        />
+        <section aria-label="Homepage semantic summary" className="sr-only">
+          <h1>A Calm Reading Room for Eastern Fantasy Worlds</h1>
+          <p>
+            Translated xianxia, wuxia, and cultivation novels with clean chapters, essential guides,
+            and reader-friendly navigation.
+          </p>
+          <ul>
+            <li>Start Reading: {featured ? `/novels/${featured.categorySlug}/${featured.novelId}` : "/search"}</li>
+            <li>Browse Xuanhuan: /category/xuanhuan</li>
+            <li>Latest Updates: /#section-latest</li>
+          </ul>
+        </section>
 
         <section className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)]/70 px-3 py-5 sm:px-6 sm:py-6">
           <SectionRail id="section-hot" title="Hot Novels" novels={hot} className="mb-8 sm:mb-10" />

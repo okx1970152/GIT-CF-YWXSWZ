@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Hero } from "@/components/site/Hero";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { NovelCard } from "@/components/novel/NovelCard";
 import { ALL_CATEGORY_SLUGS, getCategoryLabel } from "@/lib/content/categories";
@@ -55,11 +54,13 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
-      <Hero
-        title={`${label} Novels`}
-        subtitle="Popular and recently updated novels in this shelf. Every card opens a crawlable novel directory with chapter links."
-        className="mb-8 sm:mb-12"
-      />
+      <section aria-label={`${label} category semantic summary`} className="sr-only">
+        <h1>{label} Novels</h1>
+        <p>
+          Popular and recently updated novels in this shelf. Every card opens a crawlable novel
+          directory with chapter links.
+        </p>
+      </section>
       <section className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)]/70 px-3 py-5 sm:px-6 sm:py-6">
         <SectionRail title={`Popular in ${label}`} novels={popularRail} className="mb-8 sm:mb-10" />
         <SectionRail title={`Latest in ${label}`} novels={latestRail} className="mb-0" />
