@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     url: SITE_URL
   },
   robots: publicRobots(),
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" }
+    ],
+    shortcut: "/favicon.png",
+    apple: "/icon.png"
+  },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`
