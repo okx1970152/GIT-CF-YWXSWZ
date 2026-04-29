@@ -8,6 +8,7 @@ import {
   type PageKey,
   type SlotKey
 } from "@/components/ads/adPositions";
+import { AdminNav } from "@/components/admin/AdminNav";
 
 const PAGES: PageKey[] = ["directory", "reading", "guide"];
 const SLOTS: SlotKey[] = ["top", "mid", "bottom"];
@@ -91,6 +92,9 @@ export function AdsAdminClient({ initial }: AdsAdminClientProps) {
             退出登录
           </button>
         </div>
+      </div>
+      <div className="mt-4">
+        <AdminNav />
       </div>
 
       <div className="mt-8 grid gap-6">

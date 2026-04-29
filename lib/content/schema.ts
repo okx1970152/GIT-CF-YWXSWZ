@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const novelInfoSchema = z.object({
   title: z.string(),
+  title_en: z.string().optional().default(""),
   author: z.string().optional().default("Anonymous"),
   category: z.string(),
   novel_id: z.string(),

@@ -70,7 +70,7 @@ function buildIndex() {
       const { data: novelFrontmatter } = matter(infoRaw);
       const metaNovel = readJson(path.join(novelBase, "meta", "novel.json"));
 
-      const chapterItems = [];
+      const chapterItemsRaw = [];
       const chaptersDir = path.join(novelBase, "chapters");
       for (const fileName of listFiles(chaptersDir, ".md")) {
         if (!CHAPTER_FILE_PATTERN.test(fileName)) continue;
@@ -78,7 +78,7 @@ function buildIndex() {
         const slug = fileName.replace(/^\d{4}-/, "").replace(/\.md$/, "");
         const raw = fs.readFileSync(path.join(chaptersDir, fileName), "utf8");
         const { data, content } = matter(raw);
-        chapterItems.push({
+        chapterItemsRaw.push({
           chapterNo,
           slug,
           title: data?.title ?? `Chapter ${chapterNo}`,
@@ -88,6 +88,7 @@ function buildIndex() {
           fileName,
         });
       }
+      const chapterItems = dedupeChapters(chapterItemsRaw);
 
       const annotationMap = {};
       const annotationsDir = path.join(novelBase, "annotations");
@@ -132,6 +133,27 @@ function buildIndex() {
     generatedAt: new Date().toISOString(),
     categories,
   };
+}
+
+function dedupeChapters(items) {
+  const bestByChapterNo = new Map();
+  for (const item of items) {
+    const prev = bestByChapterNo.get(item.chapterNo);
+    if (!prev) {
+      bestByChapterNo.set(item.chapterNo, item);
+      continue;
+    }
+    const prevTs = Date.parse(prev.updatedAt || prev.publishedAt || "");
+    const nextTs = Date.parse(item.updatedAt || item.publishedAt || "");
+    if (Number.isFinite(nextTs) && (!Number.isFinite(prevTs) || nextTs > prevTs)) {
+      bestByChapterNo.set(item.chapterNo, item);
+      continue;
+    }
+    if (item.fileName.localeCompare(prev.fileName) > 0) {
+      bestByChapterNo.set(item.chapterNo, item);
+    }
+  }
+  return [...bestByChapterNo.values()].sort((a, b) => a.chapterNo.localeCompare(b.chapterNo));
 }
 
 const indexData = buildIndex();

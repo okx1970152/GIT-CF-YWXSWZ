@@ -7,7 +7,7 @@ import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { getChapterMetaByNo } from "@/lib/content/meta";
-import { getAllNovels, getNovel } from "@/lib/content/novels";
+import { getAllNovels, getDisplayNovelTitle, getNovel } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
 import { getAnnotationByChapterNo } from "@/lib/content/annotations";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -40,12 +40,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) return {};
   const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
+  const displayTitle = getDisplayNovelTitle(novel);
 
   const description =
     chapterMeta?.chapter_meta_description || readingDescription(chapter.content, novel.desc);
   const canonicalPath = `/novels/${category}/${novelId}/chapters/${chapterNo}`;
   const chapterTitleFull =
-    chapterMeta?.chapter_seo_title || `${chapter.title} - ${novel.title} - Reading Mode`;
+    chapterMeta?.chapter_seo_title || `${chapter.title} - ${displayTitle} - Reading Mode`;
 
   return {
     title: chapterTitleFull,
@@ -70,6 +71,7 @@ export default async function ChapterPage({ params }: Props) {
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) notFound();
+  const displayTitle = getDisplayNovelTitle(novel);
 
   const annotation = getAnnotationByChapterNo(category, novelId, chapterNo);
   const adjacent = getAdjacentChapters(category, novelId, chapterNo);
@@ -103,7 +105,7 @@ export default async function ChapterPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 3,
-        name: novel.title,
+        name: displayTitle,
         item: toAbsoluteUrl(basePath)
       },
       {
@@ -132,7 +134,7 @@ export default async function ChapterPage({ params }: Props) {
     },
     isPartOf: {
       "@type": "Book",
-      name: novel.title,
+      name: displayTitle,
       url: toAbsoluteUrl(basePath)
     },
     inLanguage: "en",
@@ -155,7 +157,10 @@ export default async function ChapterPage({ params }: Props) {
       <ChapterReader>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
           <article className="novel-container min-w-0">
-            <h1 className="story-text font-serif text-3xl font-bold tracking-tight text-[var(--text-deep)]">
+            <h1
+              className="story-text font-serif text-3xl font-bold tracking-tight"
+              style={{ color: "var(--reader-fg, var(--text-deep))", fontSize: "calc(var(--reader-font-size, 20px) * 1.9)" }}
+            >
               {chapter.title}
             </h1>
             <MainContent chapterHtml={chapterHtml} />

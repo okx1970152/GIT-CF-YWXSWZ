@@ -24,7 +24,24 @@ export function parseChapterFileName(filename: string): { chapterNo: string; slu
 export function getChapters(categorySlug: string, novelId: string): ChapterItem[] {
   const novel = getIndexNovel(categorySlug, novelId);
   if (!novel) return [];
-  return [...novel.chapters]
+  const best = new Map<string, (typeof novel.chapters)[number]>();
+  for (const c of novel.chapters) {
+    const prev = best.get(c.chapterNo);
+    if (!prev) {
+      best.set(c.chapterNo, c);
+      continue;
+    }
+    const prevTs = Date.parse(prev.updatedAt || prev.publishedAt || "");
+    const nextTs = Date.parse(c.updatedAt || c.publishedAt || "");
+    if (Number.isFinite(nextTs) && (!Number.isFinite(prevTs) || nextTs > prevTs)) {
+      best.set(c.chapterNo, c);
+      continue;
+    }
+    if (c.fileName.localeCompare(prev.fileName) > 0) {
+      best.set(c.chapterNo, c);
+    }
+  }
+  return [...best.values()]
     .sort((a, b) => a.chapterNo.localeCompare(b.chapterNo))
     .map((c) => ({
       chapterNo: c.chapterNo,

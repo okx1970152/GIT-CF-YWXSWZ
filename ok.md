@@ -493,3 +493,79 @@
   - 在 `wrangler deploy` 前，自动执行 `wrangler secret put` 同步 `ADMIN_PASSWORD`、`ADMIN_SESSION_SECRET`、`APP_GH_TOKEN` 到 Worker；
   - 部署命令改为 `npx wrangler deploy --keep-vars`，避免每次部署覆盖并清空已有运行时变量。
 - 该修复可确保后续部署后后台登录相关密钥持续存在，不再出现“变量被清空”问题。
+
+## 2026-04-30 00:32
+
+### 提问
+确认后台统计需求细化：新建 `SITE_STATS_KV`、时区固定 `Asia/Shanghai`、国家显示中文、后台登录一次后可在管理页导航中切换其他页面无需重复输入密码，并担心高频部署导致统计丢失。
+
+### 本次完成变更摘要
+- 新增统计采集与聚合能力（仅聚合，不存原始 IP）：
+  - `app/api/stats/hit/route.ts`：前台访问上报接口（含机器人 UA 跳过逻辑）。
+  - `lib/stats/store.ts`：按站点/分类/小说/章节/天/小时/国家/国家×分类聚合计数，时区固定 UTC+8。
+  - `lib/stats/country-zh.ts`：国家代码转中文名。
+  - `app/api/admin/stats/route.ts`：后台读取统计数据接口（需管理员会话）。
+- 新增后台统计页面与中文可视化看板：
+  - `app/admin/stats/page.tsx`
+  - `components/admin/StatsAdminClient.tsx`
+  - 展示核心指标、每日趋势、今日小时访问、国家来源 Top、分类热度 Top、小说 Top10、国家×分类兴趣矩阵。
+- 新增后台导航并接入广告管理页，实现“登录一次后可在后台页面间切换”：
+  - `components/admin/AdminNav.tsx`
+  - `components/admin/AdsAdminClient.tsx` 已接入管理导航。
+- 新增全站前台自动统计上报组件：
+  - `components/site/TrafficTracker.tsx`
+  - `components/site/SiteShell.tsx` 已接入；自动跳过 `/admin` 路由。
+- Cloudflare 绑定准备：
+  - `wrangler.jsonc` 增加 `SITE_STATS_KV` 绑定占位（需填真实 namespace id）。
+  - `cloudflare-env.d.ts` 增加 `SITE_STATS_KV` 类型声明。
+- 本地验证：
+  - 已执行 `npm run build`，编译、类型检查与路由生成通过（包含新增 `/admin/stats` 与统计接口）。
+
+## 2026-04-30 01:09
+
+### 提问
+已提供生产与预览两个 KV 的 Namespace ID，要求一次性配置完整，避免后续返工。
+
+### 本次完成变更摘要
+- 已在 `wrangler.jsonc` 完整配置 `SITE_STATS_KV` 双环境绑定：
+  - `id`（生产）：`ef37b15f5dd7490c9865c6d4fa3bd78`
+  - `preview_id`（预览）：`f5f39d834c1e4ea59b419651a2743e11`
+- 后续自动部署将默认携带该 KV 绑定；只要不更换 namespace ID，统计数据不会因部署丢失。
+
+## 2026-04-30 01:12
+
+### 提问
+确认执行 7 步主线修复：`novel_producer` 的 `info/index.md` 生成策略、前端卡片统一映射与布局、整卡悬停、阅读页设置生效与保存、目录章节去重、回归验证。
+
+### 本次完成变更摘要
+- `novel_producer` 生产策略升级（`007neirongzidonghua/novel_producer/producer/processor.py`）：
+  - 首章（或占位文案兜底）自动触发小说级信息生成；
+  - 每 100 章自动刷新 `info/index.md`；
+  - 检测到 `desc` 为空或含 `TBD/first full pass` 时强制重生；
+  - 写入 `title_en`、`desc`、`tags` 等，并同步刷新 `meta/novel.json`；
+  - `info/index.md` 合约补齐 `title_en`，保持 `author=Anonymous`。
+- 前端标题映射统一：
+  - `lib/content/schema.ts` 新增可选 `title_en`；
+  - `lib/content/novels.ts` 新增 `getDisplayNovelTitle()`，优先 `title_en`，其次英文标题，再回退由 `novelId` 生成可读英文名。
+- 小说卡片统一改造（`components/novel/NovelCard.tsx`）：
+  - 标题居中；
+  - 概略信息固定两行两列（Author+Category / Status+Chapters）；
+  - 简介占满剩余空间并增强多行展示；
+  - 悬停/焦点改为整卡绿底白字，保留平滑动画与可访问焦点态。
+- 目录页信息区优化（`components/novel/DirectoryPage.tsx`）：
+  - 使用统一英文展示标题；
+  - 简介区与信息区重新排版，减少空白浪费；
+  - 在 `sr-only` 里补充关键词串，增强 SEO 可抓取性（用户不可见）。
+- 阅读页设置修复：
+  - `components/novel/reader-theme.tsx` 新增 `Save` 按钮，支持“实时预览 + 手动保存”双模式；
+  - `components/novel/MainContent.tsx` 与章节标题样式改为继承阅读主题变量，确保字号与文字颜色调整即时生效。
+- 章节重复去重：
+  - `scripts/generate-content-index.mjs` 构建索引时按 `chapterNo` 去重（优先较新时间，其次文件名稳定规则）；
+  - `lib/content/chapters.ts` 读取时再次按 `chapterNo` 防御式去重，避免 `0001/0002` 重复显示。
+- 路由与 SEO 标题联动：
+  - `app/novels/[category]/[novelId]/page.tsx`
+  - `app/novels/[category]/[novelId]/chapters/[chapterNo]/page.tsx`
+  - 改为使用统一展示标题，避免目录与章节页标题不一致。
+- 回归验证：
+  - 已执行 `npm run generate:content-index`；
+  - 已执行 `npm run build`，构建、类型检查、静态页面生成全部通过。

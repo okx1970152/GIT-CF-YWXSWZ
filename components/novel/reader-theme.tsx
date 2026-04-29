@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useMemo,
   useState,
   type ReactNode
@@ -21,6 +22,8 @@ type ReaderThemeState = {
   setBg: (v: string) => void;
   setFg: (v: string) => void;
   setFontSize: (v: number | null) => void;
+  save: () => void;
+  dirty: boolean;
   reset: () => void;
 };
 
@@ -36,16 +39,28 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
   const [bg, setBgState] = useState("");
   const [fg, setFgState] = useState("");
   const [fontSize, setFontSizeState] = useState<number | null>(null);
+  const savedBg = useRef("");
+  const savedFg = useRef("");
+  const savedFs = useRef<number | null>(null);
   useEffect(() => {
     try {
       const rawBg = localStorage.getItem(STORAGE_BG);
       const rawFg = localStorage.getItem(STORAGE_FG);
       const rawFs = localStorage.getItem(STORAGE_FS);
-      if (rawBg) setBgState(rawBg);
-      if (rawFg) setFgState(rawFg);
+      if (rawBg) {
+        setBgState(rawBg);
+        savedBg.current = rawBg;
+      }
+      if (rawFg) {
+        setFgState(rawFg);
+        savedFg.current = rawFg;
+      }
       if (rawFs) {
         const n = Number.parseInt(rawFs, 10);
-        if (!Number.isNaN(n)) setFontSizeState(n);
+        if (!Number.isNaN(n)) {
+          setFontSizeState(n);
+          savedFs.current = n;
+        }
       }
     } catch {
       /* ignore */
@@ -64,40 +79,50 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
   const setBg = useCallback(
     (v: string) => {
       setBgState(v);
-      persist(STORAGE_BG, v);
     },
-    [persist]
+    []
   );
 
   const setFg = useCallback(
     (v: string) => {
       setFgState(v);
-      persist(STORAGE_FG, v);
     },
-    [persist]
+    []
   );
 
   const setFontSize = useCallback(
     (v: number | null) => {
       setFontSizeState(v);
-      if (v === null) persist(STORAGE_FS, null);
-      else persist(STORAGE_FS, String(v));
     },
-    [persist]
+    []
   );
+
+  const save = useCallback(() => {
+    savedBg.current = bg;
+    savedFg.current = fg;
+    savedFs.current = fontSize;
+    persist(STORAGE_BG, bg || null);
+    persist(STORAGE_FG, fg || null);
+    persist(STORAGE_FS, fontSize === null ? null : String(fontSize));
+  }, [bg, fg, fontSize, persist]);
 
   const reset = useCallback(() => {
     setBgState("");
     setFgState("");
     setFontSizeState(null);
+    savedBg.current = "";
+    savedFg.current = "";
+    savedFs.current = null;
     persist(STORAGE_BG, null);
     persist(STORAGE_FG, null);
     persist(STORAGE_FS, null);
   }, [persist]);
 
+  const dirty = bg !== savedBg.current || fg !== savedFg.current || fontSize !== savedFs.current;
+
   const value = useMemo(
-    () => ({ bg, fg, fontSize, setBg, setFg, setFontSize, reset }),
-    [bg, fg, fontSize, setBg, setFg, setFontSize, reset]
+    () => ({ bg, fg, fontSize, setBg, setFg, setFontSize, save, dirty, reset }),
+    [bg, fg, fontSize, setBg, setFg, setFontSize, save, dirty, reset]
   );
 
   return (
@@ -105,9 +130,10 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
       <div
         className="reader-themed rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-5 shadow-sm sm:px-6"
         style={{
+          ["--reader-fg" as string]: fg || "var(--text-deep)",
+          ["--reader-font-size" as string]: fontSize ? `${fontSize}px` : "20px",
           backgroundColor: bg || undefined,
-          color: fg || undefined,
-          fontSize: fontSize ? `${fontSize}px` : undefined
+          color: fg || undefined
         }}
       >
         {children}
@@ -130,7 +156,7 @@ const PRESET_FOREGROUNDS = [
 ];
 
 export function ReaderPreferences() {
-  const { bg, fg, fontSize, setBg, setFg, setFontSize, reset } = useReaderTheme();
+  const { bg, fg, fontSize, setBg, setFg, setFontSize, save, dirty, reset } = useReaderTheme();
 
   return (
     <section
@@ -205,6 +231,14 @@ export function ReaderPreferences() {
         />
         <span className="tabular-nums text-slate-600">{fontSize ?? 20}px</span>
       </label>
+      <button
+        type="button"
+        onClick={save}
+        disabled={!dirty}
+        className="rounded-lg bg-emerald-800 px-3 py-1.5 font-medium text-white hover:bg-emerald-900 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
+      >
+        Save
+      </button>
       <button
         type="button"
         onClick={reset}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { NovelInfo } from "@/lib/content/schema";
 import type { ChapterItem } from "@/lib/content/chapters";
 import { AdSlot } from "@/components/ads/AdSlot";
+import { getDisplayNovelTitle } from "@/lib/content/novels";
 
 type DirectoryPageProps = {
   novel: NovelInfo;
@@ -11,21 +12,36 @@ type DirectoryPageProps = {
 export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
   const firstChapter = chapters[0];
   const latestChapter = chapters[chapters.length - 1];
+  const displayTitle = getDisplayNovelTitle(novel);
+  const seoTokens = [
+    ...novel.tags,
+    "xianxia",
+    "wuxia",
+    "cultivation",
+    "eastern fantasy",
+    "martial arts fantasy",
+  ];
 
   return (
     <div className="mx-auto max-w-[1100px] px-4 pb-16 pt-6">
       <section aria-label={`${novel.title} semantic summary`} className="sr-only">
-        <h1>{novel.title}</h1>
+        <h1>{displayTitle}</h1>
         <p>{novel.desc}</p>
+        <p>{seoTokens.map((item) => `#${item}`).join(" ")}</p>
       </section>
 
       <AdSlot page="directory" position="top" />
 
       <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] p-6 shadow-sm">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          <div className="max-w-3xl">
-            <p className="font-serif text-lg leading-relaxed text-[var(--text-soft)]">{novel.desc}</p>
-            <dl className="mt-6 grid gap-2 font-sans text-sm text-[var(--text-soft)] sm:grid-cols-2">
+        <div className="flex flex-col gap-6">
+          <h1 className="text-center font-serif text-4xl font-bold tracking-tight text-[var(--text-deep)]">
+            {displayTitle}
+          </h1>
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
+            <div className="order-2 lg:order-1">
+              <p className="font-serif text-lg leading-relaxed text-[var(--text-soft)]">{novel.desc}</p>
+            </div>
+            <dl className="order-1 grid gap-2 font-sans text-sm text-[var(--text-soft)] sm:grid-cols-2 lg:order-2 lg:grid-cols-1">
               <div>
                 <dt className="text-[var(--text-muted)]">Author</dt>
                 <dd className="font-medium text-[var(--text-deep)]">{novel.author}</dd>
@@ -48,27 +64,27 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
               </div>
             </dl>
           </div>
-          <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row lg:w-auto lg:flex-col">
-            {firstChapter ? (
-              <Link
-                href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${firstChapter.chapterNo}`}
-                className="rounded-xl bg-[var(--accent-green)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-              >
-                Start reading
-              </Link>
-            ) : (
-              <span className="rounded-xl border border-dashed border-[var(--border-soft)] px-5 py-3 text-center text-sm text-[var(--text-muted)]">
-                No chapters yet
-              </span>
-            )}
-            {latestChapter ? (
-              <Link
-                href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${latestChapter.chapterNo}`}
-                className="rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-5 py-3 text-center text-sm font-semibold text-[var(--text-deep)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-              >
-                Latest chapter
-              </Link>
-            ) : null}
+          <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row">
+          {firstChapter ? (
+            <Link
+              href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${firstChapter.chapterNo}`}
+              className="rounded-xl bg-[var(--accent-green)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+            >
+              Start reading
+            </Link>
+          ) : (
+            <span className="rounded-xl border border-dashed border-[var(--border-soft)] px-5 py-3 text-center text-sm text-[var(--text-muted)]">
+              No chapters yet
+            </span>
+          )}
+          {latestChapter ? (
+            <Link
+              href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${latestChapter.chapterNo}`}
+              className="rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-5 py-3 text-center text-sm font-semibold text-[var(--text-deep)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+            >
+              Latest chapter
+            </Link>
+          ) : null}
           </div>
         </div>
       </div>

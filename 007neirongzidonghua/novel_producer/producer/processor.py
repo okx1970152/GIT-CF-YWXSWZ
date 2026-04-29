@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import date
 from pathlib import Path
+import re
 
 from producer.chapters import discover_chapters
 from producer.config import Settings
@@ -29,10 +30,23 @@ def process_workspace(settings: Settings, workspace: Workspace) -> None:
     progress = load_progress(workspace.progress_path)
     chapter_state: dict = progress.get("chapters", {})
 
-    _ensure_novel_info(workspace, len(chapters))
+    client = DeepSeekClient(settings)
+    created_info = _ensure_novel_info(workspace, len(chapters))
     _ensure_novel_meta(workspace, len(chapters))
 
-    client = DeepSeekClient(settings)
+    if created_info or _info_has_placeholder(workspace.info_dir / "index.md"):
+        seed = chapters[0]
+        seed_text = seed.source_path.read_text(encoding="utf-8").strip()
+        info("正在生成小说级信息（首章初始化/占位兜底修复）...")
+        _refresh_novel_info(
+            client=client,
+            workspace=workspace,
+            chapter_code=seed.chapter_code,
+            chapter_text=seed_text,
+            chapter_title_en="",
+            chapter_keywords=[],
+            total_chapters=len(chapters),
+        )
 
     info(f"共发现 {len(chapters)} 章，开始执行章节处理...")
     for chapter in chapters:
@@ -134,17 +148,30 @@ def process_workspace(settings: Settings, workspace: Workspace) -> None:
         save_progress(workspace.progress_path, progress)
         info(f"[{chapter.chapter_code}] 已接收并保存正文/导读/meta。")
 
+        if _should_refresh_novel_info(workspace.info_dir / "index.md", chapter.chapter_number):
+            info(f"[{chapter.chapter_code}] 触发小说级信息刷新...")
+            _refresh_novel_info(
+                client=client,
+                workspace=workspace,
+                chapter_code=chapter.chapter_code,
+                chapter_text=source_text,
+                chapter_title_en=chapter_title_en,
+                chapter_keywords=keywords,
+                total_chapters=len(chapters),
+            )
+
     info("章节处理完成。")
 
 
-def _ensure_novel_info(workspace: Workspace, total_chapters: int) -> None:
+def _ensure_novel_info(workspace: Workspace, total_chapters: int) -> bool:
     info_path = workspace.info_dir / "index.md"
     if info_path.exists():
         _patch_existing_info_contract(info_path, workspace.novel_slug)
-        return
+        return False
     content = (
         "---\n"
         f'title: "{workspace.cn_novel_name}"\n'
+        'title_en: ""\n'
         'author: "Anonymous"\n'
         f'category: "{workspace.category.title()}"\n'
         f'novel_id: "{workspace.novel_slug}"\n'
@@ -161,6 +188,7 @@ def _ensure_novel_info(workspace: Workspace, total_chapters: int) -> None:
         "---\n"
     )
     save_text(info_path, content)
+    return True
 
 
 def _patch_existing_info_contract(info_path: Path, novel_slug: str) -> None:
@@ -194,6 +222,10 @@ def _patch_existing_info_contract(info_path: Path, novel_slug: str) -> None:
                 lines[idx] = desired
                 changed = True
             break
+    if not any(line.startswith("title_en:") for line in lines):
+        insert_at = 2 if len(lines) > 2 and lines[1].startswith("title:") else 1
+        lines.insert(insert_at, 'title_en: ""')
+        changed = True
 
     if changed:
         info_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
@@ -210,10 +242,102 @@ def _ensure_novel_meta(workspace: Workspace, total_chapters: int) -> None:
         "summary": "Skeleton stage novel metadata.",
         "status": "Ongoing",
         "featured": False,
+        "tags": [],
         "chapter_count": total_chapters,
         "updated_at": date.today().isoformat(),
     }
     save_json(novel_meta_path, payload)
+
+
+def _should_refresh_novel_info(info_path: Path, chapter_number: int) -> bool:
+    if chapter_number == 1 or chapter_number % 100 == 0:
+        return True
+    return _info_has_placeholder(info_path)
+
+
+def _info_has_placeholder(info_path: Path) -> bool:
+    if not info_path.exists():
+        return True
+    raw = info_path.read_text(encoding="utf-8")
+    m = re.search(r'^\s*desc:\s*"?(.*?)"?\s*$', raw, flags=re.MULTILINE)
+    if not m:
+        return True
+    desc = m.group(1).strip()
+    if not desc:
+        return True
+    low = desc.lower()
+    return "tbd" in low or "first full pass" in low
+
+
+def _refresh_novel_info(
+    client: DeepSeekClient,
+    workspace: Workspace,
+    chapter_code: str,
+    chapter_text: str,
+    chapter_title_en: str,
+    chapter_keywords: list[str],
+    total_chapters: int,
+) -> None:
+    payload = _run_novel_info_pass(
+        client=client,
+        chapter_code=chapter_code,
+        chapter_text=chapter_text,
+        cn_novel_name=workspace.cn_novel_name,
+        category=workspace.category.title(),
+        novel_slug=workspace.novel_slug,
+        chapter_title_en=chapter_title_en,
+        chapter_keywords=chapter_keywords,
+    )
+    title_cn = ensure_string(payload.get("title"), workspace.cn_novel_name).strip() or workspace.cn_novel_name
+    title_en = ensure_string(payload.get("title_en"), "").strip()
+    if not title_en:
+        title_en = workspace.novel_slug.replace("-", " ").title()
+    summary = ensure_string(payload.get("summary"), "").strip()
+    if not summary:
+        summary = f"{title_en} is an ongoing {workspace.category.title()} web novel with cultivation themes."
+    tags = [item for item in ensure_list_of_strings(payload.get("tags")) if item.strip()]
+    if not tags and chapter_keywords:
+        tags = chapter_keywords[:10]
+
+    info_content = (
+        "---\n"
+        f'title: "{_yaml_safe(title_cn)}"\n'
+        f'title_en: "{_yaml_safe(title_en)}"\n'
+        'author: "Anonymous"\n'
+        f'category: "{_yaml_safe(workspace.category.title())}"\n'
+        f'novel_id: "{_yaml_safe(workspace.novel_slug)}"\n'
+        f'desc: "{_yaml_safe(summary)}"\n'
+        f"total_chapters: {total_chapters}\n"
+        f'status: "{_yaml_safe(ensure_string(payload.get("status"), "Ongoing"))}"\n'
+        'cover: ""\n'
+        'hero: ""\n'
+        "featured: false\n"
+        "hot: false\n"
+        "ranking: 0\n"
+        f'updated_at: "{date.today().isoformat()}"\n'
+        f"tags: [{', '.join(f'\"{_yaml_safe(item)}\"' for item in tags[:20])}]\n"
+        "---\n"
+    )
+    save_text(workspace.info_dir / "index.md", info_content)
+
+    novel_meta_path = workspace.meta_dir / "novel.json"
+    meta_payload = {
+        "title": title_cn,
+        "title_en": title_en,
+        "slug": workspace.novel_slug,
+        "category": workspace.category,
+        "summary": summary,
+        "status": ensure_string(payload.get("status"), "Ongoing"),
+        "featured": False,
+        "tags": tags[:20],
+        "chapter_count": total_chapters,
+        "updated_at": date.today().isoformat(),
+    }
+    save_json(novel_meta_path, meta_payload)
+
+
+def _yaml_safe(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"')
 
 
 def _run_story_pass(
@@ -277,6 +401,51 @@ Return JSON fields:
 Chapter code: {chapter_code}
 Source chapter text:
 {chapter_text}
+""".strip()
+    return _call_json_with_retry(client, system_prompt, user_prompt)
+
+
+def _run_novel_info_pass(
+    client: DeepSeekClient,
+    chapter_code: str,
+    chapter_text: str,
+    cn_novel_name: str,
+    category: str,
+    novel_slug: str,
+    chapter_title_en: str,
+    chapter_keywords: list[str],
+) -> dict:
+    system_prompt = (
+        "You are an English web novel metadata editor. "
+        "Reply with one valid JSON object only."
+    )
+    user_prompt = f"""
+Task: Generate novel-level metadata for directory card and SEO.
+
+Return JSON fields:
+- title
+- title_en
+- summary
+- status
+- tags
+
+Rules:
+- title keeps Chinese novel name if available.
+- title_en must be concise natural English novel title.
+- summary must be 2-4 English sentences and not use placeholder wording.
+- status should be Ongoing or Completed.
+- tags should be 5-12 concise English tags.
+
+Known values:
+- cn_novel_name: {cn_novel_name}
+- category: {category}
+- novel_slug: {novel_slug}
+- chapter_code: {chapter_code}
+- chapter_title_en: {chapter_title_en}
+- chapter_keywords: {", ".join(chapter_keywords)}
+
+Source chapter excerpt:
+{chapter_text[:6000]}
 """.strip()
     return _call_json_with_retry(client, system_prompt, user_prompt)
 

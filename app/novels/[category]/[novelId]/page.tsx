@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { DirectoryPage } from "@/components/novel/DirectoryPage";
 import { getCategoryLabel } from "@/lib/content/categories";
 import { getNovelMeta } from "@/lib/content/meta";
-import { getAllNovels, getNovel } from "@/lib/content/novels";
+import { getAllNovels, getDisplayNovelTitle, getNovel } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
 import { absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
@@ -25,8 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const novel = getNovel(category, novelId);
   if (!novel) return {};
   const novelMeta = getNovelMeta(category, novelId);
+  const displayTitle = getDisplayNovelTitle(novel);
 
-  const title = `${novel.title} - Directory`;
+  const title = `${displayTitle} - Directory`;
   const description = (novelMeta?.summary || novel.desc).trim().slice(0, 200);
   const path = `/novels/${category}/${novelId}`;
 
@@ -52,6 +53,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
   const { category, novelId } = await params;
   const novel = getNovel(category, novelId);
   if (!novel) notFound();
+  const displayTitle = getDisplayNovelTitle(novel);
 
   const chapters = getChapters(category, novelId);
   const canonical = toAbsoluteUrl(`/novels/${category}/${novelId}`);
@@ -76,7 +78,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
       {
         "@type": "ListItem",
         position: 3,
-        name: novel.title,
+        name: displayTitle,
         item: canonical
       }
     ]
@@ -85,7 +87,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
   const bookJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Book",
-    name: novel.title,
+    name: displayTitle,
     author: {
       "@type": "Person",
       name: novel.author
