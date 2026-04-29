@@ -465,3 +465,31 @@
 - 更新 `package.json`：`cf-build` 变为 `sync + diagnose + build` 串联，确保诊断先于打包。
 - 更新 `deploy-to-cloudflare.yml`：新增 `Upload content diagnostics`（`if: always()`），部署失败也可下载诊断产物。
 - 已本地执行 `npm run sync:content` + `npm run diag:content` 验证通过，报告显示当前 `validNovels=1`、`invalidNovels=0`。
+
+## 2026-04-29 22:41
+
+### 提问
+确认直接实施“方案B”：不再依赖运行时 `fs + process.cwd()`，改为构建期生成结构化索引并由页面读取静态资产。
+
+### 本次完成变更摘要
+- 新增 `scripts/generate-content-index.mjs`：从 `novels/` 构建 `data/content-index.json`（包含小说 frontmatter、章节正文、导读与 meta）。
+- 新增 `lib/content/content-index.ts`：统一读取静态索引并提供查询函数。
+- 重构内容读取层：
+  - `lib/content/novels.ts`
+  - `lib/content/chapters.ts`
+  - `lib/content/annotations.ts`
+  - `lib/content/meta.ts`
+  全部改为读 `content-index.json`，移除运行时目录扫描依赖。
+- 更新构建链路：`package.json` 新增 `generate:content-index`，`cf-build` 改为 `sync -> generate-index -> diagnose -> build`。
+- 已生成 `data/content-index.json` 并完成本地 `npm run build` 验证通过（含小说目录与章节路由静态生成）。
+
+## 2026-04-29 22:55
+
+### 提问
+反馈 Cloudflare Worker 运行时环境变量/密钥在新部署后消失，后台登录报错 `未配置 ADMIN_PASSWORD`，要求定位并修复。
+
+### 本次完成变更摘要
+- 已修复 `deploy-to-cloudflare.yml` 的部署步骤：
+  - 在 `wrangler deploy` 前，自动执行 `wrangler secret put` 同步 `ADMIN_PASSWORD`、`ADMIN_SESSION_SECRET`、`APP_GH_TOKEN` 到 Worker；
+  - 部署命令改为 `npx wrangler deploy --keep-vars`，避免每次部署覆盖并清空已有运行时变量。
+- 该修复可确保后续部署后后台登录相关密钥持续存在，不再出现“变量被清空”问题。
