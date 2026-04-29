@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { DirectoryPage } from "@/components/novel/DirectoryPage";
 import { getCategoryLabel } from "@/lib/content/categories";
+import { getNovelMeta } from "@/lib/content/meta";
 import { getAllNovels, getNovel } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
 import { absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -23,9 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId } = await params;
   const novel = getNovel(category, novelId);
   if (!novel) return {};
+  const novelMeta = getNovelMeta(category, novelId);
 
   const title = `${novel.title} - Directory`;
-  const description = novel.desc.trim().slice(0, 200);
+  const description = (novelMeta?.summary || novel.desc).trim().slice(0, 200);
   const path = `/novels/${category}/${novelId}`;
 
   return {
@@ -41,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: absoluteOgUrl(path),
       type: "website"
     },
+    keywords: novelMeta?.tags?.length ? novelMeta.tags : undefined,
     robots: publicRobots()
   };
 }

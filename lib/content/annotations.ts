@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { getAnnotationsDir } from "@/lib/content/paths";
 import { parseRelatedTopics, stripRelatedTopicsFromGuide } from "@/lib/content/relatedTopics";
 
-const ANNOTATION_FILE_PATTERN = /^\d{4}-[a-z0-9-]+-guide\.md$/;
+const ANNOTATION_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+-guide\.md$/;
 
 export type AnnotationItem = {
   chapterNo: string;

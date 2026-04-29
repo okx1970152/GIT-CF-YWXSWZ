@@ -1,0 +1,41 @@
+{
+  "last_chapter_code": "0003",
+  "chapters": {
+    "0001": {
+      "chapter_code": "0001",
+      "chapter_slug": "Breaking-the-Void",
+      "source_file": "d:\\1CHATGPT\\btc\\Google-BoKe\\谷歌博客自动化\\爬取处理素材\\全自动正式版本\\data\\01-sucai\\xuanhuan-长生界\\001-第一章 武破虚空.txt",
+      "story_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\chapters\\0001-Breaking-the-Void.md",
+      "guide_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\annotations\\0001-Breaking-the-Void-guide.md",
+      "meta_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\meta\\0001-Breaking-the-Void.json",
+      "story_done": true,
+      "guide_done": true,
+      "meta_done": true,
+      "ready_for_publish": true
+    },
+    "0002": {
+      "chapter_code": "0002",
+      "chapter_slug": "The-Death-Castle-and-the-Sea-of-Bones",
+      "source_file": "d:\\1CHATGPT\\btc\\Google-BoKe\\谷歌博客自动化\\爬取处理素材\\全自动正式版本\\data\\01-sucai\\xuanhuan-长生界\\002-第二章 古碑天图.txt",
+      "story_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\chapters\\0002-The-Death-Castle-and-the-Sea-of-Bones.md",
+      "guide_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\annotations\\0002-The-Death-Castle-and-the-Sea-of-Bones-guide.md",
+      "meta_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\meta\\0002-The-Death-Castle-and-the-Sea-of-Bones.json",
+      "story_done": true,
+      "guide_done": true,
+      "meta_done": true,
+      "ready_for_publish": true
+    },
+    "0003": {
+      "chapter_code": "0003",
+      "chapter_slug": "The-Eight-Armed-Malignant-Dragon",
+      "source_file": "d:\\1CHATGPT\\btc\\Google-BoKe\\谷歌博客自动化\\爬取处理素材\\全自动正式版本\\data\\01-sucai\\xuanhuan-长生界\\003-第三章 八臂恶龙.txt",
+      "story_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\chapters\\0003-The-Eight-Armed-Malignant-Dragon.md",
+      "guide_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\annotations\\0003-The-Eight-Armed-Malignant-Dragon-guide.md",
+      "meta_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\xuanhuan\\meta\\0003-The-Eight-Armed-Malignant-Dragon.json",
+      "story_done": true,
+      "guide_done": true,
+      "meta_done": true,
+      "ready_for_publish": true
+    }
+  }
+}

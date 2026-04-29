@@ -199,3 +199,200 @@
 - 已将顶部横幅改为仅 `sm` 及以上显示，手机端不再显示背景图与标题内容。
 - 桌面与平板端样式保持不变，仅移动端生效。
 - 已本地构建验证通过（`npm run build` 成功）。
+
+## 2026-04-29 14:52
+
+### 提问
+要求再次重试推送，并明确命令行必须走本地代理 `127.0.0.1:10809/10808`。
+
+### 本次完成变更摘要
+- 已按要求通过本地代理 `127.0.0.1:10809` 推送成功。
+- 远端更新：`6275a19..753fbe0  main -> main`，部署已被触发。
+
+## 2026-04-29 16:04
+
+### 提问
+基于“生产与发布分离”的新思路，先在 `007neirongzidonghua` 目录建立两份可执行规范文档，分别给业务确认与后续开发参照。
+
+### 本次完成变更摘要
+- 新增 `007neirongzidonghua/00-项目总方案-给你看.md`：面向业务与流程确认，明确两个项目边界、目录产物、交互与验收标准。
+- 新增 `007neirongzidonghua/01-开发执行规范-给Codex看.md`：面向后续开发约束，固化硬规则、状态机、提示词装配、低 token 策略和 CLI 行为契约。
+
+## 2026-04-29 16:54
+
+### 提问
+确认“章节级 meta 必须每章产出且同等重要”，并要求在方案文档最后强制记录：两个 PY 项目完成后必须立刻处理前端消费 meta 的问题并主动提醒。
+
+### 本次完成变更摘要
+- 已在 `00-项目总方案-给你看.md` 末尾新增“后续必须立即处理的前端对接提醒（重要）”章节。
+- 已在 `01-开发执行规范-给Codex看.md` 末尾新增“强提醒（完成两个PY项目后立即执行）”章节。
+
+## 2026-04-29 17:01
+
+### 提问
+确认按照最优方案开始执行 `novel_producer`，并在需要实测素材时再通知。
+
+### 本次完成变更摘要
+- 新建 `007neirongzidonghua/novel_producer` 第一版骨架项目（`main.py` + `producer` 模块）。
+- 已实现：素材目录扫描、编号选择、`<category>-<中文小说名>` 解析、输出工作区初始化、断点进度文件初始化。
+- 已生成首版目录契约：`novels/<category>/<slug>/info|chapters|annotations|meta` 与 `runtime/chapter_progress/<slug>/progress.json`。
+- 已通过语法验证：`python -m compileall .` 成功。
+
+## 2026-04-29 17:06
+
+### 提问
+继续执行 `novel_producer` 开发，按最优方案推进下一阶段。
+
+### 本次完成变更摘要
+- 新增章节处理骨架：实现章节 txt 发现与排序（`数字-标题.txt`），并生成每章占位产物（正文/导读/meta）。
+- 新增提示词前缀完整性检查：运行时强校验 `00-提示词前缀` 中 1~6 文件是否齐全。
+- 新增产物写入模块与 slug 工具；首次运行自动生成 `info/index.md` 与 `meta/novel.json`。
+- `runner` 已串联骨架流程，可从“选择小说”直接跑到“按章落盘占位产物”。
+- 再次执行 `python -m compileall .` 通过，语法无报错。
+
+## 2026-04-29 17:12
+
+### 提问
+继续推进 `novel_producer` 开发，进入真实双轮模型调用链阶段。
+
+### 本次完成变更摘要
+- 新增 `deepseek_client.py` 与 `contracts.py`，完成模型调用与 JSON 提取能力。
+- 将提示词装配从“仅校验存在”升级为“按规则拼接 Story/Guide 两套 Bundle”，并加入增量术语回写函数。
+- `processor.py` 已切换为真实流程：每章执行“正文翻译 + 导读生成 + chapter meta 产出 + 进度状态写入”。
+- 章节导读已按前端规则写入 `Related Topics: #tag ...` 单行格式。
+- 再次执行 `python -m compileall .` 成功，当前代码语法通过。
+
+## 2026-04-29 17:29
+
+### 提问
+提供 DeepSeek API Key，要求切换到 `deepseek-v4-flash`，开启思考模式并关闭思考过程显示；并指定 `xuanhuan-长生界` 素材做 2~3 章实测。
+
+### 本次完成变更摘要
+- 已更新 `novel_producer/producer/config.py`：默认模型改为 `deepseek-v4-flash`，新增 `PRODUCER_SOURCE_ROOT` 与 `PRODUCER_MAX_CHAPTERS` 环境变量支持。
+- 已更新 `novel_producer/producer/deepseek_client.py`：请求参数加入 `thinking: {type: enabled}` 与 `show_thinking: false`。
+- 已更新 `novel_producer/producer/processor.py`：支持按 `max_chapters_per_run` 限制本次处理章节数，便于小批量测试。
+- 已使用指定素材目录实跑 3 章并成功生成正文、导读、meta 与进度状态；`python -m compileall .` 通过，`ReadLints` 无新增问题。
+
+## 2026-04-29 17:42
+
+### 提问
+指出小说目录名错误：`xuanhuan` 只能作为分类目录，小说目录名应取 `长生界` 的英文名，并说明该英文名可从 `3-核心术语表` 文件开头读取。
+
+### 本次完成变更摘要
+- 已修复 `novel_producer/producer/parser.py`：新增从 `00-提示词前缀/3-核心术语表 (Core Glossary & Lexicon).md` 提取英文书名并生成 slug 的逻辑。
+- 提取优先级已实现为：先读文件头部 `for "..."` 的英文书名，再兜底匹配术语表中中文书名对应英文项。
+- 已修复 `novel_producer/producer/filesystem.py`：新增 slug 解析优先级控制，并兼容修复历史错误映射（分类名误作为小说目录名）。
+- 已用 `xuanhuan-长生界` 再次实跑验证，输出目录已为 `novels/xuanhuan/world-of-immortality/`。
+
+## 2026-04-29 18:09
+
+### 提问
+希望将 `novel_producer` 改为固定分类目录架构：先选分类再选小说；首次自动创建分类目录；输出按分类归档；并提供黑底绿字日志、黄色风险提示、红色错误提示。
+
+### 本次完成变更摘要
+- 新增 `producer/categories.py`：固化 10 个分类定义（含中文显示名、素材目录名、输出目录名）。
+- 新增 `producer/logger.py`：统一日志样式（黑底绿字），并提供 `warn`（黄色）与 `error`（红色）输出。
+- 重构 `producer/selector.py`：实现“两级选择流程”（先分类后小说），支持统计“每个分类扫描到几部小说”和“每部小说扫描到多少 TXT”。
+- 新增首次运行自动建目录逻辑：自动创建素材分类目录与 `novels` 下分类目录。
+- 重构 `producer/runner.py` 与 `producer/processor.py` 输出日志：增加更清晰的后台动作日志（调用翻译、调用导读、保存结果、断点跳过）。
+- 调整 `producer/filesystem.py` 映射键：改为 `分类--小说名`，避免同名小说跨分类冲突。
+- 保留旧素材结构兼容：若素材仍是旧格式 `<slug>-<中文名>` 直接放在素材根目录，也能被扫描并处理。
+- 已实测新流程（输入“1 -> 1”）通过，验证了两级选择、分类计数、小说计数、输出归档路径与日志输出。
+
+## 2026-04-29 18:33
+
+### 提问
+要求立即创建项目自己的初始素材目录（10个固定分类目录）。
+
+### 本次完成变更摘要
+- 已在 `007neirongzidonghua/novel_producer/data/01-sucai/` 下实际创建 10 个分类目录，并各放置 `.gitkeep` 作为占位。
+- 已验证分类目录全部存在，可直接往对应分类目录投放小说素材文件夹。
+
+## 2026-04-29 19:23
+
+### 提问
+已将素材放入 `novel_producer/data/01-sucai/Xuanhuan（玄幻）/长生界`，要求实测新目录结构下流程是否正常。
+
+### 本次完成变更摘要
+- 已按新两级流程实测：先选 `Xuanhuan（玄幻）`，再选 `长生界`，程序可识别并处理章节。
+- 首次测试发现终端残留了旧 `PRODUCER_SOURCE_ROOT` 环境变量，已改为显式指定项目内素材根目录后重跑成功。
+- 发现并修复断点进度隔离问题：`runtime/chapter_progress` 从“仅按 slug”改为“按 `分类--小说名`”存储，避免新旧来源互相污染。
+- 修复后再次实跑 1 章成功，进度文件路径为 `runtime/chapter_progress/xuanhuan--长生界/progress.json`，且 `source_file` 正确指向项目内素材路径。
+
+## 2026-04-29 19:27
+
+### 提问
+要求程序只扫描项目内素材目录 `novel_producer/data/01-sucai`，不再兼容其他外部目录或旧结构入口。
+
+### 本次完成变更摘要
+- 已更新 `producer/config.py`：`source_root` 固定为 `project_root/data/01-sucai`，不再受 `PRODUCER_SOURCE_ROOT` 环境变量影响。
+- 已更新 `producer/selector.py`：移除旧结构兼容扫描（`<slug>-<中文名>` 直接放根目录的兼容逻辑），仅扫描固定分类目录下小说目录。
+- 已完成编译与运行验证：即便手动注入错误 `PRODUCER_SOURCE_ROOT`，程序仍只从项目素材目录扫描并正常进入处理流程。
+
+## 2026-04-29 19:42
+
+### 提问
+确认内容生产已跑通，要求立即开始实现上传发布项目 `novel_publisher`，并明确上传路径必须保持 `novels/<category>/<novel_slug>/` 结构。
+
+### 本次完成变更摘要
+- 已新建独立项目 `007neirongzidonghua/novel_publisher`，实现完整 CLI 发布流程：扫描分类 -> 选择小说 -> 二次确认 -> 上传到内容仓对应目录 -> `git commit` -> `git push main`。
+- 已实现路径契约：始终同步到内容仓 `novels/<category>/<novel_slug>/`，不改写内容、不做转换。
+- 已实现代理策略：推送优先 `127.0.0.1:10809`，失败回退 `127.0.0.1:10808`。
+- 已实现黑底绿字日志与黄/红风险错误提示，并打印上传文件数、提交与推送状态。
+- 已本地实测交互流程（到确认步骤并取消）通过；语法编译与 lint 均通过。
+
+## 2026-04-29 20:07
+
+### 提问
+提供固定内容仓地址 `https://github.com/okx1970152/GIT-CF-YWXS`，要求硬编码并实测一次发布，确认是否触发部署。
+
+### 本次完成变更摘要
+- 已在 `novel_publisher/publisher/config.py` 硬编码默认内容仓地址为 `https://github.com/okx1970152/GIT-CF-YWXS.git`。
+- 已执行真实发布流程测试（选择 `xuanhuan/world-of-immortality` 并确认）：克隆/拉取/同步流程成功执行。
+- 本次测试结果为“未检测到文件变化”，因此未产生新提交、未执行 push（这是正常保护逻辑）。
+- 已通过 GitHub API 检查内容仓最近 Actions 记录，确认当前没有由本次测试产生的新 push 触发 run。
+
+## 2026-04-29 20:24
+
+### 提问
+要求用 token 清空内容仓，并在 `novels` 下重建十个分类目录后，再执行上传发布脚本验证效果。
+
+### 本次完成变更摘要
+- 已清空内容仓 `novels` 旧内容并推送 `main`。
+- 已在内容仓 `novels` 下创建十个分类目录（含 `.gitkeep` 占位）并推送 `main`。
+- 已执行 `novel_publisher` 完整上传流程，成功将 `novels/xuanhuan/world-of-immortality` 整目录同步到内容仓并推送 `main`。
+- 已通过 GitHub API 验证触发结果：最新 push 对应的 Actions Run 已创建（当前状态为 `queued`）。
+
+## 2026-04-29 20:46
+
+### 提问
+反馈前端部署失败：`Failed to collect page data for /novels/[category]/[novelId]`，要求用 token 直接排查部署过程与根因。
+
+### 本次完成变更摘要
+- 已定位根因：前端 `novelInfoSchema` 仍要求 `author` 字段，而当前发布的 `info/index.md` 缺失 `author`，导致页面数据收集阶段解析异常。
+- 已修复当前产物：`world-of-immortality/info/index.md` 补齐 `author: ""` 并修正 `novel_id` 为 `world-of-immortality`，随后重新发布并成功 push。
+- 已修复生产逻辑：`producer/processor.py` 中 `info/index.md` 首次生成时写入 `author: ""`，并在已存在文件时自动补齐缺失的 `author`/修正 `novel_id`。
+- 已核验流水线状态：内容仓新 run 已进行中，前端仓新的构建 run 已由 hook 触发（当前 `in_progress`）。
+
+## 2026-04-29 20:54
+
+### 提问
+确认将前端 `author` 改为可选，并默认使用“佚名”的英文单词。
+
+### 本次完成变更摘要
+- 已更新 `lib/content/schema.ts`：`author` 改为 `z.string().optional().default("Anonymous")`。
+- 已执行 `npm run build` 完整验证通过，`/novels/[category]/[novelId]` 路由可正常完成 page data 收集与静态生成。
+
+## 2026-04-29 21:02
+
+### 提问
+要求将三项对齐一次性完成并避免重复测试失败：producer 不依赖 author（默认佚名）、前端 author 可选、并推进前端消费 meta 产物；同时排查新报错 `/novels/[category]/[novelId]/chapters/[chapterNo]`。
+
+### 本次完成变更摘要
+- 已修复章节页构建潜在根因：放宽章节与导读文件名正则，支持大写 slug（例如 `0001-Breaking-the-Void.md`）。
+- 已更新 producer：`info/index.md` 默认 `author: "Anonymous"`；若历史文件 `author` 为空会自动补成 `Anonymous`，并继续修正 `novel_id`。
+- 已推进前端消费 meta：
+  - 新增 `lib/content/meta.ts` 读取 `meta/novel.json` 与 `meta/<chapter>.json`。
+  - 小说目录页 metadata 已接入 `novel.json` 的 `summary/tags`。
+  - 章节页 metadata 已接入 chapter meta 的 `chapter_seo_title/chapter_meta_description/chapter_keywords`。
+- 已完成 `npm run build` 验证通过，`/novels/[category]/[novelId]/chapters/[chapterNo]` 路由可正常收集页面数据。

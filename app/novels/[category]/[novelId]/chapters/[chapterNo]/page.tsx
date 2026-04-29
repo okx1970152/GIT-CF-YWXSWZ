@@ -6,6 +6,7 @@ import { ChapterReader } from "@/components/novel/ChapterReader";
 import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
+import { getChapterMetaByNo } from "@/lib/content/meta";
 import { getAllNovels, getNovel } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
 import { getAnnotationByChapterNo } from "@/lib/content/annotations";
@@ -38,10 +39,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) return {};
+  const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
 
-  const description = readingDescription(chapter.content, novel.desc);
+  const description =
+    chapterMeta?.chapter_meta_description || readingDescription(chapter.content, novel.desc);
   const canonicalPath = `/novels/${category}/${novelId}/chapters/${chapterNo}`;
-  const chapterTitleFull = `${chapter.title} - ${novel.title} - Reading Mode`;
+  const chapterTitleFull =
+    chapterMeta?.chapter_seo_title || `${chapter.title} - ${novel.title} - Reading Mode`;
 
   return {
     title: chapterTitleFull,
@@ -56,6 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: absoluteOgUrl(canonicalPath)
     },
+    keywords: chapterMeta?.chapter_keywords?.length ? chapterMeta.chapter_keywords : undefined,
     robots: publicRobots()
   };
 }

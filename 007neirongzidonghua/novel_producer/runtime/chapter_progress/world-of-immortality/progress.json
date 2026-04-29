@@ -1,0 +1,29 @@
+{
+  "last_chapter_code": "0002",
+  "chapters": {
+    "0001": {
+      "chapter_code": "0001",
+      "chapter_slug": "Who-in-This-World-Can-Escape-Death",
+      "source_file": "d:\\1CHATGPT\\btc\\Google-BoKe\\谷歌博客自动化\\爬取处理素材\\全自动正式版本\\data\\01-sucai\\xuanhuan-长生界\\001-第一章 武破虚空.txt",
+      "story_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\world-of-immortality\\chapters\\0001-Who-in-This-World-Can-Escape-Death.md",
+      "guide_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\world-of-immortality\\annotations\\0001-Who-in-This-World-Can-Escape-Death-guide.md",
+      "meta_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\world-of-immortality\\meta\\0001-Who-in-This-World-Can-Escape-Death.json",
+      "story_done": true,
+      "guide_done": true,
+      "meta_done": true,
+      "ready_for_publish": true
+    },
+    "0002": {
+      "chapter_code": "0002",
+      "chapter_slug": "The-Death-Castle-and-the-Bone-Sea",
+      "source_file": "d:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\data\\01-sucai\\Xuanhuan（玄幻）\\长生界\\002-第二章 古碑天图.txt",
+      "story_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\world-of-immortality\\chapters\\0002-The-Death-Castle-and-the-Bone-Sea.md",
+      "guide_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\world-of-immortality\\annotations\\0002-The-Death-Castle-and-the-Bone-Sea-guide.md",
+      "meta_file": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\007neirongzidonghua\\novel_producer\\novels\\xuanhuan\\world-of-immortality\\meta\\0002-The-Death-Castle-and-the-Bone-Sea.json",
+      "story_done": true,
+      "guide_done": true,
+      "meta_done": true,
+      "ready_for_publish": true
+    }
+  }
+}

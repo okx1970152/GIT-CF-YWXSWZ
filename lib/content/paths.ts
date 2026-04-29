@@ -18,3 +18,7 @@ export function getChaptersDir(categorySlug: string, novelId: string): string {
 export function getAnnotationsDir(categorySlug: string, novelId: string): string {
   return path.join(getNovelBasePath(categorySlug, novelId), "annotations");
 }
+
+export function getMetaDir(categorySlug: string, novelId: string): string {
+  return path.join(getNovelBasePath(categorySlug, novelId), "meta");
+}

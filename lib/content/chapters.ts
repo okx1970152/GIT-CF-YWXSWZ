@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { getChaptersDir } from "@/lib/content/paths";
 import { chapterSchema, type ChapterFrontmatter } from "@/lib/content/schema";
 
-const CHAPTER_FILE_PATTERN = /^\d{4}-[a-z0-9-]+\.md$/;
+const CHAPTER_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+\.md$/;
 
 export type ChapterItem = {
   chapterNo: string;
