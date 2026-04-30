@@ -9,7 +9,12 @@ const ADS_PATH = path.join(process.cwd(), "data", "ads.json");
 /** 与统计 `stats:*` 隔离；整份 ads.json 序列化存一条，体量极小 */
 export const ADS_KV_KEY = "site:ads_json";
 
-async function getAdsKvBinding(): Promise<KVNamespace | null> {
+type KvBinding = {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string): Promise<void>;
+};
+
+async function getAdsKvBinding(): Promise<KvBinding | null> {
   try {
     const ctx = await getCloudflareContext({ async: true });
     return ctx.env.SITE_STATS_KV ?? null;
