@@ -32,7 +32,7 @@ export function AnnotationAside({
         aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
       >
-        <span>Essential Guide</span>
+        <span>Reading Guide Decoding</span>
         <span className="text-sm font-normal text-slate-600">{open ? "Hide" : "Show"}</span>
       </button>
 
@@ -46,6 +46,9 @@ export function AnnotationAside({
         aria-label="Annotation track"
       >
         {slotTop}
+        <p className="mb-2 inline-flex items-center rounded-full border border-[#9cd8b5] bg-[#e9f8ef] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#058c46]">
+          Reading Guide Decoding
+        </p>
         <h2 className="font-serif text-[30px] font-semibold leading-tight text-[var(--text-deep)]">{title}</h2>
         <div
           className="prose mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)]"
