@@ -569,3 +569,139 @@
 - 回归验证：
   - 已执行 `npm run generate:content-index`；
   - 已执行 `npm run build`，构建、类型检查、静态页面生成全部通过。
+
+## 2026-04-30 03:45
+
+### 提问
+GitHub Actions 自动部署报错：`KV namespace ... is not valid [code: 10042]`，询问原因与处理方式。
+
+### 本次完成变更摘要
+- 已定位为 Cloudflare 部署阶段 KV 绑定校验失败，错误点在 `wrangler.jsonc` 的 `SITE_STATS_KV.id` 与当前部署账号不匹配或该命名空间已不存在。
+- 已确认报错并非 `wrangler secret put` 失败；三个 secret 均已成功写入。
+- 已给出修复路径：在 Cloudflare 当前账号确认/新建 KV Namespace，并将真实 `id`（及 `preview_id`）回填到 `wrangler.jsonc` 后重新部署。
+
+## 2026-04-30 03:54
+
+### 提问
+确认并提供两个正确的 KV Namespace ID，要求直接修正项目配置中的 `SITE_STATS_KV.id` 与 `preview_id`。
+
+### 本次完成变更摘要
+- 已更新 `wrangler.jsonc` 中 `SITE_STATS_KV.id` 为 `ef37b15f5dd7490c9865c6d4fa3bd78d`（补齐末尾 `d`）。
+- 已核对 `preview_id` 保持为 `f5f39d834c1e4ea59b419651a2743e11`，与当前控制台一致。
+
+## 2026-04-30 10:50
+
+### 提问
+将 `4-高质量翻译提示词.md` 按约束整理后完整覆盖到素材目录对应文件中。
+
+### 本次完成变更摘要
+- 已完整覆盖并重写：
+  - `007neirongzidonghua/novel_producer/data/01-sucai/Xuanhuan（玄幻）/长生界/00-提示词前缀/4-高质量翻译提示词.md`
+- 本次重写内容聚焦“可执行与可解析”：
+  - 固定输出为单一 JSON 对象；
+  - 明确 6 个必填字段与字段类型；
+  - 增加术语优先级与跨章一致性规则；
+  - 增加硬性禁止项（禁止额外文本、禁止占位符、禁止数组字符串化）；
+  - 增加内部静默自检清单（JSON 合法性、SEO 长度、时态一致、术语一致）。
+
+## 2026-04-30 10:56
+
+### 提问
+验收并按最优建议覆盖 `5-高质量解说提示词.md`，要求提升导读内容产出密度并保证结构化可解析。
+
+### 本次完成变更摘要
+- 已完整覆盖并重写：
+  - `007neirongzidonghua/novel_producer/data/01-sucai/Xuanhuan（玄幻）/长生界/00-提示词前缀/5-高质量解说提示词.md`
+- 本次重写关键点：
+  - 固定输出为单一 JSON 对象，14 个字段全部必填；
+  - 明确 `commentary_text` 必须包含 4 个固定二级标题，且顺序固定；
+  - 增加强约束：导读总词数 `>=450`，并细化各分节最低词数；
+  - 增加 SEO 字段长度约束（`chapter_seo_title`、`chapter_meta_description`）；
+  - 增加关键词/标签质量约束，避免低信息量泛词；
+  - 清理干扰项并统一规则表述，提升模型稳定执行性。
+
+## 2026-04-30 11:16
+
+### 提问
+“可以，按照你的最优建议和方案执行！”（执行已确认的两阶段优化方案）
+
+### 本次完成变更摘要
+- 已完成第一阶段核心落地（生产端严格化 + 前端兼容消费）：
+  - `producer/processor.py`：统一章节产物命名与字段契约，导读改为 `annotations/<chapter_no>.md`，章节 meta 改为 `meta/<chapter_no>.json`，并保留正文 `chapters/<chapter_no>-<slug>.md`；
+  - 新增章节/导读/meta 严格校验与重试机制（导读四段结构、最小词数、必要 SEO 字段）；
+  - 新增 `producer/validator.py`：提供章节级与工作区级契约校验，最终失败即终止，避免脏数据进入发布链路；
+  - `info/index.md` 与 `meta/novel.json` 同步升级为“新字段+兼容字段”双写（`summary` 与 `desc` 并存，新增 novel SEO/OG/Twitter 字段）。
+- 已完成前端“新字段优先、旧字段回退”兼容消费：
+  - `lib/content/schema.ts`：支持 `summary`（兼容 `desc`）及章节 `word_count`；
+  - `lib/content/novels.ts`：新增 `getNovelSummary()`，目录卡片/目录页/搜索统一优先读 `summary`；
+  - `lib/content/meta.ts`：扩展 novel/chapter meta 类型，支持 `keywords`、`guide_tags`、`og_*`、`twitter_*`；
+  - 目录页与章节页 `generateMetadata` 优先消费 meta SEO 字段，并保留回退逻辑。
+- 已升级索引脚本兼容新旧导读命名：
+  - `scripts/generate-content-index.mjs` 同时支持 `annotations/<chapter_no>.md`（新）与 `*-guide.md`（旧）。
+- 校验结果：
+  - Python 语法编译已通过（`processor.py` 修复后复检成功）；
+  - IDE Lint 诊断已检查，当前改动文件未发现新增错误。
+
+## 2026-04-30 11:52
+
+### 提问
+“可以，按照你的最优建议和方案执行！”（继续执行第二阶段：全字段消费 + 端到端回归）
+
+### 本次完成变更摘要
+- 已补齐章节页对新字段的消费闭环：
+  - `app/novels/[category]/[novelId]/chapters/[chapterNo]/page.tsx` 已将 `guide_tags` 纳入页面 SEO `keywords`（与 `chapter_keywords` 去重合并）；
+  - 章节导读侧栏标签来源改为 `annotation.relatedTopics + chapterMeta.guide_tags` 合并去重，确保生产端新增标签可被前端可视化消费。
+- 已增强站内搜索语义覆盖：
+  - `lib/content/novels.ts` 在章节搜索摘录中新增拼接 `chapter_keywords` 与 `guide_tags`，提升章节可检索性与命中精度。
+- 已升级内容诊断为“章节齐套校验”：
+  - `scripts/diagnose-content.mjs` 兼容新旧命名（导读 `0001.md` 与 `0001-xxx-guide.md`、meta `0001.json` 与 `0001-xxx.json`）；
+  - 按章节号逐一核对正文/导读/meta 是否一一对应，发现缺失即报错并判定无效小说；
+  - `info/index.md` 校验升级为 `summary/desc` 兼容（至少一个有效即可）。
+- 已完成回归验证：
+  - `node scripts/generate-content-index.mjs` 通过；
+  - `node scripts/diagnose-content.mjs` 通过（`valid_novels=1`, `invalid_novels=0`）；
+  - `npm run lint` 通过，且 IDE Lint 诊断无新增错误。
+
+## 2026-04-30（字段对照表）
+
+### 提问
+要求制作「字段对照表」逐条勾选，检查前端与内容生产是否仍有问题。
+
+### 本次完成变更摘要
+- 已新增根目录文档 `字段对照表.md`：
+  - 按 `info/index.md`、`meta/novel.json`、章节正文/导读、`meta/<chapter_no>.json` 分区列出全部字段；
+  - 每条标注生产端是否写入、索引是否入库、前端是否消费，并用 ✅/⚠️/❌ 标明对齐程度；
+  - 文末汇总当前仍存在的缺口（如 `word_count` 未进索引、封面等 frontmatter 字段未上 UI、`Related Topics` 行与新流水线关系、`novel.json.featured` 与 frontmatter 双源等）。
+
+## 2026-04-30（纯文字站 · 字段闭环）
+
+### 提问
+小说站不设封面图、元素纯文字以保证加载速度；按最优方案完成改动。
+
+### 本次完成变更摘要
+- **策略**：不增加小说封面/头图组件；`cover`/`hero` 可为空，前端不加载图片。
+- **词数**：索引写入 `wordCount`；目录列表与章节页标题下展示英文「N words」纯文本。
+- **生产端**：刷新小说信息时保留 `featured`/`hot`/`ranking`/`cover`/`hero`；`novel.json` 同步 `featured`/`hot`；导读末尾由 `guide_tags` 生成 `Related Topics` 行。
+- **类型**：`ChapterMeta.chapter_no`、`NovelMeta.hot`。
+- **文档**：`字段对照表.md` 已改为纯文字站版本（缺口项已闭环）。
+- **验证**：Python 编译、`generate-content-index`、`diagnose-content`、`npm run lint` 通过。
+
+## 2026-04-30（Wrangler 运行时明文 vars）
+
+### 提问
+将 `NEXT_PUBLIC_SITE_URL` 与 `APP_GITHUB_*` 广告兜底路径写入 CF Worker 运行时，避免仅构建机有、线上一致性风险。
+
+### 本次完成变更摘要
+- 已在 `wrangler.jsonc` 增加 `vars`：`NEXT_PUBLIC_SITE_URL`、`APP_GITHUB_REPO`、`APP_GITHUB_BRANCH`、`APP_GITHUB_ADS_PATH`（与线上一致）；`wrangler deploy` 后自动进入 Cloudflare 项目环境。
+- 已更新 `cloudflare-env.d.ts` 中 `CloudflareEnv` 字段声明。
+
+## 2026-04-30（广告配置改存 CF KV）
+
+### 提问
+广告后台保存依赖 GitHub token 回写仓库，CF 运行时环境变量常不同步导致报错；希望仅 9 个广告位改存已绑定的 KV，减少部署与 token 依赖。
+
+### 本次完成变更摘要
+- **`lib/ads/store.ts`**：新增 `ADS_KV_KEY`（`site:ads_json`，与同命名空间 `stats:*` 隔离）；`getAds()` 优先读 KV，其次 GitHub API，再本地 `data/ads.json`；导出 `writeAdsToKv()`。
+- **`app/api/admin/ads/route.ts`**：保存时优先 **KV**；本地开发写文件；生产在无 KV 时可选用 GitHub 回写（兼容旧部署）；否则返回 503 明确提示绑定 KV。
+- **效果**：线上保存广告不再依赖 `GITHUB_TOKEN` 注入 Workers（仅需 Wrangler 已绑定的 `SITE_STATS_KV`），不触发仓库提交与重复部署。
+- **说明**：首次部署后 KV 为空时仍可从原 GitHub/本地读；在后台点一次保存即可把配置写入 KV。`npm run lint` 已通过。

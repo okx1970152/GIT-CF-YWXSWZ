@@ -7,6 +7,8 @@ export type ContentIndexChapter = {
   content: string;
   publishedAt: string | null;
   updatedAt: string | null;
+  /** 正文词数（来自 frontmatter word_count 或由正文估算） */
+  wordCount: number;
   fileName: string;
 };
 

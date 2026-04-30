@@ -32,11 +32,16 @@ function safeListFiles(dirPath, suffix = "") {
 
 function validateNovelInfoFrontmatter(frontmatter) {
   const errors = [];
-  const requiredString = ["title", "category", "novel_id", "desc", "status", "updated_at"];
+  const requiredString = ["title", "category", "novel_id", "status", "updated_at"];
   for (const key of requiredString) {
     if (typeof frontmatter[key] !== "string" || frontmatter[key].trim() === "") {
       errors.push(`missing_or_invalid_${key}`);
     }
+  }
+  const summary = typeof frontmatter.summary === "string" ? frontmatter.summary.trim() : "";
+  const desc = typeof frontmatter.desc === "string" ? frontmatter.desc.trim() : "";
+  if (!summary && !desc) {
+    errors.push("missing_summary_and_desc");
   }
   if (typeof frontmatter.total_chapters !== "number") {
     errors.push("missing_or_invalid_total_chapters");
@@ -95,7 +100,9 @@ function buildReport() {
         hasMetaNovel: fs.existsSync(metaNovelPath),
         chapterCount: chapterFiles.length,
         annotationCount: annotationFiles.length,
+        chapterMetaCount: 0,
         schemaErrors: [],
+        fileErrors: [],
       };
 
       if (!entry.hasInfo) {
@@ -135,13 +142,61 @@ function buildReport() {
         report.summary.invalidNovels += 1;
         report.errors.push(`[files] ${category}/${novel} 缺少 meta/novel.json`);
       }
+      const chapterNoSet = new Set();
+      for (const fileName of chapterFiles) {
+        const m = fileName.match(/^(\d{4})-[A-Za-z0-9-]+\.md$/);
+        if (!m) {
+          entry.fileErrors.push(`invalid_chapter_file:${fileName}`);
+          continue;
+        }
+        chapterNoSet.add(m[1]);
+      }
+
+      const annotationNoSet = new Set();
+      for (const fileName of annotationFiles) {
+        let m = fileName.match(/^(\d{4})\.md$/);
+        if (!m) m = fileName.match(/^(\d{4})-[A-Za-z0-9-]+-guide\.md$/);
+        if (!m) {
+          entry.fileErrors.push(`invalid_annotation_file:${fileName}`);
+          continue;
+        }
+        annotationNoSet.add(m[1]);
+      }
+
+      const chapterMetaFiles = safeListFiles(path.join(basePath, "meta"), ".json").filter((name) => name !== "novel.json");
+      const chapterMetaNoSet = new Set();
+      for (const fileName of chapterMetaFiles) {
+        let m = fileName.match(/^(\d{4})\.json$/);
+        if (!m) m = fileName.match(/^(\d{4})-[A-Za-z0-9-]+\.json$/);
+        if (!m) {
+          entry.fileErrors.push(`invalid_chapter_meta_file:${fileName}`);
+          continue;
+        }
+        chapterMetaNoSet.add(m[1]);
+      }
+      entry.chapterMetaCount = chapterMetaNoSet.size;
+
+      for (const chapterNo of chapterNoSet) {
+        if (!annotationNoSet.has(chapterNo)) {
+          entry.fileErrors.push(`missing_annotation_for_chapter:${chapterNo}`);
+        }
+        if (!chapterMetaNoSet.has(chapterNo)) {
+          entry.fileErrors.push(`missing_meta_for_chapter:${chapterNo}`);
+        }
+      }
+      if (entry.fileErrors.length) {
+        report.summary.schemaErrors += entry.fileErrors.length;
+        report.summary.invalidNovels += 1;
+        report.errors.push(`[files] ${category}/${novel} ${entry.fileErrors.join(",")}`);
+      }
 
       if (
         entry.hasInfo &&
         entry.chapterCount > 0 &&
         entry.annotationCount > 0 &&
         entry.hasMetaNovel &&
-        entry.schemaErrors.length === 0
+        entry.schemaErrors.length === 0 &&
+        entry.fileErrors.length === 0
       ) {
         report.summary.validNovels += 1;
       }

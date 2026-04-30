@@ -6,7 +6,8 @@ export const novelInfoSchema = z.object({
   author: z.string().optional().default("Anonymous"),
   category: z.string(),
   novel_id: z.string(),
-  desc: z.string(),
+  summary: z.string().optional().default(""),
+  desc: z.string().optional().default(""),
   total_chapters: z.number().int().nonnegative(),
   status: z.string(),
   cover: z.string().optional().default(""),
@@ -22,7 +23,8 @@ export const chapterSchema = z.object({
   title: z.string(),
   chapter_no: z.string().regex(/^\d{4}$/),
   published_at: z.string().optional(),
-  updated_at: z.string().optional()
+  updated_at: z.string().optional(),
+  word_count: z.number().int().nonnegative().optional()
 });
 
 export type NovelInfo = z.infer<typeof novelInfoSchema> & {

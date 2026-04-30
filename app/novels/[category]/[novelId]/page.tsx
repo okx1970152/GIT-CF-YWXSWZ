@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { DirectoryPage } from "@/components/novel/DirectoryPage";
 import { getCategoryLabel } from "@/lib/content/categories";
 import { getNovelMeta } from "@/lib/content/meta";
-import { getAllNovels, getDisplayNovelTitle, getNovel } from "@/lib/content/novels";
+import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
 import { absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
@@ -26,9 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!novel) return {};
   const novelMeta = getNovelMeta(category, novelId);
   const displayTitle = getDisplayNovelTitle(novel);
+  const summary = getNovelSummary(novel);
 
-  const title = `${displayTitle} - Directory`;
-  const description = (novelMeta?.summary || novel.desc).trim().slice(0, 200);
+  const title = (novelMeta?.seo_title || `${displayTitle} - Directory`).trim();
+  const description = (novelMeta?.meta_description || novelMeta?.summary || summary).trim().slice(0, 200);
   const path = `/novels/${category}/${novelId}`;
 
   return {
@@ -39,12 +40,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       ...baseOpenGraph(),
-      title,
-      description,
+      title: (novelMeta?.og_title || title).trim(),
+      description: (novelMeta?.og_description || description).trim(),
       url: absoluteOgUrl(path),
       type: "website"
     },
-    keywords: novelMeta?.tags?.length ? novelMeta.tags : undefined,
+    twitter: {
+      card: "summary_large_image",
+      title: (novelMeta?.twitter_title || novelMeta?.og_title || title).trim(),
+      description: (novelMeta?.twitter_description || novelMeta?.og_description || description).trim(),
+    },
+    keywords: novelMeta?.keywords?.length
+      ? novelMeta.keywords
+      : novelMeta?.tags?.length
+        ? novelMeta.tags
+        : undefined,
     robots: publicRobots()
   };
 }
@@ -54,6 +64,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
   const novel = getNovel(category, novelId);
   if (!novel) notFound();
   const displayTitle = getDisplayNovelTitle(novel);
+  const summary = getNovelSummary(novel);
 
   const chapters = getChapters(category, novelId);
   const canonical = toAbsoluteUrl(`/novels/${category}/${novelId}`);
@@ -92,7 +103,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
       "@type": "Person",
       name: novel.author
     },
-    description: novel.desc,
+    description: summary,
     url: canonical,
     inLanguage: "en"
   };

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NovelInfo } from "@/lib/content/schema";
 import { cn } from "@/lib/cn";
-import { getDisplayNovelTitle } from "@/lib/content/novels";
+import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
 
 type NovelCardProps = {
   novel: NovelInfo;
@@ -11,6 +11,7 @@ type NovelCardProps = {
 export function NovelCard({ novel, className }: NovelCardProps) {
   const href = `/novels/${novel.categorySlug}/${novel.novelId}`;
   const displayTitle = getDisplayNovelTitle(novel);
+  const summary = getNovelSummary(novel);
   const label = `Open directory: ${displayTitle}`;
 
   return (
@@ -52,7 +53,7 @@ export function NovelCard({ novel, className }: NovelCardProps) {
         </p>
       </div>
       <p className="mt-4 line-clamp-8 flex-1 overflow-hidden font-serif text-base leading-relaxed text-[var(--text-soft)] transition-colors duration-300 group-hover:text-white group-focus-visible:text-white">
-        {novel.desc}
+        {summary}
       </p>
       <p className="mt-4 text-center font-sans text-[10px] text-[var(--text-muted)] transition-colors duration-300 group-hover:text-white/90 group-focus-visible:text-white/90">
         Click anywhere to read directory

@@ -1,13 +1,50 @@
 import fs from "node:fs";
 import path from "node:path";
 import { unstable_noStore as noStore } from "next/cache";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { adsJsonSchema, defaultAdsJson, type AdsJson } from "@/lib/ads/schema";
 
 const ADS_PATH = path.join(process.cwd(), "data", "ads.json");
 
+/** 与统计 `stats:*` 隔离；整份 ads.json 序列化存一条，体量极小 */
+export const ADS_KV_KEY = "site:ads_json";
+
+async function getAdsKvBinding(): Promise<KVNamespace | null> {
+  try {
+    const ctx = await getCloudflareContext({ async: true });
+    return ctx.env.SITE_STATS_KV ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function readAdsFromKv(): Promise<AdsJson | null> {
+  const kv = await getAdsKvBinding();
+  if (!kv) return null;
+  const raw = await kv.get(ADS_KV_KEY);
+  if (!raw) return null;
+  try {
+    return adsJsonSchema.parse(JSON.parse(raw) as unknown);
+  } catch {
+    return null;
+  }
+}
+
+/** 生产环境保存广告用；绑定存在即写入成功 */
+export async function writeAdsToKv(data: AdsJson): Promise<boolean> {
+  const kv = await getAdsKvBinding();
+  if (!kv) return false;
+  await kv.put(ADS_KV_KEY, JSON.stringify(data));
+  return true;
+}
+
 /** Always read fresh so admin saves show up without stale React cache. */
 export async function getAds(): Promise<AdsJson> {
   noStore();
+
+  const fromKv = await readAdsFromKv();
+  if (fromKv) return fromKv;
+
   const remote = await readAdsFromGithub();
   if (remote) return remote;
 

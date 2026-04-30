@@ -7,6 +7,8 @@ export type ChapterItem = {
   content: string;
   publishedAt?: string;
   updatedAt?: string;
+  /** 正文词数（索引生成：YAML word_count 或正文估算） */
+  wordCount?: number;
   fileName: string;
 };
 
@@ -50,6 +52,7 @@ export function getChapters(categorySlug: string, novelId: string): ChapterItem[
       content: c.content,
       publishedAt: c.publishedAt || undefined,
       updatedAt: c.updatedAt || undefined,
+      wordCount: typeof c.wordCount === "number" ? c.wordCount : undefined,
       fileName: c.fileName,
     }));
 }

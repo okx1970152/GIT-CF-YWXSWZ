@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { NovelInfo } from "@/lib/content/schema";
 import type { ChapterItem } from "@/lib/content/chapters";
 import { AdSlot } from "@/components/ads/AdSlot";
-import { getDisplayNovelTitle } from "@/lib/content/novels";
+import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
 
 type DirectoryPageProps = {
   novel: NovelInfo;
@@ -13,6 +13,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
   const firstChapter = chapters[0];
   const latestChapter = chapters[chapters.length - 1];
   const displayTitle = getDisplayNovelTitle(novel);
+  const summary = getNovelSummary(novel);
   const seoTokens = [
     ...novel.tags,
     "xianxia",
@@ -26,7 +27,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
     <div className="mx-auto max-w-[1100px] px-4 pb-16 pt-6">
       <section aria-label={`${novel.title} semantic summary`} className="sr-only">
         <h1>{displayTitle}</h1>
-        <p>{novel.desc}</p>
+        <p>{summary}</p>
         <p>{seoTokens.map((item) => `#${item}`).join(" ")}</p>
       </section>
 
@@ -39,7 +40,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
           </h1>
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
             <div className="order-2 lg:order-1">
-              <p className="font-serif text-lg leading-relaxed text-[var(--text-soft)]">{novel.desc}</p>
+              <p className="font-serif text-lg leading-relaxed text-[var(--text-soft)]">{summary}</p>
             </div>
             <dl className="order-1 grid gap-2 font-sans text-sm text-[var(--text-soft)] sm:grid-cols-2 lg:order-2 lg:grid-cols-1">
               <div>
@@ -106,6 +107,11 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
                   <span className="line-clamp-2 block font-medium">
                     {chapter.chapterNo} — {chapter.title}
                   </span>
+                  {chapter.wordCount != null && chapter.wordCount > 0 ? (
+                    <span className="mt-0.5 block font-sans text-[11px] text-[var(--text-muted)]">
+                      {chapter.wordCount.toLocaleString("en-US")} words
+                    </span>
+                  ) : null}
                   <span className="mt-1 flex flex-wrap items-center gap-1.5">
                     {firstChapter?.chapterNo === chapter.chapterNo ? (
                       <span className="rounded-full border border-[#9cd8b5] bg-[#e9f8ef] px-2 py-0.5 text-[10px] font-sans font-semibold uppercase tracking-wide text-[#058c46]">

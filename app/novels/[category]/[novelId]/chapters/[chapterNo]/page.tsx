@@ -7,7 +7,7 @@ import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { getChapterMetaByNo } from "@/lib/content/meta";
-import { getAllNovels, getDisplayNovelTitle, getNovel } from "@/lib/content/novels";
+import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
 import { getAnnotationByChapterNo } from "@/lib/content/annotations";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -41,12 +41,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!novel || !chapter) return {};
   const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
   const displayTitle = getDisplayNovelTitle(novel);
+  const summary = getNovelSummary(novel);
 
   const description =
-    chapterMeta?.chapter_meta_description || readingDescription(chapter.content, novel.desc);
+    chapterMeta?.chapter_meta_description || readingDescription(chapter.content, summary);
   const canonicalPath = `/novels/${category}/${novelId}/chapters/${chapterNo}`;
   const chapterTitleFull =
     chapterMeta?.chapter_seo_title || `${chapter.title} - ${displayTitle} - Reading Mode`;
+
+  const keywordPool = [
+    ...(chapterMeta?.chapter_keywords ?? []),
+    ...(chapterMeta?.guide_tags ?? []),
+  ].map((item) => item.trim()).filter(Boolean);
+  const keywords = keywordPool.length ? Array.from(new Set(keywordPool)) : undefined;
 
   return {
     title: chapterTitleFull,
@@ -57,11 +64,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       ...baseOpenGraph(),
       type: "article",
-      title: chapterTitleFull,
-      description,
+      title: chapterMeta?.og_title || chapterTitleFull,
+      description: chapterMeta?.og_description || description,
       url: absoluteOgUrl(canonicalPath)
     },
-    keywords: chapterMeta?.chapter_keywords?.length ? chapterMeta.chapter_keywords : undefined,
+    twitter: {
+      card: "summary_large_image",
+      title: chapterMeta?.twitter_title || chapterMeta?.og_title || chapterTitleFull,
+      description: chapterMeta?.twitter_description || chapterMeta?.og_description || description,
+    },
+    keywords,
     robots: publicRobots()
   };
 }
@@ -71,10 +83,18 @@ export default async function ChapterPage({ params }: Props) {
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) notFound();
+  const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
   const displayTitle = getDisplayNovelTitle(novel);
+  const summary = getNovelSummary(novel);
 
   const annotation = getAnnotationByChapterNo(category, novelId, chapterNo);
   const adjacent = getAdjacentChapters(category, novelId, chapterNo);
+  const topicPool = [
+    ...(annotation?.relatedTopics ?? []),
+    ...(chapterMeta?.guide_tags ?? []),
+  ].map((item) => item.trim()).filter(Boolean);
+  const topics = topicPool.length ? Array.from(new Set(topicPool)) : [];
+
 
   const chapterHtml = await markdownToHtml(chapter.content);
   const guideHtml = await markdownToHtml(annotation?.content || "*No annotation yet.*");
@@ -84,7 +104,8 @@ export default async function ChapterPage({ params }: Props) {
   const prevHref = adjacent.prev ? `${basePath}/chapters/${adjacent.prev}` : null;
   const nextHref = adjacent.next ? `${basePath}/chapters/${adjacent.next}` : null;
 
-  const description = readingDescription(chapter.content, novel.desc);
+  const description =
+    chapterMeta?.chapter_meta_description || readingDescription(chapter.content, summary);
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -163,6 +184,9 @@ export default async function ChapterPage({ params }: Props) {
             >
               {chapter.title}
             </h1>
+            {chapter.wordCount != null && chapter.wordCount > 0 ? (
+              <p className="mt-2 font-sans text-sm text-[var(--text-muted)]">{chapter.wordCount.toLocaleString("en-US")} words</p>
+            ) : null}
             <MainContent chapterHtml={chapterHtml} />
             <ChapterNavigation
               prevHref={prevHref}
@@ -174,7 +198,7 @@ export default async function ChapterPage({ params }: Props) {
           <AnnotationTrack
             title={annotation?.title || "Essential Guide"}
             guideHtml={guideHtml}
-            topics={annotation?.relatedTopics ?? []}
+            topics={topics}
           />
         </div>
       </ChapterReader>

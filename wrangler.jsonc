@@ -11,6 +11,13 @@
   "observability": {
     "enabled": true
   },
+  // Worker 运行时明文变量（与 GitHub Actions Variables 对齐；部署时写入 CF 项目）
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://wx.0o0o.mom",
+    "APP_GITHUB_REPO": "okx1970152/GIT-CF-YWXSWZ",
+    "APP_GITHUB_BRANCH": "main",
+    "APP_GITHUB_ADS_PATH": "data/ads.json"
+  },
   "kv_namespaces": [
     {
       "binding": "SITE_STATS_KV",

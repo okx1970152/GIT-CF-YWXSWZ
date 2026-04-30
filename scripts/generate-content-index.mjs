@@ -7,7 +7,8 @@ const novelsRoot = path.join(workspaceRoot, "novels");
 const outputPath = path.join(workspaceRoot, "data", "content-index.json");
 
 const CHAPTER_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+\.md$/;
-const ANNOTATION_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+-guide\.md$/;
+const ANNOTATION_FILE_PATTERN = /^\d{4}\.md$/;
+const LEGACY_ANNOTATION_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+-guide\.md$/;
 const RELATED_TOPICS_PATTERN = /(?:^|\n)Related Topics:\s*((?:#[A-Za-z0-9_-]+\s*)+)$/m;
 
 function log(message) {
@@ -55,6 +56,17 @@ function listFiles(dir, suffix) {
     .sort((a, b) => a.localeCompare(b));
 }
 
+/** 与生产端 word_count 一致：按空白分词计数；无 frontmatter 时从正文估算 */
+function resolveWordCount(data, content) {
+  const w = data?.word_count;
+  if (typeof w === "number" && Number.isFinite(w) && w >= 0) {
+    return Math.floor(w);
+  }
+  const text = (content || "").trim();
+  if (!text) return 0;
+  return text.split(/\s+/).filter(Boolean).length;
+}
+
 function buildIndex() {
   const categories = [];
   for (const categorySlug of listDirs(novelsRoot)) {
@@ -78,6 +90,7 @@ function buildIndex() {
         const slug = fileName.replace(/^\d{4}-/, "").replace(/\.md$/, "");
         const raw = fs.readFileSync(path.join(chaptersDir, fileName), "utf8");
         const { data, content } = matter(raw);
+        const wordCount = resolveWordCount(data, content);
         chapterItemsRaw.push({
           chapterNo,
           slug,
@@ -85,6 +98,7 @@ function buildIndex() {
           content,
           publishedAt: data?.published_at ?? null,
           updatedAt: data?.updated_at ?? null,
+          wordCount,
           fileName,
         });
       }
@@ -93,7 +107,9 @@ function buildIndex() {
       const annotationMap = {};
       const annotationsDir = path.join(novelBase, "annotations");
       for (const fileName of listFiles(annotationsDir, ".md")) {
-        if (!ANNOTATION_FILE_PATTERN.test(fileName)) continue;
+        if (!ANNOTATION_FILE_PATTERN.test(fileName) && !LEGACY_ANNOTATION_FILE_PATTERN.test(fileName)) {
+          continue;
+        }
         const chapterNo = fileName.slice(0, 4);
         const raw = fs.readFileSync(path.join(annotationsDir, fileName), "utf8");
         const { data, content } = matter(raw);

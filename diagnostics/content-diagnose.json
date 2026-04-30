@@ -62,7 +62,9 @@
           "hasMetaNovel": true,
           "chapterCount": 5,
           "annotationCount": 5,
-          "schemaErrors": []
+          "chapterMetaCount": 3,
+          "schemaErrors": [],
+          "fileErrors": []
         }
       ]
     }
