@@ -51,7 +51,7 @@ export function AnnotationAside({
         </p>
         <h2 className="font-serif text-[30px] font-semibold leading-tight text-[var(--text-deep)]">{title}</h2>
         <div
-          className="prose mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)]"
+          className="prose mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)] [&_p]:!text-[length:inherit] [&_li]:!text-[length:inherit] [&_ul]:!text-[length:inherit] [&_ol]:!text-[length:inherit] [&_blockquote]:!text-[length:inherit] [&_h1]:!text-[length:inherit] [&_h2]:!text-[length:inherit] [&_h3]:!text-[length:inherit] [&_h4]:!text-[length:inherit]"
           style={{ fontSize: "var(--reader-content-font-size, 20px)" }}
           dangerouslySetInnerHTML={{ __html: guideHtml }}
         />

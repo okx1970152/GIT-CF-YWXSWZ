@@ -17,14 +17,16 @@ export function MainContent({ chapterHtml, className }: MainContentProps) {
     >
       <AdSlot page="reading" position="top" />
       <div
-        className="prose max-w-none break-words font-serif leading-relaxed text-inherit prose-p:leading-relaxed [&_h1]:text-inherit [&_h2]:text-inherit [&_h3]:text-inherit [&_h4]:text-inherit [&_p]:text-inherit [&_li]:text-inherit [&_p]:text-[length:inherit] [&_li]:text-[length:inherit] [&_ul]:text-[length:inherit] [&_ol]:text-[length:inherit] [&_blockquote]:text-[length:inherit] [&_h1]:text-[length:inherit] [&_h2]:text-[length:inherit] [&_h3]:text-[length:inherit] [&_h4]:text-[length:inherit]"
+        className="prose max-w-none break-words font-serif leading-relaxed text-inherit prose-p:leading-relaxed [&_h1]:text-inherit [&_h2]:text-inherit [&_h3]:text-inherit [&_h4]:text-inherit [&_p]:text-inherit [&_li]:text-inherit [&_p]:!text-[length:inherit] [&_li]:!text-[length:inherit] [&_ul]:!text-[length:inherit] [&_ol]:!text-[length:inherit] [&_blockquote]:!text-[length:inherit] [&_h1]:!text-[length:inherit] [&_h2]:!text-[length:inherit] [&_h3]:!text-[length:inherit] [&_h4]:!text-[length:inherit]"
+        style={{ fontSize: "inherit" }}
         dangerouslySetInnerHTML={{ __html: first }}
       />
       {second ? (
         <>
           <AdSlot page="reading" position="mid" />
           <div
-            className="prose max-w-none break-words font-serif leading-relaxed text-inherit prose-p:leading-relaxed [&_h1]:text-inherit [&_h2]:text-inherit [&_h3]:text-inherit [&_h4]:text-inherit [&_p]:text-inherit [&_li]:text-inherit [&_p]:text-[length:inherit] [&_li]:text-[length:inherit] [&_ul]:text-[length:inherit] [&_ol]:text-[length:inherit] [&_blockquote]:text-[length:inherit] [&_h1]:text-[length:inherit] [&_h2]:text-[length:inherit] [&_h3]:text-[length:inherit] [&_h4]:text-[length:inherit]"
+            className="prose max-w-none break-words font-serif leading-relaxed text-inherit prose-p:leading-relaxed [&_h1]:text-inherit [&_h2]:text-inherit [&_h3]:text-inherit [&_h4]:text-inherit [&_p]:text-inherit [&_li]:text-inherit [&_p]:!text-[length:inherit] [&_li]:!text-[length:inherit] [&_ul]:!text-[length:inherit] [&_ol]:!text-[length:inherit] [&_blockquote]:!text-[length:inherit] [&_h1]:!text-[length:inherit] [&_h2]:!text-[length:inherit] [&_h3]:!text-[length:inherit] [&_h4]:!text-[length:inherit]"
+            style={{ fontSize: "inherit" }}
             dangerouslySetInnerHTML={{ __html: second }}
           />
         </>
