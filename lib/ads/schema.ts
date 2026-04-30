@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const adSlotSchema = z
+export const adItemSchema = z
   .object({
     enabled: z.boolean(),
     type: z.enum(["empty", "text", "image", "html"]),
@@ -23,6 +23,16 @@ export const adSlotSchema = z
     }
   });
 
+export type AdItemConfig = z.infer<typeof adItemSchema>;
+
+export const adDisplayModeSchema = z.enum(["rotate", "slide", "multi"]);
+export type AdDisplayMode = z.infer<typeof adDisplayModeSchema>;
+
+export const adSlotSchema = z.object({
+  mode: adDisplayModeSchema.default("rotate"),
+  items: z.array(adItemSchema).max(10, "每个广告位最多 10 条").default([])
+});
+
 export type AdSlotConfig = z.infer<typeof adSlotSchema>;
 
 const pageSlots = z.object({
@@ -40,11 +50,50 @@ export const adsJsonSchema = z.object({
 export type AdsJson = z.infer<typeof adsJsonSchema>;
 
 export function defaultAdsJson(): AdsJson {
-  const slot = (): AdSlotConfig => ({ enabled: false, type: "empty" });
+  const slot = (): AdSlotConfig => ({ mode: "rotate", items: [] });
   const block = () => ({ top: slot(), mid: slot(), bottom: slot() });
   return {
     directory: block(),
     reading: block(),
     guide: block()
   };
+}
+
+type LegacyAdSlot = AdItemConfig;
+
+function isLegacySlot(value: unknown): value is LegacyAdSlot {
+  if (!value || typeof value !== "object") return false;
+  return "type" in value && "enabled" in value;
+}
+
+function normalizeSlot(raw: unknown): AdSlotConfig {
+  if (isLegacySlot(raw)) {
+    return {
+      mode: "rotate",
+      items: [adItemSchema.parse(raw)]
+    };
+  }
+  return adSlotSchema.parse(raw);
+}
+
+export function normalizeAdsJson(raw: unknown): AdsJson {
+  const input = (raw ?? {}) as Record<string, unknown>;
+  const fallback = defaultAdsJson();
+  const pages = ["directory", "reading", "guide"] as const;
+  const slots = ["top", "mid", "bottom"] as const;
+
+  const normalized = Object.fromEntries(
+    pages.map((page) => {
+      const pageRaw = (input[page] ?? {}) as Record<string, unknown>;
+      const pageVal = Object.fromEntries(
+        slots.map((slot) => {
+          const rawSlot = pageRaw[slot] ?? fallback[page][slot];
+          return [slot, normalizeSlot(rawSlot)];
+        })
+      );
+      return [page, pageVal];
+    })
+  );
+
+  return adsJsonSchema.parse(normalized);
 }

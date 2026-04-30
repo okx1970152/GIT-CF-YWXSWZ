@@ -46,9 +46,10 @@ export function AnnotationAside({
         aria-label="Annotation track"
       >
         {slotTop}
-        <h2 className="font-serif text-xl font-semibold text-[var(--text-deep)]">{title}</h2>
+        <h2 className="font-serif text-[30px] font-semibold leading-tight text-[var(--text-deep)]">{title}</h2>
         <div
-          className="prose prose-sm mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)]"
+          className="prose mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)]"
+          style={{ fontSize: "var(--reader-content-font-size, 20px)" }}
           dangerouslySetInnerHTML={{ __html: guideHtml }}
         />
         {slotMid}

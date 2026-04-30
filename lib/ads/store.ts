@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { unstable_noStore as noStore } from "next/cache";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { adsJsonSchema, defaultAdsJson, type AdsJson } from "@/lib/ads/schema";
+import { defaultAdsJson, normalizeAdsJson, type AdsJson } from "@/lib/ads/schema";
 
 const ADS_PATH = path.join(process.cwd(), "data", "ads.json");
 
@@ -29,7 +29,7 @@ async function readAdsFromKv(): Promise<AdsJson | null> {
   const raw = await kv.get(ADS_KV_KEY);
   if (!raw) return null;
   try {
-    return adsJsonSchema.parse(JSON.parse(raw) as unknown);
+    return normalizeAdsJson(JSON.parse(raw) as unknown);
   } catch {
     return null;
   }
@@ -59,7 +59,7 @@ export async function getAds(): Promise<AdsJson> {
     }
     const raw = fs.readFileSync(ADS_PATH, "utf8");
     const parsed = JSON.parse(raw) as unknown;
-    return adsJsonSchema.parse(parsed);
+    return normalizeAdsJson(parsed);
   } catch {
     return defaultAdsJson();
   }
@@ -97,7 +97,7 @@ async function readAdsFromGithub(): Promise<AdsJson | null> {
 
     const text = Buffer.from(payload.content.replace(/\n/g, ""), "base64").toString("utf8");
     const parsed = JSON.parse(text) as unknown;
-    return adsJsonSchema.parse(parsed);
+    return normalizeAdsJson(parsed);
   } catch {
     return null;
   }

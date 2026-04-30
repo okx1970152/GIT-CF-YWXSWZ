@@ -180,7 +180,7 @@ export default async function ChapterPage({ params }: Props) {
           <article className="novel-container min-w-0">
             <h1
               className="story-text font-serif text-3xl font-bold tracking-tight"
-              style={{ color: "var(--reader-fg, var(--text-deep))", fontSize: "calc(var(--reader-font-size, 20px) * 1.9)" }}
+              style={{ color: "var(--reader-fg, var(--text-deep))", fontSize: "30px" }}
             >
               {chapter.title}
             </h1>

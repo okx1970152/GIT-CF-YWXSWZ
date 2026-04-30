@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
-import { adsJsonSchema, type AdsJson } from "@/lib/ads/schema";
+import { normalizeAdsJson, type AdsJson } from "@/lib/ads/schema";
 import { getAds, writeAdsLocal, writeAdsToKv } from "@/lib/ads/store";
 import { verifyAdminSession } from "@/lib/auth";
 import { commitAdsJsonToGithub } from "@/lib/github";
@@ -25,9 +25,10 @@ export async function POST(request: Request) {
   let parsed: AdsJson;
   try {
     const raw = (await request.json()) as unknown;
-    parsed = adsJsonSchema.parse(raw);
-  } catch {
-    return NextResponse.json({ error: "广告数据格式不正确" }, { status: 400 });
+    parsed = normalizeAdsJson(raw);
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : "广告数据格式不正确";
+    return NextResponse.json({ error: `广告数据格式不正确：${msg}` }, { status: 400 });
   }
 
   const payload = `${JSON.stringify(parsed, null, 2)}\n`;

@@ -131,7 +131,7 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
         className="reader-themed rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-5 shadow-sm sm:px-6"
         style={{
           ["--reader-fg" as string]: fg || "var(--text-deep)",
-          ["--reader-font-size" as string]: fontSize ? `${fontSize}px` : "20px",
+          ["--reader-content-font-size" as string]: fontSize ? `${fontSize}px` : "20px",
           backgroundColor: bg || undefined,
           color: fg || undefined
         }}
@@ -222,8 +222,8 @@ export function ReaderPreferences() {
         <span className="text-slate-600">Font size</span>
         <input
           type="range"
-          min={16}
-          max={26}
+          min={20}
+          max={50}
           step={1}
           value={fontSize ?? 20}
           onChange={(e) => setFontSize(Number.parseInt(e.target.value, 10))}
