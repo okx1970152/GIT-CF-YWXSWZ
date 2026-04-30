@@ -192,6 +192,7 @@ function SlotCard({
           <label className="mt-3 block text-xs font-medium text-slate-700">链接（可选）</label>
           <input
             className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-2 py-2 text-sm"
+            placeholder="例如：https://www.baidu.com 或 www.baidu.com"
             value={value.link ?? ""}
             onChange={(e) => onChange({ link: e.target.value })}
           />
@@ -258,5 +259,9 @@ function normalizeSlot(s: AdSlotConfig): AdSlotConfig {
 
 function optionalLink(link?: string): string | undefined {
   const t = link?.trim();
-  return t ? t : undefined;
+  if (!t) return undefined;
+  if (/^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(t)) return t;
+  if (t.startsWith("//")) return `https:${t}`;
+  if (t.startsWith("/") || t.startsWith("#") || t.startsWith("?")) return t;
+  return `https://${t}`;
 }

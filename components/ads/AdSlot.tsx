@@ -22,7 +22,12 @@ function renderSlot(cfg: AdSlotConfig): ReactNode {
     return (
       <div className="flex min-h-[30px] items-center justify-center px-2">
         {cfg.link ? (
-          <a href={cfg.link} className="underline decoration-slate-400 underline-offset-2 hover:text-emerald-900">
+          <a
+            href={normalizeAdHref(cfg.link)}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            className="underline decoration-slate-400 underline-offset-2 hover:text-emerald-900"
+          >
             {inner}
           </a>
         ) : (
@@ -41,7 +46,12 @@ function renderSlot(cfg: AdSlotConfig): ReactNode {
     return (
       <div className="text-center">
         {cfg.link ? (
-          <a href={cfg.link} className="inline-block">
+          <a
+            href={normalizeAdHref(cfg.link)}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            className="inline-block"
+          >
             {img}
           </a>
         ) : (
@@ -62,4 +72,13 @@ function renderSlot(cfg: AdSlotConfig): ReactNode {
   }
 
   return null;
+}
+
+function normalizeAdHref(raw: string): string {
+  const value = raw.trim();
+  if (!value) return "#";
+  if (/^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(value)) return value;
+  if (value.startsWith("//")) return `https:${value}`;
+  if (value.startsWith("/") || value.startsWith("#") || value.startsWith("?")) return value;
+  return `https://${value}`;
 }
