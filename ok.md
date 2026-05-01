@@ -729,3 +729,13 @@ GitHub Actions 自动部署报错：`KV namespace ... is not valid [code: 10042]
 - **运行时读取**：新增 `lib/content/load-markdown.ts`，章节页/元数据按需读取 `novels/**/chapters/*.md` 与 `annotations/*.md`（`react.cache` 去重同请求重复读取）。
 - **调用链更新**：`lib/content/chapters.ts`、`lib/content/annotations.ts`、`app/novels/.../chapters/[chapterNo]/page.tsx`、`lib/content/novels.ts`（搜索摘要不再依赖正文切片）、`app/sitemap.ts`。
 - **CI**：`.github/workflows/deploy-to-cloudflare.yml` 使用 `wrangler deploy --keep-vars --minify` 降低 gzip。
+
+## 2026-05-01（Worker 上章节 404：正文改走静态资源）
+
+### 现象
+线上 Cloudflare Worker 无法像本机一样用 `fs` 读 `novels/**.md`，章节页加载失败触发 `notFound()` → 404。
+
+### 处理
+- 构建前 `scripts/copy-novel-markdown-to-public.mjs` 将 `novels/**/chapters|annotations/*.md` 复制到 `public/__novel_md__/**`（随 ASSETS 发布，目录已加入 `.gitignore`）。
+- `lib/content/load-markdown.ts`：优先读 `public/__novel_md__` 或源码 `novels/`，否则同源 `fetch` 静态路径。
+- `package.json`：`build` 与 `cf-build` 在 `next build` / OpenNext 前执行 `copy-novel-md`。

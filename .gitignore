@@ -3,6 +3,9 @@ node_modules
 .next/
 out
 
+# 构建时从 novels/ 复制的章节/导读 markdown，随 public 静态发布（勿提交）
+public/__novel_md__
+
 # Cloudflare / OpenNext build output
 .open-next
 .wrangler
