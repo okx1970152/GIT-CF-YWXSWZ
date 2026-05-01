@@ -244,6 +244,9 @@ export function AdsAdminClient({ initial, sideImageManifest }: AdsAdminClientPro
         <p className="mt-1 text-sm text-slate-600">
           共 24 个位置：首页/分类页/目录页/正文阅读页，各自左上中下 + 右上中下。未启用不会显示。
         </p>
+        <p className="mt-1 text-sm text-slate-600">
+          侧边图片广告规格：推荐宽 170px × 高 400px；最高支持宽 180px × 高 400px。
+        </p>
         <div className="mt-4 grid gap-6">
           {(Object.entries(SIDE_SLOT_CODES_BY_PAGE) as Array<
             [keyof typeof SIDE_SLOT_CODES_BY_PAGE, { left: SideSlotCode[]; right: SideSlotCode[] }]
