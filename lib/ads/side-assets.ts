@@ -16,7 +16,7 @@ export type SideImageManifest = Record<SideSlotCode, SideImageOption[]>;
 export function emptySideImageManifest(): SideImageManifest {
   return Object.fromEntries(
     (Object.keys(SIDE_SLOT_LABEL_CN) as SideSlotCode[]).map((code) => [code, []])
-  ) as SideImageManifest;
+  ) as unknown as SideImageManifest;
 }
 
 export function readSideImageManifest(): SideImageManifest {

@@ -6,7 +6,7 @@ import {
   getLatestContentUpdatedAt
 } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
-import { getAnnotationIndexEntry } from "@/lib/content/annotations";
+import { getAnnotationIndexEntry } from "@/lib/content/annotation-index";
 import { SITE_URL } from "@/lib/seo";
 
 function absolute(path: string): string {

@@ -1,7 +1,7 @@
 import { getIndexCategories, getIndexNovel, getIndexNovelsByCategory } from "@/lib/content/content-index";
 import { novelInfoSchema, type NovelInfo } from "@/lib/content/schema";
 import { getChapters } from "@/lib/content/chapters";
-import { getAnnotationIndexEntry } from "@/lib/content/annotations";
+import { getAnnotationIndexEntry } from "@/lib/content/annotation-index";
 import { getChapterMetaByNo } from "@/lib/content/meta";
 
 export function getAllCategories(): string[] {
