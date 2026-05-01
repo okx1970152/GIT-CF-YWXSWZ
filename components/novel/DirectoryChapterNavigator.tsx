@@ -71,9 +71,9 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
     () =>
       Array.from({ length: totalPages }, (_, idx) => ({
         value: idx + 1,
-        label: `Page ${idx + 1}`
+        label: `Page${idx + 1} - ${idx * PAGE_SIZE + 1}-${Math.min((idx + 1) * PAGE_SIZE, filteredAndSorted.length)} chapters`
       })),
-    [totalPages]
+    [totalPages, filteredAndSorted.length]
   );
 
   useEffect(() => {
@@ -162,7 +162,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
           </form>
 
           <div className="grid gap-2">
-            <label className="text-xs font-semibold text-[var(--text-muted)]">Range by 10</label>
+            <label className="text-xs font-semibold text-[var(--text-muted)]">1-10 chapters</label>
             <select
               value={range10Value}
               onChange={(e) => applyRange(e.target.value, 10)}
@@ -171,14 +171,14 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
               <option value="">All chapters</option>
               {range10Options.map((opt) => (
                 <option key={`10-${opt.label}`} value={opt.label}>
-                  {opt.label}
+                  {opt.label} chapters
                 </option>
               ))}
             </select>
           </div>
 
           <div className="grid gap-2">
-            <label className="text-xs font-semibold text-[var(--text-muted)]">Range by 100</label>
+            <label className="text-xs font-semibold text-[var(--text-muted)]">1-100 chapters</label>
             <select
               value={range100Value}
               onChange={(e) => applyRange(e.target.value, 100)}
@@ -187,7 +187,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
               <option value="">All chapters</option>
               {range100Options.map((opt) => (
                 <option key={`100-${opt.label}`} value={opt.label}>
-                  {opt.label}
+                  {opt.label} chapters
                 </option>
               ))}
             </select>
