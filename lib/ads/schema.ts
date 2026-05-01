@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { SideSlotCode } from "@/components/ads/adPositions";
 
 export const adItemSchema = z
   .object({
@@ -7,13 +8,16 @@ export const adItemSchema = z
     text: z.string().optional(),
     link: z.string().optional(),
     imageUrl: z.string().optional(),
+    imageAsset: z.string().optional(),
     html: z.string().optional()
   })
   .superRefine((data, ctx) => {
     if (!data.enabled || data.type === "empty") return;
 
     if (data.type === "image") {
-      if (!data.imageUrl) ctx.addIssue({ code: z.ZodIssueCode.custom, message: "image 类型需要 imageUrl" });
+      if (!data.imageUrl && !data.imageAsset) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: "image 类型需要 imageUrl 或 imageAsset" });
+      }
     }
     if (data.type === "text") {
       if (!data.text) ctx.addIssue({ code: z.ZodIssueCode.custom, message: "text 类型需要 text" });
@@ -25,7 +29,7 @@ export const adItemSchema = z
 
 export type AdItemConfig = z.infer<typeof adItemSchema>;
 
-export const adDisplayModeSchema = z.enum(["rotate", "slide", "multi"]);
+export const adDisplayModeSchema = z.enum(["rotate", "slide", "multi", "random", "sequence"]);
 export type AdDisplayMode = z.infer<typeof adDisplayModeSchema>;
 
 export const adSlotSchema = z.object({
@@ -41,10 +45,22 @@ const pageSlots = z.object({
   bottom: adSlotSchema
 });
 
+const sideSlotCodeList = [
+  "szs", "szz", "szx", "sys", "syz", "syx",
+  "fzs", "fzz", "fzx", "fys", "fyz", "fyx",
+  "mzs", "mzz", "mzx", "mys", "myz", "myx",
+  "yzs", "yzz", "yzx", "yys", "yyz", "yyx"
+] as const satisfies readonly SideSlotCode[];
+
+const sideSlotsSchema = z.object(
+  Object.fromEntries(sideSlotCodeList.map((code) => [code, adSlotSchema])) as Record<SideSlotCode, typeof adSlotSchema>
+);
+
 export const adsJsonSchema = z.object({
   directory: pageSlots,
   reading: pageSlots,
-  guide: pageSlots
+  guide: pageSlots,
+  side: sideSlotsSchema
 });
 
 export type AdsJson = z.infer<typeof adsJsonSchema>;
@@ -52,10 +68,12 @@ export type AdsJson = z.infer<typeof adsJsonSchema>;
 export function defaultAdsJson(): AdsJson {
   const slot = (): AdSlotConfig => ({ mode: "rotate", items: [] });
   const block = () => ({ top: slot(), mid: slot(), bottom: slot() });
+  const side = Object.fromEntries(sideSlotCodeList.map((code) => [code, slot()])) as Record<SideSlotCode, AdSlotConfig>;
   return {
     directory: block(),
     reading: block(),
-    guide: block()
+    guide: block(),
+    side
   };
 }
 
@@ -94,6 +112,10 @@ export function normalizeAdsJson(raw: unknown): AdsJson {
       return [page, pageVal];
     })
   );
+  const sideRaw = (input.side ?? {}) as Record<string, unknown>;
+  const sideNormalized = Object.fromEntries(
+    sideSlotCodeList.map((code) => [code, normalizeSlot(sideRaw[code] ?? fallback.side[code])])
+  ) as Record<SideSlotCode, AdSlotConfig>;
 
-  return adsJsonSchema.parse(normalized);
+  return adsJsonSchema.parse({ ...normalized, side: sideNormalized });
 }

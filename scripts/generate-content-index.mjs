@@ -95,7 +95,6 @@ function buildIndex() {
           chapterNo,
           slug,
           title: data?.title ?? `Chapter ${chapterNo}`,
-          content,
           publishedAt: data?.published_at ?? null,
           updatedAt: data?.updated_at ?? null,
           wordCount,
@@ -116,8 +115,8 @@ function buildIndex() {
         annotationMap[chapterNo] = {
           chapterNo,
           title: typeof data?.title === "string" ? data.title : `Guide for ${chapterNo}`,
-          content: stripRelatedTopics(content),
           relatedTopics: parseRelatedTopics(content),
+          fileName,
         };
       }
 
@@ -145,7 +144,7 @@ function buildIndex() {
   }
 
   return {
-    version: 1,
+    version: 2,
     generatedAt: new Date().toISOString(),
     categories,
   };

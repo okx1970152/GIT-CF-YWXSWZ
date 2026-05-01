@@ -4,7 +4,8 @@ export type ChapterItem = {
   chapterNo: string;
   slug: string;
   title: string;
-  content: string;
+  /** 正文不再随索引 JSON 打包；章节页运行时从 novels 目录读取 */
+  content?: string;
   publishedAt?: string;
   updatedAt?: string;
   /** 正文词数（索引生成：YAML word_count 或正文估算） */
@@ -49,7 +50,6 @@ export function getChapters(categorySlug: string, novelId: string): ChapterItem[
       chapterNo: c.chapterNo,
       slug: c.slug,
       title: c.title,
-      content: c.content,
       publishedAt: c.publishedAt || undefined,
       updatedAt: c.updatedAt || undefined,
       wordCount: typeof c.wordCount === "number" ? c.wordCount : undefined,

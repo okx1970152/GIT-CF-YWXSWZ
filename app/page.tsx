@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -50,7 +51,8 @@ export default function HomePage() {
   return (
     <>
       <JsonLd id="ld-json-website" data={websiteJsonLd} />
-      <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
+      <SideAdsLayout page="home">
+        <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
         <section aria-label="Homepage semantic summary" className="sr-only">
           <h1>A Calm Reading Room for Eastern Fantasy Worlds</h1>
           <p>
@@ -83,7 +85,8 @@ export default function HomePage() {
             novels={featured ? [featured, ...hotEssays] : hotEssays}
           />
         </section>
-      </div>
+        </div>
+      </SideAdsLayout>
     </>
   );
 }

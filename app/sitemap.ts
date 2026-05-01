@@ -6,7 +6,7 @@ import {
   getLatestContentUpdatedAt
 } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
-import { getAnnotationByChapterNo } from "@/lib/content/annotations";
+import { getAnnotationIndexEntry } from "@/lib/content/annotations";
 import { SITE_URL } from "@/lib/seo";
 
 function absolute(path: string): string {
@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.7
       });
-      const guide = getAnnotationByChapterNo(novel.categorySlug, novel.novelId, chapter.chapterNo);
+      const guide = getAnnotationIndexEntry(novel.categorySlug, novel.novelId, chapter.chapterNo);
       guide?.relatedTopics.forEach((topic) => topics.add(topic));
     }
   }

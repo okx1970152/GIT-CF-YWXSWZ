@@ -55,4 +55,4 @@ jobs:
           echo "$ADMIN_PASSWORD" | npx wrangler secret put ADMIN_PASSWORD
           echo "$ADMIN_SESSION_SECRET" | npx wrangler secret put ADMIN_SESSION_SECRET
           echo "$APP_GH_TOKEN" | npx wrangler secret put APP_GH_TOKEN
-          npx wrangler deploy --keep-vars
+          npx wrangler deploy --keep-vars --minify

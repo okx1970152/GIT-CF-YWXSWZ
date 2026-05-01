@@ -705,3 +705,27 @@ GitHub Actions 自动部署报错：`KV namespace ... is not valid [code: 10042]
 - **`app/api/admin/ads/route.ts`**：保存时优先 **KV**；本地开发写文件；生产在无 KV 时可选用 GitHub 回写（兼容旧部署）；否则返回 503 明确提示绑定 KV。
 - **效果**：线上保存广告不再依赖 `GITHUB_TOKEN` 注入 Workers（仅需 Wrangler 已绑定的 `SITE_STATS_KV`），不触发仓库提交与重复部署。
 - **说明**：首次部署后 KV 为空时仍可从原 GitHub/本地读；在后台点一次保存即可把配置写入 KV。`npm run lint` 已通过。
+
+## 2026-05-01（桌面两侧 24 位广告 + 中文后台）
+
+### 提问
+新增桌面端两侧广告位（首页/分类页/目录页/正文阅读页，左上中下+右上中下，共 24 位），手机端不显示；每位支持多条广告并可轮播/随机/顺序；素材来自 `public/LiangCeIMG/<位编码>/`，支持中文文件名，后台下拉可选且操作元素中文化。
+
+### 本次完成变更摘要
+- **广告结构扩展**：`lib/ads/schema.ts` 新增 `side` 24 位结构，兼容旧中心位数据；`AdDisplayMode` 扩展 `random`/`sequence`。
+- **位置与中文命名**：`components/ads/adPositions.ts` 新增 24 位编码与中文标签，以及按页面分组（home/category/directory/reading）。
+- **素材自动识别**：`lib/ads/side-assets.ts` 扫描 `public/LiangCeIMG/<slot>/`，支持 `.png/.jpg/.jpeg/.webp/.avif/.gif`，并对中文文件名 URL 编码，后台可安全读取。
+- **后台管理中文化**：`components/admin/AdsAdminClient.tsx` 新增“两侧广告位”编辑区，24 位独立管理，图片素材下拉选择；仅启用项生效。
+- **前台渲染**：新增 `components/ads/SideAdsLayout.tsx` 与 `SideAdSlot`；桌面 `xl` 显示两侧，手机端自动隐藏，不影响原中心广告位。
+- **页面接入范围**：首页、分类页、目录页、正文阅读页接入两侧容器；原有目录/正文/导读中心广告规则保持不变。
+
+## 2026-05-01（内容索引瘦身 + Worker 部署 minify）
+
+### 提问
+小说更新越多，OpenNext Worker gzip 越接近/超过 Cloudflare Free 3MiB；需要把“章节正文/导读正文”从 `data/content-index.json` 的全量打包路径中移出，并压缩上传脚本。
+
+### 本次完成变更摘要
+- **索引**：`scripts/generate-content-index.mjs` 升级为 `version: 2`：章节不再写入 `content`；导读不再写入正文，仅保留 `relatedTopics + fileName`。
+- **运行时读取**：新增 `lib/content/load-markdown.ts`，章节页/元数据按需读取 `novels/**/chapters/*.md` 与 `annotations/*.md`（`react.cache` 去重同请求重复读取）。
+- **调用链更新**：`lib/content/chapters.ts`、`lib/content/annotations.ts`、`app/novels/.../chapters/[chapterNo]/page.tsx`、`lib/content/novels.ts`（搜索摘要不再依赖正文切片）、`app/sitemap.ts`。
+- **CI**：`.github/workflows/deploy-to-cloudflare.yml` 使用 `wrangler deploy --keep-vars --minify` 降低 gzip。

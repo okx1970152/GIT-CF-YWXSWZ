@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { NovelInfo } from "@/lib/content/schema";
 import type { ChapterItem } from "@/lib/content/chapters";
 import { AdSlot } from "@/components/ads/AdSlot";
+import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
 
 type DirectoryPageProps = {
@@ -24,7 +25,8 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
   ];
 
   return (
-    <div className="mx-auto max-w-[1100px] px-4 pb-16 pt-6">
+    <SideAdsLayout page="directory">
+      <div className="mx-auto max-w-[1100px] px-4 pb-16 pt-6">
       <section aria-label={`${novel.title} semantic summary`} className="sr-only">
         <h1>{displayTitle}</h1>
         <p>{summary}</p>
@@ -133,6 +135,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
       </section>
 
       <AdSlot page="directory" position="bottom" />
-    </div>
+      </div>
+    </SideAdsLayout>
   );
 }

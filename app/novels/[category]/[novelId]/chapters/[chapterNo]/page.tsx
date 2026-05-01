@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { markdownToHtml } from "@/lib/markdown";
+import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { ChapterReader } from "@/components/novel/ChapterReader";
 import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
@@ -9,7 +10,8 @@ import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { getChapterMetaByNo } from "@/lib/content/meta";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
-import { getAnnotationByChapterNo } from "@/lib/content/annotations";
+import { loadAnnotationByChapterNo } from "@/lib/content/annotations";
+import { loadChapterMarkdownCached } from "@/lib/content/load-markdown";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
@@ -43,8 +45,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const displayTitle = getDisplayNovelTitle(novel);
   const summary = getNovelSummary(novel);
 
+  let chapterBody = "";
+  if (!chapterMeta?.chapter_meta_description?.trim()) {
+    try {
+      const loaded = await loadChapterMarkdownCached(category, novelId, chapter.fileName);
+      chapterBody = loaded.body;
+    } catch {
+      chapterBody = "";
+    }
+  }
+
   const description =
-    chapterMeta?.chapter_meta_description || readingDescription(chapter.content, summary);
+    chapterMeta?.chapter_meta_description || readingDescription(chapterBody, summary);
   const canonicalPath = `/novels/${category}/${novelId}/chapters/${chapterNo}`;
   const chapterTitleFull =
     chapterMeta?.chapter_seo_title || `${chapter.title} - ${displayTitle} - Reading Mode`;
@@ -87,7 +99,15 @@ export default async function ChapterPage({ params }: Props) {
   const displayTitle = getDisplayNovelTitle(novel);
   const summary = getNovelSummary(novel);
 
-  const annotation = getAnnotationByChapterNo(category, novelId, chapterNo);
+  let chapterBody = "";
+  try {
+    const loaded = await loadChapterMarkdownCached(category, novelId, chapter.fileName);
+    chapterBody = loaded.body;
+  } catch {
+    notFound();
+  }
+
+  const annotation = await loadAnnotationByChapterNo(category, novelId, chapterNo);
   const adjacent = getAdjacentChapters(category, novelId, chapterNo);
   const topicPool = [
     ...(annotation?.relatedTopics ?? []),
@@ -96,7 +116,7 @@ export default async function ChapterPage({ params }: Props) {
   const topics = topicPool.length ? Array.from(new Set(topicPool)) : [];
 
 
-  const chapterHtml = await markdownToHtml(chapter.content);
+  const chapterHtml = await markdownToHtml(chapterBody);
   const guideHtml = await markdownToHtml(annotation?.content || "*No annotation yet.*");
 
   const basePath = `/novels/${category}/${novelId}`;
@@ -105,7 +125,7 @@ export default async function ChapterPage({ params }: Props) {
   const nextHref = adjacent.next ? `${basePath}/chapters/${adjacent.next}` : null;
 
   const description =
-    chapterMeta?.chapter_meta_description || readingDescription(chapter.content, summary);
+    chapterMeta?.chapter_meta_description || readingDescription(chapterBody, summary);
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -175,8 +195,9 @@ export default async function ChapterPage({ params }: Props) {
       <JsonLd id="ld-json-chapter-breadcrumb" data={breadcrumbJsonLd} />
       <JsonLd id="ld-json-chapter-article" data={articleJsonLd} />
 
-      <ChapterReader>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
+      <SideAdsLayout page="reading">
+        <ChapterReader>
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
           <article className="novel-container min-w-0">
             <h1
               className="story-text font-serif text-3xl font-bold tracking-tight"
@@ -200,8 +221,9 @@ export default async function ChapterPage({ params }: Props) {
             guideHtml={guideHtml}
             topics={topics}
           />
-        </div>
-      </ChapterReader>
+          </div>
+        </ChapterReader>
+      </SideAdsLayout>
     </>
   );
 }

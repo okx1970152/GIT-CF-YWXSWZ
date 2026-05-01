@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { AdItemConfig, AdSlotConfig } from "@/lib/ads/schema";
 import { getAds } from "@/lib/ads/store";
+import type { SideSlotCode } from "@/components/ads/adPositions";
 
 type AdPage = "directory" | "reading" | "guide";
 type AdPosition = "top" | "mid" | "bottom";
@@ -8,16 +9,32 @@ type AdPosition = "top" | "mid" | "bottom";
 export async function AdSlot(props: { page: AdPage; position: AdPosition }) {
   const ads = await getAds();
   const cfg = ads[props.page][props.position];
-  return <>{renderSlot(cfg, `${props.page}:${props.position}`)}</>;
+  return <>{renderSlot(cfg, `${props.page}:${props.position}`, "center")}</>;
 }
 
-function renderSlot(cfg: AdSlotConfig, slotKey: string): ReactNode {
+export async function SideAdSlot(props: { code: SideSlotCode }) {
+  const ads = await getAds();
+  const cfg = ads.side[props.code];
+  return <>{renderSlot(cfg, `side:${props.code}`, "side")}</>;
+}
+
+function renderSlot(cfg: AdSlotConfig, slotKey: string, style: "center" | "side"): ReactNode {
   const enabledItems = cfg.items.filter((item) => item.enabled && item.type !== "empty");
   if (!enabledItems.length) return null;
 
   if (cfg.mode === "rotate") {
     const selected = enabledItems[pickRotateIndex(slotKey, enabledItems.length)];
-    return <div className="w-full">{renderItem(selected)}</div>;
+    return <div className="w-full">{renderItem(selected, style)}</div>;
+  }
+
+  if (cfg.mode === "random") {
+    const selected = enabledItems[pickRandomIndex(slotKey, enabledItems.length)];
+    return <div className="w-full">{renderItem(selected, style)}</div>;
+  }
+
+  if (cfg.mode === "sequence") {
+    const selected = enabledItems[pickSequenceIndex(slotKey, enabledItems.length)];
+    return <div className="w-full">{renderItem(selected, style)}</div>;
   }
 
   if (cfg.mode === "slide") {
@@ -25,7 +42,7 @@ function renderSlot(cfg: AdSlotConfig, slotKey: string): ReactNode {
       <div className="scrollbar-hide -mx-1 flex gap-3 overflow-x-auto px-1 py-1">
         {enabledItems.map((item, idx) => (
           <div key={`${slotKey}-slide-${idx}`} className="min-w-[220px] flex-1 rounded-lg border border-slate-200 bg-white/70 p-2">
-            {renderItem(item)}
+            {renderItem(item, style)}
           </div>
         ))}
       </div>
@@ -36,18 +53,22 @@ function renderSlot(cfg: AdSlotConfig, slotKey: string): ReactNode {
     <div className="grid gap-3 sm:grid-cols-2">
       {enabledItems.map((item, idx) => (
         <div key={`${slotKey}-multi-${idx}`} className="rounded-lg border border-slate-200 bg-white/70 p-2">
-          {renderItem(item)}
+          {renderItem(item, style)}
         </div>
       ))}
     </div>
   );
 }
 
-function renderItem(cfg: AdItemConfig): ReactNode {
+function renderItem(cfg: AdItemConfig, style: "center" | "side"): ReactNode {
   if (cfg.type === "text") {
     if (!cfg.text) return null;
+    const textClass =
+      style === "side"
+        ? "break-words text-center font-sans text-sm text-slate-700"
+        : "break-words text-center font-sans text-sm text-slate-700";
     const inner = (
-      <span className="break-words text-center font-sans text-sm text-slate-700">{cfg.text}</span>
+      <span className={textClass}>{cfg.text}</span>
     );
     return (
       <div className="flex min-h-[30px] items-center justify-center px-2">
@@ -68,10 +89,16 @@ function renderItem(cfg: AdItemConfig): ReactNode {
   }
 
   if (cfg.type === "image") {
-    if (!cfg.imageUrl) return null;
+    const src = cfg.imageAsset || cfg.imageUrl;
+    if (!src) return null;
     const img = (
       // eslint-disable-next-line @next/next/no-img-element -- arbitrary remote ad URLs
-      <img src={cfg.imageUrl} alt="" className="mx-auto max-h-40 max-w-full object-contain" loading="lazy" />
+      <img
+        src={src}
+        alt=""
+        className={style === "side" ? "mx-auto h-[400px] max-w-full object-contain" : "mx-auto max-h-40 max-w-full object-contain"}
+        loading="lazy"
+      />
     );
     return (
       <div className="text-center">
@@ -110,6 +137,27 @@ function pickRotateIndex(slotKey: string, size: number): number {
   let hash = minuteSeed;
   for (let i = 0; i < slotKey.length; i += 1) {
     hash = (hash * 33 + slotKey.charCodeAt(i)) >>> 0;
+  }
+  return hash % size;
+}
+
+function pickRandomIndex(slotKey: string, size: number): number {
+  if (size <= 1) return 0;
+  const seed = `${slotKey}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+  let hash = 2166136261;
+  for (let i = 0; i < seed.length; i += 1) {
+    hash ^= seed.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return Math.abs(hash) % size;
+}
+
+function pickSequenceIndex(slotKey: string, size: number): number {
+  if (size <= 1) return 0;
+  const minuteSeed = Math.floor(Date.now() / 30000);
+  let hash = minuteSeed;
+  for (let i = 0; i < slotKey.length; i += 1) {
+    hash = (hash * 131 + slotKey.charCodeAt(i)) >>> 0;
   }
   return hash % size;
 }

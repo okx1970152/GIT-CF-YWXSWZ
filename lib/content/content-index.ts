@@ -4,7 +4,6 @@ export type ContentIndexChapter = {
   chapterNo: string;
   slug: string;
   title: string;
-  content: string;
   publishedAt: string | null;
   updatedAt: string | null;
   /** 正文词数（来自 frontmatter word_count 或由正文估算） */
@@ -15,8 +14,9 @@ export type ContentIndexChapter = {
 export type ContentIndexAnnotation = {
   chapterNo: string;
   title: string;
-  content: string;
   relatedTopics: string[];
+  /** 原始导读文件名（用于运行时读取 markdown，避免把正文打进索引 JSON） */
+  fileName: string;
 };
 
 export type ContentIndexNovel = {

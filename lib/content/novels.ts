@@ -1,7 +1,7 @@
 import { getIndexCategories, getIndexNovel, getIndexNovelsByCategory } from "@/lib/content/content-index";
 import { novelInfoSchema, type NovelInfo } from "@/lib/content/schema";
 import { getChapters } from "@/lib/content/chapters";
-import { getAnnotationByChapterNo } from "@/lib/content/annotations";
+import { getAnnotationIndexEntry } from "@/lib/content/annotations";
 import { getChapterMetaByNo } from "@/lib/content/meta";
 
 export function getAllCategories(): string[] {
@@ -116,16 +116,17 @@ export function getSearchIndex(): SearchResult[] {
     });
 
     for (const chapter of getChapters(novel.categorySlug, novel.novelId)) {
-      const guide = getAnnotationByChapterNo(novel.categorySlug, novel.novelId, chapter.chapterNo);
+      const guide = getAnnotationIndexEntry(novel.categorySlug, novel.novelId, chapter.chapterNo);
       const chapterMeta = getChapterMetaByNo(novel.categorySlug, novel.novelId, chapter.chapterNo);
       const topics = guide?.relatedTopics.join(" ") || "";
       const chapterKeywords = chapterMeta?.chapter_keywords?.join(" ") || "";
       const guideTags = chapterMeta?.guide_tags?.join(" ") || "";
+      const metaDesc = chapterMeta?.chapter_meta_description?.trim() || "";
 
       results.push({
         type: "chapter",
         title: `${chapter.title} (${chapter.chapterNo})`,
-        excerpt: `${chapter.content.slice(0, 120)} ${topics} ${chapterKeywords} ${guideTags}`.trim(),
+        excerpt: `${metaDesc} ${chapter.title} ${topics} ${chapterKeywords} ${guideTags}`.trim(),
         href: `/novels/${novel.categorySlug}/${novel.novelId}/chapters/${chapter.chapterNo}`
       });
     }

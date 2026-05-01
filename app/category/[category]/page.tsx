@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { NovelCard } from "@/components/novel/NovelCard";
 import { ALL_CATEGORY_SLUGS, getCategoryLabel } from "@/lib/content/categories";
@@ -53,7 +54,8 @@ export default async function CategoryPage({ params }: Props) {
   const latestRail = latest.slice(0, 8);
 
   return (
-    <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
+    <SideAdsLayout page="category">
+      <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
       <section aria-label={`${label} category semantic summary`} className="sr-only">
         <h1>{label} Novels</h1>
         <p>
@@ -82,6 +84,7 @@ export default async function CategoryPage({ params }: Props) {
           </p>
         )}
       </section>
-    </div>
+      </div>
+    </SideAdsLayout>
   );
 }

@@ -4,29 +4,41 @@ import { useMemo, useState } from "react";
 import type { AdDisplayMode, AdItemConfig, AdSlotConfig, AdsJson } from "@/lib/ads/schema";
 import {
   PAGE_LABEL_CN,
+  SIDE_SLOT_CODES_BY_PAGE,
+  SIDE_SLOT_LABEL_CN,
   SLOT_LABEL_CN,
   type PageKey,
+  type SideSlotCode,
   type SlotKey
 } from "@/components/ads/adPositions";
 import { AdminNav } from "@/components/admin/AdminNav";
+import type { SideImageManifest, SideImageOption } from "@/lib/ads/side-assets";
 
 const PAGES: PageKey[] = ["directory", "reading", "guide"];
 const SLOTS: SlotKey[] = ["top", "mid", "bottom"];
 const MODE_OPTIONS: Array<{ value: AdDisplayMode; label: string }> = [
   { value: "rotate", label: "轮播（同位一次展示1条）" },
+  { value: "random", label: "随机（按当前时间随机1条）" },
+  { value: "sequence", label: "顺序（按列表顺序轮到1条）" },
   { value: "slide", label: "滑动（横向滚动显示）" },
   { value: "multi", label: "多行（同时显示多条）" }
+];
+const SIDE_MODE_OPTIONS: Array<{ value: AdDisplayMode; label: string }> = [
+  { value: "rotate", label: "轮播" },
+  { value: "random", label: "随机" },
+  { value: "sequence", label: "顺序" }
 ];
 
 type AdsAdminClientProps = {
   initial: AdsJson;
+  sideImageManifest: SideImageManifest;
 };
 
 function cloneAds(json: AdsJson): AdsJson {
   return JSON.parse(JSON.stringify(json)) as AdsJson;
 }
 
-export function AdsAdminClient({ initial }: AdsAdminClientProps) {
+export function AdsAdminClient({ initial, sideImageManifest }: AdsAdminClientProps) {
   const [data, setData] = useState<AdsJson>(() => cloneAds(initial));
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
@@ -85,6 +97,61 @@ export function AdsAdminClient({ initial }: AdsAdminClientProps) {
       items[idx] = items[target];
       items[target] = tmp;
       next[page][slot] = normalizeSlot({ ...next[page][slot], items });
+      return next;
+    });
+  }
+
+  function patchSideSlot(slotCode: SideSlotCode, patch: Partial<AdSlotConfig>) {
+    setData((prev) => {
+      const next = cloneAds(prev);
+      next.side[slotCode] = normalizeSlot({
+        ...next.side[slotCode],
+        ...patch
+      });
+      return next;
+    });
+  }
+
+  function patchSideItem(slotCode: SideSlotCode, idx: number, patch: Partial<AdItemConfig>) {
+    setData((prev) => {
+      const next = cloneAds(prev);
+      const items = [...next.side[slotCode].items];
+      items[idx] = normalizeItem({ ...items[idx], ...patch });
+      next.side[slotCode] = normalizeSlot({ ...next.side[slotCode], items });
+      return next;
+    });
+  }
+
+  function addSideItem(slotCode: SideSlotCode) {
+    setData((prev) => {
+      const next = cloneAds(prev);
+      const items = [...next.side[slotCode].items];
+      if (items.length >= 10) return prev;
+      items.push(defaultAdItem());
+      next.side[slotCode] = normalizeSlot({ ...next.side[slotCode], items });
+      return next;
+    });
+  }
+
+  function removeSideItem(slotCode: SideSlotCode, idx: number) {
+    setData((prev) => {
+      const next = cloneAds(prev);
+      const items = next.side[slotCode].items.filter((_, i) => i !== idx);
+      next.side[slotCode] = normalizeSlot({ ...next.side[slotCode], items });
+      return next;
+    });
+  }
+
+  function moveSideItem(slotCode: SideSlotCode, idx: number, direction: -1 | 1) {
+    setData((prev) => {
+      const next = cloneAds(prev);
+      const items = [...next.side[slotCode].items];
+      const target = idx + direction;
+      if (target < 0 || target >= items.length) return prev;
+      const tmp = items[idx];
+      items[idx] = items[target];
+      items[target] = tmp;
+      next.side[slotCode] = normalizeSlot({ ...next.side[slotCode], items });
       return next;
     });
   }
@@ -164,11 +231,70 @@ export function AdsAdminClient({ initial }: AdsAdminClientProps) {
                   onAddItem={() => addItem(page, slot)}
                   onRemoveItem={(idx) => removeItem(page, slot, idx)}
                   onMoveItem={(idx, direction) => moveItem(page, slot, idx, direction)}
+                  modeOptions={MODE_OPTIONS}
                 />
               ))}
             </div>
           </section>
         ))}
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold text-emerald-950">两侧广告位（仅桌面端显示，手机端不显示）</h2>
+        <p className="mt-1 text-sm text-slate-600">
+          共 24 个位置：首页/分类页/目录页/正文阅读页，各自左上中下 + 右上中下。未启用不会显示。
+        </p>
+        <div className="mt-4 grid gap-6">
+          {(Object.entries(SIDE_SLOT_CODES_BY_PAGE) as Array<
+            [keyof typeof SIDE_SLOT_CODES_BY_PAGE, { left: SideSlotCode[]; right: SideSlotCode[] }]
+          >).map(([pageKey, side]) => (
+            <section key={pageKey} className="rounded-xl border border-slate-100 bg-slate-50/80 p-4">
+              <h3 className="text-sm font-semibold text-slate-900">
+                {pageKey === "home"
+                  ? "首页"
+                  : pageKey === "category"
+                    ? "分类页"
+                    : pageKey === "directory"
+                      ? "目录页"
+                      : "正文阅读页"}
+              </h3>
+              <div className="mt-3 grid gap-4 xl:grid-cols-2">
+                <div className="grid gap-3">
+                  {side.left.map((slotCode) => (
+                    <SlotCard
+                      key={slotCode}
+                      title={SIDE_SLOT_LABEL_CN[slotCode]}
+                      value={data.side[slotCode]}
+                      onSlotChange={(patch) => patchSideSlot(slotCode, patch)}
+                      onItemChange={(idx, patch) => patchSideItem(slotCode, idx, patch)}
+                      onAddItem={() => addSideItem(slotCode)}
+                      onRemoveItem={(idx) => removeSideItem(slotCode, idx)}
+                      onMoveItem={(idx, direction) => moveSideItem(slotCode, idx, direction)}
+                      modeOptions={SIDE_MODE_OPTIONS}
+                      imageOptions={sideImageManifest[slotCode] ?? []}
+                    />
+                  ))}
+                </div>
+                <div className="grid gap-3">
+                  {side.right.map((slotCode) => (
+                    <SlotCard
+                      key={slotCode}
+                      title={SIDE_SLOT_LABEL_CN[slotCode]}
+                      value={data.side[slotCode]}
+                      onSlotChange={(patch) => patchSideSlot(slotCode, patch)}
+                      onItemChange={(idx, patch) => patchSideItem(slotCode, idx, patch)}
+                      onAddItem={() => addSideItem(slotCode)}
+                      onRemoveItem={(idx) => removeSideItem(slotCode, idx)}
+                      onMoveItem={(idx, direction) => moveSideItem(slotCode, idx, direction)}
+                      modeOptions={SIDE_MODE_OPTIONS}
+                      imageOptions={sideImageManifest[slotCode] ?? []}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
 
       <div className="mt-10 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
@@ -197,7 +323,9 @@ function SlotCard({
   onItemChange,
   onAddItem,
   onRemoveItem,
-  onMoveItem
+  onMoveItem,
+  modeOptions,
+  imageOptions
 }: {
   title: string;
   value: AdSlotConfig;
@@ -206,6 +334,8 @@ function SlotCard({
   onAddItem: () => void;
   onRemoveItem: (idx: number) => void;
   onMoveItem: (idx: number, direction: -1 | 1) => void;
+  modeOptions: Array<{ value: AdDisplayMode; label: string }>;
+  imageOptions?: SideImageOption[];
 }) {
   return (
     <div className="rounded-xl border border-slate-100 bg-slate-50/80 p-4">
@@ -227,7 +357,7 @@ function SlotCard({
         value={value.mode}
         onChange={(e) => onSlotChange({ mode: e.target.value as AdDisplayMode })}
       >
-        {MODE_OPTIONS.map((item) => (
+        {modeOptions.map((item) => (
           <option key={item.value} value={item.value}>
             {item.label}
           </option>
@@ -248,6 +378,7 @@ function SlotCard({
             onMoveDown={() => onMoveItem(idx, 1)}
             canMoveUp={idx > 0}
             canMoveDown={idx < value.items.length - 1}
+            imageOptions={imageOptions}
           />
         ))}
       </div>
@@ -263,7 +394,8 @@ function ItemCard({
   onMoveUp,
   onMoveDown,
   canMoveUp,
-  canMoveDown
+  canMoveDown,
+  imageOptions
 }: {
   index: number;
   value: AdItemConfig;
@@ -273,7 +405,11 @@ function ItemCard({
   onMoveDown: () => void;
   canMoveUp: boolean;
   canMoveDown: boolean;
+  imageOptions?: SideImageOption[];
 }) {
+  const selectedAsset = (imageOptions ?? []).find((option) => option.imageUrl === (value.imageAsset ?? ""));
+  const previewSrc = value.imageAsset || value.imageUrl;
+
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-3">
       <div className="flex items-center justify-between gap-2">
@@ -298,7 +434,7 @@ function ItemCard({
           const t = e.target.value as AdItemConfig["type"];
           if (t === "empty") onChange({ type: "empty", text: undefined, link: undefined, imageUrl: undefined, html: undefined });
           else if (t === "text") onChange({ type: "text", text: value.text ?? "" });
-          else if (t === "image") onChange({ type: "image", imageUrl: value.imageUrl ?? "" });
+          else if (t === "image") onChange({ type: "image", imageUrl: value.imageUrl ?? "", imageAsset: value.imageAsset });
           else onChange({ type: "html", html: value.html ?? "" });
         }}
       >
@@ -324,7 +460,34 @@ function ItemCard({
 
       {value.type === "image" ? (
         <>
-          <label className="mt-2 block text-xs font-medium text-slate-700">图片 URL</label>
+          <label className="mt-2 block text-xs font-medium text-slate-700">选择素材图片（可选）</label>
+          <select
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-2 py-2 text-sm"
+            value={value.imageAsset ?? ""}
+            onChange={(e) => onChange({ imageAsset: e.target.value || undefined })}
+          >
+            <option value="">不使用素材库（改用手填 URL）</option>
+            {(imageOptions ?? []).map((option) => (
+              <option key={option.imageUrl} value={option.imageUrl}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          {previewSrc ? (
+            <div className="mt-2 rounded-lg border border-slate-200 bg-slate-50 p-2">
+              <p className="text-[11px] text-slate-600">
+                当前预览：{selectedAsset?.fileName ?? "手填 URL 图片"}
+              </p>
+              {/* eslint-disable-next-line @next/next/no-img-element -- admin preview for ad assets */}
+              <img
+                src={previewSrc}
+                alt="广告素材预览"
+                className="mt-1 h-24 w-full rounded border border-slate-200 object-contain bg-white"
+                loading="lazy"
+              />
+            </div>
+          ) : null}
+          <label className="mt-2 block text-xs font-medium text-slate-700">图片 URL（可选，未选素材时可手填）</label>
           <input className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-2 py-2 text-sm" value={value.imageUrl ?? ""} onChange={(e) => onChange({ imageUrl: e.target.value })} />
         </>
       ) : null}
@@ -360,7 +523,12 @@ function normalizeItem(s: AdItemConfig): AdItemConfig {
   if (base.type === "empty") return { enabled: base.enabled, type: "empty" };
   if (base.type === "text") return { ...base, text: (s.text ?? "").trim(), link: optionalLink(s.link) };
   if (base.type === "image") {
-    return { ...base, imageUrl: (s.imageUrl ?? "").trim(), link: optionalLink(s.link) };
+    return {
+      ...base,
+      imageUrl: (s.imageUrl ?? "").trim(),
+      imageAsset: s.imageAsset?.trim() || undefined,
+      link: optionalLink(s.link)
+    };
   }
   return { ...base, html: s.html ?? "" };
 }
