@@ -3,6 +3,7 @@ import type { NovelInfo } from "@/lib/content/schema";
 import type { ChapterItem } from "@/lib/content/chapters";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
+import { DirectoryChapterNavigator } from "@/components/novel/DirectoryChapterNavigator";
 import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
 
 type DirectoryPageProps = {
@@ -98,40 +99,13 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
         <h2 id="chapter-list-heading" className="font-serif text-2xl font-semibold text-[var(--text-deep)]">
           Chapters
         </h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {chapters.map((chapter) => (
-            <li key={chapter.chapterNo} className="min-w-0">
-              <Link
-                href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${chapter.chapterNo}`}
-                className="flex h-full items-center justify-between gap-4 rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-3 font-serif text-[var(--text-deep)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-              >
-                <span className="min-w-0">
-                  <span className="line-clamp-2 block font-medium">
-                    {chapter.chapterNo} — {chapter.title}
-                  </span>
-                  {chapter.wordCount != null && chapter.wordCount > 0 ? (
-                    <span className="mt-0.5 block font-sans text-[11px] text-[var(--text-muted)]">
-                      {chapter.wordCount.toLocaleString("en-US")} words
-                    </span>
-                  ) : null}
-                  <span className="mt-1 flex flex-wrap items-center gap-1.5">
-                    {firstChapter?.chapterNo === chapter.chapterNo ? (
-                      <span className="rounded-full border border-[#9cd8b5] bg-[#e9f8ef] px-2 py-0.5 text-[10px] font-sans font-semibold uppercase tracking-wide text-[#058c46]">
-                        Start
-                      </span>
-                    ) : null}
-                    {latestChapter?.chapterNo === chapter.chapterNo ? (
-                      <span className="rounded-full border border-[#9cd8b5] bg-[#e9f8ef] px-2 py-0.5 text-[10px] font-sans font-semibold uppercase tracking-wide text-[#058c46]">
-                        Latest
-                      </span>
-                    ) : null}
-                  </span>
-                </span>
-                <span className="shrink-0 text-sm text-[#058c46]">Read →</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-4">
+          <DirectoryChapterNavigator
+            chapters={chapters}
+            categorySlug={novel.categorySlug}
+            novelId={novel.novelId}
+          />
+        </div>
       </section>
 
       <AdSlot page="directory" position="bottom" />

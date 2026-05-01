@@ -739,3 +739,17 @@ GitHub Actions 自动部署报错：`KV namespace ... is not valid [code: 10042]
 - 构建前 `scripts/copy-novel-markdown-to-public.mjs` 将 `novels/**/chapters|annotations/*.md` 复制到 `public/__novel_md__/**`（随 ASSETS 发布，目录已加入 `.gitignore`）。
 - `lib/content/load-markdown.ts`：优先读 `public/__novel_md__` 或源码 `novels/`，否则同源 `fetch` 静态路径。
 - `package.json`：`build` 与 `cf-build` 在 `next build` / OpenNext 前执行 `copy-novel-md`。
+
+## 2026-05-01（目录页快速定位章节）
+
+### 提问
+目录页章节变多后不易定位目标章节，希望加入“跳转章节”、范围筛选（50递增/100递增）和正序/倒序切换。
+
+### 本次完成变更摘要
+- 新增 `components/novel/DirectoryChapterNavigator.tsx`（客户端交互组件）。
+- 功能包含：
+  - **Jump to chapter** 输入框（支持直接输入章节号并跳转）。
+  - **Range by 50** 下拉（1-50、51-100…）。
+  - **Range by 100** 下拉（1-100、101-200…）。
+  - **Asc/Desc** 双按钮切换排序。
+- `components/novel/DirectoryPage.tsx` 的章节列表改为使用该组件，保留原章节卡片样式与链接规则。
