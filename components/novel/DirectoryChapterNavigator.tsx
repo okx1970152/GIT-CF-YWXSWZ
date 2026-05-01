@@ -141,8 +141,8 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
   return (
     <div>
       <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-4">
-        <div className="grid gap-3 xl:grid-cols-[minmax(280px,1.5fr)_minmax(140px,1fr)_minmax(160px,1fr)_minmax(130px,0.8fr)_auto]">
-          <form onSubmit={onJumpSubmit} className="grid gap-2">
+        <div className="flex flex-wrap items-end gap-4 xl:flex-nowrap xl:gap-5">
+          <form onSubmit={onJumpSubmit} className="grid min-w-[205px] gap-2">
             <label className="text-xs font-semibold text-[var(--text-muted)]">Jump to chapter</label>
             <div className="flex gap-2">
               <input
@@ -161,7 +161,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
             {jumpError ? <p className="text-xs text-red-600">{jumpError}</p> : null}
           </form>
 
-          <div className="grid gap-2">
+          <div className="grid min-w-[190px] gap-2">
             <label className="text-xs font-semibold text-[var(--text-muted)]">1-10 chapters</label>
             <select
               value={range10Value}
@@ -177,7 +177,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
             </select>
           </div>
 
-          <div className="grid gap-2">
+          <div className="grid min-w-[190px] gap-2">
             <label className="text-xs font-semibold text-[var(--text-muted)]">1-100 chapters</label>
             <select
               value={range100Value}
@@ -193,7 +193,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
             </select>
           </div>
 
-          <div className="grid gap-2">
+          <div className="grid min-w-[190px] gap-2">
             <label className="text-xs font-semibold text-[var(--text-muted)]">Page</label>
             <select
               value={String(pageNo)}
@@ -208,7 +208,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
             </select>
           </div>
 
-          <div className="grid gap-2">
+          <div className="grid gap-2 xl:ml-1">
             <span className="text-xs font-semibold text-[var(--text-muted)]">Order</span>
             <div className="inline-flex rounded-lg border border-[var(--border-soft)] bg-white p-1">
               <button
