@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { cookies } from "next/headers";
 import type { AdItemConfig, AdSlotConfig } from "@/lib/ads/schema";
 import { getAds } from "@/lib/ads/store";
 import type { SideSlotCode } from "@/components/ads/adPositions";
@@ -8,33 +9,40 @@ type AdPosition = "top" | "mid" | "bottom";
 
 export async function AdSlot(props: { page: AdPage; position: AdPosition }) {
   const ads = await getAds();
+  const hideImageAds = (await cookies()).get("hide_image_ads")?.value === "1";
   const cfg = ads[props.page][props.position];
-  return <>{renderSlot(cfg, `${props.page}:${props.position}`, "center")}</>;
+  return <>{renderSlot(cfg, `${props.page}:${props.position}`, "center", hideImageAds)}</>;
 }
 
 export async function SideAdSlot(props: { code: SideSlotCode }) {
   const ads = await getAds();
+  const hideImageAds = (await cookies()).get("hide_image_ads")?.value === "1";
   const cfg = ads.side[props.code];
-  return <>{renderSlot(cfg, `side:${props.code}`, "side")}</>;
+  return <>{renderSlot(cfg, `side:${props.code}`, "side", hideImageAds)}</>;
 }
 
-function renderSlot(cfg: AdSlotConfig, slotKey: string, style: "center" | "side"): ReactNode {
+function renderSlot(
+  cfg: AdSlotConfig,
+  slotKey: string,
+  style: "center" | "side",
+  hideImageAds: boolean
+): ReactNode {
   const enabledItems = cfg.items.filter((item) => item.enabled && item.type !== "empty");
   if (!enabledItems.length) return null;
 
   if (cfg.mode === "rotate") {
     const selected = enabledItems[pickRotateIndex(slotKey, enabledItems.length)];
-    return <div className="w-full">{renderItem(selected, style)}</div>;
+    return <div className="w-full">{renderItem(selected, style, hideImageAds)}</div>;
   }
 
   if (cfg.mode === "random") {
     const selected = enabledItems[pickRandomIndex(slotKey, enabledItems.length)];
-    return <div className="w-full">{renderItem(selected, style)}</div>;
+    return <div className="w-full">{renderItem(selected, style, hideImageAds)}</div>;
   }
 
   if (cfg.mode === "sequence") {
     const selected = enabledItems[pickSequenceIndex(slotKey, enabledItems.length)];
-    return <div className="w-full">{renderItem(selected, style)}</div>;
+    return <div className="w-full">{renderItem(selected, style, hideImageAds)}</div>;
   }
 
   if (cfg.mode === "slide") {
@@ -42,7 +50,7 @@ function renderSlot(cfg: AdSlotConfig, slotKey: string, style: "center" | "side"
       <div className="scrollbar-hide -mx-1 flex gap-3 overflow-x-auto px-1 py-1">
         {enabledItems.map((item, idx) => (
           <div key={`${slotKey}-slide-${idx}`} className="min-w-[220px] flex-1 rounded-lg border border-slate-200 bg-white/70 p-2">
-            {renderItem(item, style)}
+            {renderItem(item, style, hideImageAds)}
           </div>
         ))}
       </div>
@@ -53,14 +61,14 @@ function renderSlot(cfg: AdSlotConfig, slotKey: string, style: "center" | "side"
     <div className="grid gap-3 sm:grid-cols-2">
       {enabledItems.map((item, idx) => (
         <div key={`${slotKey}-multi-${idx}`} className="rounded-lg border border-slate-200 bg-white/70 p-2">
-          {renderItem(item, style)}
+          {renderItem(item, style, hideImageAds)}
         </div>
       ))}
     </div>
   );
 }
 
-function renderItem(cfg: AdItemConfig, style: "center" | "side"): ReactNode {
+function renderItem(cfg: AdItemConfig, style: "center" | "side", hideImageAds: boolean): ReactNode {
   if (cfg.type === "text") {
     if (!cfg.text) return null;
     const textClass =
@@ -89,6 +97,7 @@ function renderItem(cfg: AdItemConfig, style: "center" | "side"): ReactNode {
   }
 
   if (cfg.type === "image") {
+    if (hideImageAds) return null;
     const src = cfg.imageAsset || cfg.imageUrl;
     if (!src) return null;
     const img = (

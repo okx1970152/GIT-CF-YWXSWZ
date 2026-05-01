@@ -143,94 +143,161 @@ export function ReaderThemeProvider({ children }: { children: ReactNode }) {
 }
 
 const PRESET_BACKGROUNDS = [
-  { label: "Willow", value: "#f5faf4" },
-  { label: "Page", value: "#f7f5f0" },
-  { label: "Night", value: "#0f172a" },
-  { label: "Sepia", value: "#f4ecd8" }
+  { label: "Site Default", value: "", fallback: "#f3f6f1" },
+  { label: "Eye Comfort Green", value: "#d9e6d2" },
+  { label: "Willow Green", value: "#e6f4e8" },
+  { label: "Pure Black", value: "#000000" },
+  { label: "Pure White", value: "#ffffff" },
+  { label: "Cream White", value: "#f5ecd9" }
 ];
 
 const PRESET_FOREGROUNDS = [
-  { label: "Default", value: "" },
-  { label: "Ink", value: "#111827" },
-  { label: "Soft", value: "#e2e8f0" }
+  { label: "Site Default", value: "", fallback: "#0f172a" },
+  { label: "Deep Black", value: "#111111" },
+  { label: "Soft Gray", value: "#475569" },
+  { label: "Pure White", value: "#ffffff" },
+  { label: "Willow Green", value: "#2d6a4f" },
+  { label: "Cream Brown", value: "#6b4f2d" }
 ];
+
+const FONT_SIZE_OPTIONS = [
+  { label: "Small", value: 20 },
+  { label: "Medium", value: 30 },
+  { label: "Large", value: 40 }
+] as const;
+
+function isPresetColor(value: string, presets: ReadonlyArray<{ value: string }>): boolean {
+  return presets.some((preset) => preset.value === value);
+}
+
+function swatchOuterClass(selected: boolean): string {
+  return selected
+    ? "border-[#9cd8b5] bg-[#e9f8ef]"
+    : "border-[var(--border-soft)] bg-white hover:bg-[#eef7f0]";
+}
 
 export function ReaderPreferences() {
   const { bg, fg, fontSize, setBg, setFg, setFontSize, save, dirty, reset } = useReaderTheme();
+  const bgPresetSelected = isPresetColor(bg, PRESET_BACKGROUNDS);
+  const fgPresetSelected = isPresetColor(fg, PRESET_FOREGROUNDS);
+  const activeFontSize = fontSize ?? 20;
 
   return (
     <section
-      className="mb-5 flex flex-col gap-3 rounded-xl border border-emerald-900/15 bg-white/70 p-3 text-sm text-slate-800 shadow-sm backdrop-blur-sm sm:flex-row sm:flex-wrap sm:items-center"
+      className="mb-5 flex flex-col gap-3 rounded-xl border border-emerald-900/15 bg-white/70 p-3 text-sm text-slate-800 shadow-sm backdrop-blur-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
       aria-label="Reading preferences"
     >
-      <span className="font-medium text-emerald-950">Reading</span>
-      <label className="flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <span className="text-slate-600">Background</span>
-        <select
-          className="rounded-md border border-emerald-900/20 bg-white px-2 py-1 text-sm"
-          value={PRESET_BACKGROUNDS.some((p) => p.value === bg) ? bg : bg ? "__custom__" : ""}
-          onChange={(e) => {
-            const v = e.target.value;
-            if (v === "__custom__") return;
-            setBg(v);
-          }}
-        >
-          <option value="">Site default</option>
-          {PRESET_BACKGROUNDS.map((p) => (
-            <option key={p.value} value={p.value}>
-              {p.label}
-            </option>
+        <div className="flex items-center gap-1.5">
+          {PRESET_BACKGROUNDS.map((item) => {
+            const selected = bg === item.value;
+            return (
+              <button
+                key={`bg-${item.label}`}
+                type="button"
+                title={item.label}
+                aria-label={item.label}
+                onClick={() => setBg(item.value)}
+                className={`inline-flex h-8 w-8 items-center justify-center rounded-md border p-0.5 transition ${swatchOuterClass(selected)}`}
+              >
+                <span
+                  className="block h-5 w-5 rounded-full border border-black/10"
+                  style={{ backgroundColor: item.value || item.fallback }}
+                />
+              </button>
+            );
+          })}
+          <label
+            title="Custom Color"
+            aria-label="Custom Color"
+            className={`inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border p-0.5 transition ${swatchOuterClass(!bgPresetSelected && !!bg)}`}
+          >
+            <span
+              className="block h-5 w-5 rounded-full border border-black/10"
+              style={{
+                background: !bgPresetSelected && bg
+                  ? bg
+                  : "conic-gradient(from 0deg, #ef4444, #f59e0b, #10b981, #3b82f6, #a855f7, #ef4444)"
+              }}
+            />
+            <input
+              type="color"
+              aria-label="Custom background color"
+              className="sr-only"
+              value={bg?.startsWith("#") && bg.length >= 4 ? bg : "#f3f6f1"}
+              onChange={(e) => setBg(e.target.value)}
+            />
+          </label>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span className="text-slate-600">Text Color</span>
+        <div className="flex items-center gap-1.5">
+          {PRESET_FOREGROUNDS.map((item) => {
+            const selected = fg === item.value;
+            return (
+              <button
+                key={`fg-${item.label}`}
+                type="button"
+                title={item.label}
+                aria-label={item.label}
+                onClick={() => setFg(item.value)}
+                className={`inline-flex h-8 w-8 items-center justify-center rounded-md border p-0.5 transition ${swatchOuterClass(selected)}`}
+              >
+                <span
+                  className="block h-5 w-5 rounded-full border border-black/10"
+                  style={{ backgroundColor: item.value || item.fallback }}
+                />
+              </button>
+            );
+          })}
+          <label
+            title="Custom Color"
+            aria-label="Custom Color"
+            className={`inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border p-0.5 transition ${swatchOuterClass(!fgPresetSelected && !!fg)}`}
+          >
+            <span
+              className="block h-5 w-5 rounded-full border border-black/10"
+              style={{
+                background: !fgPresetSelected && fg
+                  ? fg
+                  : "conic-gradient(from 0deg, #ef4444, #f59e0b, #10b981, #3b82f6, #a855f7, #ef4444)"
+              }}
+            />
+            <input
+              type="color"
+              aria-label="Custom text color"
+              className="sr-only"
+              value={fg?.startsWith("#") && fg.length >= 4 ? fg : "#111827"}
+              onChange={(e) => setFg(e.target.value)}
+            />
+          </label>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span className="text-slate-600">Font Size</span>
+        <div className="inline-flex rounded-lg border border-[var(--border-soft)] bg-white p-1">
+          {FONT_SIZE_OPTIONS.map((option) => (
+            <button
+              key={option.label}
+              type="button"
+              onClick={() => setFontSize(option.value)}
+              className={cn(
+                "rounded-md px-3 py-1.5 text-xs font-semibold",
+                activeFontSize === option.value
+                  ? "bg-[var(--accent-green)] text-white"
+                  : "text-[var(--text-soft)] hover:bg-[#eef7f0]"
+              )}
+            >
+              {option.label}
+            </button>
           ))}
-          <option value="__custom__">Custom (use picker)</option>
-        </select>
-        <input
-          type="color"
-          aria-label="Custom background color"
-          className="h-8 w-12 cursor-pointer rounded border border-emerald-900/20 bg-white p-0"
-          value={bg?.startsWith("#") && bg.length >= 4 ? bg : "#f7f5f0"}
-          onChange={(e) => setBg(e.target.value)}
-        />
-      </label>
-      <label className="flex items-center gap-2">
-        <span className="text-slate-600">Text</span>
-        <select
-          className="rounded-md border border-emerald-900/20 bg-white px-2 py-1 text-sm"
-          value={PRESET_FOREGROUNDS.some((p) => p.value === fg) ? fg : fg ? "__custom__" : ""}
-          onChange={(e) => {
-            const v = e.target.value;
-            if (v === "__custom__") return;
-            setFg(v);
-          }}
-        >
-          <option value="">Default</option>
-          {PRESET_FOREGROUNDS.filter((p) => p.value).map((p) => (
-            <option key={p.value} value={p.value}>
-              {p.label}
-            </option>
-          ))}
-          <option value="__custom__">Custom (picker)</option>
-        </select>
-        <input
-          type="color"
-          aria-label="Custom text color"
-          className="h-8 w-12 cursor-pointer rounded border border-emerald-900/20 bg-white p-0"
-          value={fg?.startsWith("#") && fg.length >= 4 ? fg : "#111827"}
-          onChange={(e) => setFg(e.target.value)}
-        />
-      </label>
-      <label className="flex items-center gap-2">
-        <span className="text-slate-600">Font size</span>
-        <input
-          type="range"
-          min={20}
-          max={50}
-          step={1}
-          value={fontSize ?? 20}
-          onChange={(e) => setFontSize(Number.parseInt(e.target.value, 10))}
-          className="w-36"
-        />
-        <span className="tabular-nums text-slate-600">{fontSize ?? 20}px</span>
-      </label>
+        </div>
+      </div>
+
       <button
         type="button"
         onClick={save}

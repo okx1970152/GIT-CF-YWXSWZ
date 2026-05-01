@@ -753,3 +753,24 @@ GitHub Actions 自动部署报错：`KV namespace ... is not valid [code: 10042]
   - **Range by 100** 下拉（1-100、101-200…）。
   - **Asc/Desc** 双按钮切换排序。
 - `components/novel/DirectoryPage.tsx` 的章节列表改为使用该组件，保留原章节卡片样式与链接规则。
+
+## 2026-05-01（阅读工具条与广告开关交互优化）
+
+### 提问
+阅读页偏好条改为色块交互（背景/文字颜色）+ 三档字号按钮；目录跳章输入与分段默认文案优化；导航栏末尾新增“打开/关闭广告”功能，仅隐藏图片广告、保留文字广告。
+
+### 本次完成变更摘要
+- **阅读偏好条**（`components/novel/reader-theme.tsx`）
+  - 去掉“Reading”标题与下拉式背景/文字选择，改为英文标签 + 圆形色块选择。
+  - 背景色预设：Site Default、Eye Comfort Green、Willow Green、Pure Black、Pure White、Cream White + Custom Color。
+  - 字体颜色同样改为色块逻辑（含 Custom Color）。
+  - 选中色块外层高亮为绿色方框态；色块悬浮可见英文颜色名（title）。
+  - 字号改为 `Small/Medium/Large`（20/30/40）三按钮，默认 Small。
+- **目录导航**（`components/novel/DirectoryChapterNavigator.tsx`）
+  - 跳章输入 placeholder 改为 `e.g. 0007`，输入框宽度收窄到 `117px`。
+  - 两个分段下拉默认显示 `1-10 chapters` / `1-100 chapters`（不再显示 All chapters）。
+  - Page 下拉文案改为 `PageN - x-y chapters`。
+- **全站广告开关**（`components/site/Navbar.tsx` + `components/ads/AdSlot.tsx`）
+  - 导航分类按钮最末尾新增 `Close Ads / Open Ads`。
+  - 点击后写入 cookie 并刷新当前页；服务端广告渲染读取 cookie。
+  - 仅隐藏图片广告（`type=image`），文字广告不受影响。

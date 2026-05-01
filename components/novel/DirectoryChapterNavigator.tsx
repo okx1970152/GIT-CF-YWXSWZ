@@ -148,8 +148,8 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
               <input
                 value={jumpInput}
                 onChange={(e) => setJumpInput(e.target.value)}
-                placeholder="e.g. 123"
-                className="w-full rounded-lg border border-[var(--border-soft)] bg-white px-3 py-2 text-sm text-[var(--text-deep)]"
+                placeholder="e.g. 0007"
+                className="w-[117px] rounded-lg border border-[var(--border-soft)] bg-white px-3 py-2 text-sm text-[var(--text-deep)]"
               />
               <button
                 type="submit"
@@ -168,7 +168,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
               onChange={(e) => applyRange(e.target.value, 10)}
               className="rounded-lg border border-[var(--border-soft)] bg-white px-3 py-2 text-sm text-[var(--text-deep)]"
             >
-              <option value="">All chapters</option>
+              <option value="">1-10 chapters</option>
               {range10Options.map((opt) => (
                 <option key={`10-${opt.label}`} value={opt.label}>
                   {opt.label} chapters
@@ -184,7 +184,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
               onChange={(e) => applyRange(e.target.value, 100)}
               className="rounded-lg border border-[var(--border-soft)] bg-white px-3 py-2 text-sm text-[var(--text-deep)]"
             >
-              <option value="">All chapters</option>
+              <option value="">1-100 chapters</option>
               {range100Options.map((opt) => (
                 <option key={`100-${opt.label}`} value={opt.label}>
                   {opt.label} chapters
