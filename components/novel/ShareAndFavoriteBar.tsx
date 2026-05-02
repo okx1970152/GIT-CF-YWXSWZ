@@ -6,13 +6,20 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 const POPUP =
   "toolbar=yes,location=yes,directories=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=yes,width=600,height=450,top=100,left=350";
 
+/** IE / legacy Firefox bookmark APIs are not on TypeScript's Window type */
+type LegacyBookmarkWindow = Window & {
+  external?: { AddFavorite?: (u: string, t: string) => void };
+  sidebar?: { addPanel?: (a: string, b: string, c: string) => void };
+};
+
 function bookmarkStorageKey(url: string) {
   return `novel-browser-bookmark:${url}`;
 }
 
 function tryLegacyBrowserBookmark(absUrl: string, title: string): boolean {
+  const w = window as LegacyBookmarkWindow;
   try {
-    const ext = window.external as { AddFavorite?: (u: string, t: string) => void } | undefined;
+    const ext = w.external;
     if (ext && typeof ext.AddFavorite === "function") {
       ext.AddFavorite(absUrl, title);
       return true;
@@ -21,7 +28,7 @@ function tryLegacyBrowserBookmark(absUrl: string, title: string): boolean {
     /* ignore */
   }
   try {
-    const sidebar = window.sidebar as { addPanel?: (a: string, b: string, c: string) => void } | undefined;
+    const sidebar = w.sidebar;
     if (sidebar && typeof sidebar.addPanel === "function") {
       sidebar.addPanel(title, absUrl, "");
       return true;
