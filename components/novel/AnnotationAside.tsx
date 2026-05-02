@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
 
 type AnnotationAsideProps = {
   title: string;
@@ -10,6 +11,9 @@ type AnnotationAsideProps = {
   slotTop: ReactNode;
   slotMid: ReactNode;
   slotBottom: ReactNode;
+  /** Current chapter share (absolute URL + title) */
+  shareUrl?: string;
+  shareTitle?: string;
 };
 
 export function AnnotationAside({
@@ -18,7 +22,9 @@ export function AnnotationAside({
   relatedTopicsSlot,
   slotTop,
   slotMid,
-  slotBottom
+  slotBottom,
+  shareUrl,
+  shareTitle
 }: AnnotationAsideProps) {
   const [open, setOpen] = useState(false);
   const panelId = "essential-guide-panel";
@@ -45,10 +51,22 @@ export function AnnotationAside({
         )}
         aria-label="Annotation track"
       >
+        {shareUrl && shareTitle ? (
+          <div className="mb-4 w-full max-w-[460px] lg:mx-0">
+            <ShareAndFavoriteBar
+              shareUrl={shareUrl}
+              shareTitle={shareTitle}
+              variant="compact"
+              className="justify-center sm:justify-start"
+            />
+          </div>
+        ) : null}
+        <div className="mb-3 flex w-full justify-center">
+          <span className="inline-flex items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-2 text-center font-sans text-sm font-semibold text-[var(--text-deep)] shadow-sm">
+            Reading Guide Decoding
+          </span>
+        </div>
         {slotTop}
-        <p className="mb-2 inline-flex items-center rounded-full border border-[#9cd8b5] bg-[#e9f8ef] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#058c46]">
-          Reading Guide Decoding
-        </p>
         <h2 className="font-serif text-[30px] font-semibold leading-tight text-[var(--text-deep)]">{title}</h2>
         <div
           className="prose mt-4 max-w-none font-serif leading-relaxed text-inherit prose-headings:text-[var(--text-deep)] prose-p:text-[var(--text-soft)] [&_p]:!text-[length:inherit] [&_li]:!text-[length:inherit] [&_ul]:!text-[length:inherit] [&_ol]:!text-[length:inherit] [&_blockquote]:!text-[length:inherit] [&_h1]:!text-[length:inherit] [&_h2]:!text-[length:inherit] [&_h3]:!text-[length:inherit] [&_h4]:!text-[length:inherit]"

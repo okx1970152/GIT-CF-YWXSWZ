@@ -6,9 +6,11 @@ type AnnotationTrackProps = {
   title: string;
   guideHtml: string;
   topics: string[];
+  shareUrl?: string;
+  shareTitle?: string;
 };
 
-export function AnnotationTrack({ title, guideHtml, topics }: AnnotationTrackProps) {
+export function AnnotationTrack({ title, guideHtml, topics, shareUrl, shareTitle }: AnnotationTrackProps) {
   return (
     <AnnotationAside
       title={title}
@@ -17,6 +19,8 @@ export function AnnotationTrack({ title, guideHtml, topics }: AnnotationTrackPro
       slotTop={<AdSlot page="guide" position="top" />}
       slotMid={<AdSlot page="guide" position="mid" />}
       slotBottom={<AdSlot page="guide" position="bottom" />}
+      shareUrl={shareUrl}
+      shareTitle={shareTitle}
     />
   );
 }

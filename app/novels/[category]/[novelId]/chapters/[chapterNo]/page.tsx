@@ -223,6 +223,8 @@ export default async function ChapterPage({ params }: Props) {
             title={annotation?.title || "Essential Guide"}
             guideHtml={guideHtml}
             topics={topics}
+            shareUrl={chapterUrl}
+            shareTitle={`${chapter.title} - ${displayTitle}`}
           />
           </div>
         </ChapterReader>

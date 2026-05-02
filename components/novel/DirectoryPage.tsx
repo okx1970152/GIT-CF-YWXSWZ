@@ -71,27 +71,34 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
               </div>
             </dl>
           </div>
-          <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row">
-          {firstChapter ? (
-            <Link
-              href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${firstChapter.chapterNo}`}
-              className="rounded-xl bg-[var(--accent-green)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-            >
-              Start reading
-            </Link>
-          ) : (
-            <span className="rounded-xl border border-dashed border-[var(--border-soft)] px-5 py-3 text-center text-sm text-[var(--text-muted)]">
-              No chapters yet
-            </span>
-          )}
-          {latestChapter ? (
-            <Link
-              href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${latestChapter.chapterNo}`}
-              className="rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-5 py-3 text-center text-sm font-semibold text-[var(--text-deep)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-            >
-              Latest chapter
-            </Link>
-          ) : null}
+          <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-3">
+              {firstChapter ? (
+                <Link
+                  href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${firstChapter.chapterNo}`}
+                  className="rounded-xl bg-[var(--accent-green)] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+                >
+                  Start reading
+                </Link>
+              ) : (
+                <span className="rounded-xl border border-dashed border-[var(--border-soft)] px-5 py-3 text-center text-sm text-[var(--text-muted)]">
+                  No chapters yet
+                </span>
+              )}
+              {latestChapter ? (
+                <Link
+                  href={`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${latestChapter.chapterNo}`}
+                  className="rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-5 py-3 text-center text-sm font-semibold text-[var(--text-deep)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+                >
+                  Latest chapter
+                </Link>
+              ) : null}
+            </div>
+            <ShareAndFavoriteBar
+              shareUrl={directoryAbsUrl}
+              shareTitle={displayTitle}
+              className="sm:ml-auto sm:justify-end"
+            />
           </div>
         </div>
       </div>
@@ -114,7 +121,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
       <div className="mt-10 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] px-4 py-4 shadow-sm">
         <ShareAndFavoriteBar
           shareUrl={directoryAbsUrl}
-          shareTitle={`${displayTitle} — Table of Contents`}
+          shareTitle={displayTitle}
           className="justify-start sm:items-center"
         />
       </div>
