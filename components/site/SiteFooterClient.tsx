@@ -2,16 +2,10 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import {
-  CONTACT_EMAIL,
-  FRIEND_LINKS,
-  FRIEND_LINKS_ROW_SPLIT,
-  SITE_BRAND,
-  SITE_SEARCH_QUERY
-} from "@/components/site/footer-constants";
+import { CONTACT_EMAIL, FRIEND_LINKS, SITE_BRAND } from "@/components/site/footer-constants";
 import type { SiteFooterProps } from "@/components/site/site-footer-types";
 
-const TOAST_MS = 6000;
+const TOAST_MS = 7000;
 
 function legalLead(props: SiteFooterProps): string {
   switch (props.variant) {
@@ -50,58 +44,23 @@ export function SiteFooterClient(props: SiteFooterProps) {
     );
   }, []);
 
-  const row1 = FRIEND_LINKS.slice(0, FRIEND_LINKS_ROW_SPLIT);
-  const row2 = FRIEND_LINKS.slice(FRIEND_LINKS_ROW_SPLIT);
-
   return (
     <footer className="mt-12 w-full border-t border-[var(--border-soft)] bg-[var(--bg-surface)]/95">
       <div className="mx-auto max-w-[1400px] px-3 py-10 sm:px-4">
         <h2 className="text-center font-sans text-sm font-semibold tracking-wide text-[var(--text-deep)]">
           Friend links (see contact email in footer)
         </h2>
-        <p className="mt-1 text-center font-sans text-xs text-[var(--text-muted)]">
-          Search ({SITE_SEARCH_QUERY}) opens in Google / Bing.
-        </p>
 
-        <div className="mt-6 flex flex-col gap-3">
-          <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
-            {row1.map((item) => (
+        <div className="mt-6 flex justify-center overflow-x-auto pb-1 sm:justify-start">
+          <div className="flex min-w-0 flex-nowrap items-stretch justify-start gap-2">
+            {FRIEND_LINKS.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Open ${item.label}`}
-                className="inline-flex min-h-[44px] min-w-0 items-center gap-2 rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-2 text-sm font-medium text-[var(--text-deep)] shadow-sm transition hover:border-[#9cd8b5] hover:bg-[#e9f8ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-              >
-                {!broken[item.id] ? (
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={22}
-                    height={22}
-                    className="h-5 w-5 shrink-0 object-contain"
-                    unoptimized
-                    onError={() => setBroken((b) => ({ ...b, [item.id]: true }))}
-                  />
-                ) : (
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#dcefdc] text-[10px] font-bold text-[var(--text-deep)]">
-                    {item.label.slice(0, 1)}
-                  </span>
-                )}
-                <span>{item.label}</span>
-              </a>
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
-            {row2.map((item) => (
-              <a
-                key={item.id}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`Open ${item.label}`}
-                className="inline-flex min-h-[44px] min-w-0 items-center gap-2 rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-2 text-sm font-medium text-[var(--text-deep)] shadow-sm transition hover:border-[#9cd8b5] hover:bg-[#e9f8ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+                className="inline-flex shrink-0 min-h-[44px] items-center gap-2 rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-2 text-sm font-medium text-[var(--text-deep)] shadow-sm transition hover:border-[#9cd8b5] hover:bg-[#e9f8ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
               >
                 {!broken[item.id] ? (
                   <Image

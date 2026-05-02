@@ -3,9 +3,6 @@ export const SITE_BRAND = "WX.0O0O.MOM";
 
 export const CONTACT_EMAIL = "WX@0O0O.MOM";
 
-/** SEO-oriented search: pages from this host in Google/Bing results */
-export const SITE_SEARCH_QUERY = "site:wx.0o0o.mom";
-
 export const FRIEND_LINKS: readonly {
   id: string;
   label: string;
@@ -32,5 +29,3 @@ export const FRIEND_LINKS: readonly {
     icon: "/LOGO/bing.png"
   }
 ];
-
-export const FRIEND_LINKS_ROW_SPLIT = 5;
