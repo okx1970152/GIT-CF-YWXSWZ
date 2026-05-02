@@ -138,8 +138,8 @@ export function ShareAndFavoriteBar({
   const targets = useMemo(() => SHARE_TARGETS, []);
   const isCompact = variant === "compact";
   const btnClass = isCompact
-    ? "flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-md border border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-105 hover:border-[#9cd8b5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-    : "flex h-10 w-10 items-center justify-center rounded-lg border border-transparent bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-110 hover:border-[var(--border-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
+    ? "flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-md border border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-105 hover:border-[var(--accent-green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+    : "flex h-10 w-10 items-center justify-center rounded-lg border border-transparent bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-110 hover:border-[var(--accent-green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
   const imgSize = isCompact ? 20 : 28;
   const imgClass = isCompact ? "h-5 w-5 object-contain" : "h-7 w-7 object-contain";
   const starClass = isCompact ? "h-5 w-5" : "h-6 w-6";
