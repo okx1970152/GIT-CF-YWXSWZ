@@ -115,10 +115,12 @@ export function ShareAndFavoriteBar({ shareUrl, shareTitle, className }: ShareAn
       try {
         await navigator.clipboard.writeText(line);
       } catch {
-        setToast("无法复制到剪贴板，请手动复制页面链接。");
+        setToast("Could not copy to the clipboard. Please copy the page link manually.");
         return;
       }
-      setToast(`分享内容链接已复制，请到${toastName}发布分享即可！`);
+      setToast(
+        `Share text copied. Open ${toastName} and paste it there to publish your post.`
+      );
     },
     [shareTitle, shareUrl]
   );
