@@ -4,7 +4,9 @@ import type { ChapterItem } from "@/lib/content/chapters";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { DirectoryChapterNavigator } from "@/components/novel/DirectoryChapterNavigator";
+import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
 import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
+import { toAbsoluteUrl } from "@/lib/seo";
 
 type DirectoryPageProps = {
   novel: NovelInfo;
@@ -16,6 +18,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
   const latestChapter = chapters[chapters.length - 1];
   const displayTitle = getDisplayNovelTitle(novel);
   const summary = getNovelSummary(novel);
+  const directoryAbsUrl = toAbsoluteUrl(`/novels/${novel.categorySlug}/${novel.novelId}`);
   const seoTokens = [
     ...novel.tags,
     "xianxia",
@@ -107,6 +110,14 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
           />
         </div>
       </section>
+
+      <div className="mt-10 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] px-4 py-4 shadow-sm">
+        <ShareAndFavoriteBar
+          shareUrl={directoryAbsUrl}
+          shareTitle={`${displayTitle} — Table of Contents`}
+          className="justify-start sm:items-center"
+        />
+      </div>
 
       <AdSlot page="directory" position="bottom" />
       </div>

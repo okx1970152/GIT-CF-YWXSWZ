@@ -7,6 +7,7 @@ import { ChapterReader } from "@/components/novel/ChapterReader";
 import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { getChapterMetaByNo } from "@/lib/content/meta";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
@@ -213,6 +214,8 @@ export default async function ChapterPage({ params }: Props) {
               prevHref={prevHref}
               nextHref={nextHref}
               directoryHref={basePath}
+              shareUrl={chapterUrl}
+              shareTitle={`${chapter.title} - ${displayTitle}`}
             />
           </article>
 
@@ -224,6 +227,7 @@ export default async function ChapterPage({ params }: Props) {
           </div>
         </ChapterReader>
       </SideAdsLayout>
+      <SiteFooter variant="reading" novelTitle={displayTitle} />
     </>
   );
 }

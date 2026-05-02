@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { DirectoryPage } from "@/components/novel/DirectoryPage";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { getCategoryLabel } from "@/lib/content/categories";
 import { getNovelMeta } from "@/lib/content/meta";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
@@ -117,6 +118,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
       <JsonLd id="ld-json-directory-breadcrumb" data={breadcrumbJsonLd} />
       <JsonLd id="ld-json-directory-book" data={bookJsonLd} />
       <DirectoryPage novel={novel} chapters={chapters} />
+      <SiteFooter variant="directory" novelTitle={displayTitle} />
     </>
   );
 }

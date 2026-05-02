@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { searchContent } from "@/lib/content/search";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
@@ -61,6 +62,7 @@ export default async function SearchPage({ searchParams }: Props) {
   };
 
   return (
+    <>
     <main className="mx-auto max-w-5xl p-6">
       <h1 className="font-serif text-3xl font-bold tracking-tight text-[var(--text-deep)]">Search</h1>
       {!query ? (
@@ -98,5 +100,7 @@ export default async function SearchPage({ searchParams }: Props) {
         </>
       )}
     </main>
+    <SiteFooter variant="search" />
+    </>
   );
 }

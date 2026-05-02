@@ -1,12 +1,12 @@
 {
   "env": {
-    "cwd": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站",
-    "novelsRoot": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\novels"
+    "cwd": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ",
+    "novelsRoot": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels"
   },
   "summary": {
     "categories": 10,
-    "novels": 1,
-    "validNovels": 1,
+    "novels": 0,
+    "validNovels": 0,
     "invalidNovels": 0,
     "missingInfo": 0,
     "missingChapters": 0,
@@ -53,20 +53,7 @@
     },
     {
       "category": "xuanhuan",
-      "novels": [
-        {
-          "category": "xuanhuan",
-          "novel": "world-of-immortality",
-          "basePath": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\novels\\xuanhuan\\world-of-immortality",
-          "hasInfo": true,
-          "hasMetaNovel": true,
-          "chapterCount": 5,
-          "annotationCount": 5,
-          "chapterMetaCount": 3,
-          "schemaErrors": [],
-          "fileErrors": []
-        }
-      ]
+      "novels": []
     }
   ],
   "errors": []

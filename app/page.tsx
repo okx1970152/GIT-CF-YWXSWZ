@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { SectionRail } from "@/components/novel/SectionRail";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { SITE_URL, toAbsoluteUrl } from "@/lib/seo";
@@ -87,6 +88,7 @@ export default function HomePage() {
         </section>
         </div>
       </SideAdsLayout>
+      <SiteFooter variant="home" />
     </>
   );
 }
