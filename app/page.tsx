@@ -12,7 +12,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
   description:
-    "Read xianxia, wuxia, urban fantasy, and eastern stories in English — directories, chapters, and annotation guides.",
+    "Read xiuxian, wuxia, xuanhuan, and eastern fantasy in English — directories, chapters, and annotation guides.",
   alternates: {
     canonical: toAbsoluteUrl("/")
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ...baseOpenGraph(),
     title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
     description:
-      "Read xianxia, wuxia, urban fantasy, and eastern stories in English — directories, chapters, and annotation guides.",
+      "Read xiuxian, wuxia, xuanhuan, and eastern fantasy in English — directories, chapters, and annotation guides.",
     url: absoluteOgUrl("/")
   },
   robots: publicRobots()
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const hot = getHotNovels();
   const latest = getLatestNovels(12);
-  const xuanhuan = getNovelsByCategory("xuanhuan");
+  const xiuxian = getNovelsByCategory("xiuxian");
   const wuxia = getNovelsByCategory("wuxia");
-  const urban = getNovelsByCategory("urban");
+  const xuanhuan = getNovelsByCategory("xuanhuan");
   const hotEssays = getNovelsByCategory("hot-essays");
   const featured = hot.find((item) => item.featured) ?? hot[0];
 
@@ -62,7 +62,7 @@ export default function HomePage() {
           </p>
           <ul>
             <li>Start Reading: {featured ? `/novels/${featured.categorySlug}/${featured.novelId}` : "/search"}</li>
-            <li>Browse Xuanhuan: /category/xuanhuan</li>
+            <li>Browse shelves: /category/xiuxian, /category/wuxia, /category/xuanhuan</li>
             <li>Latest Updates: /#section-latest</li>
           </ul>
         </section>
@@ -74,9 +74,9 @@ export default function HomePage() {
 
         <section className="mt-8 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)]/70 px-3 py-5 sm:mt-10 sm:px-6 sm:py-6">
           <h2 className="mb-5 font-serif text-2xl font-semibold text-[var(--text-deep)]">Category Shelves</h2>
-          <SectionRail id="section-xuanhuan" title="Xuanhuan" novels={xuanhuan} className="mb-8 sm:mb-10" />
-          <SectionRail id="section-wuxia" title="Wuxia" novels={wuxia} className="mb-8 sm:mb-10" />
-          <SectionRail id="section-urban" title="Urban" novels={urban} className="mb-0" />
+          <SectionRail id="section-xiuxian" title="XiuXian" novels={xiuxian} className="mb-8 sm:mb-10" />
+          <SectionRail id="section-wuxia" title="WuXia" novels={wuxia} className="mb-8 sm:mb-10" />
+          <SectionRail id="section-xuanhuan" title="XuanHuan" novels={xuanhuan} className="mb-0" />
         </section>
 
         <section className="mt-8 sm:mt-10">

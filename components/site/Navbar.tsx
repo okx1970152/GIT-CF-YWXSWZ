@@ -7,6 +7,18 @@ import { CATEGORY_NAV } from "@/lib/content/categories";
 import { cn } from "@/lib/cn";
 import { SearchBar } from "@/components/site/SearchBar";
 
+const categoryInactive =
+  "shrink-0 rounded-full border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--text-soft)] transition hover:bg-[#ddeedd] hover:text-[var(--text-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
+
+const categoryActive =
+  "relative z-[2] -mb-px shrink-0 rounded-full border border-[var(--accent-green)] bg-[var(--accent-green)] px-3 py-1.5 text-sm font-bold text-white shadow-[0_1px_0_0_var(--bg-surface)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
+
+const homeInactive =
+  "shrink-0 rounded-lg border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-2 text-sm font-semibold text-[var(--text-deep)] transition hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
+
+const homeActive =
+  "shrink-0 rounded-lg border border-[var(--accent-green)] bg-[var(--accent-green)] px-3 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
+
 export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
@@ -32,53 +44,59 @@ export function Navbar() {
     router.refresh();
   }
 
+  const categoryRail = (
+    <nav
+      aria-label="Categories"
+      className="scrollbar-hide relative -mx-1 flex w-full min-w-0 flex-wrap items-end justify-center gap-2 border-b border-[var(--border-soft)] px-1 pb-3 pt-1 text-sm"
+    >
+      {CATEGORY_NAV.map((cat) => {
+        const active = activeCategory === cat.slug;
+        return (
+          <Link
+            key={cat.slug}
+            href={`/category/${cat.slug}`}
+            className={active ? categoryActive : categoryInactive}
+          >
+            {cat.label}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+
+  const tools = (
+    <div className="flex flex-wrap items-center justify-end gap-2">
+      <Link href="/" className={isHome ? homeActive : homeInactive}>
+        Home
+      </Link>
+      <SearchBar className="w-auto min-w-[120px] max-w-[min(100%,320px)] shrink" />
+      <button
+        type="button"
+        onClick={toggleImageAds}
+        className="shrink-0 rounded-lg bg-[var(--accent-green)] px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+      >
+        {hideImageAds ? "Open Ads" : "Close Ads"}
+      </button>
+    </div>
+  );
+
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--bg-surface)]/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
-        <div className="flex items-center justify-between gap-4">
-          <Link
-            href="/"
-            className={cn(
-              "rounded-lg border px-3 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]",
-              isHome
-                ? "border-[#9cd8b5] bg-[#e9f8ef] text-[#058c46]"
-                : "border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-deep)] hover:bg-[#ddeedd]"
-            )}
-          >
-            Home
-          </Link>
-          <SearchBar className={cn("w-full lg:hidden")} />
+      <div className="mx-auto max-w-[1400px] px-4 py-4">
+        {/* Mobile / tablet: categories row, then tools */}
+        <div className="flex flex-col gap-3 lg:hidden">
+          {categoryRail}
+          {tools}
         </div>
-        <nav
-          aria-label="Main"
-          className="scrollbar-hide -mx-1 flex items-center gap-2 overflow-x-auto px-1 text-sm font-medium"
-        >
-          {CATEGORY_NAV.map((cat) => {
-            const active = activeCategory === cat.slug;
-            return (
-            <Link
-              key={cat.slug}
-              href={`/category/${cat.slug}`}
-                className={cn(
-                  "shrink-0 rounded-full border px-3 py-1.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]",
-                  active
-                    ? "border-[#9cd8b5] bg-[#e9f8ef] text-[#058c46]"
-                    : "border-[var(--border-soft)] bg-[var(--bg-surface)] text-[var(--text-soft)] hover:bg-[#ddeedd] hover:text-[var(--text-deep)]"
-                )}
-            >
-              {cat.label}
-            </Link>
-            );
-          })}
-          <button
-            type="button"
-            onClick={toggleImageAds}
-            className="shrink-0 rounded-lg bg-[var(--accent-green)] px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-[#06a552] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-          >
-            {hideImageAds ? "Open Ads" : "Close Ads"}
-          </button>
-        </nav>
-        <SearchBar className={cn("hidden lg:flex lg:w-auto lg:max-w-[320px]")} />
+
+        {/* Desktop: spacer | centered categories | right tools */}
+        <div className="hidden items-end gap-4 lg:flex">
+          <div className="min-w-0 flex-1" aria-hidden />
+          <div className="flex w-full min-w-0 flex-[1.4] justify-center px-1">
+            {categoryRail}
+          </div>
+          <div className="flex min-w-0 flex-1 justify-end pb-3">{tools}</div>
+        </div>
       </div>
     </header>
   );

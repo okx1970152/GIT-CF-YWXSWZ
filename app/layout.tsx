@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
   description:
-    "English-language xianxia, wuxia, urban fantasy, and eastern novels — chapters, annotations, and crawlable reading.",
+    "English-language xiuxian, wuxia, xuanhuan, and eastern fantasy — chapters, annotations, and crawlable reading.",
   openGraph: {
     ...baseOpenGraph(),
     title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
     description:
-      "English-language xianxia, wuxia, urban fantasy, and eastern novels — chapters, annotations, and crawlable reading.",
+      "English-language xiuxian, wuxia, xuanhuan, and eastern fantasy — chapters, annotations, and crawlable reading.",
     url: SITE_URL
   },
   robots: publicRobots(),

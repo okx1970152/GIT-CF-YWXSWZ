@@ -21,8 +21,10 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
   const directoryAbsUrl = toAbsoluteUrl(`/novels/${novel.categorySlug}/${novel.novelId}`);
   const seoTokens = [
     ...novel.tags,
+    "xiuxian",
     "xianxia",
     "wuxia",
+    "xuanhuan",
     "cultivation",
     "eastern fantasy",
     "martial arts fantasy",

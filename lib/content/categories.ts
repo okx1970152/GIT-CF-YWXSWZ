@@ -1,14 +1,9 @@
-/** Navbar + routing: slug is lowercase kebab-case; label is English display name. */
+/** Navbar + routing: slug is lowercase kebab-case; label is display name in the header. */
 export const CATEGORY_NAV = [
-  { slug: "xuanhuan", label: "Xuanhuan" },
-  { slug: "wuxia", label: "Wuxia" },
-  { slug: "urban", label: "Urban" },
-  { slug: "historical", label: "Historical" },
-  { slug: "gaming", label: "Gaming" },
-  { slug: "sci-fi", label: "Sci-Fi" },
-  { slug: "female", label: "Female" },
+  { slug: "xiuxian", label: "XiuXian" },
+  { slug: "wuxia", label: "WuXia" },
+  { slug: "xuanhuan", label: "XuanHuan" },
   { slug: "ranking", label: "Ranking" },
-  { slug: "completed", label: "Completed" },
   { slug: "hot-essays", label: "Hot Essays" }
 ] as const;
 
