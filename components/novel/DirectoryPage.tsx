@@ -32,7 +32,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
 
   return (
     <SideAdsLayout page="directory">
-      <div className="mx-auto max-w-[1100px] px-4 pb-16 pt-6">
+      <div className="mx-auto w-full max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
       <section aria-label={`${novel.title} semantic summary`} className="sr-only">
         <h1>{displayTitle}</h1>
         <p>{summary}</p>

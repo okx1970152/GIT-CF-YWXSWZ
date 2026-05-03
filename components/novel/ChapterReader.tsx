@@ -5,7 +5,7 @@ import { ReaderPreferences, ReaderThemeProvider } from "@/components/novel/reade
 
 export function ChapterReader({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto max-w-[1400px] px-4 pb-16 pt-4">
+    <div className="mx-auto w-full max-w-[1400px] px-3 pb-16 pt-4 sm:px-4">
       <ReaderThemeProvider>
         <ReaderPreferences />
         <div className="mt-3">{children}</div>

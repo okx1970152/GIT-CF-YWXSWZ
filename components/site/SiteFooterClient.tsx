@@ -46,7 +46,7 @@ export function SiteFooterClient(props: SiteFooterProps) {
 
   return (
     <footer className="mt-12 w-full border-t border-[var(--border-soft)] bg-[var(--bg-surface)]/95">
-      <div className="mx-auto max-w-[1400px] px-3 py-10 sm:px-4">
+      <div className="mx-auto w-full max-w-[1400px] px-3 py-10 sm:px-4">
         <h2 className="text-center font-sans text-sm font-semibold tracking-wide text-[var(--text-deep)]">
           Friend links (see contact email in footer)
         </h2>

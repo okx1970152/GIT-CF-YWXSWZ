@@ -81,7 +81,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--bg-surface)]/95 backdrop-blur">
-      <div className="mx-auto max-w-[1400px] px-4 py-4">
+      <div className="mx-auto w-full max-w-[1400px] px-3 py-4 sm:px-4">
         {/* Mobile / tablet: categories row, then tools */}
         <div className="flex flex-col gap-3 lg:hidden">
           {categoryRail}

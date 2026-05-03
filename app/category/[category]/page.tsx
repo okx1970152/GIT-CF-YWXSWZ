@@ -57,7 +57,7 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <>
     <SideAdsLayout page="category">
-      <div className="mx-auto max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
+      <div className="mx-auto w-full max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
       <section aria-label={`${label} category semantic summary`} className="sr-only">
         <h1>{label} Novels</h1>
         <p>
