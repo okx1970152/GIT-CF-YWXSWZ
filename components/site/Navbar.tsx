@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CATEGORY_NAV } from "@/lib/content/categories";
-import { cn } from "@/lib/cn";
 import { SearchBar } from "@/components/site/SearchBar";
 
 const categoryInactive =
