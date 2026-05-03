@@ -1,80 +1,139 @@
 import type { MetadataRoute } from "next";
+import contentIndex from "@/data/content-index.json";
+import type { ContentIndexNovel } from "@/lib/content/content-index";
 import { ALL_CATEGORY_SLUGS } from "@/lib/content/categories";
-import {
-  getAllNovels,
-  getCategoryLatestUpdatedAt,
-  getLatestContentUpdatedAt
-} from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
-import { getAnnotationIndexEntry } from "@/lib/content/annotation-index";
-import { SITE_URL } from "@/lib/seo";
+import { getCategoryLatestUpdatedAt, getLatestContentUpdatedAt } from "@/lib/content/novels";
+import { novelInfoSchema } from "@/lib/content/schema";
+
+const CHUNK_SIZE = 10_000;
+
+/** Sitemap 的绝对 URL 基址：优先构建环境变量，缺省则用线上域名（避免回落到 localhost）。 */
+function sitemapBaseUrl(): string {
+  const v = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+  if (v) return v;
+  return "https://wx.0o0o.mom";
+}
+
+type IndexShape = {
+  version: number;
+  generatedAt: string;
+  categories: Array<{ slug: string; novels: ContentIndexNovel[] }>;
+};
+
+const indexData = contentIndex as IndexShape;
 
 function absolute(path: string): string {
-  return `${SITE_URL}${path}`;
+  const p = path.startsWith("/") ? path : `/${path}`;
+  return `${sitemapBaseUrl()}${p}`;
 }
 
-function toDate(value: string | undefined): Date | undefined {
-  if (!value) return undefined;
-  const d = new Date(value);
-  return Number.isNaN(d.getTime()) ? undefined : d;
+/** 解析 lastmod：依次尝试多个字段，无效则用索引生成时间，再不行用当前时间。 */
+function parseLastMod(...candidates: (string | null | undefined)[]): Date {
+  for (const raw of candidates) {
+    if (!raw || typeof raw !== "string") continue;
+    const t = raw.trim();
+    if (!t) continue;
+    const d = new Date(t);
+    if (!Number.isNaN(d.getTime())) return d;
+  }
+  const g = indexData.generatedAt?.trim();
+  if (g) {
+    const d = new Date(g);
+    if (!Number.isNaN(d.getTime())) return d;
+  }
+  return new Date();
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const homeLm = getLatestContentUpdatedAt();
+let cachedEntries: MetadataRoute.Sitemap | null = null;
 
+function buildAllSitemapEntries(): MetadataRoute.Sitemap {
+  const homeLm = getLatestContentUpdatedAt() ?? parseLastMod(indexData.generatedAt);
   const items: MetadataRoute.Sitemap = [
     {
       url: absolute("/"),
-      lastModified: homeLm ?? new Date(),
+      lastModified: homeLm,
       changeFrequency: "daily",
-      priority: 1
-    }
+      priority: 1,
+    },
   ];
 
   for (const category of ALL_CATEGORY_SLUGS) {
-    const lm = getCategoryLatestUpdatedAt(category);
+    const lm = getCategoryLatestUpdatedAt(category) ?? homeLm;
     items.push({
       url: absolute(`/category/${category}`),
-      lastModified: lm ?? homeLm,
+      lastModified: lm,
       changeFrequency: "daily",
-      priority: 0.9
-    });
-  }
-
-  const topics = new Set<string>();
-
-  for (const novel of getAllNovels()) {
-    items.push({
-      url: absolute(`/novels/${novel.categorySlug}/${novel.novelId}`),
-      lastModified: toDate(novel.updated_at) ?? homeLm,
-      changeFrequency: "weekly",
-      priority: 0.85
-    });
-    for (const chapter of getChapters(novel.categorySlug, novel.novelId)) {
-      items.push({
-        url: absolute(`/novels/${novel.categorySlug}/${novel.novelId}/chapters/${chapter.chapterNo}`),
-        lastModified: toDate(chapter.updatedAt ?? novel.updated_at),
-        changeFrequency: "monthly",
-        priority: 0.7
-      });
-      const guide = getAnnotationIndexEntry(novel.categorySlug, novel.novelId, chapter.chapterNo);
-      guide?.relatedTopics.forEach((topic) => topics.add(topic));
-    }
-  }
-
-  for (const topic of topics) {
-    items.push({
-      url: absolute(`/search?q=${encodeURIComponent(topic)}`),
-      changeFrequency: "weekly",
-      priority: 0.5
+      priority: 0.9,
     });
   }
 
   items.push({
     url: absolute("/search"),
+    lastModified: homeLm,
     changeFrequency: "weekly",
-    priority: 0.6
+    priority: 0.6,
   });
 
+  for (const cat of indexData.categories) {
+    const categorySlug = cat.slug;
+    for (const novelEntry of cat.novels) {
+      const parsed = novelInfoSchema.safeParse(novelEntry.frontmatter);
+      if (!parsed.success) continue;
+
+      const novelId = novelEntry.novelId;
+      const novelLm = parseLastMod(parsed.data.updated_at, indexData.generatedAt);
+
+      items.push({
+        url: absolute(`/novels/${categorySlug}/${novelId}`),
+        lastModified: novelLm,
+        changeFrequency: "weekly",
+        priority: 0.85,
+      });
+
+      const chapters = getChapters(categorySlug, novelId);
+      for (const ch of chapters) {
+        const chapterLm = parseLastMod(ch.updatedAt, parsed.data.updated_at, indexData.generatedAt);
+        items.push({
+          url: absolute(`/novels/${categorySlug}/${novelId}/chapters/${ch.chapterNo}`),
+          lastModified: chapterLm,
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
+    }
+  }
+
   return items;
+}
+
+function getAllSitemapEntries(): MetadataRoute.Sitemap {
+  if (!cachedEntries) {
+    cachedEntries = buildAllSitemapEntries();
+  }
+  return cachedEntries;
+}
+
+/**
+ * Next.js 15：声明分块 Sitemap Index 的子表数量。
+ * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
+ */
+export async function generateSitemaps(): Promise<Array<{ id: number }>> {
+  const all = getAllSitemapEntries();
+  const total = all.length;
+  const count = Math.max(1, Math.ceil(total / CHUNK_SIZE));
+  return Array.from({ length: count }, (_, id) => ({ id }));
+}
+
+export default async function sitemap({
+  id,
+}: {
+  id: number;
+}): Promise<MetadataRoute.Sitemap> {
+  const page = typeof id === "string" ? Number.parseInt(String(id), 10) : Number(id);
+  const safePage = Number.isFinite(page) && page >= 0 ? page : 0;
+
+  const all = getAllSitemapEntries();
+  const start = safePage * CHUNK_SIZE;
+  return all.slice(start, start + CHUNK_SIZE);
 }
