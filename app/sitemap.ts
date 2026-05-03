@@ -114,6 +114,19 @@ function getAllSitemapEntries(): MetadataRoute.Sitemap {
   return cachedEntries;
 }
 
+/** 供 Route Handler（如 sitemap-index.xml）与 OpenNext 兜底索引用：站点绝对基址。 */
+export function getSitemapBaseUrl(): string {
+  return sitemapBaseUrl();
+}
+
+export const SITEMAP_CHUNK_SIZE = CHUNK_SIZE;
+
+/** 与 `generateSitemaps()` 一致：子 sitemap 分块数量（至少为 1）。 */
+export function getSitemapChunkCount(): number {
+  const all = getAllSitemapEntries();
+  return Math.max(1, Math.ceil(all.length / CHUNK_SIZE));
+}
+
 /**
  * Next.js 15：声明分块 Sitemap Index 的子表数量。
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap

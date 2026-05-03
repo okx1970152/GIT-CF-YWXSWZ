@@ -21,6 +21,6 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: toAbsoluteUrl("/sitemap.xml"),
+    sitemap: toAbsoluteUrl("/sitemap-index.xml"),
   };
 }
