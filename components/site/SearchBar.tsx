@@ -10,7 +10,7 @@ export function SearchBar({ className, defaultValue }: SearchBarProps) {
     <form
       action="/search"
       method="get"
-      className={cn("flex w-full min-w-0 max-w-md items-center gap-2", className)}
+      className={cn("flex w-auto min-w-0 max-w-md items-center gap-2", className)}
     >
       <label htmlFor="nav-search" className="sr-only">
         Search novels
@@ -21,7 +21,7 @@ export function SearchBar({ className, defaultValue }: SearchBarProps) {
         type="search"
         defaultValue={defaultValue}
         placeholder="Search…"
-        className="w-full min-w-0 rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-deep)] shadow-sm outline-none ring-[var(--accent-green)]/40 placeholder:text-[var(--text-muted)] focus:ring-2"
+        className="min-w-[7rem] flex-1 rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-deep)] shadow-sm outline-none ring-[var(--accent-green)]/40 placeholder:text-[var(--text-muted)] focus:ring-2 sm:min-w-[9rem]"
         autoComplete="off"
       />
       <button

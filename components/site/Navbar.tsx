@@ -64,11 +64,11 @@ export function Navbar() {
   );
 
   const tools = (
-    <div className="flex flex-wrap items-center justify-end gap-2">
+    <div className="flex min-w-0 flex-nowrap items-center justify-end gap-2">
       <Link href="/" className={isHome ? homeActive : homeInactive}>
         Home
       </Link>
-      <SearchBar className="w-auto min-w-[120px] max-w-[min(100%,320px)] shrink" />
+      <SearchBar className="max-w-[min(100vw-10rem,280px)] shrink sm:max-w-[300px] lg:max-w-[320px]" />
       <button
         type="button"
         onClick={toggleImageAds}
