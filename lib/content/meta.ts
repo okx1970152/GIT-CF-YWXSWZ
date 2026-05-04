@@ -24,6 +24,14 @@ export type NovelMeta = {
   tags?: string[];
 };
 
+/** 正文 hover / 导读节锚点（由生产端 meta/<chapter>.json 写入） */
+export type LoreAnchor = {
+  id: string;
+  surfaces: string[];
+  /** 与 id 相同时可省略；预留与导读 DOM id 对齐 */
+  guide_section_id?: string;
+};
+
 export type ChapterMeta = {
   /** 与 chapter_code 同义，章节 JSON 内显式写入 */
   chapter_no?: string;
@@ -39,6 +47,7 @@ export type ChapterMeta = {
   twitter_title?: string;
   twitter_description?: string;
   updated_at?: string;
+  lore_anchors?: LoreAnchor[];
 };
 
 export function getNovelMeta(categorySlug: string, novelId: string): NovelMeta | null {

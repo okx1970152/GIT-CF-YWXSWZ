@@ -15,6 +15,11 @@ import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
 import { loadAnnotationByChapterNo } from "@/lib/content/annotations";
 import { loadChapterMarkdownCached } from "@/lib/content/load-markdown";
+import {
+  applyGuideHeadingAnchors,
+  applyLoreAnchorsToChapterHtml,
+  extractLoreGuideSectionPreviews
+} from "@/lib/lore/lore-html";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
@@ -119,10 +124,17 @@ export default async function ChapterPage({ params }: Props) {
     chapterMeta?.guide_tags ?? []
   );
 
-  const chapterHtml = await markdownToHtml(chapterBody);
+  let chapterHtml = await markdownToHtml(chapterBody);
+  const anchors = chapterMeta?.lore_anchors ?? [];
+  if (anchors.length > 0) {
+    chapterHtml = applyLoreAnchorsToChapterHtml(chapterHtml, anchors);
+  }
+
   const guideMarkdown =
     stripRelatedTopicsFooter(annotation?.content ?? "").trim() || "*No annotation yet.*";
-  const guideHtml = await markdownToHtml(guideMarkdown);
+  let guideHtml = await markdownToHtml(guideMarkdown);
+  guideHtml = applyGuideHeadingAnchors(guideHtml);
+  const lorePreviews = anchors.length > 0 ? extractLoreGuideSectionPreviews(guideHtml) : {};
 
   const basePath = `/novels/${category}/${novelId}`;
   const chapterUrl = toAbsoluteUrl(`${basePath}/chapters/${chapterNo}`);
@@ -214,7 +226,11 @@ export default async function ChapterPage({ params }: Props) {
             {chapter.wordCount != null && chapter.wordCount > 0 ? (
               <p className="mt-2 font-sans text-sm text-[var(--text-muted)]">{chapter.wordCount.toLocaleString("en-US")} words</p>
             ) : null}
-            <MainContent chapterHtml={chapterHtml} />
+            <MainContent
+              chapterHtml={chapterHtml}
+              loreHoverEnabled={anchors.length > 0}
+              lorePreviews={anchors.length > 0 ? lorePreviews : undefined}
+            />
             <ChapterNavigation
               prevHref={prevHref}
               nextHref={nextHref}

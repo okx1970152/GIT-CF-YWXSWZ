@@ -49,3 +49,14 @@ iframe {
 .reader-text :where(h1, h2, h3, h4, h5, h6, li, blockquote, a) {
   overflow-wrap: anywhere;
 }
+
+.reader-text .lore-anchor {
+  cursor: help;
+  border-bottom: 1px dashed var(--text-muted);
+  text-decoration: none;
+}
+
+.reader-text .lore-anchor:focus {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}

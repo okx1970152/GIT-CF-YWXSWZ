@@ -1,16 +1,21 @@
 import { AdSlot } from "@/components/ads/AdSlot";
+import { LoreHoverLayer, type LorePreviewMap } from "@/components/novel/LoreHoverLayer";
 import { splitChapterHtmlAtHalfParagraphs } from "@/lib/splitChapterHtml";
 import { cn } from "@/lib/cn";
 
 type MainContentProps = {
   chapterHtml: string;
   className?: string;
+  /** 本章存在 lore_anchors 时为 true，正文已包 data-lore-id */
+  loreHoverEnabled?: boolean;
+  /** 按 lore id → 悬浮卡片摘要（可与正文锚点同时为空对象） */
+  lorePreviews?: LorePreviewMap;
 };
 
-export function MainContent({ chapterHtml, className }: MainContentProps) {
+export function MainContent({ chapterHtml, className, loreHoverEnabled, lorePreviews }: MainContentProps) {
   const { first, second } = splitChapterHtmlAtHalfParagraphs(chapterHtml);
 
-  return (
+  const inner = (
     <div
       className={cn("reader-text mt-6 min-w-0 max-w-[min(100%,900px)] xl:max-w-[880px]", className)}
       style={{ color: "var(--reader-fg, var(--text-deep))", fontSize: "var(--reader-content-font-size, 20px)" }}
@@ -36,4 +41,9 @@ export function MainContent({ chapterHtml, className }: MainContentProps) {
       <AdSlot page="reading" position="bottom" />
     </div>
   );
+
+  if (loreHoverEnabled) {
+    return <LoreHoverLayer lorePreviews={lorePreviews ?? {}}>{inner}</LoreHoverLayer>;
+  }
+  return inner;
 }

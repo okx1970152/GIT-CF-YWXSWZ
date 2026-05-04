@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
+import { LORE_JUMP_EVENT } from "@/components/novel/LoreHoverLayer";
 
 type AnnotationAsideProps = {
   title: string;
@@ -29,6 +30,21 @@ export function AnnotationAside({
   const [open, setOpen] = useState(false);
   const panelId = "essential-guide-panel";
 
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const id = (e as CustomEvent<{ id?: string }>).detail?.id;
+      if (!id || typeof id !== "string") return;
+      setOpen(true);
+      requestAnimationFrame(() => {
+        const panel = document.getElementById(panelId);
+        const target = panel?.querySelector(`#${CSS.escape(id)}`);
+        target?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    };
+    window.addEventListener(LORE_JUMP_EVENT, handler);
+    return () => window.removeEventListener(LORE_JUMP_EVENT, handler);
+  }, []);
+
   return (
     <div className="min-w-0">
       <button
@@ -46,7 +62,7 @@ export function AnnotationAside({
         id={panelId}
         className={cn(
           "annotation-box overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-4 shadow-sm transition-all duration-300 lg:sticky lg:top-28 lg:block lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto",
-          open ? "max-h-[2200px] opacity-100" : "max-h-0 border-transparent p-0 opacity-0",
+          open ? "max-h-[2200px] overflow-y-auto opacity-100" : "max-h-0 border-transparent p-0 opacity-0",
           "lg:max-h-[calc(100vh-7rem)] lg:opacity-100 lg:p-4 lg:border-[var(--border-soft)]"
         )}
         aria-label="Annotation track"
