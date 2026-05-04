@@ -9,6 +9,7 @@ import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { buildChapterShareTitle } from "@/lib/content/chapter-share";
+import { mergeGuideTopicLists, stripRelatedTopicsFooter } from "@/lib/content/guide-topics";
 import { getChapterMetaByNo } from "@/lib/content/meta";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
@@ -64,11 +65,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     chapterMeta?.chapter_seo_title || `${chapter.title} - ${displayTitle} - Reading Mode`;
   const shareShortTitle = buildChapterShareTitle(chapter.title, displayTitle, chapterMeta);
 
-  const keywordPool = [
-    ...(chapterMeta?.chapter_keywords ?? []),
-    ...(chapterMeta?.guide_tags ?? []),
-  ].map((item) => item.trim()).filter(Boolean);
-  const keywords = keywordPool.length ? Array.from(new Set(keywordPool)) : undefined;
+  const keywordsMerged = mergeGuideTopicLists(
+    chapterMeta?.chapter_keywords ?? [],
+    chapterMeta?.guide_tags ?? []
+  );
+  const keywords = keywordsMerged.length ? keywordsMerged : undefined;
 
   return {
     title: chapterTitleFull,
@@ -113,15 +114,15 @@ export default async function ChapterPage({ params }: Props) {
   const annotation = await loadAnnotationByChapterNo(category, novelId, chapterNo);
   const shareTitle = buildChapterShareTitle(chapter.title, displayTitle, chapterMeta);
   const adjacent = getAdjacentChapters(category, novelId, chapterNo);
-  const topicPool = [
-    ...(annotation?.relatedTopics ?? []),
-    ...(chapterMeta?.guide_tags ?? []),
-  ].map((item) => item.trim()).filter(Boolean);
-  const topics = topicPool.length ? Array.from(new Set(topicPool)) : [];
-
+  const topics = mergeGuideTopicLists(
+    annotation?.relatedTopics ?? [],
+    chapterMeta?.guide_tags ?? []
+  );
 
   const chapterHtml = await markdownToHtml(chapterBody);
-  const guideHtml = await markdownToHtml(annotation?.content || "*No annotation yet.*");
+  const guideMarkdown =
+    stripRelatedTopicsFooter(annotation?.content ?? "").trim() || "*No annotation yet.*";
+  const guideHtml = await markdownToHtml(guideMarkdown);
 
   const basePath = `/novels/${category}/${novelId}`;
   const chapterUrl = toAbsoluteUrl(`${basePath}/chapters/${chapterNo}`);

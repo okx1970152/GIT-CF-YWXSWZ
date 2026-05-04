@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { normalizeTopicKey } from "@/lib/content/guide-topics";
 
 type RelatedTopicsProps = {
   topics: string[];
@@ -16,7 +17,7 @@ export function RelatedTopics({ topics }: RelatedTopicsProps) {
       <div className="flex flex-wrap gap-x-3 gap-y-2 font-sans">
         {topics.map((topic) => (
           <Link
-            key={topic}
+            key={normalizeTopicKey(topic)}
             href={`/search?q=${encodeURIComponent(topic)}`}
             className="text-[10px] text-[var(--text-soft)] underline decoration-[var(--border-soft)]/80 underline-offset-2 hover:text-[#058c46]"
           >
