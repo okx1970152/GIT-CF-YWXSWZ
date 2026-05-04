@@ -61,17 +61,19 @@ export default async function CategoryPage({ params }: Props) {
 
   const novelsSorted = sortNovelsByRankingThenUpdated(pool);
 
+  const RAIL_LIMIT = 12;
+
   const popularRail = isRanking
-    ? novelsSorted.slice(0, 8)
+    ? novelsSorted.slice(0, RAIL_LIMIT)
     : (() => {
         const popularCandidates = shelfNovels!.filter((item) => item.hot || item.featured);
         const popularPool = popularCandidates.length ? popularCandidates : shelfNovels!;
-        return sortNovelsByRankingThenUpdated(popularPool).slice(0, 8);
+        return sortNovelsByRankingThenUpdated(popularPool).slice(0, RAIL_LIMIT);
       })();
 
   const latestRail = [...pool]
     .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
-    .slice(0, 8);
+    .slice(0, RAIL_LIMIT);
 
   const railTopTitle = isRanking ? "Top ranked (site-wide)" : `Popular in ${label}`;
   const railLatestTitle = isRanking ? "Recently updated (site-wide)" : `Latest in ${label}`;

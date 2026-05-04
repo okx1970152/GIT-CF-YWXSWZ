@@ -5,9 +5,11 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { DirectoryChapterNavigator } from "@/components/novel/DirectoryChapterNavigator";
 import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getNovelMeta } from "@/lib/content/meta";
 import { mergeNovelTags } from "@/lib/content/novel-merge";
 import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
+import { buildDirectoryBookJsonLd } from "@/lib/seo/structured-data";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 type DirectoryPageProps = {
@@ -36,8 +38,16 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
     "martial arts fantasy",
   ];
 
+  const directoryBookJsonLd = buildDirectoryBookJsonLd({
+    novel,
+    displayTitle,
+    summary,
+    directoryAbsUrl
+  });
+
   return (
     <SideAdsLayout page="directory">
+      <JsonLd id="ld-json-directory-book" data={directoryBookJsonLd} />
       <div className="mx-auto w-full max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
       <section aria-label={`${novel.title} semantic summary`} className="sr-only">
         <h1>{displayTitle}</h1>

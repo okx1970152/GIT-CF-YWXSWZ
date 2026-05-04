@@ -12,19 +12,37 @@ type SectionRailProps = {
   className?: string;
 };
 
-/** 自动向左推进（scrollLeft 增大）；与手动 Next 步长一致 */
-const SCROLL_STEP_PX = 560;
 const AUTO_ADVANCE_MS = 5000;
+/** 测量失败时的兜底（约等于 400px 卡 + gap-6） */
+const FALLBACK_CARD_STEP_PX = 424;
+
+/** 轨道内「一张卡 + flex gap」的步长，保证 Prev/Next / 自动轮播每次对齐下一张卡 */
+function getRailScrollStep(railEl: HTMLElement): number {
+  const track = railEl.firstElementChild as HTMLElement | null;
+  if (!track?.firstElementChild) return FALLBACK_CARD_STEP_PX;
+  const card = track.firstElementChild as HTMLElement;
+  const gapRaw = getComputedStyle(track).gap;
+  const gap = parseFloat(gapRaw) || 24;
+  const w = card.getBoundingClientRect().width;
+  return Math.max(1, Math.round(w + gap));
+}
+
+/** 横向卡片固定近似宽度 + shrink-0，避免 flex 把多张卡压进一屏导致无法滚动 */
+const RAIL_CARD_WIDTH =
+  "snap-start shrink-0 !w-[min(calc(100vw-2.5rem),22rem)] sm:!w-[400px] sm:max-w-[500px]";
 
 export function SectionRail({ title, novels, id, className }: SectionRailProps) {
   const first = novels[0];
   const rest = novels.slice(1);
   const railRef = useRef<HTMLDivElement | null>(null);
   const hoverPauseRef = useRef(false);
+  const novelsKey = novels.map((n) => `${n.categorySlug}:${n.novelId}`).join("|");
 
-  const scrollRail = (delta: number) => {
-    if (!railRef.current) return;
-    railRef.current.scrollBy({ left: delta, behavior: "smooth" });
+  const scrollRail = (direction: -1 | 1) => {
+    const el = railRef.current;
+    if (!el) return;
+    const step = getRailScrollStep(el);
+    el.scrollBy({ left: direction * step, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -38,17 +56,24 @@ export function SectionRail({ title, novels, id, className }: SectionRailProps) 
       if (!el) return;
       const maxScroll = el.scrollWidth - el.clientWidth;
       if (maxScroll <= 8) return;
-      const nextLeft = el.scrollLeft + SCROLL_STEP_PX;
-      if (nextLeft >= maxScroll - 8) {
+
+      const step = getRailScrollStep(el);
+      const left = el.scrollLeft;
+
+      // 已在最右端：回到开头，让所有卡片周期性都能轮到「主视觉位」
+      if (left >= maxScroll - 2) {
         el.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        el.scrollBy({ left: SCROLL_STEP_PX, behavior: "smooth" });
+        return;
       }
+
+      const remaining = maxScroll - left;
+      const delta = remaining <= step ? remaining : step;
+      el.scrollBy({ left: delta, behavior: "smooth" });
     };
 
     const idTimer = window.setInterval(tick, AUTO_ADVANCE_MS);
     return () => window.clearInterval(idTimer);
-  }, [rest.length]);
+  }, [rest.length, novelsKey]);
 
   const headingId = id ? `${id}-heading` : undefined;
 
@@ -78,7 +103,7 @@ export function SectionRail({ title, novels, id, className }: SectionRailProps) 
               <div className="flex shrink-0 gap-2 sm:justify-end">
                 <button
                   type="button"
-                  onClick={() => scrollRail(-SCROLL_STEP_PX)}
+                  onClick={() => scrollRail(-1)}
                   className="rounded-lg border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold text-[var(--text-soft)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
                   aria-label={`Scroll ${title} backward`}
                 >
@@ -86,7 +111,7 @@ export function SectionRail({ title, novels, id, className }: SectionRailProps) 
                 </button>
                 <button
                   type="button"
-                  onClick={() => scrollRail(SCROLL_STEP_PX)}
+                  onClick={() => scrollRail(1)}
                   className="rounded-lg border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold text-[var(--text-soft)] hover:bg-[#ddeedd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
                   aria-label={`Scroll ${title} forward`}
                 >
@@ -106,14 +131,14 @@ export function SectionRail({ title, novels, id, className }: SectionRailProps) 
               <div className="min-h-0 min-w-0 flex-1 self-start lg:min-w-0">
                 <div
                   ref={railRef}
-                  className="scrollbar-hide min-h-0 min-w-0 snap-x snap-mandatory overflow-x-auto scroll-smooth"
+                  className="scrollbar-hide min-h-0 min-w-0 snap-x snap-proximity overflow-x-auto scroll-smooth"
                 >
                   <div className="flex w-max items-start gap-6 pb-2">
                     {rest.map((novel) => (
                       <NovelCard
                         key={`${novel.categorySlug}-${novel.novelId}`}
                         novel={novel}
-                        className="snap-start"
+                        className={RAIL_CARD_WIDTH}
                       />
                     ))}
                   </div>

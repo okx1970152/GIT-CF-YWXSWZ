@@ -21,6 +21,11 @@ import {
   extractLoreGuideSectionPreviews
 } from "@/lib/lore/lore-html";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
+import {
+  buildChapterBreadcrumbJsonLd,
+  buildChapterReadingGraph,
+  markdownToPlainTextForSchema
+} from "@/lib/seo/structured-data";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
@@ -106,7 +111,6 @@ export default async function ChapterPage({ params }: Props) {
   if (!novel || !chapter) notFound();
   const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
   const displayTitle = getDisplayNovelTitle(novel);
-  const summary = getNovelSummary(novel);
 
   let chapterBody = "";
   try {
@@ -132,89 +136,48 @@ export default async function ChapterPage({ params }: Props) {
 
   const guideMarkdown =
     stripRelatedTopicsFooter(annotation?.content ?? "").trim() || "*No annotation yet.*";
+  const guidePlainForSchema = markdownToPlainTextForSchema(guideMarkdown);
+  const chapterPlainForSchema = markdownToPlainTextForSchema(chapterBody);
   let guideHtml = await markdownToHtml(guideMarkdown);
   guideHtml = applyGuideHeadingAnchors(guideHtml);
   const lorePreviews = anchors.length > 0 ? extractLoreGuideSectionPreviews(guideHtml) : {};
 
   const basePath = `/novels/${category}/${novelId}`;
+  const bookDirectoryUrl = toAbsoluteUrl(basePath);
   const chapterUrl = toAbsoluteUrl(`${basePath}/chapters/${chapterNo}`);
   const prevHref = adjacent.prev ? `${basePath}/chapters/${adjacent.prev}` : null;
   const nextHref = adjacent.next ? `${basePath}/chapters/${adjacent.next}` : null;
 
-  const description =
-    chapterMeta?.chapter_meta_description || readingDescription(chapterBody, summary);
+  const chapterHeadlineForSchema = chapterMeta?.chapter_title_en?.trim() || chapter.title;
 
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: toAbsoluteUrl("/")
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: novel.category,
-        item: toAbsoluteUrl(`/category/${category}`)
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: displayTitle,
-        item: toAbsoluteUrl(basePath)
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: chapterMeta?.chapter_title_en?.trim() || chapter.title,
-        item: chapterUrl
-      }
-    ]
-  };
+  const breadcrumbJsonLd = buildChapterBreadcrumbJsonLd({
+    homeUrl: toAbsoluteUrl("/"),
+    bookName: displayTitle,
+    bookDirectoryUrl,
+    chapterName: chapterHeadlineForSchema,
+    chapterUrl
+  });
 
-  const headline = chapterMeta?.chapter_title_en?.trim() || chapter.title;
-  const articleJsonLd: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline,
-    name: headline,
-    author: {
-      "@type": "Person",
-      name: novel.author
-    },
-    description,
-    url: chapterUrl,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": chapterUrl
-    },
-    isPartOf: {
-      "@type": "Book",
-      name: displayTitle,
-      url: toAbsoluteUrl(basePath)
-    },
-    inLanguage: "en",
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME
-    }
-  };
-
-  if (chapter.publishedAt) articleJsonLd.datePublished = chapter.publishedAt;
-  if (chapter.updatedAt || chapter.publishedAt) {
-    articleJsonLd.dateModified = chapter.updatedAt || chapter.publishedAt;
-  }
+  const readingGraphJsonLd = buildChapterReadingGraph({
+    chapterUrl,
+    bookDirectoryUrl,
+    displayTitle,
+    chapterNo,
+    chapterTitle: chapter.title,
+    novelAuthor: novel.author,
+    guidePlainText: guidePlainForSchema,
+    chapterBodyPlainText: chapterPlainForSchema,
+    siteName: SITE_NAME,
+    chapterDatePublished: chapter.publishedAt,
+    chapterDateModified: chapter.updatedAt || chapter.publishedAt
+  });
 
   return (
     <>
-      <JsonLd id="ld-json-chapter-breadcrumb" data={breadcrumbJsonLd} />
-      <JsonLd id="ld-json-chapter-article" data={articleJsonLd} />
-
       <SideAdsLayout page="reading">
         <ChapterReader>
+          <JsonLd id="ld-json-reading-graph" data={readingGraphJsonLd} />
+          <JsonLd id="ld-json-chapter-breadcrumb" data={breadcrumbJsonLd} />
           <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
           <article className="novel-container min-w-0">
             <h1
