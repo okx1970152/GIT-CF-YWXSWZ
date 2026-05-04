@@ -5,6 +5,7 @@ import { DirectoryPage } from "@/components/novel/DirectoryPage";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { getCategoryLabel } from "@/lib/content/categories";
 import { getNovelMeta } from "@/lib/content/meta";
+import { mergeNovelTags } from "@/lib/content/novel-merge";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
 import { absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -25,9 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId } = await params;
   const novel = getNovel(category, novelId);
   if (!novel) return {};
+  /** 目录页 SEO：title/description/og/twitter 以 meta/novel.json 为准；tags 与排序合并规则见 lib/content/novel-merge.ts */
   const novelMeta = getNovelMeta(category, novelId);
   const displayTitle = getDisplayNovelTitle(novel);
   const summary = getNovelSummary(novel);
+  const mergedTagList = mergeNovelTags(novel, novelMeta);
 
   const title = (novelMeta?.seo_title || `${displayTitle} - Directory`).trim();
   const description = (novelMeta?.meta_description || novelMeta?.summary || summary).trim().slice(0, 200);
@@ -53,9 +56,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     keywords: novelMeta?.keywords?.length
       ? novelMeta.keywords
-      : novelMeta?.tags?.length
-        ? novelMeta.tags
-        : undefined,
+      : mergedTagList.length
+        ? mergedTagList
+        : novelMeta?.tags?.length
+          ? novelMeta.tags
+          : undefined,
     robots: publicRobots()
   };
 }
@@ -64,8 +69,10 @@ export default async function NovelDirectoryRoute({ params }: Props) {
   const { category, novelId } = await params;
   const novel = getNovel(category, novelId);
   if (!novel) notFound();
+  const novelMeta = getNovelMeta(category, novelId);
   const displayTitle = getDisplayNovelTitle(novel);
   const summary = getNovelSummary(novel);
+  const mergedTags = mergeNovelTags(novel, novelMeta);
 
   const chapters = getChapters(category, novelId);
   const canonical = toAbsoluteUrl(`/novels/${category}/${novelId}`);
@@ -109,8 +116,8 @@ export default async function NovelDirectoryRoute({ params }: Props) {
     inLanguage: "en"
   };
 
-  if (novel.tags?.length) {
-    bookJsonLd.genre = novel.tags;
+  if (mergedTags.length) {
+    bookJsonLd.genre = mergedTags;
   }
 
   return (

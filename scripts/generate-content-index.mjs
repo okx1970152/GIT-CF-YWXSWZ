@@ -129,6 +129,15 @@ function buildIndex() {
         if (payload) chapterMetaMap[chapterNo] = payload;
       }
 
+      for (const chapterNo of Object.keys(annotationMap)) {
+        const ann = annotationMap[chapterNo];
+        if (ann.relatedTopics?.length) continue;
+        const meta = chapterMetaMap[chapterNo];
+        const guideTags = meta?.guide_tags;
+        if (!Array.isArray(guideTags) || guideTags.length === 0) continue;
+        ann.relatedTopics = guideTags.map((t) => String(t).trim()).filter(Boolean);
+      }
+
       novels.push({
         categorySlug,
         novelId,

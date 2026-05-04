@@ -16,14 +16,26 @@ export function NovelCard({ novel, className }: NovelCardProps) {
   const summary = getNovelSummary(novel);
   const label = `Open directory: ${displayTitle}`;
   const shareUrl = toAbsoluteUrl(href);
+  const coverUrl = novel.cover?.trim();
 
   return (
     <div
       className={cn(
-        "group/homecard flex aspect-[5/4] max-h-[400px] w-full max-w-[500px] flex-col rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] shadow-sm outline-none ring-[var(--accent-green)]/30 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--accent-green)] hover:bg-[var(--accent-green)] hover:shadow-md focus-within:-translate-y-0.5 focus-within:border-[var(--accent-green)] focus-within:bg-[var(--accent-green)] focus-within:shadow-md focus-within:ring-2 sm:h-[400px] sm:max-h-[400px] sm:aspect-auto",
+        "group/homecard flex aspect-[5/4] max-h-[400px] w-full max-w-[500px] flex-col overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] shadow-sm outline-none ring-[var(--accent-green)]/30 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--accent-green)] hover:bg-[var(--accent-green)] hover:shadow-md focus-within:-translate-y-0.5 focus-within:border-[var(--accent-green)] focus-within:bg-[var(--accent-green)] focus-within:shadow-md focus-within:ring-2 sm:h-[400px] sm:max-h-[400px] sm:aspect-auto",
         className
       )}
     >
+      {coverUrl ? (
+        <Link
+          href={href}
+          aria-hidden
+          tabIndex={-1}
+          className="relative block h-36 w-full shrink-0 overflow-hidden sm:h-40"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element -- URL from content */}
+          <img src={coverUrl} alt="" className="h-full w-full object-cover" loading="lazy" />
+        </Link>
+      ) : null}
       <Link
         href={href}
         aria-label={label}

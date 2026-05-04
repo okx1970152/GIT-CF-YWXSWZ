@@ -10,6 +10,8 @@ export type NovelMeta = {
   featured?: boolean;
   /** 与 info/index.md hot 对齐（可选） */
   hot?: boolean;
+  /** 榜单/排序权重；正数时优先于 info/index.md 的 ranking */
+  ranking?: number;
   keywords?: string[];
   seo_title?: string;
   meta_description?: string;

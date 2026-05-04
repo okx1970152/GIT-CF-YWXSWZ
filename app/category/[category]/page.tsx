@@ -5,7 +5,7 @@ import { SectionRail } from "@/components/novel/SectionRail";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NovelCard } from "@/components/novel/NovelCard";
 import { ALL_CATEGORY_SLUGS, getCategoryLabel } from "@/lib/content/categories";
-import { getNovelsByCategory } from "@/lib/content/novels";
+import { getNovelsByCategory, sortNovelsByRankingThenUpdated } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
@@ -47,12 +47,14 @@ export default async function CategoryPage({ params }: Props) {
 
   const label = getCategoryLabel(category);
   const novels = getNovelsByCategory(category);
-  const popular = novels.filter((item) => item.hot || item.featured);
+  const popularCandidates = novels.filter((item) => item.hot || item.featured);
+  const popularPool = popularCandidates.length ? popularCandidates : novels;
+  const popularRail = sortNovelsByRankingThenUpdated(popularPool).slice(0, 8);
   const latest = [...novels].sort(
     (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
   );
-  const popularRail = popular.length ? popular : novels.slice(0, 8);
   const latestRail = latest.slice(0, 8);
+  const novelsSorted = sortNovelsByRankingThenUpdated(novels);
 
   return (
     <>
@@ -74,9 +76,9 @@ export default async function CategoryPage({ params }: Props) {
         <h2 id="all-category-heading" className="mb-5 font-serif text-2xl font-semibold text-[var(--text-deep)]">
           All {label} Novels
         </h2>
-        {novels.length ? (
+        {novelsSorted.length ? (
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {novels.map((novel) => (
+            {novelsSorted.map((novel) => (
               <NovelCard key={`${novel.categorySlug}-${novel.novelId}`} novel={novel} className="max-w-none" />
             ))}
           </div>

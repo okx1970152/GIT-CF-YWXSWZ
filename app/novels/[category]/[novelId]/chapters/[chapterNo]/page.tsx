@@ -8,6 +8,7 @@ import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { buildChapterShareTitle } from "@/lib/content/chapter-share";
 import { getChapterMetaByNo } from "@/lib/content/meta";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
@@ -61,6 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalPath = `/novels/${category}/${novelId}/chapters/${chapterNo}`;
   const chapterTitleFull =
     chapterMeta?.chapter_seo_title || `${chapter.title} - ${displayTitle} - Reading Mode`;
+  const shareShortTitle = buildChapterShareTitle(chapter.title, displayTitle, chapterMeta);
 
   const keywordPool = [
     ...(chapterMeta?.chapter_keywords ?? []),
@@ -77,13 +79,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       ...baseOpenGraph(),
       type: "article",
-      title: chapterMeta?.og_title || chapterTitleFull,
+      title: chapterMeta?.og_title || shareShortTitle,
       description: chapterMeta?.og_description || description,
       url: absoluteOgUrl(canonicalPath)
     },
     twitter: {
       card: "summary_large_image",
-      title: chapterMeta?.twitter_title || chapterMeta?.og_title || chapterTitleFull,
+      title: chapterMeta?.twitter_title || chapterMeta?.og_title || shareShortTitle,
       description: chapterMeta?.twitter_description || chapterMeta?.og_description || description,
     },
     keywords,
@@ -109,6 +111,7 @@ export default async function ChapterPage({ params }: Props) {
   }
 
   const annotation = await loadAnnotationByChapterNo(category, novelId, chapterNo);
+  const shareTitle = buildChapterShareTitle(chapter.title, displayTitle, chapterMeta);
   const adjacent = getAdjacentChapters(category, novelId, chapterNo);
   const topicPool = [
     ...(annotation?.relatedTopics ?? []),
@@ -153,17 +156,18 @@ export default async function ChapterPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 4,
-        name: chapter.title,
+        name: chapterMeta?.chapter_title_en?.trim() || chapter.title,
         item: chapterUrl
       }
     ]
   };
 
+  const headline = chapterMeta?.chapter_title_en?.trim() || chapter.title;
   const articleJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: chapter.title,
-    name: chapter.title,
+    headline,
+    name: headline,
     author: {
       "@type": "Person",
       name: novel.author
@@ -215,7 +219,7 @@ export default async function ChapterPage({ params }: Props) {
               nextHref={nextHref}
               directoryHref={basePath}
               shareUrl={chapterUrl}
-              shareTitle={`${chapter.title} - ${displayTitle}`}
+              shareTitle={shareTitle}
             />
           </article>
 
@@ -224,7 +228,7 @@ export default async function ChapterPage({ params }: Props) {
             guideHtml={guideHtml}
             topics={topics}
             shareUrl={chapterUrl}
-            shareTitle={`${chapter.title} - ${displayTitle}`}
+            shareTitle={shareTitle}
           />
           </div>
         </ChapterReader>
