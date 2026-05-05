@@ -42,7 +42,8 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
     novel,
     displayTitle,
     summary,
-    directoryAbsUrl
+    directoryAbsUrl,
+    genres: displayTags.length ? displayTags : undefined
   });
 
   return (

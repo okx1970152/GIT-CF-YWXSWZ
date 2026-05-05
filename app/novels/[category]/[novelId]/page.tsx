@@ -69,10 +69,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
   const { category, novelId } = await params;
   const novel = getNovel(category, novelId);
   if (!novel) notFound();
-  const novelMeta = getNovelMeta(category, novelId);
   const displayTitle = getDisplayNovelTitle(novel);
-  const summary = getNovelSummary(novel);
-  const mergedTags = mergeNovelTags(novel, novelMeta);
 
   const chapters = getChapters(category, novelId);
   const canonical = toAbsoluteUrl(`/novels/${category}/${novelId}`);
@@ -103,27 +100,9 @@ export default async function NovelDirectoryRoute({ params }: Props) {
     ]
   };
 
-  const bookJsonLd: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    name: displayTitle,
-    author: {
-      "@type": "Person",
-      name: novel.author
-    },
-    description: summary,
-    url: canonical,
-    inLanguage: "en"
-  };
-
-  if (mergedTags.length) {
-    bookJsonLd.genre = mergedTags;
-  }
-
   return (
     <>
       <JsonLd id="ld-json-directory-breadcrumb" data={breadcrumbJsonLd} />
-      <JsonLd id="ld-json-directory-book" data={bookJsonLd} />
       <DirectoryPage novel={novel} chapters={chapters} />
       <SiteFooter variant="directory" novelTitle={displayTitle} />
     </>
