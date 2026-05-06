@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import { searchContent } from "@/lib/content/search";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -42,6 +43,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
 export default async function SearchPage({ searchParams }: Props) {
   const sp = await searchParams;
+  await ensureSiteIndexesLoaded();
   const query = sp.q?.trim() || "";
   const results = query ? searchContent(query) : [];
   const queryLower = query.toLowerCase();

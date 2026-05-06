@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import {
   getWikiNovelBucket,
   getWikiNovelDisplayLabel,
@@ -16,7 +17,8 @@ export const revalidate = 3600;
 /** true：构建未预生成的 novelId 仍可 SSR（避免 Cloudflare/OpenNext 下子路由全体 404） */
 export const dynamicParams = true;
 
-export function generateStaticParams(): { novelId: string }[] {
+export async function generateStaticParams(): Promise<{ novelId: string }[]> {
+  await ensureSiteIndexesLoaded();
   return getWikiNovelIdsSorted().map((novelId) => ({ novelId }));
 }
 
@@ -24,6 +26,7 @@ type Props = { params: Promise<{ novelId: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { novelId } = await params;
+  await ensureSiteIndexesLoaded();
   const bucket = getWikiNovelBucket(novelId);
   if (!bucket) return {};
   const label = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
@@ -47,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WikiNovelHubPage({ params }: Props) {
   const { novelId } = await params;
+  await ensureSiteIndexesLoaded();
   const bucket = getWikiNovelBucket(novelId);
   if (!bucket) notFound();
 

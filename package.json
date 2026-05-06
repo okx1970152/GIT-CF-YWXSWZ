@@ -15,7 +15,7 @@
     "diag:content": "node ./scripts/diagnose-content.mjs",
     "preview": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-build": "npm run sync:content && npm run generate:content-index && npm run generate:wiki-index && npm run diag:content && npm run copy-novel-md && opennextjs-cloudflare build"
+    "cf-build": "npm run sync:content && npm run generate:content-index && npm run generate:wiki-index && npm run diag:content && npm run copy-novel-md && npm run copy-site-index && opennextjs-cloudflare build"
   },
   "dependencies": {
     "clsx": "^2.1.1",

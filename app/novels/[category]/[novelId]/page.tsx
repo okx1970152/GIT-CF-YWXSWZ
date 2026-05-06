@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { getCategoryLabel } from "@/lib/content/categories";
 import { getNovelMeta } from "@/lib/content/meta";
 import { mergeNovelTags } from "@/lib/content/novel-merge";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
 import { absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -15,7 +16,8 @@ export const revalidate = 3600;
 
 type Props = { params: Promise<{ category: string; novelId: string }> };
 
-export function generateStaticParams(): { category: string; novelId: string }[] {
+export async function generateStaticParams(): Promise<{ category: string; novelId: string }[]> {
+  await ensureSiteIndexesLoaded();
   return getAllNovels().map((novel) => ({
     category: novel.categorySlug,
     novelId: novel.novelId
@@ -24,6 +26,7 @@ export function generateStaticParams(): { category: string; novelId: string }[] 
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId } = await params;
+  await ensureSiteIndexesLoaded();
   const novel = getNovel(category, novelId);
   if (!novel) return {};
   /** 目录页 SEO：title/description/og/twitter 以 meta/novel.json 为准；tags 与排序合并规则见 lib/content/novel-merge.ts */
@@ -67,6 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function NovelDirectoryRoute({ params }: Props) {
   const { category, novelId } = await params;
+  await ensureSiteIndexesLoaded();
   const novel = getNovel(category, novelId);
   if (!novel) notFound();
   const displayTitle = getDisplayNovelTitle(novel);

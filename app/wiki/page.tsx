@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import { getWikiNovelBucket, getWikiNovelDisplayLabel, getWikiNovelIdsSorted } from "@/lib/content/wiki-index";
 import {
   WIKI_HUB_HEADING,
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   robots: publicRobots()
 };
 
-export default function WikiHubPage() {
+export default async function WikiHubPage() {
+  await ensureSiteIndexesLoaded();
   const novelIds = getWikiNovelIdsSorted();
 
   return (

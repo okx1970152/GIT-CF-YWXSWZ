@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import {
   getWikiEntry,
   getWikiNovelBucket,
@@ -21,7 +22,8 @@ export const revalidate = 3600;
 /** true：词条 id 未出现在 generateStaticParams 时仍可按需渲染，避免误 404 */
 export const dynamicParams = true;
 
-export function generateStaticParams(): { novelId: string; id: string }[] {
+export async function generateStaticParams(): Promise<{ novelId: string; id: string }[]> {
+  await ensureSiteIndexesLoaded();
   return getWikiTermStaticParams();
 }
 
@@ -29,6 +31,7 @@ type Props = { params: Promise<{ novelId: string; id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { novelId, id } = await params;
+  await ensureSiteIndexesLoaded();
   const entry = getWikiEntry(novelId, id);
   const bucket = getWikiNovelBucket(novelId);
   if (!entry || !bucket) return {};
@@ -54,6 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WikiTermPage({ params }: Props) {
   const { novelId, id } = await params;
+  await ensureSiteIndexesLoaded();
   const entry = getWikiEntry(novelId, id);
   const bucket = getWikiNovelBucket(novelId);
   if (!entry || !bucket) notFound();
