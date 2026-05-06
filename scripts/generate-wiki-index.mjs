@@ -2,22 +2,18 @@ import fs from "node:fs";
 import path from "node:path";
 
 const workspaceRoot = process.cwd();
-const contentIndexPath = path.join(workspaceRoot, "data", "content-index.json");
+const novelsRoot = path.join(workspaceRoot, "novels");
 const outputPath = path.join(workspaceRoot, "data", "wiki-index.json");
 
 function log(message) {
   process.stdout.write(`[wiki-index] ${message}\n`);
 }
 
-function readContentIndex() {
-  if (!fs.existsSync(contentIndexPath)) {
-    log(`missing ${contentIndexPath}; writing empty wiki-index`);
-    return null;
-  }
+function readJson(filePath) {
   try {
-    return JSON.parse(fs.readFileSync(contentIndexPath, "utf8"));
+    if (!fs.existsSync(filePath)) return null;
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
   } catch {
-    log(`failed to parse content-index; writing empty wiki-index`);
     return null;
   }
 }
@@ -33,36 +29,43 @@ function longestSurface(surfaces) {
   return arr.reduce((best, s) => (s.length > best.length ? s : best), arr[0]);
 }
 
-function buildWikiIndex(indexData) {
+/**
+ * 从 novels 下各书的 meta 目录中的章节 JSON 直接读取 lore_anchors（不依赖 content-index 内嵌重型 meta）。
+ */
+function buildWikiIndexFromDisk() {
   /** @type {Record<string, { categorySlug: string, entries: Record<string, unknown> }>} */
   const novels = {};
 
-  if (!indexData?.categories || !Array.isArray(indexData.categories)) {
+  if (!fs.existsSync(novelsRoot)) {
     return { version: 1, generatedAt: new Date().toISOString(), novels };
   }
 
-  for (const cat of indexData.categories) {
-    const categorySlug = cat.slug;
-    if (!categorySlug || !Array.isArray(cat.novels)) continue;
+  for (const catEnt of fs.readdirSync(novelsRoot, { withFileTypes: true })) {
+    if (!catEnt.isDirectory()) continue;
+    const categorySlug = catEnt.name;
+    const catPath = path.join(novelsRoot, categorySlug);
 
-    for (const novel of cat.novels) {
-      const novelId = novel.novelId;
-      if (!novelId) continue;
+    for (const novelEnt of fs.readdirSync(catPath, { withFileTypes: true })) {
+      if (!novelEnt.isDirectory()) continue;
+      const novelId = novelEnt.name;
+      const metaDir = path.join(catPath, novelId, "meta");
+      if (!fs.existsSync(metaDir)) continue;
 
-      const chapterMetaByChapterNo = novel.chapterMetaByChapterNo || {};
       /** @type {Map<string, { definition: string, surfaces: Set<string>, chapters: Set<string> }>} */
       const byId = new Map();
 
-      for (const [chapterNo, meta] of Object.entries(chapterMetaByChapterNo)) {
-        const anchors = meta?.lore_anchors;
+      for (const fileName of fs.readdirSync(metaDir)) {
+        if (!fileName.endsWith(".json") || fileName === "novel.json") continue;
+        const chapterNo = fileName.slice(0, 4);
+        const full = readJson(path.join(metaDir, fileName));
+        const anchors = full?.lore_anchors;
         if (!Array.isArray(anchors)) continue;
 
         for (const anchor of anchors) {
           const id = anchor?.id;
           if (!isNonEmptyString(id)) continue;
 
-          const rawDef =
-            typeof anchor.definition === "string" ? anchor.definition.trim() : "";
+          const rawDef = typeof anchor.definition === "string" ? anchor.definition.trim() : "";
           const surfaces = Array.isArray(anchor.surfaces)
             ? anchor.surfaces.map((s) => String(s).trim()).filter(Boolean)
             : [];
@@ -112,8 +115,7 @@ function buildWikiIndex(indexData) {
   };
 }
 
-const indexData = readContentIndex();
-const wikiData = indexData ? buildWikiIndex(indexData) : buildWikiIndex(null);
+const wikiData = buildWikiIndexFromDisk();
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, JSON.stringify(wikiData, null, 2) + "\n", "utf8");

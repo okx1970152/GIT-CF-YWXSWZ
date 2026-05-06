@@ -38,6 +38,21 @@ function readJson(filePath) {
   }
 }
 
+/** 仅保留搜索/标签用轻量字段；重型字段由运行时读 meta/NNNN.json（见 load-chapter-meta）。 */
+function slimChapterMetaForIndex(full) {
+  if (!full || typeof full !== "object") return null;
+  const out = {};
+  const kw = full.chapter_keywords;
+  if (Array.isArray(kw) && kw.length > 0) {
+    out.chapter_keywords = kw.map((x) => String(x).trim()).filter(Boolean);
+  }
+  const gt = full.guide_tags;
+  if (Array.isArray(gt) && gt.length > 0) {
+    out.guide_tags = gt.map((x) => String(x).trim()).filter(Boolean);
+  }
+  return out;
+}
+
 function listDirs(dir) {
   if (!fs.existsSync(dir)) return [];
   return fs
@@ -120,23 +135,29 @@ function buildIndex() {
         };
       }
 
-      // 整份章节 meta JSON 原样进入索引（含 lore_anchors、可选 cultural_notes_faq 等）
-      const chapterMetaMap = {};
+      /** 全量 meta（仅构建期使用）；写入索引前会 slim，避免 Worker 解析巨型 JSON。 */
+      const chapterMetaFull = {};
       const metaDir = path.join(novelBase, "meta");
       for (const fileName of listFiles(metaDir, ".json")) {
         if (fileName === "novel.json") continue;
         const chapterNo = fileName.slice(0, 4);
         const payload = readJson(path.join(metaDir, fileName));
-        if (payload) chapterMetaMap[chapterNo] = payload;
+        if (payload) chapterMetaFull[chapterNo] = payload;
       }
 
       for (const chapterNo of Object.keys(annotationMap)) {
         const ann = annotationMap[chapterNo];
         if (ann.relatedTopics?.length) continue;
-        const meta = chapterMetaMap[chapterNo];
+        const meta = chapterMetaFull[chapterNo];
         const guideTags = meta?.guide_tags;
         if (!Array.isArray(guideTags) || guideTags.length === 0) continue;
         ann.relatedTopics = guideTags.map((t) => String(t).trim()).filter(Boolean);
+      }
+
+      const chapterMetaByChapterNo = {};
+      for (const [chapterNo, payload] of Object.entries(chapterMetaFull)) {
+        const slim = slimChapterMetaForIndex(payload);
+        if (slim && Object.keys(slim).length > 0) chapterMetaByChapterNo[chapterNo] = slim;
       }
 
       novels.push({
@@ -146,7 +167,7 @@ function buildIndex() {
         metaNovel,
         chapters: chapterItems,
         annotationsByChapterNo: annotationMap,
-        chapterMetaByChapterNo: chapterMetaMap,
+        chapterMetaByChapterNo,
       });
     }
 
@@ -154,7 +175,7 @@ function buildIndex() {
   }
 
   return {
-    version: 2,
+    version: 3,
     generatedAt: new Date().toISOString(),
     categories,
   };

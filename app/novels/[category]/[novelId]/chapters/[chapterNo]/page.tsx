@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) return {};
-  const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
+  const chapterMeta = await getChapterMetaByNo(category, novelId, chapterNo);
   const displayTitle = getDisplayNovelTitle(novel);
   const summary = getNovelSummary(novel);
 
@@ -134,7 +134,7 @@ export default async function ChapterPage({ params }: Props) {
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) notFound();
-  const chapterMeta = getChapterMetaByNo(category, novelId, chapterNo);
+  const chapterMeta = await getChapterMetaByNo(category, novelId, chapterNo);
   const displayTitle = getDisplayNovelTitle(novel);
 
   let chapterBody = "";

@@ -1,4 +1,6 @@
+import { padChapterNo } from "@/lib/content/chapter-utils";
 import { getIndexNovel } from "@/lib/content/content-index";
+import { loadChapterMetaCached } from "@/lib/content/load-chapter-meta";
 
 export type NovelMeta = {
   title?: string;
@@ -64,13 +66,41 @@ export function getNovelMeta(categorySlug: string, novelId: string): NovelMeta |
   return (novel?.metaNovel as NovelMeta | null) ?? null;
 }
 
-export function getChapterMetaByNo(
+/**
+ * 全局 content-index 中的章节 meta 仅保留搜索用轻量字段（见 generate-content-index 的 slim）。
+ * 用于 getSearchIndex 等，避免为搜索拉整份 meta JSON。
+ */
+export function getChapterSearchHintsFromIndex(
   categorySlug: string,
   novelId: string,
   chapterNo: string
-): ChapterMeta | null {
+): { chapter_keywords?: string[]; guide_tags?: string[] } {
   const novel = getIndexNovel(categorySlug, novelId);
-  if (!novel) return null;
-  return (novel.chapterMetaByChapterNo[chapterNo] as ChapterMeta | undefined) ?? null;
+  if (!novel) return {};
+  const padded = padChapterNo(chapterNo);
+  const raw =
+    (novel.chapterMetaByChapterNo[padded] as Record<string, unknown> | undefined) ??
+    (novel.chapterMetaByChapterNo[chapterNo] as Record<string, unknown> | undefined);
+  if (!raw || typeof raw !== "object") return {};
+
+  const chapter_keywords = Array.isArray(raw.chapter_keywords)
+    ? (raw.chapter_keywords as unknown[]).map((t) => String(t).trim()).filter(Boolean)
+    : undefined;
+  const guide_tags = Array.isArray(raw.guide_tags)
+    ? (raw.guide_tags as unknown[]).map((t) => String(t).trim()).filter(Boolean)
+    : undefined;
+
+  const out: { chapter_keywords?: string[]; guide_tags?: string[] } = {};
+  if (chapter_keywords?.length) out.chapter_keywords = chapter_keywords;
+  if (guide_tags?.length) out.guide_tags = guide_tags;
+  return out;
 }
 
+/** 完整章节 meta：运行时读 meta/NNNN.json（ASSETS / fs），勿从全局索引取重型字段。 */
+export async function getChapterMetaByNo(
+  categorySlug: string,
+  novelId: string,
+  chapterNo: string
+): Promise<ChapterMeta | null> {
+  return loadChapterMetaCached(categorySlug, novelId, chapterNo);
+}

@@ -45,7 +45,7 @@ export default async function SearchPage({ searchParams }: Props) {
   const sp = await searchParams;
   await ensureContentIndex();
   const query = sp.q?.trim() || "";
-  const results = query ? searchContent(query) : [];
+  const results = query ? await searchContent(query) : [];
   const queryLower = query.toLowerCase();
   const highlight = (text: string) => {
     if (!queryLower) return text;
