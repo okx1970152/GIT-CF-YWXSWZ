@@ -6,7 +6,10 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // OpenNext：默认「资源先匹配」时，未预生成进 assets 的 /wiki/* 可能被边缘直接 404，Worker 收不到请求。
+    // /wiki 子树一律先走 Worker，由 Next 处理 HTML 与 ?_rsc= 导航。（见 CF Static Assets run_worker_first）
+    "run_worker_first": ["/wiki/*"]
   },
   "observability": {
     "enabled": true
