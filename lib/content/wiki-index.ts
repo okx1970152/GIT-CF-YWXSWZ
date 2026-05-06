@@ -30,6 +30,10 @@ export function primeWikiIndexCache(snapshot: WikiIndexData): void {
   wikiCache = snapshot;
 }
 
+export function isWikiIndexPrimed(): boolean {
+  return wikiCache !== null;
+}
+
 /**
  * 运行时读取 wiki-index.json（勿静态 import JSON），避免 Worker bundle 内联整份维基索引。
  * 与 content-index 相同：Worker 依赖 ASSETS 预载；本地可读 data/ 或 public/__site_data__/。

@@ -44,6 +44,10 @@ export function primeContentIndexCache(snapshot: ContentIndexRoot): void {
   indexCache = snapshot;
 }
 
+export function isContentIndexPrimed(): boolean {
+  return indexCache !== null;
+}
+
 /**
  * 运行时读取 content-index.json（勿静态 import JSON），避免 OpenNext Worker bundle 内联整份索引。
  * Cloudflare Worker 上无可靠 Node fs：依赖 `public/__site_data__/` + instrumentation 预载；

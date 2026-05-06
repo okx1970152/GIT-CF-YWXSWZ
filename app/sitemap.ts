@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getContentIndexSnapshot } from "@/lib/content/content-index";
 import { getWikiIndexSnapshot } from "@/lib/content/wiki-index";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import { ALL_CATEGORY_SLUGS } from "@/lib/content/categories";
 import { getChapters } from "@/lib/content/chapters";
 import { getCategoryLatestUpdatedAt, getLatestContentUpdatedAt } from "@/lib/content/novels";
@@ -133,7 +134,8 @@ function buildAllSitemapEntries(): MetadataRoute.Sitemap {
   return items;
 }
 
-function getAllSitemapEntries(): MetadataRoute.Sitemap {
+async function getAllSitemapEntries(): Promise<MetadataRoute.Sitemap> {
+  await ensureSiteIndexesLoaded();
   if (!cachedEntries) {
     cachedEntries = buildAllSitemapEntries();
   }
@@ -148,8 +150,8 @@ export function getSitemapBaseUrl(): string {
 export const SITEMAP_CHUNK_SIZE = CHUNK_SIZE;
 
 /** 与 `generateSitemaps()` 一致：子 sitemap 分块数量（至少为 1）。 */
-export function getSitemapChunkCount(): number {
-  const all = getAllSitemapEntries();
+export async function getSitemapChunkCount(): Promise<number> {
+  const all = await getAllSitemapEntries();
   return Math.max(1, Math.ceil(all.length / CHUNK_SIZE));
 }
 
@@ -158,7 +160,7 @@ export function getSitemapChunkCount(): number {
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
 export async function generateSitemaps(): Promise<Array<{ id: number }>> {
-  const all = getAllSitemapEntries();
+  const all = await getAllSitemapEntries();
   const total = all.length;
   const count = Math.max(1, Math.ceil(total / CHUNK_SIZE));
   return Array.from({ length: count }, (_, id) => ({ id }));
@@ -172,7 +174,7 @@ export default async function sitemap({
   const page = typeof id === "string" ? Number.parseInt(String(id), 10) : Number(id);
   const safePage = Number.isFinite(page) && page >= 0 ? page : 0;
 
-  const all = getAllSitemapEntries();
+  const all = await getAllSitemapEntries();
   const start = safePage * CHUNK_SIZE;
   return all.slice(start, start + CHUNK_SIZE);
 }

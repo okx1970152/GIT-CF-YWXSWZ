@@ -7,7 +7,7 @@ import { getSitemapBaseUrl, getSitemapChunkCount } from "../sitemap";
  */
 export async function GET(): Promise<Response> {
   const base = getSitemapBaseUrl().replace(/\/+$/, "");
-  const chunkCount = getSitemapChunkCount();
+  const chunkCount = await getSitemapChunkCount();
 
   const lines = [
     `<?xml version="1.0" encoding="UTF-8"?>`,

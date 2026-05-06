@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE_URL } from "@/lib/seo";
 import { baseOpenGraph, publicRobots, SITE_NAME } from "@/lib/seo-metadata";
 import { SiteShell } from "@/components/site/SiteShell";
+import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -46,7 +47,8 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  await ensureSiteIndexesLoaded();
   return (
     <html lang="en" className={`${fontSans.variable} ${fontSerif.variable}`}>
       <body className={`${fontSans.className} font-sans antialiased`}>
