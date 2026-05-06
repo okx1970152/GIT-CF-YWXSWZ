@@ -120,6 +120,7 @@ function buildIndex() {
         };
       }
 
+      // 整份章节 meta JSON 原样进入索引（含 lore_anchors、可选 cultural_notes_faq 等）
       const chapterMetaMap = {};
       const metaDir = path.join(novelBase, "meta");
       for (const fileName of listFiles(metaDir, ".json")) {

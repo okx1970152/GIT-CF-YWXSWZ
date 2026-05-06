@@ -1,17 +1,21 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-02T00:00:00.000Z",
+  "generatedAt": "2026-05-06T14:48:55.243Z",
   "categories": [
     {
-      "slug": "xiuxian",
+      "slug": "completed",
       "novels": []
     },
     {
-      "slug": "wuxia",
+      "slug": "female",
       "novels": []
     },
     {
-      "slug": "xuanhuan",
+      "slug": "gaming",
+      "novels": []
+    },
+    {
+      "slug": "historical",
       "novels": []
     },
     {
@@ -20,6 +24,22 @@
     },
     {
       "slug": "ranking",
+      "novels": []
+    },
+    {
+      "slug": "sci-fi",
+      "novels": []
+    },
+    {
+      "slug": "urban",
+      "novels": []
+    },
+    {
+      "slug": "wuxia",
+      "novels": []
+    },
+    {
+      "slug": "xuanhuan",
       "novels": []
     }
   ]

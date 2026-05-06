@@ -28,8 +28,16 @@ export type NovelMeta = {
 export type LoreAnchor = {
   id: string;
   surfaces: string[];
+  /** 百科释义（生产端 lore_pipeline 写入；维基页 / Schema 可用） */
+  definition?: string;
   /** 与 id 相同时可省略；预留与导读 DOM id 对齐 */
   guide_section_id?: string;
+};
+
+/** 章节 Cultural Notes → FAQPage 数据源（生产端 meta 可选写入） */
+export type CulturalNotesFaqItem = {
+  q: string;
+  a: string;
 };
 
 export type ChapterMeta = {
@@ -48,6 +56,7 @@ export type ChapterMeta = {
   twitter_description?: string;
   updated_at?: string;
   lore_anchors?: LoreAnchor[];
+  cultural_notes_faq?: CulturalNotesFaqItem[];
 };
 
 export function getNovelMeta(categorySlug: string, novelId: string): NovelMeta | null {

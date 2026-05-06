@@ -1,3 +1,4 @@
+import type { CulturalNotesFaqItem } from "@/lib/content/meta";
 import type { NovelInfo } from "@/lib/content/schema";
 import { toAbsoluteUrl } from "@/lib/seo";
 
@@ -127,6 +128,13 @@ export function buildChapterReadingGraph(opts: {
   const pubIso = toSchemaOrgIsoDateTime(chapterDatePublished);
   const modIso = toSchemaOrgIsoDateTime(chapterDateModified);
 
+  /** 与目录页 `buildDirectoryBookJsonLd` 中 Book.author 对齐 */
+  const bookAuthorPerson = {
+    "@type": "Person",
+    name: novelAuthor?.trim() || "Unknown",
+    url: DEFAULT_SCHEMA_AUTHOR_PERSON_URL
+  };
+
   const guidePosting: Record<string, unknown> = {
     "@type": "BlogPosting",
     "@id": `${chapterUrl}#reading-guide`,
@@ -153,20 +161,22 @@ export function buildChapterReadingGraph(opts: {
     headline: `${displayTitle} Chapter ${chapterNo}: ${chapterTitle}`,
     articleBody: body,
     image: coverImageUrl,
-    author: {
-      "@type": "Person",
-      name: novelAuthor?.trim() || "Unknown",
-      url: DEFAULT_SCHEMA_AUTHOR_PERSON_URL
-    },
+    author: bookAuthorPerson,
     url: chapterUrl,
     isPartOf: {
       "@type": "Book",
       name: displayTitle,
-      url: bookDirectoryUrl
+      url: bookDirectoryUrl,
+      author: bookAuthorPerson
     },
     inLanguage: "en",
     publisher: publisherOrganization(siteName)
   };
+
+  const chapterPosition = Number.parseInt(String(chapterNo).trim(), 10);
+  if (Number.isFinite(chapterPosition) && chapterPosition > 0) {
+    chapterArticle.position = chapterPosition;
+  }
 
   if (pubIso) {
     guidePosting.datePublished = pubIso;
@@ -180,6 +190,33 @@ export function buildChapterReadingGraph(opts: {
   return {
     "@context": "https://schema.org",
     "@graph": [guidePosting, chapterArticle]
+  };
+}
+
+/**
+ * 章节 Cultural Notes FAQ → FAQPage（须与页面可见文案同源）。
+ * `faqItems` 应先经 `sanitizeCulturalNotesFaqForPage`；若无有效项返回 `null`。
+ */
+export function buildChapterFaqJsonLd(opts: {
+  chapterUrl: string;
+  faqItems: CulturalNotesFaqItem[];
+}): Record<string, unknown> | null {
+  const { chapterUrl, faqItems } = opts;
+  if (!faqItems.length) return null;
+  const mainEntity = faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a
+    }
+  }));
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${chapterUrl}#cultural-notes-faq`,
+    url: chapterUrl,
+    mainEntity
   };
 }
 
@@ -214,6 +251,69 @@ export function buildChapterBreadcrumbJsonLd(opts: {
         name: chapterName,
         item: chapterUrl
       }
+    ]
+  };
+}
+
+/** 维基词条页：DefinedTerm + WebPage（利于富摘要与语义） */
+export function buildWikiDefinedTermJsonLd(opts: {
+  name: string;
+  description: string;
+  pageUrl: string;
+  glossaryIndexUrl: string;
+  siteName: string;
+}) {
+  const { name, description, pageUrl, glossaryIndexUrl, siteName } = opts;
+  const descSnippet = description.trim().slice(0, 5000);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name,
+        description: descSnippet,
+        inLanguage: "en",
+        isPartOf: {
+          "@type": "WebSite",
+          name: siteName,
+          url: toAbsoluteUrl("/")
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": `${pageUrl}#term`,
+        name,
+        description: description.trim(),
+        url: pageUrl,
+        inLanguage: "en",
+        inDefinedTermSet: {
+          "@type": "DefinedTermSet",
+          name: `${siteName} lore glossary`,
+          url: glossaryIndexUrl
+        }
+      }
+    ]
+  };
+}
+
+/** 维基：首页 → 该书 glossary → 词条 */
+export function buildWikiTermBreadcrumbJsonLd(opts: {
+  homeUrl: string;
+  novelGlossaryName: string;
+  novelGlossaryUrl: string;
+  termName: string;
+  termUrl: string;
+}) {
+  const { homeUrl, novelGlossaryName, novelGlossaryUrl, termName, termUrl } = opts;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+      { "@type": "ListItem", position: 2, name: novelGlossaryName, item: novelGlossaryUrl },
+      { "@type": "ListItem", position: 3, name: termName, item: termUrl }
     ]
   };
 }

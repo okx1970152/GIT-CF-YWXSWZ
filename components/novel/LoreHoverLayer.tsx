@@ -10,6 +10,14 @@ const FALLBACK_PREVIEW = "Open the guide for the full explanation.";
 /** 侧栏监听：展开移动端面板并滚动到对应 h2#id */
 export const LORE_JUMP_EVENT = "lore-jump-to-section";
 
+type HoverTip = {
+  id: string;
+  top: number;
+  left: number;
+  title: string;
+  preview: string;
+};
+
 export function LoreHoverLayer({
   lorePreviews,
   children
@@ -21,8 +29,7 @@ export function LoreHoverLayer({
   const cardRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [mounted, setMounted] = useState(false);
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const [pos, setPos] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+  const [tip, setTip] = useState<HoverTip | null>(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -35,7 +42,7 @@ export function LoreHoverLayer({
 
   const scheduleClose = useCallback(() => {
     clearCloseTimer();
-    closeTimer.current = setTimeout(() => setActiveId(null), 220);
+    closeTimer.current = setTimeout(() => setTip(null), 220);
   }, [clearCloseTimer]);
 
   const showForEl = useCallback(
@@ -44,10 +51,20 @@ export function LoreHoverLayer({
       const r = el.getBoundingClientRect();
       const cardW = 300;
       const left = Math.min(Math.max(8, r.left), Math.max(8, window.innerWidth - cardW - 8));
-      setPos({ top: r.bottom + 8, left });
-      setActiveId(id);
+      const top = r.bottom + 8;
+      /** 优先读 DOM data-*（服务端写入 lore definition），无网络；其次导读 map */
+      const dataPreview = el.getAttribute("data-lore-preview")?.trim();
+      const dataTitle = el.getAttribute("data-lore-title")?.trim();
+      const entry = lorePreviews[id];
+      const preview =
+        dataPreview && dataPreview.length > 0
+          ? dataPreview
+          : entry?.preview?.trim() || FALLBACK_PREVIEW;
+      const title =
+        dataTitle && dataTitle.length > 0 ? dataTitle : entry?.title?.trim() || "";
+      setTip({ id, top, left, title, preview });
     },
-    [clearCloseTimer]
+    [clearCloseTimer, lorePreviews]
   );
 
   useEffect(() => {
@@ -87,65 +104,69 @@ export function LoreHoverLayer({
       if (e.pointerType === "mouse" && window.matchMedia("(hover: hover)").matches) return;
       const el = (e.target as HTMLElement | null)?.closest?.("[data-lore-id]");
       if (!el || !root.contains(el)) return;
+      /** 维基链接：交由浏览器默认打开新标签，勿拦截 */
+      if (el.closest("a.lore-link")) return;
       const id = el.getAttribute("data-lore-id");
       if (!id) return;
       e.preventDefault();
       e.stopPropagation();
-      if (activeId === id) setActiveId(null);
+      if (tip?.id === id) setTip(null);
       else showForEl(el as HTMLElement, id);
     };
 
     root.addEventListener("pointerdown", onTap);
     return () => root.removeEventListener("pointerdown", onTap);
-  }, [activeId, showForEl]);
+  }, [tip?.id, showForEl]);
 
   useEffect(() => {
-    if (!activeId) return;
+    if (!tip) return;
     const onDoc = (e: MouseEvent) => {
       const t = e.target as Node;
       if (wrapRef.current?.contains(t)) return;
       if (cardRef.current?.contains(t)) return;
-      setActiveId(null);
+      setTip(null);
     };
     document.addEventListener("mousedown", onDoc, true);
     return () => document.removeEventListener("mousedown", onDoc, true);
-  }, [activeId]);
+  }, [tip]);
 
   useEffect(() => {
-    if (!activeId) return;
+    if (!tip) return;
     const k = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveId(null);
+      if (e.key === "Escape") setTip(null);
     };
     window.addEventListener("keydown", k);
     return () => window.removeEventListener("keydown", k);
-  }, [activeId]);
+  }, [tip]);
 
   const jump = () => {
-    if (!activeId) return;
-    window.dispatchEvent(new CustomEvent(LORE_JUMP_EVENT, { detail: { id: activeId }, bubbles: true }));
-    setActiveId(null);
+    if (!tip) return;
+    window.dispatchEvent(new CustomEvent(LORE_JUMP_EVENT, { detail: { id: tip.id }, bubbles: true }));
+    setTip(null);
   };
 
-  const entry = activeId ? lorePreviews[activeId] : undefined;
-  const previewText =
-    entry?.preview?.trim() || (activeId ? FALLBACK_PREVIEW : "");
-
   const card =
-    mounted && activeId ? (
+    mounted && tip ? (
       <div
         ref={cardRef}
         role="tooltip"
-        className="fixed z-[90] w-[min(300px,calc(100vw-16px))] rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-3 shadow-lg"
-        style={{ top: pos.top, left: pos.left }}
+        className="fixed z-[90] w-[min(300px,calc(100vw-16px))] touch-manipulation rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-3 shadow-lg"
+        style={{
+          top: tip.top,
+          left: tip.left,
+          transform: "translateZ(0)",
+          contain: "layout paint",
+          willChange: "opacity, transform"
+        }}
         onMouseEnter={clearCloseTimer}
         onMouseLeave={scheduleClose}
       >
-        {entry?.title ? (
+        {tip.title ? (
           <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)]">
-            {entry.title}
+            {tip.title}
           </p>
         ) : null}
-        <p className="font-serif text-sm leading-relaxed text-[var(--text-soft)]">{previewText}</p>
+        <p className="font-serif text-sm leading-relaxed text-[var(--text-soft)]">{tip.preview}</p>
         <button
           type="button"
           className="mt-3 w-full rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] px-3 py-2 text-center font-sans text-sm font-medium text-[var(--text-deep)] hover:bg-[var(--bg-card)]"

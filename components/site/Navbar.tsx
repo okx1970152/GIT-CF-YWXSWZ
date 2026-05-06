@@ -68,6 +68,16 @@ export function Navbar() {
       <Link href="/" className={isHome ? homeActive : homeInactive}>
         Home
       </Link>
+      <Link
+        href="/wiki"
+        className={
+          pathname === "/wiki" || pathname.startsWith("/wiki/")
+            ? homeActive
+            : homeInactive
+        }
+      >
+        Wiki
+      </Link>
       <SearchBar className="max-w-[min(100vw-10rem,280px)] shrink sm:max-w-[300px] lg:max-w-[320px]" />
       <button
         type="button"

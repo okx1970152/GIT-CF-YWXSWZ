@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
 import { LORE_JUMP_EVENT } from "@/components/novel/LoreHoverLayer";
+import type { CulturalNotesFaqItem } from "@/lib/content/meta";
 
 type AnnotationAsideProps = {
   title: string;
@@ -12,6 +13,8 @@ type AnnotationAsideProps = {
   slotTop: ReactNode;
   slotMid: ReactNode;
   slotBottom: ReactNode;
+  /** 与 meta cultural_notes_faq / FAQPage JSON-LD 同源（须先 sanitize） */
+  culturalNotesFaq?: CulturalNotesFaqItem[];
   /** Current chapter share (absolute URL + title) */
   shareUrl?: string;
   shareTitle?: string;
@@ -24,6 +27,7 @@ export function AnnotationAside({
   slotTop,
   slotMid,
   slotBottom,
+  culturalNotesFaq,
   shareUrl,
   shareTitle
 }: AnnotationAsideProps) {
@@ -91,6 +95,41 @@ export function AnnotationAside({
         />
         {slotMid}
         {relatedTopicsSlot}
+        {culturalNotesFaq && culturalNotesFaq.length > 0 ? (
+          <section
+            className="mt-8 border-t-2 border-[var(--accent-green)]/35 pt-6"
+            aria-labelledby="cultural-notes-faq-heading"
+          >
+            <h3
+              id="cultural-notes-faq-heading"
+              className="font-serif text-xl font-semibold tracking-tight text-[var(--text-deep)]"
+            >
+              Quick Q&A
+            </h3>
+            <p className="mt-1 font-sans text-sm leading-snug text-[var(--text-muted)]">
+              Lore recap (TL;DR) drawn from this chapter&apos;s Cultural / Xianxia Notes — same text
+              as the FAQ structured data on this page.
+            </p>
+            <dl className="mt-5 space-y-5">
+              {culturalNotesFaq.map((item, index) => (
+                <div key={`cultural-faq-${index}`}>
+                  <dt
+                    className="font-serif font-bold text-[var(--text-deep)]"
+                    style={{ fontSize: "var(--reader-content-font-size, 20px)" }}
+                  >
+                    {item.q}
+                  </dt>
+                  <dd
+                    className="mt-2 font-serif leading-relaxed text-[var(--text-soft)]"
+                    style={{ fontSize: "var(--reader-content-font-size, 20px)" }}
+                  >
+                    {item.a}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        ) : null}
         {slotBottom}
       </aside>
     </div>

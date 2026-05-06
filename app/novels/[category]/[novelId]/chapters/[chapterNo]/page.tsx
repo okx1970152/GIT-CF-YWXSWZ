@@ -10,7 +10,9 @@ import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { buildChapterShareTitle } from "@/lib/content/chapter-share";
 import { mergeGuideTopicLists, stripRelatedTopicsFooter } from "@/lib/content/guide-topics";
+import { sanitizeCulturalNotesFaqForPage } from "@/lib/content/cultural-notes-faq";
 import { getChapterMetaByNo } from "@/lib/content/meta";
+import { getWikiLinkedIdsForNovel } from "@/lib/content/wiki-index";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
 import { loadAnnotationByChapterNo } from "@/lib/content/annotations";
@@ -24,6 +26,7 @@ import {
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import {
   buildChapterBreadcrumbJsonLd,
+  buildChapterFaqJsonLd,
   buildChapterReadingGraph,
   markdownToPlainTextForSchema
 } from "@/lib/seo/structured-data";
@@ -82,9 +85,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   );
   const keywords = keywordsMerged.length ? keywordsMerged : undefined;
 
+  const basePath = `/novels/${category}/${novelId}`;
+  const adjacent = getAdjacentChapters(category, novelId, chapterNo);
+  const pagination: Metadata["pagination"] | undefined =
+    adjacent.prev || adjacent.next
+      ? {
+          ...(adjacent.prev
+            ? { previous: toAbsoluteUrl(`${basePath}/chapters/${adjacent.prev}`) }
+            : {}),
+          ...(adjacent.next ? { next: toAbsoluteUrl(`${basePath}/chapters/${adjacent.next}`) } : {})
+        }
+      : undefined;
+
   return {
     title: chapterTitleFull,
     description,
+    ...(pagination ? { pagination } : {}),
     alternates: {
       canonical: toAbsoluteUrl(canonicalPath)
     },
@@ -132,7 +148,11 @@ export default async function ChapterPage({ params }: Props) {
   let chapterHtml = await markdownToHtml(chapterBody);
   const anchors = chapterMeta?.lore_anchors ?? [];
   if (anchors.length > 0) {
-    chapterHtml = applyLoreAnchorsToChapterHtml(chapterHtml, anchors);
+    const wikiLinkedIds = getWikiLinkedIdsForNovel(novelId);
+    chapterHtml = applyLoreAnchorsToChapterHtml(chapterHtml, anchors, {
+      novelId,
+      wikiLinkedIds
+    });
   }
 
   const guideMarkdown =
@@ -174,12 +194,21 @@ export default async function ChapterPage({ params }: Props) {
     chapterDateModified: chapter.updatedAt || chapter.publishedAt
   });
 
+  const culturalNotesFaqForPage = sanitizeCulturalNotesFaqForPage(chapterMeta?.cultural_notes_faq);
+  const chapterFaqJsonLd = buildChapterFaqJsonLd({
+    chapterUrl,
+    faqItems: culturalNotesFaqForPage
+  });
+
   return (
     <>
       <SideAdsLayout page="reading">
         <ChapterReader>
           <JsonLd id="ld-json-reading-graph" data={readingGraphJsonLd} />
           <JsonLd id="ld-json-chapter-breadcrumb" data={breadcrumbJsonLd} />
+          {chapterFaqJsonLd ? (
+            <JsonLd id="ld-json-chapter-faq" data={chapterFaqJsonLd} />
+          ) : null}
           <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
           <article className="novel-container min-w-0">
             <h1
@@ -209,6 +238,7 @@ export default async function ChapterPage({ params }: Props) {
             title={annotation?.title || "Essential Guide"}
             guideHtml={guideHtml}
             topics={topics}
+            culturalNotesFaq={culturalNotesFaqForPage}
             shareUrl={chapterUrl}
             shareTitle={shareTitle}
           />

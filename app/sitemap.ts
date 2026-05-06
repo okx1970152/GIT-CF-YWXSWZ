@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import contentIndex from "@/data/content-index.json";
+import wikiIndex from "@/data/wiki-index.json";
 import type { ContentIndexNovel } from "@/lib/content/content-index";
 import { ALL_CATEGORY_SLUGS } from "@/lib/content/categories";
 import { getChapters } from "@/lib/content/chapters";
@@ -22,6 +23,13 @@ type IndexShape = {
 };
 
 const indexData = contentIndex as IndexShape;
+
+type WikiSitemapShape = {
+  generatedAt?: string;
+  novels: Record<string, { entries?: Record<string, unknown> }>;
+};
+
+const wikiData = wikiIndex as WikiSitemapShape;
 
 function absolute(path: string): string {
   const p = path.startsWith("/") ? path : `/${path}`;
@@ -74,6 +82,32 @@ function buildAllSitemapEntries(): MetadataRoute.Sitemap {
     changeFrequency: "weekly",
     priority: 0.6,
   });
+
+  const wikiLm = parseLastMod(wikiData.generatedAt, indexData.generatedAt);
+  items.push({
+    url: absolute("/wiki"),
+    lastModified: wikiLm,
+    changeFrequency: "weekly",
+    priority: 0.72,
+  });
+
+  for (const novelId of Object.keys(wikiData.novels ?? {})) {
+    items.push({
+      url: absolute(`/wiki/${novelId}`),
+      lastModified: wikiLm,
+      changeFrequency: "weekly",
+      priority: 0.68,
+    });
+    const entries = wikiData.novels[novelId]?.entries ?? {};
+    for (const loreId of Object.keys(entries)) {
+      items.push({
+        url: absolute(`/wiki/${novelId}/${encodeURIComponent(loreId)}`),
+        lastModified: wikiLm,
+        changeFrequency: "monthly",
+        priority: 0.62,
+      });
+    }
+  }
 
   for (const cat of indexData.categories) {
     const categorySlug = cat.slug;

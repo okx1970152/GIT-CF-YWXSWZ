@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/seo";
 import { baseOpenGraph, publicRobots, SITE_NAME } from "@/lib/seo-metadata";
 import { SiteShell } from "@/components/site/SiteShell";
+
+const fontSans = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+  adjustFontFallback: true
+});
+
+const fontSerif = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-serif",
+  adjustFontFallback: true
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,8 +48,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${fontSans.variable} ${fontSerif.variable}`}>
+      <body className={`${fontSans.className} font-sans antialiased`}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

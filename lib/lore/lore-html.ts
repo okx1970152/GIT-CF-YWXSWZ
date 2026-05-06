@@ -4,6 +4,17 @@ function escapeHtmlAttr(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 }
 
+/** 词条表面文本插入 HTML 正文时转义（不含引号场景） */
+function escapeHtmlTextNode(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+export type LoreWikiLinkOptions = {
+  novelId: string;
+  /** 仅对这些 id 包 `<a href="/wiki/...">`，避免无释义词条 404 */
+  wikiLinkedIds: Set<string>;
+};
+
 function stripHtmlTags(html: string): string {
   return html.replace(/<[^>]+>/g, " ");
 }
@@ -13,6 +24,15 @@ function truncateWords(text: string, maxWords: number): string {
   if (words.length === 0) return "";
   if (words.length <= maxWords) return words.join(" ");
   return `${words.slice(0, maxWords).join(" ")}…`;
+}
+
+/** 悬停 data 属性用，限制体积，避免 HTML 膨胀 */
+const LORE_PREVIEW_ATTR_MAX_CHARS = 420;
+
+function truncateForDataAttr(s: string): string {
+  const t = s.trim().replace(/\s+/g, " ");
+  if (t.length <= LORE_PREVIEW_ATTR_MAX_CHARS) return t;
+  return `${t.slice(0, LORE_PREVIEW_ATTR_MAX_CHARS - 1)}…`;
 }
 
 /**
@@ -121,23 +141,38 @@ export function extractLoreGuideSectionPreviews(
 type SurfaceItem = { surface: string; id: string };
 
 /** 仅在「标签外的文本」中替换，避免破坏属性值；同一位置优先更长 surface。 */
-export function applyLoreAnchorsToChapterHtml(html: string, anchors: LoreAnchor[]): string {
+export function applyLoreAnchorsToChapterHtml(
+  html: string,
+  anchors: LoreAnchor[],
+  wikiLink?: LoreWikiLinkOptions
+): string {
   const items: SurfaceItem[] = anchors.flatMap((a) =>
     (a.surfaces ?? []).filter(Boolean).map((surface) => ({ surface, id: a.id }))
   );
   if (items.length === 0) return html;
   items.sort((a, b) => b.surface.length - a.surface.length);
 
+  const definitionById = new Map<string, string>();
+  for (const a of anchors) {
+    const d = a.definition?.trim();
+    if (d) definitionById.set(a.id, d);
+  }
+
   const parts = html.split(/(<[^>]+>)/);
   return parts
     .map((part, idx) => {
       if (idx % 2 === 1) return part;
-      return wrapSurfacesInPlainText(part, items);
+      return wrapSurfacesInPlainText(part, items, wikiLink, definitionById);
     })
     .join("");
 }
 
-function wrapSurfacesInPlainText(text: string, items: SurfaceItem[]): string {
+function wrapSurfacesInPlainText(
+  text: string,
+  items: SurfaceItem[],
+  wikiLink: LoreWikiLinkOptions | undefined,
+  definitionById: Map<string, string>
+): string {
   let result = "";
   let i = 0;
   while (i < text.length) {
@@ -145,7 +180,23 @@ function wrapSurfacesInPlainText(text: string, items: SurfaceItem[]): string {
     for (const { surface, id } of items) {
       if (!surface) continue;
       if (text.startsWith(surface, i)) {
-        result += `<span class="lore-anchor" data-lore-id="${escapeHtmlAttr(id)}" tabindex="0">${surface}</span>`;
+        const safeSurface = escapeHtmlTextNode(surface);
+        const def = definitionById.get(id);
+        const previewAttr = def
+          ? ` data-lore-preview="${escapeHtmlAttr(truncateForDataAttr(def))}"`
+          : "";
+        const titleAttr = ` data-lore-title="${escapeHtmlAttr(surface)}"`;
+        const inner = `<span class="lore-anchor" data-lore-id="${escapeHtmlAttr(id)}"${titleAttr}${previewAttr} tabindex="0">${safeSurface}</span>`;
+        const useWiki =
+          wikiLink &&
+          wikiLink.wikiLinkedIds.size > 0 &&
+          wikiLink.wikiLinkedIds.has(id);
+        if (useWiki) {
+          const href = `/wiki/${encodeURIComponent(wikiLink.novelId)}/${encodeURIComponent(id)}`;
+          result += `<a href="${href}" target="_blank" rel="noopener noreferrer" class="lore-link">${inner}</a>`;
+        } else {
+          result += inner;
+        }
         i += surface.length;
         matched = true;
         break;

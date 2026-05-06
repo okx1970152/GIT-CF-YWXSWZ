@@ -8,7 +8,12 @@ const config: Config = {
     "./lib/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "Times New Roman", "serif"]
+      }
+    }
   },
   plugins: [typography]
 };
