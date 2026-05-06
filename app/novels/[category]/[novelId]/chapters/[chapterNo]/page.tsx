@@ -18,7 +18,8 @@ import { loadChapterMarkdownCached } from "@/lib/content/load-markdown";
 import {
   applyGuideHeadingAnchors,
   applyLoreAnchorsToChapterHtml,
-  extractLoreGuideSectionPreviews
+  extractLoreGuideSectionPreviews,
+  reorderGuideSectionsHtml
 } from "@/lib/lore/lore-html";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import {
@@ -140,6 +141,7 @@ export default async function ChapterPage({ params }: Props) {
   const chapterPlainForSchema = markdownToPlainTextForSchema(chapterBody);
   let guideHtml = await markdownToHtml(guideMarkdown);
   guideHtml = applyGuideHeadingAnchors(guideHtml);
+  guideHtml = reorderGuideSectionsHtml(guideHtml);
   const lorePreviews = anchors.length > 0 ? extractLoreGuideSectionPreviews(guideHtml) : {};
 
   const basePath = `/novels/${category}/${novelId}`;

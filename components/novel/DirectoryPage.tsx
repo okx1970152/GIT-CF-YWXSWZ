@@ -4,6 +4,7 @@ import type { ChapterItem } from "@/lib/content/chapters";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { DirectoryChapterNavigator } from "@/components/novel/DirectoryChapterNavigator";
+import { DirectorySynopsis } from "@/components/novel/DirectorySynopsis";
 import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getNovelMeta } from "@/lib/content/meta";
@@ -87,7 +88,7 @@ export function DirectoryPage({ novel, chapters }: DirectoryPageProps) {
           ) : null}
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
             <div className="order-2 lg:order-1">
-              <p className="font-serif text-lg leading-relaxed text-[var(--text-soft)]">{summary}</p>
+              <DirectorySynopsis summary={summary} />
             </div>
             <dl className="order-1 grid gap-2 font-sans text-sm text-[var(--text-soft)] sm:grid-cols-2 lg:order-2 lg:grid-cols-1">
               <div>

@@ -168,14 +168,17 @@ export function ShareAndFavoriteBar({
 
   return (
     <div
-      className={`relative flex flex-wrap items-center gap-x-2 gap-y-2 sm:gap-x-3 ${className ?? ""}`}
+      className={`relative flex max-w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 ${className ?? ""}`}
       role="group"
       aria-label="Share and bookmark"
     >
-      <span className={`font-sans text-[var(--text-deep)] ${labelClass}`}>Share to</span>
-      <ul className={`m-0 flex list-none flex-wrap items-center p-0 ${isCompact ? "gap-1.5" : "gap-2"}`}>
+      <span className={`shrink-0 font-sans text-[var(--text-deep)] ${labelClass}`}>Share to</span>
+      {/* 所有分享与收藏同一 flex 行：nowrap + 横向滚动，避免收藏单独换行 */}
+      <ul
+        className={`m-0 flex min-w-0 flex-1 list-none flex-nowrap items-center overflow-x-auto p-0 [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] ${isCompact ? "gap-1.5" : "gap-2"}`}
+      >
         {targets.map((p) => (
-          <li key={p.id}>
+          <li key={p.id} className="shrink-0">
             <button
               type="button"
               title={p.title}
@@ -199,19 +202,21 @@ export function ShareAndFavoriteBar({
             </button>
           </li>
         ))}
+        {showBookmark ? (
+          <li className="shrink-0">
+            <button
+              type="button"
+              title={bookmarked ? "Bookmarked (click again to copy URL)" : "Add to browser bookmarks"}
+              aria-label={bookmarked ? "Bookmarked" : "Add to browser bookmarks"}
+              aria-pressed={bookmarked}
+              onClick={onBookmarkClick}
+              className={`text-amber-500 shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)] ${btnClass}`}
+            >
+              <StarIcon filled={bookmarked} className={starClass} />
+            </button>
+          </li>
+        ) : null}
       </ul>
-      {showBookmark ? (
-      <button
-        type="button"
-        title={bookmarked ? "Bookmarked (click again to copy URL)" : "Add to browser bookmarks"}
-        aria-label={bookmarked ? "Bookmarked" : "Add to browser bookmarks"}
-        aria-pressed={bookmarked}
-        onClick={onBookmarkClick}
-        className={`ml-0.5 text-amber-500 shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)] ${btnClass}`}
-      >
-        <StarIcon filled={bookmarked} className={starClass} />
-      </button>
-      ) : null}
 
       {toast ? (
         <div

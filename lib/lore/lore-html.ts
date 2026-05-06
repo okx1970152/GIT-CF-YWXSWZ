@@ -19,6 +19,62 @@ function truncateWords(text: string, maxWords: number): string {
  * 生产端约定：`## Visible title {#lore-id}` → remark 产出 `<h2>…{#id}</h2>`。
  * 转成标准带 id 的标题，便于导读内 scrollIntoView。
  */
+/** 导读侧栏四项小节在页面上的展示顺序（与素材端默认写作顺序无关） */
+const GUIDE_SECTION_ORDER = [
+  "cultural / xianxia notes",
+  "chapter overview",
+  "key plot points",
+  "reading guide"
+] as const;
+
+function stripHtmlTagsInner(s: string): string {
+  return s.replace(/<[^>]+>/g, "");
+}
+
+/** 将 remark 产出的导读 HTML 按固定顺序重排 h2 章节（保留首个 h2 前的引言片段）。 */
+export function reorderGuideSectionsHtml(html: string): string {
+  if (!html.trim()) return html;
+
+  const h2Re = /<h2\b[^>]*>([\s\S]*?)<\/h2>/gi;
+  const matches = Array.from(html.matchAll(h2Re));
+  if (matches.length <= 1) return html;
+
+  function headingSortKey(innerHtml: string, fallbackIndex: number): number {
+    const plain = stripHtmlTagsInner(innerHtml)
+      .replace(/\{#[a-z0-9-]+\}\s*$/i, "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+
+    for (let i = 0; i < GUIDE_SECTION_ORDER.length; i++) {
+      if (plain === GUIDE_SECTION_ORDER[i]) return i;
+    }
+    for (let i = 0; i < GUIDE_SECTION_ORDER.length; i++) {
+      if (plain.includes(GUIDE_SECTION_ORDER[i])) return i;
+    }
+    return 100 + fallbackIndex;
+  }
+
+  const firstIdx = matches[0].index ?? 0;
+  const preamble = firstIdx > 0 ? html.slice(0, firstIdx) : "";
+
+  const sections = matches.map((m, i) => {
+    const start = m.index ?? 0;
+    const end = i + 1 < matches.length ? (matches[i + 1].index ?? html.length) : html.length;
+    return {
+      sortKey: headingSortKey(m[1] as string, i),
+      originalIndex: i,
+      chunk: html.slice(start, end)
+    };
+  });
+
+  sections.sort((a, b) =>
+    a.sortKey !== b.sortKey ? a.sortKey - b.sortKey : a.originalIndex - b.originalIndex
+  );
+
+  return preamble + sections.map((s) => s.chunk).join("");
+}
+
 export function applyGuideHeadingAnchors(html: string): string {
   return html.replace(/<h2(\s[^>]*)?>([\s\S]*?)<\/h2>/gi, (full, attrs = "", inner: string) => {
     const attrsStr = attrs as string;
