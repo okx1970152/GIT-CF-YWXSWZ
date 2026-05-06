@@ -10,48 +10,51 @@ import {
 } from "@/lib/content/content-index";
 import { isWikiIndexPrimed, primeWikiIndexCache, type WikiIndexData } from "@/lib/content/wiki-index";
 
-let inflight: Promise<void> | null = null;
+let inflightContent: Promise<void> | null = null;
+let inflightWiki: Promise<void> | null = null;
 
-function tryPrimeBothFromFs(): boolean {
-  if (isContentIndexPrimed() && isWikiIndexPrimed()) return true;
+const CONTENT_PATHS = [
+  path.join(process.cwd(), "data", "content-index.json"),
+  path.join(process.cwd(), "public", "__site_data__", "content-index.json")
+];
+const WIKI_PATHS = [
+  path.join(process.cwd(), "data", "wiki-index.json"),
+  path.join(process.cwd(), "public", "__site_data__", "wiki-index.json")
+];
 
-  const contentPaths = [
-    path.join(process.cwd(), "data", "content-index.json"),
-    path.join(process.cwd(), "public", "__site_data__", "content-index.json")
-  ];
-  const wikiPaths = [
-    path.join(process.cwd(), "data", "wiki-index.json"),
-    path.join(process.cwd(), "public", "__site_data__", "wiki-index.json")
-  ];
-
-  let contentRaw: string | null = null;
-  let wikiRaw: string | null = null;
-
-  try {
-    for (const p of contentPaths) {
-      if (fs.existsSync(p)) {
-        contentRaw = fs.readFileSync(p, "utf8");
-        break;
-      }
+function readFirstExistingUtf8(paths: string[]): string | null {
+  for (const filePath of paths) {
+    try {
+      if (fs.existsSync(filePath)) return fs.readFileSync(filePath, "utf8");
+    } catch {
+      /* Worker 上 fs 常不可用 */
     }
-    for (const p of wikiPaths) {
-      if (fs.existsSync(p)) {
-        wikiRaw = fs.readFileSync(p, "utf8");
-        break;
-      }
-    }
-  } catch {
-    return isContentIndexPrimed() && isWikiIndexPrimed();
   }
+  return null;
+}
 
+function tryPrimeContentFromFs(): boolean {
+  if (isContentIndexPrimed()) return true;
+  const raw = readFirstExistingUtf8(CONTENT_PATHS);
+  if (!raw) return false;
   try {
-    if (contentRaw) primeContentIndexCache(JSON.parse(contentRaw) as ContentIndexRoot);
-    if (wikiRaw) primeWikiIndexCache(JSON.parse(wikiRaw) as WikiIndexData);
+    primeContentIndexCache(JSON.parse(raw) as ContentIndexRoot);
   } catch {
     return false;
   }
+  return isContentIndexPrimed();
+}
 
-  return isContentIndexPrimed() && isWikiIndexPrimed();
+function tryPrimeWikiFromFs(): boolean {
+  if (isWikiIndexPrimed()) return true;
+  const raw = readFirstExistingUtf8(WIKI_PATHS);
+  if (!raw) return false;
+  try {
+    primeWikiIndexCache(JSON.parse(raw) as WikiIndexData);
+  } catch {
+    return false;
+  }
+  return isWikiIndexPrimed();
 }
 
 type AssetFetcher = { fetch: typeof fetch };
@@ -60,84 +63,96 @@ function isAssetFetcher(x: unknown): x is AssetFetcher {
   return typeof x === "object" && x !== null && typeof (x as AssetFetcher).fetch === "function";
 }
 
-/**
- * Cloudflare：必须用 ASSETS 绑定读静态 JSON，禁止先用同源 `fetch(站点URL)`——否则会再次进入
- * 本 Worker → 根 layout → ensure → fetch → … 死循环，最终 1102 Worker exceeded resource limits。
- */
-async function tryPrimeBothFromAssetsBinding(): Promise<boolean> {
+async function fetchJsonFromAssets(pathname: string): Promise<unknown> {
+  const ctx = await getCloudflareContext({ async: true });
+  const assets = (ctx.env as Record<string, unknown>).ASSETS;
+  if (!isAssetFetcher(assets)) throw new Error("ASSETS_missing");
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://workers-assets.internal";
+  const url = `${base}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
+  const res = await assets.fetch(new Request(url));
+  if (!res.ok) throw new Error(`assets:${pathname}:${res.status}`);
+  return res.json() as Promise<unknown>;
+}
+
+async function tryPrimeContentFromAssets(): Promise<boolean> {
   try {
-    const ctx = await getCloudflareContext({ async: true });
-    const assets = (ctx.env as Record<string, unknown>).ASSETS;
-    if (!isAssetFetcher(assets)) return false;
-
-    const base =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://workers-assets.internal";
-    const loadJson = async (pathname: string): Promise<unknown> => {
-      const url = `${base}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
-      const res = await assets.fetch(new Request(url));
-      if (!res.ok) throw new Error(`assets:${pathname}:${res.status}`);
-      return res.json() as Promise<unknown>;
-    };
-
-    const [content, wiki] = (await Promise.all([
-      loadJson("/__site_data__/content-index.json"),
-      loadJson("/__site_data__/wiki-index.json")
-    ])) as [ContentIndexRoot, WikiIndexData];
-
-    primeContentIndexCache(content);
-    primeWikiIndexCache(wiki);
+    const data = (await fetchJsonFromAssets("/__site_data__/content-index.json")) as ContentIndexRoot;
+    primeContentIndexCache(data);
     return true;
   } catch {
     return false;
   }
 }
 
-/** 非 CF（如 next dev / next start）且无 ASSETS 时：同源拉 public 下的索引。 */
-async function primeBothFromHttpFetch(): Promise<void> {
-  const contentUrl = toAbsoluteUrl("/__site_data__/content-index.json");
-  const wikiUrl = toAbsoluteUrl("/__site_data__/wiki-index.json");
-
-  const [cRes, wRes] = await Promise.all([
-    fetch(contentUrl, { next: { revalidate: 300 } }),
-    fetch(wikiUrl, { next: { revalidate: 300 } })
-  ]);
-
-  if (!cRes.ok) {
-    throw new Error(`content_index_fetch_failed:${cRes.status}:${contentUrl}`);
+async function tryPrimeWikiFromAssets(): Promise<boolean> {
+  try {
+    const data = (await fetchJsonFromAssets("/__site_data__/wiki-index.json")) as WikiIndexData;
+    primeWikiIndexCache(data);
+    return true;
+  } catch {
+    return false;
   }
-  if (!wRes.ok) {
-    throw new Error(`wiki_index_fetch_failed:${wRes.status}:${wikiUrl}`);
-  }
-
-  const [content, wiki] = (await Promise.all([cRes.json(), wRes.json()])) as [
-    ContentIndexRoot,
-    WikiIndexData
-  ];
-
-  primeContentIndexCache(content);
-  primeWikiIndexCache(wiki);
 }
 
-/**
- * Cloudflare Worker 上无 Node fs：在任意 SSR 使用索引前调用本函数。
- * 顺序：缓存命中 → fs → **ASSETS.fetch（生产 CF，避免 Worker 自调用死循环）** → 最后才 HTTP fetch（本地）。
- */
-export async function ensureSiteIndexesLoaded(): Promise<void> {
-  if (isContentIndexPrimed() && isWikiIndexPrimed()) return;
+async function primeContentFromHttpFetch(): Promise<void> {
+  const url = toAbsoluteUrl("/__site_data__/content-index.json");
+  const res = await fetch(url, { next: { revalidate: 300 } });
+  if (!res.ok) throw new Error(`content_index_fetch_failed:${res.status}:${url}`);
+  primeContentIndexCache((await res.json()) as ContentIndexRoot);
+}
 
-  if (!inflight) {
-    inflight = (async () => {
-      if (isContentIndexPrimed() && isWikiIndexPrimed()) return;
-      if (tryPrimeBothFromFs()) return;
-      if (await tryPrimeBothFromAssetsBinding()) return;
-      await primeBothFromHttpFetch();
+async function primeWikiFromHttpFetch(): Promise<void> {
+  const url = toAbsoluteUrl("/__site_data__/wiki-index.json");
+  const res = await fetch(url, { next: { revalidate: 300 } });
+  if (!res.ok) throw new Error(`wiki_index_fetch_failed:${res.status}:${url}`);
+  primeWikiIndexCache((await res.json()) as WikiIndexData);
+}
+
+/** 小说目录 / 首页 / 分类 / 搜索等：只灌 content-index，避免冷启动解析 wiki-index。 */
+export async function ensureContentIndex(): Promise<void> {
+  if (isContentIndexPrimed()) return;
+
+  if (!inflightContent) {
+    inflightContent = (async () => {
+      if (isContentIndexPrimed()) return;
+      if (tryPrimeContentFromFs()) return;
+      if (await tryPrimeContentFromAssets()) return;
+      await primeContentFromHttpFetch();
     })();
   }
 
   try {
-    await inflight;
+    await inflightContent;
   } catch (err) {
-    inflight = null;
+    inflightContent = null;
     throw err;
   }
+}
+
+/** /wiki 与需 getWiki* 的页面（含章节 lore）：在 content 已灌后再调用。 */
+export async function ensureWikiIndex(): Promise<void> {
+  if (isWikiIndexPrimed()) return;
+
+  if (!inflightWiki) {
+    inflightWiki = (async () => {
+      if (isWikiIndexPrimed()) return;
+      if (tryPrimeWikiFromFs()) return;
+      if (await tryPrimeWikiFromAssets()) return;
+      await primeWikiFromHttpFetch();
+    })();
+  }
+
+  try {
+    await inflightWiki;
+  } catch (err) {
+    inflightWiki = null;
+    throw err;
+  }
+}
+
+/** sitemap 等同时需要两棵索引；顺序灌入，避免并行双大 JSON 峰值（可选保守策略）。 */
+export async function ensureSiteIndexesLoaded(): Promise<void> {
+  await ensureContentIndex();
+  await ensureWikiIndex();
 }

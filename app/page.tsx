@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { SITE_URL, toAbsoluteUrl } from "@/lib/seo";
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
   const hot = getHotNovels();
   const latest = getLatestNovels(12);
   const xiuxian = getNovelsByCategory("xiuxian");

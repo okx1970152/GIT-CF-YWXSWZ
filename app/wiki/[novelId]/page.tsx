@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex, ensureWikiIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import {
   getWikiNovelBucket,
   getWikiNovelDisplayLabel,
@@ -18,7 +18,7 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export async function generateStaticParams(): Promise<{ novelId: string }[]> {
-  await ensureSiteIndexesLoaded();
+  await ensureWikiIndex();
   return getWikiNovelIdsSorted().map((novelId) => ({ novelId }));
 }
 
@@ -26,7 +26,8 @@ type Props = { params: Promise<{ novelId: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { novelId } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
+  await ensureWikiIndex();
   const bucket = getWikiNovelBucket(novelId);
   if (!bucket) return {};
   const label = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
@@ -50,7 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WikiNovelHubPage({ params }: Props) {
   const { novelId } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
+  await ensureWikiIndex();
   const bucket = getWikiNovelBucket(novelId);
   if (!bucket) notFound();
 

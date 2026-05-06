@@ -1,6 +1,5 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { primeContentIndexCache, type ContentIndexRoot } from "@/lib/content/content-index";
-import { primeWikiIndexCache, type WikiIndexData } from "@/lib/content/wiki-index";
 
 type AssetFetcher = { fetch: typeof fetch };
 
@@ -9,8 +8,7 @@ function isAssetFetcher(x: unknown): x is AssetFetcher {
 }
 
 /**
- * Cloudflare Worker 冷启动时从 ASSETS 绑定拉取索引 JSON，写入模块缓存；
- * 避免 content-index / wiki-index 里对 data/ 的 fs 读在 Worker 上失败。
+ * Worker 冷启动仅预载 content-index（首页/骨架路径必需）；wiki-index 由 ensureWikiIndex() 按需加载，降低双大 JSON 峰值。
  */
 export async function register() {
   try {
@@ -20,24 +18,14 @@ export async function register() {
 
     const base =
       process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://placeholder.invalid";
-    const loadJson = async (pathname: string): Promise<unknown> => {
-      const url = `${base}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
-      const res = await assets.fetch(new Request(url));
-      if (!res.ok) {
-        throw new Error(`assets_fetch_failed:${pathname}:${res.status}`);
-      }
-      return res.json() as Promise<unknown>;
-    };
-
-    const [content, wiki] = await Promise.all([
-      loadJson("/__site_data__/content-index.json"),
-      loadJson("/__site_data__/wiki-index.json")
-    ]);
-
-    primeContentIndexCache(content as ContentIndexRoot);
-    primeWikiIndexCache(wiki as WikiIndexData);
+    const url = `${base}/__site_data__/content-index.json`;
+    const res = await assets.fetch(new Request(url));
+    if (!res.ok) {
+      throw new Error(`assets_fetch_failed:content-index:${res.status}`);
+    }
+    const content = (await res.json()) as ContentIndexRoot;
+    primeContentIndexCache(content);
   } catch (err) {
-    /* 本地 next dev / Node：仍由 fs 从 data/ 或 public/__site_data__ 读取 */
-    console.warn("[instrumentation] ASSETS index preload skipped:", err);
+    console.warn("[instrumentation] ASSETS content-index preload skipped:", err);
   }
 }

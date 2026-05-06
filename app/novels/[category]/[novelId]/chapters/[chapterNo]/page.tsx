@@ -12,7 +12,7 @@ import { buildChapterShareTitle } from "@/lib/content/chapter-share";
 import { mergeGuideTopicLists, stripRelatedTopicsFooter } from "@/lib/content/guide-topics";
 import { sanitizeCulturalNotesFaqForPage } from "@/lib/content/cultural-notes-faq";
 import { getChapterMetaByNo } from "@/lib/content/meta";
-import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex, ensureWikiIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { getWikiLinkedIdsForNovel } from "@/lib/content/wiki-index";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
@@ -41,7 +41,7 @@ type Props = { params: Promise<{ category: string; novelId: string; chapterNo: s
 export async function generateStaticParams(): Promise<
   { category: string; novelId: string; chapterNo: string }[]
 > {
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
   return getAllNovels().flatMap((novel) =>
     getChapters(novel.categorySlug, novel.novelId).map((chapter) => ({
       category: novel.categorySlug,
@@ -59,7 +59,8 @@ function readingDescription(chapterBody: string, novelDesc: string): string {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId, chapterNo } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
+  await ensureWikiIndex();
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) return {};
@@ -128,7 +129,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ChapterPage({ params }: Props) {
   const { category, novelId, chapterNo } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
+  await ensureWikiIndex();
   const novel = getNovel(category, novelId);
   const chapter = getChapter(category, novelId, chapterNo);
   if (!novel || !chapter) notFound();

@@ -72,7 +72,7 @@ function loadContentIndexRoot(): ContentIndexRoot {
   }
   if (!raw) {
     throw new Error(
-      "content_index_not_loaded: run copy-site-index before build, deploy ASSETS, and await ensureSiteIndexesLoaded() before any getIndex* / getContentIndexSnapshot()."
+      "content_index_not_loaded: run copy-site-index before build, deploy ASSETS, and await ensureContentIndex() before any getIndex* / getContentIndexSnapshot()."
     );
   }
   indexCache = JSON.parse(raw) as ContentIndexRoot;

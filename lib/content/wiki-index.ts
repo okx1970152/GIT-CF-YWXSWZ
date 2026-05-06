@@ -57,7 +57,7 @@ function loadWikiIndexData(): WikiIndexData {
   }
   if (!raw) {
     throw new Error(
-      "wiki_index_not_loaded: run copy-site-index before build, deploy ASSETS, and await ensureSiteIndexesLoaded() before any getWiki* / getWikiIndexSnapshot()."
+      "wiki_index_not_loaded: run copy-site-index before build, deploy ASSETS, and await ensureWikiIndex() before any getWiki* / getWikiIndexSnapshot()."
     );
   }
   wikiCache = JSON.parse(raw) as WikiIndexData;

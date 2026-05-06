@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex, ensureWikiIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import {
   getWikiEntry,
   getWikiNovelBucket,
@@ -23,7 +23,7 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export async function generateStaticParams(): Promise<{ novelId: string; id: string }[]> {
-  await ensureSiteIndexesLoaded();
+  await ensureWikiIndex();
   return getWikiTermStaticParams();
 }
 
@@ -31,7 +31,8 @@ type Props = { params: Promise<{ novelId: string; id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { novelId, id } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
+  await ensureWikiIndex();
   const entry = getWikiEntry(novelId, id);
   const bucket = getWikiNovelBucket(novelId);
   if (!entry || !bucket) return {};
@@ -57,7 +58,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WikiTermPage({ params }: Props) {
   const { novelId, id } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
+  await ensureWikiIndex();
   const entry = getWikiEntry(novelId, id);
   const bucket = getWikiNovelBucket(novelId);
   if (!entry || !bucket) notFound();

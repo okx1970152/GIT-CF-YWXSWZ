@@ -5,7 +5,7 @@ import { SectionRail } from "@/components/novel/SectionRail";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NovelCard } from "@/components/novel/NovelCard";
 import { ALL_CATEGORY_SLUGS, getCategoryLabel } from "@/lib/content/categories";
-import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { getAllNovels, getNovelsByCategory, sortNovelsByRankingThenUpdated } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  await ensureSiteIndexesLoaded();
+  await ensureContentIndex();
   if (!(ALL_CATEGORY_SLUGS as readonly string[]).includes(category)) {
     notFound();
   }
