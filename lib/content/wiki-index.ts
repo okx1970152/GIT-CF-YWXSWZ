@@ -25,13 +25,37 @@ export type WikiIndexData = {
 
 let wikiCache: WikiIndexData | null = null;
 
+/** Worker 冷启动时由 instrumentation 从 ASSETS 预载。 */
+export function primeWikiIndexCache(snapshot: WikiIndexData): void {
+  wikiCache = snapshot;
+}
+
 /**
  * 运行时读取 wiki-index.json（勿静态 import JSON），避免 Worker bundle 内联整份维基索引。
+ * 与 content-index 相同：Worker 依赖 ASSETS 预载；本地可读 data/ 或 public/__site_data__/。
  */
 function loadWikiIndexData(): WikiIndexData {
   if (wikiCache) return wikiCache;
-  const filePath = path.join(process.cwd(), "data", "wiki-index.json");
-  const raw = fs.readFileSync(filePath, "utf8");
+  const candidates = [
+    path.join(process.cwd(), "data", "wiki-index.json"),
+    path.join(process.cwd(), "public", "__site_data__", "wiki-index.json")
+  ];
+  let raw: string | null = null;
+  for (const filePath of candidates) {
+    try {
+      if (fs.existsSync(filePath)) {
+        raw = fs.readFileSync(filePath, "utf8");
+        break;
+      }
+    } catch {
+      /* 同上 */
+    }
+  }
+  if (!raw) {
+    throw new Error(
+      "wiki_index_unavailable: set up public/__site_data__/wiki-index.json and ASSETS preload (instrumentation), or run copy-site-index before deploy."
+    );
+  }
   wikiCache = JSON.parse(raw) as WikiIndexData;
   return wikiCache;
 }

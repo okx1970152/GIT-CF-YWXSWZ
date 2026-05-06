@@ -39,14 +39,38 @@ export type ContentIndexRoot = {
 
 let indexCache: ContentIndexRoot | null = null;
 
+/** Worker 冷启动时由 instrumentation 从 ASSETS 预载，避免对 data/ 使用 fs。 */
+export function primeContentIndexCache(snapshot: ContentIndexRoot): void {
+  indexCache = snapshot;
+}
+
 /**
  * 运行时读取 content-index.json（勿静态 import JSON），避免 OpenNext Worker bundle 内联整份索引。
- * 依赖 next.config outputFileTracingIncludes 在部署物中包含该文件。
+ * Cloudflare Worker 上无可靠 Node fs：依赖 `public/__site_data__/` + instrumentation 预载；
+ * 本地 / Node 仍可读 `data/` 或 `public/__site_data__/`。
  */
 function loadContentIndexRoot(): ContentIndexRoot {
   if (indexCache) return indexCache;
-  const filePath = path.join(process.cwd(), "data", "content-index.json");
-  const raw = fs.readFileSync(filePath, "utf8");
+  const candidates = [
+    path.join(process.cwd(), "data", "content-index.json"),
+    path.join(process.cwd(), "public", "__site_data__", "content-index.json")
+  ];
+  let raw: string | null = null;
+  for (const filePath of candidates) {
+    try {
+      if (fs.existsSync(filePath)) {
+        raw = fs.readFileSync(filePath, "utf8");
+        break;
+      }
+    } catch {
+      /* Worker 上 existsSync/readFileSync 常不可用，继续尝试 */
+    }
+  }
+  if (!raw) {
+    throw new Error(
+      "content_index_unavailable: set up public/__site_data__/content-index.json and ASSETS preload (instrumentation), or run copy-site-index before deploy."
+    );
+  }
   indexCache = JSON.parse(raw) as ContentIndexRoot;
   return indexCache;
 }

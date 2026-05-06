@@ -1,0 +1,25 @@
+/**
+ * 将构建生成的索引 JSON 复制到 public，随 ASSETS 发布；Worker 上无 Node fs 可读 data/ 时，
+ * 由 instrumentation 通过 ASSETS.fetch 预载到内存（见 lib/content/content-index.ts / wiki-index.ts）。
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.join(__dirname, "..");
+const outDir = path.join(root, "public", "__site_data__");
+
+const files = ["content-index.json", "wiki-index.json"];
+
+fs.mkdirSync(outDir, { recursive: true });
+for (const name of files) {
+  const src = path.join(root, "data", name);
+  const dst = path.join(outDir, name);
+  if (!fs.existsSync(src)) {
+    console.warn(`[copy-site-index] skip missing: ${src}`);
+    continue;
+  }
+  fs.copyFileSync(src, dst);
+  console.log(`[copy-site-index] ${name} -> public/__site_data__/`);
+}
