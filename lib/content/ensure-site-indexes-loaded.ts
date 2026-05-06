@@ -60,7 +60,40 @@ function isAssetFetcher(x: unknown): x is AssetFetcher {
   return typeof x === "object" && x !== null && typeof (x as AssetFetcher).fetch === "function";
 }
 
-async function primeBothFromPublicFetch(): Promise<void> {
+/**
+ * Cloudflare：必须用 ASSETS 绑定读静态 JSON，禁止先用同源 `fetch(站点URL)`——否则会再次进入
+ * 本 Worker → 根 layout → ensure → fetch → … 死循环，最终 1102 Worker exceeded resource limits。
+ */
+async function tryPrimeBothFromAssetsBinding(): Promise<boolean> {
+  try {
+    const ctx = await getCloudflareContext({ async: true });
+    const assets = (ctx.env as Record<string, unknown>).ASSETS;
+    if (!isAssetFetcher(assets)) return false;
+
+    const base =
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://workers-assets.internal";
+    const loadJson = async (pathname: string): Promise<unknown> => {
+      const url = `${base}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
+      const res = await assets.fetch(new Request(url));
+      if (!res.ok) throw new Error(`assets:${pathname}:${res.status}`);
+      return res.json() as Promise<unknown>;
+    };
+
+    const [content, wiki] = (await Promise.all([
+      loadJson("/__site_data__/content-index.json"),
+      loadJson("/__site_data__/wiki-index.json")
+    ])) as [ContentIndexRoot, WikiIndexData];
+
+    primeContentIndexCache(content);
+    primeWikiIndexCache(wiki);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** 非 CF（如 next dev / next start）且无 ASSETS 时：同源拉 public 下的索引。 */
+async function primeBothFromHttpFetch(): Promise<void> {
   const contentUrl = toAbsoluteUrl("/__site_data__/content-index.json");
   const wikiUrl = toAbsoluteUrl("/__site_data__/wiki-index.json");
 
@@ -69,9 +102,11 @@ async function primeBothFromPublicFetch(): Promise<void> {
     fetch(wikiUrl, { next: { revalidate: 300 } })
   ]);
 
-  if (!cRes.ok || !wRes.ok) {
-    await primeBothFromCloudflareAssetsBinding(contentUrl, wikiUrl);
-    return;
+  if (!cRes.ok) {
+    throw new Error(`content_index_fetch_failed:${cRes.status}:${contentUrl}`);
+  }
+  if (!wRes.ok) {
+    throw new Error(`wiki_index_fetch_failed:${wRes.status}:${wikiUrl}`);
   }
 
   const [content, wiki] = (await Promise.all([cRes.json(), wRes.json()])) as [
@@ -83,38 +118,9 @@ async function primeBothFromPublicFetch(): Promise<void> {
   primeWikiIndexCache(wiki);
 }
 
-/** 同源 fetch 被限制时（如 global_fetch_strictly_public），直接用 ASSETS 绑定读静态文件。 */
-async function primeBothFromCloudflareAssetsBinding(
-  contentUrl: string,
-  wikiUrl: string
-): Promise<void> {
-  try {
-    const ctx = await getCloudflareContext({ async: true });
-    const assets = (ctx.env as Record<string, unknown>).ASSETS;
-    if (!isAssetFetcher(assets)) {
-      throw new Error("ASSETS_binding_missing");
-    }
-    const loadJson = async (absoluteUrl: string): Promise<unknown> => {
-      const res = await assets.fetch(new Request(absoluteUrl));
-      if (!res.ok) throw new Error(`assets_fetch:${absoluteUrl}:${res.status}`);
-      return res.json() as Promise<unknown>;
-    };
-    const [content, wiki] = (await Promise.all([loadJson(contentUrl), loadJson(wikiUrl)])) as [
-      ContentIndexRoot,
-      WikiIndexData
-    ];
-    primeContentIndexCache(content);
-    primeWikiIndexCache(wiki);
-  } catch (inner) {
-    throw new Error(
-      `site_index_load_failed: public_fetch_and_ASSETS_fallback_failed:${String((inner as Error)?.message ?? inner)}`
-    );
-  }
-}
-
 /**
  * Cloudflare Worker 上无 Node fs：在任意 SSR 使用索引前调用本函数。
- * 顺序：已缓存则跳过 → 尝试本地 fs → 同源 fetch 静态资源 `public/__site_data__/*`。
+ * 顺序：缓存命中 → fs → **ASSETS.fetch（生产 CF，避免 Worker 自调用死循环）** → 最后才 HTTP fetch（本地）。
  */
 export async function ensureSiteIndexesLoaded(): Promise<void> {
   if (isContentIndexPrimed() && isWikiIndexPrimed()) return;
@@ -123,7 +129,8 @@ export async function ensureSiteIndexesLoaded(): Promise<void> {
     inflight = (async () => {
       if (isContentIndexPrimed() && isWikiIndexPrimed()) return;
       if (tryPrimeBothFromFs()) return;
-      await primeBothFromPublicFetch();
+      if (await tryPrimeBothFromAssetsBinding()) return;
+      await primeBothFromHttpFetch();
     })();
   }
 
