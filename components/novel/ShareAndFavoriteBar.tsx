@@ -137,9 +137,10 @@ export function ShareAndFavoriteBar({
 
   const targets = useMemo(() => SHARE_TARGETS, []);
   const isCompact = variant === "compact";
+  /** 仅图标；悬停用原生 title（Share to …）。横向溢出时与页脚友情链接同款：外层 overflow-x-auto + 内层 nowrap */
   const btnClass = isCompact
-    ? "flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-md border border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-105 hover:border-[var(--accent-green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
-    : "flex h-10 w-10 items-center justify-center rounded-lg border border-transparent bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-110 hover:border-[var(--accent-green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
+    ? "flex h-8 w-8 min-h-8 min-w-8 shrink-0 items-center justify-center rounded-md border border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-105 hover:border-[var(--accent-green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]"
+    : "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-transparent bg-[var(--bg-card)] text-[var(--text-deep)] shadow-sm transition-transform hover:scale-110 hover:border-[var(--accent-green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)]";
   const imgSize = isCompact ? 20 : 28;
   const imgClass = isCompact ? "h-5 w-5 object-contain" : "h-7 w-7 object-contain";
   const starClass = isCompact ? "h-5 w-5" : "h-6 w-6";
@@ -173,50 +174,52 @@ export function ShareAndFavoriteBar({
       aria-label="Share and bookmark"
     >
       <span className={`shrink-0 font-sans text-[var(--text-deep)] ${labelClass}`}>Share to</span>
-      {/* 所有分享与收藏同一 flex 行：nowrap + 横向滚动，避免收藏单独换行 */}
-      <ul
-        className={`m-0 flex min-w-0 flex-1 list-none flex-nowrap items-center overflow-x-auto p-0 [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] ${isCompact ? "gap-1.5" : "gap-2"}`}
-      >
-        {targets.map((p) => (
-          <li key={p.id} className="shrink-0">
-            <button
-              type="button"
-              title={p.title}
-              aria-label={p.title}
-              onClick={() => void copyShareForPlatform(p.toastName)}
-              className={btnClass}
-            >
-              {!iconBroken[p.id] ? (
-                <Image
-                  src={p.icon}
-                  alt=""
-                  width={imgSize}
-                  height={imgSize}
-                  className={imgClass}
-                  unoptimized
-                  onError={() => setIconBroken((prev) => ({ ...prev, [p.id]: true }))}
-                />
-              ) : (
-                <span className="text-[10px] font-bold uppercase">{p.id.slice(0, 2)}</span>
-              )}
-            </button>
-          </li>
-        ))}
-        {showBookmark ? (
-          <li className="shrink-0">
-            <button
-              type="button"
-              title={bookmarked ? "Bookmarked (click again to copy URL)" : "Add to browser bookmarks"}
-              aria-label={bookmarked ? "Bookmarked" : "Add to browser bookmarks"}
-              aria-pressed={bookmarked}
-              onClick={onBookmarkClick}
-              className={`text-amber-500 shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)] ${btnClass}`}
-            >
-              <StarIcon filled={bookmarked} className={starClass} />
-            </button>
-          </li>
-        ) : null}
-      </ul>
+      {/* 与 SiteFooterClient 友情链接：justify-center + overflow-x-auto（窄屏可横向滑动） */}
+      <div className="flex min-w-0 flex-1 justify-center overflow-x-auto pb-1 [-webkit-overflow-scrolling:touch] sm:justify-start">
+        <ul
+          className={`m-0 flex min-w-0 list-none flex-nowrap items-stretch justify-start p-0 ${isCompact ? "gap-1.5" : "gap-2"}`}
+        >
+          {targets.map((p) => (
+            <li key={p.id} className="shrink-0">
+              <button
+                type="button"
+                title={p.title}
+                aria-label={p.title}
+                onClick={() => void copyShareForPlatform(p.toastName)}
+                className={btnClass}
+              >
+                {!iconBroken[p.id] ? (
+                  <Image
+                    src={p.icon}
+                    alt=""
+                    width={imgSize}
+                    height={imgSize}
+                    className={imgClass}
+                    unoptimized
+                    onError={() => setIconBroken((prev) => ({ ...prev, [p.id]: true }))}
+                  />
+                ) : (
+                  <span className="text-[10px] font-bold uppercase">{p.id.slice(0, 2)}</span>
+                )}
+              </button>
+            </li>
+          ))}
+          {showBookmark ? (
+            <li className="shrink-0">
+              <button
+                type="button"
+                title={bookmarked ? "Bookmarked (click again to copy URL)" : "Add to browser bookmarks"}
+                aria-label={bookmarked ? "Bookmarked" : "Add to browser bookmarks"}
+                aria-pressed={bookmarked}
+                onClick={onBookmarkClick}
+                className={`text-amber-500 shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-green)] ${btnClass}`}
+              >
+                <StarIcon filled={bookmarked} className={starClass} />
+              </button>
+            </li>
+          ) : null}
+        </ul>
+      </div>
 
       {toast ? (
         <div

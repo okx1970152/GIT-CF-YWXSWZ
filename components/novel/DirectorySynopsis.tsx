@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 
-const DEFAULT_COLLAPSED_CHARS = 110;
+/** 与示例段落等长（含空格/标点）：~459 英文字符，作为默认折叠长度 */
+const DEFAULT_COLLAPSED_CHARS = 459;
 
 /** 在词边界附近截断英文简介，避免半个词悬空 */
 function truncateForPreview(text: string, maxChars: number): { preview: string; needsExpand: boolean } {
