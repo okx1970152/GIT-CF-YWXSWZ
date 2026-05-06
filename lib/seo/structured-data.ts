@@ -1,5 +1,6 @@
 import type { CulturalNotesFaqItem } from "@/lib/content/meta";
 import type { NovelInfo } from "@/lib/content/schema";
+import { WIKI_NAV_LABEL } from "@/lib/content/wiki-labels";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 /** 无独立作者主页时，Person.url 的占位（富媒体校验常用固定首页） */
@@ -290,7 +291,7 @@ export function buildWikiDefinedTermJsonLd(opts: {
         inLanguage: "en",
         inDefinedTermSet: {
           "@type": "DefinedTermSet",
-          name: `${siteName} lore glossary`,
+          name: `${siteName} — ${WIKI_NAV_LABEL}`,
           url: glossaryIndexUrl
         }
       }

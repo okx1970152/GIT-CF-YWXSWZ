@@ -9,6 +9,7 @@ import {
   getWikiNovelDisplayLabel,
   getWikiTermStaticParams
 } from "@/lib/content/wiki-index";
+import { WIKI_NAV_LABEL } from "@/lib/content/wiki-labels";
 import {
   buildWikiDefinedTermJsonLd,
   buildWikiTermBreadcrumbJsonLd
@@ -89,7 +90,7 @@ export default async function WikiTermPage({ params }: Props) {
       <div className="mx-auto w-full max-w-[880px] px-3 py-10 sm:px-4">
         <nav className="font-sans text-sm text-[var(--text-muted)]">
           <Link href="/wiki" className="text-[var(--accent-green)] hover:underline">
-            Lore glossary
+            {WIKI_NAV_LABEL}
           </Link>
           <span className="mx-2" aria-hidden>
             /

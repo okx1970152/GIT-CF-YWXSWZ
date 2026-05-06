@@ -2,21 +2,24 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { getWikiNovelBucket, getWikiNovelDisplayLabel, getWikiNovelIdsSorted } from "@/lib/content/wiki-index";
+import {
+  WIKI_HUB_HEADING,
+  WIKI_HUB_META_DESCRIPTION,
+  WIKI_HUB_TAGLINE
+} from "@/lib/content/wiki-labels";
 import { SITE_NAME, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: `Lore glossary — ${SITE_NAME}`,
-  description:
-    "In-world terms from our xianxia and wuxia novels — crawlable glossary entries with links back to chapters.",
+  title: `${WIKI_HUB_HEADING} — ${SITE_NAME}`,
+  description: WIKI_HUB_META_DESCRIPTION,
   alternates: { canonical: toAbsoluteUrl("/wiki") },
   openGraph: {
     ...baseOpenGraph(),
-    title: `Lore glossary — ${SITE_NAME}`,
-    description:
-      "In-world terms from our xianxia and wuxia novels — crawlable glossary entries with links back to chapters.",
+    title: `${WIKI_HUB_HEADING} — ${SITE_NAME}`,
+    description: WIKI_HUB_META_DESCRIPTION,
     url: toAbsoluteUrl("/wiki"),
     type: "website"
   },
@@ -30,10 +33,10 @@ export default function WikiHubPage() {
     <>
       <div className="mx-auto w-full max-w-[1400px] px-3 py-10 sm:px-4">
         <h1 className="text-center font-serif text-3xl font-bold tracking-tight text-[var(--text-deep)] sm:text-4xl">
-          Lore glossary
+          {WIKI_HUB_HEADING}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-center font-sans text-sm leading-relaxed text-[var(--text-soft)] sm:text-base">
-          Crawlable entries for cultivation-world terms. Each term links back to the chapters where it appears.
+          {WIKI_HUB_TAGLINE}
         </p>
 
         {novelIds.length === 0 ? (

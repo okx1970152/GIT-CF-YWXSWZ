@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CATEGORY_NAV } from "@/lib/content/categories";
+import { WIKI_NAV_LABEL } from "@/lib/content/wiki-labels";
 import { SearchBar } from "@/components/site/SearchBar";
 
 const categoryInactive =
@@ -43,6 +44,8 @@ export function Navbar() {
     router.refresh();
   }
 
+  const wikiActive = pathname === "/wiki" || pathname.startsWith("/wiki/");
+
   const categoryRail = (
     <nav
       aria-label="Categories"
@@ -60,25 +63,18 @@ export function Navbar() {
           </Link>
         );
       })}
+      <Link href="/wiki" className={wikiActive ? categoryActive : categoryInactive}>
+        {WIKI_NAV_LABEL}
+      </Link>
     </nav>
   );
 
   const tools = (
-    <div className="flex min-w-0 flex-nowrap items-center justify-end gap-2">
+    <div className="flex min-w-0 flex-nowrap items-center justify-end gap-2 sm:gap-3">
       <Link href="/" className={isHome ? homeActive : homeInactive}>
         Home
       </Link>
-      <Link
-        href="/wiki"
-        className={
-          pathname === "/wiki" || pathname.startsWith("/wiki/")
-            ? homeActive
-            : homeInactive
-        }
-      >
-        Wiki
-      </Link>
-      <SearchBar className="max-w-[min(100vw-10rem,280px)] shrink sm:max-w-[300px] lg:max-w-[320px]" />
+      <SearchBar className="min-w-0 max-w-[min(100vw-11rem,220px)] shrink sm:max-w-[240px] lg:max-w-[260px]" />
       <button
         type="button"
         onClick={toggleImageAds}

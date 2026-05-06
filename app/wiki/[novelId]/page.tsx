@@ -8,6 +8,7 @@ import {
   getWikiNovelIdsSorted,
   listWikiEntriesForNovel
 } from "@/lib/content/wiki-index";
+import { WIKI_NAV_LABEL } from "@/lib/content/wiki-labels";
 import { SITE_NAME, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!bucket) return {};
   const label = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
   const path = `/wiki/${novelId}`;
-  const title = `${label} — Lore glossary`;
+  const title = `${label} — ${WIKI_NAV_LABEL}`;
   const description = `Glossary terms for ${label}: cultivation lore, techniques, and world concepts with chapter links.`;
   return {
     title,
@@ -57,7 +58,7 @@ export default async function WikiNovelHubPage({ params }: Props) {
       <div className="mx-auto w-full max-w-[1400px] px-3 py-10 sm:px-4">
         <nav className="font-sans text-sm text-[var(--text-muted)]">
           <Link href="/wiki" className="text-[var(--accent-green)] hover:underline">
-            Lore glossary
+            {WIKI_NAV_LABEL}
           </Link>
           <span className="mx-2" aria-hidden>
             /
