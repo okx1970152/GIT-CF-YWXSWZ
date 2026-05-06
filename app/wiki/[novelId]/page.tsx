@@ -12,7 +12,8 @@ import { SITE_NAME, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
-export const dynamicParams = false;
+/** true：构建未预生成的 novelId 仍可 SSR（避免 Cloudflare/OpenNext 下子路由全体 404） */
+export const dynamicParams = true;
 
 export function generateStaticParams(): { novelId: string }[] {
   return getWikiNovelIdsSorted().map((novelId) => ({ novelId }));
