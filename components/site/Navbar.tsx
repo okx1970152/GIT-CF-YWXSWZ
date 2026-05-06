@@ -49,7 +49,7 @@ export function Navbar() {
   const categoryRail = (
     <nav
       aria-label="Categories"
-      className="scrollbar-hide relative -mx-1 flex w-full min-w-0 flex-wrap items-end justify-center gap-2 border-b border-[var(--border-soft)] px-1 pb-3 pt-1 text-sm"
+      className="scrollbar-hide relative -mx-1 flex w-full min-w-0 flex-wrap items-end justify-center gap-2 border-b border-[var(--border-soft)] px-1 pb-3 pt-1 text-sm lg:flex-nowrap lg:justify-start lg:overflow-x-auto"
     >
       {CATEGORY_NAV.map((cat) => {
         const active = activeCategory === cat.slug;
@@ -94,13 +94,10 @@ export function Navbar() {
           {tools}
         </div>
 
-        {/* Desktop: spacer | centered categories | right tools */}
-        <div className="hidden items-end gap-4 lg:flex">
-          <div className="min-w-0 flex-1" aria-hidden />
-          <div className="flex w-full min-w-0 flex-[1.4] justify-center px-1">
-            {categoryRail}
-          </div>
-          <div className="flex min-w-0 flex-1 justify-end pb-3">{tools}</div>
+        {/* Desktop: categories use all space left of tools (no artificial flex-[1.4] cap) */}
+        <div className="hidden items-end gap-6 lg:flex">
+          <div className="min-w-0 flex-1 px-1">{categoryRail}</div>
+          <div className="shrink-0 pb-3">{tools}</div>
         </div>
       </div>
     </header>
