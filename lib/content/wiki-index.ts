@@ -1,5 +1,8 @@
-import wikiRaw from "@/data/wiki-index.json";
-import { getDisplayNovelTitle, getNovel } from "@/lib/content/novels";
+import "server-only";
+import fs from "fs";
+import path from "path";
+import { getDisplayNovelTitle } from "@/lib/content/novel-display";
+import { getNovel } from "@/lib/content/novels";
 
 export type WikiEntryRecord = {
   id: string;
@@ -20,26 +23,45 @@ export type WikiIndexData = {
   novels: Record<string, WikiNovelBucket>;
 };
 
-const wikiIndex = wikiRaw as WikiIndexData;
+let wikiCache: WikiIndexData | null = null;
+
+/**
+ * 运行时读取 wiki-index.json（勿静态 import JSON），避免 Worker bundle 内联整份维基索引。
+ */
+function loadWikiIndexData(): WikiIndexData {
+  if (wikiCache) return wikiCache;
+  const filePath = path.join(process.cwd(), "data", "wiki-index.json");
+  const raw = fs.readFileSync(filePath, "utf8");
+  wikiCache = JSON.parse(raw) as WikiIndexData;
+  return wikiCache;
+}
+
+/** 供 sitemap 等需要整棵维基索引的调用方 */
+export function getWikiIndexSnapshot(): WikiIndexData {
+  return loadWikiIndexData();
+}
 
 /** 正文只对在此集合中的 lore id 包 wiki 链接，避免 404 */
 export function getWikiLinkedIdsForNovel(novelId: string): Set<string> {
+  const wikiIndex = loadWikiIndexData();
   const bucket = wikiIndex.novels[novelId];
   if (!bucket?.entries) return new Set();
   return new Set(Object.keys(bucket.entries));
 }
 
 export function getWikiNovelBucket(novelId: string): WikiNovelBucket | null {
-  return wikiIndex.novels[novelId] ?? null;
+  return loadWikiIndexData().novels[novelId] ?? null;
 }
 
 export function getWikiEntry(novelId: string, loreId: string): WikiEntryRecord | null {
+  const wikiIndex = loadWikiIndexData();
   const bucket = wikiIndex.novels[novelId];
   return bucket?.entries[loreId] ?? null;
 }
 
 /** SSG：所有有条目的 (novelId, id) */
 export function getWikiTermStaticParams(): { novelId: string; id: string }[] {
+  const wikiIndex = loadWikiIndexData();
   const out: { novelId: string; id: string }[] = [];
   for (const novelId of Object.keys(wikiIndex.novels)) {
     const entries = wikiIndex.novels[novelId]?.entries ?? {};
@@ -52,11 +74,11 @@ export function getWikiTermStaticParams(): { novelId: string; id: string }[] {
 
 /** 有条目的 novelId 列表（排序） */
 export function getWikiNovelIdsSorted(): string[] {
-  return Object.keys(wikiIndex.novels).sort((a, b) => a.localeCompare(b));
+  return Object.keys(loadWikiIndexData().novels).sort((a, b) => a.localeCompare(b));
 }
 
 export function listWikiEntriesForNovel(novelId: string): WikiEntryRecord[] {
-  const bucket = wikiIndex.novels[novelId];
+  const bucket = loadWikiIndexData().novels[novelId];
   if (!bucket?.entries) return [];
   return Object.values(bucket.entries).sort((a, b) =>
     a.displayTitle.localeCompare(b.displayTitle, "en")

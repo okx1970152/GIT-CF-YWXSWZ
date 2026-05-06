@@ -6,11 +6,16 @@ initOpenNextCloudflareForDev();
 const nextConfig = {
   reactStrictMode: true,
   /**
-   * Include the local Markdown content + ads JSON so runtime `fs` reads work
-   * inside the OpenNext-built Worker (Workers + Static Assets, nodejs_compat).
+   * 仅追踪运行时需要的路径：正文 .md、索引 JSON、广告 JSON。
+   * 避免对整个 data 目录做宽 glob；大索引由 fs 读取，不静态 import 进 bundle。
    */
   outputFileTracingIncludes: {
-    "/**/*": ["./novels/**/*", "./data/**/*"]
+    "/**/*": [
+      "./novels/**/*",
+      "./data/content-index.json",
+      "./data/wiki-index.json",
+      "./data/ads.json"
+    ]
   }
 };
 

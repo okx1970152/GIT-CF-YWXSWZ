@@ -1,4 +1,7 @@
+import "server-only";
+
 import { getIndexCategories, getIndexNovel, getIndexNovelsByCategory } from "@/lib/content/content-index";
+import { getNovelSummary } from "@/lib/content/novel-display";
 import { novelInfoSchema, type NovelInfo } from "@/lib/content/schema";
 import { getChapters } from "@/lib/content/chapters";
 import { getAnnotationIndexEntry } from "@/lib/content/annotation-index";
@@ -85,31 +88,6 @@ export function getNovel(categorySlug: string, novelId: string): NovelInfo | nul
   }
 }
 
-function looksLikeMostlyCjk(input: string): boolean {
-  if (!input.trim()) return false;
-  const cjk = (input.match(/[\u3400-\u9fff]/g) || []).length;
-  return cjk >= Math.max(1, Math.floor(input.length / 3));
-}
-
-export function getDisplayNovelTitle(novel: NovelInfo): string {
-  const titleEn = novel.title_en?.trim();
-  if (titleEn) return titleEn;
-  if (!looksLikeMostlyCjk(novel.title)) return novel.title;
-  return novel.novelId
-    .split("-")
-    .filter(Boolean)
-    .map((w) => w[0].toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-export function getNovelSummary(novel: NovelInfo): string {
-  const summary = novel.summary?.trim();
-  if (summary) return summary;
-  const desc = novel.desc?.trim();
-  if (desc) return desc;
-  return `${getDisplayNovelTitle(novel)} is an ongoing web novel.`;
-}
-
 export type SearchResult = {
   type: "novel" | "chapter";
   title: string;
@@ -146,3 +124,5 @@ export function getSearchIndex(): SearchResult[] {
   }
   return results;
 }
+
+export { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novel-display";

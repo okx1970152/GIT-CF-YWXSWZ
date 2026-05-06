@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { ChapterItem } from "@/lib/content/chapters";
-import { padChapterNo } from "@/lib/content/chapters";
+import { padChapterNo } from "@/lib/content/chapter-utils";
 import { cn } from "@/lib/cn";
 
 type Props = {

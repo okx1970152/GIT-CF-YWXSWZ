@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
-import contentIndex from "@/data/content-index.json";
-import wikiIndex from "@/data/wiki-index.json";
-import type { ContentIndexNovel } from "@/lib/content/content-index";
+import { getContentIndexSnapshot } from "@/lib/content/content-index";
+import { getWikiIndexSnapshot } from "@/lib/content/wiki-index";
 import { ALL_CATEGORY_SLUGS } from "@/lib/content/categories";
 import { getChapters } from "@/lib/content/chapters";
 import { getCategoryLatestUpdatedAt, getLatestContentUpdatedAt } from "@/lib/content/novels";
@@ -16,20 +15,10 @@ function sitemapBaseUrl(): string {
   return "https://wx.0o0o.mom";
 }
 
-type IndexShape = {
-  version: number;
-  generatedAt: string;
-  categories: Array<{ slug: string; novels: ContentIndexNovel[] }>;
-};
-
-const indexData = contentIndex as IndexShape;
-
 type WikiSitemapShape = {
   generatedAt?: string;
   novels: Record<string, { entries?: Record<string, unknown> }>;
 };
-
-const wikiData = wikiIndex as WikiSitemapShape;
 
 function absolute(path: string): string {
   const p = path.startsWith("/") ? path : `/${path}`;
@@ -45,7 +34,7 @@ function parseLastMod(...candidates: (string | null | undefined)[]): Date {
     const d = new Date(t);
     if (!Number.isNaN(d.getTime())) return d;
   }
-  const g = indexData.generatedAt?.trim();
+  const g = getContentIndexSnapshot().generatedAt?.trim();
   if (g) {
     const d = new Date(g);
     if (!Number.isNaN(d.getTime())) return d;
@@ -56,6 +45,9 @@ function parseLastMod(...candidates: (string | null | undefined)[]): Date {
 let cachedEntries: MetadataRoute.Sitemap | null = null;
 
 function buildAllSitemapEntries(): MetadataRoute.Sitemap {
+  const indexData = getContentIndexSnapshot();
+  const wikiData = getWikiIndexSnapshot() as WikiSitemapShape;
+
   const homeLm = getLatestContentUpdatedAt() ?? parseLastMod(indexData.generatedAt);
   const items: MetadataRoute.Sitemap = [
     {

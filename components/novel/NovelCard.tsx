@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { NovelInfo } from "@/lib/content/schema";
 import { ShareAndFavoriteBar } from "@/components/novel/ShareAndFavoriteBar";
 import { cn } from "@/lib/cn";
-import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novels";
+import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novel-display";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 type NovelCardProps = {

@@ -1,4 +1,5 @@
 import { getIndexNovel } from "@/lib/content/content-index";
+import { padChapterNo } from "@/lib/content/chapter-utils";
 
 export type ChapterItem = {
   chapterNo: string;
@@ -13,16 +14,7 @@ export type ChapterItem = {
   fileName: string;
 };
 
-export function padChapterNo(input: number | string): string {
-  const value = typeof input === "number" ? input.toString() : input;
-  return value.padStart(4, "0");
-}
-
-export function parseChapterFileName(filename: string): { chapterNo: string; slug: string } {
-  const chapterNo = filename.slice(0, 4);
-  const slug = filename.replace(/^\d{4}-/, "").replace(/\.md$/, "");
-  return { chapterNo, slug };
-}
+export { padChapterNo, parseChapterFileName } from "@/lib/content/chapter-utils";
 
 export function getChapters(categorySlug: string, novelId: string): ChapterItem[] {
   const novel = getIndexNovel(categorySlug, novelId);
