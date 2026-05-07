@@ -6,15 +6,11 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS",
-    // OpenNext：默认「资源先匹配」时，未预生成进 assets 的 /wiki/* 可能被边缘直接 404，Worker 收不到请求。
-    // /wiki 子树一律先走 Worker，由 Next 处理 HTML 与 ?_rsc= 导航。（见 CF Static Assets run_worker_first）
-    "run_worker_first": ["/wiki/*"]
+    "binding": "ASSETS"
   },
   "observability": {
     "enabled": true
   },
-  // Worker 运行时明文变量（与 GitHub Actions Variables 对齐；部署时写入 CF 项目）
   "vars": {
     "NEXT_PUBLIC_SITE_URL": "https://wx.0o0o.mom",
     "APP_GITHUB_REPO": "okx1970152/GIT-CF-YWXSWZ",
