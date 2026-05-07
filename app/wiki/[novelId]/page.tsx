@@ -13,9 +13,9 @@ import { WIKI_NAV_LABEL } from "@/lib/content/wiki-labels";
 import { SITE_NAME, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const dynamic = "force-static";
 /** true：构建未预生成的 novelId 仍可 SSR（避免 Cloudflare/OpenNext 下子路由全体 404） */
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export async function generateStaticParams(): Promise<{ novelId: string }[]> {
   await ensureWikiIndex();

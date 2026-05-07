@@ -4,7 +4,7 @@
     "novelsRoot": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels"
   },
   "summary": {
-    "categories": 10,
+    "categories": 0,
     "novels": 0,
     "validNovels": 0,
     "invalidNovels": 0,
@@ -14,47 +14,6 @@
     "missingMetaNovel": 0,
     "schemaErrors": 0
   },
-  "categories": [
-    {
-      "category": "completed",
-      "novels": []
-    },
-    {
-      "category": "female",
-      "novels": []
-    },
-    {
-      "category": "gaming",
-      "novels": []
-    },
-    {
-      "category": "historical",
-      "novels": []
-    },
-    {
-      "category": "hot-essays",
-      "novels": []
-    },
-    {
-      "category": "ranking",
-      "novels": []
-    },
-    {
-      "category": "sci-fi",
-      "novels": []
-    },
-    {
-      "category": "urban",
-      "novels": []
-    },
-    {
-      "category": "wuxia",
-      "novels": []
-    },
-    {
-      "category": "xuanhuan",
-      "novels": []
-    }
-  ],
+  "categories": [],
   "errors": []
 }

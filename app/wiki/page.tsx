@@ -11,7 +11,7 @@ import {
 import { SITE_NAME, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
-export const revalidate = 3600;
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: `${WIKI_HUB_HEADING} — ${SITE_NAME}`,

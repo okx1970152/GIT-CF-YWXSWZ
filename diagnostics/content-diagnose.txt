@@ -3,7 +3,7 @@ cwd=D:\1CHATGPT\btc\Google-BoKe\999-英文小说网站\YWXSWZ
 novelsRoot=D:\1CHATGPT\btc\Google-BoKe\999-英文小说网站\YWXSWZ\novels
 
 [diag][summary]
-categories=10
+categories=0
 novels=0
 validNovels=0
 invalidNovels=0
