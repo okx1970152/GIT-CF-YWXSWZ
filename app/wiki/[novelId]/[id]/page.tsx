@@ -18,8 +18,7 @@ import {
 import { SITE_NAME, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
-export const dynamic = "force-static";
-/** true：词条 id 未出现在 generateStaticParams 时仍可按需渲染，避免误 404 */
+/** false：仅允许构建期 generateStaticParams 产出的词条路径，未预生成路径直接 404。 */
 export const dynamicParams = false;
 
 export async function generateStaticParams(): Promise<{ novelId: string; id: string }[]> {
