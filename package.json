@@ -5,18 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "generate:wiki-index": "node ./scripts/generate-wiki-index.mjs",
-    "build": "npm run copy-novel-md && npm run copy-novel-meta && npm run generate:content-index && npm run generate:wiki-index && npm run copy-site-index && next build",
+    "build": "npm run copy-novel-md && npm run copy-novel-meta && npm run generate:content-index && npm run generate:wiki-index && npm run generate:wiki-static && npm run copy-site-index && next build",
     "start": "next start",
     "lint": "next lint",
     "sync:content": "node ./scripts/sync-content-repo.mjs",
     "generate:content-index": "node ./scripts/generate-content-index.mjs",
+    "generate:wiki-static": "node ./scripts/generate-wiki-static-html.mjs",
     "copy-novel-md": "node ./scripts/copy-novel-markdown-to-public.mjs",
     "copy-novel-meta": "node ./scripts/copy-novel-meta-to-public.mjs",
     "copy-site-index": "node ./scripts/copy-site-index-to-public.mjs",
     "diag:content": "node ./scripts/diagnose-content.mjs",
     "preview": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-build": "npm run sync:content && npm run generate:content-index && npm run generate:wiki-index && npm run diag:content && npm run copy-novel-md && npm run copy-novel-meta && npm run copy-site-index && opennextjs-cloudflare build"
+    "cf-build": "npm run sync:content && npm run generate:content-index && npm run generate:wiki-index && npm run generate:wiki-static && npm run diag:content && npm run copy-novel-md && npm run copy-novel-meta && npm run copy-site-index && opennextjs-cloudflare build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
