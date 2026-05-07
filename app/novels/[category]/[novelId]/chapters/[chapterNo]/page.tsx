@@ -156,7 +156,7 @@ export default async function ChapterPage({ params }: Props) {
   let chapterHtml = await markdownToHtml(chapterBody);
   const anchors = chapterMeta?.lore_anchors ?? [];
   if (anchors.length > 0) {
-    const wikiLinkedIds = getWikiLinkedIdsForNovel(novelId);
+    const wikiLinkedIds = await getWikiLinkedIdsForNovel(novelId);
     chapterHtml = applyLoreAnchorsToChapterHtml(chapterHtml, anchors, {
       novelId,
       wikiLinkedIds

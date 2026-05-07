@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getContentIndexSnapshot } from "@/lib/content/content-index";
-import { getWikiIndexSnapshot } from "@/lib/content/wiki-index";
+import { getWikiManifest } from "@/lib/content/wiki-index";
 import { ensureSiteIndexesLoaded } from "@/lib/content/ensure-site-indexes-loaded";
 import { ALL_CATEGORY_SLUGS } from "@/lib/content/categories";
 import { getChapters } from "@/lib/content/chapters";
@@ -18,7 +18,7 @@ function sitemapBaseUrl(): string {
 
 type WikiSitemapShape = {
   generatedAt?: string;
-  novels: Record<string, { entries?: Record<string, unknown> }>;
+  novels: Record<string, { termIds?: string[] }>;
 };
 
 function absolute(path: string): string {
@@ -47,7 +47,7 @@ let cachedEntries: MetadataRoute.Sitemap | null = null;
 
 function buildAllSitemapEntries(): MetadataRoute.Sitemap {
   const indexData = getContentIndexSnapshot();
-  const wikiData = getWikiIndexSnapshot() as WikiSitemapShape;
+  const wikiData = getWikiManifest() as WikiSitemapShape;
 
   const homeLm = getLatestContentUpdatedAt() ?? parseLastMod(indexData.generatedAt);
   const items: MetadataRoute.Sitemap = [
@@ -91,8 +91,8 @@ function buildAllSitemapEntries(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.68,
     });
-    const entries = wikiData.novels[novelId]?.entries ?? {};
-    for (const loreId of Object.keys(entries)) {
+    const termIds = wikiData.novels[novelId]?.termIds ?? [];
+    for (const loreId of termIds) {
       items.push({
         url: absolute(`/wiki/${novelId}/${encodeURIComponent(loreId)}`),
         lastModified: wikiLm,

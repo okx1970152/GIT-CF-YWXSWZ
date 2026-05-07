@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ensureContentIndex, ensureWikiIndex } from "@/lib/content/ensure-site-indexes-loaded";
-import { getWikiNovelBucket, getWikiNovelDisplayLabel, getWikiNovelIdsSorted } from "@/lib/content/wiki-index";
+import { getWikiHubNovelSummaries, getWikiNovelDisplayLabel } from "@/lib/content/wiki-index";
 import {
   WIKI_HUB_HEADING,
   WIKI_HUB_META_DESCRIPTION,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default async function WikiHubPage() {
   await ensureContentIndex();
   await ensureWikiIndex();
-  const novelIds = getWikiNovelIdsSorted();
+  const summaries = getWikiHubNovelSummaries();
 
   return (
     <>
@@ -42,18 +42,14 @@ export default async function WikiHubPage() {
           {WIKI_HUB_TAGLINE}
         </p>
 
-        {novelIds.length === 0 ? (
+        {summaries.length === 0 ? (
           <p className="mt-12 text-center font-sans text-[var(--text-muted)]">
             No glossary entries yet — rerun the content pipeline with lore definitions to populate this index.
           </p>
         ) : (
           <ul className="mx-auto mt-10 max-w-xl list-none space-y-3 p-0">
-            {novelIds.map((novelId) => {
-              const bucket = getWikiNovelBucket(novelId);
-              const count = bucket ? Object.keys(bucket.entries).length : 0;
-              const label = bucket
-                ? getWikiNovelDisplayLabel(bucket.categorySlug, novelId)
-                : novelId;
+            {summaries.map(({ novelId, categorySlug, termCount }) => {
+              const label = getWikiNovelDisplayLabel(categorySlug, novelId);
               return (
                 <li key={novelId}>
                   <Link
@@ -61,7 +57,7 @@ export default async function WikiHubPage() {
                     className="flex items-center justify-between rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-3 font-sans text-[var(--text-deep)] shadow-sm transition hover:border-[var(--accent-green)] hover:bg-[#e9f8ef]"
                   >
                     <span className="font-semibold">{label}</span>
-                    <span className="text-sm text-[var(--text-muted)]">{count} terms</span>
+                    <span className="text-sm text-[var(--text-muted)]">{termCount} terms</span>
                   </Link>
                 </li>
               );

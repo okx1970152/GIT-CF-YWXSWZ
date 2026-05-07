@@ -3,7 +3,8 @@ import path from "node:path";
 
 const workspaceRoot = process.cwd();
 const novelsRoot = path.join(workspaceRoot, "novels");
-const outputPath = path.join(workspaceRoot, "data", "wiki-index.json");
+const manifestPath = path.join(workspaceRoot, "data", "wiki-manifest.json");
+const shardsRoot = path.join(workspaceRoot, "data", "wiki", "novels");
 
 function log(message) {
   process.stdout.write(`[wiki-index] ${message}\n`);
@@ -30,15 +31,30 @@ function longestSurface(surfaces) {
 }
 
 /**
- * 从 novels 下各书的 meta 目录中的章节 JSON 直接读取 lore_anchors（不依赖 content-index 内嵌重型 meta）。
+ * 从 novels 下各书的 meta 目录中的章节 JSON 直接读取 lore_anchors。
+ * 输出：轻量 wiki-manifest.json + 每本书单独 shard（避免单体巨型 wiki-index.json 在 Worker 内整文件 parse 触发 1102）。
  */
-function buildWikiIndexFromDisk() {
-  /** @type {Record<string, { categorySlug: string, entries: Record<string, unknown> }>} */
-  const novels = {};
+function buildWikiShardsFromDisk() {
+  /** @type {Record<string, { categorySlug: string, termIds: string[] }>} */
+  const manifestNovels = {};
 
   if (!fs.existsSync(novelsRoot)) {
-    return { version: 1, generatedAt: new Date().toISOString(), novels };
+    return {
+      manifest: {
+        version: 2,
+        generatedAt: new Date().toISOString(),
+        novels: manifestNovels,
+      },
+      shardCount: 0,
+    };
   }
+
+  if (fs.existsSync(shardsRoot)) {
+    fs.rmSync(shardsRoot, { recursive: true, force: true });
+  }
+  fs.mkdirSync(shardsRoot, { recursive: true });
+
+  let shardCount = 0;
 
   for (const catEnt of fs.readdirSync(novelsRoot, { withFileTypes: true })) {
     if (!catEnt.isDirectory()) continue;
@@ -102,26 +118,41 @@ function buildWikiIndexFromDisk() {
         };
       }
 
-      if (Object.keys(entries).length > 0) {
-        novels[novelId] = { categorySlug, entries };
-      }
+      const termIds = Object.keys(entries).sort((a, b) => a.localeCompare(b));
+      if (termIds.length === 0) continue;
+
+      manifestNovels[novelId] = {
+        categorySlug,
+        termIds,
+      };
+
+      const shard = {
+        novelId,
+        categorySlug,
+        entries,
+      };
+
+      const shardFile = path.join(shardsRoot, `${novelId}.json`);
+      fs.writeFileSync(shardFile, JSON.stringify(shard) + "\n", "utf8");
+      shardCount += 1;
     }
   }
 
-  return {
-    version: 1,
+  const manifest = {
+    version: 2,
     generatedAt: new Date().toISOString(),
-    novels,
+    novels: manifestNovels,
   };
+
+  return { manifest, shardCount };
 }
 
-const wikiData = buildWikiIndexFromDisk();
+const { manifest, shardCount } = buildWikiShardsFromDisk();
 
-fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, JSON.stringify(wikiData, null, 2) + "\n", "utf8");
+fs.mkdirSync(path.dirname(manifestPath), { recursive: true });
+fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 
-const termCount = Object.values(wikiData.novels).reduce(
-  (acc, n) => acc + Object.keys(n.entries || {}).length,
-  0
+const termCount = Object.values(manifest.novels).reduce((acc, n) => acc + (n.termIds?.length ?? 0), 0);
+log(
+  `written: manifest v${manifest.version}, novels=${Object.keys(manifest.novels).length}, terms=${termCount}, shards=${shardCount}, manifest=${manifestPath}`
 );
-log(`written: novels=${Object.keys(wikiData.novels).length}, terms=${termCount}, file=${outputPath}`);

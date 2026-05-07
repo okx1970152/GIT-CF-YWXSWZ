@@ -9,11 +9,14 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const outDir = path.join(root, "public", "__site_data__");
-
-const files = ["content-index.json", "wiki-index.json"];
+const wikiSrcDir = path.join(root, "data", "wiki");
+const wikiOutDir = path.join(outDir, "wiki");
 
 fs.mkdirSync(outDir, { recursive: true });
-for (const name of files) {
+
+const rootFiles = ["content-index.json", "wiki-manifest.json"];
+
+for (const name of rootFiles) {
   const src = path.join(root, "data", name);
   const dst = path.join(outDir, name);
   if (!fs.existsSync(src)) {
@@ -22,4 +25,14 @@ for (const name of files) {
   }
   fs.copyFileSync(src, dst);
   console.log(`[copy-site-index] ${name} -> public/__site_data__/`);
+}
+
+if (fs.existsSync(wikiSrcDir)) {
+  if (fs.existsSync(wikiOutDir)) {
+    fs.rmSync(wikiOutDir, { recursive: true, force: true });
+  }
+  fs.cpSync(wikiSrcDir, wikiOutDir, { recursive: true });
+  console.log(`[copy-site-index] data/wiki/ -> public/__site_data__/wiki/`);
+} else {
+  console.warn(`[copy-site-index] skip missing wiki dir: ${wikiSrcDir}`);
 }

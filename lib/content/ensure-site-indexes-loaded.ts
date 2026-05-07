@@ -8,7 +8,7 @@ import {
   primeContentIndexCache,
   type ContentIndexRoot
 } from "@/lib/content/content-index";
-import { isWikiIndexPrimed, primeWikiIndexCache, type WikiIndexData } from "@/lib/content/wiki-index";
+import { isWikiIndexPrimed, primeWikiIndexCache, type WikiManifest } from "@/lib/content/wiki-index";
 
 let inflightContent: Promise<void> | null = null;
 let inflightWiki: Promise<void> | null = null;
@@ -18,8 +18,8 @@ const CONTENT_PATHS = [
   path.join(process.cwd(), "public", "__site_data__", "content-index.json")
 ];
 const WIKI_PATHS = [
-  path.join(process.cwd(), "data", "wiki-index.json"),
-  path.join(process.cwd(), "public", "__site_data__", "wiki-index.json")
+  path.join(process.cwd(), "data", "wiki-manifest.json"),
+  path.join(process.cwd(), "public", "__site_data__", "wiki-manifest.json")
 ];
 
 function readFirstExistingUtf8(paths: string[]): string | null {
@@ -50,7 +50,7 @@ function tryPrimeWikiFromFs(): boolean {
   const raw = readFirstExistingUtf8(WIKI_PATHS);
   if (!raw) return false;
   try {
-    primeWikiIndexCache(JSON.parse(raw) as WikiIndexData);
+    primeWikiIndexCache(JSON.parse(raw) as WikiManifest);
   } catch {
     return false;
   }
@@ -87,7 +87,7 @@ async function tryPrimeContentFromAssets(): Promise<boolean> {
 
 async function tryPrimeWikiFromAssets(): Promise<boolean> {
   try {
-    const data = (await fetchJsonFromAssets("/__site_data__/wiki-index.json")) as WikiIndexData;
+    const data = (await fetchJsonFromAssets("/__site_data__/wiki-manifest.json")) as WikiManifest;
     primeWikiIndexCache(data);
     return true;
   } catch {
@@ -103,10 +103,10 @@ async function primeContentFromHttpFetch(): Promise<void> {
 }
 
 async function primeWikiFromHttpFetch(): Promise<void> {
-  const url = toAbsoluteUrl("/__site_data__/wiki-index.json");
+  const url = toAbsoluteUrl("/__site_data__/wiki-manifest.json");
   const res = await fetch(url, { next: { revalidate: 300 } });
-  if (!res.ok) throw new Error(`wiki_index_fetch_failed:${res.status}:${url}`);
-  primeWikiIndexCache((await res.json()) as WikiIndexData);
+  if (!res.ok) throw new Error(`wiki_manifest_fetch_failed:${res.status}:${url}`);
+  primeWikiIndexCache((await res.json()) as WikiManifest);
 }
 
 /** 小说目录 / 首页 / 分类 / 搜索等：只灌 content-index，避免冷启动解析 wiki-index。 */

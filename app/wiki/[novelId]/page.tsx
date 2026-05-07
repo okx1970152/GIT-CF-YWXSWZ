@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { novelId } = await params;
   await ensureContentIndex();
   await ensureWikiIndex();
-  const bucket = getWikiNovelBucket(novelId);
+  const bucket = await getWikiNovelBucket(novelId);
   if (!bucket) return {};
   const label = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
   const path = `/wiki/${novelId}`;
@@ -53,11 +53,11 @@ export default async function WikiNovelHubPage({ params }: Props) {
   const { novelId } = await params;
   await ensureContentIndex();
   await ensureWikiIndex();
-  const bucket = getWikiNovelBucket(novelId);
+  const bucket = await getWikiNovelBucket(novelId);
   if (!bucket) notFound();
 
   const label = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
-  const entries = listWikiEntriesForNovel(novelId);
+  const entries = await listWikiEntriesForNovel(novelId);
 
   return (
     <>

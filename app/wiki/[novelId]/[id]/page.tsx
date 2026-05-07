@@ -24,7 +24,7 @@ export const dynamicParams = true;
 
 export async function generateStaticParams(): Promise<{ novelId: string; id: string }[]> {
   await ensureWikiIndex();
-  return getWikiTermStaticParams();
+  return await getWikiTermStaticParams();
 }
 
 type Props = { params: Promise<{ novelId: string; id: string }> };
@@ -33,8 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { novelId, id } = await params;
   await ensureContentIndex();
   await ensureWikiIndex();
-  const entry = getWikiEntry(novelId, id);
-  const bucket = getWikiNovelBucket(novelId);
+  const entry = await getWikiEntry(novelId, id);
+  const bucket = await getWikiNovelBucket(novelId);
   if (!entry || !bucket) return {};
 
   const bookLabel = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
@@ -60,8 +60,8 @@ export default async function WikiTermPage({ params }: Props) {
   const { novelId, id } = await params;
   await ensureContentIndex();
   await ensureWikiIndex();
-  const entry = getWikiEntry(novelId, id);
-  const bucket = getWikiNovelBucket(novelId);
+  const entry = await getWikiEntry(novelId, id);
+  const bucket = await getWikiNovelBucket(novelId);
   if (!entry || !bucket) notFound();
 
   const bookLabel = getWikiNovelDisplayLabel(bucket.categorySlug, novelId);
