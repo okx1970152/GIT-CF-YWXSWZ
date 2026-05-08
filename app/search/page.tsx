@@ -44,6 +44,8 @@ export default async function SearchPage({ searchParams }: Props) {
   await ensureContentIndex();
   const query = sp.q?.trim() || "";
   const results = query ? await searchContent(query) : [];
+  const novelCards = results.filter((item) => item.type === "novel");
+  const otherResults = results.filter((item) => item.type !== "novel");
   const queryLower = query.toLowerCase();
 
   const highlight = (text: string) => {
@@ -85,8 +87,31 @@ export default async function SearchPage({ searchParams }: Props) {
               Results for <span className="font-semibold text-[var(--text-deep)]">{query}</span>: {results.length} hit
               {results.length === 1 ? "" : "s"}
             </p>
+            {novelCards.length ? (
+              <section className="mt-6" aria-labelledby="matched-novels-heading">
+                <h2
+                  id="matched-novels-heading"
+                  className="font-serif text-2xl font-semibold tracking-tight text-[var(--text-deep)]"
+                >
+                  Matching novel directories
+                </h2>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  {novelCards.map((item) => (
+                    <Link
+                      key={`novel-card-${item.href}`}
+                      href={item.href}
+                      className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-5 shadow-sm transition hover:border-[var(--accent-green)] hover:bg-[#eef7f0]"
+                    >
+                      <p className="font-serif text-xl font-semibold text-[var(--text-deep)]">{highlight(item.title)}</p>
+                      <p className="mt-2 text-sm leading-6 text-[var(--text-soft)]">{highlight(item.excerpt)}</p>
+                      <p className="mt-3 text-sm font-semibold text-[#058c46]">Open directory -&gt;</p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
             <ul className="mt-6 space-y-4">
-              {results.map((item) => (
+              {otherResults.map((item) => (
                 <li key={`${item.type}-${item.href}`}>
                   <Link href={item.href} className="font-medium text-[#058c46] underline">
                     {highlight(item.title)}

@@ -2,10 +2,8 @@
 
 import { useMemo, useState } from "react";
 
-/** 与示例段落等长（含空格/标点）：~459 英文字符，作为默认折叠长度 */
 const DEFAULT_COLLAPSED_CHARS = 459;
 
-/** 在词边界附近截断英文简介，避免半个词悬空 */
 function truncateForPreview(text: string, maxChars: number): { preview: string; needsExpand: boolean } {
   const t = text.trim();
   if (!t) return { preview: "", needsExpand: false };
@@ -14,12 +12,11 @@ function truncateForPreview(text: string, maxChars: number): { preview: string; 
   const lastSpace = slice.lastIndexOf(" ");
   const cut =
     lastSpace > Math.floor(maxChars * 0.55) ? slice.slice(0, lastSpace).trimEnd() : slice.trimEnd();
-  return { preview: `${cut}…`, needsExpand: true };
+  return { preview: `${cut}...`, needsExpand: true };
 }
 
 type DirectorySynopsisProps = {
   summary: string;
-  /** 折叠时大约显示的字符数（英文站点按字符计） */
   collapsedChars?: number;
 };
 
