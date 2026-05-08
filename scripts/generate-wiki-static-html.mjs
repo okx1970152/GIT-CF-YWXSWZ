@@ -299,7 +299,8 @@ function baseStyles() {
     .glossary-group{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:10px}
     .glossary-trigger{
       width:100%;display:flex;align-items:center;justify-content:space-between;border:none;border-radius:14px;
-      background:#fff;padding:11px 12px;font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--deep)
+      background:#fff;padding:11px 12px;font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--deep);
+      transition:background-color .18s ease,color .18s ease
     }
     .glossary-trigger--active{background:var(--accent);color:#fff}
     .glossary-chip-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
@@ -380,11 +381,11 @@ function baseStyles() {
       .definition{padding:22px 18px}
       .title--wiki-hub{font-size:30px}
     }
-    @media (max-width: 1279px){
+    @media (max-width: 1023px){
       .wiki-glossary-layout{grid-template-columns:1fr}
       .wiki-glossary-rail{position:static}
     }
-    @media (min-width: 1280px){
+    @media (min-width: 1024px){
       .wiki-glossary-layout{grid-template-columns:minmax(0,1fr) 280px}
     }
     @media (max-width: 1023px){

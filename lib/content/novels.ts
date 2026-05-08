@@ -100,8 +100,8 @@ export async function getSearchIndex(): Promise<SearchResult[]> {
   for (const novel of getAllNovels()) {
     results.push({
       type: "novel",
-      title: novel.title,
-      excerpt: `${novel.author} - ${getNovelSummary(novel)}`,
+      title: getDisplayNovelTitle(novel),
+      excerpt: getNovelSummary(novel),
       href: `/novels/${novel.categorySlug}/${novel.novelId}`
     });
 

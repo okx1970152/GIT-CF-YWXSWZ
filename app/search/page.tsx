@@ -95,16 +95,20 @@ export default async function SearchPage({ searchParams }: Props) {
                 >
                   Matching novel directories
                 </h2>
-                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div className="mt-4 space-y-4">
                   {novelCards.map((item) => (
                     <Link
                       key={`novel-card-${item.href}`}
                       href={item.href}
-                      className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-5 shadow-sm transition hover:border-[var(--accent-green)] hover:bg-[#eef7f0]"
+                      className="block rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-6 shadow-sm transition hover:border-[var(--accent-green)] hover:bg-[#eef7f0]"
                     >
-                      <p className="font-serif text-xl font-semibold text-[var(--text-deep)]">{highlight(item.title)}</p>
-                      <p className="mt-2 text-sm leading-6 text-[var(--text-soft)]">{highlight(item.excerpt)}</p>
-                      <p className="mt-3 text-sm font-semibold text-[#058c46]">Open directory -&gt;</p>
+                      <p className="font-serif text-3xl font-semibold tracking-tight text-[var(--text-deep)]">
+                        {highlight(item.title)}
+                      </p>
+                      <p className="mt-3 max-w-4xl text-base leading-8 text-[var(--text-soft)]">
+                        {highlight(item.excerpt)}
+                      </p>
+                      <p className="mt-4 text-sm font-semibold text-[#058c46]">Open directory -&gt;</p>
                     </Link>
                   ))}
                 </div>

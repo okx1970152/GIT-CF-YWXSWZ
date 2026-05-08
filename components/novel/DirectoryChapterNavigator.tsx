@@ -304,8 +304,8 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
-      <div className="order-2 lg:order-1">
+    <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_280px] md:items-start">
+      <div className="order-2 md:order-1">
         <div className="space-y-5">
           {rangeTree.map((major) => {
             const majorActive = activeMajorKey === major.key;
@@ -414,9 +414,9 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
         </div>
       </div>
 
-      <aside className="order-1 lg:order-2">
+      <aside className="order-1 md:order-2 md:self-start">
         <div className="sticky top-24">
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
               type="button"
               onClick={() => setMobileOpen((prev) => !prev)}
@@ -428,7 +428,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
             {mobileOpen ? <div className="mt-3">{renderNavigatorContent()}</div> : null}
           </div>
 
-          <div className="hidden lg:block">{renderNavigatorContent()}</div>
+          <div className="hidden md:block">{renderNavigatorContent()}</div>
         </div>
       </aside>
     </div>
