@@ -104,10 +104,10 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
   const [mobileOpen, setMobileOpen] = useState(false);
   const [flashAnchorId, setFlashAnchorId] = useState<string | null>(null);
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const userNavigatingRef = useRef(false);
 
   const firstChapterNo = chapters[0]?.chapterNo;
   const latestChapterNo = chapters[chapters.length - 1]?.chapterNo;
-
   const rangeTree = useMemo(() => buildRangeTree(chapters), [chapters]);
 
   useEffect(() => {
@@ -120,6 +120,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
     }
     setExpandedMajorKey((prev) => prev ?? firstRange.key);
     setActiveMajorKey((prev) => prev ?? firstRange.key);
+    setActiveMinorKey((prev) => prev ?? firstRange.children[0]?.key ?? null);
   }, [rangeTree]);
 
   useEffect(() => {
@@ -127,6 +128,44 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
     const timer = window.setTimeout(() => setFlashAnchorId(null), 1800);
     return () => window.clearTimeout(timer);
   }, [flashAnchorId]);
+
+  useEffect(() => {
+    if (!rangeTree.length) return;
+
+    const updateActiveRange = () => {
+      if (userNavigatingRef.current) return;
+
+      const viewportTop = window.scrollY + 180;
+      let currentMajor: MajorRange | null = rangeTree[0] ?? null;
+      let currentMinor: MinorRange | null = rangeTree[0]?.children[0] ?? null;
+
+      for (const major of rangeTree) {
+        const majorNode = sectionRefs.current.get(major.anchorId);
+        if (majorNode && majorNode.offsetTop <= viewportTop) currentMajor = major;
+        for (const minor of major.children) {
+          const minorNode = sectionRefs.current.get(minor.anchorId);
+          if (minorNode && minorNode.offsetTop <= viewportTop) {
+            currentMajor = major;
+            currentMinor = minor;
+          }
+        }
+      }
+
+      if (currentMajor) {
+        setActiveMajorKey(currentMajor.key);
+        setExpandedMajorKey(currentMajor.key);
+      }
+      if (currentMinor) setActiveMinorKey(currentMinor.key);
+    };
+
+    updateActiveRange();
+    window.addEventListener("scroll", updateActiveRange, { passive: true });
+    window.addEventListener("resize", updateActiveRange);
+    return () => {
+      window.removeEventListener("scroll", updateActiveRange);
+      window.removeEventListener("resize", updateActiveRange);
+    };
+  }, [rangeTree]);
 
   function chapterHref(chapterNo: string): string {
     return `/novels/${categorySlug}/${novelId}/chapters/${chapterNo}`;
@@ -143,14 +182,18 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
   function scrollToAnchor(anchorId: string) {
     const node = sectionRefs.current.get(anchorId);
     if (!node) return;
+    userNavigatingRef.current = true;
     node.scrollIntoView({ behavior: "smooth", block: "start" });
     setFlashAnchorId(anchorId);
+    window.setTimeout(() => {
+      userNavigatingRef.current = false;
+    }, 650);
   }
 
   function onMajorSelect(range: MajorRange) {
     setExpandedMajorKey(range.key);
     setActiveMajorKey(range.key);
-    setActiveMinorKey(null);
+    setActiveMinorKey(range.children[0]?.key ?? null);
     scrollToAnchor(range.anchorId);
   }
 
@@ -372,7 +415,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
       </div>
 
       <aside className="order-1 xl:order-2">
-        <div className="xl:sticky xl:top-24">
+        <div className="sticky top-24">
           <div className="xl:hidden">
             <button
               type="button"

@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 
 const workspaceRoot = process.cwd();
@@ -66,6 +66,10 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+function escapeJsonForScript(value) {
+  return JSON.stringify(value).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
+}
+
 function encodePathSegment(value) {
   return encodeURIComponent(String(value ?? ""));
 }
@@ -102,8 +106,12 @@ function normalizeDisplayTitle(novelId, frontmatter = {}) {
     .join(" ");
 }
 
-function normalizeSummary(frontmatter = {}) {
+function normalizeSummary(frontmatter = {}, contentRecord = null) {
   const candidates = [
+    contentRecord?.summary,
+    contentRecord?.description,
+    contentRecord?.excerpt,
+    contentRecord?.synopsis,
     frontmatter.summary,
     frontmatter.desc,
     frontmatter.description,
@@ -146,6 +154,17 @@ function truncateForPreview(text, maxChars) {
   const lastSpace = slice.lastIndexOf(" ");
   const cut = lastSpace > Math.floor(maxChars * 0.55) ? slice.slice(0, lastSpace).trimEnd() : slice.trimEnd();
   return { preview: `${cut}...`, needsExpand: true };
+}
+
+function normalizeForSearch(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u0027\u2019]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function baseStyles() {
@@ -238,22 +257,57 @@ function baseStyles() {
     .stack{display:grid;gap:14px;margin-top:34px}
     .grid{display:grid;gap:14px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .wiki-glossary-layout{display:grid;gap:24px;margin-top:34px}
-    .wiki-term-grid{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .wiki-term-grid{display:grid;gap:20px}
+    .wiki-letter-section .grid{margin-top:0;grid-template-columns:repeat(3,minmax(0,1fr))}
     .wiki-glossary-rail{position:sticky;top:104px}
     .wiki-glossary-card{display:flex;flex-direction:column;gap:14px}
     .wiki-glossary-card .card-copy{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-    .letter-groups{display:flex;flex-direction:column;gap:12px}
-    .letter-group{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:10px}
-    .letter-group__trigger{
-      width:100%;display:flex;align-items:center;justify-content:space-between;border:none;border-radius:14px;
-      background:#fff;padding:10px 12px;font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--deep)
+    .wiki-search-panel{
+      margin-top:22px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.92);
+      padding:18px 20px;box-shadow:0 10px 24px rgba(35,55,43,.06)
     }
-    .letter-group__trigger--active{background:var(--accent);color:#fff}
-    .letter-group__items{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .letter-chip{
+    .wiki-search-form{display:grid;gap:10px}
+    .wiki-search-row{display:flex;gap:10px;flex-wrap:wrap}
+    .wiki-search-label{font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+    .wiki-search-input{
+      flex:1;min-width:220px;border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:#fff;
+      color:var(--deep);font:500 14px/1.2 ui-sans-serif,system-ui,sans-serif
+    }
+    .wiki-search-button{
+      border:none;border-radius:12px;background:var(--accent);padding:11px 16px;font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;color:#fff
+    }
+    .wiki-search-help{margin:0;font:500 13px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+    .wiki-search-results{display:grid;gap:12px;margin-top:16px}
+    .wiki-search-result{
+      display:block;border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:14px 16px
+    }
+    .wiki-search-result__title{font:700 15px/1.35 ui-sans-serif,system-ui,sans-serif;color:var(--deep)}
+    .wiki-search-result__meta{margin-top:6px;font:600 12px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--accent-deep);text-transform:uppercase;letter-spacing:.08em}
+    .wiki-search-result__copy{margin-top:6px;font:500 13px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--soft)}
+    .wiki-search-empty{font:600 13px/1.5 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+    .wiki-letter-section{
+      scroll-margin-top:120px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.82);
+      padding:18px;box-shadow:0 12px 28px rgba(35,55,43,.06);transition:border-color .18s ease,box-shadow .18s ease, background-color .18s ease
+    }
+    .wiki-letter-section--active{
+      border-color:var(--accent);box-shadow:0 0 0 2px rgba(15,184,93,.18),0 16px 34px rgba(35,55,43,.08);background:#f4fbf6
+    }
+    .wiki-letter-section__heading{
+      margin:0 0 14px;font:700 24px/1.1 Georgia,"Times New Roman",serif;color:var(--deep)
+    }
+    .glossary-groups{display:flex;flex-direction:column;gap:12px}
+    .glossary-group{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:10px}
+    .glossary-trigger{
+      width:100%;display:flex;align-items:center;justify-content:space-between;border:none;border-radius:14px;
+      background:#fff;padding:11px 12px;font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--deep)
+    }
+    .glossary-trigger--active{background:var(--accent);color:#fff}
+    .glossary-chip-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .glossary-chip{
       display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;
       background:#fff;padding:8px 12px;font:600 12px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--soft)
     }
+    .glossary-chip:hover{border-color:var(--accent);background:#eef7f0;color:var(--deep)}
     .share-bar{
       position:relative;z-index:1;width:100%;max-width:500px;flex-shrink:0;align-self:center;
       padding:0 12px 8px
@@ -335,9 +389,11 @@ function baseStyles() {
     }
     @media (max-width: 1023px){
       .wiki-term-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .wiki-letter-section .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media (max-width: 639px){
       .wiki-term-grid{grid-template-columns:1fr}
+      .wiki-letter-section .grid{grid-template-columns:1fr}
     }
   `;
 }
@@ -416,27 +472,123 @@ function sharedWikiClientScript() {
     summaryToggle.textContent = next ? 'Show less' : 'Read more';
   });
 
-  document.querySelectorAll('[data-letter-trigger]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const letter = button.getAttribute('data-letter-trigger');
-      document.querySelectorAll('[data-letter-trigger]').forEach((item) => {
-        item.classList.remove('letter-group__trigger--active');
-        item.setAttribute('aria-expanded', 'false');
+  const wikiHomeForm = document.querySelector('[data-wiki-search-form]');
+  const wikiHomeInput = document.querySelector('[data-wiki-search-input]');
+  const wikiHomeResults = document.querySelector('[data-wiki-search-results]');
+  const wikiHomeCards = Array.from(document.querySelectorAll('[data-wiki-home-card]'));
+  const wikiSearchScript = document.getElementById('wiki-search-index');
+
+  function normalizeForSearch(value) {
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFKD')
+      .replace(/[\\u0300-\\u036f]/g, '')
+      .replace(/[\\u0027\\u2019]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/\\s+/g, ' ')
+      .trim();
+  }
+
+  function renderWikiResults(results) {
+    if (!wikiHomeResults) return;
+    if (!results.length) {
+      wikiHomeResults.innerHTML = '<p class="wiki-search-empty">No matching wiki books or glossary terms yet.</p>';
+      return;
+    }
+    wikiHomeResults.innerHTML = results
+      .map((item) => '<a class="wiki-search-result" href="' + item.href + '">' +
+        '<div class="wiki-search-result__meta">' + item.kind + '</div>' +
+        '<div class="wiki-search-result__title">' + item.title + '</div>' +
+        '<div class="wiki-search-result__copy">' + item.excerpt + '</div>' +
+      '</a>')
+      .join('');
+  }
+
+  if (wikiHomeForm && wikiHomeInput && wikiHomeResults && wikiSearchScript) {
+    let wikiSearchIndex = [];
+    try {
+      wikiSearchIndex = JSON.parse(wikiSearchScript.textContent || '[]');
+    } catch {}
+
+    const runWikiSearch = () => {
+      const query = normalizeForSearch(wikiHomeInput.value);
+      if (!query) {
+        wikiHomeResults.innerHTML = '';
+        wikiHomeCards.forEach((card) => {
+          card.style.display = '';
+        });
+        return;
+      }
+
+      wikiHomeCards.forEach((card) => {
+        const haystack = normalizeForSearch(card.getAttribute('data-wiki-home-card') || '');
+        card.style.display = haystack.includes(query) ? '' : 'none';
       });
-      document.querySelectorAll('[data-letter-panel]').forEach((panel) => {
-        if (panel.getAttribute('data-letter-panel') === letter) {
-          panel.hidden = !panel.hidden;
-        } else {
-          panel.hidden = true;
-        }
-      });
-      const activePanel = document.querySelector('[data-letter-panel="' + letter + '"]');
-      if (activePanel && !activePanel.hidden) {
-        button.classList.add('letter-group__trigger--active');
-        button.setAttribute('aria-expanded', 'true');
+
+      const matches = wikiSearchIndex.filter((item) => item.search.includes(query));
+      const bookMatches = matches.filter((item) => item.kind === 'Book glossary');
+      const results = (bookMatches.length > 0 ? bookMatches : matches).slice(0, 16);
+      renderWikiResults(results);
+    };
+
+    wikiHomeForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      runWikiSearch();
+    });
+    wikiHomeInput.addEventListener('input', runWikiSearch);
+  }
+
+  const glossarySections = Array.from(document.querySelectorAll('[data-letter-section]'));
+  const glossaryButtons = Array.from(document.querySelectorAll('[data-letter-trigger]'));
+  const glossaryPanels = Array.from(document.querySelectorAll('[data-letter-panel]'));
+  let glossaryNavLock = false;
+
+  function activateLetter(letter, shouldScroll) {
+    glossaryButtons.forEach((button) => {
+      const active = button.getAttribute('data-letter-trigger') === letter;
+      button.classList.toggle('glossary-trigger--active', active);
+      button.setAttribute('aria-expanded', active ? 'true' : 'false');
+    });
+    glossaryPanels.forEach((panel) => {
+      panel.hidden = panel.getAttribute('data-letter-panel') !== letter;
+    });
+    glossarySections.forEach((section) => {
+      const active = section.getAttribute('data-letter-section') === letter;
+      section.classList.toggle('wiki-letter-section--active', active);
+      if (active && shouldScroll) {
+        glossaryNavLock = true;
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.setTimeout(() => {
+          glossaryNavLock = false;
+        }, 650);
       }
     });
+  }
+
+  glossaryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const letter = button.getAttribute('data-letter-trigger');
+      if (!letter) return;
+      activateLetter(letter, true);
+    });
   });
+
+  if (glossarySections.length && glossaryButtons.length) {
+    const syncGlossaryLetter = () => {
+      if (glossaryNavLock) return;
+      const viewportTop = window.scrollY + 180;
+      let activeLetter = glossarySections[0]?.getAttribute('data-letter-section');
+      glossarySections.forEach((section) => {
+        if (section.offsetTop <= viewportTop) {
+          activeLetter = section.getAttribute('data-letter-section');
+        }
+      });
+      if (activeLetter) activateLetter(activeLetter, false);
+    };
+    syncGlossaryLetter();
+    window.addEventListener('scroll', syncGlossaryLetter, { passive: true });
+    window.addEventListener('resize', syncGlossaryLetter);
+  }
 })();`;
 }
 
@@ -612,7 +764,7 @@ function renderSiteHeader({ activeCategory = null, wikiActive = true }) {
       <div class="site-header__tools">
         <a class="site-home" href="/">Home</a>
         <form class="site-search" action="/search" method="get">
-          <input name="q" type="search" placeholder="Search..." aria-label="Search novels" autocomplete="off" />
+          <input name="q" type="search" placeholder="Search site..." aria-label="Search site" autocomplete="off" />
           <button type="submit">Search</button>
         </form>
         <button class="site-ads" type="button" id="toggle-ads">Close Ads</button>
@@ -623,11 +775,29 @@ function renderSiteHeader({ activeCategory = null, wikiActive = true }) {
 }
 
 function renderHubPage(novels) {
+  const wikiSearchIndex = novels.flatMap((novel) => {
+    const novelResult = {
+      kind: "Book glossary",
+      title: novel.label,
+      excerpt: trimDescription(novel.summary || `${novel.termCount} terms in this glossary.`, 120),
+      href: wikiNovelPath(novel.novelId),
+      search: normalizeForSearch(`${novel.label} ${novel.summary}`)
+    };
+    const termResults = novel.entries.map((entry) => ({
+      kind: "Glossary term",
+      title: `${entry.displayTitle} - ${novel.label}`,
+      excerpt: trimDescription(entry.definition, 120),
+      href: wikiTermPath(novel.novelId, entry.id),
+      search: normalizeForSearch(`${entry.displayTitle} ${entry.definition} ${novel.label}`)
+    }));
+    return [novelResult, ...termResults];
+  });
+
   const itemsHtml = novels.length
     ? novels
         .map(
-          (novel) => `<a class="card" href="${wikiNovelPath(novel.novelId)}" data-label="${escapeHtml(
-            novel.label.toLowerCase()
+          (novel) => `<a class="card" href="${wikiNovelPath(novel.novelId)}" data-wiki-home-card="${escapeHtml(
+            `${novel.label} ${novel.summary}`
           )}">
   <div class="card-title">${escapeHtml(novel.label)}</div>
   <div class="card-copy">${escapeHtml(novel.summary || `Glossary hub for ${novel.label}.`)}</div>
@@ -642,24 +812,25 @@ function renderHubPage(novels) {
   <section class="hero">
     <h1 class="title title--wiki-hub">${escapeHtml(WIKI_HUB_HEADING)}</h1>
     <p class="tagline">${escapeHtml(WIKI_HUB_TAGLINE)}</p>
+    <div class="wiki-search-panel">
+      <form class="wiki-search-form" data-wiki-search-form>
+        <label class="wiki-search-label" for="wiki-home-search">Search wiki terms or book glossaries</label>
+        <div class="wiki-search-row">
+          <input id="wiki-home-search" class="wiki-search-input" name="q" type="search" placeholder="Search wiki terms..." aria-label="Search wiki terms" autocomplete="off" data-wiki-search-input />
+          <button class="wiki-search-button" type="submit">Search</button>
+        </div>
+        <p class="wiki-search-help">Search glossary terms only. Searching a book title will show its wiki glossary page.</p>
+      </form>
+      <div class="wiki-search-results" data-wiki-search-results></div>
+    </div>
     ${renderShareBar(wikiHubPath())}
   </section>
   <section class="stack" id="wiki-list">${itemsHtml}</section>
+  <script id="wiki-search-index" type="application/json">${escapeJsonForScript(wikiSearchIndex)}</script>
   <footer class="footer">
     <p class="footer-copy">Static wiki pages are generated during deployment from your synced novel content, then served directly by Cloudflare assets.</p>
   </footer>
-</main>
-<script>
-const input = document.querySelector('.site-search input');
-const cards = Array.from(document.querySelectorAll('#wiki-list [data-label]'));
-function applyFilter() {
-  const q = (input.value || '').trim().toLowerCase();
-  for (const card of cards) {
-    card.style.display = !q || card.dataset.label.includes(q) ? '' : 'none';
-  }
-}
-input?.addEventListener('input', applyFilter);
-</script>`;
+</main>`;
 
   return renderDocument({
     title: WIKI_HUB_HEADING,
@@ -682,34 +853,26 @@ function renderNovelHubPage(novel) {
     novel.summary || `Glossary hub for ${novel.label}.`,
     DIRECTORY_SYNOPSIS_CHARS
   );
-  const itemsHtml = novel.entries.length
+  const itemsHtml = letterGroups.length
     ? novel.entries
-        .map(
-          (entry) => `<a class="card" href="${wikiTermPath(novel.novelId, entry.id)}">
-  <div class="wiki-glossary-card">
-  <div class="card-title">${escapeHtml(entry.displayTitle)}</div>
-  <div class="card-copy">${escapeHtml(trimDescription(entry.definition, 150))}</div>
-  <div class="card-meta">${entry.chapterNos.length} chapter references</div>
-</div>
-</a>`
-        )
+        .map(() => "")
         .join("\n")
     : `<div class="empty">No glossary entries were available for this novel in the current wiki shard.</div>`;
 
   const letterNavHtml = letterGroups.length
     ? letterGroups
         .map(
-          (group, index) => `<div class="letter-group">
-  <button type="button" class="letter-group__trigger${index === 0 ? " letter-group__trigger--active" : ""}" data-letter-trigger="${escapeHtml(
+          (group, index) => `<div class="glossary-group">
+  <button type="button" class="glossary-trigger${index === 0 ? " glossary-trigger--active" : ""}" data-letter-trigger="${escapeHtml(
             group.letter
           )}" aria-expanded="${index === 0 ? "true" : "false"}">
     <span>${escapeHtml(group.letter)} terms</span>
     <span>${group.items.length}</span>
   </button>
-  <div class="letter-group__items" data-letter-panel="${escapeHtml(group.letter)}"${index === 0 ? "" : ' hidden'}>
+  <div class="glossary-chip-list" data-letter-panel="${escapeHtml(group.letter)}"${index === 0 ? "" : ' hidden'}>
     ${group.items
       .map(
-        (item) => `<a class="letter-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.displayTitle)}</a>`
+        (item) => `<a class="glossary-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.displayTitle)}</a>`
       )
       .join("")}
   </div>
@@ -717,6 +880,31 @@ function renderNovelHubPage(novel) {
         )
         .join("\n")
     : `<div class="empty">No indexed term navigation is available yet for this glossary.</div>`;
+
+  const groupedCardHtml = letterGroups.length
+    ? letterGroups
+        .map(
+          (group, index) => `<section class="wiki-letter-section${index === 0 ? " wiki-letter-section--active" : ""}" data-letter-section="${escapeHtml(
+            group.letter
+          )}" id="wiki-letter-${escapeHtml(group.letter)}">
+  <h2 class="wiki-letter-section__heading">${escapeHtml(group.letter)} terms</h2>
+  <div class="grid">
+    ${group.items
+      .map(
+        (entry) => `<a class="card" href="${wikiTermPath(novel.novelId, entry.id)}">
+      <div class="wiki-glossary-card">
+        <div class="card-title">${escapeHtml(entry.displayTitle)}</div>
+        <div class="card-copy">${escapeHtml(trimDescription(entry.definition, 150))}</div>
+        <div class="card-meta">${entry.chapterNos.length} chapter references</div>
+      </div>
+    </a>`
+      )
+      .join("\n")}
+  </div>
+</section>`
+        )
+        .join("\n")
+    : itemsHtml;
 
   const body = `${renderSiteHeader({ activeCategory: novel.categorySlug, wikiActive: true })}
 <main class="shell wiki-shell--wide">
@@ -745,11 +933,11 @@ function renderNovelHubPage(novel) {
     ${renderShareBar(pathName)}
   </section>
   <section class="wiki-glossary-layout">
-    <div class="wiki-term-grid">${itemsHtml}</div>
+    <div class="wiki-term-grid">${groupedCardHtml}</div>
     <aside class="wiki-glossary-rail">
       <div class="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-sm">
         <p class="section-label">Glossary Navigator</p>
-        <div class="letter-groups">${letterNavHtml}</div>
+        <div class="glossary-groups">${letterNavHtml}</div>
       </div>
     </aside>
   </section>
@@ -867,7 +1055,7 @@ function buildNovelRecords() {
     const contentRecord = contentLookup.get(`${categorySlug}/${novelId}`) ?? null;
     const frontmatter = contentRecord?.frontmatter ?? {};
     const label = normalizeDisplayTitle(novelId, frontmatter);
-    const summary = normalizeSummary(frontmatter);
+    const summary = normalizeSummary(frontmatter, contentRecord);
     const updatedAt = normalizeDate(frontmatter.updated_at);
     const entries = Object.values(shard.entries)
       .filter((entry) => entry && typeof entry.id === "string" && typeof entry.definition === "string")
