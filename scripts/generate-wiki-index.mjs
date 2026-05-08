@@ -39,6 +39,11 @@ function trimPreview(value, maxLength = 320) {
   return `${compact.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`;
 }
 
+function fullParagraph(sectionText) {
+  const first = String(sectionText ?? "").split(/\r?\n\r?\n/)[0] ?? "";
+  return compactText(first);
+}
+
 function isNonEmptyString(value) {
   return typeof value === "string" && value.trim().length > 0;
 }
@@ -93,11 +98,6 @@ function splitMarkdownBullets(sectionText) {
     .filter(Boolean);
 }
 
-function firstParagraph(sectionText) {
-  const first = String(sectionText ?? "").split(/\r?\n\r?\n/)[0] ?? "";
-  return trimPreview(first, 360);
-}
-
 function chooseFirstNonEmpty(values) {
   for (const value of values) {
     if (compactText(value)) return compactText(value);
@@ -107,19 +107,19 @@ function chooseFirstNonEmpty(values) {
 
 function buildStoryContext(termId, annotation) {
   return chooseFirstNonEmpty([
-    firstParagraph(annotation?.byAnchorId?.get(termId) ?? ""),
-    firstParagraph(annotation?.byHeading?.get("Chapter Overview") ?? ""),
-    trimPreview(splitMarkdownBullets(annotation?.byHeading?.get("Key Plot Points") ?? "").slice(0, 3).join(" "), 360),
+    fullParagraph(annotation?.byAnchorId?.get(termId) ?? ""),
+    fullParagraph(annotation?.byHeading?.get("Chapter Overview") ?? ""),
+    compactText(splitMarkdownBullets(annotation?.byHeading?.get("Key Plot Points") ?? "").slice(0, 3).join(" ")),
     ""
   ]);
 }
 
 function buildWhyItMatters(termId, annotation) {
   return chooseFirstNonEmpty([
-    firstParagraph(annotation?.byHeading?.get("Reading Guide") ?? ""),
-    firstParagraph(annotation?.byHeading?.get("Cultural / Xianxia Notes") ?? ""),
-    firstParagraph(annotation?.byHeading?.get("Key Plot Points") ?? ""),
-    firstParagraph(annotation?.byAnchorId?.get(termId) ?? ""),
+    fullParagraph(annotation?.byHeading?.get("Reading Guide") ?? ""),
+    fullParagraph(annotation?.byHeading?.get("Cultural / Xianxia Notes") ?? ""),
+    fullParagraph(annotation?.byHeading?.get("Key Plot Points") ?? ""),
+    fullParagraph(annotation?.byAnchorId?.get(termId) ?? ""),
     ""
   ]);
 }
@@ -128,13 +128,13 @@ function deriveFallbackDefinition(termId, chapterNos, chapterMetaLookup, chapter
   for (const chapterNo of chapterNos) {
     const annotation = chapterAnnotationLookup.get(chapterNo);
     const anchorBody = annotation?.byAnchorId?.get(termId);
-    if (compactText(anchorBody)) return firstParagraph(anchorBody);
+    if (compactText(anchorBody)) return fullParagraph(anchorBody);
 
     const cultural = annotation?.byHeading?.get("Cultural / Xianxia Notes");
-    if (compactText(cultural)) return firstParagraph(cultural);
+    if (compactText(cultural)) return fullParagraph(cultural);
 
     const overview = annotation?.byHeading?.get("Chapter Overview");
-    if (compactText(overview)) return firstParagraph(overview);
+    if (compactText(overview)) return fullParagraph(overview);
 
     const meta = chapterMetaLookup.get(chapterNo);
     if (compactText(meta?.metaDescription)) return trimPreview(meta.metaDescription, 240);
@@ -302,9 +302,9 @@ function buildWikiShardsFromDisk() {
               chapterNo,
               title: compactText(meta?.title || `Chapter ${chapterNo}`),
               metaDescription: chooseFirstNonEmpty([
-                trimPreview(meta?.metaDescription || "", 180),
-                firstParagraph(annotation?.byAnchorId?.get(id) ?? ""),
-                firstParagraph(annotation?.byHeading?.get("Chapter Overview") ?? "")
+                compactText(meta?.metaDescription || ""),
+                fullParagraph(annotation?.byAnchorId?.get(id) ?? ""),
+                fullParagraph(annotation?.byHeading?.get("Chapter Overview") ?? "")
               ])
             };
           })
