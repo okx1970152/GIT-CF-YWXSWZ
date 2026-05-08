@@ -105,21 +105,46 @@ function chooseFirstNonEmpty(values) {
   return "";
 }
 
-function buildStoryContext(termId, annotation) {
+function splitSectionParagraphs(sectionText) {
+  return String(sectionText ?? "")
+    .split(/\r?\n\r?\n/)
+    .map((part) => compactText(part))
+    .filter(Boolean);
+}
+
+function findMatchingQuickQA(termKeys, annotation) {
+  const quickQA = annotation?.byHeading?.get("Quick Q&A") ?? "";
+  if (!compactText(quickQA)) return "";
+
+  const paragraphs = splitSectionParagraphs(quickQA);
+  for (const paragraph of paragraphs) {
+    const normalized = normalizeLookupKey(paragraph);
+    if (termKeys.some((key) => key && normalized.includes(key))) {
+      return paragraph;
+    }
+  }
+
+  const full = compactText(quickQA);
+  const normalizedFull = normalizeLookupKey(full);
+  if (termKeys.some((key) => key && normalizedFull.includes(key))) {
+    return full;
+  }
+
+  return "";
+}
+
+function buildStoryContext(annotation) {
   return chooseFirstNonEmpty([
-    fullParagraph(annotation?.byAnchorId?.get(termId) ?? ""),
     fullParagraph(annotation?.byHeading?.get("Chapter Overview") ?? ""),
     compactText(splitMarkdownBullets(annotation?.byHeading?.get("Key Plot Points") ?? "").slice(0, 3).join(" ")),
     ""
   ]);
 }
 
-function buildWhyItMatters(termId, annotation) {
+function buildWhyItMatters(annotation) {
   return chooseFirstNonEmpty([
     fullParagraph(annotation?.byHeading?.get("Reading Guide") ?? ""),
     fullParagraph(annotation?.byHeading?.get("Cultural / Xianxia Notes") ?? ""),
-    fullParagraph(annotation?.byHeading?.get("Key Plot Points") ?? ""),
-    fullParagraph(annotation?.byAnchorId?.get(termId) ?? ""),
     ""
   ]);
 }
@@ -314,8 +339,12 @@ function buildWikiShardsFromDisk() {
         const relatedIds = new Set();
         const typeHints = [];
         const guideTags = [];
+        const heroQACandidates = [];
         const storyContextCandidates = [];
         const whyCandidates = [];
+        const termKeys = dedupeStrings([id, displayTitle, ...aggregate.surfaces], 16).map((value) =>
+          normalizeLookupKey(value)
+        );
 
         for (const chapterNo of chapterNos.slice(0, 5)) {
           const meta = chapterMetaLookup.get(chapterNo);
@@ -339,10 +368,13 @@ function buildWikiShardsFromDisk() {
             }
           }
 
-          const storyContext = buildStoryContext(id, annotation);
+          const heroQA = findMatchingQuickQA(termKeys, annotation);
+          if (heroQA) heroQACandidates.push(heroQA);
+
+          const storyContext = buildStoryContext(annotation);
           if (storyContext) storyContextCandidates.push(storyContext);
 
-          const whyItMatters = buildWhyItMatters(id, annotation);
+          const whyItMatters = buildWhyItMatters(annotation);
           if (whyItMatters) whyCandidates.push(whyItMatters);
         }
 
@@ -353,6 +385,7 @@ function buildWikiShardsFromDisk() {
           definition,
           chapterNos,
           firstChapterNo,
+          heroQA: heroQACandidates.find(Boolean) ?? "",
           storyContext: storyContextCandidates.find(Boolean) ?? "",
           whyItMatters: whyCandidates.find(Boolean) ?? "",
           quickFacts: {

@@ -1152,7 +1152,8 @@ function renderNovelHubPage(novel) {
 function renderTermPage(novel, entry) {
   const novelPath = wikiNovelPath(novel.novelId);
   const termPath = wikiTermPath(novel.novelId, entry.id);
-  const description = trimDescription(entry.storyContext || entry.whyItMatters || entry.definition, 170);
+  const heroText = compactText(entry.heroQA) || compactText(entry.definition) || `A lore entry from ${novel.label}.`;
+  const description = trimDescription(entry.heroQA || entry.definition || entry.storyContext || entry.whyItMatters, 170);
   const chapterLinks = renderChapterCards(entry.chapterRefs, novel);
   const factCards = renderFactCards([
     { label: "Source novel", value: novel.label },
@@ -1174,9 +1175,7 @@ function renderTermPage(novel, entry) {
       <span>${escapeHtml(entry.displayTitle)}</span>
     </nav>
     <h1 class="title">${escapeHtml(entry.displayTitle)}</h1>
-    <p class="tagline">${escapeHtml(
-      entry.storyContext || `A lore entry from ${novel.label}, with context and chapter references.`
-    )}</p>
+    <p class="tagline">${escapeHtml(heroText)}</p>
     ${renderShareBar(termPath)}
   </section>
   <article class="definition">
