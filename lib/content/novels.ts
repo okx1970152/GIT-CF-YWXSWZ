@@ -1,7 +1,7 @@
 import "server-only";
 
 import { getIndexCategories, getIndexNovel, getIndexNovelsByCategory } from "@/lib/content/content-index";
-import { getNovelSummary } from "@/lib/content/novel-display";
+import { getDisplayNovelTitle, getNovelSummary } from "@/lib/content/novel-display";
 import { novelInfoSchema, type NovelInfo } from "@/lib/content/schema";
 import { getChapters } from "@/lib/content/chapters";
 import { getAnnotationIndexEntry } from "@/lib/content/annotation-index";
