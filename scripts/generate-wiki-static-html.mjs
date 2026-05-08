@@ -135,8 +135,12 @@ function normalizeDate(value) {
   return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 0, 0, 0, 0)).toISOString();
 }
 
+function compactText(value) {
+  return String(value ?? "").replace(/\s+/g, " ").trim();
+}
+
 function trimDescription(value, maxLength = 180) {
-  const compact = String(value ?? "").replace(/\s+/g, " ").trim();
+  const compact = compactText(value);
   if (compact.length <= maxLength) return compact;
   return `${compact.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`;
 }
@@ -359,6 +363,39 @@ function baseStyles() {
     .section{margin-top:34px}
     .section h2{margin:0;font-size:1.45rem;line-height:1.2}
     .section p{margin:10px 0 0}
+    .fact-grid{
+      display:grid;gap:14px;margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))
+    }
+    .fact-card{
+      border:1px solid var(--line);border-radius:18px;background:#fff;padding:14px 16px;
+      box-shadow:0 10px 22px rgba(35,55,43,.05)
+    }
+    .fact-label{
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--muted);letter-spacing:.14em;text-transform:uppercase
+    }
+    .fact-value{
+      margin-top:8px;font:600 15px/1.55 ui-sans-serif,system-ui,sans-serif;color:var(--deep)
+    }
+    .chapter-stack{display:grid;gap:14px;margin-top:18px}
+    .chapter-card{
+      display:block;border:1px solid var(--line);border-radius:20px;background:#fff;padding:16px 18px;
+      box-shadow:0 10px 22px rgba(35,55,43,.05)
+    }
+    .chapter-card__eyebrow{
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--accent-deep);letter-spacing:.12em;text-transform:uppercase
+    }
+    .chapter-card__title{
+      margin-top:8px;font:700 18px/1.35 Georgia,"Times New Roman",serif;color:var(--deep)
+    }
+    .chapter-card__copy{
+      margin-top:8px;font:500 14px/1.7 ui-sans-serif,system-ui,sans-serif;color:var(--soft)
+    }
+    .related-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .related-card{
+      display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;
+      background:#fff;padding:10px 14px;font:600 13px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--deep)
+    }
+    .related-card:hover{border-color:var(--accent);background:#eef7f0}
     .summary-toggle{
       margin-top:10px;display:inline-flex;align-items:center;border:none;background:none;padding:0;
       font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--accent);text-decoration:underline;text-underline-offset:3px
@@ -715,6 +752,64 @@ function renderDefinitionParagraphs(definition) {
     : `<p>${escapeHtml(String(definition ?? "").trim())}</p>`;
 }
 
+function renderFactCards(facts) {
+  const items = facts.filter((item) => item && compactText(item.label) && compactText(item.value));
+  if (!items.length) return "";
+  return `<div class="fact-grid">
+    ${items
+      .map(
+        (item) => `<div class="fact-card">
+      <div class="fact-label">${escapeHtml(item.label)}</div>
+      <div class="fact-value">${escapeHtml(item.value)}</div>
+    </div>`
+      )
+      .join("\n")}
+  </div>`;
+}
+
+function renderChapterCards(chapterRefs, novel) {
+  if (!Array.isArray(chapterRefs) || !chapterRefs.length) {
+    return `<div class="empty">No chapter references were attached to this term in the current shard.</div>`;
+  }
+
+  return `<div class="chapter-stack">
+    ${chapterRefs
+      .map((chapter) => {
+        const href = `/novels/${encodePathSegment(novel.categorySlug)}/${encodePathSegment(
+          novel.novelId
+        )}/chapters/${encodePathSegment(chapter.chapterNo)}`;
+        const n = Number.parseInt(chapter.chapterNo, 10);
+        const chapterLabel = Number.isFinite(n) ? `Chapter ${n}` : `Chapter ${chapter.chapterNo}`;
+        return `<a class="chapter-card" href="${href}">
+          <div class="chapter-card__eyebrow">${escapeHtml(chapterLabel)}</div>
+          <div class="chapter-card__title">${escapeHtml(chapter.title || chapterLabel)}</div>
+          ${
+            compactText(chapter.metaDescription)
+              ? `<div class="chapter-card__copy">${escapeHtml(chapter.metaDescription)}</div>`
+              : ""
+          }
+        </a>`;
+      })
+      .join("\n")}
+  </div>`;
+}
+
+function renderRelatedTerms(entry, novel) {
+  const relatedIds = Array.isArray(entry.relatedTermIds) ? entry.relatedTermIds : [];
+  const byId = new Map((novel.entries ?? []).map((item) => [item.id, item]));
+  const related = relatedIds.map((id) => byId.get(id)).filter(Boolean).slice(0, 8);
+  if (!related.length) return "";
+  return `<div class="related-grid">
+    ${related
+      .map(
+        (item) => `<a class="related-card" href="${wikiTermPath(novel.novelId, item.id)}">${escapeHtml(
+          item.displayTitle
+        )}</a>`
+      )
+      .join("\n")}
+  </div>`;
+}
+
 function loadContentIndexLookup() {
   const contentIndex = readJson(contentIndexPath, { categories: [] });
   const novelLookup = new Map();
@@ -1057,19 +1152,16 @@ function renderNovelHubPage(novel) {
 function renderTermPage(novel, entry) {
   const novelPath = wikiNovelPath(novel.novelId);
   const termPath = wikiTermPath(novel.novelId, entry.id);
-  const description = trimDescription(entry.definition, 170);
-  const chapterLinks = entry.chapterNos.length
-    ? entry.chapterNos
-        .map((chapterNo) => {
-          const href = `/novels/${encodePathSegment(novel.categorySlug)}/${encodePathSegment(
-            novel.novelId
-          )}/chapters/${encodePathSegment(chapterNo)}`;
-          const n = Number.parseInt(chapterNo, 10);
-          const label = Number.isFinite(n) ? `Chapter ${n}` : `Chapter ${chapterNo}`;
-          return `<a class="chip" href="${href}">${escapeHtml(label)}</a>`;
-        })
-        .join("\n")
-    : `<div class="empty">No chapter references were attached to this term in the current shard.</div>`;
+  const description = trimDescription(entry.storyContext || entry.whyItMatters || entry.definition, 170);
+  const chapterLinks = renderChapterCards(entry.chapterRefs, novel);
+  const factCards = renderFactCards([
+    { label: "Source novel", value: novel.label },
+    { label: "First appearance", value: entry.quickFacts?.firstChapterTitle || entry.firstChapterNo || "" },
+    { label: "Chapter references", value: String(entry.quickFacts?.referenceCount || entry.chapterNos?.length || 0) },
+    { label: "Type hints", value: (entry.quickFacts?.typeHints || []).slice(0, 3).join(", ") },
+    { label: "Guide tags", value: (entry.quickFacts?.guideTags || []).slice(0, 3).join(", ") }
+  ]);
+  const relatedTerms = renderRelatedTerms(entry, novel);
 
   const body = `${renderSiteHeader({ activeCategory: novel.categorySlug, wikiActive: true })}
 <main class="shell">
@@ -1082,18 +1174,46 @@ function renderTermPage(novel, entry) {
       <span>${escapeHtml(entry.displayTitle)}</span>
     </nav>
     <h1 class="title">${escapeHtml(entry.displayTitle)}</h1>
-    <p class="tagline">A static cultivation glossary entry for ${escapeHtml(novel.label)}.</p>
+    <p class="tagline">${escapeHtml(
+      entry.storyContext || `A lore entry from ${novel.label}, with context and chapter references.`
+    )}</p>
     ${renderShareBar(termPath)}
   </section>
   <article class="definition">
     <p class="section-label">Definition</p>
     <div class="prose">${renderDefinitionParagraphs(entry.definition)}</div>
   </article>
+  ${
+    compactText(entry.storyContext)
+      ? `<section class="section" aria-labelledby="context-heading">
+    <h2 id="context-heading">Story context</h2>
+    <p class="lede">${escapeHtml(entry.storyContext)}</p>
+  </section>`
+      : ""
+  }
+  ${
+    compactText(entry.whyItMatters)
+      ? `<section class="section" aria-labelledby="why-heading">
+    <h2 id="why-heading">Why it matters</h2>
+    <p class="lede">${escapeHtml(entry.whyItMatters)}</p>
+  </section>`
+      : ""
+  }
+  ${factCards ? `<section class="section" aria-labelledby="facts-heading"><h2 id="facts-heading">Quick facts</h2>${factCards}</section>` : ""}
   <section class="section" aria-labelledby="appears-heading">
     <h2 id="appears-heading">Appears in chapters</h2>
     <p class="lede">Jump back into the novel from the exact chapter references used to build this glossary page.</p>
-    <div class="chips">${chapterLinks}</div>
+    ${chapterLinks}
   </section>
+  ${
+    relatedTerms
+      ? `<section class="section" aria-labelledby="related-heading">
+    <h2 id="related-heading">Related terms</h2>
+    <p class="lede">Explore connected lore, concepts, and glossary entries from the same novel.</p>
+    ${relatedTerms}
+  </section>`
+      : ""
+  }
   <section class="section" aria-labelledby="source-heading">
     <h2 id="source-heading">Source novel</h2>
     <p class="lede"><a href="/novels/${encodePathSegment(novel.categorySlug)}/${encodePathSegment(
@@ -1150,6 +1270,8 @@ function buildNovelRecords() {
       termCount: entries.length,
       entries
     });
+
+    log(`loaded shard ${categorySlug}/${novelId}: terms=${entries.length}`);
   }
 
   novels.sort((a, b) => a.label.localeCompare(b.label, "en"));
@@ -1158,6 +1280,7 @@ function buildNovelRecords() {
 
 function writeWikiPages() {
   const novels = buildNovelRecords();
+  log(`rendering static wiki pages for ${novels.length} novels`);
 
   if (fs.existsSync(wikiOutRoot)) {
     fs.rmSync(wikiOutRoot, { recursive: true, force: true });
@@ -1172,11 +1295,13 @@ function writeWikiPages() {
   let termPageCount = 0;
   for (const novel of novels) {
     const novelDir = path.join(wikiOutRoot, novel.novelId);
+    log(`rendering glossary hub: ${novel.novelId} (${novel.termCount} terms)`);
     writeText(path.join(novelDir, "index.html"), renderNovelHubPage(novel));
     for (const entry of novel.entries) {
       writeText(path.join(novelDir, entry.id, "index.html"), renderTermPage(novel, entry));
       termPageCount += 1;
     }
+    log(`rendered glossary hub: ${novel.novelId}, cumulativeTermPages=${termPageCount}`);
   }
 
   return { novelCount: novels.length, termPageCount };
