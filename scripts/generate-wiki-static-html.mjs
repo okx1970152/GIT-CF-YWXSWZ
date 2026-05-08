@@ -259,7 +259,9 @@ function baseStyles() {
     .wiki-glossary-layout{display:grid;gap:24px;margin-top:34px}
     .wiki-term-grid{display:grid;gap:20px}
     .wiki-letter-section .grid{margin-top:0;grid-template-columns:repeat(3,minmax(0,1fr))}
-    .wiki-glossary-rail{position:sticky;top:104px}
+    .wiki-glossary-rail{position:relative}
+    .follow-rail-shell{position:relative}
+    .follow-rail-inner{width:100%}
     .wiki-glossary-card{display:flex;flex-direction:column;gap:14px}
     .wiki-glossary-card .card-copy{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
     .wiki-search-panel{
@@ -384,6 +386,7 @@ function baseStyles() {
     @media (max-width: 1023px){
       .wiki-glossary-layout{grid-template-columns:1fr}
       .wiki-glossary-rail{position:static}
+      .follow-rail-shell{min-height:0 !important}
     }
     @media (min-width: 1024px){
       .wiki-glossary-layout{grid-template-columns:minmax(0,1fr) 280px}
@@ -539,6 +542,69 @@ function sharedWikiClientScript() {
     wikiHomeInput.addEventListener('input', runWikiSearch);
   }
 
+  function initFollowRail(containerSelector, shellSelector, cardSelector, desktopMinWidth) {
+    const container = document.querySelector(containerSelector);
+    const shell = document.querySelector(shellSelector);
+    const card = document.querySelector(cardSelector);
+    if (!container || !shell || !card) return;
+
+    const topGap = 104;
+
+    const updateRail = () => {
+      if (window.innerWidth < desktopMinWidth) {
+        shell.style.minHeight = '';
+        card.style.position = '';
+        card.style.top = '';
+        card.style.left = '';
+        card.style.width = '';
+        return;
+      }
+
+      const containerRect = container.getBoundingClientRect();
+      const shellRect = shell.getBoundingClientRect();
+      const cardHeight = card.offsetHeight;
+      const scrollY = window.scrollY;
+      const containerTop = scrollY + containerRect.top;
+      const containerBottom = containerTop + containerRect.height;
+      const shellTop = scrollY + shellRect.top;
+      const desiredTop = scrollY + topGap;
+      const maxFixedTop = containerBottom - cardHeight;
+
+      shell.style.minHeight = cardHeight + 'px';
+
+      if (desiredTop <= shellTop) {
+        card.style.position = 'relative';
+        card.style.top = '0';
+        card.style.left = '0';
+        card.style.width = '100%';
+        return;
+      }
+
+      if (desiredTop >= maxFixedTop) {
+        card.style.position = 'absolute';
+        card.style.top = Math.max(0, containerRect.height - cardHeight) + 'px';
+        card.style.left = '0';
+        card.style.width = '100%';
+        return;
+      }
+
+      card.style.position = 'fixed';
+      card.style.top = topGap + 'px';
+      card.style.left = shellRect.left + 'px';
+      card.style.width = shellRect.width + 'px';
+    };
+
+    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(updateRail) : null;
+    observer?.observe(document.body);
+    observer?.observe(container);
+    observer?.observe(shell);
+    observer?.observe(card);
+
+    updateRail();
+    window.addEventListener('scroll', updateRail, { passive: true });
+    window.addEventListener('resize', updateRail);
+  }
+
   const glossarySections = Array.from(document.querySelectorAll('[data-letter-section]'));
   const glossaryButtons = Array.from(document.querySelectorAll('[data-letter-trigger]'));
   const glossaryPanels = Array.from(document.querySelectorAll('[data-letter-panel]'));
@@ -590,6 +656,8 @@ function sharedWikiClientScript() {
     window.addEventListener('scroll', syncGlossaryLetter, { passive: true });
     window.addEventListener('resize', syncGlossaryLetter);
   }
+
+  initFollowRail('[data-follow-rail-container]', '[data-follow-rail-shell]', '[data-follow-rail-card]', 1024);
 })();`;
 }
 
@@ -933,10 +1001,10 @@ function renderNovelHubPage(novel) {
     <p class="meta">${novel.termCount} terms in this glossary.</p>
     ${renderShareBar(pathName)}
   </section>
-  <section class="wiki-glossary-layout">
+  <section class="wiki-glossary-layout" data-follow-rail-container>
     <div class="wiki-term-grid">${groupedCardHtml}</div>
-    <aside class="wiki-glossary-rail">
-      <div class="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-sm">
+    <aside class="wiki-glossary-rail follow-rail-shell" data-follow-rail-shell>
+      <div class="follow-rail-inner rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-sm" data-follow-rail-card>
         <p class="section-label">Glossary Navigator</p>
         <div class="glossary-groups">${letterNavHtml}</div>
       </div>

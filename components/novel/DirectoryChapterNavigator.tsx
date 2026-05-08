@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import type { ChapterItem } from "@/lib/content/chapters";
 import { padChapterNo } from "@/lib/content/chapter-utils";
@@ -103,8 +103,13 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
   const [activeMinorKey, setActiveMinorKey] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [flashAnchorId, setFlashAnchorId] = useState<string | null>(null);
+  const [railStyle, setRailStyle] = useState<CSSProperties | undefined>(undefined);
+  const [railSpacerHeight, setRailSpacerHeight] = useState<number | null>(null);
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
   const userNavigatingRef = useRef(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const asideRef = useRef<HTMLElement | null>(null);
+  const railCardRef = useRef<HTMLDivElement | null>(null);
 
   const firstChapterNo = chapters[0]?.chapterNo;
   const latestChapterNo = chapters[chapters.length - 1]?.chapterNo;
@@ -167,6 +172,79 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
     };
   }, [rangeTree]);
 
+  useEffect(() => {
+    const topGap = 96;
+    const desktopMinWidth = 768;
+
+    const updateRail = () => {
+      const container = containerRef.current;
+      const aside = asideRef.current;
+      const railCard = railCardRef.current;
+      if (!container || !aside || !railCard) return;
+
+      if (window.innerWidth < desktopMinWidth) {
+        setRailStyle(undefined);
+        setRailSpacerHeight(null);
+        return;
+      }
+
+      const railHeight = railCard.offsetHeight;
+      const containerRect = container.getBoundingClientRect();
+      const asideRect = aside.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      const containerTop = scrollY + containerRect.top;
+      const containerBottom = containerTop + containerRect.height;
+      const asideTop = scrollY + asideRect.top;
+      const desiredTop = scrollY + topGap;
+      const maxFixedTop = containerBottom - railHeight;
+
+      setRailSpacerHeight(railHeight);
+
+      if (desiredTop <= asideTop) {
+        setRailStyle(undefined);
+        return;
+      }
+
+      if (desiredTop >= maxFixedTop) {
+        setRailStyle({
+          position: "absolute",
+          top: Math.max(0, containerRect.height - railHeight),
+          left: 0,
+          width: "100%"
+        });
+        return;
+      }
+
+      setRailStyle({
+        position: "fixed",
+        top: topGap,
+        left: asideRect.left,
+        width: asideRect.width
+      });
+    };
+
+    const observer =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(() => {
+            updateRail();
+          })
+        : null;
+
+    observer?.observe(document.body);
+    if (containerRef.current) observer?.observe(containerRef.current);
+    if (asideRef.current) observer?.observe(asideRef.current);
+    if (railCardRef.current) observer?.observe(railCardRef.current);
+
+    updateRail();
+    window.addEventListener("scroll", updateRail, { passive: true });
+    window.addEventListener("resize", updateRail);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("scroll", updateRail);
+      window.removeEventListener("resize", updateRail);
+    };
+  }, [rangeTree]);
+
   function chapterHref(chapterNo: string): string {
     return `/novels/${categorySlug}/${novelId}/chapters/${chapterNo}`;
   }
@@ -221,9 +299,12 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
     router.push(chapterHref(normalized));
   }
 
-  function renderNavigatorContent() {
+  function renderNavigatorContent(cardRef?: { current: HTMLDivElement | null }) {
     return (
-      <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-4 shadow-sm">
+      <div
+        ref={cardRef}
+        className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-4 shadow-sm"
+      >
         <form onSubmit={onJumpSubmit} className="grid gap-2 border-b border-[var(--border-soft)] pb-4">
           <label className="text-xs font-semibold text-[var(--text-muted)]">Jump to chapter</label>
           <div className="flex gap-2">
@@ -304,7 +385,7 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
   }
 
   return (
-    <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_280px] md:items-start">
+    <div ref={containerRef} className="grid gap-6 md:grid-cols-[minmax(0,1fr)_280px] md:items-start">
       <div className="order-2 md:order-1">
         <div className="space-y-5">
           {rangeTree.map((major) => {
@@ -414,8 +495,12 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
         </div>
       </div>
 
-      <aside className="order-1 md:order-2 md:self-start">
-        <div className="sticky top-24">
+      <aside
+        ref={asideRef}
+        className="order-1 md:order-2 md:self-start"
+        style={railSpacerHeight ? { position: "relative", minHeight: railSpacerHeight } : { position: "relative" }}
+      >
+        <div>
           <div className="md:hidden">
             <button
               type="button"
@@ -428,7 +513,9 @@ export function DirectoryChapterNavigator({ chapters, categorySlug, novelId }: P
             {mobileOpen ? <div className="mt-3">{renderNavigatorContent()}</div> : null}
           </div>
 
-          <div className="hidden md:block">{renderNavigatorContent()}</div>
+          <div className="hidden md:block" style={railStyle}>
+            {renderNavigatorContent(railCardRef)}
+          </div>
         </div>
       </aside>
     </div>
