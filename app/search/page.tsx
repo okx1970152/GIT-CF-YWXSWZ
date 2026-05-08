@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { searchContent } from "@/lib/content/search";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
+import { SITE_NAME, absoluteOgUrl, baseOpenGraph } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
@@ -35,7 +35,10 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       url: absoluteOgUrl(raw ? `/search?q=${encodeURIComponent(raw)}` : "/search"),
       type: "website"
     },
-    robots: publicRobots()
+    robots: {
+      index: false,
+      follow: true
+    }
   };
 }
 
