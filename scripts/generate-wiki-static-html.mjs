@@ -306,6 +306,7 @@ function baseStyles() {
     }
     .glossary-trigger--active{background:var(--accent);color:#fff}
     .glossary-chip-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .glossary-chip-list[hidden]{display:none !important}
     .glossary-chip{
       display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;
       background:#fff;padding:8px 12px;font:600 12px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--soft)
