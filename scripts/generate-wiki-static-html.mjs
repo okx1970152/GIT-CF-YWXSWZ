@@ -609,15 +609,22 @@ function sharedWikiClientScript() {
   const glossaryButtons = Array.from(document.querySelectorAll('[data-letter-trigger]'));
   const glossaryPanels = Array.from(document.querySelectorAll('[data-letter-panel]'));
   let glossaryNavLock = false;
+  let openGlossaryLetter = '';
+
+  function renderGlossaryPanels() {
+    glossaryPanels.forEach((panel) => {
+      panel.hidden = panel.getAttribute('data-letter-panel') !== openGlossaryLetter;
+    });
+    glossaryButtons.forEach((button) => {
+      const expanded = button.getAttribute('data-letter-trigger') === openGlossaryLetter;
+      button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
+  }
 
   function activateLetter(letter, shouldScroll) {
     glossaryButtons.forEach((button) => {
       const active = button.getAttribute('data-letter-trigger') === letter;
       button.classList.toggle('glossary-trigger--active', active);
-      button.setAttribute('aria-expanded', active ? 'true' : 'false');
-    });
-    glossaryPanels.forEach((panel) => {
-      panel.hidden = panel.getAttribute('data-letter-panel') !== letter;
     });
     glossarySections.forEach((section) => {
       const active = section.getAttribute('data-letter-section') === letter;
@@ -636,6 +643,8 @@ function sharedWikiClientScript() {
     button.addEventListener('click', () => {
       const letter = button.getAttribute('data-letter-trigger');
       if (!letter) return;
+      openGlossaryLetter = openGlossaryLetter === letter ? '' : letter;
+      renderGlossaryPanels();
       activateLetter(letter, true);
     });
   });
@@ -652,6 +661,7 @@ function sharedWikiClientScript() {
       });
       if (activeLetter) activateLetter(activeLetter, false);
     };
+    renderGlossaryPanels();
     syncGlossaryLetter();
     window.addEventListener('scroll', syncGlossaryLetter, { passive: true });
     window.addEventListener('resize', syncGlossaryLetter);
@@ -934,11 +944,11 @@ function renderNovelHubPage(novel) {
           (group, index) => `<div class="glossary-group">
   <button type="button" class="glossary-trigger${index === 0 ? " glossary-trigger--active" : ""}" data-letter-trigger="${escapeHtml(
             group.letter
-          )}" aria-expanded="${index === 0 ? "true" : "false"}">
+          )}" aria-expanded="false">
     <span>${escapeHtml(group.letter)} terms</span>
     <span>${group.items.length}</span>
   </button>
-  <div class="glossary-chip-list" data-letter-panel="${escapeHtml(group.letter)}"${index === 0 ? "" : ' hidden'}>
+  <div class="glossary-chip-list" data-letter-panel="${escapeHtml(group.letter)}" hidden>
     ${group.items
       .map(
         (item) => `<a class="glossary-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.displayTitle)}</a>`
