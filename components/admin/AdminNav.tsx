@@ -4,10 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-const ITEMS = [
-  { href: "/admin/ads", label: "广告管理" },
-  { href: "/admin/stats", label: "统计中心" }
-];
+const ITEMS = [{ href: "/admin/ads", label: "广告管理" }];
 
 export function AdminNav() {
   const pathname = usePathname();

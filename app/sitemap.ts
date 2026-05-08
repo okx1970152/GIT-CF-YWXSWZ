@@ -78,7 +78,7 @@ function buildAllSitemapEntries(): MetadataRoute.Sitemap {
 
   const wikiLm = parseLastMod(wikiData.generatedAt, indexData.generatedAt);
   items.push({
-    url: absolute("/wiki"),
+    url: absolute("/wiki/"),
     lastModified: wikiLm,
     changeFrequency: "weekly",
     priority: 0.72,
@@ -86,7 +86,7 @@ function buildAllSitemapEntries(): MetadataRoute.Sitemap {
 
   for (const novelId of Object.keys(wikiData.novels ?? {})) {
     items.push({
-      url: absolute(`/wiki/${novelId}`),
+      url: absolute(`/wiki/${novelId}/`),
       lastModified: wikiLm,
       changeFrequency: "weekly",
       priority: 0.68,
@@ -94,7 +94,7 @@ function buildAllSitemapEntries(): MetadataRoute.Sitemap {
     const termIds = wikiData.novels[novelId]?.termIds ?? [];
     for (const loreId of termIds) {
       items.push({
-        url: absolute(`/wiki/${novelId}/${encodeURIComponent(loreId)}`),
+        url: absolute(`/wiki/${novelId}/${encodeURIComponent(loreId)}/`),
         lastModified: wikiLm,
         changeFrequency: "monthly",
         priority: 0.62,

@@ -8,6 +8,7 @@ public/__novel_md__
 public/__novel_meta__
 public/__site_data__
 public/wiki
+public/__wiki_assets__
 
 # Cloudflare / OpenNext build output
 .open-next

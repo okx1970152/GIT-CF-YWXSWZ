@@ -63,7 +63,7 @@ export function Navbar() {
           </Link>
         );
       })}
-      <Link href="/wiki" className={wikiActive ? categoryActive : categoryInactive}>
+      <Link href="/wiki/" className={wikiActive ? categoryActive : categoryInactive}>
         {WIKI_NAV_LABEL}
       </Link>
     </nav>

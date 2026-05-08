@@ -192,7 +192,7 @@ function wrapSurfacesInPlainText(
           wikiLink.wikiLinkedIds.size > 0 &&
           wikiLink.wikiLinkedIds.has(id);
         if (useWiki) {
-          const href = `/wiki/${encodeURIComponent(wikiLink.novelId)}/${encodeURIComponent(id)}`;
+          const href = `/wiki/${encodeURIComponent(wikiLink.novelId)}/${encodeURIComponent(id)}/`;
           result += `<a href="${href}" target="_blank" rel="noopener noreferrer" class="lore-link">${inner}</a>`;
         } else {
           result += inner;
