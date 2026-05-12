@@ -721,7 +721,8 @@ function renderDocument({ title, description, canonicalPath, ogType = "website",
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
-    <link rel="icon" href="/favicon.png" />
+    <link rel="icon" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="${escapeHtml(ogType)}" />

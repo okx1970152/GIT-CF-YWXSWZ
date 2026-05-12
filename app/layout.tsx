@@ -35,11 +35,12 @@ export const metadata: Metadata = {
   robots: publicRobots(),
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/favicon.png", type: "image/png" }
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" }
     ],
-    shortcut: "/favicon.png",
-    apple: "/icon.png"
+    shortcut: "/favicon-32.png",
+    apple: "/apple-touch-icon.png"
   },
   twitter: {
     card: "summary_large_image",

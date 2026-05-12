@@ -28,7 +28,7 @@ export function toSchemaOrgIsoDateTime(input: string | undefined | null): string
 
 function publisherOrganization(siteName: string) {
   const homeUrl = toAbsoluteUrl("/");
-  const logoUrl = toAbsoluteUrl("/icon.png");
+  const logoUrl = toAbsoluteUrl("/icon-192.png");
   return {
     "@type": "Organization",
     name: siteName,

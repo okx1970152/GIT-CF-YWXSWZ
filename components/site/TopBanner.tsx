@@ -1,13 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-/**
- * 全站顶部动态背景横幅：
- * - 默认显示图1
- * - 鼠标移入后平滑切换图2
- * - 正文阅读页与后台页隐藏
- */
 export function TopBanner() {
   const pathname = usePathname();
 
@@ -24,15 +19,23 @@ export function TopBanner() {
       aria-label="Site hero banner"
     >
       <div className="group relative h-[220px] overflow-hidden rounded-2xl border border-[var(--border-soft)] sm:h-[240px]">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-300 ease-out"
-          style={{ backgroundImage: "url('/top-banner-1.png')" }}
+        <Image
+          src="/top-banner-1.webp"
+          alt=""
           aria-hidden
+          fill
+          priority
+          fetchPriority="high"
+          sizes="(max-width: 639px) 100vw, (max-width: 1440px) calc(100vw - 32px), 1400px"
+          className="absolute inset-0 object-cover object-center transition-opacity duration-300 ease-out"
         />
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
-          style={{ backgroundImage: "url('/top-banner-2.png')" }}
+        <Image
+          src="/top-banner-2.webp"
+          alt=""
           aria-hidden
+          fill
+          sizes="(max-width: 639px) 100vw, (max-width: 1440px) calc(100vw - 32px), 1400px"
+          className="absolute inset-0 object-cover object-center opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#e8f3e8]/35 via-transparent to-[#e8f3e8]/15" aria-hidden />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6">
