@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const workspaceRoot = process.cwd();
 const dataRoot = path.join(workspaceRoot, "data");
 const publicRoot = path.join(workspaceRoot, "public");
@@ -8,6 +10,15 @@ const categoryOutRoot = path.join(publicRoot, "category", "eastern-mythology-enc
 const novelsOutRoot = path.join(publicRoot, "novels", "eastern-mythology-encyclopedia");
 const assetsOutRoot = path.join(publicRoot, "__encyclopedia_assets__");
 const indexPath = path.join(dataRoot, "encyclopedia-index.json");
+const localEncyclopediaSourceRoot = path.join(workspaceRoot, "novels", "eastern-mythology-encyclopedia");
+const fallbackEncyclopediaSourceRoot = path.join(
+  workspaceRoot,
+  "..",
+  "小说素材爬取",
+  "7-最终发布结果",
+  "novels",
+  "eastern-mythology-encyclopedia"
+);
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://wx.0o0o.mom").replace(/\/+$/, "");
 const SITE_NAME = "Novel Portal";
@@ -36,6 +47,11 @@ function ensureDir(dirPath) {
 function writeText(filePath, content) {
   ensureDir(path.dirname(filePath));
   fs.writeFileSync(filePath, content, "utf8");
+}
+
+function copyBinaryFile(sourcePath, targetPath) {
+  ensureDir(path.dirname(targetPath));
+  fs.copyFileSync(sourcePath, targetPath);
 }
 
 function wipeDir(dirPath) {
@@ -124,6 +140,22 @@ function renderParagraphBlocks(text) {
     .join("\n");
 }
 
+function hasUsableEncyclopediaSourceRoot(candidateRoot) {
+  if (!candidateRoot || !fs.existsSync(candidateRoot)) return false;
+  return ["xian", "shen", "fo", "yao", "mo", "gui", "ren", "dijie", "famen", "qiwu"].every((volumeKey) => {
+    const volumeDir = path.join(candidateRoot, volumeKey);
+    const infoPath = path.join(volumeDir, "info", "index.md");
+    const metaPath = path.join(volumeDir, "meta", "novel.json");
+    return fs.existsSync(volumeDir) && fs.existsSync(infoPath) && fs.existsSync(metaPath);
+  });
+}
+
+function resolveEncyclopediaSourceRoot() {
+  if (hasUsableEncyclopediaSourceRoot(localEncyclopediaSourceRoot)) return localEncyclopediaSourceRoot;
+  if (hasUsableEncyclopediaSourceRoot(fallbackEncyclopediaSourceRoot)) return fallbackEncyclopediaSourceRoot;
+  return null;
+}
+
 function renderTextList(items) {
   return items
     .map((text) => renderParagraphBlocks(text))
@@ -151,6 +183,26 @@ function volumePath(volume) {
 
 function entryPath(volume, entry) {
   return `${volumePath(volume)}chapters/${encodePathSegment(entry.slug)}/`;
+}
+
+function entryImagePublicPath(volume, entrySummary) {
+  return `${volumePath(volume)}images/${encodePathSegment(entrySummary.chapterNo)}.webp`;
+}
+
+function resolveEntryImageSourcePath(volume, entrySummary, sourceRoot) {
+  if (!sourceRoot) return null;
+  const chapterNo = getString(entrySummary.chapterNo);
+  if (!chapterNo || !getString(volume.volumeKey)) return null;
+  const candidatePath = path.join(sourceRoot, volume.volumeKey, "images", `${chapterNo}.webp`);
+  return fs.existsSync(candidatePath) ? candidatePath : null;
+}
+
+function copyOptionalEntryImage(volume, entrySummary, sourceRoot) {
+  const sourcePath = resolveEntryImageSourcePath(volume, entrySummary, sourceRoot);
+  if (!sourcePath) return null;
+  const outputPath = path.join(novelsOutRoot, volume.novelId, "images", `${entrySummary.chapterNo}.webp`);
+  copyBinaryFile(sourcePath, outputPath);
+  return entryImagePublicPath(volume, entrySummary);
 }
 
 function sharedStyles() {
@@ -508,6 +560,63 @@ function sharedStyles() {
       color:var(--soft);
       font-size:1.07rem;
       line-height:1.86
+    }
+    .entry-visual-toggle{
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(249,252,248,.97);
+      box-shadow:0 12px 28px rgba(36,58,43,.05);
+      overflow:hidden
+    }
+    .entry-visual-toggle[open]{
+      border-color:#9cd8b5;
+      box-shadow:0 16px 32px rgba(7,193,96,.08)
+    }
+    .entry-visual-toggle__summary{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      min-height:44px;
+      padding:10px 16px;
+      list-style:none;
+      cursor:pointer;
+      color:var(--accent-deep);
+      background:linear-gradient(180deg, rgba(223,247,232,.96) 0%, rgba(239,249,242,.96) 100%);
+      font:700 14px/1.3 ui-sans-serif,system-ui,sans-serif
+    }
+    .entry-visual-toggle__summary::-webkit-details-marker{display:none}
+    .entry-visual-toggle__summary-text{
+      min-width:0
+    }
+    .entry-visual-toggle__summary-icon{
+      flex:0 0 auto;
+      font-size:12px;
+      transition:transform .18s ease
+    }
+    .entry-visual-toggle[open] .entry-visual-toggle__summary-icon{
+      transform:rotate(180deg)
+    }
+    .entry-visual-figure{
+      margin:0;
+      padding:12px;
+      background:rgba(255,255,255,.92)
+    }
+    .entry-visual-figure img{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:520px;
+      object-fit:cover;
+      border-radius:16px;
+      background:#eef7f0
+    }
+    .entry-visual-figure figcaption{
+      margin-top:10px;
+      color:var(--muted);
+      font:600 12px/1.6 ui-sans-serif,system-ui,sans-serif;
+      text-align:center
     }
     .entry-body{
       margin-top:24px;
@@ -1102,6 +1211,7 @@ function sharedStyles() {
         gap:20px
       }
       .entry-main-card{padding:26px 24px 24px}
+      .entry-visual-figure img{max-height:460px}
       .entry-subsection{padding:18px 18px 16px}
       .entry-sidebar{top:80px}
       .entries-layout{
@@ -1165,6 +1275,16 @@ function sharedStyles() {
       .hub-card__meta-row{grid-template-columns:1fr}
       .pagination-mini{justify-content:flex-start}
       .entry-main-card{padding:22px 18px 20px}
+      .entry-visual-toggle__summary{
+        min-height:40px;
+        padding:9px 12px;
+        font-size:13px
+      }
+      .entry-visual-figure{padding:10px}
+      .entry-visual-figure img{
+        max-height:320px;
+        border-radius:14px
+      }
       .entry-subsection{padding:18px 16px 16px}
       .entry-header__title{font-size:1.85rem}
       .entry-nav{grid-template-columns:1fr}
@@ -1742,7 +1862,7 @@ function renderVolumePage(volume) {
   });
 }
 
-function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry, nextEntry) {
+function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry, nextEntry, entryImagePath = null) {
   const meta = getRecord(entry.meta);
   const seo = getRecord(entry.seo);
   const entryPayload = getRecord(entry.entry);
@@ -1763,6 +1883,18 @@ function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry,
   const loreEntries = getArray(entry.lore_entries).map(getRecord);
   const relationEntries = getArray(entry.relation_entries).map(getRecord);
   const description = trimDescription(getString(seo.meta_description) || hook, 180);
+  const imageDisclosureMarkup = entryImagePath
+    ? `<details class="entry-visual-toggle">
+  <summary class="entry-visual-toggle__summary">
+    <span class="entry-visual-toggle__summary-text">Click to View ${escapeHtml(titleEn)} Reference Image</span>
+    <span class="entry-visual-toggle__summary-icon">v</span>
+  </summary>
+  <figure class="entry-visual-figure">
+    <img src="${escapeHtml(entryImagePath)}" alt="${escapeHtml(`${titleEn} reference illustration`)}" loading="lazy" decoding="async" />
+    <figcaption>${escapeHtml(`${titleEn} · Eastern Mythology Encyclopedia`)}</figcaption>
+  </figure>
+</details>`
+    : "";
   const navigationMarkup = `<nav class="entry-nav" aria-label="Entry navigation">
         <a class="entry-nav__item entry-nav__item--top entry-nav__item--center" href="#entry-top"><strong>Top</strong><span>Back to Top</span></a>
         ${
@@ -1789,6 +1921,7 @@ function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry,
     <span>/</span>
     <span>${escapeHtml(titleEn)}</span>
   </nav>
+  ${imageDisclosureMarkup}
   <section class="entry-layout" style="margin-top:16px">
     <article class="entry-main-card">
       <header class="entry-header">
@@ -1866,6 +1999,7 @@ function loadVolumes() {
 function main() {
   const volumes = loadVolumes();
   const relationLookup = buildRelationLookup(volumes);
+  const encyclopediaSourceRoot = resolveEncyclopediaSourceRoot();
 
   wipeDir(categoryOutRoot);
   wipeDir(novelsOutRoot);
@@ -1884,9 +2018,10 @@ function main() {
       const entry = readJson(path.join(workspaceRoot, entrySummary.jsonPath), {});
       const prevEntry = index > 0 ? volume.entries[index - 1] : null;
       const nextEntry = index < volume.entries.length - 1 ? volume.entries[index + 1] : null;
+      const entryImagePath = copyOptionalEntryImage(volume, entrySummary, encyclopediaSourceRoot);
       writeText(
         path.join(novelsOutRoot, volume.novelId, "chapters", entrySummary.slug, "index.html"),
-        renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry, nextEntry)
+        renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry, nextEntry, entryImagePath)
       );
       entryPageCount += 1;
     }
