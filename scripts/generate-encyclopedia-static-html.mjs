@@ -247,7 +247,14 @@ function sharedStyles() {
     .grid{display:grid;gap:18px}
     .grid--volumes{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:22px}
     .grid--entries{margin-top:22px}
-    .grid--reading{grid-template-columns:minmax(0,920px) minmax(320px,420px);gap:24px;margin-top:24px}
+    .grid--reading{
+      display:grid;
+      grid-template-columns:minmax(0,780px) minmax(280px,340px);
+      justify-content:center;
+      align-items:start;
+      gap:20px;
+      margin-top:24px
+    }
     .volume-card,.entry-link,.relation-link{
       display:block;border:1px solid var(--line);border-radius:24px;background:var(--card);padding:22px;box-shadow:0 12px 28px rgba(36,58,43,.06);
       transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
@@ -259,7 +266,12 @@ function sharedStyles() {
     .card-title--small{margin:0;font-size:1.45rem;line-height:1.25}
     .card-copy{margin:14px 0 0;font-size:1rem;line-height:1.8;color:var(--soft)}
     .card-meta{margin-top:16px;color:var(--muted);font-size:13px}
-    .stack{display:grid;gap:22px}
+    .stack{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      align-self:start
+    }
     .prose-block{margin:0;font-size:1.03rem;line-height:1.95;color:var(--soft)}
     .prose-group{display:grid;gap:18px}
     .tag-row,.chip-row,.share-row{display:flex;flex-wrap:wrap;gap:10px}
@@ -282,7 +294,519 @@ function sharedStyles() {
       font:600 13px/1.5 ui-sans-serif,system-ui,sans-serif;color:var(--muted)
     }
     .breadcrumbs a{color:var(--accent-deep)}
-    .sidebar{display:grid;gap:22px}
+    .hub-shell{
+      max-width:1240px;
+      padding-top:28px
+    }
+    .hub-section{
+      display:grid;
+      gap:22px
+    }
+    .hub-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap
+    }
+    .hub-title-group{min-width:0}
+    .hub-kicker{
+      margin:0;
+      color:var(--muted);
+      font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase
+    }
+    .hub-title{
+      margin:8px 0 0;
+      font-size:clamp(1.9rem,3vw,2.55rem);
+      line-height:1.08;
+      letter-spacing:-.03em
+    }
+    .hub-subtitle{
+      margin:10px 0 0;
+      max-width:780px;
+      color:var(--soft);
+      font-size:1rem;
+      line-height:1.8
+    }
+    .pagination-mini{
+      display:flex;
+      align-items:center;
+      gap:10px
+    }
+    .page-btn{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.92);
+      padding:9px 14px;
+      color:var(--soft);
+      font:700 13px/1 ui-sans-serif,system-ui,sans-serif;
+      box-shadow:0 6px 16px rgba(36,58,43,.05)
+    }
+    .page-btn[disabled]{
+      opacity:.78;
+      cursor:not-allowed
+    }
+    .hub-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:24px
+    }
+    .hub-card{
+      display:flex;
+      flex-direction:column;
+      min-height:420px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(255,255,255,.96);
+      padding:24px;
+      box-shadow:0 16px 34px rgba(36,58,43,.06);
+      transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+    }
+    .hub-card:hover{
+      transform:translateY(-2px);
+      border-color:#9cd8b5;
+      box-shadow:0 22px 40px rgba(7,193,96,.12)
+    }
+    .hub-card__title{
+      margin:0;
+      font-size:2rem;
+      line-height:1.15;
+      text-align:center;
+      letter-spacing:-.03em
+    }
+    .hub-card__subtitle{
+      margin:12px 0 0;
+      text-align:center;
+      color:var(--soft);
+      font-size:1.08rem
+    }
+    .hub-card__meta{
+      display:grid;
+      gap:8px;
+      margin-top:22px;
+      color:var(--soft);
+      font:500 14px/1.5 ui-sans-serif,system-ui,sans-serif
+    }
+    .hub-card__meta-row{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px 18px
+    }
+    .hub-card__meta p{
+      margin:0;
+      display:flex;
+      justify-content:space-between;
+      gap:8px
+    }
+    .hub-card__meta span{
+      color:var(--muted);
+      font-weight:700
+    }
+    .hub-card__summary{
+      margin:18px 0 0;
+      color:var(--soft);
+      font-size:15px;
+      line-height:1.8;
+      overflow:hidden;
+      display:-webkit-box;
+      -webkit-line-clamp:7;
+      -webkit-box-orient:vertical
+    }
+    .hub-card__footer{
+      margin-top:auto;
+      padding-top:14px;
+      border-top:1px solid rgba(207,227,207,.9);
+      display:grid;
+      gap:10px
+    }
+    .hub-card__share{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap
+    }
+    .hub-card__share-label{
+      color:var(--muted);
+      font:700 12px/1 ui-sans-serif,system-ui,sans-serif
+    }
+    .hub-card__share .share-button{
+      min-width:0;
+      min-height:34px;
+      padding:8px 10px
+    }
+    .hub-card__share .share-button span{display:none}
+    .hub-card__hint{
+      color:#8a9890;
+      font:600 12px/1.4 ui-sans-serif,system-ui,sans-serif;
+      text-align:center
+    }
+    .entry-shell{
+      max-width:1280px;
+      padding-top:24px
+    }
+    .entry-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.68fr) minmax(300px,360px);
+      align-items:start;
+      gap:24px
+    }
+    .entry-main-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.96);
+      padding:30px 30px 26px;
+      box-shadow:var(--shadow)
+    }
+    .entry-header{
+      display:grid;
+      gap:12px
+    }
+    .entry-header__kicker{
+      margin:0;
+      color:var(--muted);
+      font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase
+    }
+    .entry-header__title{
+      margin:0;
+      font-size:clamp(2rem,3.6vw,3rem);
+      line-height:1.06;
+      letter-spacing:-.03em
+    }
+    .entry-header__subtitle{
+      margin:0;
+      color:var(--soft);
+      font-size:1.16rem
+    }
+    .entry-header__meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:2px
+    }
+    .entry-header__meta-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:var(--surface);
+      padding:8px 12px;
+      color:var(--soft);
+      font:600 13px/1.3 ui-sans-serif,system-ui,sans-serif
+    }
+    .entry-header__meta-chip strong{
+      color:var(--muted);
+      font-weight:700
+    }
+    .entry-header__hook{
+      margin:2px 0 0;
+      color:var(--soft);
+      font-size:1.07rem;
+      line-height:1.86
+    }
+    .entry-body{
+      margin-top:24px;
+      padding-top:22px;
+      border-top:1px solid rgba(207,227,207,.85)
+    }
+    .entry-body .prose-group{gap:20px}
+    .entry-body .prose-block{
+      font-size:1.06rem;
+      line-height:1.95;
+      color:var(--deep)
+    }
+    .entry-nav{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:28px;
+      padding-top:18px;
+      border-top:1px solid rgba(207,227,207,.9)
+    }
+    .entry-nav__item{
+      display:flex;
+      min-height:74px;
+      flex-direction:column;
+      justify-content:center;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface);
+      padding:14px 16px;
+      transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease
+    }
+    a.entry-nav__item:hover{
+      transform:translateY(-1px);
+      border-color:#9cd8b5;
+      box-shadow:0 14px 28px rgba(7,193,96,.1)
+    }
+    .entry-nav__item strong{
+      display:block;
+      color:var(--muted);
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase
+    }
+    .entry-nav__item span{
+      display:block;
+      margin-top:8px;
+      color:var(--soft);
+      font-size:.98rem;
+      line-height:1.55
+    }
+    .entry-nav__item--center{
+      align-items:center;
+      text-align:center
+    }
+    .entry-nav__item--center span{
+      color:var(--accent-deep);
+      font-weight:700
+    }
+    .entry-sidebar{
+      display:grid;
+      gap:18px;
+      align-content:start;
+      position:sticky;
+      top:88px
+    }
+    .entry-side-card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(249,252,248,.95);
+      padding:18px 18px 17px;
+      box-shadow:0 12px 28px rgba(36,58,43,.06)
+    }
+    .entry-side-card .section-title{
+      font-size:1.18rem
+    }
+    .entry-side-card .prose-group{
+      gap:16px
+    }
+    .entry-side-card .prose-block{
+      font-size:.98rem;
+      line-height:1.82
+    }
+    .entry-side-stack{
+      display:grid;
+      gap:14px;
+      margin-top:14px
+    }
+    .volume-shell{padding-top:18px}
+    .volume-breadcrumbs{margin-bottom:14px}
+    .volume-info-card,
+    .entries-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.94);
+      box-shadow:var(--shadow)
+    }
+    .volume-info-card{
+      display:grid;
+      grid-template-columns:minmax(0,1.7fr) minmax(260px,.95fr);
+      gap:28px;
+      padding:28px
+    }
+    .volume-main{min-width:0}
+    .volume-kicker{
+      color:var(--muted);
+      font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase
+    }
+    .volume-title{
+      margin:12px 0 0;
+      font-size:clamp(2.1rem,4vw,3.15rem);
+      line-height:1.06;
+      letter-spacing:-.03em
+    }
+    .volume-subtitle{
+      margin:10px 0 0;
+      font-size:1.22rem;
+      color:var(--soft)
+    }
+    .volume-description{
+      display:grid;
+      gap:14px;
+      margin-top:18px
+    }
+    .volume-description p{
+      margin:0;
+      font-size:1.03rem;
+      line-height:1.88;
+      color:var(--soft)
+    }
+    .volume-tags{margin-top:22px}
+    .volume-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px
+    }
+    .volume-action{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      border-radius:14px;
+      padding:0 18px;
+      font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;
+      transition:background-color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease
+    }
+    .volume-action:hover{transform:translateY(-1px)}
+    .volume-action--primary{
+      border:1px solid var(--accent);
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 8px 18px rgba(7,193,96,.16)
+    }
+    .volume-action--primary:hover{background:#06a552}
+    .volume-action--secondary{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--deep)
+    }
+    .volume-action--secondary:hover{
+      border-color:#9cd8b5;
+      background:#eef7f0
+    }
+    .volume-sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      min-width:0;
+      padding-left:24px;
+      border-left:1px solid rgba(207,227,207,.9)
+    }
+    .volume-meta-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px 16px
+    }
+    .volume-meta-item{
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface);
+      padding:14px 14px 13px
+    }
+    .volume-meta-item strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--muted);
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase
+    }
+    .volume-meta-item span{
+      display:block;
+      color:var(--deep);
+      font:600 14px/1.6 ui-sans-serif,system-ui,sans-serif;
+      overflow-wrap:anywhere
+    }
+    .volume-share{margin-top:auto}
+    .volume-share .share-row{margin-top:10px}
+    .volume-share .share-button{
+      min-height:38px;
+      padding:8px 11px;
+      font-size:12px
+    }
+    .entries-card{
+      margin-top:26px;
+      padding:24px 22px
+    }
+    .entries-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap
+    }
+    .entries-caption{
+      color:var(--text-soft, var(--soft));
+      font:500 14px/1.7 ui-sans-serif,system-ui,sans-serif
+    }
+    .entries-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px
+    }
+    .entry-row{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--card);
+      padding:18px 18px 16px;
+      box-shadow:0 10px 24px rgba(36,58,43,.05);
+      transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease,background-color .18s ease
+    }
+    .entry-row:hover{
+      transform:translateY(-1px);
+      border-color:#9cd8b5;
+      background:#fcfffd;
+      box-shadow:0 16px 30px rgba(36,58,43,.08)
+    }
+    .entry-row__main{min-width:0}
+    .entry-row__eyebrow{
+      color:var(--muted);
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase
+    }
+    .entry-row__title{
+      margin:8px 0 0;
+      font-size:1.45rem;
+      line-height:1.18
+    }
+    .entry-row__subtitle{
+      margin:8px 0 0;
+      font-size:.98rem;
+      color:var(--soft)
+    }
+    .entry-row__hook{
+      margin:12px 0 0;
+      font-size:1rem;
+      line-height:1.78;
+      color:var(--soft)
+    }
+    .entry-row__meta{
+      flex:0 0 210px;
+      display:grid;
+      justify-items:end;
+      gap:10px;
+      text-align:right
+    }
+    .entry-row__meta-top{
+      color:var(--muted);
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase
+    }
+    .entry-row__meta-link{
+      color:var(--accent-deep);
+      font:700 14px/1.3 ui-sans-serif,system-ui,sans-serif
+    }
+    .entry-row__meta-link::after{content:" ->"}
+    .entry-row__meta-date{
+      color:var(--muted);
+      font:500 12px/1.5 ui-sans-serif,system-ui,sans-serif
+    }
+    .sidebar{
+      display:grid;
+      gap:18px;
+      align-content:start
+    }
+    .sidebar .rail-card{padding:18px 18px}
+    .sidebar .section-title{font-size:1.28rem}
+    .sidebar .prose-block{font-size:1rem;line-height:1.82}
+    .nav-section{padding:18px 20px}
+    .nav-section .section-title{font-size:1.12rem}
     .faq-item,.lore-item{
       border:1px solid var(--line);border-radius:18px;background:var(--card);padding:16px
     }
@@ -293,14 +817,15 @@ function sharedStyles() {
       margin:8px 0 0;font-size:.98rem;line-height:1.8;color:var(--soft)
     }
     .nav-row{
-      display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))
+      display:grid;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr))
     }
     .nav-box{
-      min-height:92px;border:1px solid var(--line);border-radius:20px;background:var(--card);padding:16px
+      min-height:72px;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:14px 16px
     }
     .nav-box strong{display:block;font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
     .nav-box span{display:block;margin-top:8px;color:var(--soft);font-size:.98rem;line-height:1.55}
     .nav-box--center{display:flex;align-items:center;justify-content:center;text-align:center}
+    .nav-box--center span{margin-top:0;font-weight:600}
     .empty-note{
       border:1px dashed var(--line);border-radius:20px;background:rgba(245,250,244,.88);padding:20px;
       color:var(--muted);font:500 14px/1.8 ui-sans-serif,system-ui,sans-serif
@@ -309,16 +834,89 @@ function sharedStyles() {
       margin-top:40px;padding-top:22px;border-top:1px solid rgba(113,133,117,.24);
       color:var(--muted);font:500 14px/1.7 ui-sans-serif,system-ui,sans-serif
     }
+    @media (max-width: 1280px){
+      .hub-grid{
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+        gap:20px
+      }
+      .hub-card{
+        min-height:396px;
+        padding:22px
+      }
+      .grid--reading{
+        grid-template-columns:minmax(0,1fr) minmax(250px,300px);
+        gap:18px
+      }
+      .sidebar .rail-card{padding:16px}
+      .sidebar .section-title{font-size:1.18rem}
+      .entry-layout{
+        grid-template-columns:minmax(0,1fr) 320px;
+        gap:20px
+      }
+      .entry-main-card{padding:26px 24px 24px}
+      .entry-sidebar{top:80px}
+      .volume-info-card{
+        grid-template-columns:minmax(0,1.45fr) minmax(240px,.95fr);
+        gap:22px
+      }
+      .volume-sidebar{padding-left:20px}
+      .entry-row__meta{flex-basis:185px}
+    }
     @media (max-width: 1023px){
+      .hub-shell{padding-top:24px}
+      .hub-top{align-items:flex-start}
+      .pagination-mini{width:100%;justify-content:flex-end}
+      .hub-grid{grid-template-columns:1fr 1fr}
+      .entry-layout{grid-template-columns:1fr}
+      .entry-sidebar{
+        position:static;
+        top:auto
+      }
       .grid--reading{grid-template-columns:1fr}
+      .volume-info-card{
+        grid-template-columns:1fr;
+        gap:22px
+      }
+      .volume-sidebar{
+        padding-left:0;
+        padding-top:18px;
+        border-left:none;
+        border-top:1px solid rgba(207,227,207,.9)
+      }
+      .entry-row{
+        flex-direction:column;
+        align-items:stretch
+      }
+      .entry-row__meta{
+        flex-basis:auto;
+        justify-items:start;
+        text-align:left
+      }
     }
     @media (max-width: 700px){
       .site-header__inner{padding:14px}
       .site-search{min-width:100%}
       .shell{padding:20px 14px 56px}
+      .hub-grid{grid-template-columns:1fr}
+      .hub-card{
+        min-height:auto;
+        padding:20px
+      }
+      .hub-card__title{font-size:1.75rem}
+      .hub-card__meta-row{grid-template-columns:1fr}
+      .pagination-mini{justify-content:flex-start}
+      .entry-main-card{padding:22px 18px 20px}
+      .entry-header__title{font-size:1.85rem}
+      .entry-nav{grid-template-columns:1fr}
+      .entry-side-card{padding:18px 16px}
       .hero{padding:24px 18px}
       .section-card,.entry-card,.term-card,.rail-card{padding:20px 18px}
+      .volume-info-card,
+      .entries-card{padding:20px 18px}
+      .volume-title{font-size:2rem}
+      .volume-meta-grid{grid-template-columns:1fr}
       .nav-row{grid-template-columns:1fr}
+      .nav-section{padding:16px}
     }
   `;
 }
@@ -388,6 +986,23 @@ function renderShareBar(relPath, title) {
   </div>`;
 }
 
+function renderCompactShareBar(relPath, title) {
+  return `<div class="hub-card__share">
+    <span class="hub-card__share-label">Share to</span>
+    ${SHARE_PLATFORMS.map(
+      (item) =>
+        `<button class="share-button" type="button" data-share-platform="${escapeHtml(
+          item.name
+        )}" data-share-url="${escapeHtml(absoluteUrl(relPath))}" data-share-title="${escapeHtml(title)}" aria-label="Share to ${escapeHtml(
+          item.name
+        )}">
+          <img src="${escapeHtml(item.icon)}" alt="" loading="lazy" width="16" height="16" />
+          <span>${escapeHtml(item.name)}</span>
+        </button>`
+    ).join("\n")}
+  </div>`;
+}
+
 function renderDocument({ title, description, canonicalPath, body, jsonLd = [] }) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -445,6 +1060,32 @@ function renderVolumeCards(volumes) {
   </div>
 </a>`
     )
+    .join("\n");
+}
+
+function renderHubCards(volumes) {
+  return volumes
+    .map((volume) => {
+      return `<a class="hub-card" href="${volumePath(volume)}">
+  <h2 class="hub-card__title">${escapeHtml(volume.titleEn)}</h2>
+  <p class="hub-card__subtitle">${escapeHtml(volume.title)}</p>
+  <div class="hub-card__meta">
+    <div class="hub-card__meta-row">
+      <p><span>Author</span>${escapeHtml(volume.author)}</p>
+      <p><span>Category</span>Encyclopedia</p>
+    </div>
+    <div class="hub-card__meta-row">
+      <p><span>Status</span>${escapeHtml(volume.status)}</p>
+      <p><span>Entries</span>${escapeHtml(String(volume.totalChapters))}</p>
+    </div>
+  </div>
+  <p class="hub-card__summary">${escapeHtml(volume.summary)}</p>
+  <div class="hub-card__footer">
+    ${renderCompactShareBar(volumePath(volume), volume.titleEn)}
+    <div class="hub-card__hint">Click anywhere to open the volume directory</div>
+  </div>
+</a>`;
+    })
     .join("\n");
 }
 
@@ -586,16 +1227,20 @@ function renderHubPage(volumes) {
   const description =
     "Browse the ten mythic volumes of the Eastern Mythology Encyclopedia, from immortals and gods to demons, ghosts, realms, arts, and relics.";
   const body = `${renderSiteHeader("eastern-mythology-encyclopedia")}
-<main class="shell">
-  <section class="hero">
-    <p class="eyebrow">Eastern Mythology Encyclopedia</p>
-    <h1 class="title">Eastern Mythology Encyclopedia</h1>
-    <p class="subtitle">Ten mythic volumes. Ten doors into an older cosmology. Read them like books and open each entry like a full chapter of lore.</p>
-    ${renderShareBar(encyclopediaHubPath(), "Eastern Mythology Encyclopedia")}
-  </section>
-  <section class="section-card" style="margin-top:24px">
-    <h2 class="section-title">The Ten Volumes</h2>
-    <div class="grid grid--volumes">${renderVolumeCards(volumes)}</div>
+<main class="shell hub-shell">
+  <section class="hub-section">
+    <div class="hub-top">
+      <div class="hub-title-group">
+        <p class="hub-kicker">Eastern Mythology Encyclopedia</p>
+        <h1 class="hub-title">Eastern Mythology Encyclopedia</h1>
+        <p class="hub-subtitle">Ten mythic volumes. Ten doors into an older cosmology. Open any card to enter a volume directory and read its entries like chapters.</p>
+      </div>
+      <div class="pagination-mini" aria-label="Volume pagination">
+        <button class="page-btn" type="button" disabled>Prev</button>
+        <button class="page-btn" type="button" disabled>Next</button>
+      </div>
+    </div>
+    <div class="hub-grid">${renderHubCards(volumes)}</div>
   </section>
   <footer class="footer">Static encyclopedia pages generated at build time from local JSON content.</footer>
 </main>`;
@@ -611,36 +1256,78 @@ function renderHubPage(volumes) {
 
 function renderVolumePage(volume) {
   const description = trimDescription(volume.metaDescription || volume.summary, 180);
+  const detailParagraphs = splitParagraphs(volume.desc || volume.summary);
+  const detailPreview = detailParagraphs.slice(0, 2);
+  const firstEntry = volume.entries?.[0] ?? null;
+  const latestEntry = volume.entries?.[volume.entries.length - 1] ?? null;
+  const startHref = firstEntry ? entryPath(volume, firstEntry) : volumePath(volume);
+  const latestHref = latestEntry ? entryPath(volume, latestEntry) : volumePath(volume);
+  const entriesMarkup = (volume.entries ?? [])
+    .map(
+      (entry) => `<a class="entry-row" href="${entryPath(volume, entry)}">
+  <div class="entry-row__main">
+    <p class="entry-row__eyebrow">Eastern Mythology Encyclopedia</p>
+    <h3 class="entry-row__title">${escapeHtml(entry.titleEn)}</h3>
+    <p class="entry-row__subtitle">${escapeHtml(entry.titleCn)}</p>
+    <p class="entry-row__hook">${escapeHtml(entry.hook)}</p>
+  </div>
+  <div class="entry-row__meta">
+    <div class="entry-row__meta-top">Entry ${escapeHtml(entry.chapterNo)}</div>
+    <div class="entry-row__meta-link">Read entry</div>
+    ${entry.updatedAt ? `<div class="entry-row__meta-date">${escapeHtml(entry.updatedAt)}</div>` : ""}
+  </div>
+</a>`
+    )
+    .join("\n");
   const body = `${renderSiteHeader("eastern-mythology-encyclopedia")}
-<main class="shell">
-  <section class="hero">
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
+<main class="shell volume-shell">
+  <nav class="breadcrumbs volume-breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
       <span>/</span>
       <a href="${encyclopediaHubPath()}">Eastern Mythology Encyclopedia</a>
       <span>/</span>
       <span>${escapeHtml(volume.titleEn)}</span>
-    </nav>
-    <p class="eyebrow">Eastern Mythology Encyclopedia</p>
-    <h1 class="title">${escapeHtml(volume.titleEn)}</h1>
-    <p class="subhead">${escapeHtml(volume.title)}</p>
-    <p class="subtitle">${escapeHtml(volume.summary)}</p>
-    <div class="meta-grid">
-      <div><strong>Author</strong>${escapeHtml(volume.author)}</div>
-      <div><strong>Status</strong>${escapeHtml(volume.status)}</div>
-      <div><strong>Entries</strong>${escapeHtml(String(volume.totalChapters))}</div>
-      <div><strong>Updated</strong>${escapeHtml(volume.updatedAt)}</div>
+  </nav>
+  <section class="volume-info-card">
+    <div class="volume-main">
+      <p class="volume-kicker">Eastern Mythology Encyclopedia</p>
+      <h1 class="volume-title">${escapeHtml(volume.titleEn)}</h1>
+      <p class="volume-subtitle">${escapeHtml(volume.title)}</p>
+      <div class="volume-description">
+        <p>${escapeHtml(volume.summary)}</p>
+        ${detailPreview
+          .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+          .join("\n")}
+      </div>
+      ${volume.tags?.length ? `<div class="tag-row volume-tags">${volume.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
+      <div class="volume-actions">
+        <a class="volume-action volume-action--primary" href="${startHref}">Start reading</a>
+        <a class="volume-action volume-action--secondary" href="${latestHref}">Latest entry</a>
+      </div>
     </div>
-    ${volume.tags?.length ? `<div class="tag-row" style="margin-top:18px">${volume.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
-    ${renderShareBar(volumePath(volume), volume.titleEn)}
+    <aside class="volume-sidebar">
+      <div class="volume-meta-grid">
+        <div class="volume-meta-item"><strong>Author</strong><span>${escapeHtml(volume.author)}</span></div>
+        <div class="volume-meta-item"><strong>Status</strong><span>${escapeHtml(volume.status)}</span></div>
+        <div class="volume-meta-item"><strong>Category</strong><span>Eastern Mythology Encyclopedia</span></div>
+        <div class="volume-meta-item"><strong>Total Entries</strong><span>${escapeHtml(String(volume.totalChapters))}</span></div>
+        <div class="volume-meta-item"><strong>Updated</strong><span>${escapeHtml(volume.updatedAt)}</span></div>
+        <div class="volume-meta-item"><strong>Directory</strong><span>${escapeHtml(volume.titleEn)}</span></div>
+      </div>
+      <div class="volume-share">
+        <strong class="volume-kicker" style="display:block;letter-spacing:.14em">Share to</strong>
+        ${renderShareBar(volumePath(volume), volume.titleEn)}
+      </div>
+    </aside>
   </section>
-  <section class="section-card" style="margin-top:24px">
-    <h2 class="section-title">Volume Overview</h2>
-    <div class="prose-group" style="margin-top:16px">${renderParagraphBlocks(volume.desc || volume.summary)}</div>
-  </section>
-  <section class="section-card" style="margin-top:24px">
-    <h2 class="section-title">Entries</h2>
-    <div class="grid grid--entries">${renderEntryLinks(volume)}</div>
+  <section class="entries-card">
+    <div class="entries-header">
+      <h2 class="section-title">Entries</h2>
+      <p class="entries-caption">Open each entry like a chapter and move through this volume in reading order.</p>
+    </div>
+    <div class="entries-list">
+      ${entriesMarkup}
+    </div>
   </section>
   <footer class="footer"><a href="${encyclopediaHubPath()}">Back to the encyclopedia hub</a></footer>
 </main>`;
@@ -667,6 +1354,8 @@ function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry,
   const entryPayload = getRecord(entry.entry);
   const titleEn = getString(meta.title_en) || entrySummary.titleEn;
   const titleCn = getString(meta.title_cn) || entrySummary.titleCn;
+  const entryType = getString(meta.entry_type_label);
+  const updatedAt = getString(meta.updated_at) || entrySummary.updatedAt;
   const hook = getString(entryPayload.hook) || entrySummary.hook;
   const bodySections = Object.keys(getRecord(entryPayload.body))
     .sort((a, b) => a.localeCompare(b, "en"))
@@ -682,66 +1371,67 @@ function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry,
   const description = trimDescription(getString(seo.meta_description) || hook, 180);
 
   const body = `${renderSiteHeader("eastern-mythology-encyclopedia")}
-<main class="shell">
-  <section class="hero">
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span>/</span>
-      <a href="${encyclopediaHubPath()}">Eastern Mythology Encyclopedia</a>
-      <span>/</span>
-      <a href="${volumePath(volume)}">${escapeHtml(volume.titleEn)}</a>
-      <span>/</span>
-      <span>${escapeHtml(titleEn)}</span>
-    </nav>
-    <p class="eyebrow">Eastern Mythology Encyclopedia</p>
-    <h1 class="title">${escapeHtml(titleEn)}</h1>
-    <p class="subhead">${escapeHtml(titleCn)}</p>
-    ${hook ? `<p class="subtitle">${escapeHtml(hook)}</p>` : ""}
-    ${renderShareBar(entryPath(volume, entrySummary), titleEn)}
-  </section>
-  <section class="grid grid--reading">
-    <article class="stack">
-      <section class="section-card">
-        <h2 class="section-title">Entry</h2>
-        <div class="prose-group" style="margin-top:16px">${renderTextList(bodySections)}</div>
-      </section>
-      <section class="section-card">
-        <h2 class="section-title">Navigation</h2>
-        <div class="nav-row" style="margin-top:16px">
-          ${
-            prevEntry
-              ? `<a class="nav-box" href="${entryPath(volume, prevEntry)}"><strong>Previous</strong><span>${escapeHtml(prevEntry.titleEn)}</span></a>`
-              : `<div class="nav-box"><strong>Previous</strong><span>Beginning of this volume.</span></div>`
-          }
-          <a class="nav-box nav-box--center" href="${volumePath(volume)}"><span>Back to Volume Directory</span></a>
-          ${
-            nextEntry
-              ? `<a class="nav-box" href="${entryPath(volume, nextEntry)}"><strong>Next</strong><span>${escapeHtml(nextEntry.titleEn)}</span></a>`
-              : `<div class="nav-box"><strong>Next</strong><span>End of this volume.</span></div>`
-          }
+<main class="shell entry-shell">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="${encyclopediaHubPath()}">Eastern Mythology Encyclopedia</a>
+    <span>/</span>
+    <a href="${volumePath(volume)}">${escapeHtml(volume.titleEn)}</a>
+    <span>/</span>
+    <span>${escapeHtml(titleEn)}</span>
+  </nav>
+  <section class="entry-layout" style="margin-top:16px">
+    <article class="entry-main-card">
+      <header class="entry-header">
+        <p class="entry-header__kicker">Eastern Mythology Encyclopedia</p>
+        <h1 class="entry-header__title">${escapeHtml(titleEn)}</h1>
+        <p class="entry-header__subtitle">${escapeHtml(titleCn)}</p>
+        <div class="entry-header__meta">
+          <span class="entry-header__meta-chip"><strong>Entry</strong>${escapeHtml(entrySummary.chapterNo)}</span>
+          ${entryType ? `<span class="entry-header__meta-chip"><strong>Type</strong>${escapeHtml(entryType)}</span>` : ""}
+          <span class="entry-header__meta-chip"><strong>Volume</strong>${escapeHtml(volume.titleEn)}</span>
+          ${updatedAt ? `<span class="entry-header__meta-chip"><strong>Updated</strong>${escapeHtml(updatedAt)}</span>` : ""}
         </div>
-      </section>
+        ${hook ? `<p class="entry-header__hook">${escapeHtml(hook)}</p>` : ""}
+      </header>
+      <div class="entry-body">
+        <div class="prose-group">${renderTextList(bodySections)}</div>
+      </div>
+      <nav class="entry-nav" aria-label="Entry navigation">
+        ${
+          prevEntry
+            ? `<a class="entry-nav__item" href="${entryPath(volume, prevEntry)}"><strong>Previous</strong><span>${escapeHtml(prevEntry.titleEn)}</span></a>`
+            : `<div class="entry-nav__item"><strong>Previous</strong><span>Beginning of this volume.</span></div>`
+        }
+        <a class="entry-nav__item entry-nav__item--center" href="${volumePath(volume)}"><strong>Directory</strong><span>Back to Volume</span></a>
+        ${
+          nextEntry
+            ? `<a class="entry-nav__item" href="${entryPath(volume, nextEntry)}"><strong>Next</strong><span>${escapeHtml(nextEntry.titleEn)}</span></a>`
+            : `<div class="entry-nav__item"><strong>Next</strong><span>End of this volume.</span></div>`
+        }
+      </nav>
     </article>
-    <aside class="sidebar">
-      <section class="rail-card">
-        <h2 class="section-title">Guide</h2>
-        <div class="prose-group" style="margin-top:16px">${guideSections.length ? renderTextList(guideSections) : `<div class="empty-note">No guide sections were included for this entry.</div>`}</div>
+    <aside class="entry-sidebar">
+      <section class="entry-side-card">
+        <h2 class="section-title">Entry Guide</h2>
+        <div class="prose-group" style="margin-top:14px">${guideSections.length ? renderTextList(guideSections) : `<div class="empty-note">No guide sections were included for this entry.</div>`}</div>
       </section>
-      <section class="rail-card">
+      <section class="entry-side-card">
+        <h2 class="section-title">Lore Notes</h2>
+        <div class="entry-side-stack">${renderLore(loreEntries)}</div>
+      </section>
+      <section class="entry-side-card">
         <h2 class="section-title">FAQ</h2>
-        <div class="stack" style="margin-top:16px">${renderFaq(faqEntries)}</div>
+        <div class="entry-side-stack">${renderFaq(faqEntries)}</div>
       </section>
-      <section class="rail-card">
-        <h2 class="section-title">Lore</h2>
-        <div class="stack" style="margin-top:16px">${renderLore(loreEntries)}</div>
-      </section>
-      <section class="rail-card">
+      <section class="entry-side-card">
         <h2 class="section-title">Related Entries</h2>
-        <div class="stack" style="margin-top:16px">${renderRelationLinks(relationEntries, relationLookup)}</div>
+        <div class="entry-side-stack">${renderRelationLinks(relationEntries, relationLookup)}</div>
       </section>
       ${
         getArray(seo.tags).length
-          ? `<section class="rail-card">
+          ? `<section class="entry-side-card">
         <h2 class="section-title">Tags</h2>
         <div class="chip-row" style="margin-top:16px">${getArray(seo.tags)
           .map((tag) => `<span class="chip">${escapeHtml(String(tag))}</span>`)
