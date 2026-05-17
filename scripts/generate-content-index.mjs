@@ -5,6 +5,7 @@ import matter from "gray-matter";
 const workspaceRoot = process.cwd();
 const novelsRoot = path.join(workspaceRoot, "novels");
 const outputPath = path.join(workspaceRoot, "data", "content-index.json");
+const EXCLUDED_CATEGORY_SLUGS = new Set(["eastern-mythology-encyclopedia"]);
 
 const CHAPTER_FILE_PATTERN = /^\d{4}-[A-Za-z0-9-]+\.md$/;
 const ANNOTATION_FILE_PATTERN = /^\d{4}\.md$/;
@@ -85,6 +86,7 @@ function resolveWordCount(data, content) {
 function buildIndex() {
   const categories = [];
   for (const categorySlug of listDirs(novelsRoot)) {
+    if (EXCLUDED_CATEGORY_SLUGS.has(categorySlug)) continue;
     const categoryPath = path.join(novelsRoot, categorySlug);
     const novels = [];
 
@@ -212,4 +214,3 @@ const chapterCount = indexData.categories.reduce(
   0
 );
 log(`index generated: novels=${novelCount}, chapters=${chapterCount}, file=${outputPath}`);
-

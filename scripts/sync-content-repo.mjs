@@ -5,6 +5,14 @@ import { execSync } from "node:child_process";
 
 const workspaceRoot = process.cwd();
 const targetNovelsDir = path.join(workspaceRoot, "novels");
+const localUnifiedNovelsDir = path.join(
+  workspaceRoot,
+  "..",
+  "..",
+  "小说素材爬取",
+  "7-最终发布结果",
+  "novels"
+);
 
 const contentRepo = process.env.CONTENT_REPO || "okx1970152/GIT-CF-YWXS";
 const contentRepoRef = process.env.CONTENT_REPO_REF || "main";
@@ -44,6 +52,10 @@ function clearDirectory(directory) {
 
 function hasLocalNovels() {
   return fs.existsSync(targetNovelsDir) && fs.readdirSync(targetNovelsDir).length > 0;
+}
+
+function hasUnifiedLocalNovels() {
+  return fs.existsSync(localUnifiedNovelsDir) && fs.readdirSync(localUnifiedNovelsDir).length > 0;
 }
 
 function printDirectoryDiagnostics(rootDir) {
@@ -99,7 +111,22 @@ if (!contentRepoToken) {
     printDirectoryDiagnostics(targetNovelsDir);
     process.exit(0);
   }
-  log("错误：未提供 CONTENT_REPO_TOKEN，且本地 novels 目录为空。");
+  if (hasUnifiedLocalNovels()) {
+    log("未提供 CONTENT_REPO_TOKEN，改用本地统一内容仓 novels 目录同步。");
+    fs.mkdirSync(targetNovelsDir, { recursive: true });
+    clearDirectory(targetNovelsDir);
+    copyDirRecursive(localUnifiedNovelsDir, targetNovelsDir);
+    printDirectoryDiagnostics(targetNovelsDir);
+
+    const novelCount = countValidNovels(targetNovelsDir);
+    log(`本地统一内容仓同步完成：novels 已更新，检测到 ${novelCount} 部有效小说。`);
+    if (novelCount === 0) {
+      log("错误：本地统一内容仓同步后未检测到有效小说（缺少 info/index.md），中止构建。");
+      process.exit(1);
+    }
+    process.exit(0);
+  }
+  log("错误：未提供 CONTENT_REPO_TOKEN，且本地 novels 目录为空，也未找到本地统一内容仓 novels。");
   process.exit(1);
 }
 

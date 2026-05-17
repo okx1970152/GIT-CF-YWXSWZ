@@ -4,7 +4,7 @@ export const CATEGORY_NAV = [
   { slug: "wuxia", label: "WuXia" },
   { slug: "xuanhuan", label: "XuanHuan" },
   { slug: "ranking", label: "Ranking" },
-  { slug: "hot-essays", label: "Hot Essays" }
+  { slug: "eastern-mythology-encyclopedia", label: "Eastern Mythology Encyclopedia" }
 ] as const;
 
 export type CategorySlug = (typeof CATEGORY_NAV)[number]["slug"];

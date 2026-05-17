@@ -5,6 +5,8 @@ const workspaceRoot = process.cwd();
 const novelsRoot = path.join(workspaceRoot, "novels");
 const manifestPath = path.join(workspaceRoot, "data", "wiki-manifest.json");
 const shardsRoot = path.join(workspaceRoot, "data", "wiki", "novels");
+const encyclopediaIndexPath = path.join(workspaceRoot, "data", "encyclopedia-index.json");
+const ENCYCLOPEDIA_CATEGORY_SLUG = "eastern-mythology-encyclopedia";
 
 function log(message) {
   process.stdout.write(`[wiki-index] ${message}\n`);
@@ -26,6 +28,18 @@ function readText(filePath) {
   } catch {
     return "";
   }
+}
+
+function getRecord(value) {
+  return typeof value === "object" && value !== null ? value : {};
+}
+
+function getString(value) {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function getArray(value) {
+  return Array.isArray(value) ? value : [];
 }
 
 function compactText(value) {
@@ -112,6 +126,14 @@ function splitSectionParagraphs(sectionText) {
     .filter(Boolean);
 }
 
+function getObjectStringValues(record) {
+  const valueRecord = getRecord(record);
+  return Object.keys(valueRecord)
+    .sort((a, b) => a.localeCompare(b, "en"))
+    .map((key) => compactText(valueRecord[key]))
+    .filter(Boolean);
+}
+
 function findMatchingQuickQA(termKeys, annotation) {
   const quickQA = annotation?.byHeading?.get("Quick Q&A") ?? "";
   if (!compactText(quickQA)) return "";
@@ -194,13 +216,146 @@ function isDirectoryLike(rootPath, dirent) {
   }
 }
 
+function buildEncyclopediaEntryLookup(volumes) {
+  const lookup = new Map();
+  for (const volume of volumes) {
+    for (const entry of getArray(volume?.entries)) {
+      const candidates = [entry?.slug, entry?.titleEn, entry?.titleCn];
+      for (const candidate of candidates) {
+        const key = normalizeLookupKey(candidate);
+        if (!key || lookup.has(key)) continue;
+        lookup.set(key, {
+          novelId: compactText(volume?.novelId),
+          entryId: compactText(entry?.slug)
+        });
+      }
+    }
+  }
+  return lookup;
+}
+
+function buildEncyclopediaWikiShards(manifestNovels) {
+  const encyclopediaIndex = readJson(encyclopediaIndexPath);
+  const volumes = getArray(encyclopediaIndex?.volumes).filter(
+    (volume) =>
+      compactText(volume?.categorySlug) === ENCYCLOPEDIA_CATEGORY_SLUG && compactText(volume?.novelId)
+  );
+  if (volumes.length === 0) {
+    return { shardCount: 0, termCount: 0 };
+  }
+
+  const relationLookup = buildEncyclopediaEntryLookup(volumes);
+  let shardCount = 0;
+  let termCount = 0;
+
+  for (const volume of volumes) {
+    const novelId = compactText(volume.novelId);
+    const categorySlug = compactText(volume.categorySlug);
+    const entries = {};
+
+    log(`processing ${categorySlug}/${novelId} (encyclopedia)`);
+
+    for (const entrySummary of getArray(volume.entries)) {
+      const slug = compactText(entrySummary?.slug);
+      if (!slug) continue;
+
+      const payload = readJson(path.join(workspaceRoot, compactText(entrySummary?.jsonPath)), {});
+      const meta = getRecord(payload?.meta);
+      const entry = getRecord(payload?.entry);
+      const seo = getRecord(payload?.seo);
+      const loreEntries = getArray(payload?.lore_entries).map((item) => getRecord(item));
+      const faqEntries = getArray(payload?.faq_entries).map((item) => getRecord(item));
+      const relationEntries = getArray(payload?.relation_entries).map((item) => getRecord(item));
+      const bodySections = getObjectStringValues(entry.body);
+      const guideSections = getObjectStringValues(entry.guide);
+      const hook = getString(entry.hook) || compactText(entrySummary?.hook);
+      const displayTitle =
+        getString(meta.title_en) || compactText(entrySummary?.titleEn) || compactText(entrySummary?.titleCn) || slug;
+      const displayTitleCn = getString(meta.title_cn) || compactText(entrySummary?.titleCn);
+      const loreDescriptions = loreEntries.map((item) => getString(item.description)).filter(Boolean);
+      const faqAnswers = faqEntries.map((item) => getString(item.answer)).filter(Boolean);
+      const definition = chooseFirstNonEmpty([
+        bodySections[0] ? trimPreview(bodySections[0], 420) : "",
+        hook,
+        loreDescriptions[0] || ""
+      ]);
+      if (!definition) continue;
+
+      const relatedTermIds = relationEntries
+        .map((item) => relationLookup.get(normalizeLookupKey(getString(item.target)))?.entryId || "")
+        .filter((id) => id && id !== slug)
+        .slice(0, 8);
+
+      const typeHints = dedupeStrings([
+        ...getArray(seo.tags).map((item) => compactText(item)),
+        ...getArray(seo.keywords).map((item) => compactText(item))
+      ]);
+      const guideTags = dedupeStrings(
+        loreEntries.map((item) => getString(item.surface_form)).filter(Boolean),
+        6
+      );
+
+      entries[slug] = {
+        id: slug,
+        displayTitle,
+        surfaces: dedupeStrings([displayTitle, displayTitleCn, slug], 16),
+        definition,
+        chapterNos: [slug],
+        firstChapterNo: slug,
+        heroQA: hook,
+        storyContext: chooseFirstNonEmpty([guideSections[0] || "", bodySections[1] || "", hook]),
+        whyItMatters: chooseFirstNonEmpty([guideSections[1] || "", faqAnswers[0] || "", bodySections[0] || ""]),
+        quickFacts: {
+          typeHints,
+          guideTags,
+          firstChapterTitle: displayTitle,
+          referenceCount: 1
+        },
+        chapterRefs: [
+          {
+            chapterNo: slug,
+            title: displayTitle,
+            metaDescription: chooseFirstNonEmpty([hook, definition, guideSections[0] || ""])
+          }
+        ],
+        relatedTermIds
+      };
+    }
+
+    const termIds = Object.keys(entries).sort((a, b) => a.localeCompare(b));
+    if (termIds.length === 0) {
+      log(`skipped ${categorySlug}/${novelId}: no encyclopedia-derived terms`);
+      continue;
+    }
+
+    manifestNovels[novelId] = {
+      categorySlug,
+      termIds
+    };
+
+    const shard = {
+      novelId,
+      categorySlug,
+      entries
+    };
+
+    const shardFile = path.join(shardsRoot, `${novelId}.json`);
+    fs.writeFileSync(shardFile, JSON.stringify(shard) + "\n", "utf8");
+    shardCount += 1;
+    termCount += termIds.length;
+    log(`enriched ${categorySlug}/${novelId}: terms=${termIds.length}, shard=${shardFile}`);
+  }
+
+  return { shardCount, termCount };
+}
+
 function buildWikiShardsFromDisk() {
   const manifestNovels = {};
 
   if (!fs.existsSync(novelsRoot)) {
     return {
       manifest: {
-        version: 2,
+        version: 3,
         generatedAt: new Date().toISOString(),
         novels: manifestNovels
       },
@@ -425,13 +580,19 @@ function buildWikiShardsFromDisk() {
     }
   }
 
+  const encyclopediaResult = buildEncyclopediaWikiShards(manifestNovels);
+
   const manifest = {
-    version: 2,
+    version: 3,
     generatedAt: new Date().toISOString(),
     novels: manifestNovels
   };
 
-  return { manifest, shardCount, termCount: totalTerms };
+  return {
+    manifest,
+    shardCount: shardCount + encyclopediaResult.shardCount,
+    termCount: totalTerms + encyclopediaResult.termCount
+  };
 }
 
 const { manifest, shardCount, termCount } = buildWikiShardsFromDisk();

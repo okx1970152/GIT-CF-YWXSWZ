@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
+import { VolumeCard } from "@/components/encyclopedia/VolumeCard";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
+import { getEncyclopediaVolumes } from "@/lib/encyclopedia/index";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { SITE_URL, toAbsoluteUrl } from "@/lib/seo";
@@ -34,7 +36,7 @@ export default async function HomePage() {
   const xiuxian = getNovelsByCategory("xiuxian");
   const wuxia = getNovelsByCategory("wuxia");
   const xuanhuan = getNovelsByCategory("xuanhuan");
-  const hotEssays = getNovelsByCategory("hot-essays");
+  const encyclopediaVolumes = getEncyclopediaVolumes();
   const featured = hot.find((item) => item.featured) ?? hot[0];
 
   const searchTemplate = `${SITE_URL}/search?q={search_term_string}`;
@@ -81,13 +83,29 @@ export default async function HomePage() {
           <SectionRail id="section-xuanhuan" title="XuanHuan" novels={xuanhuan} className="mb-0" />
         </section>
 
-        <section className="mt-8 sm:mt-10">
-          <SectionRail
-            id="section-featured"
-            title="Featured Series"
-            novels={featured ? [featured, ...hotEssays] : hotEssays}
-          />
-        </section>
+        {featured ? (
+          <section className="mt-8 sm:mt-10">
+            <SectionRail id="section-featured" title="Featured Series" novels={[featured]} />
+          </section>
+        ) : null}
+
+        {encyclopediaVolumes.length ? (
+          <section className="mt-8 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)]/70 px-3 py-5 sm:mt-10 sm:px-6 sm:py-6">
+            <div className="mb-5">
+              <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                Eastern Mythology Encyclopedia
+              </p>
+              <h2 className="mt-2 font-serif text-2xl font-semibold text-[var(--text-deep)]">
+                Ten Mythic Volumes
+              </h2>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {encyclopediaVolumes.map((volume) => (
+                <VolumeCard key={volume.novelId} volume={volume} />
+              ))}
+            </div>
+          </section>
+        ) : null}
         </main>
       </SideAdsLayout>
       <SiteFooter variant="home" />

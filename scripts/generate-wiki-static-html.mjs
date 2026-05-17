@@ -9,6 +9,8 @@ const wikiAssetsOutRoot = path.join(publicRoot, "__wiki_assets__");
 const manifestPath = path.join(dataRoot, "wiki-manifest.json");
 const shardRoot = path.join(dataRoot, "wiki", "novels");
 const contentIndexPath = path.join(dataRoot, "content-index.json");
+const encyclopediaIndexPath = path.join(dataRoot, "encyclopedia-index.json");
+const ENCYCLOPEDIA_CATEGORY_SLUG = "eastern-mythology-encyclopedia";
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://wx.0o0o.mom").replace(/\/+$/, "");
 const SITE_NAME = "Novel Portal";
@@ -23,7 +25,7 @@ const CATEGORY_NAV = [
   { slug: "wuxia", label: "WuXia" },
   { slug: "xuanhuan", label: "XuanHuan" },
   { slug: "ranking", label: "Ranking" },
-  { slug: "hot-essays", label: "Hot Essays" }
+  { slug: "eastern-mythology-encyclopedia", label: "Eastern Mythology Encyclopedia" }
 ];
 const DIRECTORY_SYNOPSIS_CHARS = 170;
 const WIKI_SHARE_PLATFORMS = [
@@ -780,7 +782,12 @@ function renderChapterCards(chapterRefs, novel) {
           novel.novelId
         )}/chapters/${encodePathSegment(chapter.chapterNo)}`;
         const n = Number.parseInt(chapter.chapterNo, 10);
-        const chapterLabel = Number.isFinite(n) ? `Chapter ${n}` : `Chapter ${chapter.chapterNo}`;
+        const chapterLabel =
+          novel.categorySlug === ENCYCLOPEDIA_CATEGORY_SLUG
+            ? "Entry"
+            : Number.isFinite(n)
+              ? `Chapter ${n}`
+              : `Chapter ${chapter.chapterNo}`;
         return `<a class="chapter-card" href="${href}">
           <div class="chapter-card__eyebrow">${escapeHtml(chapterLabel)}</div>
           <div class="chapter-card__title">${escapeHtml(chapter.title || chapterLabel)}</div>
@@ -820,6 +827,16 @@ function loadContentIndexLookup() {
     }
   }
   return novelLookup;
+}
+
+function loadEncyclopediaLookup() {
+  const encyclopediaIndex = readJson(encyclopediaIndexPath, { volumes: [] });
+  const volumeLookup = new Map();
+  for (const volume of encyclopediaIndex.volumes ?? []) {
+    if (!volume?.novelId || !volume?.categorySlug) continue;
+    volumeLookup.set(`${volume.categorySlug}/${volume.novelId}`, volume);
+  }
+  return volumeLookup;
 }
 
 function wikiHubJsonLd(novels) {
@@ -1003,9 +1020,6 @@ function renderHubPage(novels) {
   </section>
   <section class="stack" id="wiki-list">${itemsHtml}</section>
   <script id="wiki-search-index" type="application/json">${escapeJsonForScript(wikiSearchIndex)}</script>
-  <footer class="footer">
-    <p class="footer-copy">Static wiki pages are generated during deployment from your synced novel content, then served directly by Cloudflare assets.</p>
-  </footer>
 </main>`;
 
   return renderDocument({
@@ -1242,6 +1256,7 @@ function renderTermPage(novel, entry) {
 function buildNovelRecords() {
   const manifest = readJson(manifestPath, { novels: {} });
   const contentLookup = loadContentIndexLookup();
+  const encyclopediaLookup = loadEncyclopediaLookup();
   const novels = [];
 
   for (const [novelId, meta] of Object.entries(manifest.novels ?? {})) {
@@ -1253,10 +1268,25 @@ function buildNovelRecords() {
     if (!shard?.entries || typeof shard.entries !== "object") continue;
 
     const contentRecord = contentLookup.get(`${categorySlug}/${novelId}`) ?? null;
+    const encyclopediaRecord = encyclopediaLookup.get(`${categorySlug}/${novelId}`) ?? null;
     const frontmatter = contentRecord?.frontmatter ?? {};
-    const label = normalizeDisplayTitle(novelId, frontmatter);
-    const summary = normalizeSummary(frontmatter, contentRecord);
-    const updatedAt = normalizeDate(frontmatter.updated_at);
+    const label =
+      encyclopediaRecord?.titleEn ||
+      encyclopediaRecord?.title ||
+      normalizeDisplayTitle(novelId, frontmatter);
+    const summary = encyclopediaRecord
+      ? normalizeSummary(
+          {
+            summary: encyclopediaRecord.summary,
+            desc: encyclopediaRecord.desc,
+            description: encyclopediaRecord.metaDescription
+          },
+          encyclopediaRecord
+        )
+      : normalizeSummary(frontmatter, contentRecord);
+    const updatedAt = normalizeDate(
+      encyclopediaRecord?.updatedAt || encyclopediaRecord?.updated_at || frontmatter.updated_at
+    );
     const entries = Object.values(shard.entries)
       .filter((entry) => entry && typeof entry.id === "string" && typeof entry.definition === "string")
       .sort((a, b) => String(a.displayTitle || a.id).localeCompare(String(b.displayTitle || b.id), "en"));

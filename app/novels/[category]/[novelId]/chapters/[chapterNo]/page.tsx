@@ -8,6 +8,7 @@ import { MainContent } from "@/components/novel/MainContent";
 import { AnnotationTrack } from "@/components/novel/AnnotationTrack";
 import { ChapterNavigation } from "@/components/novel/ChapterNavigation";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { EncyclopediaEntryPage } from "@/components/encyclopedia/EncyclopediaEntryPage";
 import { buildChapterShareTitle } from "@/lib/content/chapter-share";
 import { mergeGuideTopicLists, stripRelatedTopicsFooter } from "@/lib/content/guide-topics";
 import { sanitizeCulturalNotesFaqForPage } from "@/lib/content/cultural-notes-faq";
@@ -16,6 +17,12 @@ import { ensureContentIndex, ensureWikiIndex } from "@/lib/content/ensure-site-i
 import { getWikiLinkedIdsForNovel } from "@/lib/content/wiki-index";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
+import {
+  getAllEncyclopediaEntryParams,
+  getEncyclopediaEntry,
+  getEncyclopediaEntrySummary,
+  getEncyclopediaVolume
+} from "@/lib/encyclopedia/index";
 import { loadAnnotationByChapterNo } from "@/lib/content/annotations";
 import { loadChapterMarkdownCached } from "@/lib/content/load-markdown";
 import {
@@ -42,13 +49,21 @@ export async function generateStaticParams(): Promise<
   { category: string; novelId: string; chapterNo: string }[]
 > {
   await ensureContentIndex();
-  return getAllNovels().flatMap((novel) =>
-    getChapters(novel.categorySlug, novel.novelId).map((chapter) => ({
-      category: novel.categorySlug,
-      novelId: novel.novelId,
-      chapterNo: chapter.chapterNo
-    }))
-  );
+  return getAllNovels()
+    .flatMap((novel) =>
+      getChapters(novel.categorySlug, novel.novelId).map((chapter) => ({
+        category: novel.categorySlug,
+        novelId: novel.novelId,
+        chapterNo: chapter.chapterNo
+      }))
+    )
+    .concat(
+      getAllEncyclopediaEntryParams().map((entry) => ({
+        category: "eastern-mythology-encyclopedia",
+        novelId: entry.novelId,
+        chapterNo: entry.chapterNo
+      }))
+    );
 }
 
 function readingDescription(chapterBody: string, novelDesc: string): string {
@@ -59,6 +74,48 @@ function readingDescription(chapterBody: string, novelDesc: string): string {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId, chapterNo } = await params;
+
+  if (category === "eastern-mythology-encyclopedia") {
+    const volume = getEncyclopediaVolume(novelId);
+    const entrySummary = getEncyclopediaEntrySummary(novelId, chapterNo);
+    const entry = getEncyclopediaEntry(novelId, chapterNo);
+    if (!volume || !entrySummary || !entry) return {};
+
+    const meta = typeof entry.meta === "object" && entry.meta !== null ? (entry.meta as Record<string, unknown>) : {};
+    const seo = typeof entry.seo === "object" && entry.seo !== null ? (entry.seo as Record<string, unknown>) : {};
+    const titleEn = typeof meta.title_en === "string" && meta.title_en.trim() ? String(meta.title_en).trim() : entrySummary.titleEn;
+    const description =
+      (typeof seo.meta_description === "string" && seo.meta_description.trim()) || entrySummary.hook;
+    const canonicalPath = `/novels/${category}/${novelId}/chapters/${chapterNo}`;
+    const title = (typeof seo.og_title === "string" && seo.og_title.trim()) || `${titleEn} - ${volume.titleEn}`;
+
+    return {
+      title,
+      description,
+      alternates: {
+        canonical: toAbsoluteUrl(canonicalPath)
+      },
+      openGraph: {
+        ...baseOpenGraph(),
+        type: "article",
+        title,
+        description:
+          (typeof seo.og_description === "string" && seo.og_description.trim()) || description,
+        url: absoluteOgUrl(canonicalPath)
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: (typeof seo.twitter_title === "string" && seo.twitter_title.trim()) || title,
+        description:
+          (typeof seo.twitter_description === "string" && seo.twitter_description.trim()) ||
+          (typeof seo.og_description === "string" && seo.og_description.trim()) ||
+          description
+      },
+      keywords: Array.isArray(seo.keywords) ? (seo.keywords as string[]) : undefined,
+      robots: publicRobots()
+    };
+  }
+
   await ensureContentIndex();
   await ensureWikiIndex();
   const novel = getNovel(category, novelId);
@@ -120,7 +177,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: chapterMeta?.twitter_title || chapterMeta?.og_title || shareShortTitle,
-      description: chapterMeta?.twitter_description || chapterMeta?.og_description || description,
+      description: chapterMeta?.twitter_description || chapterMeta?.og_description || description
     },
     keywords,
     robots: publicRobots()
@@ -129,6 +186,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ChapterPage({ params }: Props) {
   const { category, novelId, chapterNo } = await params;
+
+  if (category === "eastern-mythology-encyclopedia") {
+    const volume = getEncyclopediaVolume(novelId);
+    const entrySummary = getEncyclopediaEntrySummary(novelId, chapterNo);
+    const entry = getEncyclopediaEntry(novelId, chapterNo);
+    if (!volume || !entrySummary || !entry) notFound();
+
+    const currentIndex = volume.entries.findIndex((item) => item.slug === entrySummary.slug);
+    const prevEntry = currentIndex > 0 ? volume.entries[currentIndex - 1] : null;
+    const nextEntry =
+      currentIndex >= 0 && currentIndex < volume.entries.length - 1
+        ? volume.entries[currentIndex + 1]
+        : null;
+
+    return (
+      <>
+        <EncyclopediaEntryPage
+          volume={volume}
+          entrySummary={entrySummary}
+          entry={entry}
+          prevEntry={prevEntry}
+          nextEntry={nextEntry}
+        />
+        <SiteFooter variant="reading" novelTitle={volume.titleEn} />
+      </>
+    );
+  }
+
   await ensureContentIndex();
   await ensureWikiIndex();
   const novel = getNovel(category, novelId);
@@ -218,38 +303,40 @@ export default async function ChapterPage({ params }: Props) {
             <JsonLd id="ld-json-chapter-faq" data={chapterFaqJsonLd} />
           ) : null}
           <div className="grid gap-8 lg:grid-cols-[minmax(0,920px)_minmax(360px,460px)] lg:gap-10">
-          <article className="novel-container min-w-0">
-            <h1
-              className="story-text font-serif text-3xl font-bold tracking-tight"
-              style={{ color: "var(--reader-fg, var(--text-deep))", fontSize: "30px" }}
-            >
-              {chapter.title}
-            </h1>
-            {chapter.wordCount != null && chapter.wordCount > 0 ? (
-              <p className="mt-2 font-sans text-sm text-[var(--text-muted)]">{chapter.wordCount.toLocaleString("en-US")} words</p>
-            ) : null}
-            <MainContent
-              chapterHtml={chapterHtml}
-              loreHoverEnabled={anchors.length > 0}
-              lorePreviews={anchors.length > 0 ? lorePreviews : undefined}
-            />
-            <ChapterNavigation
-              prevHref={prevHref}
-              nextHref={nextHref}
-              directoryHref={basePath}
+            <article className="novel-container min-w-0">
+              <h1
+                className="story-text font-serif text-3xl font-bold tracking-tight"
+                style={{ color: "var(--reader-fg, var(--text-deep))", fontSize: "30px" }}
+              >
+                {chapter.title}
+              </h1>
+              {chapter.wordCount != null && chapter.wordCount > 0 ? (
+                <p className="mt-2 font-sans text-sm text-[var(--text-muted)]">
+                  {chapter.wordCount.toLocaleString("en-US")} words
+                </p>
+              ) : null}
+              <MainContent
+                chapterHtml={chapterHtml}
+                loreHoverEnabled={anchors.length > 0}
+                lorePreviews={anchors.length > 0 ? lorePreviews : undefined}
+              />
+              <ChapterNavigation
+                prevHref={prevHref}
+                nextHref={nextHref}
+                directoryHref={basePath}
+                shareUrl={chapterUrl}
+                shareTitle={shareTitle}
+              />
+            </article>
+
+            <AnnotationTrack
+              title={annotation?.title || "Essential Guide"}
+              guideHtml={guideHtml}
+              topics={topics}
+              culturalNotesFaq={culturalNotesFaqForPage}
               shareUrl={chapterUrl}
               shareTitle={shareTitle}
             />
-          </article>
-
-          <AnnotationTrack
-            title={annotation?.title || "Essential Guide"}
-            guideHtml={guideHtml}
-            topics={topics}
-            culturalNotesFaq={culturalNotesFaqForPage}
-            shareUrl={chapterUrl}
-            shareTitle={shareTitle}
-          />
           </div>
         </ChapterReader>
       </SideAdsLayout>
