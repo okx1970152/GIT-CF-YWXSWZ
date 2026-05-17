@@ -1,0 +1,23 @@
+# Encyclopedia static assets
+/__encyclopedia_assets__/*
+  Cache-Control: public, max-age=86400, s-maxage=604800
+
+# Encyclopedia entry images
+/novels/eastern-mythology-encyclopedia/*/images/*.webp
+  Cache-Control: public, max-age=86400, s-maxage=2592000
+
+# Encyclopedia category page
+/category/eastern-mythology-encyclopedia/
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+# Encyclopedia volume directory pages
+/novels/eastern-mythology-encyclopedia/*/
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+# Encyclopedia entry pages
+/novels/eastern-mythology-encyclopedia/*/chapters/*/
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+# Site data fallback
+/__site_data__/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
