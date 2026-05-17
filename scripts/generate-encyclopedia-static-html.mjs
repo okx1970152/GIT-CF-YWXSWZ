@@ -738,6 +738,13 @@ function sharedStyles() {
       margin-top:26px;
       padding:24px 22px
     }
+    .entries-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 292px;
+      gap:22px;
+      align-items:start;
+      margin-top:18px
+    }
     .entries-header{
       display:flex;
       align-items:center;
@@ -753,6 +760,227 @@ function sharedStyles() {
       display:grid;
       gap:12px;
       margin-top:18px
+    }
+    .entries-stack{
+      display:grid;
+      gap:22px
+    }
+    .range-group{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(247,251,246,.96);
+      padding:18px 18px 16px;
+      box-shadow:0 10px 24px rgba(36,58,43,.05)
+    }
+    .range-group__eyebrow{
+      margin:0;
+      color:var(--muted);
+      font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase
+    }
+    .range-group__title{
+      margin:6px 0 0;
+      font-size:1.18rem;
+      line-height:1.2
+    }
+    .range-subgroup{
+      margin-top:16px;
+      border:1px solid rgba(7,193,96,.32);
+      border-radius:22px;
+      background:rgba(242,251,245,.98);
+      padding:14px 14px 12px
+    }
+    .range-subgroup__top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap
+    }
+    .range-subgroup__chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      background:var(--accent);
+      padding:7px 14px;
+      color:#fff;
+      font:700 13px/1 ui-sans-serif,system-ui,sans-serif
+    }
+    .range-subgroup__count{
+      color:var(--muted);
+      font:600 12px/1.3 ui-sans-serif,system-ui,sans-serif
+    }
+    .range-subgroup__grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:12px
+    }
+    .directory-entry{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+      padding:14px 16px;
+      box-shadow:0 8px 18px rgba(36,58,43,.04);
+      transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease
+    }
+    .directory-entry:hover{
+      transform:translateY(-1px);
+      border-color:#9cd8b5;
+      box-shadow:0 14px 26px rgba(7,193,96,.09)
+    }
+    .directory-entry__main{
+      min-width:0
+    }
+    .directory-entry__title{
+      margin:0;
+      font-size:1.02rem;
+      line-height:1.45;
+      color:var(--deep)
+    }
+    .directory-entry__subtitle{
+      margin:6px 0 0;
+      color:var(--soft);
+      font:500 .9rem/1.45 ui-sans-serif,system-ui,sans-serif
+    }
+    .directory-entry__meta{
+      margin-top:8px;
+      color:var(--muted);
+      font:600 12px/1.3 ui-sans-serif,system-ui,sans-serif
+    }
+    .directory-entry__cta{
+      flex:0 0 auto;
+      align-self:center;
+      color:var(--accent-deep);
+      font:700 14px/1.3 ui-sans-serif,system-ui,sans-serif;
+      white-space:nowrap
+    }
+    .volume-directory-sidebar{
+      position:sticky;
+      top:88px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(249,252,248,.97);
+      padding:16px;
+      box-shadow:0 12px 28px rgba(36,58,43,.06)
+    }
+    .volume-jump-form{
+      display:grid;
+      gap:10px;
+      padding-bottom:16px;
+      border-bottom:1px solid rgba(207,227,207,.9)
+    }
+    .volume-jump-form label{
+      color:var(--muted);
+      font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif
+    }
+    .volume-jump-form__row{
+      display:flex;
+      gap:10px
+    }
+    .volume-jump-form input{
+      flex:1;
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      padding:10px 12px;
+      color:var(--deep);
+      font:500 14px/1.2 ui-sans-serif,system-ui,sans-serif
+    }
+    .volume-jump-form button,
+    .volume-sidebar-top{
+      border:none;
+      border-radius:12px;
+      background:var(--accent);
+      padding:10px 14px;
+      color:#fff;
+      font:700 14px/1.2 ui-sans-serif,system-ui,sans-serif;
+      cursor:pointer;
+      transition:background-color .18s ease,transform .18s ease
+    }
+    .volume-jump-form button:hover,
+    .volume-sidebar-top:hover{
+      background:#06a552;
+      transform:translateY(-1px)
+    }
+    .volume-range-nav{
+      display:grid;
+      gap:12px;
+      margin-top:16px
+    }
+    .volume-range-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface);
+      padding:10px
+    }
+    .volume-range-card[open]{
+      border-color:#9cd8b5;
+      background:#f2fbf5
+    }
+    .volume-range-summary{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      list-style:none;
+      cursor:pointer;
+      border-radius:12px;
+      padding:10px 12px;
+      color:var(--deep);
+      font:700 14px/1.3 ui-sans-serif,system-ui,sans-serif
+    }
+    .volume-range-card[open] .volume-range-summary{
+      background:var(--accent);
+      color:#fff
+    }
+    .volume-range-summary::-webkit-details-marker{display:none}
+    .volume-range-arrow{
+      font-size:12px;
+      transition:transform .18s ease
+    }
+    .volume-range-card[open] .volume-range-arrow{transform:rotate(0deg)}
+    .volume-range-card:not([open]) .volume-range-arrow{transform:rotate(-90deg)}
+    .volume-subrange-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+      padding:0 2px 2px
+    }
+    .volume-subrange-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      padding:7px 11px;
+      color:var(--soft);
+      font:700 12px/1 ui-sans-serif,system-ui,sans-serif;
+      transition:border-color .18s ease,background-color .18s ease,color .18s ease
+    }
+    .volume-subrange-link:hover{
+      border-color:#9cd8b5;
+      background:#eef7f0;
+      color:var(--accent-deep)
+    }
+    .volume-sidebar-actions{
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid rgba(207,227,207,.9)
+    }
+    .volume-sidebar-top{
+      display:block;
+      width:100%;
+      text-align:center
     }
     .entry-row{
       display:flex;
@@ -876,6 +1104,10 @@ function sharedStyles() {
       .entry-main-card{padding:26px 24px 24px}
       .entry-subsection{padding:18px 18px 16px}
       .entry-sidebar{top:80px}
+      .entries-layout{
+        grid-template-columns:minmax(0,1fr) 270px;
+        gap:18px
+      }
       .volume-info-card{
         grid-template-columns:minmax(0,1.45fr) minmax(240px,.95fr);
         gap:22px
@@ -893,6 +1125,12 @@ function sharedStyles() {
         position:static;
         top:auto
       }
+      .entries-layout{grid-template-columns:1fr}
+      .volume-directory-sidebar{
+        position:static;
+        top:auto
+      }
+      .range-subgroup__grid{grid-template-columns:1fr}
       .grid--reading{grid-template-columns:1fr}
       .volume-info-card{
         grid-template-columns:1fr;
@@ -931,6 +1169,11 @@ function sharedStyles() {
       .entry-header__title{font-size:1.85rem}
       .entry-nav{grid-template-columns:1fr}
       .entry-side-card{padding:18px 16px}
+      .entries-card{padding:20px 16px}
+      .range-group{padding:16px 14px 14px}
+      .range-subgroup{padding:12px 12px 10px}
+      .directory-entry{padding:13px 14px}
+      .volume-jump-form__row{flex-direction:column}
       .hero{padding:24px 18px}
       .section-card,.entry-card,.term-card,.rail-card{padding:20px 18px}
       .volume-info-card,
@@ -962,6 +1205,32 @@ function sharedClientScript() {
           };
           const target = destinations[platform];
           if (target) window.open(target, "_blank", "noopener,noreferrer,width=720,height=640");
+        });
+      }
+
+      const jumpForms = document.querySelectorAll("[data-volume-jump-form]");
+      for (const form of jumpForms) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const input = form.querySelector("input[name='entry']");
+          if (!(input instanceof HTMLInputElement)) return;
+          const raw = input.value.trim().toLowerCase();
+          if (!raw) return;
+          const normalized = raw.replace(/^0+/, "") || "0";
+          const anchors = document.querySelectorAll("[data-entry-anchor]");
+          let target = null;
+          for (const anchor of anchors) {
+            const entryNo = (anchor.getAttribute("data-entry-no") || "").replace(/^0+/, "") || "0";
+            const entryText = (anchor.getAttribute("data-entry-text") || "").toLowerCase();
+            if (entryNo === normalized || entryText.includes(raw)) {
+              target = anchor;
+              break;
+            }
+          }
+          if (target instanceof HTMLElement) {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            history.replaceState(null, "", "#" + (target.id || "volume-directory"));
+          }
         });
       }
     })();
@@ -1109,6 +1378,57 @@ function renderHubCards(volumes) {
 </a>`;
     })
     .join("\n");
+}
+
+function getChapterOrder(entry) {
+  const raw = getString(entry.chapterNo);
+  const match = raw.match(/\d+/);
+  return match ? Number.parseInt(match[0], 10) : Number.MAX_SAFE_INTEGER;
+}
+
+function padRangeNumber(value) {
+  return String(value).padStart(4, "0");
+}
+
+function buildVolumeRangeGroups(entries, majorSize = 100, minorSize = 10) {
+  const sorted = [...(entries ?? [])].sort((a, b) => getChapterOrder(a) - getChapterOrder(b));
+  const majorMap = new Map();
+
+  for (const entry of sorted) {
+    const order = getChapterOrder(entry);
+    if (!Number.isFinite(order)) continue;
+    const majorStart = Math.floor((order - 1) / majorSize) * majorSize + 1;
+    const majorEnd = majorStart + majorSize - 1;
+    const minorStart = Math.floor((order - 1) / minorSize) * minorSize + 1;
+    const minorEnd = minorStart + minorSize - 1;
+    const majorKey = `${majorStart}-${majorEnd}`;
+    if (!majorMap.has(majorKey)) {
+      majorMap.set(majorKey, {
+        majorStart,
+        majorEnd,
+        label: `${padRangeNumber(majorStart)}-${padRangeNumber(majorEnd)}`,
+        anchor: `group-${padRangeNumber(majorStart)}-${padRangeNumber(majorEnd)}`,
+        minorMap: new Map()
+      });
+    }
+    const majorGroup = majorMap.get(majorKey);
+    const minorKey = `${minorStart}-${minorEnd}`;
+    if (!majorGroup.minorMap.has(minorKey)) {
+      majorGroup.minorMap.set(minorKey, {
+        minorStart,
+        minorEnd,
+        label: `${minorStart}-${minorEnd}`,
+        anchor: `range-${padRangeNumber(minorStart)}-${padRangeNumber(minorEnd)}`,
+        entries: []
+      });
+    }
+    majorGroup.minorMap.get(minorKey).entries.push(entry);
+  }
+
+  return [...majorMap.values()].map((group) => ({
+    ...group,
+    minors: [...group.minorMap.values()]
+  }));
 }
 
 function renderEntryLinks(volume) {
@@ -1284,25 +1604,60 @@ function renderVolumePage(volume) {
   const latestEntry = volume.entries?.[volume.entries.length - 1] ?? null;
   const startHref = firstEntry ? entryPath(volume, firstEntry) : volumePath(volume);
   const latestHref = latestEntry ? entryPath(volume, latestEntry) : volumePath(volume);
-  const entriesMarkup = (volume.entries ?? [])
+  const rangeGroups = buildVolumeRangeGroups(volume.entries ?? []);
+  const entriesMarkup = rangeGroups
     .map(
-      (entry) => `<a class="entry-row" href="${entryPath(volume, entry)}">
-  <div class="entry-row__main">
-    <p class="entry-row__eyebrow">Eastern Mythology Encyclopedia</p>
-    <h3 class="entry-row__title">${escapeHtml(entry.titleEn)}</h3>
-    <p class="entry-row__subtitle">${escapeHtml(entry.titleCn)}</p>
-    <p class="entry-row__hook">${escapeHtml(entry.hook)}</p>
+      (group) => `<section class="range-group" id="${group.anchor}">
+  <p class="range-group__eyebrow">Entry Range</p>
+  <h3 class="range-group__title">${group.label}</h3>
+  ${group.minors
+    .map(
+      (minor) => `<section class="range-subgroup" id="${minor.anchor}">
+    <div class="range-subgroup__top">
+      <span class="range-subgroup__chip">${minor.label}</span>
+      <span class="range-subgroup__count">${minor.entries.length} entries</span>
+    </div>
+    <div class="range-subgroup__grid">
+      ${minor.entries
+        .map(
+          (entry) => `<a class="directory-entry" href="${entryPath(volume, entry)}" id="entry-${escapeHtml(
+            entry.chapterNo
+          )}" data-entry-anchor data-entry-no="${escapeHtml(entry.chapterNo)}" data-entry-text="${escapeHtml(
+            `${entry.titleEn} ${entry.titleCn} ${entry.chapterNo}`
+          )}">
+        <div class="directory-entry__main">
+          <h4 class="directory-entry__title">${escapeHtml(entry.titleEn)}</h4>
+          ${entry.titleCn ? `<p class="directory-entry__subtitle">${escapeHtml(entry.titleCn)}</p>` : ""}
+          <div class="directory-entry__meta">Entry ${escapeHtml(entry.chapterNo)}</div>
+        </div>
+        <span class="directory-entry__cta">Read -></span>
+      </a>`
+        )
+        .join("\n")}
+    </div>
+  </section>`
+    )
+    .join("\n")}
+</section>`
+    )
+    .join("\n");
+  const sidebarMarkup = rangeGroups
+    .map(
+      (group, index) => `<details class="volume-range-card"${index === 0 ? " open" : ""}>
+  <summary class="volume-range-summary">
+    <span>${group.label}</span>
+    <span class="volume-range-arrow">v</span>
+  </summary>
+  <div class="volume-subrange-links">
+    ${group.minors
+      .map((minor, minorIndex) => `<a class="volume-subrange-link" href="#${minor.anchor}">${minor.label}</a>`)
+      .join("\n")}
   </div>
-  <div class="entry-row__meta">
-    <div class="entry-row__meta-top">Entry ${escapeHtml(entry.chapterNo)}</div>
-    <div class="entry-row__meta-link">Read entry</div>
-    ${entry.updatedAt ? `<div class="entry-row__meta-date">${escapeHtml(entry.updatedAt)}</div>` : ""}
-  </div>
-</a>`
+</details>`
     )
     .join("\n");
   const body = `${renderSiteHeader("eastern-mythology-encyclopedia")}
-<main class="shell volume-shell">
+<main class="shell volume-shell" id="volume-directory">
   <nav class="breadcrumbs volume-breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
       <span>/</span>
@@ -1345,10 +1700,27 @@ function renderVolumePage(volume) {
   <section class="entries-card">
     <div class="entries-header">
       <h2 class="section-title">Entries</h2>
-      <p class="entries-caption">Open each entry like a chapter and move through this volume in reading order.</p>
+      <p class="entries-caption">Use the compact directory below to scan this volume quickly. Each link opens the full entry page.</p>
     </div>
-    <div class="entries-list">
-      ${entriesMarkup}
+    <div class="entries-layout">
+      <div class="entries-stack">
+        ${entriesMarkup}
+      </div>
+      <aside class="volume-directory-sidebar">
+        <form class="volume-jump-form" data-volume-jump-form>
+          <label for="volume-entry-jump">Jump to entry</label>
+          <div class="volume-jump-form__row">
+            <input id="volume-entry-jump" name="entry" type="search" placeholder="For example 0007" autocomplete="off" />
+            <button type="submit">Go</button>
+          </div>
+        </form>
+        <div class="volume-range-nav">
+          ${sidebarMarkup}
+        </div>
+        <div class="volume-sidebar-actions">
+          <a class="volume-sidebar-top" href="#volume-directory">Back to Top</a>
+        </div>
+      </aside>
     </div>
   </section>
   <footer class="footer"><a href="${encyclopediaHubPath()}">Back to the encyclopedia hub</a></footer>
