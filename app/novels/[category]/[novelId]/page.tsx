@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { getCategoryLabel } from "@/lib/content/categories";
 import { getNovelMeta } from "@/lib/content/meta";
 import { mergeNovelTags } from "@/lib/content/novel-merge";
-import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex, ensureEncyclopediaIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getChapters } from "@/lib/content/chapters";
 import { getEncyclopediaVolume, getEncyclopediaVolumeIds } from "@/lib/encyclopedia/index";
@@ -21,6 +21,7 @@ type Props = { params: Promise<{ category: string; novelId: string }> };
 
 export async function generateStaticParams(): Promise<{ category: string; novelId: string }[]> {
   await ensureContentIndex();
+  await ensureEncyclopediaIndex();
   return [
     ...getAllNovels().map((novel) => ({
       category: novel.categorySlug,
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId } = await params;
 
   if (category === "eastern-mythology-encyclopedia") {
+    await ensureEncyclopediaIndex();
     const volume = getEncyclopediaVolume(novelId);
     if (!volume) return {};
 
@@ -112,6 +114,7 @@ export default async function NovelDirectoryRoute({ params }: Props) {
   const { category, novelId } = await params;
 
   if (category === "eastern-mythology-encyclopedia") {
+    await ensureEncyclopediaIndex();
     const volume = getEncyclopediaVolume(novelId);
     if (!volume) notFound();
 

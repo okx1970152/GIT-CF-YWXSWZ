@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { NovelCard } from "@/components/novel/NovelCard";
 import { VolumeCard } from "@/components/encyclopedia/VolumeCard";
 import { ALL_CATEGORY_SLUGS, getCategoryLabel } from "@/lib/content/categories";
-import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex, ensureEncyclopediaIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { getAllNovels, getNovelsByCategory, sortNovelsByRankingThenUpdated } from "@/lib/content/novels";
 import { getEncyclopediaVolumes } from "@/lib/encyclopedia/index";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -68,6 +68,7 @@ export default async function CategoryPage({ params }: Props) {
   const isEncyclopedia = category === "eastern-mythology-encyclopedia";
 
   if (isEncyclopedia) {
+    await ensureEncyclopediaIndex();
     const volumes = getEncyclopediaVolumes();
 
     return (

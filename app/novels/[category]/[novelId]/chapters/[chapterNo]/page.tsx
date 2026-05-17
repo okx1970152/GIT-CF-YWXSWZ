@@ -13,7 +13,11 @@ import { buildChapterShareTitle } from "@/lib/content/chapter-share";
 import { mergeGuideTopicLists, stripRelatedTopicsFooter } from "@/lib/content/guide-topics";
 import { sanitizeCulturalNotesFaqForPage } from "@/lib/content/cultural-notes-faq";
 import { getChapterMetaByNo } from "@/lib/content/meta";
-import { ensureContentIndex, ensureWikiIndex } from "@/lib/content/ensure-site-indexes-loaded";
+import {
+  ensureContentIndex,
+  ensureEncyclopediaIndex,
+  ensureWikiIndex
+} from "@/lib/content/ensure-site-indexes-loaded";
 import { getWikiLinkedIdsForNovel } from "@/lib/content/wiki-index";
 import { getAllNovels, getDisplayNovelTitle, getNovel, getNovelSummary } from "@/lib/content/novels";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/content/chapters";
@@ -49,6 +53,7 @@ export async function generateStaticParams(): Promise<
   { category: string; novelId: string; chapterNo: string }[]
 > {
   await ensureContentIndex();
+  await ensureEncyclopediaIndex();
   return getAllNovels()
     .flatMap((novel) =>
       getChapters(novel.categorySlug, novel.novelId).map((chapter) => ({
@@ -76,6 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, novelId, chapterNo } = await params;
 
   if (category === "eastern-mythology-encyclopedia") {
+    await ensureEncyclopediaIndex();
     const volume = getEncyclopediaVolume(novelId);
     const entrySummary = getEncyclopediaEntrySummary(novelId, chapterNo);
     const entry = getEncyclopediaEntry(novelId, chapterNo);
@@ -188,6 +194,7 @@ export default async function ChapterPage({ params }: Props) {
   const { category, novelId, chapterNo } = await params;
 
   if (category === "eastern-mythology-encyclopedia") {
+    await ensureEncyclopediaIndex();
     const volume = getEncyclopediaVolume(novelId);
     const entrySummary = getEncyclopediaEntrySummary(novelId, chapterNo);
     const entry = getEncyclopediaEntry(novelId, chapterNo);

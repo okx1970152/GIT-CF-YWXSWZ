@@ -9,9 +9,15 @@ import {
   type ContentIndexRoot
 } from "@/lib/content/content-index";
 import { isWikiIndexPrimed, primeWikiIndexCache, type WikiManifest } from "@/lib/content/wiki-index";
+import {
+  isEncyclopediaIndexPrimed,
+  primeEncyclopediaIndexCache,
+  type EncyclopediaIndexRoot
+} from "@/lib/encyclopedia/index";
 
 let inflightContent: Promise<void> | null = null;
 let inflightWiki: Promise<void> | null = null;
+let inflightEncyclopedia: Promise<void> | null = null;
 
 const CONTENT_PATHS = [
   path.join(process.cwd(), "data", "content-index.json"),
@@ -21,13 +27,17 @@ const WIKI_PATHS = [
   path.join(process.cwd(), "data", "wiki-manifest.json"),
   path.join(process.cwd(), "public", "__site_data__", "wiki-manifest.json")
 ];
+const ENCYCLOPEDIA_PATHS = [
+  path.join(process.cwd(), "data", "encyclopedia-index.json"),
+  path.join(process.cwd(), "public", "__site_data__", "encyclopedia-index.json")
+];
 
 function readFirstExistingUtf8(paths: string[]): string | null {
   for (const filePath of paths) {
     try {
       if (fs.existsSync(filePath)) return fs.readFileSync(filePath, "utf8");
     } catch {
-      /* Worker 上 fs 常不可用 */
+      /* Worker fallback handled by ASSETS / HTTP */
     }
   }
   return null;
@@ -55,6 +65,18 @@ function tryPrimeWikiFromFs(): boolean {
     return false;
   }
   return isWikiIndexPrimed();
+}
+
+function tryPrimeEncyclopediaFromFs(): boolean {
+  if (isEncyclopediaIndexPrimed()) return true;
+  const raw = readFirstExistingUtf8(ENCYCLOPEDIA_PATHS);
+  if (!raw) return false;
+  try {
+    primeEncyclopediaIndexCache(JSON.parse(raw) as EncyclopediaIndexRoot);
+  } catch {
+    return false;
+  }
+  return isEncyclopediaIndexPrimed();
 }
 
 type AssetFetcher = { fetch: typeof fetch };
@@ -95,6 +117,18 @@ async function tryPrimeWikiFromAssets(): Promise<boolean> {
   }
 }
 
+async function tryPrimeEncyclopediaFromAssets(): Promise<boolean> {
+  try {
+    const data = (await fetchJsonFromAssets(
+      "/__site_data__/encyclopedia-index.json"
+    )) as EncyclopediaIndexRoot;
+    primeEncyclopediaIndexCache(data);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function primeContentFromHttpFetch(): Promise<void> {
   const url = toAbsoluteUrl("/__site_data__/content-index.json");
   const res = await fetch(url, { next: { revalidate: 300 } });
@@ -109,7 +143,13 @@ async function primeWikiFromHttpFetch(): Promise<void> {
   primeWikiIndexCache((await res.json()) as WikiManifest);
 }
 
-/** 小说目录 / 首页 / 分类 / 搜索等：只灌 content-index，避免冷启动解析 wiki-index。 */
+async function primeEncyclopediaFromHttpFetch(): Promise<void> {
+  const url = toAbsoluteUrl("/__site_data__/encyclopedia-index.json");
+  const res = await fetch(url, { next: { revalidate: 300 } });
+  if (!res.ok) throw new Error(`encyclopedia_index_fetch_failed:${res.status}:${url}`);
+  primeEncyclopediaIndexCache((await res.json()) as EncyclopediaIndexRoot);
+}
+
 export async function ensureContentIndex(): Promise<void> {
   if (isContentIndexPrimed()) return;
 
@@ -130,7 +170,6 @@ export async function ensureContentIndex(): Promise<void> {
   }
 }
 
-/** /wiki 与需 getWiki* 的页面（含章节 lore）：在 content 已灌后再调用。 */
 export async function ensureWikiIndex(): Promise<void> {
   if (isWikiIndexPrimed()) return;
 
@@ -151,8 +190,28 @@ export async function ensureWikiIndex(): Promise<void> {
   }
 }
 
-/** sitemap 等同时需要两棵索引；顺序灌入，避免并行双大 JSON 峰值（可选保守策略）。 */
+export async function ensureEncyclopediaIndex(): Promise<void> {
+  if (isEncyclopediaIndexPrimed()) return;
+
+  if (!inflightEncyclopedia) {
+    inflightEncyclopedia = (async () => {
+      if (isEncyclopediaIndexPrimed()) return;
+      if (tryPrimeEncyclopediaFromFs()) return;
+      if (await tryPrimeEncyclopediaFromAssets()) return;
+      await primeEncyclopediaFromHttpFetch();
+    })();
+  }
+
+  try {
+    await inflightEncyclopedia;
+  } catch (err) {
+    inflightEncyclopedia = null;
+    throw err;
+  }
+}
+
 export async function ensureSiteIndexesLoaded(): Promise<void> {
   await ensureContentIndex();
   await ensureWikiIndex();
+  await ensureEncyclopediaIndex();
 }

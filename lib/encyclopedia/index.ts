@@ -57,6 +57,14 @@ const INDEX_PATHS = [
   path.join(process.cwd(), "public", "__site_data__", "encyclopedia-index.json")
 ];
 
+export function primeEncyclopediaIndexCache(snapshot: EncyclopediaIndexRoot): void {
+  indexCache = snapshot;
+}
+
+export function isEncyclopediaIndexPrimed(): boolean {
+  return indexCache !== null;
+}
+
 function readFirstExistingUtf8(paths: string[]): string | null {
   for (const filePath of paths) {
     try {
@@ -84,8 +92,12 @@ function loadEntryByPath(relPath: string): EncyclopediaEntryRecord | null {
   if (entryCache.has(relPath)) return entryCache.get(relPath) ?? null;
 
   const normalized = relPath.replace(/^\/+/, "");
+  const publicSiteDataPath = normalized.startsWith("data/")
+    ? path.join(process.cwd(), "public", "__site_data__", normalized.slice("data/".length))
+    : path.join(process.cwd(), "public", "__site_data__", normalized);
   const candidates = [
     path.join(process.cwd(), "data", normalized),
+    publicSiteDataPath,
     path.join(process.cwd(), "public", normalized),
     path.join(process.cwd(), normalized)
   ];

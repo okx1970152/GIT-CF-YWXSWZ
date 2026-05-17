@@ -1,6 +1,7 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { primeContentIndexCache, type ContentIndexRoot } from "@/lib/content/content-index";
 import { primeWikiIndexCache, type WikiManifest } from "@/lib/content/wiki-index";
+import { primeEncyclopediaIndexCache, type EncyclopediaIndexRoot } from "@/lib/encyclopedia/index";
 
 type AssetFetcher = { fetch: typeof fetch };
 
@@ -33,6 +34,13 @@ export async function register() {
     if (wikiRes.ok) {
       const wiki = (await wikiRes.json()) as WikiManifest;
       primeWikiIndexCache(wiki);
+    }
+
+    const encyclopediaUrl = `${base}/__site_data__/encyclopedia-index.json`;
+    const encyclopediaRes = await assets.fetch(new Request(encyclopediaUrl));
+    if (encyclopediaRes.ok) {
+      const encyclopedia = (await encyclopediaRes.json()) as EncyclopediaIndexRoot;
+      primeEncyclopediaIndexCache(encyclopedia);
     }
   } catch (err) {
     console.warn("[instrumentation] ASSETS index preload skipped:", err);

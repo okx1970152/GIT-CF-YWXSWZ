@@ -13,6 +13,8 @@ const nextConfig = {
     "/**/*": [
       "./novels/**/*",
       "./data/content-index.json",
+      "./data/encyclopedia-index.json",
+      "./data/encyclopedia/**/*.json",
       "./data/wiki-manifest.json",
       "./data/wiki/**/*.json",
       "./data/ads.json"

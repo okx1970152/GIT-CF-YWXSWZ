@@ -4,7 +4,7 @@ import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { VolumeCard } from "@/components/encyclopedia/VolumeCard";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
+import { ensureContentIndex, ensureEncyclopediaIndex } from "@/lib/content/ensure-site-indexes-loaded";
 import { getEncyclopediaVolumes } from "@/lib/encyclopedia/index";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   await ensureContentIndex();
+  await ensureEncyclopediaIndex();
   const hot = getHotNovels();
   const latest = getLatestNovels(12);
   const xiuxian = getNovelsByCategory("xiuxian");
