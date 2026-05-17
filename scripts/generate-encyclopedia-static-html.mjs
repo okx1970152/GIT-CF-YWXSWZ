@@ -520,9 +520,25 @@ function sharedStyles() {
       line-height:1.95;
       color:var(--deep)
     }
+    .entry-subsection{
+      margin-top:24px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(249,252,248,.95);
+      padding:20px 20px 18px;
+      box-shadow:0 12px 28px rgba(36,58,43,.05)
+    }
+    .entry-subsection .section-title{
+      font-size:1.24rem
+    }
+    .entry-subsection .entry-side-stack,
+    .entry-subsection .chip-row,
+    .entry-subsection .prose-group{
+      margin-top:14px
+    }
     .entry-nav{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:12px;
       margin-top:28px;
       padding-top:18px;
@@ -563,6 +579,10 @@ function sharedStyles() {
       text-align:center
     }
     .entry-nav__item--center span{
+      color:var(--accent-deep);
+      font-weight:700
+    }
+    .entry-nav__item--top span{
       color:var(--accent-deep);
       font-weight:700
     }
@@ -854,6 +874,7 @@ function sharedStyles() {
         gap:20px
       }
       .entry-main-card{padding:26px 24px 24px}
+      .entry-subsection{padding:18px 18px 16px}
       .entry-sidebar{top:80px}
       .volume-info-card{
         grid-template-columns:minmax(0,1.45fr) minmax(240px,.95fr);
@@ -906,6 +927,7 @@ function sharedStyles() {
       .hub-card__meta-row{grid-template-columns:1fr}
       .pagination-mini{justify-content:flex-start}
       .entry-main-card{padding:22px 18px 20px}
+      .entry-subsection{padding:18px 16px 16px}
       .entry-header__title{font-size:1.85rem}
       .entry-nav{grid-template-columns:1fr}
       .entry-side-card{padding:18px 16px}
@@ -1369,9 +1391,23 @@ function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry,
   const loreEntries = getArray(entry.lore_entries).map(getRecord);
   const relationEntries = getArray(entry.relation_entries).map(getRecord);
   const description = trimDescription(getString(seo.meta_description) || hook, 180);
+  const navigationMarkup = `<nav class="entry-nav" aria-label="Entry navigation">
+        <a class="entry-nav__item entry-nav__item--top entry-nav__item--center" href="#entry-top"><strong>Top</strong><span>Back to Top</span></a>
+        ${
+          prevEntry
+            ? `<a class="entry-nav__item" href="${entryPath(volume, prevEntry)}"><strong>Previous</strong><span>${escapeHtml(prevEntry.titleEn)}</span></a>`
+            : `<div class="entry-nav__item"><strong>Previous</strong><span>Beginning of this volume.</span></div>`
+        }
+        <a class="entry-nav__item entry-nav__item--center" href="${volumePath(volume)}"><strong>Directory</strong><span>Back to Volume</span></a>
+        ${
+          nextEntry
+            ? `<a class="entry-nav__item" href="${entryPath(volume, nextEntry)}"><strong>Next</strong><span>${escapeHtml(nextEntry.titleEn)}</span></a>`
+            : `<div class="entry-nav__item"><strong>Next</strong><span>End of this volume.</span></div>`
+        }
+      </nav>`;
 
   const body = `${renderSiteHeader("eastern-mythology-encyclopedia")}
-<main class="shell entry-shell">
+<main class="shell entry-shell" id="entry-top">
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span>/</span>
@@ -1398,32 +1434,21 @@ function renderEntryPage(volume, entrySummary, entry, relationLookup, prevEntry,
       <div class="entry-body">
         <div class="prose-group">${renderTextList(bodySections)}</div>
       </div>
-      <nav class="entry-nav" aria-label="Entry navigation">
-        ${
-          prevEntry
-            ? `<a class="entry-nav__item" href="${entryPath(volume, prevEntry)}"><strong>Previous</strong><span>${escapeHtml(prevEntry.titleEn)}</span></a>`
-            : `<div class="entry-nav__item"><strong>Previous</strong><span>Beginning of this volume.</span></div>`
-        }
-        <a class="entry-nav__item entry-nav__item--center" href="${volumePath(volume)}"><strong>Directory</strong><span>Back to Volume</span></a>
-        ${
-          nextEntry
-            ? `<a class="entry-nav__item" href="${entryPath(volume, nextEntry)}"><strong>Next</strong><span>${escapeHtml(nextEntry.titleEn)}</span></a>`
-            : `<div class="entry-nav__item"><strong>Next</strong><span>End of this volume.</span></div>`
-        }
-      </nav>
+      ${navigationMarkup}
+      <section class="entry-subsection">
+        <h2 class="section-title">Lore Notes</h2>
+        <div class="entry-side-stack">${renderLore(loreEntries)}</div>
+      </section>
+      <section class="entry-subsection">
+        <h2 class="section-title">FAQ</h2>
+        <div class="entry-side-stack">${renderFaq(faqEntries)}</div>
+      </section>
+      ${navigationMarkup}
     </article>
     <aside class="entry-sidebar">
       <section class="entry-side-card">
         <h2 class="section-title">Entry Guide</h2>
         <div class="prose-group" style="margin-top:14px">${guideSections.length ? renderTextList(guideSections) : `<div class="empty-note">No guide sections were included for this entry.</div>`}</div>
-      </section>
-      <section class="entry-side-card">
-        <h2 class="section-title">Lore Notes</h2>
-        <div class="entry-side-stack">${renderLore(loreEntries)}</div>
-      </section>
-      <section class="entry-side-card">
-        <h2 class="section-title">FAQ</h2>
-        <div class="entry-side-stack">${renderFaq(faqEntries)}</div>
       </section>
       <section class="entry-side-card">
         <h2 class="section-title">Related Entries</h2>
