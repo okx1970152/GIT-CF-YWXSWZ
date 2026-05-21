@@ -69,8 +69,24 @@ function resolveHotEssaysRoot() {
   return null;
 }
 
-function sortByTitle(a, b) {
-  return `${a.titleEn} ${a.titleCn}`.localeCompare(`${b.titleEn} ${b.titleCn}`, "en");
+function parseEntryFileName(fileName) {
+  const fileStem = fileName.replace(/\.json$/i, "");
+  const match = /^(\d{4})(?:[-_]|$)(.*)$/.exec(fileStem);
+  return {
+    chapterNo: match?.[1] ?? "",
+    titlePart: compactText(match?.[2] ?? fileStem)
+  };
+}
+
+function sortByChapterNo(a, b) {
+  const aNo = compactText(a.chapterNo);
+  const bNo = compactText(b.chapterNo);
+  if (aNo && bNo && aNo !== bNo) {
+    return aNo.localeCompare(bNo, "en");
+  }
+  if (aNo && !bNo) return -1;
+  if (!aNo && bNo) return 1;
+  return `${a.fileName}`.localeCompare(`${b.fileName}`, "en");
 }
 
 function wipeDir(dirPath) {
@@ -123,9 +139,8 @@ function buildVolumeRecord(config) {
       .map((fileName, index) => {
         const sourceFilePath = path.join(volumeSourceDir, fileName);
         const payload = readJson(sourceFilePath, {});
-        const fileStem = fileName.replace(/\.json$/i, "");
-        const [titleCnFromFile = ""] = fileStem.split("_");
-        const titleCn = compactText(titleCnFromFile) || compactText(payload?.meta?.title_cn);
+        const parsedFile = parseEntryFileName(fileName);
+        const titleCn = parsedFile.titlePart || compactText(payload?.meta?.title_cn);
         const titleEn = compactText(payload?.meta?.title_en);
         const slug = compactText(payload?.meta?.english_slug);
         const hook = compactText(payload?.entry?.hook);
@@ -142,21 +157,19 @@ function buildVolumeRecord(config) {
         fs.copyFileSync(sourceFilePath, outEntryAbsPath);
 
         return {
-          chapterNo: String(index + 1).padStart(4, "0"),
+          chapterNo: parsedFile.chapterNo || String(index + 1).padStart(4, "0"),
           slug,
           titleCn,
           titleEn,
           hook,
           updatedAt: compactText(payload?.meta?.updated_at) || null,
-          jsonPath: outEntryRelPath
+          jsonPath: outEntryRelPath,
+          fileName
         };
       })
       .filter(Boolean)
-      .sort(sortByTitle)
-      .map((entry, index) => ({
-        ...entry,
-        chapterNo: String(index + 1).padStart(4, "0")
-      }));
+      .sort(sortByChapterNo)
+      .map(({ fileName, ...entry }) => entry);
 
     const latestUpdatedAt = entries
       .map((item) => item.updatedAt)
