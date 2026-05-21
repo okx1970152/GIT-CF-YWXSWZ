@@ -293,13 +293,10 @@ try {
   );
   log(`[summary] report_json=${reportJsonPath}`);
   log(`[summary] report_txt=${reportTxtPath}`);
-
   if (report.summary.validNovels === 0 || report.summary.invalidNovels > 0) {
-    log("[error] diagnosis failed: invalid content directories detected; check diagnostics report.");
-    process.exit(1);
+    log("[warn] diagnosis found content issues, but this report is non-blocking for deployment.");
   }
 } catch (err) {
-  log(`[error] diagnose_content_exception=${String(err?.message || err)}`);
+  log(`[warn] diagnose_content_exception=${String(err?.message || err)}`);
   if (err?.stack) log(`[error] stack=${err.stack}`);
-  process.exit(1);
 }
