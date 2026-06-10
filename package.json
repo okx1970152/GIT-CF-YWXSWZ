@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean:generated-static": "node ./scripts/clean-generated-static.mjs",
     "dev": "next dev",
     "generate:encyclopedia-index": "node ./scripts/generate-encyclopedia-index.mjs",
     "generate:encyclopedia-static": "node ./scripts/generate-encyclopedia-static-html.mjs",
     "generate:wiki-index": "node ./scripts/generate-wiki-index.mjs",
-    "build": "npm run copy-novel-md && npm run copy-novel-meta && npm run generate:content-index && npm run generate:encyclopedia-index && npm run generate:encyclopedia-static && npm run generate:wiki-index && npm run generate:wiki-static && npm run copy-site-index && next build",
+    "build": "npm run clean:generated-static && npm run copy-novel-md && npm run copy-novel-meta && npm run generate:content-index && npm run generate:encyclopedia-index && npm run generate:wiki-index && npm run generate:wiki-static && npm run copy-site-index && next build",
     "start": "next start",
     "lint": "next lint",
     "sync:content": "node ./scripts/sync-content-repo.mjs",
@@ -19,7 +20,7 @@
     "diag:content": "node ./scripts/diagnose-content.mjs",
     "preview": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "npm run sync:content && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-build": "npm run sync:content && npm run generate:content-index && npm run generate:encyclopedia-index && npm run generate:encyclopedia-static && npm run generate:wiki-index && npm run generate:wiki-static && npm run diag:content && npm run copy-novel-md && npm run copy-novel-meta && npm run copy-site-index && opennextjs-cloudflare build"
+    "cf-build": "npm run clean:generated-static && npm run sync:content && npm run generate:content-index && npm run generate:encyclopedia-index && npm run generate:wiki-index && npm run generate:wiki-static && npm run diag:content && npm run copy-novel-md && npm run copy-novel-meta && npm run copy-site-index && opennextjs-cloudflare build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
