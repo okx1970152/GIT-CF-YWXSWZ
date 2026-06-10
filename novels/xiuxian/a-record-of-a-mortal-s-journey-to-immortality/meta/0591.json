@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0591",
+  "chapter_code": "0591",
+  "chapter_slug": "Winds-Rise-Overseas-The-Netherworld-Domain",
+  "chapter_title_en": "Winds Rise Overseas: The Netherworld Domain",
+  "chapter_keywords": [
+    "netherworld domain",
+    "spirit void eruption",
+    "jiaozheng beast",
+    "netherworld beast crystal",
+    "forbidden land",
+    "mana seal",
+    "han li",
+    "mortals stream",
+    "survival ecology",
+    "yin beast"
+  ],
+  "guide_tags": [
+    "survival",
+    "new world",
+    "ecology",
+    "battle",
+    "mystery",
+    "han li",
+    "mana seal",
+    "netherworld"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 591 – The Netherworld Domain Unveiled",
+  "chapter_meta_description": "Han Li witnesses a village defense against a Jiaozheng beast, learns the brutal rules of the Netherworld Domain, and recognizes a mysterious green crystal from the Void Heaven Palace.",
+  "og_title": "Ch. 591: The Netherworld Domain – Han Li Enters a No-Mana Wasteland",
+  "og_description": "A giant yin beast attacks a village, experts hurl spears with mortal strength, and a green crystal sparks a connection to an ancient treasure. The Mortal Stream's most hostile frontier awaits.",
+  "twitter_title": "Ch. 591: Surviving the Netherworld Domain – No Mana, No Mercy",
+  "twitter_description": "Han Li gets a crash course in frontier survival: dead mana, hungry yin beasts, and a village that only keeps useful people. And that green crystal? It's from the Void Heaven Palace.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "netherworld-domain",
+      "surfaces": [
+        "Netherworld Domain"
+      ],
+      "definition": "A mana-sealed pocket dimension within the Chaotic Star Sea, inhabited by demon beasts, yin-born Netherworld beasts, and human refugees. Spiritual energy is unusable here, forcing cultivators to rely on physical strength, endurance, and mortal tactics to survive."
+    },
+    {
+      "id": "spirit-void-eruption",
+      "surfaces": [
+        "Spirit Void Eruption"
+      ],
+      "definition": "A periodic phenomenon in the Netherworld Domain that suppresses all magical power, making cultivators vulnerable to mundane threats and reducing the environment to raw survival conditions. The eruption also temporarily exposes the domain’s boundaries."
+    },
+    {
+      "id": "jiaozheng",
+      "surfaces": [
+        "Jiaozheng"
+      ],
+      "definition": "A four-eyed giant ape-like Netherworld beast native to the Netherworld Domain. It has a thick hide and can launch its neck bristles as projectiles or spit a freezing yin wind. Its body spontaneously reforms from condensed yin energy after being killed."
+    },
+    {
+      "id": "netherworld-beast-crystal",
+      "surfaces": [
+        "Netherworld"
+      ],
+      "definition": "A green crystal core found inside certain Netherworld beasts, similar to the crystals present in ancient puppets from the Void Heaven Palace. Its exact origin and use remain a mystery to Han Li."
+    },
+    {
+      "id": "yin-beast-netherworld-beast",
+      "surfaces": [
+        "Yin"
+      ],
+      "definition": "A class of creature born spontaneously from concentrated yin energy in the Netherworld Domain. They instinctively hunt humans and are nearly inexhaustible—killing one only leads to a replacement forming later from the same yin condensation."
+    }
+  ]
+}

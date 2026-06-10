@@ -1,0 +1,80 @@
+{
+  "chapter_no": "0403",
+  "chapter_code": "0403",
+  "chapter_slug": "An-Acquaintance",
+  "chapter_title_en": "An Acquaintance",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "chapter 402",
+    "zhuge yuan",
+    "doumu taiyin",
+    "zuowandao siming",
+    "cultivate the true",
+    "national hand of go",
+    "supernatural houston",
+    "heart element cultivator",
+    "li huowang"
+  ],
+  "guide_tags": [
+    "lore heavy",
+    "philosophical revelation",
+    "combat skirmish",
+    "character introduction",
+    "zhuige yuan backstory"
+  ],
+  "chapter_seo_title": "Chapter 402: The Name of the Zuowandao's Siming - Doumu Taiyin Revealed",
+  "chapter_meta_description": "Zhuge Yuan reveals the name of the Zuowandao's patron deity and explains why a Heart-Element is their natural predator. A sudden fight pulls them into a reunion with a National Hand.",
+  "og_title": "The Name of the Great Liar: Doumu Taiyin",
+  "og_description": "Zhuge Yuan explains the source of the Zuowandao's power and Li Huowang discovers he could be their perfect counter—if he can learn to Cultivate the True.",
+  "twitter_title": "The Zuowandao's god finally has a name: Doumu Taiyin",
+  "twitter_description": "Noodles, poison tests, and a surprise reunion. New chapter drops a massive lore bomb about the source of the Zuowandao's power.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "doumu-taiyin",
+      "surfaces": [
+        "Doumu Taiyin"
+      ],
+      "definition": "The Siming governing the domain of falsehood or shadow, worshipped by the Zuowandao. The name merges the Daoist Mother of the Dipper (Doumu) with the lunar Great Yin (Taiyin)."
+    },
+    {
+      "id": "national-hand",
+      "surfaces": [
+        "National Hand"
+      ],
+      "definition": "An informal but prestigious honorific, \"Guo Shou\" (国手), for the most skilled Go player in a nation, comparable to a grandmaster."
+    },
+    {
+      "id": "celestial-ear",
+      "surfaces": [
+        "Celestial Ear"
+      ],
+      "definition": "A supernatural ability granting enhanced hearing; used by Li Huowang to detect distant combat."
+    },
+    {
+      "id": "purple-tasseled-sword",
+      "surfaces": [
+        "Purple-Tasseled Sword"
+      ],
+      "definition": "A corrupting military-sect blade carried by Li Huowang."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is the significance of Doumu Taiyin?",
+      "a": "It is the specific, named Siming of the Zuowandao, confirming their divine power source is a real entity rather than mere trickery."
+    },
+    {
+      "q": "Why is Li Huowang considered a natural enemy of the Zuowandao?",
+      "a": "As a Heart-Element, if he learns the method of Cultivating the True, he would be the conceptual opposite of their Cultivating the False, allowing him to counter their abilities."
+    },
+    {
+      "q": "Who is the \"National Hand\"?",
+      "a": "A high-ranking Go player and a trusted old friend of Zhuge Yuan who serves in the Supervisory Heavenly Office."
+    },
+    {
+      "q": "Why does Li Huowang feed the noodles to his dog first?",
+      "a": "He uses Mantou as a live poison tester before eating himself, a grimly practical survival tactic."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "chapter_no": "0527",
+  "chapter_code": "0527",
+  "chapter_slug": "Foreshadowed-Winds-The-Grand-Yin-Scripture",
+  "chapter_title_en": "Foreshadowed Winds: The Grand Yin Scripture",
+  "chapter_keywords": [
+    "grand yin scripture",
+    "Void Heaven Cauldron",
+    "refining crystal",
+    "celestial corpse fire",
+    "core formation",
+    "secret arts",
+    "demonic techniques",
+    "golden silk silkworms",
+    "gold devourer beetles",
+    "mortals stream",
+    "xianxia logistics"
+  ],
+  "guide_tags": [
+    "loot analysis",
+    "ancient scripture",
+    "martial preparation",
+    "crafting arc",
+    "beetle update",
+    "secret arts",
+    "core formation cultivation"
+  ],
+  "chapter_seo_title": "Han Li Unlocks the Grand Yin Scripture and Faces the Void Heaven Cauldron",
+  "chapter_meta_description": "Han Li activates Xuan Gu’s rib bone, revealing the Grand Yin Scripture. He learns secret arts, fails to open the Void Heaven Cauldron, and pivots to refining his flying swords.",
+  "og_title": "Han Li’s Rib Discovery: A Demonic Scripture Hidden in Bone",
+  "og_description": "Behind the beast’s rib lies the Grand Yin Scripture. Han Li harvests usable techniques, shelves the unopenable Void Heaven Cauldron, and preps for the long sea campaign.",
+  "twitter_title": "That’s No Ordinary Rib—It’s a Demon Scripture!",
+  "twitter_description": "Han Li finds secret arts, fails to open a legendary cauldron, then calmly switches gears to sword forging. The Mortal Stream way.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "grand-yin-scripture",
+      "surfaces": [
+        "Grand"
+      ],
+      "definition": "A legendary demonic cultivation manual focused on extreme yin/ghost-path power. In RMJI, it is the source of the Blood Essence Divine Light and contains several secret arts including the Celestial Corpse Fire."
+    },
+    {
+      "id": "celestial-corpse-fire",
+      "surfaces": [
+        "Celestial"
+      ],
+      "definition": "A devastating demonic flame technique derived from the Grand Yin Scripture. Han Li discovers its weakness while reading the cultivation instructions, giving him a potential counter against Extreme Yin."
+    },
+    {
+      "id": "void-heaven-cauldron",
+      "surfaces": [
+        "Void"
+      ],
+      "definition": "The number one sealed treasure of the Chaotic Star Sea, rumored to contain the Heaven-Mending Pill and other ancient treasures. It is impervious to all of Han Li’s current methods and requires a specific key or vastly higher cultivation to open."
+    },
+    {
+      "id": "refining-crystal",
+      "surfaces": [
+        "Refining"
+      ],
+      "definition": "An ultra-hard ore refined from demon beast cores and special minerals. It requires months of continuous mana infusion with the help of a formation to be melted into weapons, making it accessible only to cultivators with massive mana reserves or restoring items like Ten-Thousand-Year Spirit Milk."
+    },
+    {
+      "id": "golden-silk-silkworm",
+      "surfaces": [
+        "Golden"
+      ],
+      "definition": "A rare spirit insect that produces golden silk. Han Li has two of them, which have ingested five-colored round pills and are still awaiting a reaction."
+    },
+    {
+      "id": "ten-thousand-year-spirit-milk",
+      "surfaces": [
+        "Ten-Thousand-Year"
+      ],
+      "definition": "A legendary-grade mana-restoring liquid that can sustain continuous spellcasting or refining for extended periods. Han Li’s stock is a key resource enabling his ambitious sword-remaking plan."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is Han Li disappointed by the Grand Yin Scripture?",
+      "a": "He is already committed to the Azure Origin Sword Art and cannot switch paths; the true value is in the usable secret arts in the second half."
+    },
+    {
+      "q": "Why can't Han Li open the Void Heaven Cauldron?",
+      "a": "It is designed to be opened only by someone with the correct key or at least Nascent Soul cultivation; his Core Formation attempts are far too weak to leave any mark."
+    },
+    {
+      "q": "Why does Han Li pivot to refining his swords instead of trying harder?",
+      "a": "The Mortal Stream philosophy values efficient resource allocation. He identifies a productive task that will directly improve his combat power for the upcoming sea campaign."
+    }
+  ]
+}

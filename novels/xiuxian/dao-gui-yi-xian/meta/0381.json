@@ -1,0 +1,106 @@
+{
+  "chapter_no": "0381",
+  "chapter_code": "0381",
+  "chapter_slug": "The-Heart-Element",
+  "chapter_title_en": "The Heart-Element",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Heart-Element",
+    "Sima Lan",
+    "Primordial Qi",
+    "Grand Beginning",
+    "Ten Emotions and Eight Sufferings",
+    "Supervisory Heavenly Office",
+    "Red Center",
+    "North Wind",
+    "Zuowandao",
+    "Four Joys",
+    "Mohist"
+  ],
+  "guide_tags": [
+    "lore heavy",
+    "psychological horror",
+    "cognitive dissonance",
+    "xianxia metaphysics",
+    "character study"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 380: The Terrifying Truth About the Heart-Element",
+  "chapter_meta_description": "Li Huowang finally reads the secret files on the Heart-Element. What he finds is a terrifying mythological power he doesn't recognize—and confirmation his greatest enemy is untouchable.",
+  "og_title": "The Heart-Element’s Power is Terrifying—And Li Huowang Can’t Use It",
+  "og_description": "Li Huowang learns what a Heart-Element *should* be able to do: overturn mountains with a thought. The gap between that myth and his broken reality is the truest horror of the chapter.",
+  "twitter_title": "Ch. 380: The Heart-Element’s power is a myth Li Huowang can’t reach.",
+  "twitter_description": "Li Huowang gets the lore on the Heart-Element—it’s terrifying, godlike… and completely alien to his own experience.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution possessing an extra \"Primordial Qi\" that allows their emotions to manifest as reality-altering power when pushed to the brink. Official lore says they can overturn mountains and seas with a thought."
+    },
+    {
+      "id": "primordial-qi",
+      "surfaces": [
+        "Primordial"
+      ],
+      "definition": "A fundamental, pre-heaven energy in Daoist cosmology. In the Dao-Twisted World, it is the unique power of a Heart-Element, allowing them to merge their emotions with the Heavenly Way."
+    },
+    {
+      "id": "grand-beginning",
+      "surfaces": [
+        "Grand"
+      ],
+      "definition": "A classical Daoist term for a primordial state before the formation of substance and body. It is the metaphysical origin point of a Heart-Element's power."
+    },
+    {
+      "id": "ten-emotions-and-eight-sufferings",
+      "surfaces": [
+        "Ten"
+      ],
+      "definition": "An expanded version of the Buddhist Eight Sufferings; the specific emotional and suffering framework that, for a Heart-Element, can be channeled into their Primordial Qi."
+    },
+    {
+      "id": "four-joys",
+      "surfaces": [
+        "Four"
+      ],
+      "definition": "The highest-ranking members of the Zuowandao sect, each associated with a corrupted aspect of joy. North Wind is one of the Four Joys."
+    },
+    {
+      "id": "mohist",
+      "surfaces": [
+        "Mohist"
+      ],
+      "definition": "A follower of the Mohist school of thought; in the novel, they serve a bureaucratic role within the Supervisory Heavenly Office, preserving and interpreting ancient knowledge."
+    },
+    {
+      "id": "red-center",
+      "surfaces": [
+        "Red"
+      ],
+      "definition": "A spectral, faceless entity that follows Li Huowang. She possesses sharp, mocking intelligence and often provides cynical commentary that cuts through official dogma."
+    },
+    {
+      "id": "north-wind",
+      "surfaces": [
+        "North"
+      ],
+      "definition": "The alias of a powerful Zuowandao member and one of the Four Joys. He is the primary target of Li Huowang's investigation."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is the official description of a Heart-Element so different from Li Huowang's experience?",
+      "a": "The official record describes a Heart-Element's *potential* under ideal, theoretical conditions. Li Huowang's reality is a broken, painful existence filled with hallucinations and a corrupted parasite, proving the \"official\" lore is a sanitized myth."
+    },
+    {
+      "q": "Who is Red Center and why does she appear now?",
+      "a": "Red Center is one of Li Huowang's persistent hallucinations, likely a manifestation of his trauma. She appears to mock Sima Lan's academic ignorance, highlighting the gap between book-knowledge and lived horror."
+    },
+    {
+      "q": "What does it mean that North Wind is a \"Four Joy\"?",
+      "a": "The Zuowandao's \"Four Joys\" are its highest-ranking members, named after the corrupted Deity of Joy. This confirms North Wind is not just a liar but a master of cognitive deception, making him an exceptionally difficult and dangerous target."
+    }
+  ]
+}

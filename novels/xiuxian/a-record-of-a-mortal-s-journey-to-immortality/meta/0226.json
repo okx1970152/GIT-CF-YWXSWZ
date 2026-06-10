@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0226",
+  "chapter_code": "0226",
+  "chapter_slug": "The-Reversed-Five-Elements-Formation",
+  "chapter_title_en": "The Reversed Five Elements Formation",
+  "chapter_keywords": [
+    "reversed five elements formation",
+    "forbidden array",
+    "formation tools",
+    "millennium spirit herb",
+    "foundation establishment cultivator",
+    "Han Li negotiation",
+    "secret shop auction",
+    "quiet victory",
+    "mortal stream"
+  ],
+  "guide_tags": [
+    "Xianxia",
+    "Mortal Stream",
+    "Chapter Recap",
+    "Strategy",
+    "Negotiation",
+    "Worldbuilding",
+    "Formation Mastery",
+    "Quiet Victory"
+  ],
+  "chapter_seo_title": "Han Li's Quiet Victory: The Reversed Five Elements Formation Deal Explained",
+  "chapter_meta_description": "Han Li patiently waits out the competition and makes a cold, calculated move for a set of legendary but defective formation tools. A masterclass in mortal stream negotiation and resource acquisition.",
+  "og_title": "A Mortal Stream Masterclass: Han Li Acquires the Legendary Formation",
+  "og_description": "The auction is over, but the real game begins. Han Li plays the long game and walks away with a true treasure—a set of legendary array tools that could transform his cave dwelling into an impenetrable fortress.",
+  "twitter_title": "How Han Li Wins Without Fighting",
+  "twitter_description": "A perfect example of the quiet victory phase: patience, timing, and letting the market do the work. Han Li secures a legendary formation while everyone else walks away.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "reversed-five-elements-formation",
+      "surfaces": [
+        "Reversed Five Elements Formation"
+      ],
+      "definition": "A legendary \"Minor Forbidden Array\" that excels at illusion, concealment, and trapping enemies, though it lacks offensive power and covers only a small area."
+    },
+    {
+      "id": "minor-forbidden-array",
+      "surfaces": [
+        "Minor Forbidden Array"
+      ],
+      "definition": "A colloquial term for a formation so powerful and intricate that it rivals the grandeur of major protective arrays, despite its smaller scale and lack of direct lethality."
+    },
+    {
+      "id": "moon-essence-stone",
+      "surfaces": [
+        "Moon Essence Stone"
+      ],
+      "definition": "A rare and valuable cultivation resource, often used as a high-tier currency or material in refining artifacts."
+    },
+    {
+      "id": "sound-isolation-barrier",
+      "surfaces": [
+        "Sound-Isolation Barrier"
+      ],
+      "definition": "A basic utility spell that prevents the conversation within its area from being heard by outsiders; often used during sensitive negotiations."
+    },
+    {
+      "id": "foundation-establishment-cultivator",
+      "surfaces": [
+        "Foundation Establishment Cultivator"
+      ],
+      "definition": "The second major tier of cultivation, marking the transition from mortal to a true cultivator with a stable foundation for higher arts."
+    },
+    {
+      "id": "magic-essence",
+      "surfaces": [
+        "Magic Essence"
+      ],
+      "definition": "A refined, concentrated form of metallic essence used in artifact crafting; incredibly labor-intensive to produce."
+    },
+    {
+      "id": "spirit-herb-millennium-grade",
+      "surfaces": [
+        "Spirit"
+      ],
+      "definition": "A medicinal plant that has grown for over a thousand years, containing concentrated spiritual energy and often serving as a crucial ingredient for high-grade pills or as a primer for life-saving treatments."
+    }
+  ]
+}

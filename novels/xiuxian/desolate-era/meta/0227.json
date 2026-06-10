@@ -1,0 +1,64 @@
+{
+  "chapter_no": "0227",
+  "chapter_code": "0227",
+  "chapter_slug": "The-Homecoming",
+  "chapter_title_en": "The Homecoming",
+  "chapter_keywords": [
+    "ji ning revenge",
+    "shui yi execution",
+    "hearts-corching art",
+    "yinglong guard homecoming",
+    "wing serpent lake",
+    "mu northson parting",
+    "autumn leaf reunion",
+    "xianxia vengeance",
+    "soul annihilation",
+    "yan mountains"
+  ],
+  "guide_tags": [
+    "revenge arc",
+    "emotional catharsis",
+    "reunion",
+    "homecoming",
+    "character growth",
+    "cultivation world",
+    "tranquil interlude"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 227 — Ji Ning takes revenge on Shui Yi and returns to Winged Serpent Lake.",
+  "chapter_meta_description": "Ji Ning executes his second enemy, Shui Yi, with a cruel but just technique, then returns home to Winged Serpent Lake for a quiet reunion with Autumn Leaf.",
+  "og_title": "Desolate Era Ch. 227 — Two Down, One to Go",
+  "og_description": "Ji Ning kills Shui Yi in poetic justice, then returns to the lake where it all began.",
+  "twitter_title": "Desolate Era Ch. 227 — Revenge, then home",
+  "twitter_description": "Ji Ning finishes Shui Yi and drifts home to Winged Serpent Lake.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "heart-scorching-art",
+      "surfaces": [
+        "Heart-Scorching"
+      ],
+      "definition": "A non-combat torture technique that inflicts excruciating internal agony; used by Ji Ning on Shui Yi as poetic justice rather than tactical necessity."
+    },
+    {
+      "id": "contribution-points",
+      "surfaces": [
+        "Contribution"
+      ],
+      "definition": "The internal points/merits system of the Yinglong Guard, earned through missions and combat, used to exchange for techniques and treasures."
+    },
+    {
+      "id": "hometown-root",
+      "surfaces": [
+        "Hometown"
+      ],
+      "definition": "A Xianxia concept where a cultivator's starting point, clan, and emotional bonds are considered part of their spiritual foundation."
+    },
+    {
+      "id": "violet-palace",
+      "surfaces": [
+        "Violet"
+      ],
+      "definition": "The dimensional space within a Ki Refiner's body that stores their Yuan power; shattering it cripples a cultivator permanently."
+    }
+  ]
+}

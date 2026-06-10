@@ -1,0 +1,82 @@
+{
+  "chapter_no": "0273",
+  "chapter_code": "0273",
+  "chapter_slug": "The-Execution",
+  "chapter_title_en": "The Execution",
+  "chapter_keywords": [
+    "Han Li",
+    "Xuan Le",
+    "White Spider",
+    "Crystal Spider",
+    "Greater Teleportation Token",
+    "Blood Forbidden Land",
+    "Green Coagulation Mirror",
+    "Puppet Beasts",
+    "Cyan Origin Sword Light",
+    "Ink Flood Dragon",
+    "Foundation Establishment",
+    "mortal stream",
+    "xianxia"
+  ],
+  "guide_tags": [
+    "action",
+    "battle",
+    "death of a major antagonist",
+    "tactical combat",
+    "loot",
+    "magic tools",
+    "foundation establishment",
+    "resource management"
+  ],
+  "chapter_seo_title": "A Mortal's Journey: Chapter 273 - Han Li Executes a Late Foundation Cultivator & Claims the Token",
+  "chapter_meta_description": "Han Li turns the cave into a killing floor. He shatters a top-grade armor, beheads Xuan Le, and methodically drains the White Spider's true qi before claiming the legendary Greater Teleportation Token.",
+  "og_title": "Han Li Beheads Xuan Le & Claims the Ultimate Prize!",
+  "og_description": "A masterclass in mortal-stream combat: Han Li uses the terrain, a self-destruct artifact, and puppets to kill a late Foundation Establishment cultivator and a fourth-rank beast.",
+  "twitter_title": "Han Li's Bloodiest Haul Yet!",
+  "twitter_description": "Using a terrain trap and a self-destruct artifact, Han Li kills a late Foundation Establishment cultivator, a 4th-rank spider, and claims a legendary Teleportation Token.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "greater-teleportation-token",
+      "surfaces": [
+        "Greater"
+      ],
+      "definition": "A rare artifact that allows a cultivator to activate ancient, long-range teleportation formations, often granting access to hidden zones or secret areas inaccessible through normal means."
+    },
+    {
+      "id": "puppet-beasts",
+      "surfaces": [
+        "Puppet"
+      ],
+      "definition": "Mechanical constructs animated by cultivators. They lack independent thought but can follow simple commands and unleash pre-programmed attacks, such as light beams, making them excellent for attrition warfare."
+    },
+    {
+      "id": "green-coagulation-mirror",
+      "surfaces": [
+        "Green"
+      ],
+      "definition": "A top-grade magic tool that can neutralize other magical implements, forcing them back to their original form and freezing them in place for a short time."
+    },
+    {
+      "id": "self-destruct-magic-tool",
+      "surfaces": [
+        "Self-Destruct"
+      ],
+      "definition": "A magical tool designed to be destroyed for a single, devastating burst of power. They are often refined from rare, unstable materials as a one-use trump card."
+    },
+    {
+      "id": "top-grade-defensive-armor",
+      "surfaces": [
+        "Top-Grade"
+      ],
+      "definition": "The highest tier of non-treasure defensive equipment. While incredibly durable, it can be shattered by a sufficiently powerful, concentrated attack or a specialized self-destruct tool."
+    },
+    {
+      "id": "true-qi",
+      "surfaces": [
+        "True"
+      ],
+      "definition": "The refined, internal energy of a cultivator, used to power techniques, spells, and defenses. When true qi is depleted, a cultivator's or beast's defenses weaken drastically."
+    }
+  ]
+}

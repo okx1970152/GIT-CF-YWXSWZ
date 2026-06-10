@@ -1,0 +1,47 @@
+{
+  "chapter_no": "0068",
+  "chapter_code": "0068",
+  "chapter_slug": "Poisoned",
+  "chapter_title_en": "Poisoned",
+  "chapter_keywords": [
+    "celestial eye technique",
+    "han li cultivation",
+    "mortal stream",
+    "seven mysteries sect",
+    "fireball technique",
+    "clear spirit powder",
+    "poison cure",
+    "elder li poisoned",
+    "ma rong",
+    "jianghu poison",
+    "spiritual power detection",
+    "cultivation spell practice"
+  ],
+  "guide_tags": [
+    "Cultivation Progression",
+    "Magic System",
+    "Jianghu Politics",
+    "Poison Alert"
+  ],
+  "chapter_seo_title": "Han Li Learns the Celestial Eye Technique & Confronts a Deadly Poison",
+  "chapter_meta_description": "Han Li masters the Celestial Eye Technique only to discover its limited utility. Summoned to treat a critically poisoned elder, he faces a test of his medical skills and unresolved grief.",
+  "og_title": "Poisoned: Han Li’s Medical Crisis at Seven Mysteries Sect",
+  "og_description": "Han Li’s progress with new spells hits a frustrating plateau, but a bell tolls for a poisoned elder. Can he trust his Clear Spirit Powder against an unknown Jianghu toxin?",
+  "twitter_title": "A Bell Tolls for a Poisoned Elder",
+  "twitter_description": "Han Li’s magical training stalls, then a poisoned elder changes everything. A new test of nerve and skill awaits.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "celestial-eye-technique",
+      "surfaces": [
+        "Celestial"
+      ]
+    },
+    {
+      "id": "clear-spirit-powder",
+      "surfaces": [
+        "Clear"
+      ]
+    }
+  ]
+}

@@ -4,7 +4,6 @@ import "./globals.css";
 import { SITE_URL } from "@/lib/seo";
 import { baseOpenGraph, publicRobots, SITE_NAME } from "@/lib/seo-metadata";
 import { SiteShell } from "@/components/site/SiteShell";
-import { ensureContentIndex } from "@/lib/content/ensure-site-indexes-loaded";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -20,17 +19,26 @@ const fontSerif = Lora({
   adjustFontFallback: true
 });
 
+const siteDescription =
+  "English-language xiuxian, wuxia, xuanhuan, and eastern fantasy - chapters, annotations, and crawlable reading.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
-  description:
-    "English-language xiuxian, wuxia, xuanhuan, and eastern fantasy — chapters, annotations, and crawlable reading.",
+  description: siteDescription,
   openGraph: {
     ...baseOpenGraph(),
     title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
-    description:
-      "English-language xiuxian, wuxia, xuanhuan, and eastern fantasy — chapters, annotations, and crawlable reading.",
-    url: SITE_URL
+    description: siteDescription,
+    url: SITE_URL,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} - Xianxia, Wuxia & Eastern Fantasy Reading`
+      }
+    ]
   },
   robots: publicRobots(),
   icons: {
@@ -44,12 +52,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`
+    title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
+    description: siteDescription,
+    images: ["/og-image.png"]
   }
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  await ensureContentIndex();
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fontSans.variable} ${fontSerif.variable}`}>
       <body className={`${fontSans.className} font-sans antialiased`}>

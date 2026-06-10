@@ -1,0 +1,56 @@
+{
+  "chapter_no": "0267",
+  "chapter_code": "0267",
+  "chapter_slug": "Spring-Opera",
+  "chapter_title_en": "Spring Opera",
+  "chapter_keywords": [
+    "Dao gui yi xian",
+    "li huowang",
+    "bai lingmiao",
+    "lü xiucai",
+    "spring opera",
+    "bronze coin sword",
+    "nascent soul",
+    "lü zhuangyuan",
+    "plague",
+    "chinese folk opera"
+  ],
+  "guide_tags": [
+    "chapter analysis",
+    "lore deep dive",
+    "cultural commentary",
+    "character study",
+    "dao-twisted world",
+    "subtle horror setup"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 267: Spring Opera — A Breather Before the Next Horror",
+  "chapter_meta_description": "Lü Xiucai achieves a breakthrough with the Bronze Coin Sword, but Li Huowang remains wary. Meanwhile, the Lü troupe survives by performing risqué *spring opera*, and a whisper of plague sets the stage for what's next.",
+  "og_title": "Spring Opera — The Lü Troupe's Last Resort",
+  "og_description": "A breather chapter with crude jokes, ox-dung scavenging, and a plague foreshadowing that hits like a punchline from hell.",
+  "twitter_title": "Dao Gui Yi Xian Ch. 267: Lü Xiucai’s suspicious breakthrough + the Lü troupe goes risqué",
+  "twitter_description": "Lü Xiucai makes a coin tremble. Li Huowang is not impressed. The Lü family troupe finds a new audience. And a plague is mentioned. Relax while you can.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "spring-opera",
+      "surfaces": [
+        "Spring"
+      ],
+      "definition": "A pejorative term for erotic or bawdy Chinese opera performances, often performed by struggling troupes to draw a male-only audience; considered low-class but highly profitable."
+    },
+    {
+      "id": "bronze-coin-sword",
+      "surfaces": [
+        "Bronze"
+      ],
+      "definition": "A ritual Daoist weapon made of old bronze coins strung on red thread; each coin carries dynastic authority and spiritual weight, making it a potent exorcism tool."
+    },
+    {
+      "id": "nascent-soul",
+      "surfaces": [
+        "Nascent"
+      ],
+      "definition": "In xianxia cultivation, a condensed, infant-like form of the cultivator's core essence after Core Formation; a sentient, independent entity of immense power and anxiety."
+    }
+  ]
+}

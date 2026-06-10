@@ -1,0 +1,63 @@
+{
+  "chapter_no": "0054",
+  "chapter_code": "0054",
+  "chapter_slug": "The-Wandering-Lord",
+  "chapter_title_en": "The Wandering Lord",
+  "chapter_keywords": [
+    "li huowang",
+    "wandering lord",
+    "daoist bell",
+    "lifespan cost",
+    "training the fool",
+    "peddler zhu dexi",
+    "dao-twisted world",
+    "xianxia translation"
+  ],
+  "guide_tags": [
+    "strategy",
+    "discovery",
+    "worldbuilding",
+    "training",
+    "survival",
+    "folk horror"
+  ],
+  "chapter_seo_title": "Chapter 54 – The Wandering Lord: Multiplying Horror for a Price",
+  "chapter_meta_description": "Li Huowang recovers from his wounds and trains the Fool as a bodyguard. He then discovers the Daoist bell’s hidden power: the Wandering Lord can multiply, but each copy costs three months of his lifespan.",
+  "og_title": "The Wandering Lord Multiplies",
+  "og_description": "Li Huowang learns the Wandering Lord has no concept of death—or quantity. By shaking his head, he can spawn a swarm. The price? Ten years of his life for a single squad.",
+  "twitter_title": "Li Huowang discovers the Wandering Lord can multiply",
+  "twitter_description": "He trains a bodyguard, tests a broken bell, and learns that summoning a swarm of Wandering Lords would cost a decade of his lifespan.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "wandering-lord",
+      "surfaces": [
+        "Wandering"
+      ]
+    },
+    {
+      "id": "daoist-bell",
+      "surfaces": [
+        "Daoist"
+      ]
+    },
+    {
+      "id": "lifespan-cost",
+      "surfaces": [
+        "Lifespan"
+      ]
+    },
+    {
+      "id": "zhu-dexi",
+      "surfaces": [
+        "Zhu"
+      ]
+    },
+    {
+      "id": "l-zhuangyuan",
+      "surfaces": [
+        "Lü"
+      ]
+    }
+  ]
+}

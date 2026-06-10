@@ -1,0 +1,91 @@
+{
+  "chapter_no": "0447",
+  "chapter_code": "0447",
+  "chapter_slug": "Departure",
+  "chapter_title_en": "Departure",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Zhuge Yuan",
+    "Doumu",
+    "Heart-Element",
+    "Hong Zhong",
+    "Zuowandao",
+    "Dice",
+    "Niuxin Village",
+    "True Cultivation",
+    "hallucination roster"
+  ],
+  "guide_tags": [
+    "Dao Gui Yi Xian",
+    "Dao-Twisted World",
+    "xianxia horror",
+    "ghost entourage",
+    "slow burn",
+    "reunion setup"
+  ],
+  "chapter_seo_title": "Departure – Li Huowang Plans His Return to Niuxin Village & Analyzes Doumu’s Gift",
+  "chapter_meta_description": "Li Huowang talks to a tree, analyzes his new Zuowandao identity, and decides to head home. But a Siming’s gift is never free.",
+  "og_title": "Departure – Chapter 446",
+  "og_description": "Li Huowang weighs the pros and cons of having his past rewritten by Doumu, then decides to head back to Niuxin Village for cultivation.",
+  "twitter_title": "Chapter 446 – Heading Home",
+  "twitter_description": "Li Huowang talks to trees, learns the full hallucination roster, and plans his return to Niuxin Village. Doumu’s waiting.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "doumu",
+      "surfaces": [
+        "Doumu"
+      ],
+      "definition": "A high Daoist deity, Mother of the Big Dipper. In this novel, she is a Siming who controls all falsehood in the world. Every lie is a piece of her domain."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution that makes the bearer an object of desire for alchemists. Heart-Elements are prone to severe hallucinations and reality bleed."
+    },
+    {
+      "id": "heart-pupil",
+      "surfaces": [
+        "Heart-Pupil"
+      ],
+      "definition": "A step above Heart-Element; a person whose belief is so strong it can reshape reality. More stable than Heart-Elements."
+    },
+    {
+      "id": "siming",
+      "surfaces": [
+        "Siming"
+      ],
+      "definition": "A high-dimensional entity in the Dao-Twisted World that governs a fundamental aspect of reality. Doumu is one."
+    },
+    {
+      "id": "zuowandao",
+      "surfaces": [
+        "Zuowandao"
+      ],
+      "definition": "A secret society of tricksters whose name means \"The Way of Sitting in Forgetfulness.\" They steal falsehood from Doumu to fuel their powers."
+    },
+    {
+      "id": "true-cultivation",
+      "surfaces": [
+        "True"
+      ],
+      "definition": "The orthodox path of cultivation; grounding oneself in reality. Contrasts with the Zuowandao's \"Cultivation of the False.\""
+    },
+    {
+      "id": "hallucination-roster",
+      "surfaces": [
+        "Hallucination"
+      ],
+      "definition": "The collection of ghostly entities attached to Li Huowang as a result of his Heart-Element condition. Current count: seven total, five remaining."
+    },
+    {
+      "id": "niuxin-village",
+      "surfaces": [
+        "Niuxin"
+      ],
+      "definition": "A remote village where Bai Lingmiao and the rest of Li Huowang's found family are staying. A potential safe haven for cultivation."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "chapter_no": "0277",
+  "chapter_code": "0277",
+  "chapter_slug": "Ghost-Comes",
+  "chapter_title_en": "Ghost Comes",
+  "chapter_keywords": [
+    "Dao-Twisted World",
+    "Mass Hysteria",
+    "Koro Syndrome",
+    "Ghost Attack",
+    "Talisman",
+    "Li Huowang",
+    "Folk Panic",
+    "Social Horror",
+    "Copper Coin Mask",
+    "Suoyang"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Social Commentary",
+    "Folk Horror",
+    "Mass Delusion",
+    "Combat Chapter",
+    "Body Horror"
+  ],
+  "chapter_seo_title": "Chapter 277: Ghost Comes – Li Huowang Battles a Mass Hysteria Monster",
+  "chapter_meta_description": "Li Huowang tries to stop a town-wide panic over a ghost that steals men’s manhood—but the lie has teeth.",
+  "og_title": "Ghost Comes – Li Huowang vs The Koro Panic",
+  "og_description": "A town gripped by mass hysteria meets a monster that feeds on their fear. Li Huowang must kill the lie—and then maintain it.",
+  "twitter_title": "When a folk panic becomes real: Li Huowang’s worst battle yet",
+  "twitter_description": "The “shrinking ghost” rumor turns murderous. Great chapter for new readers.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "copper-coin-mask",
+      "surfaces": [
+        "Copper"
+      ],
+      "definition": "A face-covering made of threaded old Chinese coins; in folk Daoism, coins carry yang energy and can ward off malevolent spirits."
+    },
+    {
+      "id": "daoist-talisman-fulu",
+      "surfaces": [
+        "Daoist"
+      ],
+      "definition": "A written charm empowered by a cultivator’s spiritual energy; often used to seal or immobilize ghosts in xianxia fiction."
+    },
+    {
+      "id": "yamen",
+      "surfaces": [
+        "Yamen"
+      ],
+      "definition": "A local government office in imperial China, serving both administrative and judicial functions."
+    },
+    {
+      "id": "pi-county",
+      "surfaces": [
+        "Pi County"
+      ],
+      "definition": "A fictional county in the Dao-Twisted World; its name roughly translates to “Skid County” or “Poor County,” hinting at its desperation."
+    },
+    {
+      "id": "purple-tasseled-sword",
+      "surfaces": [
+        "Purple-Tasseled"
+      ],
+      "definition": "A named blade in Li Huowang’s possession; a military-grade weapon said to be effective against both men and spirits."
+    },
+    {
+      "id": "spirit-dancer",
+      "surfaces": [
+        "Spirit-Dancer"
+      ],
+      "definition": "A shamanic practitioner from Chinese folk religion who performs exorcisms and communicates with spirits; in the Dao-Twisted World, often corrupted or faked."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Is the “penis shrinkage” rumor real?",
+      "a": "Yes, it is a documented culture-bound mass delusion known as Koro syndrome, with recorded outbreaks in China and Southeast Asia, including a major panic in Hainan in 1984-85."
+    },
+    {
+      "q": "Why didn’t Li Huowang’s sword cut the ghost?",
+      "a": "The ghost was not a conventional yin spirit; it was an entity with a physical, reinforced body that required a specific sealing ritual (a talisman) rather than brute force."
+    }
+  ]
+}

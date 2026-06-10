@@ -40,10 +40,51 @@ function publisherOrganization(siteName: string) {
   };
 }
 
+export function buildWebsiteAndOrganizationJsonLd(opts: {
+  siteName: string;
+  siteUrl: string;
+  searchTemplateUrl: string;
+  description?: string;
+}) {
+  const { siteName, siteUrl, searchTemplateUrl, description } = opts;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}#website`,
+        name: siteName,
+        url: siteUrl,
+        inLanguage: "en",
+        description: description?.trim() || undefined,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: searchTemplateUrl,
+          "query-input": "required name=search_term_string"
+        },
+        publisher: {
+          "@id": `${siteUrl}#organization`
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}#organization`,
+        name: siteName,
+        url: siteUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: toAbsoluteUrl("/icon-192.png")
+        },
+        image: toAbsoluteUrl("/og-image.png")
+      }
+    ]
+  };
+}
+
 /** 章节阅读页占位图（仅 JSON-LD；1200×630，与 OG 常见比例一致） */
-export function getPlaceholderCover(title: string): string {
-  const t = title?.trim() || "Chapter";
-  return `https://placehold.co/1200x630/f3f4f6/374151?text=${encodeURIComponent(t)}`;
+export function getPlaceholderCover(_title: string): string {
+  void _title;
+  return toAbsoluteUrl("/og-image.png");
 }
 
 /** 将 Markdown 压成纯文本供 JSON-LD，避免 HTML 与过长脚本 */
@@ -62,8 +103,37 @@ export function markdownToPlainTextForSchema(input: string, maxLen = 120_000): s
 }
 
 /** Schema 专用占位封面（仅 JSON-LD，不改 UI） */
-export function bookSchemaPlaceholderImage(displayTitle: string): string {
-  return `https://placehold.co/600x800/f3f4f6/374151?text=${encodeURIComponent(displayTitle)}`;
+export function bookSchemaPlaceholderImage(_displayTitle: string): string {
+  void _displayTitle;
+  return toAbsoluteUrl("/og-image.png");
+}
+
+export function buildCollectionPageJsonLd(opts: {
+  name: string;
+  description: string;
+  pageUrl: string;
+  items?: Array<{ name: string; url: string }>;
+}) {
+  const { name, description, pageUrl, items } = opts;
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: pageUrl,
+    inLanguage: "en",
+    mainEntity: items?.length
+      ? {
+          "@type": "ItemList",
+          itemListElement: items.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.name,
+            url: item.url
+          }))
+        }
+      : undefined
+  };
 }
 
 /** 小说目录页 Book（不含 aggregateRating） */
@@ -316,5 +386,66 @@ export function buildWikiTermBreadcrumbJsonLd(opts: {
       { "@type": "ListItem", position: 2, name: novelGlossaryName, item: novelGlossaryUrl },
       { "@type": "ListItem", position: 3, name: termName, item: termUrl }
     ]
+  };
+}
+
+export function buildEncyclopediaEntryJsonLd(opts: {
+  pageUrl: string;
+  collectionUrl: string;
+  collectionName: string;
+  termName: string;
+  description: string;
+  siteName: string;
+  faqItems?: CulturalNotesFaqItem[];
+}) {
+  const { pageUrl, collectionUrl, collectionName, termName, description, siteName, faqItems } = opts;
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: termName,
+      description,
+      inLanguage: "en",
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteName,
+        url: toAbsoluteUrl("/")
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": `${pageUrl}#term`,
+      name: termName,
+      description,
+      url: pageUrl,
+      inLanguage: "en",
+      inDefinedTermSet: {
+        "@type": "DefinedTermSet",
+        name: collectionName,
+        url: collectionUrl
+      }
+    }
+  ];
+
+  if (faqItems?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      url: pageUrl,
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a
+        }
+      }))
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph
   };
 }

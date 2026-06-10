@@ -1,0 +1,65 @@
+{
+  "chapter_no": "0426",
+  "chapter_code": "0426",
+  "chapter_slug": "The-Severed-Head-and-the-Impossible-Task",
+  "chapter_title_en": "The Severed Head and the Impossible Task",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Supervisory Heavenly Office",
+    "Hong Zhong",
+    "Zhuge Yuan",
+    "Zuowandao",
+    "Nascent Soul",
+    "Heart-Element",
+    "Six-Shining Comprehensive Guide",
+    "severing head",
+    "Ao-Jing Sect"
+  ],
+  "guide_tags": [
+    "office politics",
+    "deception",
+    "severed head",
+    "moral ambiguity",
+    "horror",
+    "body horror",
+    "lore drop",
+    "clever protagonist"
+  ],
+  "chapter_seo_title": "Li Huowang Delivers Hong Zhong's Head—Then Gets a Worse Assignment",
+  "chapter_meta_description": "Li Huowang delivers Hong Zhong's severed head to the Supervisory Heavenly Office, but instead of thanks, he gets a suicide mission: befriend Zhuge Yuan using his own stolen face.",
+  "og_title": "Li Huowang Peels His Own Face to Prove He's Not a Zuowandao",
+  "og_description": "After delivering a severed head, Li Huowang must slice his face open to pass the Office's interrogation—and then receives an impossible order to befriend the man whose book was stolen by his own identity.",
+  "twitter_title": "When Even Decapitation Can't Explain the Plot",
+  "twitter_description": "Li Huowang learns that as a Heart-Element, losing your head doesn't always mean dying—but that's the least of his problems when the Office wants him to befriend a man whose prized book was stolen by his face.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "six-shining-comprehensive-guide",
+      "surfaces": [
+        "Six-Shining"
+      ],
+      "definition": "A prized almanac or divination manual owned by Zhuge Yuan, valuable enough for the Zuowandao to orchestrate an elaborate heist to steal it."
+    },
+    {
+      "id": "nascent-souls",
+      "surfaces": [
+        "Nascent"
+      ],
+      "definition": "A classical xianxia cultivation stage, but in the Dao-Twisted World, they manifest as grumpy, sentient heads attached to the cultivator's neck, complete with their own opinions."
+    },
+    {
+      "id": "later-shu",
+      "surfaces": [
+        "Later"
+      ],
+      "definition": "A historical kingdom from China's Five Dynasties and Ten Kingdoms period, used here as a geographic reference for a region where military cultivators are known."
+    },
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ],
+      "definition": "A fictional syncretic sect fusing Zoroastrian and Nestorian elements; known for a flesh-mortifying cultivation path that involves extreme self-harm to prove identity."
+    }
+  ]
+}

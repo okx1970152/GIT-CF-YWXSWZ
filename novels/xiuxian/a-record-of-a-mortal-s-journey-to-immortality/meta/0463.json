@@ -1,0 +1,67 @@
+{
+  "chapter_no": "0463",
+  "chapter_code": "0463",
+  "chapter_slug": "The-Scramble-for-Han-Li",
+  "chapter_title_en": "The Scramble for Han Li",
+  "chapter_keywords": [
+    "nominal disciple",
+    "profound yin ring",
+    "extreme yin island",
+    "nine-bend spirit ginseng",
+    "ice and fire path",
+    "core formation cultivators",
+    "mortal stream politics"
+  ],
+  "guide_tags": [
+    "politics",
+    "survival",
+    "forced alliance",
+    "demonic sect",
+    "ancient treasures",
+    "dungeon preparation"
+  ],
+  "chapter_seo_title": "Three Nascent Soul Monsters Fight Over Han Li’s Future – Chapter 463",
+  "chapter_meta_description": "Han Li is offered mentorship, wealth, and even a woman—but every gift is a trap. Which master will he choose, and at what cost?",
+  "og_title": "Han Li Caught Between Three Monsters",
+  "og_description": "Three Nascent Soul cultivators compete to claim Han Li as their pawn. The price of saying yes might be worse than the price of saying no.",
+  "twitter_title": "Han Li’s Impossible Choice",
+  "twitter_description": "Loyalty, power, or death? Han Li must pick one master from three deadly options.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "nominal-disciple",
+      "surfaces": [
+        "Nominal Disciple"
+      ],
+      "definition": "In xianxia, a nominal or probationary disciple has official status but limited rights; the master can dismiss them at will, while the disciple owes obedience."
+    },
+    {
+      "id": "nine-bend-spirit-ginseng",
+      "surfaces": [
+        "Nine-Bend Spirit Ginseng"
+      ],
+      "definition": "A legendary, sentient spirit herb that can transform; its alchemical formula is a tightly guarded secret."
+    },
+    {
+      "id": "profound-yin-ring",
+      "surfaces": [
+        "Profound Yin Ring"
+      ],
+      "definition": "An ancient treasure given as a sect token; it provides defense and attack power but is structurally countered by a paired Yang Ring."
+    },
+    {
+      "id": "ice-and-fire-path",
+      "surfaces": [
+        "Ice and Fire Path"
+      ],
+      "definition": "A dangerous elemental trial within the Void Heaven Palace, split between red (fire) and blue (ice) zones."
+    },
+    {
+      "id": "yin-yang-paired-treasures",
+      "surfaces": [
+        "Yin-Yang"
+      ],
+      "definition": "Artifacts designed as complementary opposites; one may empower or suppress the other depending on who holds the dominant half."
+    }
+  ]
+}

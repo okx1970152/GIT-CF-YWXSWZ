@@ -1,0 +1,93 @@
+{
+  "chapter_no": "0372",
+  "chapter_code": "0372",
+  "chapter_slug": "A-New-Shore-A-New-Bargain",
+  "chapter_title_en": "A New Shore, A New Bargain",
+  "chapter_keywords": [
+    "mortal stream",
+    "han li",
+    "starcrest island",
+    "cultivation settlement",
+    "guarantor system",
+    "spirit land contest",
+    "three revolutions heavy origin art",
+    "great derivative art",
+    "cultivation politics",
+    "dark forest",
+    "maritime xianxia"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "World-Building",
+    "Negotiation",
+    "Dark Forest",
+    "New World Arc",
+    "Political Economy"
+  ],
+  "chapter_seo_title": "A Mortal's Journey: Starcrest Island & the Guarantor System Explained",
+  "chapter_meta_description": "Han Li lands on Starcrest Island, but first he must negotiate a deal with a desperate merchant. A deep dive into the Mortal Stream's political economy, the guarantor system, and the Spirit Land Contest.",
+  "og_title": "A Mortal's Journey: Han Li's First Deal in a New World",
+  "og_description": "The Mortal Stream classic: negotiation, risk calculation, and a glimpse of a maritime cultivation empire.",
+  "twitter_title": "Han Li's Mortal Stream real estate agent finally shows up",
+  "twitter_description": "Fresh off the boat, Han Li must choose: stay a wanderer or buy into the system. The price? One fight, three years of profit, and a whole lot of caution.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "three-revolutions-heavy-origin-art",
+      "surfaces": [
+        "Three"
+      ],
+      "definition": "A key cultivation technique Han Li plans to practice on Starcrest Island; locked translation."
+    },
+    {
+      "id": "great-derivative-art",
+      "surfaces": [
+        "Great"
+      ],
+      "definition": "A foundational mental cultivation technique for strengthening divine sense and enabling advanced puppet control."
+    },
+    {
+      "id": "spirit-land-contest",
+      "surfaces": [
+        "Spirit"
+      ],
+      "definition": "A decennial tournament on major islands where cultivators compete for cultivation plots with varying densities of spiritual qi."
+    },
+    {
+      "id": "guarantor",
+      "surfaces": [
+        "Guarantor"
+      ],
+      "definition": "A local resident or family who vouches for an outsider, enabling them to apply for permanent residence on a major island."
+    },
+    {
+      "id": "starcrest-island",
+      "surfaces": [
+        "Starcrest"
+      ],
+      "definition": "A major island in a new sea region; the main island with the richest spiritual veins in the area."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Han Li need a guarantor to settle on Starcrest Island?",
+      "a": "It is a control mechanism to tie powerful cultivators to local power structures; without one, you cannot hold a post or compete for the best cultivation sites."
+    },
+    {
+      "q": "What is the Spirit Land Contest?",
+      "a": "A decennial tournament where residents compete for cultivation plots with varying densities of spiritual qi; ranking higher means better training grounds."
+    },
+    {
+      "q": "Why does Han Li finally agree to help Proprietor Gu?",
+      "a": "The promised package—permanent residence, profit sharing, and a guarantor—is exactly what he needs to settle and cultivate his advanced techniques."
+    },
+    {
+      "q": "How big is Starcrest Island’s port?",
+      "a": "It has hundreds of ships, including six or seven ships as large as Proprietor Gu’s giant vessel, and a constant flow of people."
+    },
+    {
+      "q": "What are Han Li’s cultivation goals on this new island?",
+      "a": "To practice the Three Revolutions Heavy Origin Art, the Great Derivative Art, and the External Incarnation technique."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "chapter_no": "0576",
+  "chapter_code": "0576",
+  "chapter_slug": "The-Celestial-Omen",
+  "chapter_title_en": "The Celestial Omen",
+  "chapter_keywords": [
+    "a record of a mortal's journey to immortality",
+    "mortal stream cultivation",
+    "han li",
+    "yuan yao",
+    "soul reunion art",
+    "celestial omen",
+    "xianxia formations",
+    "tai yang sect",
+    "foundation establishment island",
+    "shattering the golden core"
+  ],
+  "guide_tags": [
+    "Soul Reunion Arc",
+    "High Tension Setup",
+    "Yuan Yao Lore Drop",
+    "Mortal Stream Consequences",
+    "Formation Engineering"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 576: The Celestial Omen",
+  "chapter_meta_description": "Yuan Yao begins the Soul Reunion Art, but the massive celestial omen it creates attracts unwanted attention from nearby sects. Han Li’s guard duty just got a lot more complicated.",
+  "og_title": "RMJI Ch. 576 - The Ritual Begins",
+  "og_description": "A forbidden ritual starts, and the sky itself screams a warning to every cultivator for miles.",
+  "twitter_title": "RMJI #576 - When Rituals Go Loud",
+  "twitter_description": "Han Li helps Yuan Yao set up defenses for a risky ritual, which immediately creates a sky-wide celestial alarm.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "soul-reunion-art",
+      "surfaces": [
+        "Soul Reunion Art"
+      ],
+      "definition": "A dark, Yin-aligned technique used to reunite a shattered or fading primordial soul with a prepared vessel, often at great cost to the caster."
+    },
+    {
+      "id": "primordial-soul",
+      "surfaces": [
+        "Primordial Soul"
+      ],
+      "definition": "The condensed spiritual essence of a high-level cultivator, capable of independent existence and possession; preserving it requires a suitable physical anchor."
+    },
+    {
+      "id": "cold-jade-coffin",
+      "surfaces": [
+        "Cold Jade Coffin"
+      ],
+      "definition": "A special coffin made from Cold Jade, used to preserve a corpse or a fading soul within a Yin-rich environment."
+    },
+    {
+      "id": "qi-condensation",
+      "surfaces": [
+        "Qi Condensation"
+      ],
+      "definition": "The first major stage of cultivation, where a practitioner absorbs and refines spiritual Qi within their body."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation Establishment"
+      ],
+      "definition": "The second major stage of cultivation, marking the creation of a stable internal foundation for higher arts."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core Formation"
+      ],
+      "definition": "The third major stage, where a cultivator condenses their power into a Golden Core, dramatically increasing lifespan and combat ability."
+    },
+    {
+      "id": "celestial-omen",
+      "surfaces": [
+        "Celestial Omen"
+      ],
+      "definition": "A visible disturbance in the sky caused by a world-shaking event, such as a forbidden art or powerful treasure emerging, which attracts the attention of cultivators nearby."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Yuan Yao have to shatter her core?",
+      "a": "The Soul Reunion Art requires an immense, precise expenditure of Yin-type energy to call back and stabilize a fading primordial soul. Yuan Yao’s Golden Core is the most powerful, concentrated source of energy she has—sacrificing it provides the necessary power for the ritual to succeed."
+    },
+    {
+      "q": "Why doesn't Han Li just stop her?",
+      "a": "In the Mortal Stream, a deeply personal debt is a powerful motivator that can override cold logic. Han Li recognizes that her decision is a calculated sacrifice based on a lifetime of loyalty, so after a single clarifying question, he accepts her choice and focuses on his role as protector."
+    }
+  ]
+}

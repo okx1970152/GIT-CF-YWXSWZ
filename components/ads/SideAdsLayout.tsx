@@ -4,7 +4,7 @@ import { SideAdSlot } from "@/components/ads/AdSlot";
 
 type SideAdsPage = keyof typeof SIDE_SLOT_CODES_BY_PAGE;
 
-export async function SideAdsLayout({
+export function SideAdsLayout({
   page,
   children
 }: {

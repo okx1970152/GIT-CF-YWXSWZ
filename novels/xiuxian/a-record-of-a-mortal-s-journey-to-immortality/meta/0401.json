@@ -1,0 +1,74 @@
+{
+  "chapter_no": "0401",
+  "chapter_code": "0401",
+  "chapter_slug": "The-Winds-Rise-Overseas-Nishang-Grass",
+  "chapter_title_en": "The Winds Rise Overseas, Nishang Grass",
+  "chapter_keywords": [
+    "nishang grass",
+    "demon luring grass",
+    "han li trap setup",
+    "reversed five elements formation",
+    "chaotic star sea",
+    "bloodjade spider test",
+    "cultivation logistics",
+    "waiting by the stump"
+  ],
+  "guide_tags": [
+    "logistics chapter",
+    "lore drop",
+    "patient setup",
+    "core formation plan",
+    "strategic luring"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 401: The Nishang Grass Trap",
+  "chapter_meta_description": "Han Li transforms Red Coral Island into a kill box using the 'Nishang Grass' and Heaven Vial. A masterclass in cultivation-world logistics and patient predation.",
+  "og_title": "Setting the Perfect Ambush: Han Li's Botanical Kill Box",
+  "og_description": "Han Li uses a forgotten herb and his Heaven Vial to create the perfect demonic beast trap, turning a failed cultivation-world scheme into a logistical masterpiece.",
+  "twitter_title": "A Record of a Mortal's Journey to Immortality Ch. 401: The Botanical Trap is Set",
+  "twitter_description": "Han Li engineers the perfect hunt by weaponizing a 'useless' spirit herb. The ultimate patience play in xianxia.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "nishang-grass",
+      "surfaces": [
+        "Nishang"
+      ],
+      "definition": "A spirit herb with thirteen curled leaves that emits a demonic-beast-luring scent every hundred years when a leaf unfurls. Also known as 'Demon Luring Grass,' it was abandoned by most cultivators due to its rigid growth cycle."
+    },
+    {
+      "id": "demon-luring-grass",
+      "surfaces": [
+        "Demon"
+      ],
+      "definition": "The former nickname for the Nishang Grass given after its scent's effect on demonic beasts was discovered; later abandoned by cultivators as impractical."
+    },
+    {
+      "id": "reversed-five-elements-formation",
+      "surfaces": [
+        "Reversed"
+      ],
+      "definition": "A legendary \"Minor Forbidden Array\" used by Han Li that specializes in illusion and concealment. It blocks one of the three paths to the island's center."
+    },
+    {
+      "id": "heaven-vial",
+      "surfaces": [
+        "Heaven"
+      ],
+      "definition": "Han Li's mysterious treasure; its green liquid can accelerate the growth of spirit herbs, allowing him to bypass the century-long wait for the Nishang Grass's leaf-unfurling."
+    },
+    {
+      "id": "bloodjade-spider",
+      "surfaces": [
+        "Bloodjade"
+      ],
+      "definition": "A pair of spirit beasts owned by Han Li, used to test the safety of the Nishang Grass's scent. They consumed the grass while under its influence."
+    },
+    {
+      "id": "waiting-by-the-stump",
+      "surfaces": [
+        "Waiting"
+      ],
+      "definition": "A classical Chinese idiom describing a foolish farmer waiting for a rabbit to kill itself on a stump. Han Li subverts this into a calculated survival strategy by engineering the conditions for success."
+    }
+  ]
+}

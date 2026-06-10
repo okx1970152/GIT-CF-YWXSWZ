@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0499",
+  "chapter_code": "0499",
+  "chapter_slug": "Manifestation",
+  "chapter_title_en": "Manifestation",
+  "chapter_keywords": [
+    "dao-twisted world",
+    "li huowang",
+    "supervisory heavenly office",
+    "zhuge yuan",
+    "marrow sword",
+    "golden buddha",
+    "judge's brush",
+    "peng longteng",
+    "shadow binding",
+    "xianxia horror",
+    "body horror",
+    "chinese folk religion"
+  ],
+  "guide_tags": [
+    "action",
+    "horror",
+    "standoff",
+    "body horror",
+    "supernatural",
+    "xianxia"
+  ],
+  "chapter_seo_title": "Li Huowang vs the Office — Thumb-Sized Buddhas & Shadow Binding",
+  "chapter_meta_description": "Invisible Li Huowang fights a swarm of thumb-sized golden Buddhas, breaks his own ribs for shared pain, and faces a brush that erases him from reality. Peng Longteng arrives.",
+  "og_title": "Manifestation — A Desperate Heist in the Shadows",
+  "og_description": "Li Huowang’s invisibility fails, his weapons shatter, and a Daoist’s brush begins erasing him. Only pain and a headless corpse can save him now.",
+  "twitter_title": "Thumb Buddhas & Shadow Binding — Li Huowang vs the Office",
+  "twitter_description": "Li Huowang crushes golden Buddhas underfoot and jams ribs into his chest to fight a full Office squad. Peng Longteng appears where she shouldn’t be.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "marrow-sword",
+      "surfaces": [
+        "Marrow"
+      ],
+      "definition": "A sword made from the bone of a powerful being; this one is Zhuge Yuan’s remains, carrying his lingering warmth and emotional weight."
+    },
+    {
+      "id": "peng-longteng",
+      "surfaces": [
+        "Peng"
+      ],
+      "definition": "The headless female corpse of a convict-soldier general from Siqi; she serves as Li Huowang’s supernatural summon."
+    },
+    {
+      "id": "thumb-sized-golden-buddha",
+      "surfaces": [
+        "Thumb-sized"
+      ],
+      "definition": "A miniature golden Buddha-entity that emerges from a person’s body; it can speak in unison, cast mind-control suggestions (like “lay down the butcher’s knife”), and physically block attacks with its head."
+    },
+    {
+      "id": "supervisor-heavenly-office",
+      "surfaces": [
+        "Supervisor"
+      ],
+      "definition": "A government-sponsored supernatural law enforcement body that hunts rogue cults and prevents Heavenly Calamities; its agents are highly trained and equipped with specialized ritual tools."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does the Daoist’s brush turn the user’s hair gray?",
+      "a": "Using the Kui Star Brush consumes the user’s life force or qi, visibly aging them with each stroke—a common trade-off in xianxia when wielding high-grade ritual tools."
+    },
+    {
+      "q": "Why can’t Li Huowang just run away when his shadow is pinned?",
+      "a": "His shadow is a reflection of his body’s yin-yang connection; pinning it freezes his physical movement, not just his shadow’s location—body and shadow are linked in Chinese folk magic."
+    },
+    {
+      "q": "What’s with the thumb-sized golden Buddhas?",
+      "a": "They are miniature Buddha-emanations that can speak, move, and cast subtle mental influences; they represent a corrupted, parasitic form of Buddhist power in the Dao-Twisted World."
+    },
+    {
+      "q": "Why is Peng Longteng’s appearance such a shock to the Daoist?",
+      "a": "The Kui Star Brush should suppress all summoned or supernatural entities; the fact that she appears despite the brush’s effect implies Li Huowang’s power operates on a different set of rules."
+    }
+  ]
+}

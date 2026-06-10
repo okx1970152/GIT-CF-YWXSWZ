@@ -1,0 +1,55 @@
+{
+  "chapter_no": "0597",
+  "chapter_code": "0597",
+  "chapter_slug": "A-Psychiatric-Ward",
+  "chapter_title_en": "A Psychiatric Ward",
+  "chapter_keywords": [
+    "Li Huowang",
+    "psychiatric hospital",
+    "mental illness",
+    "admission",
+    "group therapy",
+    "diagnosis",
+    "recognition",
+    "bloodbath",
+    "school massacre",
+    "Kangning Hospital"
+  ],
+  "guide_tags": [
+    "Modern Reality Arc",
+    "Slow Burn",
+    "Psychological Horror",
+    "Mundane Horror",
+    "Character Study"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 596: Li Huowang’s Quiet Hell in a Psychiatric Ward",
+  "chapter_meta_description": "In the quiet of a new hospital, Li Huowang tries to find peace. But a fellow patient's chilling recognition shatters the illusion, reminding him that terror follows him, even to this mundane hell.",
+  "og_title": "The Scariest Thing in a Psych Ward is Recognition",
+  "og_description": "Li Huowang tries to blend in, but a fellow patient’s terrified gaze reminds him who he truly is.",
+  "twitter_title": "Can’t Escape a Legend, Even in a Psych Ward",
+  "twitter_description": "Li Huowang checks into a private hospital for peace, but a single, terrified scream proves his past is a monster he can’t leave behind.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "wu-cheng",
+      "surfaces": [
+        "Wu"
+      ],
+      "definition": "A psychiatrist at Kangning Hospital and a junior of Yi Donglai; he is responsible for Li Huowang’s intake and care."
+    },
+    {
+      "id": "sun-xiaoqin",
+      "surfaces": [
+        "Sun"
+      ],
+      "definition": "Li Huowang’s fiercely protective mother, who struggles to leave him alone in the hospital."
+    },
+    {
+      "id": "li-jiancheng",
+      "surfaces": [
+        "Li"
+      ],
+      "definition": "Li Huowang’s father; Li Huowang calls him to convince Sun Xiaoqin to leave the hospital."
+    }
+  ]
+}

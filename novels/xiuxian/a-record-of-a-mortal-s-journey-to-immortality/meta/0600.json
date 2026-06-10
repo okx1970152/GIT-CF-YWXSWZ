@@ -1,0 +1,84 @@
+{
+  "chapter_no": "0600",
+  "chapter_code": "0600",
+  "chapter_slug": "The-Descent-Talisman",
+  "chapter_title_en": "The Descent Talisman",
+  "chapter_keywords": [
+    "Descent Talisman",
+    "Secret Talismans",
+    "Netherworld Domain",
+    "Transformation-level demon beast",
+    "Heavenly Talisman Sect",
+    "Jin Kingdom",
+    "yin beasts",
+    "chicken rib",
+    "Mortal Stream negotiation",
+    "Han Li"
+  ],
+  "guide_tags": [
+    "negotiation",
+    "lore drop",
+    "worldbuilding",
+    "talisman",
+    "quiet victory",
+    "Netherworld Domain"
+  ],
+  "chapter_seo_title": "Chapter 600: A Desperate Sect Leader’s Ultimate Gift – The Descent Talisman",
+  "chapter_meta_description": "Han Li receives the legendary Descent Talisman formula, a treasure no one can use. A quiet transaction of desperation and cold calculation in the Mortal Stream.",
+  "og_title": "A Dying Man’s Last Bet – The Descent Talisman",
+  "og_description": "Han Li accepts a talisman formula no one has ever successfully refined. The primary ingredient? The soul of a deity-level beast.",
+  "twitter_title": "The Descent Talisman: A Useless Treasure?",
+  "twitter_description": "Han Li gets handed a legendary talisman method. Too bad its primary material is a god-tier monster soul. A classic Mortal Stream chicken rib.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "descent-talisman",
+      "surfaces": [
+        "Descent Talisman"
+      ],
+      "definition": "A legendary secret talisman of the Heavenly Talisman Sect, requiring the refined soul of a Transformation-level demon beast as its primary ingredient."
+    },
+    {
+      "id": "secret-talisman",
+      "surfaces": [
+        "Secret Talisman"
+      ],
+      "definition": "A unique category of talisman that cannot be reproduced through standard elemental arts, often guarded as a sect’s exclusive legacy."
+    },
+    {
+      "id": "transformation-level",
+      "surfaces": [
+        "Transformation-level"
+      ],
+      "definition": "The stage at which a demon beast transforms its body and soul, gaining human-level intelligence and power rivaling core formation cultivators."
+    },
+    {
+      "id": "netherworld-domain",
+      "surfaces": [
+        "Netherworld Domain"
+      ],
+      "definition": "A ghost-mist-realm in the Chaotic Star Sea where yin energy replaces normal qi; a sealed, mana-starved wasteland."
+    },
+    {
+      "id": "yin-beast",
+      "surfaces": [
+        "Yin Beast"
+      ],
+      "definition": "A creature born from concentrated yin energy; the lowest tiers are often the only edible lifeforms in the Netherworld Domain."
+    },
+    {
+      "id": "toad-beast",
+      "surfaces": [
+        "Toad Beast"
+      ],
+      "definition": "A low-tier, ugly yin beast resembling a giant toad; one of the few non-toxic and edible species in the Netherworld Domain."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation Establishment"
+      ],
+      "definition": "The stage of cultivation where a cultivator’s internal foundation is fully formed, marking them as a true disciple of the immortal path."
+    }
+  ]
+}

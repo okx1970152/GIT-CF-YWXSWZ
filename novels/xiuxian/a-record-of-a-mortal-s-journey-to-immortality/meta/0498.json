@@ -1,0 +1,99 @@
+{
+  "chapter_no": "0498",
+  "chapter_code": "0498",
+  "chapter_slug": "The-Cauldron-Rises",
+  "chapter_title_en": "The Cauldron Rises",
+  "chapter_keywords": [
+    "a record of a mortal's journey to immortality",
+    "chapter 498",
+    "heaven-mending pill",
+    "nine-bend spirit ginseng",
+    "void heaven cauldron",
+    "blood jade spider",
+    "profound bone saint",
+    "corpse puppetry",
+    "core formation",
+    "nascent soul",
+    "xianxia",
+    "dark forest negotiation"
+  ],
+  "guide_tags": [
+    "mortal stream",
+    "high-stakes deal",
+    "lore dump",
+    "power mechanics",
+    "character negotiation"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 498 – The Cauldron Rises: Han Li and Xuan Gu's Deadly Deal",
+  "chapter_meta_description": "Han Li and the Profound Bone Saint strike a deal to retrieve the Void Heaven Cauldron. The Heaven-Mending Pill's true power is revealed—a century-long boost to Nascent Soul chances.",
+  "og_title": "The Cauldron Rises: A Deal With a Dead Man",
+  "og_description": "Xuan Gu spills the truth about the Heaven-Mending Pill: a 30-40% chance at Nascent Soul, but it takes a century to work. Han Li accepts the risk.",
+  "twitter_title": "Void Heaven Cauldron rises—Han Li gambles on a century of refinement",
+  "twitter_description": "Xuan Gu reveals the Heaven-Mending Pill's secret, Corpse Puppetry showcased, and the prize finally emerges. Cold calculations in the Mortal Stream.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "heaven-mending-pill",
+      "surfaces": [
+        "Heaven-Mending Pill"
+      ],
+      "definition": "A legendary pill said to wash and refine a cultivator's Spiritual Roots, greatly increasing the chance of forming a Nascent Soul when combined with the Nine-Bend Spirit Ginseng. The effect takes a century to fully manifest."
+    },
+    {
+      "id": "nine-bend-spirit-ginseng",
+      "surfaces": [
+        "Nine-Bend Spirit Ginseng"
+      ],
+      "definition": "A sentient, legendary spirit herb that can transform and evade capture. It is a central ingredient in the formula Xuan Gu gives Han Li."
+    },
+    {
+      "id": "void-heaven-cauldron",
+      "surfaces": [
+        "Void Heaven Cauldron"
+      ],
+      "definition": "The supreme ancient treasure sealed in the innermost chamber of the Void Heaven Palace. Its retrieval requires a blood-ripened Blood Jade Spider pair."
+    },
+    {
+      "id": "blood-jade-spider",
+      "surfaces": [
+        "Blood Jade Spider"
+      ],
+      "definition": "A rare pair-bonded spirit spider species; only a male-female pair can advance in rank, making a live pair essential for retrieving the Void Heaven Cauldron."
+    },
+    {
+      "id": "corpse-puppetry",
+      "surfaces": [
+        "Corpse Puppetry"
+      ],
+      "definition": "A refined ghost-path technique that reanimates and controls a corpse using special materials and arts. The puppet's abilities are weaker than the original life form and it has a limited lifespan."
+    },
+    {
+      "id": "soul-search-and-soul-refining",
+      "surfaces": [
+        "Soul Search and Soul Refining"
+      ],
+      "definition": "A pair of invasive techniques used to extract information from a captive's soul. Xuan Gu used it on a Star Palace elder to learn the Heaven-Mending Pill's true function."
+    },
+    {
+      "id": "heavenly-firmament-barrier",
+      "surfaces": [
+        "Heavenly Firmament Barrier"
+      ],
+      "definition": "An ancient protective formation said to completely isolate the sealed area from spiritual sense detection, allowing internal events to go unnoticed by outsiders."
+    },
+    {
+      "id": "spirit-resonance-pendant",
+      "surfaces": [
+        "Spirit Resonance Pendant"
+      ],
+      "definition": "A defensive magical tool owned by Han Li that generates a powerful white light shield to protect against elemental attacks such as the blue cold flame."
+    },
+    {
+      "id": "azure-origin-sword-shield",
+      "surfaces": [
+        "Azure Origin Sword Shield"
+      ],
+      "definition": "A defensive technique from the Azure Origin Sword Art; it forms a cyan, thorny shield around the user's body."
+    }
+  ]
+}

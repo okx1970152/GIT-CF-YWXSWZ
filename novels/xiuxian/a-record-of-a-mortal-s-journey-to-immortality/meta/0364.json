@@ -1,0 +1,84 @@
+{
+  "chapter_no": "0364",
+  "chapter_code": "0364",
+  "chapter_slug": "An-Unexpected-Encounter-with-an-Old-Acquaintance",
+  "chapter_title_en": "An Unexpected Encounter with an Old Acquaintance",
+  "chapter_keywords": [
+    "han li",
+    "ancient teleportation array",
+    "yue kingdom",
+    "ghost spirit sect",
+    "wang chan",
+    "dong xuan'er",
+    "nan gong wan",
+    "veiled woman",
+    "foundation establishment",
+    "dual cultivation technique"
+  ],
+  "guide_tags": [
+    "Emotional Rollercoaster",
+    "Plot Twist",
+    "Tension",
+    "Reunion",
+    "Don't Trust Anyone",
+    "Master and Disciple"
+  ],
+  "chapter_seo_title": "Han Li Encounters Dong Xuan'er and a Mysterious Veiled Woman Over the Spirit Mine",
+  "chapter_meta_description": "Han Li returns to the Yue Kingdom to repair the ancient teleportation array, but a night-time chase above the mine brings him face-to-face with Wang Chan, Dong Xuan'er, and a familiar-sounding voice in white.",
+  "og_title": "A Startling Reunion: Han Li Meets Old Acquaintances Over the Yue Kingdom Mine",
+  "og_description": "Han Li’s repair mission hits a snag, and a chance encounter in the sky above the mine reveals Wang Chan, Dong Xuan’er in a changed state, and a veiled woman whose voice is unmistakably Nan Gong Wan’s.",
+  "twitter_title": "Old Faces, New Dangers: Han Li’s Night Encounter",
+  "twitter_description": "Dong Xuan’er reappears, standing with the effeminate man from Yanling Fort, her cultivation raised and her demeanor cold. And a veiled woman’s voice sends Han Li’s heart racing.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "ancient-teleportation-array",
+      "surfaces": [
+        "Ancient Teleportation Array"
+      ],
+      "definition": "A damaged spatial transport formation from a bygone era; repairing it requires extreme precision and specialized knowledge, and even minor errors can cause the entire array to fail."
+    },
+    {
+      "id": "ghost-spirit-sect",
+      "surfaces": [
+        "Ghost"
+      ],
+      "definition": "A major demonic path sect specializing in ghostly summoning, blood arts, and sinister techniques; Wang Chan is its young master."
+    },
+    {
+      "id": "pleasure-union-sect",
+      "surfaces": [
+        "Pleasure"
+      ],
+      "definition": "A demonic path sect known for its dual cultivation techniques, often used to drain yin or yang essence from unwilling partners for personal advancement."
+    },
+    {
+      "id": "moon-devouring-yin-absorption-technique",
+      "surfaces": [
+        "Moon-Devouring"
+      ],
+      "definition": "A secret dual cultivation art that forcibly absorbs a female cultivator’s primordial yin essence, lowering her cultivation and potentially crippling her while boosting the user’s power."
+    },
+    {
+      "id": "illusory-formation-flags",
+      "surfaces": [
+        "Illusory"
+      ],
+      "definition": "A set of portable flags that create a spiritual illusion over an area, masking physical entrances or objects; commonly used by cautious cultivators to conceal hideouts."
+    },
+    {
+      "id": "reversed-five-elements-formation",
+      "surfaces": [
+        "Reversed"
+      ],
+      "definition": "An advanced concealment and trapping formation that inverts the natural Five Element cycle; in its improved form, it provides both confusion and defensive utility."
+    },
+    {
+      "id": "yin-essence",
+      "surfaces": [
+        "Yin"
+      ],
+      "definition": "A female cultivator’s foundational yin energy, tied to her life force and cultivation base; forcibly extracting it is a violation that can cripple her cultivation and shorten her lifespan."
+    }
+  ]
+}

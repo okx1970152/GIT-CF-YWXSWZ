@@ -1,0 +1,87 @@
+{
+  "chapter_no": "0321",
+  "chapter_code": "0321",
+  "chapter_slug": "The-Target",
+  "chapter_title_en": "The Target",
+  "chapter_keywords": [
+    "dao-guai-yi-xian",
+    "chapter 321",
+    "li huowang",
+    "cangshui county",
+    "shadow thief",
+    "alchemy prescription",
+    "missing children",
+    "night watchman",
+    "cliffhanger"
+  ],
+  "guide_tags": [
+    "investigation",
+    "procedural",
+    "alchemy horror",
+    "shadow horror",
+    "cliffhanger",
+    "slow build"
+  ],
+  "chapter_seo_title": "Dao Guai Yi Xian Chapter 321 – Li Huowang Hunts a Shadow Thief",
+  "chapter_meta_description": "Li Huowang plays detective, staking out a shadow thief that steals alchemy ingredients and missing children. The trail leads to an underwater cave.",
+  "og_title": "The Shadow Thief – Chapter 321",
+  "og_description": "A slow-burn investigation where Li Huowang outsmarts an alchemical ring using his Danyangzi training. The payoff is a chase through the night and a cliffhanger at an underwater cave.",
+  "twitter_title": "Ch 321: Li Huowang hunts a shadow-stealing phantom thief",
+  "twitter_description": "A procedural chapter where Li Huowang’s alchemy knowledge becomes his detective edge. The thief’s shadow is the real scene-stealer.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "danyangzi",
+      "surfaces": [
+        "Danyangzi"
+      ],
+      "definition": "Li Huowang’s former master in alchemy; a corrupt and grotesque figure from the Qingfeng Temple arc. His methods and principles still shape how Li Huowang thinks."
+    },
+    {
+      "id": "fifty-san",
+      "surfaces": [
+        "Fifty-San"
+      ],
+      "definition": "A historical Daoist-adjacent powder of mineral origin, consumed as a spiritual stimulant and reputedly used in immortality-seeking alchemy. A key controlled substance in the Dao-Twisted World."
+    },
+    {
+      "id": "one-qi-two-extremes-six-dusts-seven-returns",
+      "surfaces": [
+        "One"
+      ],
+      "definition": "A set of Daoist alchemical principles Li Huowang uses to predict the thieves’ next ingredient needs. “Six Dusts” refers to sensory impurities that must be fed into the pill for spiritual potency."
+    },
+    {
+      "id": "slow-slicing",
+      "surfaces": [
+        "Slow"
+      ],
+      "definition": "A historical Chinese execution method involving the gradual cutting of the body. In the Dao-Twisted World, it is used as a public punishment for the rapist."
+    },
+    {
+      "id": "shadow-theft",
+      "surfaces": [
+        "Shadow"
+      ],
+      "definition": "A supernatural technique where a person’s shadow acts as an independent entity, capable of moving through walls and carrying objects. A folkloric concept weaponized as logistics by the thieves."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is the \"One Qi, Two Extremes, Six Dusts, Seven Returns\" thing Li Huowang mentions?",
+      "a": "It's a technical alchemical formula he learned from Danyangzi. He uses it to deduce what ingredients the thieves still need, predicting they will steal Fifty-San soon."
+    },
+    {
+      "q": "Did Li Huowang really leave the county?",
+      "a": "No. The farewell was a staged performance to make the thieves think he was gone. He stayed and began secret surveillance."
+    },
+    {
+      "q": "What is the shadow thief?",
+      "a": "A possessed night watchman whose shadow becomes a storage/transportation medium for stolen alchemy ingredients and possibly children. The shadow moves independently and can phase through walls."
+    },
+    {
+      "q": "Why does the chase end with a cave?",
+      "a": "That underwater cave is the lair’s entrance. Li Huowang deduces it is the central hub of the child-snatching operation, located at the geographic midpoint of all affected counties."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0350",
+  "chapter_code": "0350",
+  "chapter_slug": "Ancestor-Linghu",
+  "chapter_title_en": "Ancestor Linghu",
+  "chapter_keywords": [
+    "A Record of a Mortal's Journey to Immortality",
+    "RMJI",
+    "Chapter 350",
+    "Ancestor Linghu",
+    "Yellow Maple Valley",
+    "Nascent Soul",
+    "evacuation of Yue Kingdom",
+    "Geopolitical escalation",
+    "Mortal Stream",
+    "forbidden oath",
+    "Spirit Beast Mountain traitor"
+  ],
+  "guide_tags": [
+    "Political upheaval",
+    "Secret revealed",
+    "Ancestor entrance",
+    "Geopolitics",
+    "Tense council",
+    "Mortal Stream"
+  ],
+  "chapter_seo_title": "RMJI Ch. 350: The Rear Hall Beckons — Evacuation Order",
+  "chapter_meta_description": "Ancestor Linghu, the Yellow Maple Valley’s sole Nascent Soul cultivator, announces a catastrophic defeat and orders the evacuation of the Yue Kingdom. Han Li is selected for a dangerous unknown task.",
+  "og_title": "RMJI 350 — Ancestor Linghu",
+  "og_description": "The Dragon-Scaring Bell tolls. The war is lost. The Yellow Maple Valley’s ultimate hidden trump card steps forward to announce the end of an era.",
+  "twitter_title": "RMJI 350 — The Rear Hall",
+  "twitter_description": "The Nascent Soul ancestor arrives. The war is lost. Han Li gets drafted for a dangerous mission.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "dragon-scaring-bell",
+      "surfaces": [
+        "Dragon-Scaring"
+      ],
+      "definition": "A massive ceremonial bell whose toll signals an existential crisis for a sect; its sound is a call to arms and a declaration of emergency."
+    },
+    {
+      "id": "nascent-soul",
+      "surfaces": [
+        "Nascent"
+      ],
+      "definition": "The fourth major cultivation realm, where a cultivator births a second spiritual self within their body; lifespan approaches a thousand years, and the cultivator can survive the destruction of their physical form."
+    },
+    {
+      "id": "poisonous-oath",
+      "surfaces": [
+        "Poisonous"
+      ],
+      "definition": "A magically binding vow invoking supernatural retribution; breaking it can have severe karmic or physical consequences, and is taken seriously even by the most powerful cultivators."
+    },
+    {
+      "id": "spirit-beast-mountain",
+      "surfaces": [
+        "Spirit"
+      ],
+      "definition": "One of the seven great sects of the Yue Kingdom; revealed in this chapter to have betrayed the alliance, secretly opening the formation to the demonic path."
+    },
+    {
+      "id": "six-demonic-sects",
+      "surfaces": [
+        "Six"
+      ],
+      "definition": "The six major demonic-path schools of the Tianluo Nation, the primary antagonists of the Yue Kingdom seven-sect alliance in the ongoing war."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core"
+      ],
+      "definition": "The third major cultivation realm, where a cultivator compresses their spiritual power into a solid core; lifespan extends to around five hundred years, and they are considered regional powerhouses."
+    }
+  ]
+}

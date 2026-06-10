@@ -1,0 +1,111 @@
+{
+  "chapter_no": "0345",
+  "chapter_code": "0345",
+  "chapter_slug": "The-Gathering-Storm",
+  "chapter_title_en": "The Gathering Storm",
+  "chapter_keywords": [
+    "desolate era",
+    "ji ning",
+    "immortal fortunes assembly",
+    "final six",
+    "daofather crimsonbright",
+    "mu chuan",
+    "grand dao of wood and water",
+    "xianxia tournament",
+    "grand xia emperor",
+    "slacker daoist"
+  ],
+  "guide_tags": [
+    "Tournament Arc",
+    "Power Reveal",
+    "Psychological Pressure",
+    "Cultivation Showdown",
+    "Immortal Fortunes Assembly"
+  ],
+  "chapter_seo_title": "Desolate Era: The Final Six Face Off in the Immortal Fortunes Assembly",
+  "chapter_meta_description": "The stakes are absolute as the Immortal Fortunes Assembly enters its critical round. Ji Ning, Xiamang Zishan, and the others prepare for a battle that will decide who earns a Daofather’s favor.",
+  "og_title": "Desolate Era: The Gathering Storm",
+  "og_description": "Six Wanxiang Adepts, one hour of enforced stillness, and a battle that will decide who earns Daofather Crimsonbright’s favor. The Immortal Fortunes Assembly reaches its breaking point.",
+  "twitter_title": "Desolate Era #345: The Final Six",
+  "twitter_description": "Ji Ning faces Xiamang Zishan while Mu Chuan drops a shocking hidden card—dual Grand Daos. The Immortal Fortunes Assembly reaches its critical point.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "daofather-crimsonbright",
+      "surfaces": [
+        "Daofather Crimsonbright"
+      ],
+      "definition": "The supreme Daofather overseeing the Immortal Fortunes Assembly; a major power of the Three Realms who will take one of the final six as his personal disciple."
+    },
+    {
+      "id": "grand-xia-emperor",
+      "surfaces": [
+        "Grand Xia Emperor"
+      ],
+      "definition": "The Celestial Thearch of the Grand Xia Dynasty, a Pure Yang True Immortal who orchestrates the final rounds of the assembly with cold precision."
+    },
+    {
+      "id": "slacker-daoist",
+      "surfaces": [
+        "Slacker Daoist"
+      ],
+      "definition": "A seemingly simple but immensely powerful Wanxiang Adept; already a disciple of the Black Tortoise Grand Emperor."
+    },
+    {
+      "id": "mu-chuan",
+      "surfaces": [
+        "Mu Chuan"
+      ],
+      "definition": "A deceptively humble genius who has been hiding his mastery of two Grand Daos (Verdant Wood and Source Water) for three hundred years."
+    },
+    {
+      "id": "grand-dao-of-verdant-wood",
+      "surfaces": [
+        "Grand Dao of Verdant Wood"
+      ],
+      "definition": "A Grand Dao governing the properties of wood, growth, and life force; combined with Source Water, it becomes a devastatingly fluid defense."
+    },
+    {
+      "id": "grand-dao-of-source-water",
+      "surfaces": [
+        "Grand Dao of Source Water"
+      ],
+      "definition": "A Grand Dao governing the properties of water, flow, and adaptability; complements Verdant Wood in Mu Chuan's dual-Dao fighting style."
+    },
+    {
+      "id": "xiamang-zishan",
+      "surfaces": [
+        "Xiamang Zishan"
+      ],
+      "definition": "A proud, overbearing imperial prince of the Xiamang clan; renowned for his devastating staff technique and brute force."
+    },
+    {
+      "id": "blackstone-recluse",
+      "surfaces": [
+        "Blackstone Recluse"
+      ],
+      "definition": "A mysterious barefoot, bald youth wielding a staff; suspected by the watching Immortals of having a connection to Fuxi."
+    },
+    {
+      "id": "three-heads-six-arms",
+      "surfaces": [
+        "Three Heads, Six Arms"
+      ],
+      "definition": "A divine form that multiplies a cultivator's offensive and defensive capabilities by manifesting extra limbs."
+    },
+    {
+      "id": "stacking-waves",
+      "surfaces": [
+        "Stacking Waves"
+      ],
+      "definition": "A secret art employed by the Slacker Daoist that layers attacks for increasing power, similar to crashing waves that build in intensity."
+    },
+    {
+      "id": "sealing-formation",
+      "surfaces": [
+        "Sealing Formation"
+      ],
+      "definition": "The designated arena for the final battles of the Immortal Fortunes Assembly; a sealed space that contains all combat force."
+    }
+  ]
+}

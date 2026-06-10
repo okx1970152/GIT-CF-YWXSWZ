@@ -1,0 +1,71 @@
+{
+  "chapter_no": "0164",
+  "chapter_code": "0164",
+  "chapter_slug": "The-Secret-of-the-Talisman-Treasure",
+  "chapter_title_en": "The Secret of the Talisman Treasure",
+  "chapter_keywords": [
+    "talisman treasure",
+    "fu bao",
+    "fake treasure",
+    "han li",
+    "thousand-year spirit herb",
+    "mana depletion",
+    "core formation",
+    "foundation establishment",
+    "xianxia economics",
+    "magic treasure"
+  ],
+  "guide_tags": [
+    "Lore Heavy",
+    "Economy of Power",
+    "Worldbuilding",
+    "Cultivation System",
+    "Critical Item",
+    "Negotiation"
+  ],
+  "chapter_seo_title": "A Record of a Mortal’s Journey: The Secret of the Talisman Treasure Explained",
+  "chapter_meta_description": "Han Li unveils the truth behind the Talisman Treasure—a high-tier weapon only Core Formation cultivators can create. A deep dive into the economics and mechanics of power in the cultivation world.",
+  "og_title": "The Hidden Economics of Power in Xianxia",
+  "og_description": "A rare lore chapter unveils the mechanics of Talisman Treasures. How do dying elders pass on their power? The answer is tragically efficient.",
+  "twitter_title": "The \"False Treasure\" that defines the power ceiling",
+  "twitter_description": "Han Li learns about Talisman Treasures—items that are literally pieces of a dying elder's soul-bound weapon. Pure Mortal Stream worldbuilding.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "talisman-treasure",
+      "surfaces": [
+        "Talisman"
+      ]
+    },
+    {
+      "id": "yellow-essence-mushroom",
+      "surfaces": [
+        "Yellow"
+      ]
+    },
+    {
+      "id": "manager-tian",
+      "surfaces": [
+        "Manager Tian"
+      ]
+    },
+    {
+      "id": "ten-thousand-treasures-pavilion",
+      "surfaces": [
+        "Ten Thousand Treasures Pavilion"
+      ]
+    },
+    {
+      "id": "core-formation-realm",
+      "surfaces": [
+        "Core Formation Realm"
+      ]
+    },
+    {
+      "id": "magic-treasure",
+      "surfaces": [
+        "Magic Treasure"
+      ]
+    }
+  ]
+}

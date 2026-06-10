@@ -1,0 +1,91 @@
+{
+  "chapter_no": "0389",
+  "chapter_code": "0389",
+  "chapter_slug": "The-Hunt-Turns-Battle-With-a-Core-Formation-Cultivator",
+  "chapter_title_en": "The Hunt Turns – Battle With a Core Formation Cultivator",
+  "chapter_keywords": [
+    "mortal stream",
+    "foundation establishment",
+    "core formation",
+    "magical treasure",
+    "formation trap",
+    "battle tactics",
+    "divine wind boat",
+    "qi condensation",
+    "true essence damage",
+    "darhk forest"
+  ],
+  "guide_tags": [
+    "action",
+    "survival",
+    "formation tactics",
+    "desperate fight",
+    "cultivator duel",
+    "six serenity hall"
+  ],
+  "chapter_seo_title": "RMJI Ch. 389: Han Li's Desperate Stand Against a Core Formation Elder",
+  "chapter_meta_description": "Cornered on a deserted islet, Han Li must use a pre-set formation and a wounded enemy's own weakness to survive a Core Formation elder's relentless pursuit.",
+  "og_title": "Record of a Mortal's Journey – The Hunt Turns",
+  "og_description": "Han Li's last-stand gambit against a six serenity hall elder: a masterclass in mortal stream fighting.",
+  "twitter_title": "RMJI Ch. 389 – When the Predator Bleeds",
+  "twitter_description": "A desperate chase, a pre-set array, and the cold exploitation of an enemy's weakness.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "divine-wind-boat",
+      "surfaces": [
+        "Divine Wind Boat"
+      ],
+      "definition": "A speed-focused flying artifact refined from Ink Flood Dragon fin and tail; extremely fast but lacks defensive capabilities."
+    },
+    {
+      "id": "azure-water-armor-array",
+      "surfaces": [
+        "Azure Water Armor Array"
+      ],
+      "definition": "A water-element formation set by Han Li on the nameless islet, capable of trapping and pressuring an enemy with crushing force and illusory terrain."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core Formation"
+      ],
+      "definition": "The third major cultivation stage; cultivators at this level possess qualitative advantages in mana, tools, and lifespan over Foundation Establishment."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation Establishment"
+      ],
+      "definition": "The second major cultivation stage; Han Li is at the late tier of this stage."
+    },
+    {
+      "id": "six-serenity-hall",
+      "surfaces": [
+        "Six Serenity Hall"
+      ],
+      "definition": "A major Chaotic Star Sea faction; Elder Gu is a Core Formation member of this organization."
+    },
+    {
+      "id": "true-essence",
+      "surfaces": [
+        "True Essence"
+      ],
+      "definition": "A cultivator's deepest life-force, distinct from ordinary spiritual power; reckless use can cause severe backlash."
+    },
+    {
+      "id": "magic-tool-vs-magical-treasure",
+      "surfaces": [
+        "Magic"
+      ],
+      "definition": "Tools (法器) are used by Qi Condensation and Foundation Establishment cultivators; Treasures (法宝) are wielded by Core Formation cultivators and above, possessing qualitatively superior power."
+    },
+    {
+      "id": "formation-control-flag",
+      "surfaces": [
+        "Formation"
+      ],
+      "definition": "A artifact that allows a cultivator to direct and manipulate a formation’s effects; Han Li uses the azure banner to intensify the array’s pressure."
+    }
+  ]
+}

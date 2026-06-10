@@ -1,0 +1,71 @@
+{
+  "chapter_no": "0260",
+  "chapter_code": "0260",
+  "chapter_slug": "Opera",
+  "chapter_title_en": "Opera",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Lü Zhuangyuan",
+    "Dao-Twisted World",
+    "Chinese opera",
+    "rivalry",
+    "Bai Lingmiao",
+    "Great Liang",
+    "grain harvest",
+    "traveling troupe",
+    "strange details"
+  ],
+  "guide_tags": [
+    "opera",
+    "slice-of-horror",
+    "worldbuilding",
+    "cultural detail",
+    "performance",
+    "subtle unease",
+    "character moment"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 260 – Opera: A Night at the Theater Turns Strange",
+  "chapter_meta_description": "A rival opera troupe arrives in the village. Li Huowang is dragged to watch, but he quickly senses that this Great Liang performance is subtly, dangerously wrong.",
+  "og_title": "A Night at the Opera… In the Dao-Twisted World",
+  "og_description": "Li Huowang is coaxed into watching a traveling opera. The songs are bold, the crowd cheers, but something about the performance doesn’t sit right.",
+  "twitter_title": "Even the opera feels wrong in the Dao-Twisted World.",
+  "twitter_description": "Li Huowang watches a traveling opera—and realizes the tune is off.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "coarse-grain",
+      "surfaces": [
+        "Coarse"
+      ],
+      "definition": "Unrefined grains like sorghum and cornmeal, historically the food of the poor and commoners, distinct from luxury white flour."
+    },
+    {
+      "id": "white-flour",
+      "surfaces": [
+        "White"
+      ],
+      "definition": "Fine wheat flour, a prized commodity in historical China often reserved for tax payments or special occasions."
+    },
+    {
+      "id": "corv-e-labor",
+      "surfaces": [
+        "Corvée"
+      ],
+      "definition": "Unpaid, forced labor imposed by the state on commoners, often as a penalty for failing to meet tax quotas."
+    },
+    {
+      "id": "pheasant-feathers",
+      "surfaces": [
+        "Pheasant"
+      ],
+      "definition": "Long, decorative feathers worn on the headpiece of high-ranking military characters in Chinese opera, signifying rank and authority."
+    },
+    {
+      "id": "twin-maces",
+      "surfaces": [
+        "Twin"
+      ],
+      "definition": "A traditional blunt weapon used in Chinese martial arts and opera, often associated with heroic generals."
+    }
+  ]
+}

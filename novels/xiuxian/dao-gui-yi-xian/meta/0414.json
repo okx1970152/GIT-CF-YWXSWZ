@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0414",
+  "chapter_code": "0414",
+  "chapter_slug": "The-Marrow-of-the-Storm",
+  "chapter_title_en": "The Marrow of the Storm",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "zuowandao",
+    "supervisory heavenly office",
+    "four joys",
+    "three yuans",
+    "dice",
+    "mahjong cult",
+    "confucian",
+    "mortal censor"
+  ],
+  "guide_tags": [
+    "strategy",
+    "court politics",
+    "hidden bosses",
+    "philosophical horror",
+    "lore drop"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 413 – Li Huowang Reports the Zuowandao Army to the Heavenly Office",
+  "chapter_meta_description": "Li Huowang finally uses his Office credentials to warn the Supervisory Censor about the full Zuowandao invasion, discovering the most terrifying man in the bureau is a mortal Confucian.",
+  "og_title": "Dao Gui Yi Xian 413 – The Mahjong Set of Liars Arrives",
+  "og_description": "Li Huowang finds the man he must convince to fight the Zuowandao is a mortal—which makes him even scarier.",
+  "twitter_title": "Dao Gui Yi Xian 413 – The Censor is Human",
+  "twitter_description": "The most dangerous man in the Heavenly Office isn't a cultivator. He just reads people.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government-sponsored supernatural law enforcement body in Great Liang, tasked with hunting rogue cultivators and managing disasters."
+    },
+    {
+      "id": "supervisory-censor",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "The bureaucratic title of the high-ranking mortal official who oversees the Heavenly Office’s operations."
+    },
+    {
+      "id": "confucian-scholar",
+      "surfaces": [
+        "Confucian"
+      ],
+      "definition": "A follower of Confucianism, a philosophy focusing on ethics and social order; in this world, their power comes from logic and understanding of humanity, not cultivation."
+    },
+    {
+      "id": "root-carved-fat-monk",
+      "surfaces": [
+        "Root-carved"
+      ],
+      "definition": "A statue of a laughing Buddha whose upper body is finely carved while the lower body is left as chaotic roots, symbolizing the unnatural union of artificial order and natural horror."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What are the Four Joys and Three Yuans of the Zuowandao?",
+      "a": "The Zuowandao is organized like a mahjong set. The Four Joys are 16 Wind tiles (the highest-ranking members), the Three Yuans are the 12 Dragon tiles (the second tier), and the 108 common tiles are ordinary members. Their leader is called \"Dice.\""
+    },
+    {
+      "q": "Why is it terrifying that the Supervisory Censor is a mortal?",
+      "a": "In a world of supernatural powers, a man with no cultivation who can still defeat liars and command exorcists must be terrifyingly intelligent. His ability to see through lies without magic makes him the most unpredictable person in the room."
+    },
+    {
+      "q": "What does the root-carved monk symbolize?",
+      "a": "The monk is a visual metaphor for the Dao-Twisted World itself: a perfectly ordered, happy surface (the carved upper half) stitched violently onto a chaotic, inhumane foundation (the twisted roots of the lower half)."
+    }
+  ]
+}

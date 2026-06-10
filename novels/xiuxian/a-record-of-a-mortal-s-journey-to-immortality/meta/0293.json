@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0293",
+  "chapter_code": "0293",
+  "chapter_slug": "The-Flame-Show",
+  "chapter_title_en": "The Flame Show",
+  "chapter_keywords": [
+    "a record of a mortal's journey to immortality",
+    "rmji chapter 293",
+    "social tribulation",
+    "immortal arts",
+    "spiritual root",
+    "false fire bird technique",
+    "flame manipulation",
+    "prince xin",
+    "han li observation",
+    "showmanship vs combat",
+    "mortal stream"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "Han Li POV",
+    "World Building",
+    "Social Observation",
+    "Xianxia Showmanship",
+    "Spiritual Roots",
+    "Cultivation Politics"
+  ],
+  "chapter_seo_title": "RMJI Ch. 293: The Flame Show – Spiritual Roots & Social Tribulation",
+  "chapter_meta_description": "Han Li watches a Qi Condensation Daoist perform dazzling flame transformations, nearly fooling him into thinking it's a mid-grade spell. A surprise spiritual root discovery shakes up Prince Xin's banquet in this social tribulation chapter.",
+  "og_title": "RMJI Ch. 293: A False Fire Bird and a Surprise Disciple",
+  "og_description": "A lazy glutton is chosen by fate, and an old master puts on a fire show that almost tricks even Han Li. Chapter 293 is all about perception, talent, and the art of looking powerful.",
+  "twitter_title": "RMJI 293: The Power of Looking Good",
+  "twitter_description": "A fat, useless noble is found to have a spiritual root, and an old Daoist's flame puppetry nearly fools a Foundation Establishment cultivator. Sometimes, control is better than raw power.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "fireball-technique",
+      "surfaces": [
+        "Fireball"
+      ],
+      "definition": "A basic fire-element spell that most fire-spiritual-root cultivators learn. It creates a fist-sized fireball for ranged attack."
+    },
+    {
+      "id": "fire-bird-technique",
+      "surfaces": [
+        "Fire"
+      ],
+      "definition": "A mid-grade elementary spell that conjures a large, destructive fire bird. Han Li has not yet mastered this spell himself."
+    },
+    {
+      "id": "spiritual-root",
+      "surfaces": [
+        "Spiritual"
+      ],
+      "definition": "The innate aptitude required to cultivate immortality. It has no correlation with a person's looks, intelligence, or social status—it is a random cosmic lottery."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation"
+      ],
+      "definition": "The second major cultivation realm. A Foundation Establishment cultivator is a true immortal in the eyes of mortals, possessing far greater power and lifespan than a Qi Condensation cultivator."
+    },
+    {
+      "id": "immortal-master",
+      "surfaces": [
+        "Immortal"
+      ],
+      "definition": "A respectful title mortals use when addressing any cultivator, regardless of their actual rank or power."
+    }
+  ]
+}

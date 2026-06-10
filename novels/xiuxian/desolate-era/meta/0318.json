@@ -1,0 +1,71 @@
+{
+  "chapter_no": "0318",
+  "chapter_code": "0318",
+  "chapter_slug": "The-Emperor-s-Summons",
+  "chapter_title_en": "The Emperor's Summons",
+  "chapter_keywords": [
+    "Grand Xia Emperor",
+    "Immortal Fortunes Assembly",
+    "Six Paths of Reincarnation collapse",
+    "Heavenly Dao master",
+    "Wanxiang Adept tournament",
+    "cosmic tribulation",
+    "Ji Ning Black-White College",
+    "Yuchi Xiyue",
+    "Yu Wei",
+    "peerless genius"
+  ],
+  "guide_tags": [
+    "world-building",
+    "lore-heavy",
+    "tournament arc setup",
+    "power-up",
+    "emperor decrees",
+    "fate and fortune",
+    "cosmic-scale threats"
+  ],
+  "chapter_seo_title": "The Grand Xia Emperor Personally Commands the Immortal Fortunes Assembly: A New Era of Conflict Begins",
+  "chapter_meta_description": "The Grand Xia Emperor, fearing a cosmic tribulation, personally decrees that all major powers send their best disciples to a high-stakes Immortal Fortunes Assembly. The fate of the realm hangs in the balance.",
+  "og_title": "The Emperor Awakens: A Cosmic Showdown is Ordered!",
+  "og_description": "The Grand Xia Emperor pulls the trigger on a legendary tournament. Every elite disciple must attend. The future of the Three Realms will be decided.",
+  "twitter_title": "The Emperor is anxious! He's hosting the biggest ever Immortal Fortunes Assembly.",
+  "twitter_description": "The Grand Xia Emperor fears a coming tribulation, and he personally decrees that all the realm's top geniuses must compete in the next Immortal Fortunes Assembly.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "six-paths-of-reincarnation",
+      "surfaces": [
+        "Six"
+      ],
+      "definition": "The fundamental cosmic mechanism of the Three Realms that recycles souls between different lifeforms. It collapsed decades ago in the novel, causing immense upheaval."
+    },
+    {
+      "id": "qi-yun",
+      "surfaces": [
+        "Qi"
+      ],
+      "definition": "A metaphysical concept of fate, fortune, and destiny. In Xianxia, convergence of Qi Yun around a person or event makes them more likely to gain power and become historical heroes."
+    },
+    {
+      "id": "heavenly-dao",
+      "surfaces": [
+        "Heavenly"
+      ],
+      "definition": "The supreme natural law governing the universe. Cultivators who grasp a Heavenly Dao are among the most powerful beings in the Three Realms."
+    },
+    {
+      "id": "immortal-fortunes-assembly",
+      "surfaces": [
+        "Immortal"
+      ],
+      "definition": "A triennial tournament for Wanxiang Adepts held by the Grand Xia Dynasty, where winners receive treasures and a chance to be recognized by supreme powers."
+    },
+    {
+      "id": "grand-xia-emperor",
+      "surfaces": [
+        "Grand"
+      ],
+      "definition": "The absolute sovereign over the entire Grand Xia major world. He hails from the primordial imperial clan and commands immense personal power and authority."
+    }
+  ]
+}

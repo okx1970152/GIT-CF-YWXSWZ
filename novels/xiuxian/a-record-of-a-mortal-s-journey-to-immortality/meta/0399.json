@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0399",
+  "chapter_code": "0399",
+  "chapter_slug": "Rising-Winds-Beyond-the-Sea-Part-2-The-Jade-Emerald-Island",
+  "chapter_title_en": "Rising Winds Beyond the Sea, Part 2: The Jade Emerald Island",
+  "chapter_keywords": [
+    "Han Li",
+    "Jade Emerald Island",
+    "beast hunting",
+    "starfall sea",
+    "teleportation array",
+    "core formation",
+    "storage pouch",
+    "auction house",
+    "mortal stream",
+    "xianxia"
+  ],
+  "guide_tags": [
+    "Chapter Translation",
+    "World-building",
+    "Logistics Arc",
+    "New Arc Beginning",
+    "Frontier Setting"
+  ],
+  "chapter_seo_title": "A Record of a Mortal’s Journey – Chapter 399 Translation: Han Li Prepares for the Sea",
+  "chapter_meta_description": "Han Li makes his final preparations for the trip to the outer sea beast islands. A new frontier awaits—where monsters are deadly, but men are worse.",
+  "og_title": "Crossing the Threshold: Han Li Takes the Plunge into the Starfall Sea",
+  "og_description": "From the safety of Heaven Star City to the lawless outpost of Jade Emerald Island. Han Li’s new arc begins with a shopping trip and a cold warning.",
+  "twitter_title": "Han Li finally leaves the nest! Chapter 399 is live.",
+  "twitter_description": "The frontier calls. Han Li teleports to the beast islands, where the only law is your own strength. New chapter out now.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "teleportation-talisman",
+      "surfaces": [
+        "Teleportation Talisman"
+      ],
+      "definition": "A single-use talisman that protects a cultivator during long-distance teleportation. Unlike the Great Teleportation Token, it has a range limit and can only be used once."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core"
+      ],
+      "definition": "The third major cultivation stage in the xianxia system, where a cultivator condenses their qi into a solid golden core in their dantian. This is a huge leap in power and lifespan."
+    },
+    {
+      "id": "demonic-core",
+      "surfaces": [
+        "Demonic"
+      ],
+      "definition": "The condensed energy core of a demonic beast, analogous to a human cultivator’s golden core. It is the prime target for hunters, used in alchemy and artifact refining."
+    },
+    {
+      "id": "jade-emerald-island",
+      "surfaces": [
+        "Jade"
+      ],
+      "definition": "A Beast Island in the Starfall Sea’s outer reaches, controlled by no single sect. It is a lawless frontier where rogue cultivators gather to hunt demonic beasts."
+    },
+    {
+      "id": "star-void-hall",
+      "surfaces": [
+        "Star"
+      ],
+      "definition": "The main teleportation hub in Heaven Star City, a white marble hall containing dozens of arrays connecting to islands across the Starfall Sea."
+    },
+    {
+      "id": "fengle-auction-house",
+      "surfaces": [
+        "Fengle"
+      ],
+      "definition": "The premier auction house in Heaven Star City. Items sold there are marked up in price by at least 50%, making it a venue for only the wealthiest of cultivators."
+    }
+  ]
+}

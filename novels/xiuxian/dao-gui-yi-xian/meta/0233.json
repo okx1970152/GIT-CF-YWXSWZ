@@ -1,0 +1,48 @@
+{
+  "chapter_no": "0233",
+  "chapter_code": "0233",
+  "chapter_slug": "The-Cauldron",
+  "chapter_title_en": "The Cauldron",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "bai lingmiao",
+    "sacrifice",
+    "body horror",
+    "human transformation",
+    "bronze cauldron",
+    "folk horror",
+    "cave exploration",
+    "ritual"
+  ],
+  "guide_tags": [
+    "Body Horror",
+    "Folk Horror",
+    "Sacrifice",
+    "Mystery",
+    "Cultivation"
+  ],
+  "chapter_seo_title": "The Cauldron: A Thousand Human-Sheep Sacrifices in the Dao-Twisted World",
+  "chapter_meta_description": "Li Huowang descends into a cursed cave to find a massive bronze cauldron and a sea of dead sheep. The horrifying truth: they were all once human.",
+  "og_title": "The Cauldron: A Thousand Human-Sheep Sacrifices in the Dao-Twisted World",
+  "og_description": "Li Huowang descends into a cursed cave to find a massive bronze cauldron and a sea of dead sheep. The horrifying truth: they were all once human.",
+  "twitter_title": "A cauldron, a cave, and a flock of human-sheep.",
+  "twitter_description": "Li Huowang uncovers a grotesque ritual where over a thousand people were turned into sheep and slaughtered as an offering.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "ding",
+      "surfaces": [
+        "Ding"
+      ],
+      "definition": "An ancient Chinese ritual vessel, often a cauldron on legs, used for cooking offerings to gods and ancestors. It was a powerful symbol of state and religious authority."
+    },
+    {
+      "id": "fluorescent-stone",
+      "surfaces": [
+        "Fluorescent"
+      ],
+      "definition": "A phosphorescent mineral used for illumination in the Dao-Twisted World. It provides a weak, eerie light that creates more shadows than it banishes."
+    }
+  ]
+}

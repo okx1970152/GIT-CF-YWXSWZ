@@ -1,0 +1,84 @@
+{
+  "chapter_no": "0028",
+  "chapter_code": "0028",
+  "chapter_slug": "Chapter-10-Eastmarsh-Swamp",
+  "chapter_title_en": "Chapter 10: Eastmarsh Swamp",
+  "chapter_keywords": [
+    "eastmarsh swamp",
+    "huan beast",
+    "blackjaguar",
+    "ironstone tribe",
+    "dala shu",
+    "beast-head gold",
+    "ji ning",
+    "coming of age trial",
+    "houtian perfection",
+    "demon beast"
+  ],
+  "guide_tags": [
+    "xianxia",
+    "cultivation",
+    "adventure",
+    "character introduction",
+    "world building",
+    "beast hunting",
+    "rite of passage"
+  ],
+  "chapter_seo_title": "Desolate Era Ch.10: Eastmarsh Swamp – Ji Ning Saves the Ironstone Tribe",
+  "chapter_meta_description": "Ji Ning leaves Western Prefecture for Eastmarsh Swamp. On the way, he rescues a small tribe from a Huan Beast and gains a guide for the treacherous swamplands ahead.",
+  "og_title": "Desolate Era Ch.10: Eastmarsh Swamp – A Divine Arrow Turns the Tide",
+  "og_description": "On the journey to his first real trial, Ji Ning saves a hunting party with a perfect long-range kill and earns a guide into the dangerous Eastmarsh Swamp.",
+  "twitter_title": "Desolate Era Ch.10 – Eastmarsh Swamp",
+  "twitter_description": "Ji Ning's adventure begins! He leaves home, saves a tribe, and hires a veteran guide to the deadly Swamp.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "blackjaguar",
+      "surfaces": [
+        "Blackjaguar"
+      ]
+    },
+    {
+      "id": "huan-beast",
+      "surfaces": [
+        "Huan Beast"
+      ]
+    },
+    {
+      "id": "eastmarsh-swamp",
+      "surfaces": [
+        "Eastmarsh"
+      ]
+    },
+    {
+      "id": "ironstone-tribe",
+      "surfaces": [
+        "Ironstone"
+      ]
+    },
+    {
+      "id": "dala-shu",
+      "surfaces": [
+        "Dala"
+      ]
+    },
+    {
+      "id": "ayi",
+      "surfaces": [
+        "Ayi"
+      ]
+    },
+    {
+      "id": "beast-head-gold",
+      "surfaces": [
+        "Beast-Head"
+      ]
+    },
+    {
+      "id": "houtian-perfection",
+      "surfaces": [
+        "Houtian"
+      ]
+    }
+  ]
+}

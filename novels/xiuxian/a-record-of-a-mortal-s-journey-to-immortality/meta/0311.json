@@ -1,0 +1,86 @@
+{
+  "chapter_no": "0311",
+  "chapter_code": "0311",
+  "chapter_slug": "Blood-Servants",
+  "chapter_title_en": "Blood Servants",
+  "chapter_keywords": [
+    "Han Li",
+    "Foundation Establishment",
+    "Black Fiend Sect",
+    "Blood Servant",
+    "Black Wind Formation",
+    "Golden Fleece Mother-Son Blades",
+    "blood-light sphere",
+    "Meng Mountain Four",
+    "young prince",
+    "Green Sun Demon Flame"
+  ],
+  "guide_tags": [
+    "action",
+    "strategy",
+    "crowd control",
+    "blood cultivation",
+    "fight sequence"
+  ],
+  "chapter_seo_title": "Han Li Takes on the Black Fiend Sect’s Blood Servant – Chapter 311",
+  "chapter_meta_description": "Han Li reveals his mid-Foundation power, slaughtering Black Fiend Sect cultists before their formation can complete. But the Blood Servant’s blood-light transformation proves a tougher nut to crack.",
+  "og_title": "Han Li vs the Blood Servant",
+  "og_description": "A fast-paced crowd control chapter where Han Li dismantles the Black Fiend Sect’s ritual while facing an invulnerable blood-light sphere.",
+  "twitter_title": "Han Li’s ruthless takedown of the Black Fiend Sect",
+  "twitter_description": "Han Li shows why you never let a formation finish—brutal efficiency in Chapter 311.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "black-wind-formation",
+      "surfaces": [
+        "Black"
+      ],
+      "definition": "A multi-cultivator ritual array that generates a domain effect to pin down a higher-tier enemy; highly effective but requires setup time and coordination."
+    },
+    {
+      "id": "blood-servant",
+      "surfaces": [
+        "Blood"
+      ],
+      "definition": "A title for a cultivator enhanced through blood-path techniques, often serving as a direct subordinate of a blood-cultivation Sect Leader."
+    },
+    {
+      "id": "white-phosphorus-shield",
+      "surfaces": [
+        "White"
+      ],
+      "definition": "A high-quality defensive artifact that can block punches from a blood-light enhanced opponent, though it suffers visible damage."
+    },
+    {
+      "id": "golden-fleece-mother-son-blades",
+      "surfaces": [
+        "Golden"
+      ],
+      "definition": "A set of top-grade flying blades used by Han Li; a classic concealed weapon with high lethality."
+    },
+    {
+      "id": "black-flood-dragon-snatch",
+      "surfaces": [
+        "Black"
+      ],
+      "definition": "Another top-grade offensive artifact in Han Li’s arsenal, likely a capturing or striking-type tool."
+    },
+    {
+      "id": "green-sun-demon-flame",
+      "surfaces": [
+        "Green"
+      ],
+      "definition": "A devastating ritual flame technique encountered earlier at a spirit stone mine, capable of consuming everything; its summoning ritual bears strong resemblance to the Black Wind Formation’s setup."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Han Li leave the barrier to attack the cultists directly?",
+      "a": "He recognizes the banner ritual as a threat similar to the Green Sun Demon Flame, which must be stopped before it completes; his allies can hold the barrier for the moment."
+    },
+    {
+      "q": "Is the blood-light sphere invincible?",
+      "a": "It seems highly resistant to top-grade artifacts, but such transformations often have drawbacks like reduced mobility or mana exhaustion."
+    }
+  ]
+}

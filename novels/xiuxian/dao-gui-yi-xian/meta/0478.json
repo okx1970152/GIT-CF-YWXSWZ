@@ -1,0 +1,93 @@
+{
+  "chapter_no": "0478",
+  "chapter_code": "0478",
+  "chapter_slug": "Conversation",
+  "chapter_title_en": "Conversation",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Yi Donglai",
+    "psychologist",
+    "League of Legends",
+    "controlled psychosis",
+    "double feeding",
+    "peach grove",
+    "Spiritual Scourge",
+    "Zhuge Yuan",
+    "tragic memory"
+  ],
+  "guide_tags": [
+    "psychological horror",
+    "body horror",
+    "split reality",
+    "doctor’s gambit",
+    "folk horror",
+    "peach grove",
+    "character study",
+    "tragic backstory"
+  ],
+  "chapter_seo_title": "Li Huowang Plays the Doctor’s Game – Dao Gui Yi Xian Chapter 477",
+  "chapter_meta_description": "Li Huowang fakes cooperation with a League-playing psychiatrist, chews food in two worlds at once, and enters a silent, resin-dripping peach grove. Zhuge Yuan’s buried grief surfaces.",
+  "og_title": "A Chapter of Masks: Therapy, Double-Meals, and the Silent Grove",
+  "og_description": "Li Huowang learns to smile at the doctor while his mother feeds him in one world and he chews braised rice in another. A peach grove holds a darker answer.",
+  "twitter_title": "Laughing with the Doctor, Chewing in Two Worlds",
+  "twitter_description": "Li Huowang plays along with a psychiatrist’s gaming small talk to escape surveillance. Then a silent peach grove and Zhuge Yuan’s tragic past close in.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "spiritual-scourge",
+      "surfaces": [
+        "Spiritual"
+      ],
+      "definition": "A karmic curse or parasitic entity that clings to its victim, causing endless suffering. In this novel, it is implied that the only release may be death, as Zhuge Yuan was forced to grant his own friend."
+    },
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government-sponsored body that polices supernatural phenomena in the Dao-Twisted World, operating with near-total autonomy under the imperial board of war."
+    },
+    {
+      "id": "peach-resin",
+      "surfaces": [
+        "Peach"
+      ],
+      "definition": "Sticky amber sap exuded by peach trees. In folk medicine it is used for healing, but in this novel its excess in a silent forest signals sickness or supernatural stagnation."
+    },
+    {
+      "id": "peach-grove-stillness",
+      "surfaces": [
+        "Peach"
+      ],
+      "definition": "In Chinese ghostlore, a silent forest—especially of peach trees—can indicate the presence of a binding or feeding entity, as animals and insects instinctively flee."
+    },
+    {
+      "id": "yi-donglai",
+      "surfaces": [
+        "Yi"
+      ],
+      "definition": "A younger psychiatrist in the White Tower Psychiatric Hospital who uses video game references as a therapeutic bridge to build rapport with Li Huowang."
+    },
+    {
+      "id": "tryndamere",
+      "surfaces": [
+        "Tryndamere"
+      ],
+      "definition": "A champion from *League of Legends* whose ultimate ability makes him temporarily invincible—used by Yi Donglai as an ironic parallel to Li Huowang’s survival state."
+    },
+    {
+      "id": "braised-rice",
+      "surfaces": [
+        "Braised"
+      ],
+      "definition": "A simple Chinese one-pot dish of rice cooked with broth and ingredients. In this chapter it becomes the common meal shared between two realities."
+    },
+    {
+      "id": "turmeric-paper",
+      "surfaces": [
+        "Turmeric"
+      ],
+      "definition": "A yellow-tinted paper used in Daoist talisman writing, often treated with plant-based coloring for ritual purposes."
+    }
+  ]
+}

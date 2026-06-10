@@ -1,0 +1,108 @@
+{
+  "chapter_no": "0456",
+  "chapter_code": "0456",
+  "chapter_slug": "An-Old-Acquaintance",
+  "chapter_title_en": "An Old Acquaintance",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Bai Lingmiao",
+    "Niuxin Village",
+    "Lü Zhuangyuan",
+    "Gouwa",
+    "Lü Xiucai",
+    "Liu Zongyuan",
+    "Supervisory Heavenly Office",
+    "White Lotus",
+    "Chinese folk horror"
+  ],
+  "guide_tags": [
+    "slice of life",
+    "domestic tension",
+    "reunion",
+    "Office intrigue",
+    "slow burn"
+  ],
+  "chapter_seo_title": "Li Huowang’s New Dawn: An Unexpected Reunion in Niuxin Village",
+  "chapter_meta_description": "A peaceful morning in Niuxin Village is disrupted by old tensions and new visitors—as Li Huowang reunites with a fellow survivor of the Heart-Turbid hunt.",
+  "og_title": "Breakfast, Blood Scabs, and a Familiar Ghost from the Office",
+  "og_description": "Neighbors argue over breakfast, Li Huowang gets scolded for scaring his wife at night, and a masked old acquaintance steps out of the morning fog.",
+  "twitter_title": "Li Huowang’s peaceful morning is cut short by a familiar face in a wooden mask.",
+  "twitter_description": "Domestic squabbles, free porridge, and a surprise visit from a past ally—Li Huowang can’t catch a break even in his own village.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "niuxin-village",
+      "surfaces": [
+        "Niuxin Village"
+      ],
+      "definition": "The new settlement Li Huowang’s group has built after their journey; named after the nearby Niuxin Mountain, it serves as their base and a refuge for fellow survivors."
+    },
+    {
+      "id": "l-zhuangyuan",
+      "surfaces": [
+        "Lü Zhuangyuan"
+      ],
+      "definition": "The grumpy patriarch of a small traveling opera troupe; blunt, protective, perpetually irritable toward his sons but sharp from hard-won survival."
+    },
+    {
+      "id": "l-xiucai",
+      "surfaces": [
+        "Lü Xiucai"
+      ],
+      "definition": "Lü Zhuangyuan’s younger son; resentful and ambitious, he has been learning a supernatural ability and harbors intense hatred for his father."
+    },
+    {
+      "id": "gouwa",
+      "surfaces": [
+        "Gouwa"
+      ],
+      "definition": "A sycophantic survivor who ingratiated himself into Li Huowang’s group; his pregnant wife is about to deliver, and he prefers a comfortable, hands-off life over dangerous cultivation."
+    },
+    {
+      "id": "liu-zongyuan",
+      "surfaces": [
+        "Liu Zongyuan"
+      ],
+      "definition": "A fellow operative of the Supervisory Heavenly Office; the wooden-masked survivor of the same doomed mission to hunt the Heart-Turbid that killed the Chief Recorder and trapped Tuoba Danqing."
+    },
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government-sponsored supernormal law enforcement body that hunts rogue cultivators and manages supernatural disasters."
+    },
+    {
+      "id": "white-lotus-cult",
+      "surfaces": [
+        "White"
+      ],
+      "definition": "A long-standing Chinese secret religious tradition, syncretic in nature, often centered on a savior figure and the Unborn Venerable Mother; here, a recurring threat that the Office watches for."
+    },
+    {
+      "id": "purple-tasseled-sword",
+      "surfaces": [
+        "Purple-Tasseled"
+      ],
+      "definition": "A powerful “military path” weapon that corrupts a normal user’s personality with overwhelming bloodlust; Li Huowang remains its wielder despite its influence."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is Li Huowang still covered in blood scabs at breakfast?",
+      "a": "He practices the self-sacrificial techniques of the *Thousand Greats Record*, which demand constant self-harm and bloodletting as a source of power. Even in peace, the cost of his abilities never stops."
+    },
+    {
+      "q": "Who is Liu Zongyuan?",
+      "a": "He is a fellow member of the Supervisory Heavenly Office who accompanied Li Huowang, the Chief Recorder, Tuoba Danqing, and the mind-blind monk on a mission to hunt a Heart-Turbid entity. Only Li Huowang and he are still “alive” and free."
+    },
+    {
+      "q": "Why does Lü Xiucai hate his father so much?",
+      "a": "Lü Xiucai resents his father’s harsh, traditional authority and his refusal to respect Xiucai’s desire to learn supernatural arts. The conflict is a classic case of a rebellious son vs. a domineering patriarch."
+    },
+    {
+      "q": "Is this chapter important for the main plot?",
+      "a": "It’s a character-building and world-establishing chapter. It shows the daily life of Niuxin Village, reveals simmering intragroup tensions (especially around Lü Xiucai), and introduces a returning Office agent who could later act as a witness or ally."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0292",
+  "chapter_code": "0292",
+  "chapter_slug": "Entering-the-Lion-s-Den-The-Imperial-Capital",
+  "chapter_title_en": "Entering the Lion’s Den: The Imperial Capital",
+  "chapter_keywords": [
+    "Ji Ning",
+    "Grand Xia imperial capital",
+    "Shaoyan clan",
+    "Yu Shengong",
+    "Heavenly Treasures Mountain",
+    "Blackwater Carriage",
+    "Soul-Shattering Art",
+    "divine sense secret art",
+    "Primordial Liquid",
+    "Four Young Masters",
+    "Xianxia"
+  ],
+  "guide_tags": [
+    "progress",
+    "politics",
+    "marketplace",
+    "intel",
+    "capital",
+    "tension"
+  ],
+  "chapter_seo_title": "Ji Ning Arrives in the Grand Xia Capital – Tracking, Treasures, and Deadly Rules",
+  "chapter_meta_description": "Ji Ning enters the Grand Xia imperial capital, but the Shaoyan clan immediately picks up his trail. With killing forbidden, how will they strike? Also: treasure trading at the Heavenly Treasures Mountain.",
+  "og_title": "Ji Ning’s First Day in the Imperial Capital",
+  "og_description": "The Shaoyan clan finds Ji Ning, but can’t act in the kill-free capital. Ji Ning heads to the Heavenly Treasures Mountain to spend his spoils—and attracts unwanted attention.",
+  "twitter_title": "Ji Ning at the Capital: Under Watch",
+  "twitter_description": "Ji Ning’s arrival in the Grand Xia capital is anything but quiet. The Shaoyan clan, the Heavenly Treasures Mountain’s intelligence network—everyone’s watching. Can he navigate the politics?",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "blackwater-carriage",
+      "surfaces": [
+        "Blackwater Carriage"
+      ],
+      "definition": "The personal conveyance of the late Shaoyan Nong, a flashy magic treasure that instantly identifies the rider as connected to the Shaoyan clan. Ji Ning uses it, making him an easy target for surveillance."
+    },
+    {
+      "id": "soul-shattering-art",
+      "surfaces": [
+        "Soul-Shattering Art"
+      ],
+      "definition": "A divine sense secret art that weaponizes the cultivator’s spiritual perception into a mental shockwave. Ji Ning uses it to suppress a Primal Daoist’s probing."
+    },
+    {
+      "id": "heavenly-treasures-mountain",
+      "surfaces": [
+        "Heavenly Treasures Mountain"
+      ],
+      "definition": "The largest treasure trading hub in the Grand Xia Dynasty, headquartered in the imperial capital. It resembles a giant qilin and also operates a vast intelligence network."
+    },
+    {
+      "id": "primordial-liquid",
+      "surfaces": [
+        "Primordial Liquid"
+      ],
+      "definition": "The ultimate concentrated essence of natural energy, used as high-value currency among cultivators for purchasing top-grade treasures."
+    },
+    {
+      "id": "four-young-masters",
+      "surfaces": [
+        "Four Young Masters"
+      ],
+      "definition": "A social title for four wealthy, pleasure-loving scions of the Grand Xia imperial capital; denotes high status and extravagance, not peak combat power."
+    },
+    {
+      "id": "divine-sense-secret-art",
+      "surfaces": [
+        "Divine"
+      ],
+      "definition": "A rare type of magical technique that manipulates a cultivator’s spiritual perception for direct mental attacks, defenses, or manifestation, separate from Ki techniques or Fiendgod divine abilities."
+    }
+  ]
+}

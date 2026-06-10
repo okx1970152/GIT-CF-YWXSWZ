@@ -1,0 +1,66 @@
+{
+  "chapter_no": "0227",
+  "chapter_code": "0227",
+  "chapter_slug": "A-Calculated-Investment",
+  "chapter_title_en": "A Calculated Investment",
+  "chapter_keywords": [
+    "Han Li",
+    "Qi Yunxiao",
+    "Reversed Five Elements Formation",
+    "Artifact Refinement",
+    "Divine Soldier Sect",
+    "Mortal Stream",
+    "xianxia",
+    "cultivation",
+    "formation tools",
+    "memory seal",
+    "quiet victory",
+    "Thousand-Year Spiritual Herb"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "Xianxia",
+    "Long-Term Strategy",
+    "Quiet Victory",
+    "Formation Tools",
+    "Social Engineering",
+    "Artifact Refinement"
+  ],
+  "chapter_seo_title": "Han Li’s Calculated Investment: The Quiet Art of Befriending a Genius Refiner",
+  "chapter_meta_description": "Han Li seals a secret book and gambles on a five-year friendship with a rare refiner. In this Mortal Stream chapter, the real treasure isn’t the formation tools—it’s the relationship.",
+  "og_title": "The Long Game: Han Li’s Masterclass in Deferred Value",
+  "og_description": "A quiet chapter, but one that plants the seeds for alliances that will change everything. Watch Han Li trade a spiritual herb for trust.",
+  "twitter_title": "Han Li & the Sealed Book – Why Quiet Victories Win Wars",
+  "twitter_description": "No explosions, just pure strategy. Han Li befriends a refiner by *not* reading his book. Classic Mortal Stream brilliance.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "reversed-five-elements-formation",
+      "surfaces": [
+        "Reversed Five Elements Formation"
+      ],
+      "definition": "A legendary “Minor Forbidden Array” that specializes in illusion and concealment. When compressed into portable array flags and plates, even a fraction of its original power is a valuable defensive asset for a lone cultivator."
+    },
+    {
+      "id": "artifact-refinement",
+      "surfaces": [
+        "Artifact Refinement"
+      ],
+      "definition": "The craft of tempering materials to create magical tools; a cultivator skilled in this art is a precious resource. The Divine Soldier Sect is the most famous for this in the Yuanwu Kingdom region."
+    },
+    {
+      "id": "divine-soldier-sect",
+      "surfaces": [
+        "Divine Soldier Sect"
+      ],
+      "definition": "One of Yuanwu Kingdom’s three great orthodox sects, renowned for its artifact refinement heritage. Its elders produced many of the region’s top magical tools."
+    },
+    {
+      "id": "thousand-year-spiritual-herb",
+      "surfaces": [
+        "Thousand-Year"
+      ],
+      "definition": "A rare, high-grade medicinal ingredient that can take a millennium to naturally mature. Its value is enormous, often serving as a key bargaining chip for Foundation Establishment-level transactions."
+    }
+  ]
+}

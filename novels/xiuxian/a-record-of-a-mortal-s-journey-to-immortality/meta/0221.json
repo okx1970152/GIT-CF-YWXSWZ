@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0221",
+  "chapter_code": "0221",
+  "chapter_slug": "The-Starfall-Sect-and-the-Formation",
+  "chapter_title_en": "The Starfall Sect and the Formation",
+  "chapter_keywords": [
+    "Han Li",
+    "Spirit Eye Spring",
+    "Cave Dwelling",
+    "Starfall Sect",
+    "Formation Banners",
+    "Double-Pupil Rat",
+    "Yuanwu Kingdom",
+    "Mortal Stream"
+  ],
+  "guide_tags": [
+    "Resource Management",
+    "Worldbuilding",
+    "Slice of Cultivation Life",
+    "Strategic Planning",
+    "Foundation"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey: Chapter 221 – Building a Secret Cave and Spirit Eye Spring",
+  "chapter_meta_description": "Han Li stumbles upon a Spirit Eye Spring! He builds a secret cave dwelling, discovers a Starfall Sect market, and plans his next move in this strategic \"quiet victory\" chapter.",
+  "og_title": "A Mortal's Journey: The Art of the Quiet Victory",
+  "og_description": "Witness Han Li’s meticulous planning as he carves a new lair, finds a Spirit Eye, and prepares for the future in this tactical masterclass.",
+  "twitter_title": "Han Li’s Foundation: Chapter 221 Breakdown",
+  "twitter_description": "No battles, just brilliance. Han Li finds a Spirit Eye Spring and plans his next move.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "spirit-eye-spring",
+      "surfaces": [
+        "Spirit Eye Spring"
+      ]
+    },
+    {
+      "id": "formation-banners",
+      "surfaces": [
+        "Formation Banners"
+      ]
+    },
+    {
+      "id": "formation-disks",
+      "surfaces": [
+        "Formation Disks"
+      ]
+    },
+    {
+      "id": "starfall-sect",
+      "surfaces": [
+        "Starfall Sect"
+      ]
+    },
+    {
+      "id": "double-pupil-rat",
+      "surfaces": [
+        "Double-Pupil Rat"
+      ]
+    }
+  ]
+}

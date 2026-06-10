@@ -1,0 +1,59 @@
+{
+  "chapter_no": "0424",
+  "chapter_code": "0424",
+  "chapter_slug": "The-Twin-Lotus",
+  "chapter_title_en": "The Twin Lotus",
+  "chapter_keywords": [
+    "bai lingmiao",
+    "twin lotus",
+    "white lotus society",
+    "second spirit",
+    "niuxin village",
+    "chuma spirit medium",
+    "wusheng laomu",
+    "lü family drama"
+  ],
+  "guide_tags": [
+    "Bai Lingmiao Character Development",
+    "Slow-Burn Politics",
+    "Folk Horror Symbolism",
+    "Domestic Atmosphere"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 423 - Bai Lingmiao Builds Her Rule & the Twin Lotus Appears",
+  "chapter_meta_description": "Bai Lingmiao returns to Niuxin Village, signs laborers, and scolds the Second Spirit for pining over Li Huowang. But a flickering jade lotus triggers a terrifying ritual vision, transforming the mural into a twin lotus.",
+  "og_title": "The Twin Lotus Blooms in Niuxin Village",
+  "og_description": "Bai Lingmiao builds her power base in the village, but a ritual triggered by the White Lotus jade pendant threatens to dissolve her very emotions.",
+  "twitter_title": "Bai Lingmiao scolds, builds, and faces a lotus that flickers with ominous power. The twin lotus has opened.",
+  "twitter_description": "Domestic politics, harsh truths, and a hallucinated chant that nearly dissolves Bai Lingmiao's soul. The White Lotus legacy is awakening.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "twin-lotus",
+      "surfaces": [
+        "Twin"
+      ],
+      "definition": "A traditional Chinese symbol of inseparable love and unity, representing two flowers growing from a single stalk. In the Dao-Twisted World, it signals an ominous split or duplication within a previously singular entity."
+    },
+    {
+      "id": "six-white-donkeys",
+      "surfaces": [
+        "Six"
+      ],
+      "definition": "In the mural, six white donkeys pull the lotus petals. Donkeys carry associations of stubbornness and lowliness in Chinese culture, adding a strangely base, mundane weight to the divine vision."
+    },
+    {
+      "id": "great-qian-realm",
+      "surfaces": [
+        "Great Qian甘露 Realm"
+      ],
+      "definition": "A deliberately garbled term blending Buddhist and Daoist cosmological language (“Great Qian” = heaven; “甘露” = sweet dew/ambrosia). The effect is a sacred text that sounds holy but feels wrong."
+    },
+    {
+      "id": "ten-emotions-and-eight-sufferings",
+      "surfaces": [
+        "Ten"
+      ],
+      "definition": "A twisted adaptation of the Buddhist concept of the “Eight Sufferings.” Here, it implies an expanded, granular taxonomy of emotional pain cultivated by the White Lotus path, not for enlightenment but for power."
+    }
+  ]
+}

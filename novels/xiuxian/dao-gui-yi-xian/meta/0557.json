@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0557",
+  "chapter_code": "0557",
+  "chapter_slug": "Shangguan-Yuting",
+  "chapter_title_en": "Shangguan Yuting",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "Li Huowang",
+    "Zhuge Yuan",
+    "Shangguan Yuting",
+    "Supreme Extremity Confluence",
+    "Supervisory Heavenly Office",
+    "the Unspeakable",
+    "Void Nian",
+    "body horror",
+    "lore bomb"
+  ],
+  "guide_tags": [
+    "supernatural heist",
+    "lore drop",
+    "body horror",
+    "faction reveal",
+    "countdown to Dice"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 556: Shangguan Yuting – The Unspeakable Reveals Itself",
+  "chapter_meta_description": "The \"trade\" with the Supreme Extremity Confluence turns violent. Zhuge Yuan names a terrifying new faction—the Unspeakable—that cannot be named at all.",
+  "og_title": "Dao Gui Yi Xian Ch 556 – The Unspeakable Heist",
+  "og_description": "Shangguan Yuting's true purpose is revealed as the Office official forcibly merges secrets into her body. Li Huowang learns of a being born from the void.",
+  "twitter_title": "The Unspeakable Arrives — Dao Gui Yi Xian Ch 556",
+  "twitter_description": "A faction that cannot be spoken or written down makes its debut. Li Huowang just signed up to be its errand boy.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "supreme-extremity-confluence",
+      "surfaces": [
+        "Supreme"
+      ],
+      "definition": "A supernatural entity that stores or exchanges secrets; in this chapter it is forcibly \"harvested\" by the Supervisory Heavenly Office official against its will."
+    },
+    {
+      "id": "the-unspeakable",
+      "surfaces": [
+        "the"
+      ],
+      "definition": "A primordial being or sect that cannot be named by mortal mouths or recorded in writing; born from the void, it can only be glimpsed at the edges of death or extreme grief."
+    },
+    {
+      "id": "void-nian",
+      "surfaces": [
+        "Void"
+      ],
+      "definition": "A corrupted Nian beast that drains yang life on contact, distinct from the traditional folkloric Nian."
+    },
+    {
+      "id": "spine-bone-sword",
+      "surfaces": [
+        "Spine-Bone"
+      ],
+      "definition": "Li Huowang's weapon, made from a human spine; a signature item of his grim aesthetic."
+    },
+    {
+      "id": "senior-ear",
+      "surfaces": [
+        "Senior"
+      ],
+      "definition": "Shangguan Yuting's respectful address for Li Huowang, a recurring alias from earlier in the narrative."
+    },
+    {
+      "id": "jade-pendant",
+      "surfaces": [
+        "jade"
+      ],
+      "definition": "The pendant Li Huowang inherited from Senior Brother Xuan Yang at Qingfeng Temple; now used as currency for a horse, symbolizing the burning of his last ties to that era."
+    }
+  ]
+}

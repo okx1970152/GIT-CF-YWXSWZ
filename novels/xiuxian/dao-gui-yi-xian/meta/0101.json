@@ -1,0 +1,56 @@
+{
+  "chapter_no": "0101",
+  "chapter_code": "0101",
+  "chapter_slug": "Yang-Xiaohai",
+  "chapter_title_en": "Yang Xiaohai",
+  "chapter_keywords": [
+    "yang xiaohai",
+    "chun xiaoman",
+    "gouwa",
+    "dao tong",
+    "temple boy",
+    "layue shiba",
+    "beggars",
+    "wu family village",
+    "li huowang",
+    "character study",
+    "qingfeng temple",
+    "sword manual"
+  ],
+  "guide_tags": [
+    "Character Study",
+    "Atmospheric",
+    "Slow Burn",
+    "World-Building",
+    "Psychological Horror",
+    "Dao-Twisted World",
+    "Survival"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 101: Yang Xiaohai – The Rules of Survival",
+  "chapter_meta_description": "Chapter 101 shifts perspective to the ten-year-old temple boy. Through his eyes, we see the cold economics of survival in the Dao-Twisted World, where being ‘useful’ is the only law.",
+  "og_title": "Dao Gui Yi Xian – Ch 101: A Child’s View of the Dao-Twisted World",
+  "og_description": "Who is Yang Xiaohai? A new perspective reveals the quiet horror of a world where children learn to be useful or die.",
+  "twitter_title": "On being useful or being dead. A chapter from a child’s eyes.",
+  "twitter_description": "Chapter 101 of Dao Gui Yi Xian turns the camera on the smallest member of the group to show the most intimate cost of survival.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "layue-shiba",
+      "surfaces": [
+        "Layue"
+      ]
+    },
+    {
+      "id": "sword-manual",
+      "surfaces": [
+        "Sword"
+      ]
+    },
+    {
+      "id": "carrying-pole",
+      "surfaces": [
+        "Carrying"
+      ]
+    }
+  ]
+}

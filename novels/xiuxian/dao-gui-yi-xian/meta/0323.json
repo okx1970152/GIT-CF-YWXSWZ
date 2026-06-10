@@ -1,0 +1,71 @@
+{
+  "chapter_no": "0323",
+  "chapter_code": "0323",
+  "chapter_slug": "The-Renxiao-s-Morning-Lesson",
+  "chapter_title_en": "The Renxiao's Morning Lesson",
+  "chapter_keywords": [
+    "Renxiao",
+    "cheng ghost",
+    "Li Huowang",
+    "Black Tai Sui",
+    "heart-element",
+    "Dao-Twisted World",
+    "folk horror",
+    "morning lesson",
+    "Qingfeng Temple",
+    "self-harm",
+    "hallucination"
+  ],
+  "guide_tags": [
+    "Body Horror",
+    "Folk Horror",
+    "Psychological Horror",
+    "Cultivation Parody",
+    "Character Study",
+    "Dark Fantasy"
+  ],
+  "chapter_seo_title": "Li Huowang Confronts His Hallucinations and Discovers the Renxiao's Twisted Cult",
+  "chapter_meta_description": "Li Huowang questions whether his spectral followers are real, nearly kills himself in a rage, and stumbles upon a grotesque parody of religious cultivation among the blind Renxiao.",
+  "og_title": "Renxiao Rising: The Blind Cult Beneath the Cavern",
+  "og_description": "Li Huowang’s own parasite has to stop him from self-destruction, only for him to find a group of twisted, blind mock-monks chanting morning lessons.",
+  "twitter_title": "The Renxiao morning lesson is Qingfeng Temple 2.0, and Li Huowang almost didn’t make it.",
+  "twitter_description": "Li Huowang’s self-harm spiral is stopped by his own parasitic tentacles, then he finds blind cultivators reciting scripture underground.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "renxiao",
+      "surfaces": [
+        "Renxiao"
+      ],
+      "definition": "In the Dao-Twisted World, a blind, malformed creature created from a person who lives miserably into extreme old age; its hair is long like a shell, its nails are curled, and it speaks only in ghost tongue, serving as a horrifying guardian or lure."
+    },
+    {
+      "id": "cheng-ghost",
+      "surfaces": [
+        "Cheng"
+      ],
+      "definition": "A ghost from Chinese folklore that results when a tiger devours a person; the victim’s soul is trapped and forced to lure other travelers to be eaten by the tiger. The idiom “playing the jackal to the tiger” describes an accomplice to evil."
+    },
+    {
+      "id": "morning-lesson",
+      "surfaces": [
+        "Morning"
+      ],
+      "definition": "A daily dawn practice in Daoist and Buddhist temples where adherents chant scriptures and perform devotions. In this novel, seeing Renxiao mimic the ritual is a chilling echo of Qingfeng Temple’s hollow cultivation."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare, innate human constitution in the Dao-Twisted World that makes the bearer a target for alchemists; it blurs the line between reality and hallucination."
+    },
+    {
+      "id": "black-tai-sui",
+      "surfaces": [
+        "Black"
+      ],
+      "definition": "A grotesque parasitic entity that Li Huowang carries inside him; it can extend tentacles from his navel and acts as both a restraint and a horror."
+    }
+  ]
+}

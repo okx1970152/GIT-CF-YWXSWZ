@@ -1,0 +1,64 @@
+{
+  "chapter_no": "0521",
+  "chapter_code": "0521",
+  "chapter_slug": "Storm-Rising-Beyond-the-Seas-The-Abyssal-Depths",
+  "chapter_title_en": "Storm Rising Beyond the Seas: The Abyssal Depths",
+  "chapter_keywords": [
+    "A Record of a Mortal's Journey to Immortality",
+    "chapter 521",
+    "Qiyuan Island",
+    "Bright Pearl Pavilion",
+    "demon beast abyss",
+    "grade 8 demon beasts",
+    "Four Great Merchant Alliances",
+    "Star Palace",
+    "Lady Ming",
+    "Xu Yun",
+    "outer star seas auction",
+    "xianxia worldbuilding"
+  ],
+  "guide_tags": [
+    "Worldbuilding heavy",
+    "Economic lore",
+    "Political faction introduction",
+    "Calm before the storm",
+    "Han Li the observer"
+  ],
+  "chapter_seo_title": "The Abyssal Island's Dark Bargain – RMJI Ch. 521",
+  "chapter_meta_description": "Han Li learns the true history of Abyssal Island—a beast abyss that breeds grade 8 monsters, a coalition that defied the Merchant Alliances, and a secret punishable by death.",
+  "og_title": "The Outer Seas' Most Dangerous Hunting Ground: Abyssal Island Revealed",
+  "og_description": "A coalition of Nascent Soul-backed powers carved this island from the Four Great Merchant Alliances. Now, Han Li must decide if the abyss's treasures are worth the blood price.",
+  "twitter_title": "Abyssal Island's Bloody Auction",
+  "twitter_description": "Grade 8 beasts, a coalition war, and an information blackout. Han Li's quiet tour of the Outer Seas' deadliest trade hub.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "bright-pearl-pavilion",
+      "surfaces": [
+        "Bright Pearl Pavilion"
+      ],
+      "definition": "The trade hub of Abyssal Island, where cultivators sell overseas spoils and bid on rare treasures; its auction hall is restricted by an enchanted barrier."
+    },
+    {
+      "id": "grade-8-demonic-beast",
+      "surfaces": [
+        "Grade"
+      ],
+      "definition": "A demon beast roughly equivalent in power to a human Nascent Soul stage cultivator; its appearance can rewrite the strategic map of any region."
+    },
+    {
+      "id": "four-great-merchant-alliances",
+      "surfaces": [
+        "Four Great Merchant Alliances"
+      ],
+      "definition": "The dominant commercial powers of the cultivation world, controlling resource flow across vast regions; their reach is checked only by united opposition from multiple Nascent Soul-backed factions."
+    },
+    {
+      "id": "outer-affairs-enforcer",
+      "surfaces": [
+        "Outer"
+      ],
+      "definition": "A Star Palace institutional title referring to the cultivator(s) responsible for managing external diplomatic and enforcement matters beyond the sacred mountain's core domains."
+    }
+  ]
+}

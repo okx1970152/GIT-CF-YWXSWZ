@@ -1,0 +1,117 @@
+{
+  "chapter_no": "0592",
+  "chapter_code": "0592",
+  "chapter_slug": "The-Legend-of-the-Luohou-Beast",
+  "chapter_title_en": "The Legend of the Luohou Beast",
+  "chapter_keywords": [
+    "netherworld domain",
+    "spirit void eruption",
+    "luohou beast",
+    "great jin dynasty",
+    "stormwind mountain",
+    "yin beasts",
+    "mana seal",
+    "spatial rift",
+    "immortal cultivation",
+    "mortal stream"
+  ],
+  "guide_tags": [
+    "worldbuilding heavy",
+    "lore dump",
+    "introduction",
+    "survival",
+    "new setting",
+    "power reset"
+  ],
+  "chapter_seo_title": "The Netherworld Domain — Han Li’s Mana-Dead Zone (Chapter 592)",
+  "chapter_meta_description": "Han Li learns the terrifying truth of the Netherworld Domain: a sealed sub-realm where mana is permanently suppressed and the only legend of escape requires climbing Stormwind Mountain.",
+  "og_title": "The Netherworld Domain — Han Li Learns the Dark Truth of His Prison",
+  "og_description": "Discover the two competing origin theories for the Netherworld Domain: a spatial rift to the underworld, or the belly of the legendary Luohou demon beast.",
+  "twitter_title": "The Netherworld Domain — Han Li’s Powerless Prison",
+  "twitter_description": "Han Li lands in a mana-sealed realm where cultivators are reduced to mortals. Is this a spatial rift or the inside of a legendary beast? New chapter of RMJI.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "netherworld-domain",
+      "surfaces": [
+        "Netherworld Domain"
+      ],
+      "definition": "A sealed sub-realm where cultivators lose all magical power due to the Spirit Void Eruption; inhabited by Yin Beasts and survivors."
+    },
+    {
+      "id": "spirit-void-eruption",
+      "surfaces": [
+        "Spirit Void Eruption"
+      ],
+      "definition": "A periodic phenomenon that floods the Netherworld Domain with mana-sealing energy, rendering all cultivators powerless."
+    },
+    {
+      "id": "yin-beast",
+      "surfaces": [
+        "Yin Beast"
+      ],
+      "definition": "A class of creature born from concentrated Netherworld force; they prey on any living thing that enters the domain."
+    },
+    {
+      "id": "luohou",
+      "surfaces": [
+        "Luohou"
+      ],
+      "definition": "A legendary demon beast from Hindu-Mythological origin, said to swallow the sun and moon and tear through space."
+    },
+    {
+      "id": "great-jin-dynasty",
+      "surfaces": [
+        "Great Jin Dynasty"
+      ],
+      "definition": "A super-empire in the cultivation world, considered by its natives to be the \"holy land\" of cultivators in this realm."
+    },
+    {
+      "id": "stormwind-mountain",
+      "surfaces": [
+        "Stormwind Mountain"
+      ],
+      "definition": "A legendary location within the Netherworld Domain, said to be the only known path of escape; considered nearly impossible to climb."
+    },
+    {
+      "id": "spirit-void-eruption-2",
+      "surfaces": [
+        "Spirit Void Eruption"
+      ],
+      "definition": "A periodic phenomenon that floods the Netherworld Domain with mana-sealing energy, rendering all cultivators powerless."
+    },
+    {
+      "id": "netherworld-force",
+      "surfaces": [
+        "Netherworld force"
+      ],
+      "definition": "A substitute energy type that replaces spiritual qi in the Netherworld Domain; cannot be used by ordinary cultivators for spellcasting."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What exactly is the Netherworld Domain?",
+      "a": "It is a sealed sub-realm filled with Netherworld force where cultivators lose all magical power due to the Spirit Void Eruption phenomenon; it is believed to be either a spatial rift to the underworld or the belly of a legendary demon beast called the Luohou."
+    },
+    {
+      "q": "Why can't Han Li use his magical power here?",
+      "a": "The Netherworld Domain is periodically flooded by the Spirit Void Eruption, a mana-sealing energy that suppresses all supernatural abilities; as long as he stays in this space, his cultivation techniques will not work."
+    },
+    {
+      "q": "Is there really a way out of the Netherworld Domain?",
+      "a": "The only known method is climbing Stormwind Mountain, but it is considered nearly impossible by the local survivors; the elder warns that attempting it is often suicidal."
+    },
+    {
+      "q": "What is the Luohou beast theory?",
+      "a": "Some believe the Netherworld Domain is actually inside the belly of a legendary demon beast called the Luohou, which can swallow the sun and moon and tear through space, explaining why the domain connects to different sea regions at different times."
+    },
+    {
+      "q": "Who is the village elder?",
+      "a": "He is a cultivator from the Great Jin Dynasty who was pulled into the Netherworld Domain long ago; he serves as a village elder and provides information to new arrivals."
+    },
+    {
+      "q": "What is the Great Jin Dynasty?",
+      "a": "The Great Jin Dynasty is a super-empire in the cultivation world, considered by its natives to be the \"holy land\" of cultivators; it is a larger and more prosperous region than the Heavenly South or the Chaotic Star Sea."
+    }
+  ]
+}

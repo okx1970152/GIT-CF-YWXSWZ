@@ -1,0 +1,63 @@
+{
+  "chapter_no": "0551",
+  "chapter_code": "0551",
+  "chapter_slug": "The-Gale-Beast-s-Invitation",
+  "chapter_title_en": "The Gale Beast’s Invitation",
+  "chapter_keywords": [
+    "mortal stream xianxia",
+    "gale beast",
+    "ninth-grade demon beast",
+    "demon transformation stages",
+    "qianlan pearl",
+    "han li",
+    "demon cultivator invitation",
+    "power asymmetry",
+    "rebellion",
+    "chaotian sea"
+  ],
+  "guide_tags": [
+    "suspense",
+    "character encounter",
+    "world building",
+    "high tension",
+    "mortal stream",
+    "demon beast lore"
+  ],
+  "chapter_seo_title": "RMJI Ch 551 – Han Li Meets a Ninth-Grade Gale Beast: Death’s Door & A Strange Invitation",
+  "chapter_meta_description": "Han Li is cornered by a ninth-grade demon beast. After realizing escape is impossible, he prepares to self-destruct—only to receive an unexpected offer.",
+  "og_title": "Chapter 551 – The Gale Beast’s Invitation",
+  "og_description": "Cornered by a ninth-grade demon beast, Han Li is forced to accept a bizarre invitation.",
+  "twitter_title": "Han Li vs a Ninth-Grade Gale Beast",
+  "twitter_description": "Cornered by a ninth-grade demon beast, Han Li prepares to detonate his last resort—but the predator has a surprise in store.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "gale-beast",
+      "surfaces": [
+        "Gale"
+      ],
+      "definition": "A high-grade demon beast known for its incredible speed, existing on the border between sea beast and demon bird. A ninth-grade Gale Beast can move at near-teleportation speed."
+    },
+    {
+      "id": "accompanying-heart-grass",
+      "surfaces": [
+        "Accompanying-heart"
+      ],
+      "definition": "A spirit herb that often grows near high-grade demon beast lairs, used in certain alchemical recipes aimed at demonic or beast-type cultivation."
+    },
+    {
+      "id": "second-stage-of-transformation",
+      "surfaces": [
+        "Second"
+      ],
+      "definition": "A major milestone in a demon beast’s journey to humanoid form; completing this stage corresponds to entering the ninth grade, granting near-perfect human appearance."
+    },
+    {
+      "id": "qianlan-pearl",
+      "surfaces": [
+        "Qianlan"
+      ],
+      "definition": "A dangerous treasure pearl that, when detonated via divine lightning, can unleash a devastating explosion intended as a self-destruction or mutual-kill trump card."
+    }
+  ]
+}

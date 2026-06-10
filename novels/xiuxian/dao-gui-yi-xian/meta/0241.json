@@ -1,0 +1,69 @@
+{
+  "chapter_no": "0241",
+  "chapter_code": "0241",
+  "chapter_slug": "The-Lion-Dance-Palace",
+  "chapter_title_en": "The Lion Dance Palace",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "Li Huowang",
+    "Han Fu",
+    "Bai Lingmiao",
+    "Lion-Masks",
+    "Lion Dance Palace",
+    "bronze coin sword",
+    "Heart Element",
+    "spirit medium",
+    "folk horror",
+    "xianxia"
+  ],
+  "guide_tags": [
+    "action",
+    "horror",
+    "betrayal",
+    "ambush",
+    "desperate escape",
+    "body horror",
+    "ritual combat",
+    "folk horror"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 241: The Lion Dance Palace – Betrayal & Blood",
+  "chapter_meta_description": "Li Huowang discovers Han Fu’s “exit” is a trap: the Lion Dance Palace, lair of a hundred Lion-Masks. A desperate chase, brutal duels, and Bai Lingmiao’s rescue unfold.",
+  "og_title": "Trapped in the Lion Dance Palace – Chapter 241",
+  "og_description": "Li Huowang faces a wall of giant, living masks. Han Fu’s betrayal sends the group hurtling into a nightmare of endless pursuit.",
+  "twitter_title": "Ch. 241: The Lion Dance Palace",
+  "twitter_description": "No exit, no mercy—just a hundred Lion-Masks and a two-headed traitor. Li Huowang’s worst fears come true.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "lion-dance-palace",
+      "surfaces": [
+        "Lion Dance Palace"
+      ],
+      "definition": "The main stronghold of the Lion-Masks, a corrupted sect whose members have fused with lion-dance costumes. Its name inverts a festive performance tradition into a horror lair."
+    },
+    {
+      "id": "bronze-coin-sword",
+      "surfaces": [
+        "bronze"
+      ],
+      "definition": "A ritual Daoist weapon made of coins threaded with red string, traditionally used for exorcism. In this chapter, it can scatter and reassemble to bypass blocks."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare and valuable human constitution in the Dao-Twisted World, making the bearer a target for alchemists and cultivators who seek to exploit their nature."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why did Han Fu lead them to the Lion Dance Palace?",
+      "a": "He was never an ally; his goal was to use the Lion-Masks to kill Li Huowang and the group without risking a direct fight he might lose."
+    },
+    {
+      "q": "What is the Lion Dance Palace's origin?",
+      "a": "It is likely a sect that has corrupted the traditional Chinese lion-dance performance into a living, parasitic body-horror; the \"lion-masks\" are now fused with human faces."
+    }
+  ]
+}

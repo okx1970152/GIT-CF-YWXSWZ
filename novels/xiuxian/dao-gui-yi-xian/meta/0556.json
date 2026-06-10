@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0556",
+  "chapter_code": "0556",
+  "chapter_slug": "The-Great-Qi",
+  "chapter_title_en": "The Great Qi",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "Dao Twisted Cultivator",
+    "Li Huowang",
+    "Zhuge Yuan",
+    "Great Qi",
+    "Great Liang",
+    "Heavenly Calamity",
+    "Upper-Stage Filling Gate",
+    "Earth God Temple",
+    "feng shui geomancy"
+  ],
+  "guide_tags": [
+    "Dao Twisted Cultivator",
+    "tragedy",
+    "cosmic horror",
+    "folk horror",
+    "cultivation",
+    "emotional gut punch",
+    "core lore"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 555: The Real Hell of the Great Qi - A Heartbreaking Encounter",
+  "chapter_meta_description": "Li Huowang confronts the true cost of the Heavenly Calamity when he meets a single, silent orphan in the ruins of a crushed village. A devastating chapter on the limits of power and the nature of reality.",
+  "og_title": "The Great Qi's True Horror: A Child Beneath a Broken Mountain",
+  "og_description": "A heartbreaking encounter forces Li Huowang to see the human tragedy of the Great Qi, challenging what he can and cannot save.",
+  "twitter_title": "The Great Qi is a Hell You Can't Escape",
+  "twitter_description": "Li Huowang finds a mute orphan in a collapsed village and learns the cruelest rule of the Dao-Twisted World: you can't save someone from the real world if you live in a fake one.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "earth-god-temple",
+      "surfaces": [
+        "Earth"
+      ],
+      "definition": "A small shrine dedicated to the local tutelary deities, the Earth God and Goddess, who protect a specific village or area. In the Dao-Twisted World, these shrines often harbor corrupted or merged forms of these once-benevolent spirits."
+    },
+    {
+      "id": "talisman",
+      "surfaces": [
+        "Talisman"
+      ],
+      "definition": "A Daoist ritual writing on paper used for a variety of purposes, from warding off evil to summoning aid. Li Huowang uses a golden one here at Zhuge Yuan’s direction to call an ally."
+    },
+    {
+      "id": "upper-stage-filling-gate",
+      "surfaces": [
+        "Upper-Stage"
+      ],
+      "definition": "A specific dimensional portal or landmark used for transit between the Great Liang and the Great Qi. Reaching it requires precise navigation of the world's corrupted metaphysical geography."
+    },
+    {
+      "id": "zhuge-yuan",
+      "surfaces": [
+        "Zhuge"
+      ],
+      "definition": "The ghostly scholar from the Great Liang who guides Li Huowang. He possesses profound knowledge of geomancy and ritual, and is Li Huowang's most trusted, rational advisor—even in death."
+    },
+    {
+      "id": "li-sui",
+      "surfaces": [
+        "Li"
+      ],
+      "definition": "The parasitic entity (Black Tai Sui) living inside Li Huowang, who he treats as a daughter. She possesses tentacles and a child-like consciousness, often wanting meat and calling Li Huowang 'Dad.'"
+    },
+    {
+      "id": "great-qi",
+      "surfaces": [
+        "Great"
+      ],
+      "definition": "The \"real\" world in the Dao-Twisted dichotomy, a land ravaged by Heavenly Calamities and where the laws of reality are breaking down. Its inhabitants cannot cross into the \"fake\" Great Liang."
+    },
+    {
+      "id": "great-liang",
+      "surfaces": [
+        "Great"
+      ],
+      "definition": "The \"fake\" world where Li Huowang's group primarily operates. It is a synthetic reality that can access the Great Qi, but the reverse is impossible, creating a one-way trap of suffering."
+    }
+  ]
+}

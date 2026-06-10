@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0234",
+  "chapter_code": "0234",
+  "chapter_slug": "The-Lion-Dance",
+  "chapter_title_en": "The Lion Dance",
+  "chapter_keywords": [
+    "dao-guided immortal",
+    "lion dance palace",
+    "death cult",
+    "li huowang",
+    "cave horror",
+    "corpse immortal",
+    "thousand greats record",
+    "qingqiu",
+    "chinese folk horror",
+    "zuowandao"
+  ],
+  "guide_tags": [
+    "Body Horror",
+    "Cosmic Horror",
+    "Cult Encounter",
+    "Action Horror",
+    "Chinese Mythology"
+  ],
+  "chapter_seo_title": "The Lion Dance Chamber: Li Huowang Faces a Death Cult – Daoguai Yixian Ch. 234",
+  "chapter_meta_description": "A grim discovery reveals a cult that worships death itself. Li Huowang faces a lion dancer from a cursed palace—a flat-faced horror with a body of hands.",
+  "og_title": "The Lion Dance Palace’s True Face",
+  "og_description": "When the lion’s head is replaced by a dead man’s face, the dance becomes a funeral. Li Huowang uncovers a religion that sacrifices the act of dying.",
+  "twitter_title": "A lion dancer from a corrupted palace",
+  "twitter_description": "Li Huowang uncovers a religion that doesn’t worship a god, but the act of death itself. The ritual’s performer is a horror of cloth, hands, and a flat human face.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "lion-dance-palace",
+      "surfaces": [
+        "Lion Dance Palace"
+      ],
+      "definition": "A local institution in Qingqiu for teaching the art of the lion dance; its name suggests a formalized tradition that may conceal a secret, corrupted cult."
+    },
+    {
+      "id": "qingqiu",
+      "surfaces": [
+        "Qingqiu"
+      ],
+      "definition": "The city where the current events take place, likely part of the walled civilization inside the pass."
+    },
+    {
+      "id": "thousand-greats-record",
+      "surfaces": [
+        "Thousand Greats Record"
+      ],
+      "definition": "A foundational artifact of a suffering-cult that trades extreme agony for power; Li Huowang has embedded it under his own skin."
+    },
+    {
+      "id": "black-tai-sui",
+      "surfaces": [
+        "Black Tai Sui"
+      ],
+      "definition": "A grotesque, wriggling parasitic entity produced by corrupt cultivation; Li Huowang seeks it as an alchemical ingredient."
+    },
+    {
+      "id": "offering-backwards",
+      "surfaces": [
+        "Offering"
+      ],
+      "definition": "A detail in ritual logic; placing offerings backwards implies the recipient is not a deity above, but something below or internal."
+    },
+    {
+      "id": "corpse-solution-immortal",
+      "surfaces": [
+        "Corpse"
+      ],
+      "definition": "A corrupted Daoist concept of transcendence achieved through rot and decay, inverting the traditional \"Corpse Solution\" myth."
+    }
+  ]
+}

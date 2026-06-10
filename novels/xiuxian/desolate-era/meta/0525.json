@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0525",
+  "chapter_code": "0525",
+  "chapter_slug": "The-Armor-Breakers-Gift",
+  "chapter_title_en": "The Armor-Breakers Gift",
+  "chapter_keywords": [
+    "desolate era",
+    "ji ning",
+    "xia emperor",
+    "seamless gate",
+    "pure yang treasure",
+    "Xingtian formation",
+    "war mobilization",
+    "qi of fortune",
+    "heartforge tribulation",
+    "baiji commandery",
+    "grand xia"
+  ],
+  "guide_tags": [
+    "war arc",
+    "strategy",
+    "army mobilization",
+    "treasure distribution",
+    "formation warfare",
+    "political maneuver"
+  ],
+  "chapter_seo_title": "Ji Ning Receives a Pure Yang Treasure in Desolate Era's War Arc",
+  "chapter_meta_description": "The Xia Emperor mobilizes his million-strong army, equips his generals with Pure Yang treasures, and springs a space-sealing trap on the Seamless Gate.",
+  "og_title": "The Emperor's Gambit: A Million Immortals Mobilize",
+  "og_description": "The Xia Emperor moves his army, gifts the generals Pure Yang supreme-grade treasures, and springs a world-sealing formation on the Seamless Gate.",
+  "twitter_title": "Massive Xianxia War Setup! The Emperor Strikes First!",
+  "twitter_description": "The Xia Emperor abandons his capital and launches a bold offensive, setting a space-locking trap for the Seamless Gate.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "eight-dragons-cloud-city",
+      "surfaces": [
+        "Eight Dragons Cloud City"
+      ],
+      "definition": "A mobile fortress and innate spirit treasure used by the Xia Emperor to transport his million-strong army."
+    },
+    {
+      "id": "pure-yang-supreme-grade-magic-treasure",
+      "surfaces": [
+        "Pure Yang supreme-grade magic treasure"
+      ],
+      "definition": "The highest tier of manufactured magic treasure, surpassing even Immortal-grade; often worth more than an Empyrean God's entire collection."
+    },
+    {
+      "id": "armor-breakers",
+      "surfaces": [
+        "Armor-Breakers"
+      ],
+      "definition": "A pair of Pure Yang supreme-grade gloves that can transform into any weapon; designed specifically for the Xingtian Spirit's hands."
+    },
+    {
+      "id": "xingtian-spirit",
+      "surfaces": [
+        "Xingtian Spirit"
+      ],
+      "definition": "The divine entity formed through the Xingtian Formation, possessing god-tier durability and strength, used for close-quarters destruction."
+    },
+    {
+      "id": "xingtian-formation",
+      "surfaces": [
+        "Xingtian"
+      ],
+      "definition": "A massive war formation requiring 100,000 Loose Immortals as a foundation and 1,000 Celestial Immortals as its framework."
+    },
+    {
+      "id": "seamless-city",
+      "surfaces": [
+        "Seamless City"
+      ],
+      "definition": "The floating black fortress-city of the Seamless Gate, anchored above Baiji City."
+    },
+    {
+      "id": "baiji-commandery",
+      "surfaces": [
+        "Baiji Commandery"
+      ],
+      "definition": "The Grand Xia administrative region under attack, currently hosting both the imperial army and the Seamless Gate stronghold."
+    }
+  ]
+}

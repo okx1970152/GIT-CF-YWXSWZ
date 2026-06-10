@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0475",
+  "chapter_code": "0475",
+  "chapter_slug": "Precious-Light-Pavilion",
+  "chapter_title_en": "Precious Light Pavilion",
+  "chapter_keywords": [
+    "Void Heaven Palace",
+    "Precious Light Pavilion",
+    "Bodhi Beads",
+    "Talisman Treasure",
+    "Imperial Scale Armor",
+    "Heaven-Mending Pill",
+    "Star Palace elders",
+    "demonic path alliance",
+    "inner hall trial",
+    "Han Li Core Formation"
+  ],
+  "guide_tags": [
+    "treasures",
+    "power dynamics",
+    "dark forest",
+    "alliance",
+    "foreshadowing",
+    "world-building",
+    "forced entry"
+  ],
+  "chapter_seo_title": "Precious Light Pavilion: Void Heaven Palace Inner Trial Begins",
+  "chapter_meta_description": "Han Li accepts Bodhi Beads, a Nascent Soul-grade Talisman Treasure, and a borrowed scale armor from the demonic patriarchs before entering the Void Heaven Palace's inner trial. The Star Palace elders watch from the shadows.",
+  "og_title": "The Demonic Patriarchs Open Their Vaults – Precious Light Pavilion Awaits",
+  "og_description": "Extreme Yin, Man Brutal Beard, and the Confucian-robed elder each gift Han Li a rare treasure before he steps into the floating jade pavilion. But every gift is a leash.",
+  "twitter_title": "Han Li Gets the Best Gear of His Life – All of It Borrowed",
+  "twitter_description": "The demonic old freaks load Han Li with Bodhi Beads, a Nascent Soul Talisman Treasure, and scale armor. Every leash is a loan.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "bodhi-beads",
+      "surfaces": [
+        "Bodhi Beads"
+      ],
+      "definition": "Spirit-calming beads that resist inner demons and illusions; extremely rare, and stringing four together is an act of lavish desperation."
+    },
+    {
+      "id": "verdant-nether-needle-talisman-treasure",
+      "surfaces": [
+        "Verdant Nether Needle Talisman Treasure"
+      ],
+      "definition": "A single-use talisman treasure created by a Nascent Soul cultivator; far more powerful than ordinary Talisman Treasures."
+    },
+    {
+      "id": "imperial-scale-armor",
+      "surfaces": [
+        "Imperial Scale Armor"
+      ],
+      "definition": "A scale-covered inner armor once used by a late-stage Nascent Soul cultivator; lent to Han Li with an implicit threat of reclaimation."
+    },
+    {
+      "id": "void-heaven-cauldron",
+      "surfaces": [
+        "Void Heaven Cauldron"
+      ],
+      "definition": "The supreme treasure sealed in the Void Heaven Palace's inner hall; the primary objective of the expedition."
+    },
+    {
+      "id": "heaven-mending-pill",
+      "surfaces": [
+        "Heaven-Mending Pill"
+      ],
+      "definition": "A legendary pill that can repair damaged Five Elements roots; once nearly retrieved from the cauldron before the thief was ambushed."
+    },
+    {
+      "id": "gold-devourer-beetles",
+      "surfaces": [
+        "Gold"
+      ],
+      "definition": "A swarm-class spirit insect that can devour magical power; Han Li's primary trump card in the inner trial."
+    },
+    {
+      "id": "precious-light-pavilion",
+      "surfaces": [
+        "Precious Light Pavilion"
+      ],
+      "definition": "A floating jade pavilion in the inner void of the Void Heaven Palace; the immediate destination before the final trial."
+    }
+  ]
+}

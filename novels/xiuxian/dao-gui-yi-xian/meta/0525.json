@@ -1,0 +1,61 @@
+{
+  "chapter_no": "0525",
+  "chapter_code": "0525",
+  "chapter_slug": "The-Letter",
+  "chapter_title_en": "The Letter",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "道诡异仙",
+    "Li Huowang",
+    "Bai Lingmiao letter",
+    "Zuowandao",
+    "psychological horror",
+    "travel permit",
+    "capital city",
+    "Ao-Jing Sect",
+    "human skin mask"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Plot Twist",
+    "Character Study",
+    "World-Building"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Chapter 524: A Letter From Bai Lingmiao Awakens Hope and Dread",
+  "chapter_meta_description": "A letter from Bai Lingmiao fills Li Huowang with desperate hope, but the shadow of the Zuowandao turns a kind word into a venomous trap. Plus, the troupe arrives at the capital.",
+  "og_title": "The Deadliest Weapon is a Kind Word",
+  "og_description": "Li Huowang receives a letter from his missing wife. Is it a sign of hope or a trap designed by the Zuowandao to break him?",
+  "twitter_title": "A single letter shakes Li Huowang to his core. #DaoGuiYiXian #Chapter524",
+  "twitter_description": "Bai Lingmiao writes to Li Huowang, but in a world of lies, can he afford to believe in sweetness?",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "travel-permit",
+      "surfaces": [
+        "travel"
+      ],
+      "definition": "An official document required for passage through city gates and checkpoints in imperial China. Losing it could mean imprisonment or worse."
+    },
+    {
+      "id": "barbican",
+      "surfaces": [
+        "barbican"
+      ],
+      "definition": "A fortified enclosure built outside a city gate, designed to trap and ambush enemies who breach the outer entrance."
+    },
+    {
+      "id": "nine-wan",
+      "surfaces": [
+        "Nine-Wan"
+      ],
+      "definition": "A rank or code-name within the Zuowandao, referring to the Nine of Ten-thousands mahjong tile. Its appearance signals a trained agent, not a random beggar."
+    },
+    {
+      "id": "dried-persimmons",
+      "surfaces": [
+        "dried"
+      ],
+      "definition": "A sweet, dried fruit snack in China. In the letter, it is a domestic detail weaponized by the Zuowandao to create a false sense of intimacy and trust."
+    }
+  ]
+}

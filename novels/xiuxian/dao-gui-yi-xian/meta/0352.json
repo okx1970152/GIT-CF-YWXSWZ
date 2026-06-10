@@ -1,0 +1,101 @@
+{
+  "chapter_no": "0352",
+  "chapter_code": "0352",
+  "chapter_slug": "The-Storyteller",
+  "chapter_title_en": "The Storyteller",
+  "chapter_keywords": [
+    "li huowang",
+    "chief recorder",
+    "heart-mud",
+    "zhuge yuan",
+    "storyteller",
+    "zuowandao",
+    "four repositories",
+    "supernatural heavenly office",
+    "yinling city",
+    "alternate history"
+  ],
+  "guide_tags": [
+    "negotiation chapter",
+    "lore drop",
+    "moral dilemma",
+    "horror bureaucracy",
+    "new character introduction"
+  ],
+  "chapter_seo_title": "The Chief Recorder's Offer: Hunt a Living Heart-Mud for Forbidden Knowledge",
+  "chapter_meta_description": "Li Huowang is summoned by the Chief Recorder and offered a dangerous deal: capture a living Heart-Mud in exchange for hidden Zuowandao texts. Who is the mysterious Storyteller?",
+  "og_title": "The Chief Recorder Bids for a Living Heart-Mud",
+  "og_description": "Li Huowang faces a devil's bargain: hunt a creature like himself for the secrets that might save him.",
+  "twitter_title": "A deal with the eunuch: live Heart-Mud for forbidden scrolls",
+  "twitter_description": "The Chief Recorder is back, and he wants Li Huowang to catch something just as strange as himself.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "chief-recorder",
+      "surfaces": [
+        "Chief"
+      ],
+      "definition": "A high-ranking eunuch official in the Supervisory Heavenly Office; their power is both bureaucratic and supernatural, often wielded through a deceptively genial demeanor."
+    },
+    {
+      "id": "heart-mud",
+      "surfaces": [
+        "Heart-Mud"
+      ],
+      "definition": "A rare existence akin to the Heart-Element, but in a \"muddy\" or impure state; capturing a living one is the new mission."
+    },
+    {
+      "id": "four-repositories",
+      "surfaces": [
+        "Four"
+      ],
+      "definition": "A reference to the *Siku Quanshu*, the imperial library system; accessing its forbidden records is the offered reward."
+    },
+    {
+      "id": "storyteller",
+      "surfaces": [
+        "Storyteller"
+      ],
+      "definition": "Zhuge Yuan's nickname; a scholar who recites fabricated historical timelines, suggesting he may be able to rewrite reality through narrative."
+    },
+    {
+      "id": "ren-wu",
+      "surfaces": [
+        "Ren"
+      ],
+      "definition": "The Office's rank system; Li Huowang's low assignment is seen as underutilization of his talents."
+    },
+    {
+      "id": "facai",
+      "surfaces": [
+        "Facai"
+      ],
+      "definition": "A member of the Zuowandao's mysterious triad; dead by this chapter, his absence provides a window of opportunity."
+    },
+    {
+      "id": "ying-hui",
+      "surfaces": [
+        "Ying"
+      ],
+      "definition": "The fabricated era name in Zhuge Yuan's alternate history, meaning \"Heroic and Wise.\""
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is a Heart-Mud?",
+      "a": "A rare, living entity that is the \"muddy\" counterpart to a Heart-Element; the Office wants a live one to substitute for a dead specimen they lost."
+    },
+    {
+      "q": "Why does the Chief Recorder need Li Huowang?",
+      "a": "He needs a capable, expendable agent for a dangerous, non-official task; Li Huowang’s proven survival instincts make him ideal."
+    },
+    {
+      "q": "Who is Zhuge Yuan?",
+      "a": "A mysterious scholar nicknamed \"The Storyteller\" who recites fabricated historical timelines; he is implied to be powerful enough to steal a Heart-Mud from the Office."
+    },
+    {
+      "q": "What is the Four Repositories?",
+      "a": "An imperial library system; the Chief Recorder promises to transcribe forbidden texts about the Zuowandao from it as payment."
+    }
+  ]
+}

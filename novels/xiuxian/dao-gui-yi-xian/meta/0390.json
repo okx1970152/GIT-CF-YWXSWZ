@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0390",
+  "chapter_code": "0390",
+  "chapter_slug": "Apricot-Island",
+  "chapter_title_en": "Apricot Island",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Apricot Island",
+    "Black Tai Sui",
+    "Yang Na hallucination",
+    "True Sutra of the Fire Vestments",
+    "gambling",
+    "self-surgery",
+    "bone divination",
+    "Zhuge Yuan",
+    "Red Center"
+  ],
+  "guide_tags": [
+    "aftermath",
+    "body horror",
+    "trauma",
+    "gambling interlude",
+    "folk horror",
+    "moral rage",
+    "self-mutilation"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian 389: After the Monster’s Belly – Li Huowang’s Brutal Return",
+  "chapter_meta_description": "After surviving the water horror, Li Huowang wakes to find the crew worshipping him as a dragon king. Explosive rage, a phantom Yang Na, and a bloody self-surgery follow. Apricot Island awaits, but finding Zhuge Yuan will cost him a piece of himself.",
+  "og_title": "Dao Gui Yi Xian Ch. 389: Apricot Island",
+  "og_description": "Li Huowang carves bone from his own arm to find Zhuge Yuan.",
+  "twitter_title": "Apricot Island – Dao Gui Yi Xian Ch. 389",
+  "twitter_description": "After the monster, the worshipers. Li Huowang kicks over the altar and pulls out his own bone.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "true-sutra-of-the-fire-vestments",
+      "surfaces": [
+        "True Sutra of the Fire Vestments"
+      ],
+      "definition": "A sacred text of the Ao-Jing Sect that, when burned, releases a fire-slug for agonizing, flesh-sealing healing."
+    },
+    {
+      "id": "red-center",
+      "surfaces": [
+        "Red"
+      ],
+      "definition": "A spectral Zuowandao trickster who now serves as Li Huowang’s captive advisor; her voice is sharp, sarcastic, and constantly weary."
+    },
+    {
+      "id": "divination-with-human-bone",
+      "surfaces": [
+        "Divination"
+      ],
+      "definition": "In the Dao-Twisted World, human bone is considered a potent medium for seeking fate or locating a person, particularly using one’s own bone for direct sympathetic connection."
+    },
+    {
+      "id": "apricot-island",
+      "surfaces": [
+        "Apricot"
+      ],
+      "definition": "A vast island, said to be half the size of Jiangnan province, where Zhuge Yuan has asked Li Huowang to find him."
+    },
+    {
+      "id": "dragon-king",
+      "surfaces": [
+        "Dragon"
+      ],
+      "definition": "A popular folk water deity in Chinese mythology; the boat crew mistakenly worships Li Huowang as one due to his tentacled appearance."
+    },
+    {
+      "id": "child-offerings",
+      "surfaces": [
+        "Child"
+      ],
+      "definition": "In some dark folk traditions, children are offered in sacrifice to appease river deities; Li Huowang reacts with fury when he sees this."
+    }
+  ]
+}

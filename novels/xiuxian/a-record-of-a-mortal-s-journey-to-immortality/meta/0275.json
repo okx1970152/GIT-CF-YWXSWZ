@@ -1,0 +1,103 @@
+{
+  "chapter_no": "0275",
+  "chapter_code": "0275",
+  "chapter_slug": "One-Year",
+  "chapter_title_en": "One Year",
+  "chapter_keywords": [
+    "jingu plain battle",
+    "Foundation Establishment war mechanics",
+    "core formation cultivators",
+    "Dragon Sing Grass",
+    "ancient pill formula cultivation war",
+    "qi yunxiao plan",
+    "Spirit Eye Spring spider eggs",
+    "seven sects vs six clans"
+  ],
+  "guide_tags": [
+    "war arc",
+    "worldbuilding",
+    "resource management",
+    "market trading",
+    "quiet chapter",
+    "mortal stream realism"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 275: The Jingu Plain War",
+  "chapter_meta_description": "Han Li survives a year of Foundation Establishment-level warfare, acquires a Dragon Sing Grass, secures two ancient formulas, and waits for his chance to find Qi Yunxiao.",
+  "og_title": "RMJI Ch. 275 — The War of Attrition",
+  "og_description": "Han Li has survived a year of grinding, asymmetric warfare on the Jingu Plain. The Foundation Establishment die in droves; Core Formation cultivators remain invincible. But Han Li is accumulating, trading, and waiting for his real move.",
+  "twitter_title": "RMJI Ch. 275 — Meat Grinder Economy",
+  "twitter_description": "A year of war, zero Core Formation deaths, hundreds of Foundation Establishment kills. Han Li buys a Dragon Sing Grass, gets two formulas for cheap, and plays the long game.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "spirit-eye-spring",
+      "surfaces": [
+        "Spirit Eye Spring"
+      ],
+      "definition": "A rare natural concentration of spiritual qi formed over millennia; meditating near one accelerates cultivation by 20-30%."
+    },
+    {
+      "id": "jingu-plain",
+      "surfaces": [
+        "Jingu Plain"
+      ],
+      "definition": "The main battlefield between the Seven Sects of Yue and the Six Demonic Clans; a site of daily Foundation Establishment-level skirmishes and nightly Core Formation duels."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation Establishment"
+      ],
+      "definition": "The second major cultivation realm, granting a lifespan of ~200 years and the ability to use mid-grade magic tools; the primary casualty bracket in the Jingu Plain war."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core Formation"
+      ],
+      "definition": "The third major cultivation realm, granting a ~500-year lifespan and vastly superior combat speed; effectively invincible in the war's current balance."
+    },
+    {
+      "id": "ancient-teleportation-array",
+      "surfaces": [
+        "Ancient Teleportation Array"
+      ],
+      "definition": "A prehistoric formation capable of crossing millions of li; its repair knowledge is lost in modern times."
+    },
+    {
+      "id": "dragon-sing-grass",
+      "surfaces": [
+        "Dragon Sing Grass"
+      ],
+      "definition": "A rare, valuable spiritual herb used in alchemy; requires 500 spirit stones on the Jingu Plain black market."
+    },
+    {
+      "id": "mana-condensing-pill",
+      "surfaces": [
+        "Mana"
+      ],
+      "definition": "A cultivation pill for accelerating mana accumulation; Han Li has now acquired all its ingredients."
+    },
+    {
+      "id": "soul-controlling-formation",
+      "surfaces": [
+        "Soul-Controlling Formation"
+      ],
+      "definition": "A basic formation used by cultivators to imprint their essence blood on beast eggs, establishing ownership and control."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why has no Core Formation cultivator died in a year?",
+      "a": "Their flight speed and defensive capabilities make a successful kill nearly impossible; a Core Formation cultivator can retreat faster than any peer can pursue, and killing one would require a decisive power advantage or a perfect trap."
+    },
+    {
+      "q": "Why does Han Li keep buying ancient formulas?",
+      "a": "A single viable pill formula is a permanent multiplying asset; unlike a single pill, a formula lets Han Li produce as many pills as his ingredients allow, making it the highest-return investment in the Mortal Stream economy."
+    },
+    {
+      "q": "Why are Qi Condensation cultivators saved as reserves?",
+      "a": "They are too weak to survive the daily skirmishes, so both sides preserve them as a strategic reserve for the final decisive battle, making them the lowest priority casualties in the war."
+    }
+  ]
+}

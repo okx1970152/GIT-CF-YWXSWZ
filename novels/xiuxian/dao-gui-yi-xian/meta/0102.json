@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0102",
+  "chapter_code": "0102",
+  "chapter_slug": "War",
+  "chapter_title_en": "War",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Yang Xiaohai",
+    "jade pendant",
+    "lotus song",
+    "war refugees",
+    "routed army",
+    "Gao Zhijian",
+    "experiment",
+    "duplicate",
+    "identity horror",
+    "Dao-Twisted World"
+  ],
+  "guide_tags": [
+    "War",
+    "Refugees",
+    "Body Horror",
+    "Existential Horror",
+    "Psychological Horror",
+    "Experiment",
+    "Dream Sequence",
+    "Folk Horror"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 102: War — Li Huowang's Jade Pendant Experiment",
+  "chapter_meta_description": "Li Huowang tests the boundary between worlds with a jade pendant—and gets back a duplicate that shatters everything he thought he knew about real and fake.",
+  "og_title": "War — The Jade Pendant Splits Reality",
+  "og_description": "A single experiment forces Li Huowang to confront the possibility that both worlds might be real. And neither is safe.",
+  "twitter_title": "Ch. 102: War — The Pendant That Proved Nothing",
+  "twitter_description": "Yang Xiaohai uncovers a war. Li Huowang uncovers a duplicate. No one gets an easy answer.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "lotus-song",
+      "surfaces": [
+        "Lotus"
+      ]
+    },
+    {
+      "id": "routed-army",
+      "surfaces": [
+        "Routed"
+      ]
+    },
+    {
+      "id": "white-tower-psychiatric-hospital",
+      "surfaces": [
+        "White"
+      ]
+    },
+    {
+      "id": "dream-sequence",
+      "surfaces": [
+        "Dream"
+      ]
+    }
+  ]
+}

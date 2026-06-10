@@ -1,0 +1,77 @@
+{
+  "chapter_no": "0530",
+  "chapter_code": "0530",
+  "chapter_slug": "The-Beheader",
+  "chapter_title_en": "The Beheader",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Mercenary King",
+    "skin-man",
+    "Civil Wealth God",
+    "Martial Wealth God",
+    "shadow puppets",
+    "Great Qi fissure",
+    "copper-coin sword",
+    "body horror",
+    "assassination"
+  ],
+  "guide_tags": [
+    "action",
+    "assassination",
+    "folk horror",
+    "Wealth God",
+    "shenanigans",
+    "cliffhanger"
+  ],
+  "chapter_seo_title": "The Beheader: Li Huowang Hunts the Mercenary King in a Supernatural Ambush",
+  "chapter_meta_description": "Li Huowang ambushes the Mercenary King mid-performance, only to face a skin-man escape, shadow-puppet immobilization, and two corrupted Wealth Gods. A desperate sprint toward the Great Qi fissure.",
+  "og_title": "Li Huowang Hunts the Mercenary King—With a Reality-Splitting Sword",
+  "og_description": "Li Huowang’s ambush goes sideways. The Mercenary King has a skin-man backup, two Wealth God bodyguards, and an army of shadow puppets. Can our one-armed hero reach the Great Qi tear in time?",
+  "twitter_title": "The Beheader: Li Huowang’s Reality-Splitting Sword vs. The Wealth Gods",
+  "twitter_description": "Li Huowang loses a hand, gains a dimensional escape plan, and learns that the Mercenary King doesn’t stay dead easily.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "skin-man",
+      "surfaces": [
+        "Skin-man"
+      ],
+      "definition": "A life-preserving artifact in Dao-Twisted cultivation; a palm-sized doll made from the user’s own skin or hair that can regrow a destroyed body if the original consciousness transfers into it."
+    },
+    {
+      "id": "civil-wealth-god",
+      "surfaces": [
+        "Civil"
+      ],
+      "definition": "A folk deity of worldly prosperity, often depicted with a gold ingot; in this chapter, a masked bodyguard wearing this title controls any copper-coin weaponry through sympathetic magic."
+    },
+    {
+      "id": "martial-wealth-god",
+      "surfaces": [
+        "Martial"
+      ],
+      "definition": "A warrior-aspect of the Wealth God, often mounted and armored; in this story, he manifests as a silver-mace-wielding, leopard-riding enforcer."
+    },
+    {
+      "id": "shadow-puppet-entities",
+      "surfaces": [
+        "Shadow-puppet"
+      ],
+      "definition": "Supernatural beings that mimic the art of Chinese shadow puppetry; they can seize a living person’s shadow to immobilize them, and are nullified by the absence of light."
+    },
+    {
+      "id": "copper-coin-sword",
+      "surfaces": [
+        "Copper"
+      ],
+      "definition": "A ritual Daoist weapon composed of old Chinese coins strung on red cord; in the Dao-Twisted World, it is vulnerable to the control of Wealth God imitators."
+    },
+    {
+      "id": "great-qi-fissure",
+      "surfaces": [
+        "Great"
+      ],
+      "definition": "A cut in reality that tears open a portal to the Great Qi realm; Li Huowang can use it both as a weapon and as a dimensional stepping-stone."
+    }
+  ]
+}

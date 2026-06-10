@@ -1,0 +1,48 @@
+{
+  "chapter_no": "0002",
+  "chapter_code": "0002",
+  "chapter_slug": "Green-Ox-Town",
+  "chapter_title_en": "Green Ox Town",
+  "chapter_keywords": [
+    "green ox town",
+    "seven mysteries sect",
+    "wild wolf gang",
+    "fatty han",
+    "protector wang",
+    "spring fragrance tavern",
+    "jianghu",
+    "xianxia mountains",
+    "seven ultimates sage",
+    "disciple recruitment"
+  ],
+  "guide_tags": [
+    "worldbuilding",
+    "sect introduction",
+    "rival factions",
+    "martial arts setting",
+    "origin story",
+    "power dynamics",
+    "bribery"
+  ],
+  "chapter_seo_title": "Green Ox Town: Han Li Arrives & the Sect-Gang Conflict",
+  "chapter_meta_description": "Han Li arrives in Green Ox Town and meets his third uncle. As he awaits the Seven Mysteries Sect's messenger, the history of the sect and its rivalry with the Wild Wolf Gang is revealed.",
+  "og_title": "Entering Green Ox Town: A Martial World Takes Shape",
+  "og_description": "Han Li arrives in Green Ox Town, meets his uncle, and awaits the Seven Mysteries Sect. The chapter unveils the history of the sect and its bitter rivalry with the Wild Wolf Gang.",
+  "twitter_title": "Green Ox Town: Sect & Gang",
+  "twitter_description": "Han Li reaches Green Ox Town. The Seven Mysteries Sect and Wild Wolf Gang are introduced as rival powers shaping the world he is about to enter.",
+  "updated_at": "2026-05-05",
+  "lore_anchors": [
+    {
+      "id": "seven-mysteries-sect",
+      "surfaces": [
+        "Seven Mysteries Sect"
+      ]
+    },
+    {
+      "id": "wild-wolf-gang",
+      "surfaces": [
+        "Wild Wolf Gang"
+      ]
+    }
+  ]
+}

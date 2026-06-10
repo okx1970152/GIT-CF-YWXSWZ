@@ -1,0 +1,90 @@
+{
+  "chapter_no": "0548",
+  "chapter_code": "0548",
+  "chapter_slug": "The-Hunt",
+  "chapter_title_en": "The Hunt",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "supervisory heavenly office",
+    "gao zhijian",
+    "chun xiaoman",
+    "zuowandao",
+    "shangji guankou",
+    "tracking the dice",
+    "imperial capital"
+  ],
+  "guide_tags": [
+    "psychological horror",
+    "xianxia",
+    "bureaucractic horror",
+    "character development",
+    "gao zhijian arc",
+    "the hunt"
+  ],
+  "chapter_seo_title": "The Hunt: Li Huowang Faces the Supervisory Office & Gao Zhijian Sets Out",
+  "chapter_meta_description": "Li Huowang finally tracks his quarry to the Imperial Capital, but is intercepted by a terrifyingly knowledgeable agent of the Supervisory Heavenly Office. Meanwhile, a quiet emperor sets out.",
+  "og_title": "The Bureaucratic Gaze Falls on Li Huowang",
+  "og_description": "In this chapter, the world's hidden administration emerges, and a simple man's loyalty becomes a beacon of hope.",
+  "twitter_title": "The Office knows everything. Li Huowang is a file now.",
+  "twitter_description": "Bureaucrats, false emperors, and the hunt for the Dice. Chapter 547 of Dao Gui Yi Xian is a cold masterpiece of institutional horror.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "The imperial intelligence and supernatural law enforcement body of the Great Liang. They track, file, and neutralize threats to the state's version of reality."
+    },
+    {
+      "id": "er-jiu",
+      "surfaces": [
+        "Er"
+      ],
+      "definition": "A high-ranking field agent of the Supervisory Heavenly Office. His ability to recite Li Huowang’s entire career with cold precision reveals the Office’s terrifying reach."
+    },
+    {
+      "id": "shangji-guankou",
+      "surfaces": [
+        "Shangji"
+      ],
+      "definition": "A strange, receding location from Li Huowang’s experience. Its existence is denied by the Office, but affirmed by Zhuge Yuan as a truth that weakens with ignorance."
+    },
+    {
+      "id": "ji-zai",
+      "surfaces": [
+        "Ji"
+      ],
+      "definition": "The registered alias given to Li Huowang within the Ao-Jing Sect and his official Office file. A name of bureaucratic and spiritual weight."
+    },
+    {
+      "id": "spirit-invocation",
+      "surfaces": [
+        "Spirit"
+      ],
+      "definition": "A folk technique granting temporary invulnerability through blood sacrifice and chanting. Chun Xiaoman mentions they have seven practitioners in the village."
+    },
+    {
+      "id": "vajra-club",
+      "surfaces": [
+        "Vajra"
+      ],
+      "definition": "A ritual weapon, here used as a projectile by the Office agents. Its use signals a Buddhist or hybrid-cultivation combat style within the Office’s ranks."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why did Li Huowang threaten Gouwa so harshly?",
+      "a": "He was in the middle of a critical pursuit and needed absolute silence and obedience. His threat was a survival tool, not cruelty for its own sake."
+    },
+    {
+      "q": "How does the Supervisory Office know everything about Li Huowang?",
+      "a": "The Office is a vast, shadowy intelligence network. They track cultivators, register their sect affiliations, and maintain dossiers. Li Huowang has been a person of interest for a long time."
+    },
+    {
+      "q": "Is Gao Zhijian actually the emperor?",
+      "a": "It is a core part of his backstory. He was a mad emperor who fled his throne. His declaration “I am the emperor” is both a tragic fact and a source of unexpected authority."
+    }
+  ]
+}

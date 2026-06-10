@@ -1,0 +1,51 @@
+{
+  "chapter_no": "0250",
+  "chapter_code": "0250",
+  "chapter_slug": "Success",
+  "chapter_title_en": "Success",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "chapter 250",
+    "gouwa",
+    "blow dart",
+    "lu xiucai",
+    "li huowang",
+    "folk horror",
+    "xianxia comedy",
+    "black tai sui",
+    "secret tent"
+  ],
+  "guide_tags": [
+    "comic relief",
+    "character moment",
+    "worldbuilding",
+    "slow burn horror",
+    "slice of cult life"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 250 – Gouwa’s Big Win & Li Huowang’s Secret",
+  "chapter_meta_description": "Gouwa nearly chokes to death on his own trick, then charms the ladies. But the real horror is watching Li Huowang head toward a tent that isn’t the Black Tai Sui’s.",
+  "og_title": "Dao Gui Yi Xian Chapter 250 – Success",
+  "og_description": "A rare moment of levity in the Dao-Twisted World: Gouwa’s blow-dart triumph turns into a flirting victory, while Li Huowang sharpens his tools and heads for a mysterious tent.",
+  "twitter_title": "Ch. 250 – Success",
+  "twitter_description": "Gouwa nearly dies on his own trick, then lands a date. Meanwhile, Li Huowang ignores the Black Tai Sui tent and heads somewhere else.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "magic-tool",
+      "surfaces": [
+        "Magic"
+      ],
+      "definition": "A specialized implement used to channel or unleash supernatural power. In xianxia, even a simple object like a tube and a needle can qualify if treated with ritual significance."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is Gouwa so scared of swallowing the needle?",
+      "a": "The needle is a physical object imbued with supernatural properties—swallowing it wouldn't just choke him, it could transform him into a monster, just as Senior Brother Li feared previously."
+    },
+    {
+      "q": "Who is Lü Zhuangyuan?",
+      "a": "The grumpy patriarch of a small traveling opera troupe. He trusts Li Huowang's supernatural judgment and relies on his son Lü Xiucai to gauge the cultivator's mood before asking for favors."
+    }
+  ]
+}

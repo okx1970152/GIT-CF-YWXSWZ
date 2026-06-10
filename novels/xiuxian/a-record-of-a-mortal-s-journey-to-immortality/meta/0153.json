@@ -1,0 +1,59 @@
+{
+  "chapter_no": "0153",
+  "chapter_code": "0153",
+  "chapter_slug": "The-Gate-of-Yue-Lu-Hall",
+  "chapter_title_en": "The Gate of Yue Lu Hall",
+  "chapter_keywords": [
+    "yellow maple valley",
+    "yue lu hall",
+    "foundation establishment disciples",
+    "teleportation formation",
+    "immortal sect bureaucracy",
+    "guarantor token",
+    "senior martial uncle ma",
+    "alchemy formulas",
+    "sect hierarchy",
+    "mortal stream"
+  ],
+  "guide_tags": [
+    "world-building",
+    "sect politics",
+    "setup chapter",
+    "resource management",
+    "social engineer han li",
+    "immortal sect bureaucracy"
+  ],
+  "chapter_seo_title": "A Record of a Mortal’s Journey Chapter 153: The Gate of Yue Lu Hall – Immortal Sect Bureaucracy",
+  "chapter_meta_description": "Han Li navigates the strict protocols of Yellow Maple Valley’s Yue Lu Hall, using a hard-won guarantor token from an eccentric alchemist to gain access. A deep dive into sect hierarchy.",
+  "og_title": "Chapter 153: Paying the Price for Knowledge",
+  "og_description": "Han Li trades a year of free labor for a single entry pass to the sect’s restricted archive. The Mortal Stream lesson: no shortcuts, only transactions.",
+  "twitter_title": "Han Li buys a library card with a year of hard labor.",
+  "twitter_description": "No free lunch in the cultivation world. Han Li navigates sect politics and pays a steep price to enter Yue Lu Hall.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation"
+      ]
+    },
+    {
+      "id": "teleportation-formation",
+      "surfaces": [
+        "Teleportation"
+      ]
+    },
+    {
+      "id": "yue-lu-hall",
+      "surfaces": [
+        "Yue"
+      ]
+    },
+    {
+      "id": "guarantor-token",
+      "surfaces": [
+        "Guarantor"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "chapter_no": "0188",
+  "chapter_code": "0188",
+  "chapter_slug": "The-Crimson-Dragon-Mountains",
+  "chapter_title_en": "The Crimson Dragon Mountains",
+  "chapter_keywords": [
+    "Ji Ning",
+    "Mu Northson",
+    "Yinglong Guard",
+    "Crimson Dragon Mountains",
+    "Anchan Commandery",
+    "Puppetry",
+    "Internal Guard",
+    "Yanshan Great Wasteland",
+    "Black-White College",
+    "Grand Xia Dynasty",
+    "Beishan Baiwei",
+    "Welcome Peak"
+  ],
+  "guide_tags": [
+    "World Building",
+    "Brotherhood",
+    "Adventure Setup",
+    "Power Scale Reveal",
+    "Brutal Bureaucracy",
+    "Sect Politics"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 188: Ji Ning Joins the Yinglong Guard - The Crimson Dragon Mountains",
+  "chapter_meta_description": "Ji Ning and Mu Northson arrive at the Crimson Dragon Mountains to join the Yinglong Guard. They face cold bureaucracy, witness the terrifying scale of the state's power, and prepare for the deadly Yanshan trial.",
+  "og_title": "Desolate Era 188: The Crimson Dragon Mountains",
+  "og_description": "Ji Ning bids farewell and heads to the Crimson Dragon Mountains, where the cold, ruthless authority of the Imperial Yinglong Guard is on full display.",
+  "twitter_title": "The Guards are Here: Desolate Era Ch188",
+  "twitter_description": "World-building at its finest! Ji Ning meets the terrifying bureaucracy of the Yinglong Guard. The calm before the storm has begun.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "yinglong-guard",
+      "surfaces": [
+        "Yinglong"
+      ]
+    },
+    {
+      "id": "anchan-commandery",
+      "surfaces": [
+        "Anchan"
+      ]
+    },
+    {
+      "id": "crimson-dragon-mountains",
+      "surfaces": [
+        "Crimson"
+      ]
+    },
+    {
+      "id": "welcome-peak",
+      "surfaces": [
+        "Welcome"
+      ]
+    },
+    {
+      "id": "internal-guard",
+      "surfaces": [
+        "Internal"
+      ]
+    },
+    {
+      "id": "puppet-mansion",
+      "surfaces": [
+        "Puppet"
+      ]
+    }
+  ]
+}

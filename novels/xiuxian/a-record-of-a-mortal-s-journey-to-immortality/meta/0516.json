@@ -1,0 +1,81 @@
+{
+  "chapter_no": "0516",
+  "chapter_code": "0516",
+  "chapter_slug": "The-Conspiracy-in-the-Courtyard",
+  "chapter_title_en": "The Conspiracy in the Courtyard",
+  "chapter_keywords": [
+    "Han Li",
+    "Heaven Star City",
+    "Star Palace",
+    "Outer Star Seas",
+    "Foundation Establishment cultivators",
+    "Half-Foundation stage",
+    "teleportation fee",
+    "bribery",
+    "spying",
+    "eavesdropping",
+    "sacred mountain",
+    "Mortal Stream"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "information warfare",
+    "low-level cultivators",
+    "Star Palace arc",
+    "Han Li schemes",
+    "slow burn",
+    "foundation establishment",
+    "pre-war tension"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 516 – Han Li Eavesdrops on a Secret Escape Plan",
+  "chapter_meta_description": "Han Li tails two cultivators to a secret meeting and overhears a desperate plot to bribe their way off the Sacred Mountain before the great war begins. A classic lesson in Mortal Stream information warfare.",
+  "og_title": "Ch. 516: The Conspiracy in the Courtyard",
+  "og_description": "Han Li spies on Foundation Establishment cultivators planning to escape the war by bribing a teleportation operator. No swords, just cold calculation.",
+  "twitter_title": "AOMJI Ch. 516 – The Art of Listening",
+  "twitter_description": "Han Li doesn't lift a sword—he just listens to desperate people talk, and walks away with the perfect escape plan.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "half-foundation",
+      "surfaces": [
+        "Half-Foundation"
+      ],
+      "definition": "A precarious threshold state just before Core Formation, where a cultivator’s mana peaks at Foundation Establishment but hasn’t yet solidified into a true Golden Core; many get stuck here for decades."
+    },
+    {
+      "id": "outer-star-seas",
+      "surfaces": [
+        "Outer"
+      ],
+      "definition": "The dangerous, resource-rich frontier zone beyond the Inner Star Seas, where high-grade demon beasts and rare materials draw desperate cultivators willing to risk everything."
+    },
+    {
+      "id": "flowing-water-formation",
+      "surfaces": [
+        "Flowing"
+      ],
+      "definition": "A low-grade warning array that detects intruders by sensing disturbances in an artificially circulated spiritual air current; easily bypassed by anyone with basic formation knowledge."
+    },
+    {
+      "id": "sacred-mountain-fourth-layer",
+      "surfaces": [
+        "Sacred"
+      ],
+      "definition": "The middle residential tier of Heaven Star City’s tiered Sacred Mountain system, where mid-to-low-level cultivators are housed; distinct from the elite upper layers."
+    },
+    {
+      "id": "starry-sky-hall",
+      "surfaces": [
+        "Starry"
+      ],
+      "definition": "A major administrative hall on the Sacred Mountain, likely where teleportation permits and official Star Palace missions are handled."
+    },
+    {
+      "id": "spiritual-sense",
+      "surfaces": [
+        "Spiritual"
+      ],
+      "definition": "A cultivator’s non-physical perception ability; at Han Li’s Foundation Establishment level, it can envelop a courtyard and distinguish individual presences within."
+    }
+  ]
+}

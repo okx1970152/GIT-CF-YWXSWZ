@@ -1,0 +1,77 @@
+{
+  "chapter_no": "0314",
+  "chapter_code": "0314",
+  "chapter_slug": "Yinling-City",
+  "chapter_title_en": "Yinling City",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "black tai su",
+    "tuoba danqing",
+    "bagua mirror",
+    "three character classic",
+    "zuowandao",
+    "talisman manual",
+    "supernatural horror",
+    "chinese cultivation novel",
+    "xianxia translation"
+  ],
+  "guide_tags": [
+    "slow-burn horror",
+    "dark comedy",
+    "mundanely gruesome",
+    "world-building chapter",
+    "protagonist growth"
+  ],
+  "chapter_seo_title": "Li Huowang Teaches Black Tai Sui & Reunites with Tuoba Danqing — Daode Guiyi Xian Ch. 314",
+  "chapter_meta_description": "Li Huowang eats Black Tai Sui for breakfast, tries teaching it the Three Character Classic, and negotiates a bagua mirror trade with Tuoba Danqing. Quiet horror with a side of martial-world politics.",
+  "og_title": "Li Huowang's Parasite Tutor: Yinling City Chapter",
+  "og_description": "Feeding, teaching, and trading—Li Huowang's new routine is disturbingly domestic. A must-read for fans of slow-burn supernatural horror.",
+  "twitter_title": "He's Teaching a Parasite to Read the Classics",
+  "twitter_description": "Li Huowang eats Black Tai Sui, recites the Three Character Classic, and talks shop with Tuoba Danqing. The quietest chapter of horror you'll ever love.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "the-three-character-classic",
+      "surfaces": [
+        "The"
+      ],
+      "definition": "A foundational Confucian primer from the Song dynasty, composed entirely of three-character lines. Li Huowang uses it in a futile attempt to teach literacy to a parasitic flesh entity inside his belly."
+    },
+    {
+      "id": "bagua-mirror",
+      "surfaces": [
+        "bagua"
+      ],
+      "definition": "A Daoist ritual bronze mirror engraved with the eight trigrams, used for feng shui, exorcism, and reflection of evil. Here, it has a secret activation technique that Li Huowang cannot currently access."
+    },
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ],
+      "definition": "A fictional sect in the novel fusing Zoroastrianism (袄教) and Nestorian Christianity (景教); its cultivation philosophy relies on voluntarily enduring extreme physical suffering for power."
+    },
+    {
+      "id": "one-more-friend-one-more-road",
+      "surfaces": [
+        "one"
+      ],
+      "definition": "A classic jianghu (martial world) proverb emphasizing that personal connections are the most valuable currency for survival and advancement."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Li Huowang eat the Black Tai Sui?",
+      "a": "He consumes it to keep its power/symbiosis active inside his body; the Black Tai Sui is now a living part of his internal ecosystem that he can \"teach\" from the inside."
+    },
+    {
+      "q": "What is the bagua mirror trade?",
+      "a": "Tuoba Danqing found a blind Daoist (originally duped by the Zuowandao) who wants the mirror back. The Daoist offers a set of talisman manuals in exchange instead of the mirror's activation technique."
+    },
+    {
+      "q": "Is Tuoba Danqing trustworthy?",
+      "a": "He's presented as a \"brother in the Office,\" but his advice is pragmatic and self-interested. Treat him as a useful ally with his own agenda, not a pure friend."
+    }
+  ]
+}

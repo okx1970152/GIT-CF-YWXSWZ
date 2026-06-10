@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0362",
+  "chapter_code": "0362",
+  "chapter_slug": "The-Trials-of-the-Divine-Palace",
+  "chapter_title_en": "The Trials of the Divine Palace",
+  "chapter_keywords": [
+    "desolate era",
+    "ji ning",
+    "patriarch subhuti",
+    "divine palace of immortals",
+    "mount innerheart",
+    "silvermoon brother",
+    "xianxia cultivation",
+    "trials of service",
+    "trials of combat",
+    "sword dao",
+    "three realms palace",
+    "imm"
+  ],
+  "guide_tags": [
+    "Xianxia",
+    "Cultivation",
+    "World Building",
+    "Mount Innerheart",
+    "Sword Arts",
+    "Trials"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 362 – Ji Ning Chooses Battle: The Divine Palace Trials",
+  "chapter_meta_description": "Ji Ning explores the Divine Palace of Immortals and discovers the true price of learning its arts: years of labor or a battle of pure Dao against a legendary puppet.",
+  "og_title": "The Chore Master vs. The Puppet Fighter: Ji Ning’s Defining Choice",
+  "og_description": "Our hero picks a fight with a sixth-level puppet that purely tests his Sword Dao. The real training begins now.",
+  "twitter_title": "The Divine Palace isn't a library, it's a gauntlet.",
+  "twitter_description": "Ji Ning discovers the classic Xianxia choice: sweep a path for a thousand years or prove your Dao with a single perfect sword stroke. Guess which one he picks.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "divine-palace-of-immortals",
+      "surfaces": [
+        "Divine Palace of Immortals"
+      ],
+      "definition": "The lower library and trial ground of Mount Innerheart, containing countless techniques from the primordial era to the present, accessible only through designated service or combat trials."
+    },
+    {
+      "id": "silvermoon-brother",
+      "surfaces": [
+        "Silvermoon Brother"
+      ],
+      "definition": "The white-robed steward of the Divine Palace of Immortals and an elder disciple of Patriarch Subhuti who guides Ji Ning through the Palace’s rules."
+    },
+    {
+      "id": "path-of-service-trials-of-service",
+      "surfaces": [
+        "Path"
+      ],
+      "definition": "A method of learning techniques by performing manual labor chores of increasing scope and duration, from sweeping a path to a thousand years of gate-keeping."
+    },
+    {
+      "id": "path-of-combat-trials-of-combat",
+      "surfaces": [
+        "Path"
+      ],
+      "definition": "A method of learning techniques by defeating specially-created puppets that test pure Dao comprehension, forbidding the use of divine abilities or formations."
+    },
+    {
+      "id": "three-realms-palace",
+      "surfaces": [
+        "Three Realms Palace"
+      ],
+      "definition": "The highest treasure hall of Mount Innerheart, accessible only to personal disciples or those who have mastered the ninth floor of the Divine Palace of Immortals."
+    }
+  ]
+}

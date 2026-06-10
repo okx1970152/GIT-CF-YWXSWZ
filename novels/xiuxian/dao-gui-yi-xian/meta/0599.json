@@ -1,0 +1,59 @@
+{
+  "chapter_no": "0599",
+  "chapter_code": "0599",
+  "chapter_slug": "The-Red-Pill",
+  "chapter_title_en": "The Red Pill",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Kangning Hospital",
+    "Wu Cheng",
+    "psychological horror",
+    "talk therapy",
+    "new medication",
+    "institutional control",
+    "paranoia",
+    "Wang Wei conspiracy",
+    "modern world arc"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Modern World Arc",
+    "Hospital Siege",
+    "Paranoia",
+    "Institutional Control",
+    "Standoff"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 598: The Red Pill - Li Huowang's Hospital Siege Tightens",
+  "chapter_meta_description": "A new doctor, a suspicious new pill, and a tightening cage. Li Huowang must navigate the psychological horror of the modern world as the institution closes in. Chapter 598 of Dao Gui Yi Xian.",
+  "og_title": "The Hospital is a Trap",
+  "og_description": "Li Huowang’s new treatment takes a dark turn as Dr. Wu Cheng tries to force him back into his hallucinations.",
+  "twitter_title": "Fear of the Red Pill",
+  "twitter_description": "The quiet horror of the asylum. Li Huowang is trapped in a system that wants to drug him into submission.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "talk-therapy",
+      "surfaces": [
+        "Talk"
+      ],
+      "definition": "A colloquial term for psychotherapy, often used by Chinese doctors to describe informal, conversational therapeutic sessions."
+    },
+    {
+      "id": "evaluation",
+      "surfaces": [
+        "Evaluation"
+      ],
+      "definition": "A formal psychiatric assessment; in this context, it is the gatekeeping procedure that determines a patient's discharge or continued confinement."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is Li Huowang so afraid of the new red pill?",
+      "a": "He doesn't know what it is, and the lack of transparency signals that the hospital’s intentions toward him have shifted from treatment to control."
+    },
+    {
+      "q": "Is Wu Cheng actually working with Wang Wei?",
+      "a": "It's strongly implied but not yet confirmed; Wu Cheng's actions perfectly align with isolating and destabilizing Li Huowang, making the connection a plausible and terrifying possibility."
+    }
+  ]
+}

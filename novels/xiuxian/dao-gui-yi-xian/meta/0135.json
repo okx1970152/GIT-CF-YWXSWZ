@@ -1,0 +1,48 @@
+{
+  "chapter_no": "0135",
+  "chapter_code": "0135",
+  "chapter_slug": "Found",
+  "chapter_title_en": "Found",
+  "chapter_keywords": [
+    "Li Huowang hallucination",
+    "eating rocks",
+    "Bai Lingmiao reunion",
+    "Anci Nunnery",
+    "Siqi",
+    "Lu Zhuangyuan",
+    "face-saving",
+    "leaving Siqi",
+    "faction mapping",
+    "gouwa slip-up"
+  ],
+  "guide_tags": [
+    "Emotional Chapter",
+    "Hallucination",
+    "Reunion",
+    "World-Building",
+    "Strategy",
+    "Folk Horror",
+    "Character Study"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 135: Li Huowang's Mother, Rock-Eating Madness, and a New Resolve",
+  "chapter_meta_description": "Li Huowang is found eating rocks and hallucinating his mother. After a tense reunion, he decides to map the factions of the Dao-Twisted world, starting with a trip back to Anci Nunnery.",
+  "og_title": "Found: A Mother's Voice in the Madness",
+  "og_description": "A quiet, painful chapter of recovery and planning. Li Huowang is found in a dissociative state, and his journey from victim to strategist begins.",
+  "twitter_title": "The Rock Eater's Map: Li Huowang starts his survey of hell.",
+  "twitter_description": "Found in the mud, talking to his mom, Li Huowang emerges from a fugue state ready to become the cartographer of a nightmare.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "anci-nunnery",
+      "surfaces": [
+        "Anci"
+      ]
+    },
+    {
+      "id": "siqi",
+      "surfaces": [
+        "Siqi"
+      ]
+    }
+  ]
+}

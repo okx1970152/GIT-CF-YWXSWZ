@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0552",
+  "chapter_code": "0552",
+  "chapter_slug": "The-Dragon",
+  "chapter_title_en": "The Dragon",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Void Nian",
+    "Imperial Carriage of Great Qi",
+    "Dragon Vein",
+    "child emperor",
+    "bronze coin sword",
+    "spine-sword",
+    "zombie emperor",
+    "two-front war",
+    "qi dynasty"
+  ],
+  "guide_tags": [
+    "action-heavy",
+    "high stakes",
+    "world-building",
+    "pressure",
+    "body horror",
+    "Chinese mythology",
+    "power disparity"
+  ],
+  "chapter_seo_title": "The Child-Emperor of Great Qi: Dragon Vein Fusion and Li Huowang’s Desperate Fight | Chapter 551",
+  "chapter_meta_description": "Li Huowang faces a two-front war against the cunning Void Nian and the impossible Dragon Vein beneath Great Qi's zombie child-emperor. Nothing works.",
+  "og_title": "The Child-Emperor of Great Qi Is Not What He Seems",
+  "og_description": "The Imperial Carriage crashes in, a giggling child fused with Dragon Veins, and Li Huowang's spine-sword fails for the first time.",
+  "twitter_title": "The zombie kid-emperor of Great Qi just *piled Dragon Veins* under his dragon robe. Li Huowang's having a bad day.",
+  "twitter_description": "A bronze coin sword to the skull? The Void Nian doesn't care. A reality-cutting fissure? The Dragon Vein shatters it. Li Huowang is outmatched on every front.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "imperial-carriage-ti-nz-ch-l",
+      "surfaces": [
+        "Imperial"
+      ],
+      "definition": "The supreme ceremonial vehicle of the Chinese emperor, pulled by eunuchs and draped in dragon-and-cloud ornaments. A broken, moving throne."
+    },
+    {
+      "id": "dragon-vein-l-ngm-i",
+      "surfaces": [
+        "Dragon"
+      ],
+      "definition": "A geomancy concept of underground qi channels that determine a dynasty's fate. Here, they are literally piled under a living child-emperor as a power source."
+    },
+    {
+      "id": "void-nian-x-ni-n",
+      "surfaces": [
+        "Void"
+      ],
+      "definition": "A corrupted Nian beast that drains yang life on contact; named to distinguish it from traditional folkloric Nian. Highly intelligent and tactical."
+    },
+    {
+      "id": "bronze-coin-sword-t-ngqi-n-ji-n",
+      "surfaces": [
+        "Bronze"
+      ],
+      "definition": "A ritual Daoist weapon made of coins strung on red cord; used to pierce evil, but the Void Nian's flesh ignores it."
+    },
+    {
+      "id": "spine-sword",
+      "surfaces": [
+        "Spine-sword"
+      ],
+      "definition": "Li Huowang's weapon that can cut fissures \"between the two histories,\" but the Dragon Vein is the first entity to completely resist it."
+    },
+    {
+      "id": "fire-striker-hu-li-n",
+      "surfaces": [
+        "Fire-striker"
+      ],
+      "definition": "A traditional steel striker for starting fires; Li Huowang uses it to set himself ablaze as a desperate tactical measure."
+    },
+    {
+      "id": "child-emperor-of-great-qi",
+      "surfaces": [
+        "Child-emperor of Great Qi"
+      ],
+      "definition": "A living six-year-old boy fused with Dragon Veins while still alive; his giggling innocence contrasts grotesquely with the horror of his power."
+    }
+  ]
+}

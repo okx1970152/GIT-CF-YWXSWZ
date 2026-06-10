@@ -1,0 +1,73 @@
+{
+  "chapter_no": "0408",
+  "chapter_code": "0408",
+  "chapter_slug": "Divine-Thunder-Bamboo-and-a-Calculated-Alliance",
+  "chapter_title_en": "Divine Thunder Bamboo and a Calculated Alliance",
+  "chapter_keywords": [
+    "divine thunder bamboo",
+    "mortal stream",
+    "madam fan",
+    "shuimiao sect",
+    "starfall sea",
+    "han li negotiation",
+    "left envoy",
+    "right envoy",
+    "zhuo ruting",
+    "charm arts",
+    "core formation cultivators",
+    "cultivation negotiation"
+  ],
+  "guide_tags": [
+    "chapter analysis",
+    "mortal stream",
+    "cultivation world",
+    "negotiation",
+    "political intrigue",
+    "xianxia",
+    "core formation"
+  ],
+  "chapter_seo_title": "RMJI Chapter 408: Han Li Allocates Resources for a Divine Thunder Bamboo Mission",
+  "chapter_meta_description": "Madam Fan recruits cultivators for a mission to reclaim a stolen shipment, including a precious Divine Thunder Bamboo. Han Li performs a cold cost-benefit analysis before agreeing to join.",
+  "og_title": "A Record of a Mortal's Journey to Immortality — Chapter 408",
+  "og_description": "Madam Fan’s grief is a performance, the reward is a rare treasure, and Han Li’s consent is a calculated transaction. The cold winds of the Starfall Sea are picking up.",
+  "twitter_title": "RMJI 408: The Price of Bamboo",
+  "twitter_description": "Han Li doesn't answer calls to adventure. He runs the numbers.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "madam-fan",
+      "surfaces": [
+        "Madam"
+      ],
+      "definition": "The Left Envoy of the Sublime Sound Sect. A skilled negotiator who uses charm, grief, and feminine vulnerability as tactical tools; her mask of politeness is nearly perfect."
+    },
+    {
+      "id": "zhuo-ruting",
+      "surfaces": [
+        "Zhuo"
+      ],
+      "definition": "The Right Envoy of the Sublime Sound Sect. A cold, authoritative woman who leads a rival faction within the sect; her presence signals internal political tension."
+    },
+    {
+      "id": "divine-thunder-bamboo",
+      "surfaces": [
+        "Divine"
+      ],
+      "definition": "An extremely rare, slow-growing lightning-element spiritual plant. Unrefined and still-living specimens are exceptionally valuable as a renewable material source for top-tier thunder-attribute artifacts."
+    },
+    {
+      "id": "sublime-sound-sect",
+      "surfaces": [
+        "Sublime"
+      ],
+      "definition": "A mid-tier merchant sect in the Starfall Sea, dominated by female disciples. Known for its charm arts and for using marriage alliances as a political survival strategy."
+    },
+    {
+      "id": "left-and-right-envoys",
+      "surfaces": [
+        "Left"
+      ],
+      "definition": "The two highest-ranking positions below the sect leader in the Sublime Sound Sect. Their rivalry often shapes internal sect politics."
+    }
+  ]
+}

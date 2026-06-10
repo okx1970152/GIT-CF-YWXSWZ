@@ -1,0 +1,70 @@
+{
+  "chapter_no": "0273",
+  "chapter_code": "0273",
+  "chapter_slug": "The-Ghost-That-Is-Told",
+  "chapter_title_en": "The Ghost That Is Told",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "suoyang",
+    "ghost folk horror",
+    "information horror",
+    "chinese supernatural",
+    "corpse anatomy humor",
+    "xianxia psychological horror",
+    "county faer",
+    "inn interrogation"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Folk Horror",
+    "Interrogation",
+    "Viral Curse",
+    "Supernatural Rules",
+    "Gao Zhijian"
+  ],
+  "chapter_seo_title": "Li Huowang Learns of a Ghost That Spreads by Word of Mouth",
+  "chapter_meta_description": "Li Huowang interrogates a terrified waiter and learns of a ghost that causes suoyang, a curse that spreads simply by being spoken about. A masterclass in informational horror.",
+  "og_title": "A Ghost That Lives in Your Stories",
+  "og_description": "How do you fight a curse that only exists because people talk about it? Li Huowang gets a terrifying lesson in viral folk horror.",
+  "twitter_title": "The Scariest Ghost Can’t Be Seen",
+  "twitter_description": "Li Huowang realizes the new enemy is not a demon, but information itself. A chilling chapter.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "suoyang",
+      "surfaces": [
+        "suoyang"
+      ],
+      "definition": "A folk-medical and supernatural condition in Chinese culture where it is believed that male genitals can retract into the body, often attributed to spiritual attack or yin-energy imbalance."
+    },
+    {
+      "id": "suoyin",
+      "surfaces": [
+        "suoyin"
+      ],
+      "definition": "The female equivalent of *suoyang*; a belief that female genitals can shrink or recede due to supernatural causes."
+    },
+    {
+      "id": "ghost-gui",
+      "surfaces": [
+        "Ghost"
+      ],
+      "definition": "In Chinese folk religion, a ghost is the spirit of a deceased person, often a restless or unsatisfied one. They are usually invisible to the living and can cause misfortune."
+    },
+    {
+      "id": "toolkit",
+      "surfaces": [
+        "Toolkit"
+      ],
+      "definition": "A set of professional torture implements; in this context, Li Huowang uses it as a practical tool for intimidation rather than for genuine torture, as his psychological description alone breaks the subject."
+    },
+    {
+      "id": "county-gazeteer",
+      "surfaces": [
+        "County"
+      ],
+      "definition": "A local administrative record of major events; an empty or sanitized gazetteer in the Dao-Twisted World signals official complicity or denial of supernatural horror."
+    }
+  ]
+}

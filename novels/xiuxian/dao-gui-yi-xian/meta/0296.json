@@ -1,0 +1,75 @@
+{
+  "chapter_no": "0296",
+  "chapter_code": "0296",
+  "chapter_slug": "The-First-Lesson",
+  "chapter_title_en": "The First Lesson",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Black Tai Sui",
+    "Supervisory Heavenly Office",
+    "daoshi xianxia",
+    "body horror cultivation",
+    "Silverwood City",
+    "folk horror",
+    "new character introduction"
+  ],
+  "guide_tags": [
+    "Mood: Hopeful",
+    "Character: Li Huowang",
+    "Character: Tuoba Danqing",
+    "Creature: Black Tai Sui",
+    "Faction: Supervisory Heavenly Office",
+    "Plot: New Connection"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 296: Li Huowang Tries to Teach the Black Tai Sui to Speak",
+  "chapter_meta_description": "Li Huowang discovers the Black Tai Sui inside him only knows a few overheard words. He crafts a bizarre plan to teach it to read, then finally meets his mysterious handler face-to-face.",
+  "og_title": "Chapter 296: The First Lesson",
+  "og_description": "Li Huowang realizes the monster in his gut can't talk. His plan? Lesson one: the alphabet. Then a masked man shows him unexpected kindness.",
+  "twitter_title": "Dao Gui Yi Xian 296",
+  "twitter_description": "Li Huowang tries to teach a silent horror to read, and gets a warm reception from the Supervisory Heavenly Office’s biggest fan. It’s almost… nice.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "The empire’s shadowy agency for policing rogue cultivators and managing supernatural calamities. Li Huowang’s employer and potential lifeline."
+    },
+    {
+      "id": "life-span-pill",
+      "surfaces": [
+        "Life"
+      ],
+      "definition": "A pill that contains or represents ‘yang life,’ the user’s vital years. They are a tangible currency in the Dao-Twisted World, usable for payment or as a ‘security deposit’ for risky tasks."
+    },
+    {
+      "id": "black-tai-sui",
+      "surfaces": [
+        "Black"
+      ],
+      "definition": "A grotesque, parasitic entity that lives inside Li Huowang to suppress his hallucinations. It is currently mute and can only repeat overheard words."
+    },
+    {
+      "id": "tuoba-danqing",
+      "surfaces": [
+        "Tuoba"
+      ],
+      "definition": "A rotund, smiling man who serves as the Big-Headed Doll, Li Huowang’s handler in the Supervisory Heavenly Office. His surname is historically prestigious."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is the Black Tai Sui only saying simple words?",
+      "a": "Because it only knows the words it overheard Li Huowang teaching to Lü Xiucai. It doesn't understand their meaning; it is simply parroting sounds."
+    },
+    {
+      "q": "Why does Li Huowang decide to teach it?",
+      "a": "He can't get rid of the Black Tai Sui (it suppresses his visions), and he can't kill it without harming himself. Teaching it to speak is the only long-term way to gain a controllable ally instead of a silent passenger."
+    },
+    {
+      "q": "Is Tuoba Danqing being sincere?",
+      "a": "Li Huowang assumes it's an act, but the gesture itself—returning the pills, offering his name, inviting trust—is more warmth than he's received in months. For now, it's a welcome reprieve."
+    }
+  ]
+}

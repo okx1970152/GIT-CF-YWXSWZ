@@ -1,0 +1,69 @@
+{
+  "chapter_no": "0262",
+  "chapter_code": "0262",
+  "chapter_slug": "The-Things",
+  "chapter_title_en": "The Things",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "chapter 262",
+    "li huowang",
+    "bronze coin sword",
+    "gao zhijian",
+    "peng longteng armor",
+    "heavenly scripture",
+    "chun xiaoman",
+    "lü xiucai",
+    "gear check"
+  ],
+  "guide_tags": [
+    "Character Development",
+    "Worldbuilding",
+    "Gear Upgrade",
+    "Humor",
+    "Action Prep"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Chapter 262: Li Huowang’s Arsenal Audit & Gao Zhijian’s Upgrade",
+  "chapter_meta_description": "Li Huowang takes stock of his gear in a rare moment of peace. He experiments with Han Fu’s sword, turns the Heavenly Scripture into armor for Gao Zhijian, and faces a desperate plea for tutelage.",
+  "og_title": "A Sparring Session in the Granary",
+  "og_description": "Li Huowang studies a new sword, tries to find a safer alternative to self-mutilation, and reinforces the party’s tank.",
+  "twitter_title": "Inventory Management in the Dao-Twisted World",
+  "twitter_description": "A slice-of-life chapter that upgrades the party’s gear and sets the stage for future horrors.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "bronze-coin-sword",
+      "surfaces": [
+        "Bronze"
+      ],
+      "definition": "A ritual Daoist weapon made of coins strung on red thread; in the Dao-Twisted World, its users can make the coins scatter and reform as a tactical combat tool."
+    },
+    {
+      "id": "heavenly-scripture",
+      "surfaces": [
+        "Heavenly"
+      ],
+      "definition": "The stone slab Li Huowang obtained from Danyangzi; inscribed with moral adages, it is spiritually useless to him, but its physical durability makes it a valuable piece of improvised armor."
+    },
+    {
+      "id": "purple-tassel-sword",
+      "surfaces": [
+        "Purple"
+      ],
+      "definition": "The sword Li Huowang received from the abbess of Anci Nunnery; it is saturated with killing intent and capable of harming both men and spirits."
+    },
+    {
+      "id": "peng-longteng-s-armor",
+      "surfaces": [
+        "Peng Longteng’s armor"
+      ],
+      "definition": "The heavy scale armor of the deceased madwoman general; its lightweight but durable construction makes it a high-value piece of protective gear."
+    },
+    {
+      "id": "yang-life-pellets",
+      "surfaces": [
+        "Yang"
+      ],
+      "definition": "Pellets that restore a user’s lifespan; Li Huowang has nineteen of them stored in a gourd."
+    }
+  ]
+}

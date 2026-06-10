@@ -8,9 +8,11 @@ import { ensureContentIndex, ensureEncyclopediaIndex } from "@/lib/content/ensur
 import { getEncyclopediaVolumes } from "@/lib/encyclopedia/index";
 import { getHotNovels, getLatestNovels, getNovelsByCategory } from "@/lib/content/novels";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
+import { buildWebsiteAndOrganizationJsonLd } from "@/lib/seo/structured-data";
 import { SITE_URL, toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} - Xianxia, Wuxia and Eastern Fantasy Reading`,
@@ -41,18 +43,13 @@ export default async function HomePage() {
   const featured = hot.find((item) => item.featured) ?? hot[0];
 
   const searchTemplate = `${SITE_URL}/search?q={search_term_string}`;
-  const websiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_NAME,
-    url: SITE_URL,
-    inLanguage: "en",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: searchTemplate,
-      "query-input": "required name=search_term_string"
-    }
-  };
+  const websiteJsonLd = buildWebsiteAndOrganizationJsonLd({
+    siteName: SITE_NAME,
+    siteUrl: SITE_URL,
+    searchTemplateUrl: searchTemplate,
+    description:
+      "Read xiuxian, wuxia, xuanhuan, and eastern fantasy in English with crawlable directories, chapters, and annotation guides."
+  });
 
   return (
     <>

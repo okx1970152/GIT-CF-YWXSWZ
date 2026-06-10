@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0412",
+  "chapter_code": "0412",
+  "chapter_slug": "Mahjong",
+  "chapter_title_en": "Mahjong",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "Li Huowang",
+    "Bei Feng",
+    "Zuowandao",
+    "Heart-Element",
+    "mahjong deception",
+    "Zhuge Yuan",
+    "True Sutra of the Fire Vestments",
+    "four-of-a-kind scheme",
+    "Cultivate the False into Reality"
+  ],
+  "guide_tags": [
+    "psychological horror",
+    "devastating revelation",
+    "Zuowandao arc",
+    "philosophical twist",
+    "mahjong metaphor"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 411: The Mahjong Trap & The Four Bei Fengs",
+  "chapter_meta_description": "Li Huowang finally captures Bei Feng, only to discover he is just one of four identical copies. A Zuowandao deception shatters his hope and reveals a deeper, crueler game.",
+  "og_title": "He Caught His White Whale… But It Had Three Twins",
+  "og_description": "Li Huowang finds the Heart-Element he’s been hunting. But the Zuowandao’s “four-of-a-kind” trick turns victory into a philosophical gut punch.",
+  "twitter_title": "The Mahjong Horror: Four Faces, One Name",
+  "twitter_description": "Imagine finding the cure, only to learn it’s one of four identical copies. Li Huowang gets a masterclass in Zuowandao cruelty.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "bei-feng",
+      "surfaces": [
+        "Bei"
+      ],
+      "definition": "One of the four identical copies sharing the same Zuowandao face; only “Old Four” is the true Heart-Element."
+    },
+    {
+      "id": "mahjong",
+      "surfaces": [
+        "Mahjong"
+      ],
+      "definition": "A classic Chinese tile-based game; in this novel, its set structure of four identical Winds and Dragons is weaponized as a system of identity deception."
+    },
+    {
+      "id": "zuowandao",
+      "surfaces": [
+        "Zuowandao"
+      ],
+      "definition": "The Way of Sitting in Forgetfulness; a secret society of liars who weaponize confusion and treat identity as a performance piece."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution that makes the bearer a living alchemical ingredient; the source of Li Huowang’s hallucinations and his value to the world."
+    },
+    {
+      "id": "four-joys",
+      "surfaces": [
+        "Four"
+      ],
+      "definition": "The highest-ranked inner circle of the Zuowandao; their appearance signals an escalation in the enemy’s threat level."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why are there four Bei Fengs?",
+      "a": "In the Zuowandao, a single public “color” identity like Bei Feng is shared by four members who each play the same role in shifts, making it impossible for outsiders to track them."
+    },
+    {
+      "q": "What does the mahjong metaphor mean?",
+      "a": "A mahjong set contains four identical copies of each wind tile. The Zuowandao use this logic to multiply a single persona, turning social identity into a game of concealment."
+    },
+    {
+      "q": "Was Bei Feng lying about being a fake?",
+      "a": "No. Zhuge Yuan confirmed he is not a Heart-Element. The real target is “Old Four,” one of the other three Bei Feng copies."
+    }
+  ]
+}

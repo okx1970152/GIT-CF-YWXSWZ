@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0118",
+  "chapter_code": "0118",
+  "chapter_slug": "The-Lord-of-Wounds",
+  "chapter_title_en": "The Lord of Wounds",
+  "chapter_keywords": [
+    "Dao-Twisted World",
+    "Ao-Jing Sect",
+    "Bashe",
+    "Gu-Spirit",
+    "Thousand Greats Record",
+    "Dung-Beetle Ascension",
+    "Shou San",
+    "Heart-Element",
+    "flesh-skin letter",
+    "folk horror"
+  ],
+  "guide_tags": [
+    "dark fantasy",
+    "Chinese web novel",
+    "horror",
+    "body horror",
+    "supernatural",
+    "cultivation",
+    "lore-heavy"
+  ],
+  "chapter_seo_title": "Li Huowang meets the charred corpse Shou San and learns the Ao-Jing Sect's terrifying bargain",
+  "chapter_meta_description": "Li Huowang finally finds the Ao-Jing Sect. But their leader, a charred corpse named Shou San, demands a live performance of the Dung-Beetle Ascension in exchange for help.",
+  "og_title": "The Wound-Traders of Bashe",
+  "og_description": "Li Huowang enters the Ao-Jing Sect's mountain lair, only to find that their leader wants to witness a Heart-Element perform the horrific Dung-Beetle Ascension.",
+  "twitter_title": "What does it cost to ask a pain-cult for help?",
+  "twitter_description": "The Ao-Jing Sect agrees to help Li Huowang—but Shou San wants a live show of the Dung-Beetle Ascension first.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ]
+    },
+    {
+      "id": "bashe",
+      "surfaces": [
+        "Bashe"
+      ]
+    },
+    {
+      "id": "gu-spirit",
+      "surfaces": [
+        "Gu-Spirit"
+      ]
+    },
+    {
+      "id": "dung-beetle-ascension",
+      "surfaces": [
+        "Dung-Beetle"
+      ]
+    },
+    {
+      "id": "flesh-skin-letter",
+      "surfaces": [
+        "Flesh-skin"
+      ]
+    },
+    {
+      "id": "shou-san",
+      "surfaces": [
+        "Shou"
+      ]
+    }
+  ]
+}

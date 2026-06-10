@@ -1,0 +1,58 @@
+{
+  "chapter_no": "0016",
+  "chapter_code": "0016",
+  "chapter_slug": "Little-Abacus",
+  "chapter_title_en": "Little Abacus",
+  "chapter_keywords": [
+    "Seven Mysteries Sect",
+    "class conflict",
+    "Wang Dapang",
+    "Little Abacus",
+    "Jianghu",
+    "grudge match",
+    "martial arts duel",
+    "rich vs poor",
+    "Mortal Stream",
+    "sect life"
+  ],
+  "guide_tags": [
+    "character introduction",
+    "worldbuilding",
+    "slice of sect life",
+    "class divide",
+    "bystander Han Li"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 16 – Little Abacus",
+  "chapter_meta_description": "Han Li watches a sect-wide grudge match sparked by a broken engagement and a rich man's gold. Meet Little Abacus, the gossip who knows everyone.",
+  "og_title": "A Record of a Mortal's Journey – Ch. 16",
+  "og_description": "A simple spar reveals the ugly class divide within the Seven Mysteries Sect.",
+  "twitter_title": "RMJI Ch. 16 – Little Abacus",
+  "twitter_description": "Rich vs. poor. Love, death, and revenge by fist. Han Li just watches and walks away.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "little-abacus",
+      "surfaces": [
+        "Little Abacus"
+      ]
+    },
+    {
+      "id": "wang-dapang",
+      "surfaces": [
+        "Wang Dapang"
+      ]
+    },
+    {
+      "id": "outer-disciple",
+      "surfaces": [
+        "Outer Disciple"
+      ]
+    },
+    {
+      "id": "inner-disciple",
+      "surfaces": [
+        "Inner Disciple"
+      ]
+    }
+  ]
+}

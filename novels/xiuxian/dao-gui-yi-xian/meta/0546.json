@@ -1,0 +1,93 @@
+{
+  "chapter_no": "0546",
+  "chapter_code": "0546",
+  "chapter_slug": "The-Price-of-a-Corpse",
+  "chapter_title_en": "The Price of a Corpse",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Supervisory Heavenly Office",
+    "Taixu Sword",
+    "Spine Sword",
+    "Dice",
+    "Zuowandao",
+    "Fo Yulu",
+    "Hong Da",
+    "Ji Lin",
+    "eunuch",
+    "Heart-Element corpse",
+    "political scheming",
+    "xianxia negotiation"
+  ],
+  "guide_tags": [
+    "Political maneuvering",
+    "Artifact trading",
+    "Bureaucratic horror",
+    "Understated tension",
+    "Worldbuilding chapter"
+  ],
+  "chapter_seo_title": "Dao-Guai Yi-Xian Ch. 545: Li Huowang’s Dangerous Deal for the Taixu Sword",
+  "chapter_meta_description": "Li Huowang trades a Heart-Element corpse for the Taixu Sword’s use, hunts for an ally against Dice, and is summoned by the emperor. A chapter of cold deals and rising tension.",
+  "og_title": "The Cost of a Blade",
+  "og_description": "Li Huowang signs a contract for a dead man’s sword, while a eunuch waits with an imperial summons. In the Dao-Twisted World, every trade is a trap.",
+  "twitter_title": "When a corpse buys you 20 years.",
+  "twitter_description": "Li Huowang finalizes a deal for the Taixu Sword, then learns the emperor has been looking for him. Bureaucratic horror hits differently when the ink is still wet.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government body that polices supernatural threats and rogue cultivators, operating with near-total autonomy and heavy bureaucracy."
+    },
+    {
+      "id": "celestial-overseer",
+      "surfaces": [
+        "Celestial"
+      ],
+      "definition": "The highest-ranking official of the Supervisory Heavenly Office, a position of immense political and supernatural power."
+    },
+    {
+      "id": "heart-element-corpse",
+      "surfaces": [
+        "Heart-Element corpse"
+      ],
+      "definition": "A xinsu’s dead body, treated as a valuable alchemical or ritual ingredient; Li Huowang trades one for sword rights."
+    },
+    {
+      "id": "taixu-sword-spine-sword",
+      "surfaces": [
+        "Taixu"
+      ],
+      "definition": "A high-grade weapon made from a Heart-Pan, more powerful and rarer than a mere Heart-Element; its lease is the subject of this chapter’s deal."
+    },
+    {
+      "id": "heart-pan",
+      "surfaces": [
+        "Heart-Pan"
+      ],
+      "definition": "A spiritually potent being refined into a weapon or artifact; far rarer than a Heart-Element, it makes the Taixu Sword priceless and dangerous."
+    },
+    {
+      "id": "ten-emotions-and-eight-sufferings",
+      "surfaces": [
+        "Ten"
+      ],
+      "definition": "A distorted cultivation concept derived from Buddhism, weaponizing a broad spectrum of human emotions as fuel for power."
+    },
+    {
+      "id": "moon-gate",
+      "surfaces": [
+        "Moon"
+      ],
+      "definition": "A sect or intelligence network specializing in hidden knowledge, probably tied to astrology or the retrieval of secrets."
+    },
+    {
+      "id": "upper-extremity-injection",
+      "surfaces": [
+        "Upper"
+      ],
+      "definition": "A secret technique or knowledge that Li Huowang considers using to locate Bai Lingmiao; its nature remains unexplored."
+    }
+  ]
+}

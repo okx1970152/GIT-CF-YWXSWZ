@@ -1,0 +1,86 @@
+{
+  "chapter_no": "0486",
+  "chapter_code": "0486",
+  "chapter_slug": "The-Dragon-Vein-s-True-Face",
+  "chapter_title_en": "The Dragon Vein’s True Face",
+  "chapter_keywords": [
+    "dao gui daoist",
+    "li huowang",
+    "zhuge yuan",
+    "ji lin",
+    "great liang",
+    "dragon vein",
+    "nine dragons pulling a coffin",
+    "imperial horror",
+    "xianxia horror",
+    "ao-jing sect",
+    "zuowandao",
+    "ji song"
+  ],
+  "guide_tags": [
+    "worldbuilding heavy",
+    "imperial politics",
+    "body horror",
+    "father-son horror",
+    "ritual magic",
+    "atmosphere horror"
+  ],
+  "chapter_seo_title": "Dao Gui Episode 485: The Dragon Vein Revealed – Ji Lin’s Brutal Inheritance",
+  "chapter_meta_description": "The Great Liang dragon vein is not a myth—it’s a chained corpse emperor. Ji Lin learns the cost of power in the bleakest succession scene in xianxia horror.",
+  "og_title": "Dao Gui Chapter 485: The Dragon Vein’s True Face",
+  "og_description": "Witness the grotesque nature of the Great Liang dynasty’s dragon vein—dead emperors chained and kept alive by parasitic qi.",
+  "twitter_title": "Dao Gui 485: Imperial Horror at Its Peak",
+  "twitter_description": "The new emperor Ji Lin must watch his father’s chained corpse give him a lesson in ruthless survival. Dragon veins are not what you think.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "dragon-vein",
+      "surfaces": [
+        "Dragon"
+      ],
+      "definition": "In traditional Chinese geomancy, a flow of beneficial qi along landforms that empowers a dynasty. In the Dao-Twisted World, it is literalized into a chain of dead emperors kept puppet-walking by parasitic dragon qi."
+    },
+    {
+      "id": "the-exalted-one-is-the-isolated-one",
+      "surfaces": [
+        "The"
+      ],
+      "definition": "The traditional self-address of the Chinese emperor, meaning “the one who is bereft.” Ji Song’s advice to “trust no one” is a twisted extrapolation of this ancient political principle."
+    },
+    {
+      "id": "nine-dragons-pulling-a-coffin",
+      "surfaces": [
+        "Nine"
+      ],
+      "definition": "A classical mythic motif often used to transport immortals or celestial emperors. Here, the chains pull inward to restrain rather than escort, inverting the image from honor into imprisonment."
+    },
+    {
+      "id": "castor-beans",
+      "surfaces": [
+        "Castor"
+      ],
+      "definition": "A strong laxative; Ji Lin famously poisoned his brother with these at age six to win favor with his father."
+    },
+    {
+      "id": "crane-top-poison",
+      "surfaces": [
+        "Crane-top"
+      ],
+      "definition": "A traditional Chinese term for a lethal toxin (often arsenic), named after the red crown of the red-crowned crane; considered a swift, elegant killing agent."
+    },
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ],
+      "definition": "A fictional sect in the novel fusing Zoroastrianism (袄教) and Nestorian Christianity (景教); Li Huowang’s cover identity claims to be a member."
+    },
+    {
+      "id": "great-liang-state-preceptor",
+      "surfaces": [
+        "Great"
+      ],
+      "definition": "A powerful court Daoist official with divinatory abilities; Zhuge Yuan’s alias magic prevents him from seeing Li Huowang’s true name."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "chapter_no": "0503",
+  "chapter_code": "0503",
+  "chapter_slug": "The-Ghost-s-Final-Pitch",
+  "chapter_title_en": "The Ghost's Final Pitch",
+  "chapter_keywords": [
+    "a record of a mortals journey to immortality",
+    "rmji chapter 503",
+    "crying soul beast",
+    "profound bone saint",
+    "ghost slave bargain",
+    "tracking mark removal",
+    "void heaven palace map",
+    "ancient teleportation array",
+    "gold devourer beetles",
+    "mortal stream victory"
+  ],
+  "guide_tags": [
+    "treachery & deal making",
+    "moral of the story",
+    "lore & world-building",
+    "strategic genius",
+    "rising tension"
+  ],
+  "chapter_seo_title": "RMJI Ch. 503: The Ghost's Final Pitch, Han Li's Refusal",
+  "chapter_meta_description": "The Profound Bone Saint offers everything to save his soul, but Han Li knows a dead ghost is a trustworthy ghost. Plus, an ancient map reveals a secret escape route!",
+  "og_title": "The Cunning Ghost's Last Stand",
+  "og_description": "Han Li refuses a dangerous deal and finds a new path on an ancient map.",
+  "twitter_title": "The Art of the Refusal: Han Li vs. a Thousand-Year Ghost",
+  "twitter_description": "A quiet victory: Han Li chooses death over debt and gains a map to a secret teleportation array.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "crying-soul-beast",
+      "surfaces": [
+        "Crying Soul Beast"
+      ],
+      "definition": "A rare spirit beast known for its ability to suppress and devour evil spirits and demon souls; its nose emits a 'Soul-Devouring Light' that can drag out the soul from a possessed treasure or body."
+    },
+    {
+      "id": "profound-yin-art",
+      "surfaces": [
+        "Profound Yin Art"
+      ],
+      "definition": "The signature technique of Extreme Yin Island; as revealed here, its founder, the Profound Bone Saint, never taught the complete version to his disciple, Extreme Yin."
+    },
+    {
+      "id": "ghost-slave",
+      "surfaces": [
+        "Ghost Slave"
+      ],
+      "definition": "A demon or ghost bound to serve a master through a soul pact; considered extremely risky in the cultivation world as a cunning ghost will always seek to reverse the power dynamic."
+    },
+    {
+      "id": "soul-summoning-pearl",
+      "surfaces": [
+        "Soul Summoning Pearl"
+      ],
+      "definition": "A ritual artifact used to control and command the Crying Soul Beast; Han Li uses it to call and dismiss the beast at will."
+    },
+    {
+      "id": "tracking-mark",
+      "surfaces": [
+        "Tracking Mark"
+      ],
+      "definition": "A concealed spiritual marker placed on a target by a higher-realm cultivator, allowing them to be tracked over vast distances; the novel’s system is clear: you cannot erase a mark you cannot even sense."
+    },
+    {
+      "id": "gold-devourer-beetles",
+      "surfaces": [
+        "Gold Devourer Beetles"
+      ],
+      "definition": "A rare and powerful breed of spirit insect that devours metal and spiritual energy; Han Li uses their unique sensitivity to locate the invisible tracking mark on his body."
+    },
+    {
+      "id": "void-heaven-palace",
+      "surfaces": [
+        "Void Heaven Palace"
+      ],
+      "definition": "The floating jade palace in the sky, a central dungeon of this arc; it contains sealed treasures and ancient secrets."
+    },
+    {
+      "id": "void-heaven-cauldron",
+      "surfaces": [
+        "Void Heaven Cauldron"
+      ],
+      "definition": "The supreme treasure sealed in the innermost chamber of the Void Heaven Palace; the primary objective of the expedition."
+    }
+  ]
+}

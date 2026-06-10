@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "volume_key": "famen",
+    "volume_name_cn": "法门卷",
+    "title_cn": "大威天龙",
+    "title_en": "Great Mighty Celestial Dragon",
+    "english_slug": "da-wei-tian-long",
+    "file_stem": "0013-大威天龙-da-wei-tian-long",
+    "output_filename": "0013-大威天龙-da-wei-tian-long.json",
+    "entry_type_label": "法门种包",
+    "created_at": "2026-05-20T14:25:41+08:00",
+    "updated_at": "2026-05-20T14:25:41+08:00"
+  },
+  "entry": {
+    "hook": "Great Mighty Celestial Dragon (大威天龙) – A forbidden Buddhist divine art that summons a celestial dragon's phantom to possess or manifest through the caster. It is not a spell of creation but one of borrowing: the caster uses their own accumulated karmic merit as collateral to open a causal channel to the Nāga race, the serpentine dharma protectors of the Buddhist cosmos. Each invocation consumes a decade's worth of merit. When the merit is exhausted, the account is settled in years of life. And the dragon's will, once invited in, is never merely borrowed—it takes root.",
+    "body": {
+      "body_1": "大威天龙 / Great Mighty Celestial Dragon\n\nType: 神通禁术 / Forbidden Divine Art\n\nCategory: Dharma Protector Divine Ability (护法神通)\n\nCreator or Lineage: No single creator; transmitted through Buddhist esoteric lineages (Mijiao) and Chan monasteries. Codified in the ritual texts of the Vajra Crown Buddha and the celestial Nāga legacy of the Avataṃsaka Sūtra.\n\nGrade: High-tier forbidden divine art. Formal classification varies by tradition—some list it as a wrathful protector skill, others as a Vasudhārā-level (wealth and wrath) ritual.\n\nFirst Recorded Era: Unknown; earliest stable textual trace appears in the Tang dynasty esoteric Buddhist corpus. The iconic phrase \"Great Mighty Celestial Dragon, the Buddha's Law is vast as the sea\" (大威天龙，世尊地藏) entered popular circulation through later folklore and the *Jigong* oral cycle.",
+      "body_2": "The Great Mighty Celestial Dragon operates on two layers of cosmic law simultaneously.\n\nFirst, it invokes the **Dharma Protector Covenant** (护法誓约). Every Buddhist practitioner who takes formal vows enters into a karmic contract with the dharma-protecting beings of the cosmos—the Eight Classes of Supernatural Beings (天龙八部), among whom the Nāga (龙众) are the most ferocious and reliable. By reciting the specific mantra and forming the corresponding hand seal, the caster signals to the Nāga authority that a legitimate request for assistance is being made. The Nāga race, bound by their own vows to the Buddha, must answer—if the caster's merit account can cover the debt.\n\nSecond, it engages **Causal Channeling** (因果借道). The caster's body becomes a temporary vessel through which the celestial dragon's power flows. This is not an elemental borrowing of Five-Phase energy; it is a direct attachment of a foreign consciousness to the caster's spirit. The dragon's might—its physical mass, its dharma-wrath, its territorial authority over wind and rain—enters the local reality through the caster's meridian system and dharma-body.\n\nThe fundamental transgression of this art is that it forces a being of a different moral nature (dragon-kind are not inherently enlightened) to manifest within the sanctified space of a human vessel. The Buddhist cosmos permits it only because of the protector vow, but the debt is recorded in the karmic ledger as real expenditure of **Xiang Huo Yuan Li** (香火愿力) and personal merit.",
+      "body_3": "The preparation phase requires the caster to enter a state of formal ritual purity—a minimum of seven days of vegetarian diet, chanting the Nāga-hṛdaya dhāraṇī, and maintaining a consecrated altar with a dragon icon and the *Vajra Crown Buddha* scripture. The caster must have completed at least one full prostration repentance session of 10,000 bows. In times of emergency, this preparation can be condensed to a single night, but the karmic cost multiplies.\n\nAt the moment of casting, the caster's body performs one of two forms:\n\n- **Dragon-Self Manifestation** (天龙附体): The caster's back arches violently. A visible shimmer—like heat haze or water distortion—crawls up the spine. The skin on the arms and face shifts, scales forming briefly before settling as raised patterns. The caster's eyes turn vertical-pupil gold. The voice, when chanting, carries a secondary bass resonance—the dragon's presence speaking through the human throat.\n\n- **Dragon Phantom Projection** (天龙显化): From the caster's outstretched hand or from behind the caster's body, a translucent dragon shape—blue-gold in color, with scales like hammered bronze—coils outward. It is not solid; it passes through physical obstacles. But its roar is audible and palpable: a low, vibrating sound that shakes the chest cavity of everyone within thirty paces.\n\nDuring the sustained state, the caster must continuously chant the core mantra (usually \"Namah samanta-buddhānām…\" or the shortened formula popularized by folklore). If the chant stops before the dragon's power has fully discharged, the dragon may remain unattached, causing the phantom to dissolve uncontrollably and the debt to still be levied.",
+      "body_4": "The energy source is the caster's own karmic merit fund—not ambient spiritual energy. Each standard invocation consumes exactly **ten years of accumulated merit**. Merit (功德) in the Buddhist framework is a non-material resource generated through ethical conduct, meditation, sutra recitation, charitable acts, and ritual practice. It is measured not in joules but in causal weight. One decade of merit means the amount of positive karma that a diligent monk would accumulate in ten years of standard practice.\n\nIf the caster's merit reserve is insufficient, the spell forcibly draws from **Ming Yuan** (命元, life-root) at a rate of one year of lifespan per half-year of merit owed. The conversion is not favorable: the universe charges interest. A first-time emergency invocation by a monk with only five years of merit would cost five years of merit plus five years of life, because the shortfall is treated as a karmic loan.\n\nPhysiologically, the sensation of merit burning is described as a warmth behind the chest, followed by a slow, spreading emptiness—as if a part of the caster's inner treasure has been gently scooped out. The life-root deduction, by contrast, is felt as a cold contraction at the base of the spine, followed by an unmistakable sensation of having lost something irreplaceable—like a thread that was connected to the future has snapped.",
+      "body_5": "The backlash manifests in two layers: immediate and cumulative.\n\n**Immediate backlash:** During the dragon's presence, the caster's mind is subjected to the dragon's nature—wrathful, imperious, and territorial. The caster's own Buddhist compassion becomes more difficult to access. The literature describes it as \"a red film over the eyes.\" If the caster's mind is not firmly anchored in meditation (samādhi), they may attack allies or refuse to release the dragon after the threat is gone. Every minute the dragon stays inside the caster beyond the intended duration adds one year of merit cost.\n\n**Cumulative backlash (the Dragon-Root Corruption, 龙根侵蚀):** With each use, a portion of the dragon's consciousness embeds itself in the caster's spirit. Over three to five invocations, the caster begins to show permanent behavioral changes: irritability, a craving for raw meat, a tendency to sleep with the windows open even in cold, an aversion to holy water and temple incense (ironically). After ten or more invocations, the caster may develop partial scalation on the spine and forearms, a forked tongue tremor, and spontaneous dragon-roaring when angered. At this stage, the caster's human identity is in active competition with the dragon-mind.\n\n**Terminal outcome:** If the caster attempts more than twelve invocations without rigorous purification rituals (which themselves can take years), the dragon-mind fully takes over. The caster loses the ability to speak human language, begins hoarding shiny objects, and physically transforms into a wingless, land-bound dragon-creature—a state referred to as **Half-Dragon Lost** (半龙迷失). There is no known reversal. The original human consciousness is never recovered.\n\n**Partial mitigation:** The backlash can be delayed through the \"Deer Repentance\" ritual (鹿角忏悔法), a forty-nine-day purification involving extreme asceticism and confessing the names of all dragons used. However, the ritual only resets the corruption counter to half its current value; it cannot erase the deepest scars.",
+      "body_6": "This art does not produce spatial law pollution like space-twisting spells, but it leaves a different kind of scar: **Dharma Echo Scar** (法印回响). Each summoning burns a pattern of the dragon's causal signature into the local area. When the same location is used repeatedly (more than three times), the space itself begins to attract ambient Nāga energy. Other draconic entities, such as lesser river dragons or serpentine earth spirits, become drawn to the site, causing spontaneous rain squalls, serpent births among local livestock, and strange dreams about underwater palaces among the nearby population.\n\nMore critically, the caster's own dharma-body becomes a permanent attractor for dragon-related karma. Their future meditation sessions may be interrupted by dragon memory fragments. Their prayers to Buddhist deities will be filtered through a dragon-influenced lens. In extreme cases, the caster's death and rebirth may be redirected into a non-human realm—specifically the Nāga path of the Six Paths—effectively becoming a dragon in the next life, regardless of their original cultivation goals.\n\nThis is a form of law pollution that targets the soul's karmic navigation system, not the physical environment.",
+      "body_7": "The Great Mighty Celestial Dragon has no single recorded creator. It emerged organically from the confluence of Chinese Buddhist esoteric practice, which arrived in the Tang dynasty via Indian and Central Asian masters, and the indigenous Chinese dragon-worship substratum. The earliest ritual manuals—fragments from Dunhuang—already contain the core structure of a \"Nāga Summoning Method\" (召龙法) used for rainmaking and protection of monasteries.\n\nThe first recorded restriction appears in the Song dynasty: the Chan master Foyin (佛印) is said to have formally prohibited his disciples from using the art except when facing a demon that could not be pacified through sutra recitation alone. The prohibition was not a doctrinal ban but a practical warning: too many monks had returned from battle \"with dragon's hearts and human faces.\"\n\nIn the Ming dynasty, the *Jigong* oral cycle transformed the art into a crowd-pleasing spectacle—the eccentric monk Daoji (济公) was depicted using the Great Mighty Celestial Dragon to defeat demons with humorous flair. This popularization diluted the gravity of the art in folk memory.\n\nCurrently, the full ritual transmission is preserved in three known lineages: the Baohua Mountain Vinaya School (宝华山律宗), which maintains it as a sealed text requiring abbot-level permission to read; the Tibetan Buddhist Gelug school, where it exists as a sub-ritual within the Vajrabhairava mandala practice; and a single anonymous hermit in the Wutai Mountains, said to be the last living practitioner who has used it more than three times and still retains human speech.",
+      "body_8": "In the cultivation taxonomy, the Great Mighty Celestial Dragon sits at the border between the **Xian Dao** (仙道) and **Fo Dao** (佛道). It is not a Daoshi's art because it requires Buddhist vow-power, not natural spiritual energy. An independent cultivator attempting this art without Buddhist ordination would find the dragon's response unpredictable—the Nāga may arrive, but without a protector vow binding them, they may attack the caster instead of the target.\n\nCompared to **Shen Dao** (神道) arts that petition Dragon Kings (龙王) through official celestial channels, this art is faster and more direct but lacks the institutional safety of the divine bureaucracy. A Dragon King petition requires less personal merit but more ritual protocol and a longer wait.\n\nCompared to **Wu Xing Shu Fa** (五行术法), this art does not use elemental energy transfer at all. Its energy is causal and contractual. The dragon does not pay for the spell—the caster pays the dragon.\n\nCompared to demonic arts (魔功), which often summon outsider entities through blood sacrifice, this art is structurally similar—both involve a contract with a non-human intelligence—but the terms differ: demonic contracts are permanent and soul-binding, while the Buddhist art has a built-in release mechanism (the vow) and a purification path. The effects, however, overlap disturbingly in the corruption of the self.",
+      "body_9": "The most famous recorded instance is the monk **Daoji** (济公), the legendary \"Mad Monk\" of the Southern Song dynasty. Daoji, a Chan monk known for breaking monastic rules (eating meat, drinking wine), used the Great Mighty Celestial Dragon on multiple occasions to exorcise demons and punish corrupt officials. In the narrative tradition, Daoji always followed each dragon summoning with a period of extreme asceticism—sleeping in graveyards, eating only wild herbs—to purge the dragon-anger from his system. Despite his legendary success, folk tradition notes that in his later years, Daoji developed a habit of talking to the wind and would sometimes weep without reason—interpreted by later commentators as the slow encroachment of dragon-melancholy.\n\nA second documented case comes from the **History of Liao** (辽史) fragment: the monk Huizhao (慧照) of the Upper Capital Monastery summoned a celestial dragon during a Khitan drought ritual. Huizhao's dragon-summons succeeded and rain fell, but the monk fell into a coma for three days afterward. When he woke, his eyes had changed from brown to amber-yellow. He was permanently barred from further dragon rituals by the Imperial Preceptor. The yellow eyes remained until his death.\n\nA third instance is the anonymous **Sutra-Preacher of Lingyin** (灵隐诵经僧), recorded in a Ming miscellany. This monk, a junior scripture chanter at Lingyin Temple, was forced by bandits who captured the temple to summon a dragon to release the abbot. He succeeded on his first try, drove off the bandits, and immediately collapsed. Upon awakening, he could no longer chant sutras—every word he spoke came out as a guttural half-roar. He was confined to a meditation cave where he spent the remaining twenty years of his life in silence, communicating only by writing.",
+      "body_10": "The most notable surviving physical trace is the **Dragon Summoning Altar** (召龙坛) at the Lingyin Temple in Hangzhou, a stone platform with weathered carvings of coiled dragon forms. The carvings show signs of heat damage and deep scratches—attributed by temple tradition to the claws of manifested dragons that grasped the stone on their way out. The altar is kept under a sealed pavilion and is not open to visitors.\n\nAt Baohua Mountain, the sealed ritual scroll—a hand-written manuscript on blue paper—is stored in the Tripitaka Hall behind a metal door inscribed with the image of a dragon bound by lotus chains. Only the abbot and two senior elders possess the combined keys to open the case.\n\nOn the western cliffs of Mount Wutai, there is a cave known as **Dragon Cave** (龙洞) where the hermetic practitioner is said to have lived. The entrance is blocked by a massive boulder, and pilgrims report hearing a low hum—not quite wind, not quite chanting—from within.",
+      "body_11": "This entry connects to the broader framework of forbidden divine arts through its classification as a Dharma Protector Divine Ability (护法神通). Its mechanism of borrowing non-human consciousness parallels the Seventy-Two Transformations (七十二变) and the Celestial Mainstay Thirty-Six Transformations (天罡三十六变), though the latter are Taoist arts. The concept of merit-as-fuel ties directly to the Incense-Fire Faith Energy (香火愿力) system used by deities. The Half-Dragon Lost state represents a specific case of Form-Depth Fusion (形态深度融合), where the borrowed form permanently dominates. The Dragon Cave and sealed scrolls are examples of law-pollution sites and sealed transmission artifacts referenced elsewhere in this volume. For a full list of related deities, see the entries for Nāga race and the Eight Classes of Supernatural Beings in the Fa Volume's creature lexicon."
+    },
+    "guide": {
+      "guide_1": "Imagine you're sitting in a quiet corner of a Beijing temple courtyard, and an old monk—the kind with eyes that look both tired and amused—tells you about the time he had to call on a dragon. Not a metaphor for power. An actual celestial dragon, with scales and teeth and a will of its own, that would pour into his body like water through a broken cup. He tells you there were nine other monks before him who tried the same ritual. Three lost their minds. Two turned into something that no longer ate with chopsticks. One spoke only in roars for the rest of his life. He's still a monk, but his left hand has developed a tremor that gets worse when he meditates. That's the Great Mighty Celestial Dragon. It's not a superpower. It's a transaction with beings older than Buddhism itself.",
+      "guide_2": "If you've ever watched Chinese street opera or seen a wuxia movie, you've probably encountered the \"Great Mighty Celestial Dragon\" moment—a monk roars the line, golden energy flares, a dragon-shaped blast sends demons flying. In those versions, it looks like a magic trick: chant, win. The problem with that simplification is that it erases the entire weight of what is actually happening. The real art, the one that cost monks their humanity, isn't a technique you can just slot into your repertoire. It's a seven-day ritual, a decade of merit pre-burned, and a dragon that stays in your soul rent-free long after the battle is over. In the Eastern cosmic economy, nothing is free—especially not the service of a creature that can swallow a river.",
+      "guide_3": "Let me explain the payment plan in terms that would make a modern banker wince. You have a merit account, built up over years of ethical living, sutra study, and charitable acts. Every standard dragon summoning deducts ten years of merit in one transaction. If your balance is short, the universe offers a high-interest loan: one year of lifespan for every half-year of merit missing. There's no grace period. The debt is collected the moment the dragon's phantom fades. Now think about what ten years of merit actually represents: a monk who meditates three hours a day, recites daily sutras, observes all precepts, and spends weekends feeding the hungry. That's ten years of life work, gone in a single thirty-second roar.",
+      "guide_4": "I want you to visualize the actual casting. The monk sits cross-legged on a consecrated platform, incense smoke curling upward. The hand seal is complex—thumb and ring finger joined, the other three fingers extended like talons. The first sound is a low om that seems to come not from the throat but from the floor. Then the temperature drops. Not a cold chill, but a sudden heaviness, as if the air has become denser. The monk's back arches. You see his shoulder blades shift under the robe—not bones moving, but something else beneath the skin. His eyes open, and they are not his eyes. The pupils have become vertical slits, gold-flecked. He roars, and the sound splits the silence not as a thunderclap but as a pressure that enters your chest. From outside, you see a translucent dragon shape coiling around the monk's body. From inside, the monk is fighting the dragon's will—holding onto the Buddha's name like a rope in a flood.",
+      "guide_5": "The aftermath is where the real story begins. The immediate backlash is a mental invasion: the dragon's nature—its pride, its wrath, its territorial hunger—now lives in the caster's mind. The first time, it fades in a few days with meditation. The second time, it lingers for weeks. The third time, the caster starts finding it easier to be angry than calm. Some monks report a craving for raw meat. Others find themselves staring at jewelry with an acquisitive intensity they didn't have before. The cumulative effect is a slow replacement of human consciousness with dragon-compatibility. After the fifth use, your meridian system has been permanently altered; the dragon's energy pathway is now part of your spiritual anatomy. After the tenth, you start growing actual scales along the spine. After the twelfth, you may never speak human words again. There is no known cure for the full corruption. The purification rituals are like washing a wound with more wound.",
+      "guide_6": "Let me give you the names of those who paid. There was the monk Daoji, famous and beloved, who used this art so often that in his final years he would weep for no reason and speak to invisible presences. The elders of his temple covered for him, claiming it was the ecstasy of enlightenment. But those who knew said he was fighting a dragon inside his own chest every night. Then there was the anonymous scripture chanter from Lingyin Temple—a young man forced by bandits to summon a dragon. He succeeded on his first try. He never chanted a sutra again. Every word he uttered came out as a half-roar. His own brothers in the dharma had to lock him in a meditation cave to keep him from frightening the pilgrims. He lived there for twenty years in silence, communicating only with written notes. There is no happy ending in these stories. There is only a debt paid, and the cost tallied.",
+      "guide_7": "So what does all this mean for us, sitting safely in a world without dragons? I think it offers a lens for something universal: the idea that every shortcut, every power borrowed, leaves residue. In the Eastern cosmic model, you cannot outrun the consequences of what you've done—not by good intentions, not by piety, not by being the hero. The universe always settles accounts. The Great Mighty Celestial Dragon is a stark reminder that some doors, once opened, cannot be fully closed. The monk who borrows a dragon's strength will always carry a dragon's shadow. There is a kind of honesty in that: an admission that real power is never cheap, and that the cost of changing reality is paid in the most personal currency you own. The final line from an old Baohua Mountain scroll says it simply: \"Before you chant the dragon's name, learn to sit in silence for a hundred years.\""
+    }
+  },
+  "seo": {
+    "meta_description": "Great Mighty Celestial Dragon – A forbidden Buddhist divine art that summons a celestial dragon through karmic merit. Each invocation consumes ten years of merit; the dragon's consciousness corrupts the caster. History, costs, and known practitioners.",
+    "og_title": "Great Mighty Celestial Dragon – The Forbidden Buddhist Art That Costs Your Life",
+    "og_description": "A complete encyclopedia entry on 大威天龙 (Great Mighty Celestial Dragon), a forbidden divine art that borrows a celestial dragon's power at the cost of karmic merit, lifespan, and human consciousness.",
+    "twitter_title": "Great Mighty Celestial Dragon: The Dragon You Summon Is the Dragon That Stays",
+    "twitter_description": "Summon a celestial dragon, lose a decade of merit. Use it too often, lose your mind. The full story of one of Buddhism's most terrifying protector arts.",
+    "keywords": [
+      "Great Mighty Celestial Dragon",
+      "大威天龙",
+      "forbidden Buddhist divine art",
+      "dragon summoning cultivation",
+      "karmic merit cost",
+      "dharma protector",
+      "Half-Dragon Lost",
+      "Nāga cultivation",
+      "Buddhist forbidden techniques",
+      "Jin Shu"
+    ],
+    "tags": [
+      "forbidden divine art",
+      "Buddhist cultivation",
+      "dragon summoning",
+      "karmic backlash",
+      "Five Impairments",
+      "protector vow"
+    ]
+  },
+  "lore_entries": [
+    {
+      "surface_form": "Eight Classes of Supernatural Beings",
+      "description": "The eight classes of non-human beings (天龙八部) who protect the Buddhist dharma: deva, nāga, yakṣa, gandharva, asura, garuḍa, kinnara, mahoraga."
+    },
+    {
+      "surface_form": "Nāga (龙众)",
+      "description": "Serpentine dragon-beings in Buddhist cosmology, renowned for their strength, territoriality, and vow to protect the dharma."
+    },
+    {
+      "surface_form": "Half-Dragon Lost (半龙迷失)",
+      "description": "The terminal state of a caster after twelve or more uses of the Great Mighty Celestial Dragon, where the dragon-mind permanently overrides human consciousness and physical form."
+    },
+    {
+      "surface_form": "Dragon-Root Corruption (龙根侵蚀)",
+      "description": "The cumulative spiritual contamination left by each dragon invocation, progressively replacing the caster's consciousness with dragon nature."
+    },
+    {
+      "surface_form": "Deer Repentance Ritual (鹿角忏悔法)",
+      "description": "A 49-day purification ritual that can partially (half) reset the corruption counter, but cannot erase the deepest scars."
+    },
+    {
+      "surface_form": "Dragon Summoning Altar (召龙坛)",
+      "description": "The stone platform at Lingyin Temple in Hangzhou where dragon manifestation was historically performed; now sealed."
+    },
+    {
+      "surface_form": "Baohua Mountain Vinaya School (宝华山律宗)",
+      "description": "One of three known lineages that preserve the full ritual transmission of the Great Mighty Celestial Dragon as a sealed text."
+    }
+  ],
+  "faq_entries": [
+    {
+      "question": "Can anyone learn the Great Mighty Celestial Dragon?",
+      "answer": "No. Only Buddhist monks or practitioners with formal ordination and a strong protector vow can safely attempt it. Unauthorized casters risk immediate dragon attack."
+    },
+    {
+      "question": "How much merit does one invocation cost?",
+      "answer": "Exactly ten years of accumulated merit. If the caster's merit is insufficient, the shortfall is deducted from lifespan at a rate of one year of life per half-year of merit owed."
+    },
+    {
+      "question": "Is the dragon's corruption permanent?",
+      "answer": "The corruption is cumulative and difficult to reverse. After three to five uses, permanent behavioral changes appear. After twelve, the casted permanently becomes a Half-Dragon Lost creature with no known recovery."
+    },
+    {
+      "question": "Does the spell work against dragons?",
+      "answer": "Against beings with dragon blood, the spell's power is halved, and it may provoke the target's dragon patron or ancestor into retaliation."
+    },
+    {
+      "question": "What happens if the dragon is summoned in a deeply yin location?",
+      "answer": "In places like the entrance to the Underworld, dragon power is weakened and the backlash probability doubles."
+    }
+  ],
+  "relation_entries": [
+    {
+      "target": "Seventy-Two Transformations",
+      "relation_type": "similar forbidden divine art"
+    },
+    {
+      "target": "Celestial Mainstay Thirty-Six Transformations",
+      "relation_type": "similar forbidden divine art"
+    },
+    {
+      "target": "Incense-Fire Faith Energy",
+      "relation_type": "shared fuel concept"
+    },
+    {
+      "target": "Eight Classes of Supernatural Beings",
+      "relation_type": "invoked entity class"
+    },
+    {
+      "target": "Daoji",
+      "relation_type": "historical practitioner"
+    },
+    {
+      "target": "Huizhao",
+      "relation_type": "historical practitioner"
+    },
+    {
+      "target": "Lingyin Temple",
+      "relation_type": "ritual location"
+    },
+    {
+      "target": "Baohua Mountain",
+      "relation_type": "sealed text location"
+    }
+  ],
+  "new_terms": [],
+  "source": {
+    "seed_packet_filename": "0014-大威天龙.txt",
+    "seed_packet_relative_path": "百科内容生产系统/1-信息包成品素材/8-法门卷/0014-大威天龙.txt",
+    "template_file": "2-十大卷固定详情生产模板/8-法门卷万能生产模板（英文内容输出）.md",
+    "fixed_glossary_file": "2-十大卷固定详情生产模板/8-法门卷法门卷核心术语表（已锁定）.md",
+    "dynamic_glossary_file": "3-十大类型信息包/8-法门卷-动态增量术语表.md",
+    "system_files": [
+      "0-总框架东方版本/0-至高起源与创世框架：《太一黑箱与熵寂契约》.md",
+      "0-总框架东方版本/1-绝对本源-道.md",
+      "1-八大子板块/9-法门卷·总纲：扭曲造化与因果反噬.md",
+      "2-十大卷固定详情生产模板/8-法门卷万能生产模板（英文内容输出）.md",
+      "2-十大卷固定详情生产模板/8-法门卷法门卷核心术语表（已锁定）.md"
+    ],
+    "user_files": [
+      "3-十大类型信息包/8-法门卷-动态增量术语表.md",
+      "百科内容生产系统/1-信息包成品素材/8-法门卷/0014-大威天龙.txt"
+    ]
+  }
+}

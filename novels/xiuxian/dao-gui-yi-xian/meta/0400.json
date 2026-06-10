@@ -1,0 +1,57 @@
+{
+  "chapter_no": "0400",
+  "chapter_code": "0400",
+  "chapter_slug": "Half-Immortal",
+  "chapter_title_en": "Half-Immortal",
+  "chapter_keywords": [
+    "Lu Xiucai",
+    "locked room exorcism",
+    "five copper coins",
+    "folk horror trap",
+    "Chinese exorcism tropes",
+    "Kui Sanjin",
+    "Zhao Tianhu",
+    "possessed son",
+    "arrogant exorcist",
+    "horrifying reveal",
+    "Dao-Twisted World"
+  ],
+  "guide_tags": [
+    "Horror",
+    "Suspense",
+    "Dark Humor",
+    "Folk Horror",
+    "Character Suffering",
+    "Li Huowang’s Legacy"
+  ],
+  "chapter_seo_title": "Lu Xiucai’s First Exorcism Goes Horribly Wrong – Dao-Twisted World Ch. 400",
+  "chapter_meta_description": "Lu Xiucai thinks he’s the next great exorcist. A locked door and a face across the flame will teach him how wrong he is. A horror masterclass in borrowed confidence.",
+  "og_title": "He Bragged He Could Do What Li Huowang Did. The Door Locked.",
+  "og_description": "Lu Xiucai’s solo exorcism turns into a nightmare—locked in a pitch-black room with an entity that doesn’t care about his five coins.",
+  "twitter_title": "That moment when “I got this!” turns into “AAAAAHHHHH!!!”",
+  "twitter_description": "Lu Xiucai’s borrowed bravado meets a folk-horror locked room—and a face in the lamplight he’ll never forget.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "half-immortal",
+      "surfaces": [
+        "Half-Immortal"
+      ],
+      "definition": "A semi-ironic honorific for someone who claims (or is believed to possess) partial mastery of supernatural arts. In this chapter, it's used to flatter Lu Xiucai before he's thrown to the wolves."
+    },
+    {
+      "id": "five-copper-coins",
+      "surfaces": [
+        "Five"
+      ],
+      "definition": "A common folk-religious talisman in Chinese exorcism traditions, often strung together or arranged in a pattern. Their power depends on the user's spiritual cultivation—not just possession."
+    },
+    {
+      "id": "face-in-the-lamplight",
+      "surfaces": [
+        "Face"
+      ],
+      "definition": "A classic reveal technique in Chinese horror—the mundane act of lighting a lamp becomes a terrifying unveiling when the face on the other side is inhumanly long, pale, and silent."
+    }
+  ]
+}

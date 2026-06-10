@@ -1,0 +1,52 @@
+{
+  "chapter_no": "0030",
+  "chapter_code": "0030",
+  "chapter_slug": "Chapter-30-The-Opera",
+  "chapter_title_en": "Chapter 30: The Opera",
+  "chapter_keywords": [
+    "ghost opera",
+    "daoist bell repair",
+    "food shortage",
+    "lü zhuangyuan",
+    "luo juan",
+    "jianye town",
+    "gold anklet",
+    "jade pendant",
+    "folk opera payment",
+    "spirit appeasement"
+  ],
+  "guide_tags": [
+    "survival drama",
+    "logistics",
+    "folk horror",
+    "worldbuilding",
+    "character dynamics"
+  ],
+  "chapter_seo_title": "Chapter 30: The Opera — Li Huowang’s Group Faces a Food Crisis and a Ghost Opera Job",
+  "chapter_meta_description": "Food runs low and a ghost opera gig appears. Li Huowang juggles broken bells, useless silver, and a mounting supernatural debt.",
+  "og_title": "Chapter 30: The Opera — Grain, Gigs, and Ghosts",
+  "og_description": "The Lü family lands a ghost opera job. Li Huowang’s group faces a food crisis, a broken Daoist bell, and the creeping cost of survival.",
+  "twitter_title": "Chapter 30: When your only asset is a jade pendant and nobody in the village can appraise it.",
+  "twitter_description": "Ghost opera gig, dented bell, and dwindling sweet potatoes. The survival grind is as tense as any monster fight.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "ghost-opera",
+      "surfaces": [
+        "Ghost"
+      ]
+    },
+    {
+      "id": "daoist-bell",
+      "surfaces": [
+        "Daoist"
+      ]
+    },
+    {
+      "id": "gold-anklet",
+      "surfaces": [
+        "Gold"
+      ]
+    }
+  ]
+}

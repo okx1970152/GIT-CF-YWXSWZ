@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0254",
+  "chapter_code": "0254",
+  "chapter_slug": "The-Heir-of-the-Shao-Yan-Clan",
+  "chapter_title_en": "The Heir of the Shao Yan Clan",
+  "chapter_keywords": [
+    "shao yan nong",
+    "nine lotos",
+    "ji ning",
+    "xue hongyi",
+    "buyou realperson",
+    "black-white college",
+    "grand xia dynasty",
+    "marriage politics",
+    "xianxia clan hierarchy",
+    "dao-companion"
+  ],
+  "guide_tags": [
+    "Arrival of a Major Power",
+    "Domestic Conflict",
+    "Clan Politics",
+    "Power Dynamics",
+    "Recruitment Plot"
+  ],
+  "chapter_seo_title": "The Heir of the Shao Yan Clan Arrives—Ji Ning Faces the Grand Xia's Elite",
+  "chapter_meta_description": "A warship bearing the Shao Yan clan banner descends on Serpentwing Lake. Shao Yan Nong, heir to a top-ten Grand Xia clan, has come to recruit Ji Ning—but first, a domestic storm with Nine Lotos over the cost of status.",
+  "og_title": "The Heir of the Shao Yan Clan Comes Knocking",
+  "og_description": "Before the politics, a clash of hearts: Ji Ning and Nine Lotos argue over servant hierarchy. Then a warship from the Grand Xia's top ten clans arrives, and the real game begins.",
+  "twitter_title": "When a top-10 clan heir comes calling at your lake house",
+  "twitter_description": "Shao Yan Nong's arrival at Serpentwing Lake brings the weight of three marquisates—and a domestic storm between Ji Ning and Nine Lotos over what it really means to rule.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "serpentwing-lake",
+      "surfaces": [
+        "Serpentwing Lake"
+      ],
+      "definition": "The secluded lake home of Ji Ning, where his parents' ashes were scattered, now serving as a sanctuary and meeting point for major characters."
+    },
+    {
+      "id": "shao-yan-clan",
+      "surfaces": [
+        "Shao Yan clan"
+      ],
+      "definition": "One of the top ten most powerful clans in the Grand Xia Dynasty, possessing three separate marquisate fiefs that together dwarf the Anchan Commandery."
+    },
+    {
+      "id": "feather-duke",
+      "surfaces": [
+        "Feather"
+      ],
+      "definition": "The title held by the leader of the Shao Yan clan; a duke-level noble within the Grand Xia Dynasty's hierarchy."
+    },
+    {
+      "id": "four-young-masters",
+      "surfaces": [
+        "Four Young Masters"
+      ],
+      "definition": "A prestigious title designating the most politically powerful and well-connected scions of the Grand Xia royal capital, groomed to inherit immense authority."
+    },
+    {
+      "id": "xiangliu-fang",
+      "surfaces": [
+        "Xiangliu Fang"
+      ],
+      "definition": "A powerful old servant sworn to protect Shao Yan Nong; his presence is a testament to the clan's caution and wealth."
+    },
+    {
+      "id": "dong-yan-yun",
+      "surfaces": [
+        "Dong"
+      ],
+      "definition": "The full formal name of Nine Lotos, revealing her identity as the next leader of the Dong Yan clan."
+    }
+  ]
+}

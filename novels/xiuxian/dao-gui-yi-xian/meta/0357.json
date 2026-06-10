@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0357",
+  "chapter_code": "0357",
+  "chapter_slug": "The-Hidden-Heart-Turbid",
+  "chapter_title_en": "The Hidden Heart-Turbid",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "qi yi dao",
+    "li huowang",
+    "heart-turbid",
+    "xinsu",
+    "xin zhuo",
+    "supervisory heavenly office",
+    "chief recorder",
+    "tuoba danqing",
+    "renxiao",
+    "lifespan pill"
+  ],
+  "guide_tags": [
+    "body horror",
+    "cosmic horror",
+    "folk horror",
+    "xianxia",
+    "psychological horror",
+    "supernatural"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 356: The Heart-Turbid's Tragic Power Explained",
+  "chapter_meta_description": "Li Huowang captures the Heart-Turbid with shocking ease, but a gruesome discovery in a hidden cellar reveals the true, tragic nature of her power.",
+  "og_title": "The Heart-Turbid's Prison of Self",
+  "og_description": "In a cellar of mummies, the novel’s horror turns inward. The Heart-Turbid isn't a monster who hides others—she is a victim who forgot her own prisoners.",
+  "twitter_title": "A Prisoner of Her Own Mind",
+  "twitter_description": "Li Huowang captures the Heart-Turbid, only to find a cellar of forgotten victims. A chilling chapter on the cost of supernatural power.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "heart-turbid",
+      "surfaces": [
+        "Heart-Turbid"
+      ],
+      "definition": "The corrupted counterpart to the Heart-Element. Its power is to \"hide\" or erase concepts, objects, and memories from reality, rather than making fictions real."
+    },
+    {
+      "id": "chief-recorder",
+      "surfaces": [
+        "Chief"
+      ],
+      "definition": "A high-ranking eunuch official in the Supervisory Heavenly Office; their power is both bureaucratic and supernatural, often wielded through a deceptively genial demeanor."
+    },
+    {
+      "id": "renxiao",
+      "surfaces": [
+        "Renxiao"
+      ],
+      "definition": "A person who lives past 120 without achieving immortality and forcibly extends life with elixirs, resulting in a malformed, blind monster. The novel explains that obsession (执念) must be dispelled before the age of 120 to avoid this fate."
+    },
+    {
+      "id": "lifespan-pill",
+      "surfaces": [
+        "Lifespan"
+      ],
+      "definition": "A pill that consumes a user's lifespan for energy; the Chief Recorder uses them to sustain himself but is terrified of the Renxiao transformation that awaits him at the limit."
+    },
+    {
+      "id": "tuoba-danqing",
+      "surfaces": [
+        "Tuoba"
+      ],
+      "definition": "A handler in the Supervisory Heavenly Office; his compound surname (Tuoba) marks him as being from a historical non-Han ruling clan, adding a layer of cultural and political significance."
+    },
+    {
+      "id": "hong-da",
+      "surfaces": [
+        "Hong"
+      ],
+      "definition": "A member of the Office squad; his ability to perceive the karma within the Heart-Turbid reveals the tragic truth of her forgotten victims."
+    }
+  ]
+}

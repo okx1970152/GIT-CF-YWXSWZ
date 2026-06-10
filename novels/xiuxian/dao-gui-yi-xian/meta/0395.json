@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0395",
+  "chapter_code": "0395",
+  "chapter_slug": "True-and-False",
+  "chapter_title_en": "True and False",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "Li Huowang",
+    "Zhuge Yuan",
+    "Heart-Pan",
+    "Zuowandao",
+    "North Wind",
+    "Cultivate the True",
+    "xianxia lore",
+    "Chinese folk religion",
+    "Siming"
+  ],
+  "guide_tags": [
+    "World-building deep dive",
+    "Dialogue-heavy",
+    "Zuowandao lore",
+    "Heart-Element explained",
+    "Character growth",
+    "Cosmic horror",
+    "Mind-blowing revelation"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 394: Zuowandao vs. Heart-Elements – The Cultivation War",
+  "chapter_meta_description": "In a pivotal chapter, Li Huowang and Zhuge Yuan discuss the true nature of the war between Heart-Elements and the Zuowandao, revealing that their conflict is a war between “Cultivating the False” and “Cultivating the True.”",
+  "og_title": "The Final Move: Why the Zuowandao HATE Heart-Elements",
+  "og_description": "A simple Go game reveals the terrifying philosophical war at the heart of the Dao-Twisted World: the battle between cultivating truth and cultivating lies.",
+  "twitter_title": "Li Huowang learns the shocking truth: He’s been fighting a war he never even understood.",
+  "twitter_description": "A quiet game of Go shatters everything as Zhuge Yuan reveals the ancient war between Heart-Elements and the Zuowandao.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "heart-pan",
+      "surfaces": [
+        "Heart-Pan"
+      ],
+      "definition": "A member of the \"Heart\" generation whose destiny is permanently and inextricably \"coiled\" (蟠) with a higher power, such as a Siming."
+    },
+    {
+      "id": "one-above-the-three-bodies",
+      "surfaces": [
+        "One"
+      ],
+      "definition": "A cryptic epithet for a very powerful Siming from the White Jade Capital, whose true name is too dangerous to speak aloud."
+    },
+    {
+      "id": "dung-beetle-ascension",
+      "surfaces": [
+        "Dung-Beetle"
+      ],
+      "definition": "A notoriously painful and vile ascension technique from the Ao-Jing Sect, involving self-mutilation and corruption."
+    },
+    {
+      "id": "siming",
+      "surfaces": [
+        "Siming"
+      ],
+      "definition": "A class of high-dimensional, god-like entities that oversee specific aspects of reality and are often the objects of worship for various cults."
+    },
+    {
+      "id": "cultivate-the-true",
+      "surfaces": [
+        "Cultivate"
+      ],
+      "definition": "The original Chinese term for the entire xianxia genre. In this novel, it is revealed to be a literal cultivation path that directly opposes the Zuowandao's method of cultivating the false."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is the \"One Above the Three Bodies\"?",
+      "a": "It is a cryptic and dangerous epithet used by Zhuge Yuan to refer to a powerful Siming (司命) from the White Jade Capital. Speaking its true name would supposedly invite its attention, which is why he uses a vague term."
+    },
+    {
+      "q": "Why do the Zuowandao hate Heart-Elements so much?",
+      "a": "Zhuge Yuan deduces that it is because the Heart-Element's unique power—making their own beliefs and hallucinations real—is a natural, hard counter to the Zuowandao's cultivation method of \"replacing the true with the false.\""
+    },
+    {
+      "q": "What is the Heart-Element's cultivation method?",
+      "a": "While not yet fully revealed, Zhuge Yuan mentions a forgotten book that details a technique for controlling a Heart-Element's excess innate One Qi. He concludes that this technique is called \"Cultivating the True\" (修真), a direct counter to the Zuowandao's \"Cultivating the False\" (修假)."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0377",
+  "chapter_code": "0377",
+  "chapter_slug": "The-Chicken-Rib-Isle",
+  "chapter_title_en": "The Chicken Rib Isle",
+  "chapter_keywords": [
+    "small huan island",
+    "starfall island",
+    "azure cloud mountain",
+    "chicken rib",
+    "island lord",
+    "spirit vein",
+    "heaven vial",
+    "qi concentration",
+    "ascension pavilion",
+    "mortal stream strategy"
+  ],
+  "guide_tags": [
+    "resource management",
+    "worldbuilding",
+    "quiet victory",
+    "tactical isolation",
+    "cultivator bureaucracy"
+  ],
+  "chapter_seo_title": "Han Li Chooses Small Huan Island – Why He Picks the Weakest Spirit Vein",
+  "chapter_meta_description": "Han Li skips the best cultivation spots on Starfall Island and picks Small Huan Island, a qi-poor outlier. The bureaucrat laughs, but Han Li’s plan is perfectly clear: the Heaven Vial doesn’t need strong energy.",
+  "og_title": "Han Li Becomes an Island Lord—On the Worst Island",
+  "og_description": "He chooses the runt of the map: thin qi, high costs, and a long list of failures before him. But for a man with a secret green bottle, isolation is the real treasure.",
+  "twitter_title": "Why Han Li Picked the Worst Island on the Map",
+  "twitter_description": "Every other cultivator fled within years. Han Li signs up on day one. The secret? His Heaven Vial doesn’t need rich spiritual qi—it grows its own.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "chicken-rib",
+      "surfaces": [
+        "Chicken Rib"
+      ],
+      "definition": "A classical Chinese idiom for something that is tasteless to eat yet a pity to discard; in cultivation fiction, it describes a resource or location that is not worth fighting for but too valuable to simply abandon."
+    },
+    {
+      "id": "island-lord",
+      "surfaces": [
+        "Island Lord"
+      ],
+      "definition": "A de facto title granted to a cultivator who selects a remote island as their cultivation site, carrying full responsibility for the island’s protective formation costs and tax exemption to the main sect."
+    },
+    {
+      "id": "ascension-pavilion",
+      "surfaces": [
+        "Ascension Pavilion"
+      ],
+      "definition": "The administrative hall on Azure Cloud Mountain where cultivators register for cultivation sites and receive their proof of claim in the form of a jade slip."
+    },
+    {
+      "id": "divine-wind-boat",
+      "surfaces": [
+        "Divine Wind Boat"
+      ],
+      "definition": "Han Li's speed-focused flying artifact, refined from Ink Flood Dragon fin and tail; fast but lacks defensive capabilities."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "chapter_no": "0585",
+  "chapter_code": "0585",
+  "chapter_slug": "Lotus-Head",
+  "chapter_title_en": "Lotus Head",
+  "chapter_keywords": [
+    "Tao Hua Yao Yi",
+    "Li Huowang",
+    "lotus root head",
+    "Chief Astrologer",
+    "Siqi",
+    "Fangxian Sect",
+    "Bai Lingmiao",
+    "Sun Xiaoqin",
+    "mental health",
+    "Bashe",
+    "Thousand Greats Record",
+    "cure anxiety"
+  ],
+  "guide_tags": [
+    "body horror",
+    "medical setting",
+    "family warmth",
+    "existential doubt",
+    "fantasy horror",
+    "web novel"
+  ],
+  "chapter_seo_title": "Li Huowang’s Lotus Head & the Unhealable Scar: A Soft Chapter with a Hard Question",
+  "chapter_meta_description": "Morning sunlight, lotus-root skulls, and a doctor’s gentle logic. Li Huowang is healing — but can you cut away a god’s debt with medicine?",
+  "og_title": "Li Huowang’s Head is Now a Lotus Root",
+  "og_description": "The calmest scene in a while: porridge, mom, and a brittle, hollow shell where a skull used to be. But the *Thousand Greats Record* is still there.",
+  "twitter_title": "Baita Mornings: Porridge, Mom, and Lotus-Head",
+  "twitter_description": "A tender, brittle checkpoint chapter. Even without Hong Zhong’s memories, the *Thousand Greats Record* lingers.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "chief-astrologer-sitian-jian",
+      "surfaces": [
+        "Chief"
+      ],
+      "definition": "A mysterious figure who oversees the positions of the stars; in the Dao-Twisted World, he acts as a guide between the mortal and divine realms, sometimes appearing in visions."
+    },
+    {
+      "id": "fangxian-sect",
+      "surfaces": [
+        "Fangxian"
+      ],
+      "definition": "A school of alchemists and healers rooted in the historical *fangshu* tradition; their creed holds that “anything can be used as medicine,” a philosophy taken to grotesque extremes in the Dao-Twisted World."
+    },
+    {
+      "id": "lotus-root-prosthetic",
+      "surfaces": [
+        "Lotus"
+      ],
+      "definition": "A temporary head made of lotus root, evoking the Nezha myth of body reconstruction; in this case, a crude medical patch from court alchemists rather than a divine revival."
+    },
+    {
+      "id": "heart-pan",
+      "surfaces": [
+        "Heart-Pan"
+      ],
+      "definition": "A mortal who serves as a Siming’s causal connection to the world, acting as its ‘past’ and ‘seed’ to ensure its existence."
+    }
+  ]
+}

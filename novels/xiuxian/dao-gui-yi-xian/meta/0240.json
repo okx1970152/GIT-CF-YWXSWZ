@@ -1,0 +1,75 @@
+{
+  "chapter_no": "0240",
+  "chapter_code": "0240",
+  "chapter_slug": "The-Daoist",
+  "chapter_title_en": "The Daoist",
+  "chapter_keywords": [
+    "Fengdu",
+    "eating the heirless inheritance",
+    "rope spirit",
+    "two-headed daoist",
+    "heart-element reveal",
+    "heavenly calamity",
+    "lies disappeared",
+    "zuowandao"
+  ],
+  "guide_tags": [
+    "body horror",
+    "folk horror",
+    "reveal chapter",
+    "buddy horror",
+    "trust betrayal",
+    "underworld escape"
+  ],
+  "chapter_seo_title": "Dao-Twisted Chapter 240: Fengdu's Two-Headed Daoist and the Heart-Element Reveal",
+  "chapter_meta_description": "Li Huowang finally reaches the Fengdu exit. But his guide, Han Fu, has a secret body part—and he's known about Li Huowang's Heart-Element all along. A perfect slow-burn horror reveal chapter.",
+  "og_title": "Fengdu’s Exit is a Trap",
+  "og_description": "Han Fu peels off Li Huowang's mask and grins with both mouths. The Heart-Element is exposed, and the darkness is now a hunting ground.",
+  "twitter_title": "The Heart-Element is Out",
+  "twitter_description": "Han Fu the Daoist has two heads and zero trust. His reveal turns a friendly conversation into a deadly chase—and confirms a terrifying truth about the Heavenly Calamity cycle.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "fengdu",
+      "surfaces": [
+        "Fengdu"
+      ],
+      "definition": "The Chinese underworld city; in this novel, it is a nesting network of dark caves beneath Qingqiu."
+    },
+    {
+      "id": "rope-spirit",
+      "surfaces": [
+        "Rope"
+      ],
+      "definition": "A folk-horror entity in the Dao-Twisted World that is fed old people in exchange for their estates; its name sounds playful, but its practice is brutal."
+    },
+    {
+      "id": "heavenly-calamity",
+      "surfaces": [
+        "Heavenly"
+      ],
+      "definition": "An ontological disaster where a fundamental law of reality (e.g., rot, lies) ceases to function; a recurring, systemic event tied to the Dao of the Siming."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution that makes the bearer a powerful alchemical ingredient; its exposure makes Li Huowang a target for anyone who can claim him."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why did Han Fu knock off Li Huowang's mask?",
+      "a": "He wanted to confirm his suspicion that Li Huowang was a Heart-Element before revealing his true nature and attempting to trap him in Fengdu."
+    },
+    {
+      "q": "What was the “Little Girl” voice from the darkness?",
+      "a": "It was Han Fu’s second, infantile head speaking; he was never arguing with a separate entity, just performing a one-man show to keep Li Huowang guessing."
+    },
+    {
+      "q": "What does the “disappearance of Lies” mean for the world?",
+      "a": "Every Heavenly Calamity removes one rule from reality; when Lies vanished, even the Zuowandao couldn’t function, confirming these are systemic, cyclical overwrites of existence."
+    }
+  ]
+}

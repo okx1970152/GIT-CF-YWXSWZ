@@ -1,0 +1,74 @@
+{
+  "chapter_no": "0432",
+  "chapter_code": "0432",
+  "chapter_slug": "The-Golden-Throne",
+  "chapter_title_en": "The Golden Throne",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Heart-Turbid",
+    "Great Liang Imperial Palace",
+    "Throne Hall",
+    "memory erasure",
+    "golden palace",
+    "Zuowandao",
+    "North Wind",
+    "astral constellation formation",
+    "vertical pupil",
+    "sixty-four hexagrams",
+    "swastika seal"
+  ],
+  "guide_tags": [
+    "horror",
+    "suspense",
+    "cosmic horror",
+    "xianxia",
+    "Li Huowang",
+    "palace intrigue",
+    "memory manipulation",
+    "formation eye"
+  ],
+  "chapter_seo_title": "The Golden Throne: Li Huowang's Memory-Eating Palace Trap",
+  "chapter_meta_description": "Li Huowang enters the golden Throne Hall of the Great Liang Palace, only to discover time and memory are being erased. Beneath the golden bricks, a Heart-Turbid corpse waits, sewn shut with swastikas.",
+  "og_title": "The Golden Throne: Memory Erasure and a Buried Heart-Turbid",
+  "og_description": "Li Huowang's search for the Zuowandao leads him into a golden palace that eats memories. He finds his own desperate carvings on his arm—and a buried Heart-Turbid corpse serving as a formation eye.",
+  "twitter_title": "Li Huowang vs. the Golden Memory-Eating Palace",
+  "twitter_description": "The Great Liang Palace isn't just gold—it's a trap. A Heart-Turbid corpse sewn with swastikas lies beneath the Throne Hall.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "six-clawed-golden-dragon",
+      "surfaces": [
+        "Six-clawed"
+      ],
+      "definition": "In traditional Chinese symbolism, a five-clawed dragon represents the emperor. A sixth claw here signals a corrupted or escalated form of imperial power."
+    },
+    {
+      "id": "throne-hall",
+      "surfaces": [
+        "Throne"
+      ],
+      "definition": "The Jinluan Dian was the most important ceremonial hall in a Chinese palace. Here, it is literalized into a solid gold trap."
+    },
+    {
+      "id": "swastika",
+      "surfaces": [
+        "Swastika"
+      ],
+      "definition": "A sacred Buddhist symbol of auspiciousness, here corrupted into a binding, sealing curse that entangles the Heart-Turbid corpse."
+    },
+    {
+      "id": "sixty-four-hexagrams",
+      "surfaces": [
+        "Sixty-four"
+      ],
+      "definition": "The complete set of hexagrams from the I Ching, representing all states of change in the universe. Their appearance in the sky suggests a cosmic principle or observer."
+    },
+    {
+      "id": "formation-eye",
+      "surfaces": [
+        "Formation"
+      ],
+      "definition": "The central node of a ritual or supernatural formation; destroying or removing it usually collapses the entire array."
+    }
+  ]
+}

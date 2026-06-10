@@ -1,0 +1,55 @@
+{
+  "chapter_no": "0572",
+  "chapter_code": "0572",
+  "chapter_slug": "The-Emperor",
+  "chapter_title_en": "The Emperor",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Gao Zhijian",
+    "Ji Lin",
+    "Li Sui",
+    "emperor of Great Liang",
+    "dragon vein",
+    "mandate of heaven",
+    "royal succession",
+    "Huangfu Tiangang",
+    "Shangjing"
+  ],
+  "guide_tags": [
+    "ascension",
+    "tragedy",
+    "coronation",
+    "political horror",
+    "family sacrifice"
+  ],
+  "chapter_seo_title": "Gao Zhijian Becomes Emperor While Ji Lin Falls to Despair — Chapter 571",
+  "chapter_meta_description": "Li Huowang reveals Gao Zhijian’s true identity as the heir to Great Liang’s throne. Ji Lin’s final breakdown and suicide lay bare the horrific cost of imperial power.",
+  "og_title": "The Emperor’s Burden: A Coronation and a Suicide",
+  "og_description": "Gao Zhijian accepts the throne, but Ji Lin’s tragic death reminds us that in the Dao-Twisted World, power is never a gift—it’s a curse.",
+  "twitter_title": "Gao Zhijian is crowned emperor while Ji Lin takes her own life.",
+  "twitter_description": "A bittersweet coronation and a devastating suicide reveal the true nature of the Mandate of Heaven.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "dragon-vein",
+      "surfaces": [
+        "Dragon"
+      ],
+      "definition": "In Chinese geomancy and political cosmology, the dragon vein is the underground energy channel that determines a dynasty's fortune and legitimacy."
+    },
+    {
+      "id": "the-grand-preceptor",
+      "surfaces": [
+        "The"
+      ],
+      "definition": "Huangfu Tiangang, the top Daoist official of Great Liang; he wields the Star-Lodge Sword and holds both military and supernatural authority."
+    },
+    {
+      "id": "shangsi-festival",
+      "surfaces": [
+        "Shangsi"
+      ],
+      "definition": "A traditional Chinese festival; Ji Lin was first introduced during this event, making her current fate a stark contrast to that earlier impression."
+    }
+  ]
+}

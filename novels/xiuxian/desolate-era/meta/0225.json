@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0225",
+  "chapter_code": "0225",
+  "chapter_slug": "A-Father-s-Lesson-a-Friend-s-Burden",
+  "chapter_title_en": "A Father’s Lesson, a Friend’s Burden",
+  "chapter_keywords": [
+    "beishan baiwei",
+    "beishan heihu",
+    "ji ning",
+    "mystic army",
+    "crippled moon realperson",
+    "shui yi",
+    "northmont clan",
+    "xianxia revenge",
+    "cultivator politics",
+    "dao-heart"
+  ],
+  "guide_tags": [
+    "Character Depth",
+    "Political Intrigue",
+    "Friendship Bonds",
+    "Xianxia Politics",
+    "Revenge Arc"
+  ],
+  "chapter_seo_title": "Desolate Era Ch 225: A Father's Lesson, a Friend's Burden - Ji Ning's Revenge Catches Up",
+  "chapter_meta_description": "The Mystic Army closes in on Ji Ning’s trail. Beishan Baiwei must choose: abandon his friend or sacrifice his own reputation. A masterclass in Xianxia politics and true brotherhood.",
+  "og_title": "Desolate Era Ch 225: A Father's Lesson, a Friend's Burden",
+  "og_description": "Beishan Baiwei faces the consequence of Ji Ning’s revenge. A choice between cold strategy and true friendship.",
+  "twitter_title": "Desolate Era Ch 225: A Father's Lesson",
+  "twitter_description": "The Mystic Army is on the hunt. Beishan Baiwei must decide: abandon his friend or take the fall himself. #DesolateEra",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "mystic-army",
+      "surfaces": [
+        "Mystic"
+      ],
+      "definition": "The secret, elite cultivator legion serving the Northmont clan of Anchan. Its members are bound by a powerful brotherhood; harming a retired veteran is considered an attack on the legion’s honor and triggers an institutional hunt for vengeance."
+    },
+    {
+      "id": "crippled-moon-realperson",
+      "surfaces": [
+        "Crippled"
+      ],
+      "definition": "A retired Wanxiang Adept of the Northmont clan's Mystic Army. Killed by Ji Ning while trying to protect his disciple, Yu Tong. His death creates a political crisis that threatens to expose Ji Ning."
+    },
+    {
+      "id": "direct-descendant",
+      "surfaces": [
+        "Direct"
+      ],
+      "definition": "A core bloodline member of a noble clan, often in line for succession or high office. Their status provides a degree of legal and social immunity that lower-ranking cultivators or outsiders lack."
+    },
+    {
+      "id": "y-ng-river-bay",
+      "surfaces": [
+        "Yáng"
+      ],
+      "definition": "A large river region in the Anchan Commandery, roughly the size of the Yan Mountains. It is the territory of the Shui clan, the tribe of Ji Ning’s next target, Shui Yi."
+    },
+    {
+      "id": "self-built-city",
+      "surfaces": [
+        "Self-built"
+      ],
+      "definition": "A fortified city constructed by a tribe or clan on their own, without the official recognition or backing of the Grand Xia Dynasty. It is a mark of lower prestige and security compared to a true Grand Xia city."
+    },
+    {
+      "id": "dao-heart",
+      "surfaces": [
+        "Dao-heart"
+      ],
+      "definition": "The unshakeable core of a cultivator’s will and spiritual conviction. Violating one’s own principles (such as killing the innocent) can damage the Dao-heart, leading to stagnation or regression in cultivation."
+    }
+  ]
+}

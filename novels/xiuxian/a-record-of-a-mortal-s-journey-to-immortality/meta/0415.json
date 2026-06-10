@@ -1,0 +1,98 @@
+{
+  "chapter_no": "0415",
+  "chapter_code": "0415",
+  "chapter_slug": "Stirring-the-Seas-The-Corpse-Fiend",
+  "chapter_title_en": "Stirring the Seas—The Corpse Fiend",
+  "chapter_keywords": [
+    "Corpse Puppet",
+    "Han Li",
+    "extreme yin ancestor",
+    "chihuo old monster",
+    "star palace",
+    "twin saints",
+    "magnetic divine light",
+    "tactical retreat",
+    "shi yue dao",
+    "purple flame"
+  ],
+  "guide_tags": [
+    "action",
+    "tactical combat",
+    "escape",
+    "politics",
+    "worldbuilding"
+  ],
+  "chapter_seo_title": "RMJI Ch 415: Han Li vs. a Teleporting Corpse Puppet & the Twin Saints' Secret",
+  "chapter_meta_description": "Han Li fights a near-indestructible Corpse Puppet and escapes using a clever web-and-fire combo, only to uncover a shocking secret about the Star Palace's weakness.",
+  "og_title": "A New Threat Emerges in the Starfall Sea!",
+  "og_description": "Han Li uses every trick in his book to survive a relentless Corpse Puppet, while the Extreme Yin Ancestor reveals the Twin Saints' fatal flaw.",
+  "twitter_title": "The Real Battle Is in the Shadows",
+  "twitter_description": "Han Li escapes a teleporting Corpse Puppet, only to learn that the region's biggest power is crippled. The next arc starts here!",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "corpse-puppet",
+      "surfaces": [
+        "Corpse Puppet"
+      ],
+      "definition": "A high-tier undead creation refined from a human cadaver, often armored and imbued with regeneration; a classic demonic path tool in xianxia."
+    },
+    {
+      "id": "blood-essence-diamond",
+      "surfaces": [
+        "Blood Essence Diamond"
+      ],
+      "definition": "A condensed projectile of blood-type energy, capable of piercing most defenses; a signature attack of blood-path cultivators."
+    },
+    {
+      "id": "blood-jade-spider",
+      "surfaces": [
+        "Blood Jade Spider"
+      ],
+      "definition": "An ancient blood-type spirit beast that produces tough, flame-resistant webs; a high-value asset for binding and control."
+    },
+    {
+      "id": "magnetic-divine-light",
+      "surfaces": [
+        "Magnetic Divine Light"
+      ],
+      "definition": "A legendary technique harnessing primordial magnetic forces, granting domain-level power at the cost of mobility and freedom."
+    },
+    {
+      "id": "star-palace",
+      "surfaces": [
+        "Star Palace"
+      ],
+      "definition": "The dominant political and martial power in the Starfall Sea, ruled by the Twin Saints and based in the Heaven Star City."
+    },
+    {
+      "id": "twin-saints-of-heaven-and-star",
+      "surfaces": [
+        "Twin Saints of Heaven and Star"
+      ],
+      "definition": "The two highest-level cultivators of the Star Palace, currently crippled by the side effects of their Magnetic Divine Light technique."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is a Corpse Puppet?",
+      "a": "A Corpse Puppet (炼尸) is a refined undead warrior, strengthened with metals and rituals to become a near-indestructible combat tool, often used by demonic cultivators."
+    },
+    {
+      "q": "Why didn't Han Li just kill it?",
+      "a": "It was immune to most of his attacks and healed from the ones that worked; killing it would have wasted too much time and resources, so he escaped."
+    },
+    {
+      "q": "What is the Magnetic Divine Light?",
+      "a": "A legendary technique that manipulates magnetic and elemental forces, granting immense power but shackling the user to a specific location to prevent cultivation regression."
+    },
+    {
+      "q": "Why is the Twin Saints' weakness important?",
+      "a": "It means the Star Palace cannot project power effectively, leaving a power vacuum that the Extreme Yin Ancestor and other demonic factions can exploit."
+    },
+    {
+      "q": "What is the Void Heaven Palace?",
+      "a": "A legendary secret realm mentioned in passing; a major location for high-level cultivators to seek treasures and breakthroughs, now made less dangerous by the Twin Saints' absence."
+    }
+  ]
+}

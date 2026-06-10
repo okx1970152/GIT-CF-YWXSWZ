@@ -1,0 +1,89 @@
+{
+  "chapter_no": "0535",
+  "chapter_code": "0535",
+  "chapter_slug": "The-Doctor",
+  "chapter_title_en": "The Doctor",
+  "chapter_keywords": [
+    "dao guiyi xian",
+    "li huowang",
+    "yi donglai",
+    "psychiatrist vs patient",
+    "psychological horror",
+    "rational horror",
+    "wang wei",
+    "cultivat the truth",
+    "qi deviation",
+    "dragon vein",
+    "great qi",
+    "great liang",
+    "li sui",
+    "zhuge yuan"
+  ],
+  "guide_tags": [
+    "dao guiyi xian",
+    "chapter 534",
+    "psychological horror",
+    "hospital arc",
+    "doctor confrontation",
+    "rational horror",
+    "great qi"
+  ],
+  "chapter_seo_title": "Dao Guiyi Xian Ch. 534 – The Doctor: When Logic Becomes the True Horror",
+  "chapter_meta_description": "Li Huowang faces his most terrifying enemy yet: a psychiatrist who uses his own logic against him. And then, a chilling revelation about his former doctor.",
+  "og_title": "The Doctor Strikes – Dao Guiyi Xian Chapter 534",
+  "og_description": "A rational foe steps into the ring, and the horror is in the argument, not the blood.",
+  "twitter_title": "Ch. 534: When the Therapist Wins Using Your Rules",
+  "twitter_description": "Li Huowang vs. the psychiatrist: the most dangerous fight yet.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "dragon-vein",
+      "surfaces": [
+        "Dragon"
+      ],
+      "definition": "In Chinese geomancy and political cosmology, the dragon vein is the underground energy channel that shapes a dynasty’s fate and legitimacy. Severing one can cause a kingdom to collapse, but the effect is usually local."
+    },
+    {
+      "id": "cultivate-the-true",
+      "surfaces": [
+        "Cultivate"
+      ],
+      "definition": "A central philosophical path in the Dao-Twisted World, opposed by the Zuowandao’s “Cultivate the False.” It suggests the protagonist is trying to force an illogical world into being real."
+    },
+    {
+      "id": "qi-deviation",
+      "surfaces": [
+        "Qi"
+      ],
+      "definition": "A generic xianxia term for a cultivator’s practice going wrong, leading to madness, injury, or death. The Dice’s implied threat is that Li Huowang’s “true cultivation” path is inherently unstable."
+    },
+    {
+      "id": "double-layer-restraint-suit",
+      "surfaces": [
+        "Double-layer"
+      ],
+      "definition": "A hospital-grade straitjacket used for high-risk psychiatric patients, emphasizing the severity of Li Huowang’s diagnosis in the modern-world reality."
+    },
+    {
+      "id": "wang-wei",
+      "surfaces": [
+        "Wang"
+      ],
+      "definition": "Li Huowang’s former attending physician in the hospital, now himself a patient. His presence implies that engaging with Li Huowang’s worldview can drive a normal person insane, hinting at a contagion of logic."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Li Huowang react so violently to Yi Donglai’s questions?",
+      "a": "Because the doctor is using Li Huowang’s own logic—that the Dao-Twisted World is real—to undermine his sense of control. The violent outburst is a reflexive defense against the terrifying possibility that his belief system might be a fragile delusion."
+    },
+    {
+      "q": "Who is Wang Wei, and why does his appearance shock Yi Donglai?",
+      "a": "Wang Wei was Li Huowang’s previous attending physician. His current insanity implies that engaging with Li Huowang’s worldview can drive a normal person mad, proving that the “illness” might be contagious through rational discourse—a revelation that shatters Yi Donglai’s professional confidence."
+    },
+    {
+      "q": "Why does Zhuge Yuan say severing Great Qi’s dragon vein is “good for Great Liang”?",
+      "a": "Dragon veins are localized. The collapse of a rival dynasty’s geomantic foundation weakens them without harming the other. It’s a geopolitical win-by-proxy in the Dao-Twisted World’s brutal logic."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "chapter_no": "0418",
+  "chapter_code": "0418",
+  "chapter_slug": "Cultivating-the-Bamboo",
+  "chapter_title_en": "Cultivating the Bamboo",
+  "chapter_keywords": [
+    "Divine Thunder Bamboo",
+    "Gold Thunder Bamboo",
+    "White Thunder Bamboo",
+    "Green Liquid",
+    "Heaven Vial",
+    "Core Formation",
+    "Azure Bamboo Cloudswarm Swords",
+    "Sublime Sound Sect",
+    "chicken rib",
+    "Starfall Sea",
+    "spirit plant cultivation",
+    "Demon-Repelling Lightning"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "Xianxia",
+    "strategy",
+    "resource management",
+    "cultivation",
+    "payoff chapter",
+    "underdog victory",
+    "rare materials"
+  ],
+  "chapter_seo_title": "A Record of a Mortal’s Journey to Immortality Ch.418 – Han Li’s Gold Thunder Bamboo",
+  "chapter_meta_description": "Han Li acquires Divine Thunder Bamboo from the Sublime Sound Sect, then uses the Heaven Vial to mature it into legendary Gold Thunder Bamboo. A rare moment of triumph in the Mortal Stream.",
+  "og_title": "Han Li Turns a Chicken Rib Into a Legendary Treasure",
+  "og_description": "After acquiring the seemingly useless Divine Thunder Bamboo, Han Li cultivates it into the fabled Gold Thunder Bamboo—his biggest bargain yet.",
+  "twitter_title": "Han Li’s Ultimate Bargain: Gold Thunder Bamboo",
+  "twitter_description": "The Sublime Sound Sect thought they got the better of Han Li. They had no idea he could turn their White Thunder Bamboo into a ten-thousand-year Gold Thunder Bamboo.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "divine-thunder-bamboo",
+      "surfaces": [
+        "Divine Thunder Bamboo"
+      ],
+      "definition": "One of the three legendary divine bamboos of the cultivation world; its grade is determined by age, with the rarest ten-thousand-year variant called Gold Thunder Bamboo that releases pale-gold lightning capable of countering evil arts."
+    },
+    {
+      "id": "white-thunder-bamboo",
+      "surfaces": [
+        "White Thunder Bamboo"
+      ],
+      "definition": "A lower-grade Divine Thunder Bamboo under five thousand years old, releasing only ordinary white lightning; considered a \"chicken rib\" by most cultivators due to limited utility."
+    },
+    {
+      "id": "gold-thunder-bamboo",
+      "surfaces": [
+        "Gold Thunder Bamboo"
+      ],
+      "definition": "The ten-thousand-year pinnacle of Divine Thunder Bamboo, producing pale-gold Demon-Repelling Lightning; its appearance in history sparked decades of bloodshed in the Starfall Sea."
+    },
+    {
+      "id": "demon-repelling-lightning",
+      "surfaces": [
+        "Demon-Repelling Lightning"
+      ],
+      "definition": "The special property of Gold Thunder Bamboo's lightning, which has a natural克制 effect on demonic arts and evil techniques, making it highly prized for refining anti-evil treasures."
+    },
+    {
+      "id": "chicken-rib",
+      "surfaces": [
+        "Chicken"
+      ],
+      "definition": "A classical Chinese idiom (鸡肋) describing something that is tasteless to eat yet a pity to discard; in the cultivation world, it refers to assets that have high reputation but low practical value."
+    },
+    {
+      "id": "starfall-sea",
+      "surfaces": [
+        "Starfall Sea"
+      ],
+      "definition": "The vast ocean region where the current arc takes place, known for its abundant resources and chaotic history; the setting of the Star Plucking Assembly and Heaven Star City."
+    }
+  ]
+}

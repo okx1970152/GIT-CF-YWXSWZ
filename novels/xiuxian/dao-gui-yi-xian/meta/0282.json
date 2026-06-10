@@ -1,0 +1,84 @@
+{
+  "chapter_no": "0282",
+  "chapter_code": "0282",
+  "chapter_slug": "The-Porcelain-Pagoda",
+  "chapter_title_en": "The Porcelain Pagoda",
+  "chapter_keywords": [
+    "Yinling City",
+    "Linglong Pagoda",
+    "Dao-Twisted World",
+    "folk horror",
+    "Chinese folklore",
+    "social satire",
+    "prostitution",
+    "Beauty Paper",
+    "broken porcelain symbolism",
+    "urban horror"
+  ],
+  "guide_tags": [
+    "Worldbuilding",
+    "Social Commentary",
+    "Character Study",
+    "Atmospheric Horror",
+    "Slow Burn",
+    "City Arc"
+  ],
+  "chapter_seo_title": "Li Huowang Reaches Yinling—The Beauty and Horror of the Linglong Pagoda",
+  "chapter_meta_description": "Li Huowang's group arrives in the opulent city of Yinling. They witness the breathtaking Linglong Pagoda—a porcelain tower of pleasure. But behind its beauty lies a cruel, dehumanizing truth. A chapter of stark social satire and weary cynicism.",
+  "og_title": "A Pagoda of Pleasure: The Bitter Luxury of Yinling City",
+  "og_description": "A new city, a beautiful pagoda, and a terrible price. Li Huowang observes the social rot at the heart of the Great Liang Empire. A haunting chapter.",
+  "twitter_title": "Broken Porcelain: The Real Horror in Yinling City",
+  "twitter_description": "The Linglong Pagoda is a marvel, but its beauty masks a dark transaction. Li Huowang sees what no one else does: the beggar with the shattered tattoos.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "beauty-paper",
+      "surfaces": [
+        "Beauty"
+      ],
+      "definition": "A cruel historical practice where a beautiful young woman was used as a living, reusable piece of toilet paper by feudal nobles. Represents extreme class-based dehumanization."
+    },
+    {
+      "id": "linglong-pagoda",
+      "surfaces": [
+        "Linglong"
+      ],
+      "definition": "The famous porcelain pagoda of Yinling City. \"Linglong\" (玲珑) means exquisitely carved or intricate. It is a brothel that disguises its nature as a site of artistic and spiritual cultivation."
+    },
+    {
+      "id": "travel-permit",
+      "surfaces": [
+        "Travel"
+      ],
+      "definition": "An official document required for travel and lodging within the Great Liang Empire. Its requirement signals a highly bureaucratic and controlled society."
+    },
+    {
+      "id": "celadon",
+      "surfaces": [
+        "Celadon"
+      ],
+      "definition": "A type of Chinese pottery known for its jade-like green or blue-green glaze, often with fine crackle patterns. In the novel, it is used to describe the courtesans' skin and tattoos."
+    },
+    {
+      "id": "porcelain-pagoda",
+      "surfaces": [
+        "Porcelain"
+      ],
+      "definition": "A tower made entirely of ceramic. In reality, building a full-scale pagoda out of fired porcelain would be nearly impossible, making it a fantastical symbol of the city's wealth and obsession with artifice."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is the \"Beauty Paper\" Li Huowang mentions?",
+      "a": "It is a reference to a horrifying historical practice in ancient China where wealthy nobles used a beautiful woman as a living, reusable piece of toilet paper. The term is used here as a scathing critique of the Great Liang Empire's culture of commodifying women."
+    },
+    {
+      "q": "Why is the Linglong Pagoda shocking to Li Huowang?",
+      "a": "From a distance it appears to be a beautiful piece of sacred architecture, but it's actually a high-end brothel. Li Huowang is disgusted by the hypocrisy and the reduction of human beings, especially women, to the status of exquisite objects."
+    },
+    {
+      "q": "What is the significance of the broken old beggar?",
+      "a": "His face has the same藏 blue tattoo patterns as the courtesans in the pagoda. He is a symbol of what happens to these women when their beauty fades. Like a piece of shattered porcelain, he has been thrown away once he lost his value, highlighting the cruel, transactional nature of this society."
+    }
+  ]
+}

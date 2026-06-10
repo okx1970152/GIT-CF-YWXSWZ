@@ -1,0 +1,70 @@
+{
+  "chapter_no": "0014",
+  "chapter_code": "0014",
+  "chapter_slug": "An-Ally",
+  "chapter_title_en": "An Ally",
+  "chapter_keywords": [
+    "li huowang",
+    "bai lingmiao",
+    "danyangzi",
+    "wandering lord",
+    "market day",
+    "human ingredients",
+    "rebellion planning",
+    "alchemy taboos",
+    "illiteracy mystery",
+    "qingfeng temple"
+  ],
+  "guide_tags": [
+    "conspiracy building",
+    "moral conflict",
+    "folk religion",
+    "worldbuilding",
+    "quiet tension"
+  ],
+  "chapter_seo_title": "Dao-Twisted World Ch. 14: Li Huowang Recruits His First Ally",
+  "chapter_meta_description": "Li Huowang gains strength from a tainted pill, recruits Bai Lingmiao to his rebellion, and discovers a critical weakness in Danyangzi's surveillance system.",
+  "og_title": "An Ally – Chapter 14 of Dao-Twisted World",
+  "og_description": "Li Huowang builds his first conspiracy, learns the Wandering Lord's schedule, and uncovers a dangerous mystery about Danyangzi's Heavenly Scripture.",
+  "twitter_title": "Ch. 14: The rebellion begins with a pill, a girl, and a calendar loophole.",
+  "twitter_description": "Li Huowang builds his first conspiracy, learns the Wandering Lord's schedule, and uncovers a dangerous mystery about Danyangzi's Heavenly Scripture.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "dantian",
+      "surfaces": [
+        "Dantian"
+      ]
+    },
+    {
+      "id": "meridians",
+      "surfaces": [
+        "Meridians"
+      ]
+    },
+    {
+      "id": "wandering-lord",
+      "surfaces": [
+        "Wandering"
+      ]
+    },
+    {
+      "id": "market-day",
+      "surfaces": [
+        "Market"
+      ]
+    },
+    {
+      "id": "heavenly-scripture",
+      "surfaces": [
+        "Heavenly"
+      ]
+    },
+    {
+      "id": "lord-lao",
+      "surfaces": [
+        "Lord"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "chapter_no": "0202",
+  "chapter_code": "0202",
+  "chapter_slug": "The-Hamlet",
+  "chapter_title_en": "The Hamlet",
+  "chapter_keywords": [
+    "li huowang",
+    "bai lingmiao",
+    "gouwa",
+    "chun xiaoman",
+    "lv zhuangyuan",
+    "borrowed grain",
+    "shu province",
+    "mountain village",
+    "door gods",
+    "the dao-twisted world",
+    "survival horror",
+    "moral anchor"
+  ],
+  "guide_tags": [
+    "survival horror",
+    "resource conflict",
+    "folk horror",
+    "moral dilemma",
+    "door gods",
+    "character tension"
+  ],
+  "chapter_seo_title": "The Hamlet (Ch. 202) – Li Huowang Faces Starvation in a Hidden Village",
+  "chapter_meta_description": "Li Huowang's group faces starvation. A desperate gamble leads them to a hidden mountain village. But in the Dao-Twisted World, not even paradise opens its door for the hungry.",
+  "og_title": "The Hamlet – Starvation and a Hidden Door",
+  "og_description": "No monsters, just a closed door. Li Huowang’s crew faces the cruelest horror yet: running out of food.",
+  "twitter_title": "The Hamlet – Starving on a mountaintop",
+  "twitter_description": "A quiet, grim chapter where the real enemy is an empty stomach. Li Huowang refuses to become his master, but the world refuses to feed him.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "door-gods",
+      "surfaces": [
+        "Door"
+      ]
+    },
+    {
+      "id": "yellow-flatbread",
+      "surfaces": [
+        "Yellow"
+      ]
+    },
+    {
+      "id": "shu",
+      "surfaces": [
+        "Shu"
+      ]
+    }
+  ]
+}

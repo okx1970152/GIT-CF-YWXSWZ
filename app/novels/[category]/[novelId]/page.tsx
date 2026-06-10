@@ -16,6 +16,7 @@ import { toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
 export const dynamicParams = false;
+export const dynamic = "force-static";
 
 type Props = { params: Promise<{ category: string; novelId: string }> };
 

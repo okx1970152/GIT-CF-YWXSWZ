@@ -1,0 +1,70 @@
+{
+  "chapter_no": "0457",
+  "chapter_code": "0457",
+  "chapter_slug": "The-Lure-is-Set",
+  "chapter_title_en": "The Lure is Set",
+  "chapter_keywords": [
+    "nine-bend spirit ginseng",
+    "soul search grand art",
+    "musk orchid beast",
+    "formation flags",
+    "golden lightning bamboo",
+    "evil-repelling divine lightning",
+    "xuan gu",
+    "han li",
+    "ghost partner",
+    "spirit beast bait"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "Formation Warfare",
+    "Spirit Beast Lore",
+    "Tactical Deception",
+    "Ghost Cultivator",
+    "Core Formation"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 457 – The Lure is Set",
+  "chapter_meta_description": "Xuan Gu and Han Li lay their traps for the Nine-Bend Spirit Ginseng, but hidden layers of deception run deep—both men are playing a game only one knows he has already lost.",
+  "og_title": "The Hunt for the Nine-Bend Spirit Ginseng Begins",
+  "og_description": "Xuan Gu sets a foul-smelling lure, but Han Li has already planted his own countermeasures—who will spring the first trap?",
+  "twitter_title": "RMJI Ch. 457 – The Rabbit Steps In",
+  "twitter_description": "The Nine-Bend Spirit Ginseng arrives in the form of a white rabbit—but is it truly caught, or just probing the formation?",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "nine-bend-spirit-ginseng",
+      "surfaces": [
+        "Nine-Bend"
+      ],
+      "definition": "A legendary spiritual herb that can transform into animal forms and is exceptionally difficult to capture; its main body is hidden separately from its incarnation."
+    },
+    {
+      "id": "soul-search-grand-art",
+      "surfaces": [
+        "Soul"
+      ],
+      "definition": "A powerful tracking technique that scans the environment for specific spiritual auras; it is invasive and often used for locating hidden targets."
+    },
+    {
+      "id": "musk-orchid-beast",
+      "surfaces": [
+        "Musk"
+      ],
+      "definition": "A strange spirit beast prized for the calming incense from its horn; ironically, its feces is what attracts the Nine-Bend Spirit Ginseng."
+    },
+    {
+      "id": "evil-repelling-divine-lightning",
+      "surfaces": [
+        "Evil-Repelling"
+      ],
+      "definition": "A Yang-aligned lightning inherent to Golden Lightning Bamboo, capable of instantly erasing Yin-type ghostly entities; it is a finite resource that must be recharged."
+    },
+    {
+      "id": "ghost-mist",
+      "surfaces": [
+        "Ghost"
+      ],
+      "definition": "An animate undead mist that drains life and traps souls; Xuan Gu used it to exhaust Han Li's divine lightning earlier."
+    }
+  ]
+}

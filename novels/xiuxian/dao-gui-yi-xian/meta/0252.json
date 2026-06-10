@@ -1,0 +1,90 @@
+{
+  "chapter_no": "0252",
+  "chapter_code": "0252",
+  "chapter_slug": "The-Supervisory-Heavenly-Office",
+  "chapter_title_en": "The Supervisory Heavenly Office",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "zuowandao",
+    "supervisory heavenly office",
+    "heavenly calamity",
+    "north wind",
+    "seven-star sword",
+    "nascent soul",
+    "han fu",
+    "bronze coin sword"
+  ],
+  "guide_tags": [
+    "lore heavy",
+    "worldbuilding",
+    "information gathering",
+    "political landscape",
+    "cosmic horror"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 252: Li Huowang learns the Supervisory Heavenly Office's true mission",
+  "chapter_meta_description": "Li Huowang interrogates Han Fu's Nascent Soul and learns the truth about the Supervisory Heavenly Office—they're not just hunting monsters, they're fighting Heavenly Calamities.",
+  "og_title": "The Supervisory Heavenly Office's Hidden Purpose",
+  "og_description": "In Chapter 252 of Dao Gui Yi Xian, Li Huowang discovers that the world's monster-hunting bureau has a far more terrifying primary mission.",
+  "twitter_title": "The Office That Hunts Heaven",
+  "twitter_description": "Li Huowang interrogates a Nascent Soul and learns the Supervisory Heavenly Office's real job—fighting Heavenly Calamities, not just Zuowandao.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "The imperial bureau that polices supernatural threats; its primary mission is dealing with Heavenly Calamities, not just hunting monsters or cults."
+    },
+    {
+      "id": "seven-star-sword",
+      "surfaces": [
+        "Seven-Star"
+      ],
+      "definition": "A bronze coin sword made from 184 ancient coins, forged at a ritually auspicious time; it can disperse inauspicious earth energies and has exorcism powers."
+    },
+    {
+      "id": "eight-nodes",
+      "surfaces": [
+        "Eight"
+      ],
+      "definition": "The eight seasonal turning points in the traditional Chinese calendar (solstices, equinoxes, and the start of each season), often used for ritual and alchemical timing."
+    },
+    {
+      "id": "three-prime-days",
+      "surfaces": [
+        "Three"
+      ],
+      "definition": "Three major Daoist festival days: Shangyuan (15th of 1st month), Zhongyuan (15th of 7th month), and Xiayuan (15th of 10th month); considered potent days for crafting talismans and artifacts."
+    },
+    {
+      "id": "two-blacks-and-five-yellows",
+      "surfaces": [
+        "Two"
+      ],
+      "definition": "In feng shui and the Flying Star school, these are inauspicious star energies associated with illness, misfortune, and disaster."
+    },
+    {
+      "id": "dongxia",
+      "surfaces": [
+        "Dongxia"
+      ],
+      "definition": "A fallen kingdom whose emperor was replaced by a Zuowandao agent over two hundred years ago, leading to the nation's complete collapse."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is the Supervisory Heavenly Office's main job?",
+      "a": "Its primary mission is dealing with Heavenly Calamities—systemic breakdowns of reality's fundamental rules."
+    },
+    {
+      "q": "Why doesn't the Office target Zhengde Temple or the Ao-Jing Sect?",
+      "a": "Because their harm is contained within their own circles and doesn't threaten the ruler's political stability."
+    },
+    {
+      "q": "What is the Seven-Star Sword?",
+      "a": "A bronze coin sword made of 184 ancient coins, forged at a specific astrological time for maximum ritual power against evil."
+    }
+  ]
+}

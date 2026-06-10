@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0417",
+  "chapter_code": "0417",
+  "chapter_slug": "Red-Center",
+  "chapter_title_en": "Red Center",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "zuowandao",
+    "red center",
+    "four joys",
+    "cultivation of falsehood",
+    "body horror",
+    "impersonation",
+    "assassination",
+    "zhuge yuan",
+    "political intrigues"
+  ],
+  "guide_tags": [
+    "plot twist",
+    "identity reveal",
+    "body horror",
+    "supernatural politics",
+    "betrayal"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 416: Red Center — The Ultimate Betrayal",
+  "chapter_meta_description": "Li Huowang reveals himself as Zuowandao’s Red Center in a brutal, grotesque twist—assassinating the Supervisor and reshaping his own face into the character 中.",
+  "og_title": "The Mask of the Red Center Falls",
+  "og_description": "Li Huowang betrays Zhuge Yuan and murders the Supervisor, unveiling himself as a high-ranking Zuowandao trickster.",
+  "twitter_title": "Red Center Revealed",
+  "twitter_description": "Li Huowang’s shocking Zuowandao identity is exposed in a chapter of bloody betrayal and body horror.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "red-center",
+      "surfaces": [
+        "Red"
+      ],
+      "definition": "A high-ranking title within the Zuowandao, corresponding to the “red center” tile in mahjong. It marks the holder as one of the Four Joys."
+    },
+    {
+      "id": "four-joys",
+      "surfaces": [
+        "Four"
+      ],
+      "definition": "The highest echelon of the Zuowandao, named after the four wind tiles or joy patterns in mahjong. Their appearance signals a major escalation in the sect’s operations."
+    },
+    {
+      "id": "trap-and-smash-camp",
+      "surfaces": [
+        "Trap-and-Smash"
+      ],
+      "definition": "An elite military unit in the Dao-Twisted World, reimagined here as a cover identity for Zuowandao operatives."
+    },
+    {
+      "id": "supervisor",
+      "surfaces": [
+        "Supervisor"
+      ],
+      "definition": "A mid-level official in the Supervisory Heavenly Office, often assigned as an overseer or handler; killed here by the Red Center."
+    }
+  ]
+}

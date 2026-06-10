@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0594",
+  "chapter_code": "0594",
+  "chapter_slug": "The-Snake-in-the-White-Coat",
+  "chapter_title_en": "The Snake in the White Coat",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Wang Wei",
+    "Yi Donglai's thesis",
+    "Yang Life Pill",
+    "gold conjuring",
+    "Spring Festival Gala",
+    "White Tower",
+    "mental hospital blackmail",
+    "insider leak"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Tense Standoff",
+    "Modern Reality",
+    "New Year's Eve",
+    "Back to the Ward",
+    "Human Antagonist"
+  ],
+  "chapter_seo_title": "Chapter 594: A Threat from the Real World—Wang Wei Wants the Yang Life Pill",
+  "chapter_meta_description": "Wang Wei has proof of Li Huowang's power and uses it to blackmail him during a tense New Year's Eve in the psych ward. A new kind of threat emerges from the real world.",
+  "og_title": "A Cold Threat in the Hospital Ward",
+  "og_description": "Wang Wei brings Yi Donglai's thesis to the ward, demanding a Yang Life Pill from Li Huowang.",
+  "twitter_title": "When the Doctor Becomes the Predator",
+  "twitter_description": "Wang Wei threatens to expose Li Huowang’s secret unless he delivers an immortality pill.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "wang-wei",
+      "surfaces": [
+        "Wang Wei"
+      ],
+      "definition": "Li Huowang's former therapist who has become obsessed with proving that Li Huowang's \"delusions\" are real. He seeks to exploit Li Huowang's ability for personal gain."
+    },
+    {
+      "id": "yang-life-pill",
+      "surfaces": [
+        "Yang"
+      ],
+      "definition": "The novel's term for a theoretical pill that would extend a person's lifespan. This concept is central to Wang Wei's new obsession."
+    },
+    {
+      "id": "yi-donglai-s-thesis",
+      "surfaces": [
+        "Yi Donglai's thesis"
+      ],
+      "definition": "A research document written by Li Huowang's original doctor, containing a comprehensive record of Li Huowang's hallucinations and confessions."
+    },
+    {
+      "id": "spring-festival-gala",
+      "surfaces": [
+        "Spring"
+      ],
+      "definition": "The annual Chinese New Year variety show broadcast by CCTV, a major cultural event watched by hundreds of millions of people."
+    }
+  ]
+}

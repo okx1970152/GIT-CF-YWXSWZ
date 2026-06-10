@@ -1,0 +1,65 @@
+{
+  "chapter_no": "0311",
+  "chapter_code": "0311",
+  "chapter_slug": "The-Price-of-Confession",
+  "chapter_title_en": "The Price of Confession",
+  "chapter_keywords": [
+    "confession",
+    "moral choice",
+    "lie vs truth",
+    "white lie",
+    "Zuowandao",
+    "Niuxin Village",
+    "Bai Lingmiao grief",
+    "Li Huowang guilt",
+    "self-exile",
+    "Dao-Twisted World"
+  ],
+  "guide_tags": [
+    "emotional devastation",
+    "character drama",
+    "philosophical conflict",
+    "no supernatural horror",
+    "pivotal chapter"
+  ],
+  "chapter_seo_title": "A Lie's Weight: Li Huowang's Devastating Confession to Bai Lingmiao",
+  "chapter_meta_description": "Li Huowang refuses to lie and confesses his horrific deed to Bai Lingmiao. This chapter is a raw, philosophical gut-punch on truth, morality, and the cost of a broken mind.",
+  "og_title": "The Cost of Truth: A Heartbreaking Chapter",
+  "og_description": "Li Huowang shatters his own world by telling the truth. A devastating, character-driven chapter from 'Daode Tianzun'.",
+  "twitter_title": "He Couldn't Lie. The Cost Was Everything.",
+  "twitter_description": "Facing Bai Lingmiao, Li Huowang chooses the brutal truth over a \"kind lie.\" A gut-wrenching chapter on the price of sanity.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "white-lie",
+      "surfaces": [
+        "white lie"
+      ],
+      "definition": "A lie told to avoid causing hurt or distress; in this context, the Zuowandao argues it can be a tool for good."
+    },
+    {
+      "id": "niuxin-village",
+      "surfaces": [
+        "Niuxin Village"
+      ],
+      "definition": "Bai Lingmiao's home village; the site of Li Huowang's most terrible, involuntary crime where he burned the entire Bai clan to death."
+    },
+    {
+      "id": "qingfeng-temple",
+      "surfaces": [
+        "Qingfeng Temple"
+      ],
+      "definition": "The Daoist temple where Li Huowang was taken in by Danyangzi; the location of his original suffering and the source of his final \"will\" letters."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why did Li Huowang choose to tell the truth?",
+      "a": "He believes that a lie is a lie, regardless of its intent. His own mental instability makes him cling to a rigid moral principle as his only stable anchor against the world's chaos."
+    },
+    {
+      "q": "What is the \"white lie\" Hongzhong proposes?",
+      "a": "Hongzhong wants Li Huowang to lie to Bai Lingmiao, telling her that someone else (the Black Tai Sui or Danyangzi) committed the massacre, to preserve their relationship."
+    }
+  ]
+}

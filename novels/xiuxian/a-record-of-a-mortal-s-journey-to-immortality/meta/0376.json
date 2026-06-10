@@ -1,0 +1,95 @@
+{
+  "chapter_no": "0376",
+  "chapter_code": "0376",
+  "chapter_slug": "Stirrings-Beyond-the-Sea-The-Immortal-Ascension-Pavilion",
+  "chapter_title_en": "Stirrings Beyond the Sea / The Immortal Ascension Pavilion",
+  "chapter_keywords": [
+    "kui xing island",
+    "immortal ascension pavilion",
+    "settlement procedures",
+    "green cloud mountain",
+    "spirit land challenge",
+    "foundation establishment",
+    "core formation",
+    "blue jade pendant",
+    "five-year duel",
+    "mortal stream"
+  ],
+  "guide_tags": [
+    "settlement arc",
+    "new location",
+    "worldbuilding",
+    "bureaucratic intrigue",
+    "five-year promise",
+    "grumpy senior"
+  ],
+  "chapter_seo_title": "Han Li’s Settlement on Kui Xing Island – The Immortal Ascension Pavilion",
+  "chapter_meta_description": "Han Li arrives at Kui Xing Island’s gate to reality: a crumbling Immortal Ascension Pavilion with a luxurious interior and a grumpy senior who knows exactly who he is.",
+  "og_title": "Han Li Faces a Grumpy Senior and a Five-Year Duel on Kui Xing Island",
+  "og_description": "The new island has new rules—including a surprise sparring match with the senior’s own defeated disciple.",
+  "twitter_title": "Paperwork, Pearls, and a Five-Year Promise – Han Li’s First Day on Kui Xing Island",
+  "twitter_description": "Han Li learns the island’s power structure and agrees to a future duel he might not be able to win.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "immortal-ascension-pavilion",
+      "surfaces": [
+        "Immortal Ascension Pavilion"
+      ],
+      "definition": "The administrative office for settlement, land registration, and token management on Kui Xing Island; its decrepit exterior masks an opulent interior."
+    },
+    {
+      "id": "guard-force",
+      "surfaces": [
+        "Guard Force"
+      ],
+      "definition": "The institutionalized hired security force whose members serve as temporary fighters for wealthy island families."
+    },
+    {
+      "id": "spirit-land-challenge",
+      "surfaces": [
+        "Spirit Land Challenge"
+      ],
+      "definition": "A decennial tournament on Green Cloud Mountain where the thirty-six richest peaks are contested in direct combat."
+    },
+    {
+      "id": "spirit-eye",
+      "surfaces": [
+        "Spirit Eye"
+      ],
+      "definition": "The point of densest spiritual qi on a given landmass, often claimed by the island’s most powerful cultivator as a personal cultivation site."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core Formation"
+      ],
+      "definition": "The third major cultivation realm, conferring greatly increased lifespan and magical power; a standard measure of a strong regional cultivator."
+    },
+    {
+      "id": "blue-jade-pendant",
+      "surfaces": [
+        "Blue Jade Pendant"
+      ],
+      "definition": "A low-grade magic tool issued to registered settlers on Kui Xing Island, granting a minor water-repelling effect."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is the Immortal Ascension Pavilion so shabby on the outside?",
+      "a": "It is a deliberate psychological display: the owner hides his wealth behind a broken facade to signal that he is both unpredictable and not to be underestimated."
+    },
+    {
+      "q": "Why does Han Li agree to the five-year duel so quickly?",
+      "a": "He assesses it as a deferred cost—agreeing avoids immediate conflict and buys him time to grow stronger, which is his default tactical position."
+    },
+    {
+      "q": "What does the senior’s coughing mean?",
+      "a": "It signals that even a late Foundation Establishment cultivator is still mortal; his finite lifespan and declining health are an undercurrent of tension in the chapter."
+    },
+    {
+      "q": "Can Qi Condensation cultivators get their own mountain?",
+      "a": "Not on Green Cloud Mountain. Foundation Establishment cultivators are entitled to a peak, while Qi Condensation cultivators must settle for valleys or caves."
+    }
+  ]
+}

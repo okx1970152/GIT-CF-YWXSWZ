@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0322",
+  "chapter_code": "0322",
+  "chapter_slug": "The-Hidden-Dangers-of-Fame",
+  "chapter_title_en": "The Hidden Dangers of Fame",
+  "chapter_keywords": [
+    "brightmoon landscape painting",
+    "ji ning",
+    "immortal fortunes assembly",
+    "xia emperor",
+    "pure yang true immortal",
+    "mahasthamaprapta",
+    "water-fire lotus",
+    "lesser thousand sword formation",
+    "xianxia tournament",
+    "heavenly treasures mountain"
+  ],
+  "guide_tags": [
+    "Tournament Arc",
+    "Strategic Combat",
+    "Political Intrigue",
+    "Xianxia Worldbuilding",
+    "Power Scaling"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 322: The Hidden Dangers of Fame – Politics in the Brightmoon Painting",
+  "chapter_meta_description": "Ji Ning faces the deadly downside of fame as he becomes a top target in the Brightmoon Landscape Painting. Political scheming among Pure Yang True Immortals adds new tension to the Immortal Fortunes Assembly.",
+  "og_title": "Desolate Era – The Hidden Dangers of Fame",
+  "og_description": "Ji Ning is hunted by everyone after his name hits the \"top 100\" list. The Grand Xia Emperor worries about an ancient Buddhist Bodhisattva's schemes.",
+  "twitter_title": "Desolate Era 322: Fame = Death Wish in the Brightmoon Painting",
+  "twitter_description": "Ji Ning's kill list fame has made him public enemy #1. Can he survive the late-stage tournament by forcing his enemies to concede?",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "pure-yang-true-immortal",
+      "surfaces": [
+        "Pure Yang True Immortal"
+      ],
+      "definition": "A true immortal whose soul is completely purified of yin energy, reaching a state of pure yang. In the Three Realms hierarchy, they are supreme beings with power to influence the fate of entire worlds."
+    },
+    {
+      "id": "brightmoon-landscape-painting",
+      "surfaces": [
+        "Brightmoon Landscape Painting"
+      ],
+      "definition": "A treasure world created by the Xia Emperor for the final stage of his Immortal Fortunes Assembly, serving as an isolated battlefield where Wanxiang Adepts fight for tokens to qualify."
+    },
+    {
+      "id": "heavenly-treasures-mountain",
+      "surfaces": [
+        "Heavenly Treasures Mountain"
+      ],
+      "definition": "The Grand Xia's primary intelligence and trading organization; they publish rankings and assessments of cultivators that can make or break a reputation."
+    },
+    {
+      "id": "token-talisman",
+      "surfaces": [
+        "token talisman"
+      ],
+      "definition": "The \"life tokens\" in this trial; giving yours up means instant elimination and teleportation out of the painting world."
+    },
+    {
+      "id": "water-fire-lotus",
+      "surfaces": [
+        "Water-Fire Lotus"
+      ],
+      "definition": "Ji Ning's signature binding and strangulation spell, formed from interlocking lotus leaves of Taiyin True Water and Sunstar True Fire; recently upgraded to use first-grade elemental foundations."
+    },
+    {
+      "id": "earthfire-and-coldsnare",
+      "surfaces": [
+        "Earthfire and Coldsnare"
+      ],
+      "definition": "Fundamental natural energies used as the core of a spell; their grade (1st to 9th) determines the spell's raw power and durability."
+    },
+    {
+      "id": "three-heads-six-arms",
+      "surfaces": [
+        "Three Heads, Six Arms"
+      ],
+      "definition": "A classic Xianxia divine ability that allows a Fiendgod Body Refiner to grow extra limbs, dramatically increasing close-combat offense and defense."
+    }
+  ]
+}

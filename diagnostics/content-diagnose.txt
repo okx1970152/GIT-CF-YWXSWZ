@@ -3,9 +3,9 @@ cwd=D:\1CHATGPT\btc\Google-BoKe\999-英文小说网站\YWXSWZ
 novelsRoot=D:\1CHATGPT\btc\Google-BoKe\999-英文小说网站\YWXSWZ\novels
 
 [diag][summary]
-categories=0
-novels=0
-validNovels=0
+categories=5
+novels=4
+validNovels=4
 invalidNovels=0
 missingInfo=0
 missingChapters=0

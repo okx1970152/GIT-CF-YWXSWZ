@@ -1,0 +1,92 @@
+{
+  "chapter_no": "0348",
+  "chapter_code": "0348",
+  "chapter_slug": "Wusheng-Laomu",
+  "chapter_title_en": "Wusheng Laomu",
+  "chapter_keywords": [
+    "wusheng laomu",
+    "white lotus sect",
+    "native land of true emptiness",
+    "bai lingmiao",
+    "forbidden scripture",
+    "secret chamber",
+    "gao zhijian",
+    "chun xiaoman",
+    "three monkeys",
+    "blood princes",
+    "dao twisted world"
+  ],
+  "guide_tags": [
+    "lore bomb",
+    "hidden history",
+    "cult revelation",
+    "bai lingmiao backstory",
+    "underground chamber"
+  ],
+  "chapter_seo_title": "Wusheng Laomu – The Full Origin Myth of a Betrayed Goddess in the Dao-Twisted World",
+  "chapter_meta_description": "A hidden scripture under the Bai ancestral hall reveals the forbidden history of Wusheng Laomu, the White Lotus, and a multi-generational oath to restore a betrayed mother-goddess.",
+  "og_title": "Wusheng Laomu – The Secret Gospel Beneath the Bai Family Altar",
+  "og_description": "A hidden chamber opens. A forbidden book is read. Chun Xiaoman and Gao Zhijian uncover the origin myth of a goddess who was stripped of everything—and has been waiting to return.",
+  "twitter_title": "The Three Monkeys hid a door to the past",
+  "twitter_description": "The Bai ancestral hall had a secret. A heretical scripture carved in stone reveals the full backstory of Wusheng Laomu. The White Lotus runs deeper than anyone knew.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "wusheng-laomu",
+      "surfaces": [
+        "Wusheng"
+      ],
+      "definition": "The \"Unborn Venerable Mother,\" a primordial goddess from late Ming folk religion who created humanity and seeks to return them to the \"Native Land of True Emptiness.\""
+    },
+    {
+      "id": "three-monkeys",
+      "surfaces": [
+        "Three"
+      ],
+      "definition": "A motif of three monkeys covering ears, eyes, and mouth (hear no evil, see no evil, speak no evil); here used as a hidden switch concealing a secret chamber."
+    },
+    {
+      "id": "blood-princes",
+      "surfaces": [
+        "Blood"
+      ],
+      "definition": "A classical term for imperial nobility; in this secret scripture, it refers to the once-loyal lieutenants of Wusheng Laomu who betrayed her."
+    },
+    {
+      "id": "unspeakable-armies",
+      "surfaces": [
+        "Unspeakable"
+      ],
+      "definition": "An enigmatic military force mentioned in the scripture; they were born from Wusheng Laomu's dantian and conspired with the traitorous blood princes."
+    },
+    {
+      "id": "native-land-of-true-emptiness",
+      "surfaces": [
+        "Native"
+      ],
+      "definition": "The paradisiacal, transcendent homeland that Wusheng Laomu offers to her faithful, free from suffering and rebirth."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What does the three-monkey statue do?",
+      "a": "It is a hidden switch that reveals a secret underground chamber beneath the Bai family ancestral hall."
+    },
+    {
+      "q": "Who wrote the hidden scripture?",
+      "a": "The text is written from the perspective of \"the sole surviving blood prince,\" likely an ancestor of the Bai family or their spiritual lineage."
+    },
+    {
+      "q": "Is this White Lotus lore directly from real history?",
+      "a": "It adapts the structure and key terms of White Lotus folk religion (Wusheng Laomu, Zhenkong Jiaxiang) but the narrative of betrayal and usurpers is original to the novel."
+    },
+    {
+      "q": "Why doesn't Bai Lingmiao know about this chamber?",
+      "a": "The hall was part of her family's larger compound, suggesting that the secret was passed down selectively, perhaps only to certain heirs or elders."
+    },
+    {
+      "q": "Does \"ceramic horses\" mean horses made of porcelain?",
+      "a": "Yes, the scripture says Wusheng Laomu will return on \"six ceramic horses\" (六匹陶瓷马)—a deliberate, uncanny choice of material that suggests something sculpted, brittle, and eerily artificial."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0231",
+  "chapter_code": "0231",
+  "chapter_slug": "The-Source",
+  "chapter_title_en": "The Source",
+  "chapter_keywords": [
+    "li huowang",
+    "black tai sui",
+    "qingqiu",
+    "sun baolu",
+    "hysteria",
+    "grassland nest",
+    "daotwisted world",
+    "heartbeat",
+    "body horror",
+    "folk horror"
+  ],
+  "guide_tags": [
+    "Atmospheric Horror",
+    "Worldbuilding Heavy",
+    "Folk Horror",
+    "Grimdark",
+    "Character Study",
+    "Trauma Response",
+    "Slow Burn Danger"
+  ],
+  "chapter_seo_title": "Dao-Twisted World Ch. 231 — Li Huowang Hunts a Deadly Cure Beneath Qingqiu",
+  "chapter_meta_description": "Li Huowang finds Black Tai Sui skin and pursues its source, but Sun Baolu reveals a terrifying secret: Qingqiu's demons hide underground. Walking into the nest may be the only way forward.",
+  "og_title": "The Guide: Ch. 231 — The Source",
+  "og_description": "A desperate hunt for a temporary cure leads Li Huowang to a forbidden hole in the earth—where the ground is a nest.",
+  "twitter_title": "The Cure Is a Trap — Ch. 231",
+  "twitter_description": "Li Huowang chases a scrap of dried skin into a forbidden tunnel. Sun Baolu begs him to stop. He doesn't.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "black-tai-sui",
+      "surfaces": [
+        "Black Tai Sui"
+      ],
+      "definition": "A grotesque parasitic entity produced by twisted alchemical practices; its dried skin is believed by Li Huowang to temporarily block his hallucinations, though it dissolves into black water upon death."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution that makes the bearer a living alchemical ingredient; Li Huowang's condition is incurable, and his \"hysteria\" is the visible symptom of his identity instability."
+    },
+    {
+      "id": "qingqiu",
+      "surfaces": [
+        "Qingqiu"
+      ],
+      "definition": "The vast grassland region Li Huowang's group is traveling through; its lack of surface monsters is revealed to be a deception—the evil spirits are hiding in tunnels beneath the grass."
+    },
+    {
+      "id": "hysteria",
+      "surfaces": [
+        "Hysteria"
+      ],
+      "definition": "A term for a mental breakdown involving dissociative or psychosomatic symptoms; in this novel's context, it describes the visible, public collapse of Li Huowang's cognitive stability."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Li Huowang trust a dry scrap of skin?",
+      "a": "He tasted it and recognized the unique texture from his past experience with Black Tai Sui. In the Dao-Twisted World, sensory memory is often the only reliable anchor he has left."
+    },
+    {
+      "q": "What is the \"grasslands nest\"?",
+      "a": "Qingqiu's green grass covers a hidden underground ecosystem of supernatural entities. The Great Khan prohibits even discussion of it, because thinking about or naming the things below can attract them."
+    },
+    {
+      "q": "Is Black Tai Sui a permanent cure?",
+      "a": "No. Li Huowang believes it can block his hallucinations temporarily. Its flesh dissolves on death, and the solution it offers is described as \"a rotting bandage\"—a short-term patch on an incurable wound."
+    }
+  ]
+}

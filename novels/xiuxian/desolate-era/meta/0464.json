@@ -1,0 +1,77 @@
+{
+  "chapter_no": "0464",
+  "chapter_code": "0464",
+  "chapter_slug": "The-Realm-of-Annihilation",
+  "chapter_title_en": "The Realm of Annihilation",
+  "chapter_keywords": [
+    "ji ning stranded",
+    "realm of annihilation",
+    "primordial ruins world",
+    "yellow-furred bear cultivation",
+    "shaoyin clan conspiracy",
+    "no heavenly dao zone",
+    "spirit treasure cultivation",
+    "xianxia survival",
+    "fufeng reincarnation",
+    "karmic hellfire aftermath"
+  ],
+  "guide_tags": [
+    "World-Building Heavy",
+    "Lore Drop",
+    "Survival Arc",
+    "Cliffhanger Setup",
+    "Breather Chapter",
+    "Cosmic Horror"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 464: Ji Ning Trapped in the Realm of Annihilation – A World Without the Heavenly Dao",
+  "chapter_meta_description": "Stranded in a void storm where the Dao itself is useless, Ji Ning learns the shocking truth about his artifact spirits and accepts a lonely drift through cosmic purgatory.",
+  "og_title": "The Dao Doesn’t Work Here: Ji Ning Meets the Realm of Annihilation",
+  "og_description": "Ji Ning wakes up in a zone where the Heavenly Dao is null. Can he escape the outer edge of the Primordial Ruins?",
+  "twitter_title": "Stranded in the Void – Ji Ning Faces a Realm Where Sword Arts Are Useless",
+  "twitter_description": "Nothing works. No Dao. No escape. Just void storms and a bear who’s secretly been cultivating for eons.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "realm-of-annihilation",
+      "surfaces": [
+        "Realm of Annihilation"
+      ],
+      "definition": "The turbulent boundary zone between a major world and the endless Void. For normal worlds it is safe, but for the Primordial Ruins World, it is a deadly barrier where even the Heavenly Dao does not function."
+    },
+    {
+      "id": "primordial-ruins-world",
+      "surfaces": [
+        "Primordial Ruins World"
+      ],
+      "definition": "The legendary, terrifying remnants of the shattered Primordial Era. Its true origin is said to be far more mysterious than mere wreckage of Pangu’s World."
+    },
+    {
+      "id": "small-cycle-of-reincarnation",
+      "surfaces": [
+        "Small Cycle of Reincarnation"
+      ],
+      "definition": "A localized recreation of the Six Paths of Reincarnation, established by Daofather Crimsonbright after the original system was shattered; its Ten Kings of Hell are more politically accessible to major powers."
+    },
+    {
+      "id": "life-tablet",
+      "surfaces": [
+        "Life Tablet"
+      ],
+      "definition": "A soul-linked artifact kept in a sect or clan’s hall that shatters instantly upon the owner’s death, providing a definitive way to verify death from afar."
+    },
+    {
+      "id": "spirit-treasure-cultivation",
+      "surfaces": [
+        "Spirit-Treasure"
+      ],
+      "definition": "The Daoist concept that any sentient treasure can cultivate its spirit and eventually become a true living being, shedding its physical vessel to become an autonomous immortal."
+    },
+    {
+      "id": "eight-nine-arcane-art",
+      "surfaces": [
+        "Eight-Nine Arcane Art"
+      ],
+      "definition": "The supreme divine ability beneath the True God level, trained by mastering nine cycles of body refinement; provides indestructibility without consuming divine power."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "chapter_no": "0510",
+  "chapter_code": "0510",
+  "chapter_slug": "The-Daoist",
+  "chapter_title_en": "The Daoist",
+  "chapter_keywords": [
+    "Lü Family Troupe",
+    "Lü Xiucai",
+    "Gouwa",
+    "copper-coin sword",
+    "Heart-Element",
+    "exorcism",
+    "folk horror",
+    "jianghu performance",
+    "inverted clay bodhisattva",
+    "rotten-wood ruyi"
+  ],
+  "guide_tags": [
+    "folk horror",
+    "jianghu realism",
+    "occult thriller",
+    "xianxia",
+    "cross-world clue",
+    "undercover pursuit"
+  ],
+  "chapter_seo_title": "Daoist Who Exorcises and Keeps the Ghost—509 Explained",
+  "chapter_meta_description": "The Lü Family Troupe stumbles onto a false exorcism by a cunning Daoist. A copper-coin sword link ties this side story back to Li Huowang’s present.",
+  "og_title": "Exorcist or Ghost-Keeper? Chapter 509 of Dao Gui Yi Xian",
+  "og_description": "Follow the Lü Family Troupe through a tense, back-alley exorcism that twists into a bigger peril.",
+  "twitter_title": "The Copper-Coin Sword Returns",
+  "twitter_description": "A shady Daoist’s fake exorcism reveals a connection to Li Huowang.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "copper-coin-sword",
+      "surfaces": [
+        "copper-coin sword"
+      ],
+      "definition": "A Daoist ritual weapon made from coins strung on red cord, used for exorcism and spirit-binding. In this chapter, its reappearance signals a link to Li Huowang."
+    },
+    {
+      "id": "celestial-master",
+      "surfaces": [
+        "Celestial Master"
+      ],
+      "definition": "A title for Daoist priests who claim authority to command spirits and perform high-level exorcisms; often used as a rhetorical flourish by itinerant sorcerers."
+    },
+    {
+      "id": "inverted-clay-bodhisattva",
+      "surfaces": [
+        "inverted clay bodhisattva"
+      ],
+      "definition": "A small statue of a bodhisattva seated backward, considered an unlucky or heretical devotional object in some folk traditions; here used as a vessel for the black smoke entity."
+    },
+    {
+      "id": "heart-element-tongue",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "Refers to a tongue from a person with the Heart-Element constitution, a rare and valuable alchemical ingredient; the Daoist’s final discovery is a double windfall."
+    },
+    {
+      "id": "rotten-wood-ruyi",
+      "surfaces": [
+        "rotten-wood"
+      ],
+      "definition": "An amulet or talisman carved from decayed wood, used by Gouwa as a defensive implement; it is effective against the animated black gown."
+    },
+    {
+      "id": "gong-sound",
+      "surfaces": [
+        "gong sound"
+      ],
+      "definition": "In Chinese folk culture, gong beats are used to alert people to red (joyous) or white (funeral) events; for performers, they indicate potential work."
+    }
+  ]
+}

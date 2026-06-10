@@ -1,0 +1,67 @@
+{
+  "chapter_no": "0518",
+  "chapter_code": "0518",
+  "chapter_slug": "A-Bargain-Struck-with-a-Leak",
+  "chapter_title_en": "A Bargain Struck with a Leak",
+  "chapter_keywords": [
+    "mortal stream",
+    "information warfare",
+    "teleportation array",
+    "han li bargaining",
+    "voice transmission blackmail",
+    "magical treasure bribe",
+    "outer star seas",
+    "core formation cultivation"
+  ],
+  "guide_tags": [
+    "Underhanded Tactics",
+    "Information Warfare",
+    "Starry Sky Hall",
+    "Resource Management",
+    "Cold Calculation"
+  ],
+  "chapter_seo_title": "Mortal Stream Machinations: Han Li's Hostile Takeover of a Teleportation Spot",
+  "chapter_meta_description": "Han Li uses a stolen secret and a pair of expendable treasures to strong-arm his way onto a teleportation formation in this masterclass in Mortal Stream negotiation.",
+  "og_title": "Blackmail and Bribery: Han Li's Two-Step Plan to Escape the Inner Star Seas",
+  "og_description": "Discover how a whispered threat and a discarded treasure are more powerful than a thousand spells.",
+  "twitter_title": "How Han Li Bought a Teleport Spot with Blackmail and a Bribe",
+  "twitter_description": "A masterclass in xianxia negotiation—no spells, just leverage.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "voice-transmission",
+      "surfaces": [
+        "Voice"
+      ],
+      "definition": "A private communication method using spiritual sense, undetectable by others unless the listener has a far higher cultivation level or a specialized detection art."
+    },
+    {
+      "id": "magical-treasure",
+      "surfaces": [
+        "Magical"
+      ],
+      "definition": "A powerful artifact above ordinary magic tools, capable of being refined into a spirit-link with its owner; gifting one is a massive favor in the cultivation world."
+    },
+    {
+      "id": "tier-five-demon-core",
+      "surfaces": [
+        "Tier-Five"
+      ],
+      "definition": "A mid-grade demon beast core, useful for alchemy and crafting, but far less valuable than a true magical treasure."
+    },
+    {
+      "id": "teleportation-array",
+      "surfaces": [
+        "Teleportation"
+      ],
+      "definition": "A formation that allows instantaneous travel across vast distances; using one requires both payment and a designated slot."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core"
+      ],
+      "definition": "The third major realm of cultivation, marking a cultivator as a regional power; lifespan of approximately five hundred years."
+    }
+  ]
+}

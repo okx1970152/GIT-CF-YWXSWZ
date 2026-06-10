@@ -1,0 +1,63 @@
+{
+  "chapter_no": "0387",
+  "chapter_code": "0387",
+  "chapter_slug": "The-Eight-Nine-Arcane-Art",
+  "chapter_title_en": "The Eight-Nine Arcane Art",
+  "chapter_keywords": [
+    "eight-nine arcane art",
+    "body refinement",
+    "immortal-ranked elixir",
+    "silvermoon archdemon",
+    "three realms",
+    "ji ning",
+    "mount innerheart",
+    "cultivation cost",
+    "seventy-two transformations",
+    "pure yang treasure"
+  ],
+  "guide_tags": [
+    "Cultivation",
+    "Power Up",
+    "World Building",
+    "Resource Management",
+    "Character Interaction",
+    "Training Arc"
+  ],
+  "chapter_seo_title": "The Eight-Nine Arcane Art - The Cost of True Indestructibility",
+  "chapter_meta_description": "Ji Ning learns the brutal price of the Eight-Nine Arcane Art. Trading his treasures and going into debt, he trains his body to become an Immortal-ranked treasure.",
+  "og_title": "Ji Ning's Debt to the Archdemon",
+  "og_description": "Ji Ning trades away his hard-won treasures and writes an IOU to master the Eight-Nine Arcane Art. The payoff? A body that no Immortal-ranked sword can scratch.",
+  "twitter_title": "The Cost of Being Unkillable",
+  "twitter_description": "To train the ultimate body-refining art, Ji Ning goes into massive debt with a greedy Empyrean God. The result is a divine body tougher than an Immortal-ranked treasure.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "eight-nine-arcane-art",
+      "surfaces": [
+        "Eight-Nine Arcane Art"
+      ],
+      "definition": "The supreme divine ability beneath the True God level. It requires a Primal-level Fiendgod body to begin training and consumes enormous treasure resources to advance. Each of its nine cycles makes the body as durable as a higher-grade magic treasure, providing indestructibility without consuming divine power."
+    },
+    {
+      "id": "immortal-ranked-supreme-elixir",
+      "surfaces": [
+        "Immortal-ranked supreme elixir"
+      ],
+      "definition": "A high-grade restoration pill containing energy as pure as a Celestial Immortal's own magic power. Used for rapid breakthroughs or emergency power replenishment; worth the equivalent of a high-grade Immortal-ranked treasure each."
+    },
+    {
+      "id": "silvermoon-archdemon",
+      "surfaces": [
+        "Silvermoon Archdemon"
+      ],
+      "definition": "The nickname for senior apprentice-brother Silvermoon, an Empyrean God known for his mercilessly shrewd dealings with fellow Mt. Innerheart disciples."
+    },
+    {
+      "id": "seventy-two-transformations",
+      "surfaces": [
+        "Seventy-Two Transformations"
+      ],
+      "definition": "A divine ability within the Eight-Nine Arcane Art that allows the user to perfectly change their body, soul aura, and even visible karmic signs to mimic any living being or object."
+    }
+  ]
+}

@@ -4,9 +4,9 @@
     "novelsRoot": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels"
   },
   "summary": {
-    "categories": 0,
-    "novels": 0,
-    "validNovels": 0,
+    "categories": 5,
+    "novels": 4,
+    "validNovels": 4,
     "invalidNovels": 0,
     "missingInfo": 0,
     "missingChapters": 0,
@@ -14,6 +14,81 @@
     "missingMetaNovel": 0,
     "schemaErrors": 0
   },
-  "categories": [],
+  "categories": [
+    {
+      "category": "eastern-mythology-encyclopedia",
+      "novels": []
+    },
+    {
+      "category": "ranking",
+      "novels": []
+    },
+    {
+      "category": "wuxia",
+      "novels": []
+    },
+    {
+      "category": "xiuxian",
+      "novels": [
+        {
+          "category": "xiuxian",
+          "novel": "a-record-of-a-mortal-s-journey-to-immortality",
+          "basePath": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels\\xiuxian\\a-record-of-a-mortal-s-journey-to-immortality",
+          "hasInfo": true,
+          "hasMetaNovel": true,
+          "chapterCount": 613,
+          "annotationCount": 613,
+          "encyclopediaEntryCount": 0,
+          "chapterMetaCount": 613,
+          "schemaErrors": [],
+          "fileErrors": []
+        },
+        {
+          "category": "xiuxian",
+          "novel": "dao-gui-yi-xian",
+          "basePath": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels\\xiuxian\\dao-gui-yi-xian",
+          "hasInfo": true,
+          "hasMetaNovel": true,
+          "chapterCount": 613,
+          "annotationCount": 613,
+          "encyclopediaEntryCount": 0,
+          "chapterMetaCount": 613,
+          "schemaErrors": [],
+          "fileErrors": []
+        },
+        {
+          "category": "xiuxian",
+          "novel": "desolate-era",
+          "basePath": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels\\xiuxian\\desolate-era",
+          "hasInfo": true,
+          "hasMetaNovel": true,
+          "chapterCount": 613,
+          "annotationCount": 613,
+          "encyclopediaEntryCount": 0,
+          "chapterMetaCount": 613,
+          "schemaErrors": [],
+          "fileErrors": []
+        }
+      ]
+    },
+    {
+      "category": "xuanhuan",
+      "novels": [
+        {
+          "category": "xuanhuan",
+          "novel": "world-of-immortality",
+          "basePath": "D:\\1CHATGPT\\btc\\Google-BoKe\\999-英文小说网站\\YWXSWZ\\novels\\xuanhuan\\world-of-immortality",
+          "hasInfo": true,
+          "hasMetaNovel": true,
+          "chapterCount": 678,
+          "annotationCount": 678,
+          "encyclopediaEntryCount": 0,
+          "chapterMetaCount": 678,
+          "schemaErrors": [],
+          "fileErrors": []
+        }
+      ]
+    }
+  ],
   "errors": []
 }

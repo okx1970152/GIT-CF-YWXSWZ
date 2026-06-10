@@ -1,0 +1,55 @@
+{
+  "chapter_no": "0243",
+  "chapter_code": "0243",
+  "chapter_slug": "The-Pill-s-Limit",
+  "chapter_title_en": "The Pill’s Limit",
+  "chapter_keywords": [
+    "mortal stream",
+    "pill resistance",
+    "cultivation drugs",
+    "qi condensation powder",
+    "foundation establishment",
+    "li huayuan",
+    "red feather",
+    "xianxia logistics",
+    "sealed cultivation"
+  ],
+  "guide_tags": [
+    "Drug Resistance",
+    "Cultivation Economy",
+    "Master's Summons",
+    "Red Feather",
+    "Character Introduction",
+    "Xianxia Worldbuilding"
+  ],
+  "chapter_seo_title": "Chapter 243: The Pill's Limit – Han Li Faces Drug Resistance in a Mortal Stream World",
+  "chapter_meta_description": "Han Li emerges from a four-year seclusion to find his miracle pills have failed. A new threat, the icy Red Feather, awaits. A classic 'Mortal Stream' reality check.",
+  "og_title": "Han Li's Cultivation High Road Ends in Pill Failure",
+  "og_description": "A cold, hard lesson in Xianxia: even ancient formulas have limits. Han Li must shop for new drugs.",
+  "twitter_title": "Han Li's pill resistance crisis is a true Mortal Stream classic.",
+  "twitter_description": "Han Li’s cheat code runs out. He now faces a bitter search for new drugs and a mysterious senior audit.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "qi-condensation-powder",
+      "surfaces": [
+        "Qi"
+      ],
+      "definition": "A potent medicinal powder refined from an ancient formula, designed to greatly accelerate Qi Condensation stage cultivation."
+    },
+    {
+      "id": "beauty-preserving-pill",
+      "surfaces": [
+        "Beauty-Preserving"
+      ],
+      "definition": "A rare pill that permanently freezes the user's physical appearance at the moment of consumption, preventing the outward signs of aging."
+    },
+    {
+      "id": "azure-origin-sword-art",
+      "surfaces": [
+        "Azure"
+      ],
+      "definition": "A foundational cultivation technique known for its powerful sword-light attacks but cursed with periodic mana regurgitation."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "chapter_no": "0355",
+  "chapter_code": "0355",
+  "chapter_slug": "Instant-Kill",
+  "chapter_title_en": "Instant Kill",
+  "chapter_keywords": [
+    "Han Li",
+    "Foundation Establishment cultivation",
+    "Smoke Step",
+    "transparent thread",
+    "instant kill",
+    "Fu Clan",
+    "Qi Yunxiao",
+    "Xin Ruyin",
+    "sound transmission talisman",
+    "mortal stream tactics"
+  ],
+  "guide_tags": [
+    "ruthless efficiency",
+    "intel gathering",
+    "assassination",
+    "puppet warfare",
+    "defensive meta"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey to Immortality Ch. 355: Han Li's Instant Kill and Foundation Establishment Tactics",
+  "chapter_meta_description": "Han Li ends a tense interrogation with a lightning-fast decapitation, exploiting a critical weakness in Foundation Establishment combat meta. Then a new voice challenges him at Xin Ruyin's hideout.",
+  "og_title": "RMJI Ch. 355 - The Three-Second Execution",
+  "og_description": "Han Li decapitates two Fu Clan cultivators with a transparent thread and a feint, then arrives at Xin Ruyin's mountain—only to be challenged by an unfamiliar voice.",
+  "twitter_title": "RMJI 355: Foundation Establishment assassins play by different rules.",
+  "twitter_description": "Han Li proves that a well-timed flank beats a flashy spell every time. No shields, no mercy, just a thread.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "smoke-step",
+      "surfaces": [
+        "Smoke"
+      ],
+      "definition": "A high-speed mobility technique that blurs the user's form, allowing them to cross large distances in seconds while remaining nearly invisible to the naked eye."
+    },
+    {
+      "id": "transparent-thread",
+      "surfaces": [
+        "Transparent"
+      ],
+      "definition": "A nearly invisible, razor-sharp magic tool used for covert assassination; its lack of visible presence makes it a perfect ambush weapon."
+    },
+    {
+      "id": "sound-transmission-talisman",
+      "surfaces": [
+        "Sound"
+      ],
+      "definition": "A one-use talisman that converts a spoken message into a flame and sends it to a designated recipient; common in cultivation fiction for short-range communication."
+    },
+    {
+      "id": "foundation-establishment-meta",
+      "surfaces": [
+        "Foundation"
+      ],
+      "definition": "A recurring tactical observation in RMJI: cultivators at this level rarely use full-body barriers because low-grade ones are useless against top-tier tools, and high-grade ones are too slow to cast—creating a vulnerability to speed-based flanking attacks."
+    },
+    {
+      "id": "defensive-magic-tool",
+      "surfaces": [
+        "Defensive"
+      ],
+      "definition": "A magic tool designed primarily to block or deflect attacks, often activated instantly; preferred over full-body shields by Foundation Establishment cultivators for its practicality in combat."
+    }
+  ]
+}

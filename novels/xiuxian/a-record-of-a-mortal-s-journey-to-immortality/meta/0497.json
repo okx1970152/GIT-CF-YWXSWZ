@@ -1,0 +1,85 @@
+{
+  "chapter_no": "0497",
+  "chapter_code": "0497",
+  "chapter_slug": "Winds-Stir-Beyond-the-Sea-Wu-Chou-s-Death",
+  "chapter_title_en": "Winds Stir Beyond the Sea – Wu Chou’s Death",
+  "chapter_keywords": [
+    "void heaven palace",
+    "profound bone saint",
+    "wu chou death",
+    "tian du corpse",
+    "blood jade spider",
+    "pair bonding",
+    "extreme yin",
+    "void heaven cauldron",
+    "ghost claw",
+    "han li negotiation"
+  ],
+  "guide_tags": [
+    "Action",
+    "Strategy",
+    "Lore Drop",
+    "Character Death",
+    "Tension",
+    "Demon Path",
+    "Ancient Treasure"
+  ],
+  "chapter_seo_title": "Void Heaven Palace – Wu Chou Falls to the Profound Bone Saint’s Ghost Claw | A Record of a Mortal’s Journey",
+  "chapter_meta_description": "Wu Chou’s Tian Du Corpses fail against the Profound Bone Saint’s perfect counter. The old ghost then reveals he knows Han Li’s secret—a second Blood Jade Spider—and a dangerous negotiation begins.",
+  "og_title": "Winds Stir Beyond the Sea: Wu Chou’s Death",
+  "og_description": "The Profound Bone Saint executes Wu Chou in seconds, then turns to Han Li with a revelation about the Blood Jade Spiders that changes everything.",
+  "twitter_title": "Wu Chou is erased. The Profound Bone Saint knows too much.",
+  "twitter_description": "A demon dies, and a secret is exposed. The Profound Bone Saint has Han Li exactly where he wants him.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "tian-du-corpse",
+      "surfaces": [
+        "Tian Du Corpse"
+      ],
+      "definition": "A high-grade refined corpse controlled by the master's spiritual sense, roughly as strong as a mid-Core Formation cultivator."
+    },
+    {
+      "id": "blood-jade-spider",
+      "surfaces": [
+        "Blood Jade Spider"
+      ],
+      "definition": "A pair-bonded spirit spider species; only when male and female are raised together can they advance in rank, making a living pair essential for certain ancient treasures."
+    },
+    {
+      "id": "void-heaven-cauldron",
+      "surfaces": [
+        "Void Heaven Cauldron"
+      ],
+      "definition": "The supreme treasure sealed in the innermost chamber of the Void Heaven Palace, requiring a Blood Jade Spider pair to retrieve."
+    },
+    {
+      "id": "profound-yin-art",
+      "surfaces": [
+        "Profound Yin Art"
+      ],
+      "definition": "The signature demonic cultivation technique of Extreme Yin Island; the Profound Bone Saint knows its weaknesses intimately."
+    },
+    {
+      "id": "ghost-claw",
+      "surfaces": [
+        "Ghost"
+      ],
+      "definition": "A signature attack of the Profound Bone Saint that can ignore defensive qi and pierce through demonic armor."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does the Profound Bone Saint know so much about the Blood Jade Spiders?",
+      "a": "He personally studied a wild pair long ago and discovered the male-female bonding rule, a fact even Extreme Xuan never learned."
+    },
+    {
+      "q": "Why does Han Li hesitate to use the second spider?",
+      "a": "He fears that pulling the cauldron will alert the other Nascent Soul cultivators, who will return and kill him for the treasure."
+    },
+    {
+      "q": "What is the significance of Wu Chou's death?",
+      "a": "It removes Extreme Yin's only direct descendant, turning Extreme Yin into an even more dangerous enemy—and it binds Han Li to the Profound Bone Saint's plan by association."
+    }
+  ]
+}

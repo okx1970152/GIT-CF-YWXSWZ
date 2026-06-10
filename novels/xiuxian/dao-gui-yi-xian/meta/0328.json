@@ -1,0 +1,57 @@
+{
+  "chapter_no": "0328",
+  "chapter_code": "0328",
+  "chapter_slug": "The-Noodles",
+  "chapter_title_en": "The Noodles",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "Li Huowang",
+    "Black Tai Sui",
+    "parasite cultivation",
+    "Zuowandao",
+    "Red Center",
+    "folk horror",
+    "xianxia satire",
+    "prenatal horror",
+    "roadside horror"
+  ],
+  "guide_tags": [
+    "Body Horror",
+    "Cosmic Horror",
+    "Psychological Horror",
+    "Black Comedy",
+    "Cultivation Anti-Tropes",
+    "Dad Horror",
+    "Slow Burn"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch328: A Loving Dad Learns Horror at a Noodle Stall",
+  "chapter_meta_description": "Li Huowang enjoys a rare moment of peace. He declines a Zuowandao's bait, eats noodles, and watches a family talk to their unborn child. Then the Black Tai Sui answers for the baby.",
+  "og_title": "A Soothing Bowl of Noodles and a Cry of \"Daddy\"",
+  "og_description": "A loving husband asks his unborn child to speak. The reply comes from inside Li Huowang's stomach. Chapter 328 cuts deep with quiet, domestic horror.",
+  "twitter_title": "Black Tai Sui just claimed \"Daddy\" before the real baby could. #Daoguiyixian",
+  "twitter_description": "The noodle stall is my new favorite horror set piece. A man speaks to his pregnant wife’s belly. The answer comes from Li Huowang’s. Gutted.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "black-tai-sui",
+      "surfaces": [
+        "Black Tai Sui"
+      ],
+      "definition": "A parasitic entity that grows inside a host; it feeds on spiritual residue and can develop independent intelligence if taught. In this chapter, Li Huowang treats it like a strange, nascent child by reading to it."
+    },
+    {
+      "id": "red-center",
+      "surfaces": [
+        "Red Center"
+      ],
+      "definition": "A persistent Zuowandao trickster that appears as two halves of a Mahjong tile. It is known for baiting Li Huowang with puzzles, half-truths, and manipulative stories."
+    },
+    {
+      "id": "zuowandao",
+      "surfaces": [
+        "Zuowandao"
+      ],
+      "definition": "The Dao of Sitting in Forgetfulness; a secretive sect of liars and tricksters who weaponize uncertainty, treating reality as a game to be rewritten through deception."
+    }
+  ]
+}

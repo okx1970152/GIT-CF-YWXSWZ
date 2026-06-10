@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0251",
+  "chapter_code": "0251",
+  "chapter_slug": "The-Immortal-Gathering",
+  "chapter_title_en": "The Immortal Gathering",
+  "chapter_keywords": [
+    "Immortal Gathering",
+    "Wanxiang Adept",
+    "Celestial Immortal",
+    "True Immortal",
+    "Black-White College",
+    "Pure Yang",
+    "Grand Dao of Ice",
+    "reincarnated Immortal",
+    "Winged Serpent Lake",
+    "Dao of the Sword"
+  ],
+  "guide_tags": [
+    "worldbuilding",
+    "power scaling",
+    "lore drop",
+    "Immortal Gathering",
+    "cultivation hierarchy",
+    "Three Realms",
+    "foreshadowing",
+    "slice-of-life"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 251 – The Immortal Gathering: A Battle of 100,000 True Geniuses",
+  "chapter_meta_description": "Ji Ning learns of the Immortal Gathering—a dynasty-wide event where only the top ten out of over 100,000 Wanxiang geniuses can catch the eyes of Three Realms-level mighty figures.",
+  "og_title": "The Immortal Gathering Revealed: Over 100,000 Wanxiang Monsters vs. One Sword Immortal",
+  "og_description": "Ji Ning sits on a boat, drinks spirit-wine, and slowly learns that his victory over Snowfeather Daoist is just the prologue to a far bloodier stage.",
+  "twitter_title": "Desolate Era 251 – The Scale of Xianxia Peak Competition",
+  "twitter_description": "Over 80% of Celestial Immortals made their name at the Immortal Gathering. Ji Ning now knows the bell tolls for him too.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "immortal-gathering",
+      "surfaces": [
+        "Immortal Gathering"
+      ],
+      "definition": "A dynasty-wide competition hosted by the Grand Xia, open to cultivators below Primal Daoist level. The top ten may be accepted as disciples by beings who transcend Celestial Immortals."
+    },
+    {
+      "id": "pure-yang-true-immortal",
+      "surfaces": [
+        "Pure"
+      ],
+      "definition": "The cultivation realm above Celestial Immortal, achieved by fully comprehending a complete Grand Dao and surviving further tribulations."
+    },
+    {
+      "id": "grand-dao-of-ice",
+      "surfaces": [
+        "Grand"
+      ],
+      "definition": "A complete Grand Dao that Yu Wei has mastered, granting her dominion over ice. In the novel's cosmology, mastering a Grand Dao is the prerequisite for becoming a True Immortal."
+    },
+    {
+      "id": "reincarnated-immortal",
+      "surfaces": [
+        "Reincarnated Immortal"
+      ],
+      "definition": "A cultivator who retains memories from a past life as an Immortal. Their talent, power ceiling, and awakening speed vary greatly depending on the strength of their previous incarnation."
+    },
+    {
+      "id": "wanxiang-adept",
+      "surfaces": [
+        "Wanxiang"
+      ],
+      "definition": "The fourth major Ki Refining realm; \"Wanxiang\" means \"myriad manifestations.\" Cultivators at this level develop stars, moons, and suns within their Violet Palace, vastly accelerating their energy absorption."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "chapter_no": "0511",
+  "chapter_code": "0511",
+  "chapter_slug": "Storms-Abroad-Conflicts-Rekindled",
+  "chapter_title_en": "Storms Abroad, Conflicts Rekindled",
+  "chapter_keywords": [
+    "killing intent",
+    "mortal stream",
+    "xianxia",
+    "han li",
+    "rebel star alliance",
+    "spiritual sense",
+    "core formation",
+    "zi ling the fairy",
+    "tensions",
+    "disguise"
+  ],
+  "guide_tags": [
+    "tension",
+    "political scheming",
+    "killing intent",
+    "observation",
+    "predator vs prey",
+    "setup chapter"
+  ],
+  "chapter_seo_title": "RMJI Ch. 511: Han Li Intercepted by Core Formation Cultivators",
+  "chapter_meta_description": "Han Li is stopped by Alliance cultivators after passing inspection. Their interest in his killing intent and their designs on Zi Ling set the stage for a new conflict.",
+  "og_title": "Storms Abroad, Conflicts Rekindled — Record of a Mortal’s Journey",
+  "og_description": "Han Li’s escape is cut short by two Core Formation cultivators who analyze his killing intent and plot to use him against the Sublime Sound Sect.",
+  "twitter_title": "RMJI Ch. 511: The Interception Begins",
+  "twitter_description": "Han Li passes a Nascent Soul probe but is stopped by two Alliance cultivators who read his killing intent like a battle ledger.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "killing-intent-sh-q",
+      "surfaces": [
+        "Killing"
+      ],
+      "definition": "A tangible, semi-spiritual aura that accumulates on a cultivator through the act of killing; dense, permanent killing intent from slaying same-rank foes can suppress enemy willpower and weaken illusions in battle."
+    },
+    {
+      "id": "spiritual-sense-sh-n-sh",
+      "surfaces": [
+        "Spiritual"
+      ],
+      "definition": "A cultivator’s non-physical perception, capable of detecting energy, life force, hidden threats, and even probing another person’s cultivation level or identity across great distances."
+    },
+    {
+      "id": "sublime-sound-sect-mi-o-y-n-m-n",
+      "surfaces": [
+        "Sublime"
+      ],
+      "definition": "One of the major sects in the Rebel Star Alliance; known for its political agility and reliance on charm and intelligence networks; Zi Ling the Fairy is their most famous Elder."
+    },
+    {
+      "id": "core-formation-ji-d-n",
+      "surfaces": [
+        "Core"
+      ],
+      "definition": "The second major cultivation realm after Foundation Establishment; cultivators at this stage form an internal golden core, greatly extending their lifespan and power."
+    },
+    {
+      "id": "nascent-soul-yu-n-y-ng",
+      "surfaces": [
+        "Nascent"
+      ],
+      "definition": "A higher cultivation realm where the cultivator’s soul condenses into a physical infant-like form that can survive independently of the body; even a single Nascent Soul old monster can dominate a battlefield."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is “killing intent” (煞气) in xianxia?",
+      "a": "It is a tangible aura of violence that accumulates on a cultivator through killing; dense, permanent killing intent can suppress enemies’ willpower and weaken illusions, making it a combat-stat rather than just a mood."
+    },
+    {
+      "q": "Why doesn’t Han Li use a disguise?",
+      "a": "Most disguise arts cannot fool high-level spiritual sense probes; Han Li gambles that a genuine identity will draw less suspicion than a false one caught by a Nascent Soul cultivator’s scan."
+    },
+    {
+      "q": "Who are the two Core Formation cultivators intercepting Han Li?",
+      "a": "They are orthodox cultivators of the Rebel Star Alliance, a blue-robed scholar and a dark-skinned brute, both at Core Formation First Layer. They claim to be hunting Star Palace remnants."
+    },
+    {
+      "q": "What is the green-robed elder’s plan?",
+      "a": "He wants to use the coming war to pressure the Sublime Sound Sect, force Zi Ling to the Young Master, and in the same move pressure Han Li to reveal his secret for gathering dense killing intent."
+    }
+  ]
+}

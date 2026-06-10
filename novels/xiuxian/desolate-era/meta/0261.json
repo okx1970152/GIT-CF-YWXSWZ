@@ -1,0 +1,80 @@
+{
+  "chapter_no": "0261",
+  "chapter_code": "0261",
+  "chapter_slug": "The-Breaking-Point",
+  "chapter_title_en": "The Breaking Point",
+  "chapter_keywords": [
+    "xianxia",
+    "Qiongqi puppets",
+    "Shaoyan Gongzi",
+    "formation breaking",
+    "Whitewater Hound",
+    "Celestial Immortal Wu Jiang",
+    "Fuxi Staff Formation",
+    "Immortal estate trial",
+    "tactical retreat",
+    "wanxiang adept"
+  ],
+  "guide_tags": [
+    "tension",
+    "strategy",
+    "formation",
+    "betrayal",
+    "desperate gambit",
+    "immortal inheritance",
+    "divine beast",
+    "battle tactics",
+    "turning point"
+  ],
+  "chapter_seo_title": "A Formation on the Brink: Shaoyan Gongzi’s Rage and Whitewater Hound’s Last Gamble",
+  "chapter_meta_description": "Xue Hongyi flees, ten death warriors die in seconds, and Shaoyan Gongzi unleashes his true power—but can the Whitewater Hound break a Celestial Immortal’s formation before it’s too late?",
+  "og_title": "A Formation on the Brink: Shaoyan Gongzi’s Rage and Whitewater Hound’s Last Gamble",
+  "og_description": "With the Qiongqi puppets closing in and the team fracturing, Ji Ning’s spirit-beast reveals a shocking plan to break the immortal array from within.",
+  "twitter_title": "Formation Breaking Time: Uncle White Steps Up",
+  "twitter_description": "The puppets just slaughtered ten Wanxiang Adepts. Can Ji Ning’s Whitewater Hound really crack a Celestial Immortal’s formation?",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "qiongqi-puppet",
+      "surfaces": [
+        "Qiongqi puppet"
+      ],
+      "definition": "A powerful, treasure-bodied construct formed by an immortal formation, virtually indestructible and relentless when attacking without a controller."
+    },
+    {
+      "id": "crimson-scaled-flood-dragon",
+      "surfaces": [
+        "Crimson Scaled Flood Dragon"
+      ],
+      "definition": "A top-tier divine beast bloodline at the Wanxiang stage, trained in Fiendgod Body Refining, capable of regenerating wounds instantly and matching a Primal Daoist in combat power."
+    },
+    {
+      "id": "fuxi-staff-formation",
+      "surfaces": [
+        "Fuxi Staff Formation"
+      ],
+      "definition": "A portable formation-breaking tool named after the mythical Fuxi, used by formation masters to calculate and counter enemy arrays by disrupting their energy flow."
+    },
+    {
+      "id": "first-grade-earthfire",
+      "surfaces": [
+        "First-grade Earthfire"
+      ],
+      "definition": "A high-grade type of terrestrial flame whose power rivals ordinary Heavenly Fire; a rare and potent resource for both refinement and combat."
+    },
+    {
+      "id": "wanxiang-adept-death-warrior",
+      "surfaces": [
+        "Wanxiang Adept death warrior"
+      ],
+      "definition": "An expendable combatant trained to fight in synchronized formations with linked minds, often used as cannon fodder by wealthy clans in high-risk trials."
+    },
+    {
+      "id": "greater-teleportation",
+      "surfaces": [
+        "Greater Teleportation"
+      ],
+      "definition": "A high-level escape technique that allows a cultivator to instantly flee a formation or trapped space; costly and usually burns a rare treasure or immense energy."
+    }
+  ]
+}

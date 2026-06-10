@@ -1,0 +1,65 @@
+{
+  "chapter_no": "0274",
+  "chapter_code": "0274",
+  "chapter_slug": "Death",
+  "chapter_title_en": "Death",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "shrink-stealing ghost",
+    "folklore horror",
+    "county gazetteer",
+    "folk fear",
+    "pi county"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Folk Horror",
+    "Investigation Arc",
+    "Li Huowang Strategy",
+    "Invisible Threat"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 274: The Invisible Ghost – A Man Hangs Himself from Fear",
+  "chapter_meta_description": "The invisible 'shrink-stealing ghost' drives a man to hang himself. Li Huowang must abandon his sword and seek out the County Magistrate to fight a threat he can't even see.",
+  "og_title": "The Horror of the Invisible Ghost",
+  "og_description": "Li Huowang faces a deadly curse he cannot stab. His only weapon is knowledge.",
+  "twitter_title": "Ch. 274: Fear is the Real Killer",
+  "twitter_description": "Li Huowang realizes the true enemy isn't a ghost—it's the town's collective fear.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "county-gazeteer",
+      "surfaces": [
+        "County"
+      ],
+      "definition": "A local administrative record of major events; an empty or sanitized gazetteer in the Dao-Twisted World signals official complicity or denial of supernatural horror."
+    },
+    {
+      "id": "shrink-stealing-ghost",
+      "surfaces": [
+        "shrink-stealing"
+      ],
+      "definition": "A folk-horror entity believed to cause a man's penis (the 'life-root' or 命根子) to retract into his body. It is seen as an attack on a man's vital yang energy and his ability to reincarnate."
+    },
+    {
+      "id": "life-root-ming-gen-zi",
+      "surfaces": [
+        "life-root"
+      ],
+      "definition": "In Chinese folk belief, a term for the penis, viewed as a vital source of yang energy and a key to one's lineage and future reincarnation."
+    },
+    {
+      "id": "deeds-not-hearts",
+      "surfaces": [
+        "Deeds,"
+      ],
+      "definition": "A classic Chinese philosophical and moral principle that judges a person by their actions rather than their private thoughts."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why did the waiter hang himself?",
+      "a": "He was terrified that the ghost would steal his \"life-root,\" making his body incomplete and preventing his soul from reincarnating. He chose to die \"whole\" to escape an eternal torment as a restless ghost."
+    }
+  ]
+}

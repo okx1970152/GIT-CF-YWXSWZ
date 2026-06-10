@@ -1,0 +1,96 @@
+{
+  "chapter_no": "0560",
+  "chapter_code": "0560",
+  "chapter_slug": "The-Mandate-of-Heaven",
+  "chapter_title_en": "The Mandate of Heaven",
+  "chapter_keywords": [
+    "Dao Twisted World",
+    "Ji Lin",
+    "emperor",
+    "mandate of heaven",
+    "true dragon",
+    "ancestral temple",
+    "Ao-Jing Sect",
+    "Er-Jiu",
+    "Princess Anping",
+    "imperial succession",
+    "kin-slaughter",
+    "ancient history",
+    "Wu",
+    "Great Liang Dynasty"
+  ],
+  "guide_tags": [
+    "lore heavy",
+    "political horror",
+    "tragedy",
+    "revelation",
+    "trauma",
+    "slow burn",
+    "dark fantasy"
+  ],
+  "chapter_seo_title": "Unlocking the Dark Secret of the Emperor's Power: \"The Mandate of Heaven\"",
+  "chapter_meta_description": "Ji Lin learns the horrific truth behind the Mandate of Heaven: his family's throne was built on a pact of self-slaughter. A new law of the Dao-Twisted World is revealed.",
+  "og_title": "The Bloody Price of the Crown",
+  "og_description": "The truth is out. The Ji family's throne isn't a right—it's a curse of kin-slaughter. A lore-heavy chapter that rewrites the rules of power.",
+  "twitter_title": "The Emperor's Secret is Out. It's Not Pretty.",
+  "twitter_description": "Ji Lin learns the price of his throne is his own family's blood. The \"Mandate of Heaven\" in this world is far more terrifying than you'd think.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "mandate-of-heaven",
+      "surfaces": [
+        "Mandate"
+      ],
+      "definition": "A divine right to rule in Chinese political thought. In the Dao-Twisted World, it is presented as a stolen fragment of ancient power that only a willing kinship-slaugtherer can bear."
+    },
+    {
+      "id": "true-dragon-son-of-heaven",
+      "surfaces": [
+        "True"
+      ],
+      "definition": "A title for the Chinese emperor. Here, it is literalized: the imperial power takes the form of a dragon that physically marks its bearer."
+    },
+    {
+      "id": "nine-dragons-pulling-a-coffin",
+      "surfaces": [
+        "Nine"
+      ],
+      "definition": "A classic Chinese mythological motif. In this novel, it is used as a prison for the undead emperor."
+    },
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ],
+      "definition": "A fictional sect fusing Zoroastrianism and Nestorian Christianity. They are the original owners of the Thousand Greats Record and view suffering as a path to power."
+    },
+    {
+      "id": "the-wu",
+      "surfaces": [
+        "The"
+      ],
+      "definition": "Ancient sorcerers or shamanic beings. According to the emperor, they once kept humans as livestock before the ancestors escaped to forge their own reality."
+    },
+    {
+      "id": "great-liang-dynasty",
+      "surfaces": [
+        "Great"
+      ],
+      "definition": "The imperial dynasty founded by the Ji family after the fall of the Great Qi."
+    },
+    {
+      "id": "er-jiu",
+      "surfaces": [
+        "Er-Jiu"
+      ],
+      "definition": "An envoy from the Ao-Jing Sect. He has betrayed the new emperor by kidnapping Princess Anping."
+    },
+    {
+      "id": "princess-anping",
+      "surfaces": [
+        "Princess"
+      ],
+      "definition": "The emperor's daughter who has been kidnapped."
+    }
+  ]
+}

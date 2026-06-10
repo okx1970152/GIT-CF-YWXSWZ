@@ -1,24 +1,21 @@
 import type { ReactNode } from "react";
-import { cookies } from "next/headers";
 import type { AdItemConfig, AdSlotConfig } from "@/lib/ads/schema";
-import { getAds } from "@/lib/ads/store";
+import { getStaticAds } from "@/lib/ads/store";
 import type { SideSlotCode } from "@/components/ads/adPositions";
 
 type AdPage = "directory" | "reading" | "guide";
 type AdPosition = "top" | "mid" | "bottom";
 
-export async function AdSlot(props: { page: AdPage; position: AdPosition }) {
-  const ads = await getAds();
-  const hideImageAds = (await cookies()).get("hide_image_ads")?.value === "1";
+export function AdSlot(props: { page: AdPage; position: AdPosition }) {
+  const ads = getStaticAds();
   const cfg = ads[props.page][props.position];
-  return <>{renderSlot(cfg, `${props.page}:${props.position}`, "center", hideImageAds)}</>;
+  return <>{renderSlot(cfg, `${props.page}:${props.position}`, "center", false)}</>;
 }
 
-export async function SideAdSlot(props: { code: SideSlotCode }) {
-  const ads = await getAds();
-  const hideImageAds = (await cookies()).get("hide_image_ads")?.value === "1";
+export function SideAdSlot(props: { code: SideSlotCode }) {
+  const ads = getStaticAds();
   const cfg = ads.side[props.code];
-  return <>{renderSlot(cfg, `side:${props.code}`, "side", hideImageAds)}</>;
+  return <>{renderSlot(cfg, `side:${props.code}`, "side", false)}</>;
 }
 
 function renderSlot(

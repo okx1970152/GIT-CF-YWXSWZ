@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0229",
+  "chapter_code": "0229",
+  "chapter_slug": "The-Giant-Tiger",
+  "chapter_title_en": "The Giant Tiger",
+  "chapter_keywords": [
+    "mortal stream",
+    "han li",
+    "puppet cultivator",
+    "foundation establishment",
+    "spirit stone",
+    "yuanwu nation",
+    "thousand bamboo school",
+    "divine wind boat",
+    "giant puppet tiger",
+    "azure haze"
+  ],
+  "guide_tags": [
+    "Battle of Attrition",
+    "Power Creep",
+    "Survival Strategy",
+    "Stealth Game",
+    "Xianxia Economics"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey Ch. 229: The Giant Tiger",
+  "chapter_meta_description": "Han Li observes from concealment as a group of Foundation Establishment cultivators are systematically massacred by a giant puppet tiger fueled by spirit stones. A lesson in Mortal Stream survival.",
+  "og_title": "A Mortal's Journey Ch. 229 – The Giant Tiger",
+  "og_description": "A brutal masterclass in resource disparity: Han Li watches from the clouds as a puppet tiger and its wealthy master decimate a pack of greedy cultivators.",
+  "twitter_title": "RMJI Ch. 229 – The Giant Tiger",
+  "twitter_description": "The burly man from the auction unleashes his monstrous puppet tiger. Han Li’s lesson for the day: never be the one on the ground when the spirit stones start burning.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "spirit-stone",
+      "surfaces": [
+        "Spirit"
+      ],
+      "definition": "The universal currency and cultivation fuel of the xianxia world, refined from mineral deposits containing spiritual energy. A mid-grade stone is a significant fortune for most low-level cultivators."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation"
+      ],
+      "definition": "The second major realm of cultivation. A cultivator at this stage has solidified their spiritual foundation, granting substantially increased lifespan and power over Qi Condensation cultivators."
+    },
+    {
+      "id": "thousand-bamboo-school",
+      "surfaces": [
+        "Thousand"
+      ],
+      "definition": "A wealthy and powerful sect from a nation known for its mastery of puppet arts and mechanism techniques. They are not native to the Yuanwu Nation."
+    },
+    {
+      "id": "puppet",
+      "surfaces": [
+        "Puppet"
+      ],
+      "definition": "An artificially constructed being animated by formations and spirit stones, used for combat, labor, or guard duty. High-level puppets can rival true cultivators in power."
+    },
+    {
+      "id": "divine-wind-boat",
+      "surfaces": [
+        "Divine"
+      ],
+      "definition": "A speed-focused flying artifact recently acquired by Han Li, refined from Ink Flood Dragon materials. It prioritizes velocity over defense or passenger capacity."
+    },
+    {
+      "id": "zhang",
+      "surfaces": [
+        "Zhang"
+      ],
+      "definition": "A traditional Chinese unit of length, roughly 3.33 meters or 10.9 feet. A six-zhang tiger is approximately 20 meters tall."
+    },
+    {
+      "id": "yuanwu-nation",
+      "surfaces": [
+        "Yuanwu"
+      ],
+      "definition": "One of the neighboring mortal countries in the cultivation world setting, distinct from the Yue Nation where Han Li began his journey."
+    }
+  ]
+}

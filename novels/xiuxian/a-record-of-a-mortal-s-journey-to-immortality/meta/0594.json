@@ -1,0 +1,77 @@
+{
+  "chapter_no": "0594",
+  "chapter_code": "0594",
+  "chapter_slug": "The-Stone-Library-of-the-Netherworld",
+  "chapter_title_en": "The Stone Library of the Netherworld",
+  "chapter_keywords": [
+    "Netherworld Domain",
+    "demon language tutorial",
+    "Nascent Soul insights",
+    "Yin Beast ecology",
+    "Yin Wind Days",
+    "ancient stone tablets",
+    "cultivation knowledge",
+    "Elder Feng",
+    "mortal stream quiet victory",
+    "Han Li memory"
+  ],
+  "guide_tags": [
+    "lore heavy",
+    "hidden legacy",
+    "knowledge is power",
+    "character growth",
+    "world building",
+    "quiet triumph"
+  ],
+  "chapter_seo_title": "Han Li Deciphers Ancient Demon Language in a Netherworld Library",
+  "chapter_meta_description": "Stranded in a hostile realm, Han Li finds a library of stone tablets. He discovers the secrets to forming a Nascent Soul and the key to the lost demon language—a quiet but devastating power-up.",
+  "og_title": "The Scholar's Dungeon: How Han Li Cheats the System",
+  "og_description": "Forget fighting monsters; this is a chapter about the *real* loot—a dead man's cultivation guide and the key to a lost language.",
+  "twitter_title": "Han Li just found a Nascent Soul’s diary and a Demon Rosetta Stone. #Xianxia",
+  "twitter_description": "No fighting, just pure, cold knowledge acquisition. Our boy is leveling up by reading.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "netherworld-domain",
+      "surfaces": [
+        "Netherworld"
+      ],
+      "definition": "A ghost-mist sealed realm in the Chaotic Star Sea where mana is suppressed and cultivators rely on brute force and cunning, forced to survive against Yin Beasts and periodic Yin Wind Days."
+    },
+    {
+      "id": "yin-beast",
+      "surfaces": [
+        "Yin"
+      ],
+      "definition": "A class of bioforms born of concentrated Netherworld force, whose bones are used by local inhabitants to forge weapons after soaking in Camphor Water."
+    },
+    {
+      "id": "nascent-soul",
+      "surfaces": [
+        "Nascent"
+      ],
+      "definition": "The cultivation stage where a cultivator condenses their spiritual power into a secondary, independent soul-body; the chapter highlights the many taboos and risks of this process."
+    },
+    {
+      "id": "demon-script",
+      "surfaces": [
+        "Demon"
+      ],
+      "definition": "The written language of the demon race, an older and more primal power source; mastering it could unlock forgotten techniques and secret histories."
+    },
+    {
+      "id": "yin-wind-days",
+      "surfaces": [
+        "Yin"
+      ],
+      "definition": "Regular environmental disasters in the Netherworld Domain where a black, bone-chilling Yin Wind sweeps the land, freezing anything exposed into black ice sculptures."
+    },
+    {
+      "id": "camphor-water",
+      "surfaces": [
+        "Camphor"
+      ],
+      "definition": "A special liquid used in the Netherworld Domain to soak Yin Beast bones, making them harder and infusing them with Yin Fire for better lethality against other creatures."
+    }
+  ]
+}

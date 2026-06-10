@@ -1,0 +1,75 @@
+{
+  "chapter_no": "0205",
+  "chapter_code": "0205",
+  "chapter_slug": "A-Serpent-Reborn-and-the-Veins-of-the-Earth",
+  "chapter_title_en": "A Serpent Reborn and the Veins of the Earth",
+  "chapter_keywords": [
+    "Ji Ning",
+    "Skygreen Serpent",
+    "Ji Qingqing",
+    "spirit-beast",
+    "cold-sha vein",
+    "earthfire vein",
+    "Yinglong Guard",
+    "Mount Yujue Wasteland",
+    "White Dragon Immortal",
+    "Dongyi",
+    "Wanxiang realm",
+    "elemental cultivation",
+    "Xianxia"
+  ],
+  "guide_tags": [
+    "Reunion",
+    "New Ally",
+    "Worldbuilding",
+    "Elemental Cultivation",
+    "Resource Gathering",
+    "Power Up",
+    "Foreshadowing"
+  ],
+  "chapter_seo_title": "Ji Ning Reunites with the Skygreen Serpent & Discovers Earthfire Veins!",
+  "chapter_meta_description": "Ji Ning reunites with the Skygreen Serpent, who becomes his new spirit-beast. She reveals the locations of rare cold-sha and earthfire veins, setting the stage for a massive power-up.",
+  "og_title": "A Serpent’s Oath: Ji Ning’s New Ally Reveals Hidden Treasures!",
+  "og_description": "The Skygreen Serpent joins Ji Ning’s team, bringing with her the secrets of two primordial veins of power in Mount Yujue Wasteland.",
+  "twitter_title": "The Serpent Returns: Ji Ning’s New Spirit-Beast & Earthfire Frenzy!",
+  "twitter_description": "Old rivals become allies as the Skygreen Serpent pledges herself to Ji Ning and reveals ancient veins of fire and cold.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "cold-sha-vein",
+      "surfaces": [
+        "Cold-Sha Vein"
+      ]
+    },
+    {
+      "id": "earthfire-vein",
+      "surfaces": [
+        "Earthfire Vein"
+      ]
+    },
+    {
+      "id": "white-dragon-immortal",
+      "surfaces": [
+        "White Dragon Immortal"
+      ]
+    },
+    {
+      "id": "wanxiang-phantasm",
+      "surfaces": [
+        "Wanxiang Phantasm"
+      ]
+    },
+    {
+      "id": "true-fire",
+      "surfaces": [
+        "True Fire"
+      ]
+    },
+    {
+      "id": "human-fire-earthfire-skyfire-true-fire",
+      "surfaces": [
+        "Human"
+      ]
+    }
+  ]
+}

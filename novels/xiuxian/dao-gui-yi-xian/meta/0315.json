@@ -1,0 +1,88 @@
+{
+  "chapter_no": "0315",
+  "chapter_code": "0315",
+  "chapter_slug": "A-Feast-of-Lies-and-Promotion",
+  "chapter_title_en": "A Feast of Lies and Promotion",
+  "chapter_keywords": [
+    "Supervisory Heavenly Office",
+    "Tuoba Danqing",
+    "promotion system",
+    "lie and deception",
+    "Zuowandao intelligence",
+    "Ao-Jing Sect backstory",
+    "bureaucratic horror",
+    "fake backstory",
+    "secret archives"
+  ],
+  "guide_tags": [
+    "Politics",
+    "Lore Deep Dive",
+    "Character Development",
+    "Psychological Horror"
+  ],
+  "chapter_seo_title": "Li Huowang's Dangerous Lie to Climb the Ranks in the Supervisory Heavenly Office",
+  "chapter_meta_description": "Li Huowang must convince Tuoba Danqing of his loyalty while secretly manipulating the Office's promotion system to access Zuowandao secrets. A tense dinner negotiation.",
+  "og_title": "A Feast of Lies and Promotion",
+  "og_description": "Tuoba Danqing tests Li Huowang's motives. Can the protagonist lie his way into the Office's inner circle?",
+  "twitter_title": "Lying for a Promotion",
+  "twitter_description": "A single misstep could end Li Huowang's only lead. How far will he go to climb the ranks?",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government-sponsored supernatural law enforcement body. It operates with near-total autonomy, prioritizing stability over imperial loyalty or morality."
+    },
+    {
+      "id": "gui-zu",
+      "surfaces": [
+        "Gui-Zu"
+      ],
+      "definition": "The lowest rank in the Office's Ten Heavenly Stems hierarchy, equivalent to a \"tenth-grade runner\" or probationary agent."
+    },
+    {
+      "id": "ren-wu",
+      "surfaces": [
+        "Ren-Wu"
+      ],
+      "definition": "A mid-low rank in the Office's promotion ladder; one step above the entry-level positions."
+    },
+    {
+      "id": "geng-qi",
+      "surfaces": [
+        "Geng-Qi"
+      ],
+      "definition": "A mid-rank in the Office, high enough to access classified Zuowandao intelligence, which is considered \"Celestial-Grade\" secrets."
+    },
+    {
+      "id": "celestial-grade",
+      "surfaces": [
+        "Celestial-Grade"
+      ],
+      "definition": "The highest classification level for intelligence within the Office, guarded against tampering or destruction by the Zuowandao."
+    },
+    {
+      "id": "manual-of-deception",
+      "surfaces": [
+        "Manual"
+      ],
+      "definition": "A book on the art of lying that Li Huowang uses as a mental reference to craft his cover story."
+    },
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ],
+      "definition": "A fictional sect in the novel fusing Zoroastrianism (袄教) and Nestorian Christianity (景教); the original owners of the Thousand Greats Record."
+    },
+    {
+      "id": "ten-heavenly-stems",
+      "surfaces": [
+        "Ten"
+      ],
+      "definition": "A classical Chinese ranking system (Jia to Gui) used for dates, grades, and hierarchies; the Office repurposes it for its internal promotion ladder."
+    }
+  ]
+}

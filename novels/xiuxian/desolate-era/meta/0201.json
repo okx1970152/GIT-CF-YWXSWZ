@@ -1,0 +1,67 @@
+{
+  "chapter_no": "0201",
+  "chapter_code": "0201",
+  "chapter_slug": "The-Skygreen-Serpent-Reunion",
+  "chapter_title_en": "The Skygreen Serpent Reunion",
+  "chapter_keywords": [
+    "Skygreen Serpent",
+    "Ji Ning",
+    "Wanxiang great demon",
+    "Dragon Whale King",
+    "sword immortal",
+    "Mu Northson",
+    "reunion",
+    "Dongshan Swamp",
+    "Fiendgod Body Refining",
+    "formation seal"
+  ],
+  "guide_tags": [
+    "reunion",
+    "sword immortal",
+    "great demon",
+    "Wanxiang",
+    "yan mountains",
+    "friendship",
+    "combat",
+    "formation tactics"
+  ],
+  "chapter_seo_title": "Ji Ning Reunites With the Skygreen Serpent – A Fiery Rescue in the Wilderness",
+  "chapter_meta_description": "Ji Ning finds his old rival the Skygreen Serpent besieged by Wanxiang demons. A one-shot kill and a warm reunion lead to a cold ultimatum for the Dragon Whale King.",
+  "og_title": "The Little Snakey Snake Returns!",
+  "og_description": "Ji Ning rescues his old sparring partner from a sixteen-demon ambush. Old friends meet again – with swords.",
+  "twitter_title": "Little Snakey Snake Lives!",
+  "twitter_description": "Ji Ning reunites with the Skygreen Serpent and immediately threatens to kill a Wanxiang perfection demon king. What a way to say hello.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "skygreen-serpent",
+      "surfaces": [
+        "Skygreen Serpent"
+      ]
+    },
+    {
+      "id": "dragon-whale-king",
+      "surfaces": [
+        "Dragon"
+      ]
+    },
+    {
+      "id": "sealing-formation",
+      "surfaces": [
+        "Sealing Formation"
+      ]
+    },
+    {
+      "id": "northriver-sword-formation",
+      "surfaces": [
+        "Northriver Sword Formation"
+      ]
+    },
+    {
+      "id": "wanxiang-manifestation",
+      "surfaces": [
+        "Wanxiang Manifestation"
+      ]
+    }
+  ]
+}

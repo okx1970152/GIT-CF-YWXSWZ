@@ -1,0 +1,86 @@
+{
+  "chapter_no": "0603",
+  "chapter_code": "0603",
+  "chapter_slug": "Intelligence",
+  "chapter_title_en": "Intelligence",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Wu Cheng",
+    "Xu Shou",
+    "Yi Donglai",
+    "Yang Na",
+    "Beihai New Port",
+    "White Yacht",
+    "Kangning Hospital",
+    "White Tower Sector",
+    "identity swap",
+    "forced medication",
+    "escape plan"
+  ],
+  "guide_tags": [
+    "Psychological Horror",
+    "Mental Patient Escape",
+    "Identity Swap",
+    "Desperate Interrogation",
+    "Medical Corruption",
+    "Pacing Suspense"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch602: Li Huowang Escapes – A Fountain Pen and a Fake Doctor",
+  "chapter_meta_description": "Li Huowang tortures Wu Cheng for Xu Shou’s location, swaps clothes with him, and escapes from the ward by faking an emergency. But even his old doctor still thinks he’s crazy.",
+  "og_title": "“I’m Not Crazy.” Li Huowang Stages a Brutal Hospital Breakout.",
+  "og_description": "He shoved a pen up a man’s nose, fed him his own meds, and walked out wearing a white coat. But getting free is only half the problem.",
+  "twitter_title": "Li Huowang just escaped the psych ward by turning Wu Cheng into a patient. Now he’s hunting Xu Shou.",
+  "twitter_description": "Blood, pills, a swapped gown, and a doctor who still doesn’t believe him. Chapter 602 delivers the breakout.",
+  "updated_at": "2026-05-09",
+  "lore_anchors": [
+    {
+      "id": "beihai-new-port",
+      "surfaces": [
+        "Beihai New Port"
+      ],
+      "definition": "A modern port district, likely serving as a quick escape route by sea for Xu Shou."
+    },
+    {
+      "id": "kangning-hospital",
+      "surfaces": [
+        "Kangning Hospital"
+      ],
+      "definition": "The psychiatric hospital where Li Huowang was being held before this breakout."
+    },
+    {
+      "id": "white-tower-sector",
+      "surfaces": [
+        "White Tower Sector"
+      ],
+      "definition": "The high-security monitoring section of the psychiatric facility, associated with Li Huowang’s case."
+    },
+    {
+      "id": "restraint-gown",
+      "surfaces": [
+        "Restraint gown"
+      ],
+      "definition": "A heavy-duty hospital garment used to restrict violent patients, often with straps and an iron mouth-mask."
+    },
+    {
+      "id": "fountain-pen-interrogation",
+      "surfaces": [
+        "Fountain"
+      ],
+      "definition": "A brutal improvised technique where Li Huowang drives the nib up the victim’s nostril to force compliance."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Li Huowang trust Yi Donglai but not the police?",
+      "a": "Yi Donglai is the doctor who treated him before—he represents the only institutional figure who might believe his story, whereas the police would likely write him off as a delusional patient."
+    },
+    {
+      "q": "Why does Li Huowang block Yi Donglai after pleading for help?",
+      "a": "Because he knows Yi will try to physically hold him inside the hospital. He only needed Yi to deliver the warning to his family; the rest of the fight he intends to handle alone."
+    },
+    {
+      "q": "How is this not just a generic escape scene?",
+      "a": "The escape is psychologically specific: Li Huowang weaponizes the image of a “crazy patient” against his captor, turning the very tools of psychiatric control—a mask, a gown, antipsychotics—into instruments of reversal. It’s a commentary on whose reality gets to be believed."
+    }
+  ]
+}

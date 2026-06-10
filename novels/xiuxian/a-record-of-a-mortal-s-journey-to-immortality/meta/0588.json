@@ -1,0 +1,56 @@
+{
+  "chapter_no": "0588",
+  "chapter_code": "0588",
+  "chapter_slug": "Rising-Wind-Overseas-A-Nameless-Land",
+  "chapter_title_en": "Rising Wind Overseas, A Nameless Land",
+  "chapter_keywords": [
+    "han li",
+    "yin beasts",
+    "foreign environment",
+    "survival",
+    "unknown territory",
+    "fire scale beast",
+    "outsiders",
+    "mysterious portal",
+    "wasteland",
+    "cultivation novel"
+  ],
+  "guide_tags": [
+    "Mortal Stream",
+    "World Building",
+    "New Frontier",
+    "Survival",
+    "Mystery",
+    "Dark Fantasy"
+  ],
+  "chapter_seo_title": "A Record of a Mortal's Journey: Chapter 588 - Rising Wind Overseas & The Nameless Land",
+  "chapter_meta_description": "Han Li and his companion emerge from a strange portal into a deadly, pitch-black world. They face Yin Beasts, a blood-soaked desert, and a new tribe of armed survivors who are all too familiar with the local horrors.",
+  "og_title": "A Record of a Mortal's Journey: Chapter 588",
+  "og_description": "Han Li escapes one prison only to land in a nameless land of black sand and deadly Yin Beasts.",
+  "twitter_title": "RMJI Ch. 588",
+  "twitter_description": "New world, new rules. Han Li faces a savage frontier.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "yin-beast",
+      "surfaces": [
+        "Yin"
+      ],
+      "definition": "A category of monster born from concentrated yin energy or corrupted environments. This term signals a unique, dangerous ecosystem different from common spirit beasts."
+    },
+    {
+      "id": "fire-scale-beast",
+      "surfaces": [
+        "Fire"
+      ],
+      "definition": "A specific type of Yin Beast, described as a leopard-headed monster with crimson scales and razor-sharp fangs. The locals know their behavior patterns."
+    },
+    {
+      "id": "zhang",
+      "surfaces": [
+        "Zhang"
+      ],
+      "definition": "A traditional Chinese unit of length, approximately 3.33 meters. Used here to describe the size of the cavern and the beasts."
+    }
+  ]
+}

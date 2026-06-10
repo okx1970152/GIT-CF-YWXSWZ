@@ -1,0 +1,86 @@
+{
+  "chapter_no": "0347",
+  "chapter_code": "0347",
+  "chapter_slug": "The-Green-Sword",
+  "chapter_title_en": "The Green煌 Sword",
+  "chapter_keywords": [
+    "rmji",
+    "a record of a mortal's journey to immortality",
+    "han li",
+    "qu hun",
+    "green煌 sword",
+    "magical treasure",
+    "core formation",
+    "blood drill",
+    "puppet",
+    "soul summoning bell",
+    "golden core",
+    "foundation establishment"
+  ],
+  "guide_tags": [
+    "Tactical Victory",
+    "Magical Treasure Reveal",
+    "Bittersweet Power",
+    "Mortal Stream Combat",
+    "Soul Manipulation",
+    "Worldbuilding"
+  ],
+  "chapter_seo_title": "Han Li Claims His First Magical Treasure: The Green煌 Sword",
+  "chapter_meta_description": "Han Li wins his first Magical Treasure, the Green煌 Sword, but learns a hard lesson about the power hierarchy in this thrilling tactical takedown of a possessed cultivator.",
+  "og_title": "Han Li Wins, But Can't Use His Prize",
+  "og_description": "The Green煌 Sword is a Monumental Prize, But its Core Power Remains Locked. A masterclass in Mortal Stream combat.",
+  "twitter_title": "The ultimate 'Nice Sword. Can't Use It.' moment in xianxia.",
+  "twitter_description": "Han Li outsmarts a possessed Core Formation cultivator to claim his first Magical Treasure, only to find it's useless to him. Peak RMJI.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "magical-treasure",
+      "surfaces": [
+        "Magical"
+      ],
+      "definition": "A high-tier artifact refined from a cultivator’s life essence, possessing power far exceeding common magic tools. It is often bound to the user’s soul and can only be properly wielded by cultivators of a certain rank."
+    },
+    {
+      "id": "soul-summoning-bell",
+      "surfaces": [
+        "Soul"
+      ],
+      "definition": "A natal magic tool used by Han Li to control and command soulless bodies, such as the zombie Qu Hun. Its power can be resisted by strong spiritual defenses."
+    },
+    {
+      "id": "blood-drill",
+      "surfaces": [
+        "Blood"
+      ],
+      "definition": "A powerful, concentrated offensive technique that fires a drill-like projectile of pure energy. It is a high-cost, high-damage attack resource in Han Li’s arsenal."
+    },
+    {
+      "id": "golden-core",
+      "surfaces": [
+        "Golden"
+      ],
+      "definition": "The crystallized essence of a Core Formation cultivator’s power and lifespan. It is the literal core of their being, and its destruction is both a fatal blow and a potential source of powerful fragmented remains."
+    },
+    {
+      "id": "green-sword",
+      "surfaces": [
+        "Green煌"
+      ],
+      "definition": "A genuine Magical Treasure, likely the former weapon of a Core Formation cultivator. It is Han Li’s first treasure of this tier, but he lacks the cultivation base to activate it."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why couldn't Han Li just kill Qu Hun directly?",
+      "a": "He was unsure if Qu Hun's zombie body had vital points like a normal person, so he chose to attack the seemingly invulnerable green orb, which turned out to be the target's true weak point."
+    },
+    {
+      "q": "Why can't Han Li use the Green煌 Sword right away?",
+      "a": "In the cultivation world, Magical Treasures are soul-bound to high-level users. Without a Core Formation cultivation base, a Foundation Establishment cultivator lacks the power to break that seal or fuel the treasure's immense energy demands."
+    },
+    {
+      "q": "What are the fragments Han Li picks up at the end?",
+      "a": "They are the remains of the green orb, which Han Li suspects are pieces of the original cultivator's Golden Core. They may hold residual power or secrets, making them a dangerous but potentially valuable asset."
+    }
+  ]
+}

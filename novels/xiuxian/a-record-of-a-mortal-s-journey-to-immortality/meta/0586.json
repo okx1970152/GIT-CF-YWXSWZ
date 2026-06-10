@@ -1,0 +1,70 @@
+{
+  "chapter_no": "0586",
+  "chapter_code": "0586",
+  "chapter_slug": "Storms-Stir-Beyond-the-Seas-An-Unforeseen-Peril",
+  "chapter_title_en": "Storms Stir Beyond the Seas, An Unforeseen Peril",
+  "chapter_keywords": [
+    "Han Li",
+    "Wen Tianren",
+    "Eightfold Golden Light Mirrors",
+    "Spirit Liquid",
+    "Ghost Mist",
+    "cultivation attrition war",
+    "Zi Ling",
+    "Yuan Yao",
+    "Soul Reunion Art",
+    "Chaotic Star Sea",
+    "Mortal Stream"
+  ],
+  "guide_tags": [
+    "attrition battle",
+    "environmental hazard",
+    "power nullification",
+    "game changer",
+    "tense standoff",
+    "fallen cultivators"
+  ],
+  "chapter_seo_title": "The Ghost Mist Arrives! Han Li vs. Wen Tianren’s Attrition War Ends in Chaos",
+  "chapter_meta_description": "",
+  "og_title": "The Ghost Mist Arrives! Cultivators Fall",
+  "og_description": "The battle between Han Li and Wen Tianren is interrupted as a terrifying Ghost Mist sweeps in, stripping every cultivator of their power.",
+  "twitter_title": "No One Flies Today! The Ghost Mist Strips All Cultivators of Power",
+  "twitter_description": "Wen Tianren’s golden flames fail to kill Han Li, but before a new fight can begin, a supernatural mist disables all flying magic, causing everyone to fall.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "ghost-mist",
+      "surfaces": [
+        "Ghost Mist"
+      ],
+      "definition": "A mobile, semi-sentient environmental hazard that appears as a living black fog; it nullifies spiritual energy, causing cultivators to lose flight and mana."
+    },
+    {
+      "id": "spirit-liquid",
+      "surfaces": [
+        "Spirit Liquid"
+      ],
+      "definition": "The Ten-Thousand-Year Spirit Liquid produced by the Heaven Vial; an extremely rare substance that can instantly restore a cultivator's mana."
+    },
+    {
+      "id": "eightfold-golden-light-mirrors",
+      "surfaces": [
+        "Eightfold Golden Light Mirrors"
+      ],
+      "definition": "A high-grade magic treasure that produces a golden flame barrier; it is powerful but requires a massive, continuous drain on the user's mana."
+    },
+    {
+      "id": "soul-reunion-art",
+      "surfaces": [
+        "Soul Reunion Art"
+      ],
+      "definition": "A forbidden Yin-aligned resurrection technique that requires intense concentration to cast, making the caster vulnerable."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Wen Tianren suddenly order Zi Ling to capture Yuan Yao?",
+      "a": "He is desperate; his mana is depleted and the golden flames aren't working, so he resorts to a hostage tactic to force Han Li's hand."
+    }
+  ]
+}

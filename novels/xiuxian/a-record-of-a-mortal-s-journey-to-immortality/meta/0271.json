@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0271",
+  "chapter_code": "0271",
+  "chapter_slug": "The-White-Spider",
+  "chapter_title_en": "The White Spider",
+  "chapter_keywords": [
+    "Mortal Stream",
+    "Record of a Mortal's Journey to Immortality",
+    "Han Li",
+    "White Spider",
+    "stalactite cave",
+    "teleportation formation",
+    "foundation establishment cultivators",
+    "Moon-Masking Sect",
+    "devil flame sect",
+    "siege of the six sects"
+  ],
+  "guide_tags": [
+    "survival horror",
+    "high tension",
+    "monster encounter",
+    "sealed arena",
+    "party conflict",
+    "tunnel collapse",
+    "demonic cultivators",
+    "xianxia monster"
+  ],
+  "chapter_seo_title": "The White Spider - A Record of a Mortal's Journey to Immortality Chapter 271",
+  "chapter_meta_description": "Han Li escapes a tunnel collapse into a cave system, only to join a party of survivors trapped in a dead-end arena with an invulnerable white spider guarding a mysterious teleportation formation.",
+  "og_title": "Trapped with an Unkillable White Spider",
+  "og_description": "Han Li escapes the collapse only to run right into a dead-end cave with a monster that shrugs off top-grade magic tools and has just sealed the only exit.",
+  "twitter_title": "The White Spider",
+  "twitter_description": "Han Li and a group of survivors find themselves sealed in a cave with an invulnerable white spider. The exit is gone and the monster is patient.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "white-spider",
+      "surfaces": [
+        "White Spider"
+      ],
+      "definition": "A giant, crystalline spider with a nigh-invulnerable chitinous shell. It is a high-grade demonic beast capable of dissolving low-grade magic tools with its body and can emit a web-like liquid."
+    },
+    {
+      "id": "earthshaking-talisman",
+      "surfaces": [
+        "Earthshaking Talisman"
+      ],
+      "definition": "A rare mid-grade talisman that can trigger a localized earthquake. In the *Mortal Stream* economy, a tool like this is a strategic asset, not a toy."
+    },
+    {
+      "id": "green-sun-demon-flame",
+      "surfaces": [
+        "Green Sun Demon Flame"
+      ],
+      "definition": "A signature demonic flame that burns on spiritual energy, making it devastating against spirit herbs and plants. A total-war tactic used to deny future resources."
+    },
+    {
+      "id": "five-colored-skeleton",
+      "surfaces": [
+        "Five-Colored Skeleton"
+      ],
+      "definition": "A skeleton floating in a meditation pose, often the remains of a powerful cultivator whose bones are still infused with elemental spiritual residue. It can signal a sealed or suppressed spirit."
+    },
+    {
+      "id": "hexagonal-teleportation-formation",
+      "surfaces": [
+        "Hexagonal Teleportation Formation"
+      ],
+      "definition": "An ancient magical formation that can transport a person or object from one location to another. Its presence in a sealed location is a major prize."
+    }
+  ]
+}

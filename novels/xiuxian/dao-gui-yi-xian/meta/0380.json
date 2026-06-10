@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0380",
+  "chapter_code": "0380",
+  "chapter_slug": "The-Dossier-of-North-Wind",
+  "chapter_title_en": "The Dossier of North Wind",
+  "chapter_keywords": [
+    "li huowang",
+    "supervisory heavenly office",
+    "zuowandao",
+    "four joys",
+    "north wind",
+    "heart-element",
+    "body-swapping",
+    "office records",
+    "bewilderment",
+    "eunuch"
+  ],
+  "guide_tags": [
+    "lore-heavy",
+    "bureaucratic horror",
+    "enemy profile",
+    "psychological dread",
+    "slow-burn tension"
+  ],
+  "chapter_seo_title": "The Dossier of North Wind - Li Huowang's Hunt for the Zuowandao Begins",
+  "chapter_meta_description": "Li Huowang digs through the Supervisory Heavenly Office's archives and finally learns the terrifying truth about North Wind of the Four Joys — body-swapping, deception, and a power that can reach inside his hallucinations.",
+  "og_title": "The Dossier of North Wind — Li Huowang Faces the True Scale of His Enemy",
+  "og_description": "He came looking for a lead. He found a nightmare. North Wind of the Zuowandao can swap bodies at a glance and turn strangers into followers in under an hour.",
+  "twitter_title": "The Dossier of North Wind",
+  "twitter_description": "Li Huowang's hunt for North Wind reveals the true power of the Zuowandao's Four Joys — body-swapping, instant conversion, and a reach that extends into hallucinations.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "four-joys",
+      "surfaces": [
+        "Four"
+      ],
+      "definition": "One of the Four Joys and Three Yuans, the highest-ranked members of the Zuowandao; named after winning hands in Chinese domino tiles, with North Wind being one of them."
+    },
+    {
+      "id": "three-yuans",
+      "surfaces": [
+        "Three"
+      ],
+      "definition": "Alongside the Four Joys, the apex of the Zuowandao hierarchy; named after the top three passing scores in the imperial examination."
+    },
+    {
+      "id": "north-wind",
+      "surfaces": [
+        "North"
+      ],
+      "definition": "A member of the Zuowandao's Four Joys; capable of instant Bewilderment, body-swapping, and converting normal people into accomplices through deception alone."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution with reality-warping properties; highly valued as an alchemical ingredient and targeted by both the Zuowandao and the Office."
+    },
+    {
+      "id": "chief-recorder",
+      "surfaces": [
+        "Chief"
+      ],
+      "definition": "A high-ranking eunuch official in the Supervisory Heavenly Office; their power is both bureaucratic and supernatural, often wielded through a deceptively genial demeanor."
+    },
+    {
+      "id": "supervisor",
+      "surfaces": [
+        "Supervisor"
+      ],
+      "definition": "A rank above Chief Recorder in the Supervisory Heavenly Office; one was killed during the North Wind incident in Tanyang County."
+    },
+    {
+      "id": "five-bars",
+      "surfaces": [
+        "Five"
+      ],
+      "definition": "A rank within the Zuowandao hierarchy, below the Four Joys and Three Yuans; a seventeen-year-old girl was converted into one by North Wind in under an hour."
+    }
+  ]
+}

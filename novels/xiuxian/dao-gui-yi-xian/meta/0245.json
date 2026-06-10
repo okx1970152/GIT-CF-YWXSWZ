@@ -1,0 +1,49 @@
+{
+  "chapter_no": "0245",
+  "chapter_code": "0245",
+  "chapter_slug": "Treatment",
+  "chapter_title_en": "Treatment",
+  "chapter_keywords": [
+    "Dao-Twisted World",
+    "Li Huowang",
+    "Black Tai Sui",
+    "body horror",
+    "self-surgery",
+    "white panicles",
+    "human transformation",
+    "Bai Lingmiao",
+    "Gouwa",
+    "Chinese folk horror"
+  ],
+  "guide_tags": [
+    "Body Horror",
+    "Medical Horror",
+    "Self-Surgery",
+    "Transformation",
+    "Bleak Hope",
+    "Character Survival"
+  ],
+  "chapter_seo_title": "Dao-Twisted World Chapter 245: Li Huowang’s Body Horror and the Brutal Cure",
+  "chapter_meta_description": "After escaping with the Black Tai Sui, Li Huowang discovers his body has been twisted by white panicles. In a grisly self-surgery, he fights to stay human.",
+  "og_title": "Chapter 245 – Treatment: A Body Unmade",
+  "og_description": "Li Huowang got what he came for, but his own flesh no longer obeys him. One of the most brutal body-horror chapters yet.",
+  "twitter_title": "After the victory comes the horror. Li Huowang’s body is no longer his own.",
+  "twitter_description": "He won the Black Tai Sui. But when he looked at his own reflection, he saw a mass of misplaced flesh. Now he’s cutting himself back into shape — one scream at a time.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "black-tai-sui",
+      "surfaces": [
+        "Black"
+      ],
+      "definition": "A grotesque parasitic entity produced by twisted cultivation; in folk religion, Tai Sui is a life-giving substance, but here it is an organic horror that must be eaten to survive."
+    },
+    {
+      "id": "white-panicles",
+      "surfaces": [
+        "White"
+      ],
+      "definition": "Pale, swaying organic tendrils from the underground entity that can rearrange biological structure; they are the cause of Li Huowang's body-horror transformation."
+    }
+  ]
+}

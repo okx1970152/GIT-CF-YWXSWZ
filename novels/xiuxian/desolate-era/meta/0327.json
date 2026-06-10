@@ -1,0 +1,77 @@
+{
+  "chapter_no": "0327",
+  "chapter_code": "0327",
+  "chapter_slug": "The-Observers-Gaze",
+  "chapter_title_en": "The Observers’ Gaze",
+  "chapter_keywords": [
+    "Yu Wei Ji Ning romance",
+    "Xiamang Zishan Cangwu Jiu",
+    "Immortal Fortunes Assembly",
+    "Nine Lotos heartbreak",
+    "Dao of Fire breakthrough",
+    "Domain of the Grand Dao",
+    "Mingyue Water-Mountain Diagram",
+    "Xianxia tournament",
+    "danger ambush"
+  ],
+  "guide_tags": [
+    "Romance",
+    "Suspense",
+    "Tournament Arc",
+    "Cultivation Breakthrough",
+    "Power Dynamics",
+    "Character Development",
+    "Cultural Notes"
+  ],
+  "chapter_seo_title": "Immortal Fortunes Assembly: Yu Wei’s Confession & a Deadly Ambush",
+  "chapter_meta_description": "Ji Ning breaks through to the Dao of Fire, but his joy is short-lived when the top two geniuses of the Immortal Fortunes Assembly—Xiamang Zishan and Cangwu Jiu—corner him and Yu Wei. A clash of titans is brewing.",
+  "og_title": "Heartfelt Revelation and a Deadly Trap in the Mingyue Diagram",
+  "og_description": "Yu Wei’s hidden feelings for Ji Ning are exposed to the entire Assembly, just as a legendary duo of cultivators marks them for elimination. The stakes have never been higher.",
+  "twitter_title": "Love in the Crosshairs: Ji Ning & Yu Wei vs. the Top Two Geniuses!",
+  "twitter_description": "A sweet moment between Ji Ning and Yu Wei turns deadly when the tournament’s #1 and #2 threats arrive. Can they survive this ambush?",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "domain-of-the-grand-dao",
+      "surfaces": [
+        "Domain"
+      ],
+      "definition": "A high-level state of Dao comprehension where a cultivator can project their understanding of a Grand Dao as a tangible, oppressive field of influence. It is a rare achievement that marks one as a top-tier genius even among the elite of an Immortal Fortunes Assembly."
+    },
+    {
+      "id": "mingyue-water-mountain-diagram",
+      "surfaces": [
+        "Mingyue"
+      ],
+      "definition": "A pocket-realm treasure used by the Grand Xia to host the first major trial of the Immortal Fortunes Assembly. It contains a vast, idyllic landscape where participants hunt each other for faith-tokens, with the top 80 token holders advancing."
+    },
+    {
+      "id": "faith-token",
+      "surfaces": [
+        "Faith-token"
+      ],
+      "definition": "A token of qualification obtained by defeating or killing other participants inside the Mingyue Water-Mountain Diagram. The number of tokens a participant holds determines their rank for the first trial."
+    },
+    {
+      "id": "crimsonbright-diagram-of-the-nine-heavens",
+      "surfaces": [
+        "Crimsonbright"
+      ],
+      "definition": "The number one Fiendgod Body Refining method in the Three Realms, divided into nine layers. It grants immense physical power and regenerative abilities. Ji Ning is currently at the 11th layer, a noted weakness."
+    },
+    {
+      "id": "xiamang-zishan",
+      "surfaces": [
+        "Xiamang"
+      ],
+      "definition": "The top-ranked genius of the Immortal Fortunes Assembly, a descendant of the Grand Xia imperial clan. He is a master of the Crimsonbright Diagram and possesses numerous powerful imperial divine abilities, making him a terrifying opponent."
+    },
+    {
+      "id": "cangwu-jiu",
+      "surfaces": [
+        "Cangwu"
+      ],
+      "definition": "The second-ranked genius of the Immortal Fortunes Assembly, hailing from the prestigious Cangwu clan. He is a meticulous strategist and a deadly combatant, known for his keen observation and ability to recognize any threat instantly."
+    }
+  ]
+}

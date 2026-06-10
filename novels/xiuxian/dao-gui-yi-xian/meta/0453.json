@@ -1,0 +1,71 @@
+{
+  "chapter_no": "0453",
+  "chapter_code": "0453",
+  "chapter_slug": "The-Cage-of-Kindness",
+  "chapter_title_en": "The Cage of Kindness",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "gao zhijian",
+    "bai lingmiao",
+    "military cultivation",
+    "psychiatric hospital",
+    "white family village",
+    "sun xiaoqin",
+    "mental illness in china",
+    "body tempering"
+  ],
+  "guide_tags": [
+    "character-driven",
+    "dual world",
+    "slow burn",
+    "family dynamics",
+    "medical horror",
+    "worldbuilding",
+    "slice of horror"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 452 – Li Huowang Faces the Real Prison: A Psychiatric Hospital",
+  "chapter_meta_description": "Li Huowang builds a village army on one side of reality, but on the other, he can't even get out of a psychiatric ward. A quiet, painful chapter about the cage of being seen as dangerous.",
+  "og_title": "The Real Cage Isn't Made of Bone or Flesh",
+  "og_description": "Two worlds, one prisoner: Li Huowang can command a village full of cultivators but can't convince a single doctor he's safe to release.",
+  "twitter_title": "Li Huowang vs. the Psychiatric System",
+  "twitter_description": "On one side of reality, he's building an army. On the other, he can't even leave a locked ward. The horror of being legally dangerous.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "li-sui",
+      "surfaces": [
+        "Li Sui"
+      ],
+      "definition": "Li Huowang's parasitic child, born from the Black Tai Sui. She can sprout tentacles, see through multiple pupils, and burrow into his body. Despite her monstrous form, she is fiercely loyal and childlike."
+    },
+    {
+      "id": "gao-zhijian",
+      "surfaces": [
+        "Gao Zhijian"
+      ],
+      "definition": "A simple-minded but loyal follower of Li Huowang. He is now training in a military cultivation technique, gaining a sharper edge and a new intensity that marks his growth from a foolish beggar to a budding fighter."
+    },
+    {
+      "id": "military-cultivation",
+      "surfaces": [
+        "Military"
+      ],
+      "definition": "A xianxia school based on the practical, body-tempering arts of ancient Chinese warfare. It emphasizes group combat, killing intent, and physical resilience over spiritual enlightenment or internal alchemy."
+    },
+    {
+      "id": "ox-heart-mountain",
+      "surfaces": [
+        "Ox-Heart"
+      ],
+      "definition": "The large mountain behind White Family Village. Its slopes are covered in fresh graves, likely the result of a recent mass casualty event that the village has already buried and moved past."
+    },
+    {
+      "id": "private-slave",
+      "surfaces": [
+        "Private"
+      ],
+      "definition": "In historical Chinese society, a bonded laborer tied to a household or land. Not a chattel slave; private slaves had legal protections and could sometimes gain freedom. The term reflects class hierarchy, not total dehumanization."
+    }
+  ]
+}

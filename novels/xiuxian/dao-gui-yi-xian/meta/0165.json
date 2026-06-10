@@ -1,0 +1,66 @@
+{
+  "chapter_no": "0165",
+  "chapter_code": "0165",
+  "chapter_slug": "The-Nun-Again",
+  "chapter_title_en": "The Nun, Again",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Abbess Jingxin",
+    "Anci Nunnery",
+    "Danyangzi",
+    "Heart-Element",
+    "decay ceases",
+    "supernatural erasure",
+    "True Sutra of the Fire Vestments",
+    "Mount Heng",
+    "body horror"
+  ],
+  "guide_tags": [
+    "horror",
+    "tragedy",
+    "character death",
+    "world-building",
+    "folk horror",
+    "Xianxia",
+    "body horror"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch.165: The Nun, Again – A Feast of Silence",
+  "chapter_meta_description": "Li Huowang returns to Anci Nunnery with pastries, only to find Abbess Jingxin dead and the world’s decay itself mysteriously erased. A quiet, devastating horror.",
+  "og_title": "The Kindness That Vanished – Chapter 165",
+  "og_description": "After a brief respite, Li Huowang discovers the one safe place in his world has been hollowed out. No flies. No rot. No answers.",
+  "twitter_title": "A World Without Rot – Ch.165",
+  "twitter_description": "Li Huowang returns to Anci Nunnery. His only ally is dead. And the laws of nature have stopped working.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "anci-nunnery",
+      "surfaces": [
+        "Anci Nunnery"
+      ]
+    },
+    {
+      "id": "abbess-jingxin",
+      "surfaces": [
+        "Abbess Jingxin"
+      ]
+    },
+    {
+      "id": "true-sutra-of-the-fire-vestments",
+      "surfaces": [
+        "True Sutra of the Fire Vestments"
+      ]
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ]
+    },
+    {
+      "id": "danyangzi",
+      "surfaces": [
+        "Danyangzi"
+      ]
+    }
+  ]
+}

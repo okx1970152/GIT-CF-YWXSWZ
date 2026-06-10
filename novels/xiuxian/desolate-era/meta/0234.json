@@ -1,0 +1,82 @@
+{
+  "chapter_no": "0234",
+  "chapter_code": "0234",
+  "chapter_slug": "The-Sword-Light-Lotus",
+  "chapter_title_en": "The Sword-Light Lotus",
+  "chapter_keywords": [
+    "Ji Ning",
+    "Nine Lotos",
+    "Luo Qing",
+    "Dao-companion",
+    "lotus techniques",
+    "Green Lotus Sutra",
+    "Dongyan clan",
+    "Sword-Light Lotus",
+    "Dao-discussion",
+    "Brightheart Island"
+  ],
+  "guide_tags": [
+    "Romance Subtext",
+    "Cultivation Training",
+    "Character Interaction",
+    "Worldbuilding"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 234 - The Sword-Light Lotus: Ji Ning and Nine Lotos Discuss the Dao",
+  "chapter_meta_description": "A day-and-night Dao-discussion between Ji Ning and Nine Lotos deepens their bond over lotus techniques. Meanwhile, Luo Qing asks a bold question about Dao-companions.",
+  "og_title": "The Dao of the Lotus Unfolds",
+  "og_description": "Ji Ning and Nine Lotos share a marathon discussion on lotus techniques, while Luo Qing bluntly asks if there’s something more between them.",
+  "twitter_title": "When cultivation gets romantic – did Nine Lotos just blush?",
+  "twitter_description": "A quiet day on Brightheart Island turns into a passionate Dao-discussion. And then Luo Qing drops *the* question…",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "dao-companion",
+      "surfaces": [
+        "Dao-companion"
+      ],
+      "definition": "A cultivation partner bound by shared Dao-heart and lifelong commitment, more than a romantic spouse."
+    },
+    {
+      "id": "dongyan-clan",
+      "surfaces": [
+        "Dongyan"
+      ],
+      "definition": "An ancient tribe spanning three commanderies, known for their Green Lotus Sutra; stronger than any single power in Anchan Commandery."
+    },
+    {
+      "id": "green-lotus-sutra",
+      "surfaces": [
+        "Green"
+      ],
+      "definition": "The foundational secret manual of the Dongyan clan, containing profound lotus mysteries."
+    },
+    {
+      "id": "sword-light-lotus",
+      "surfaces": [
+        "Sword-Light"
+      ],
+      "definition": "A technique created by Ji Ning that condenses sword-light into a lotus formation for training or combat."
+    },
+    {
+      "id": "unity-of-man-and-heaven",
+      "surfaces": [
+        "Unity"
+      ],
+      "definition": "The second realm of swordsmanship; a state of harmony with nature allowing instinctual swordplay. Ji Ning considers it insufficient for true mastery."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is a Dao-companion?",
+      "a": "In Xianxia, a Dao-companion is a cultivation partner bound by a shared path—both romantic and spiritual—who supports each other's growth for eternity."
+    },
+    {
+      "q": "Why doesn't Ji Ning consider Unity of Man and Heaven as 'entering the gate'?",
+      "a": "Because true mastery of the sword requires comprehending a True Meaning of the Dao; Unity of Man and Heaven is only the second realm of swordsmanship, not the final step."
+    },
+    {
+      "q": "Who is the Dongyan clan?",
+      "a": "An extremely powerful ancient tribe that spans three commanderies; its Green Lotus Sutra makes it a lotus-cultivation powerhouse, stronger than any single sect in Anchan Commandery."
+    }
+  ]
+}

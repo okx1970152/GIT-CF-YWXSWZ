@@ -1,0 +1,79 @@
+{
+  "chapter_no": "0539",
+  "chapter_code": "0539",
+  "chapter_slug": "The-Law-Faith-Rises",
+  "chapter_title_en": "The Law Faith Rises",
+  "chapter_keywords": [
+    "Dao Gui Yi Xian",
+    "Li Huowang",
+    "Law Faith",
+    "Yu'er Shen",
+    "Purple-Tasseled Sword",
+    "bone-sword",
+    "Peng Longteng",
+    "Li Sui",
+    "Zhuge Yuan",
+    "Great Qi cults",
+    "refugee horror",
+    "stone soup"
+  ],
+  "guide_tags": [
+    "action-heavy",
+    "cult horror",
+    "gore",
+    "sword combat",
+    "mass slaughter",
+    "dark fantasy"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 538: Li Huowang battles the Law Faith in a sea of cultists!",
+  "chapter_meta_description": "Li Huowang discovers the Law Faith has spread to Great Qi. A city of white-headbanded fanatics boiling stones for immortality stands between him and escape. The Purple-Tasseled Sword gets its first true battlefield.",
+  "og_title": "The Stones Are Boiling",
+  "og_description": "Li Huowang wades into a city converted by the Law Faith. Stone soup, dead babies, and the goriest sword swing of the arc await.",
+  "twitter_title": "Dao Gui Yi Xian Ch. 538 – The Law Faith Rises",
+  "twitter_description": "Great Qi has its own cult problem. And Li Huowang is about to carve his way through every last one of them.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "law-faith",
+      "surfaces": [
+        "Law"
+      ],
+      "definition": "A grassroots folk cult that worships a combination of shamanic spirits and warped deities. In the Dao-Twisted World, it has infiltrated both Great Liang and Great Qi, attracting desperate followers with apocalyptic promises and crude \"miracles.\" It is deeply linked to the Yu'er Shen."
+    },
+    {
+      "id": "shidu",
+      "surfaces": [
+        "Shidu"
+      ],
+      "definition": "The name used for Yu'er Shen by the Great Qi branch of the Law Faith; a local variation of the same cult."
+    },
+    {
+      "id": "stone-soup",
+      "surfaces": [
+        "Stone"
+      ],
+      "definition": "A pseudo-alchemical folk practice where followers believe boiling a stone until it dissolves grants immortality or passage to heaven; a symbol of desperate, groundless faith."
+    },
+    {
+      "id": "purple-tasseled-sword",
+      "surfaces": [
+        "Purple-Tasseled"
+      ],
+      "definition": "A weapon of the \"military path\" that feeds on killing intent (sha qi). The more blood it draws in battle, the stronger its wielder becomes, making it ideal for mass combat rather than duels."
+    },
+    {
+      "id": "bone-sword",
+      "surfaces": [
+        "Bone-sword"
+      ],
+      "definition": "Li Huowang's secondary weapon, drawn from his own or others' remains; a heavy, visceral tool for crowd control."
+    },
+    {
+      "id": "white-headbands",
+      "surfaces": [
+        "White"
+      ],
+      "definition": "The identifying mark of Law Faith followers in Great Qi; the \"Wu\" (shaman) character on the mask signals a ranking ritualist."
+    }
+  ]
+}

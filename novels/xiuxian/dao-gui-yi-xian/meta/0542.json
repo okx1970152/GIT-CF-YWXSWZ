@@ -1,0 +1,73 @@
+{
+  "chapter_no": "0542",
+  "chapter_code": "0542",
+  "chapter_slug": "The-Irrigation-Outlet",
+  "chapter_title_en": "The Irrigation Outlet",
+  "chapter_keywords": [
+    "li huowang",
+    "qiu chibao",
+    "hallucination",
+    "heart-element",
+    "supreme irrigation outlet",
+    "zishi",
+    "hour of the rat",
+    "zhuge yuan",
+    "cold pool",
+    "dao-twisted world"
+  ],
+  "guide_tags": [
+    "Horror",
+    "Dark Fantasy",
+    "Xianxia",
+    "Psychological Horror",
+    "Chinese Folklore",
+    "Cultivation"
+  ],
+  "chapter_seo_title": "Li Huowang descends into a frozen pool to find the hidden Supreme Irrigation Outlet.",
+  "chapter_meta_description": "Haunted by a starving mothers hallucination, Li Huowang dives into a frozen abyss to find the time-locked Supreme Irrigation Outlet at the Hour of the Rat.",
+  "og_title": "The Heart-Element sinks deeper",
+  "og_description": "A new hallucination, a frozen pool, and a portal that only opens at midnight. Li Huowangs quiet, drowning nightmare continues.",
+  "twitter_title": "Cold water, colder truths",
+  "twitter_description": "Li Huowang is haunted by a starving womans ghost as he descends into a bottomless pool in search of a secret dimension.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "supreme-irrigation-outlet",
+      "surfaces": [
+        "Supreme Irrigation Outlet"
+      ],
+      "definition": "A hidden, time-locked dimensional entrance that only appears at specific Chinese hours; currently concealed within a deep, frozen pool."
+    },
+    {
+      "id": "hour-of-the-rat",
+      "surfaces": [
+        "Hour of the Rat"
+      ],
+      "definition": "The traditional Chinese two-hour period from 11 PM to 1 AM, associated with the beginning of a new day and yang energy; a common time window for supernatural events."
+    },
+    {
+      "id": "qiu-chibao",
+      "surfaces": [
+        "Qiu Chibao"
+      ],
+      "definition": "A starving woman who died near Li Huowang and became one of his permanent hallucinations, eternally desperate for food and unable to save her child."
+    },
+    {
+      "id": "fluorescent-stone",
+      "surfaces": [
+        "Fluorescent stone"
+      ],
+      "definition": "A phosphorescent mineral used by Li Huowang for illumination in the Dao-Twisted World; its sickly green light can push back darkness and unseen threats."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Qiu Chibao keep asking for food?",
+      "a": "She is trapped in the moment of her death—starving and frantic—and cannot perceive that she is now a hallucination."
+    },
+    {
+      "q": "Why can’t Li Huowang just make the hallucination go away?",
+      "a": "As a Heart-Element, his emotional state near someone’s death can permanently imprint them as a hallucination; he has no control over who stays or leaves."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0331",
+  "chapter_code": "0331",
+  "chapter_slug": "Entering-the-Formation",
+  "chapter_title_en": "Entering the Formation",
+  "chapter_keywords": [
+    "Reversed Five Elements Formation",
+    "Emperor Yue",
+    "formation banners",
+    "formation disk",
+    "spatial trap",
+    "Han Li counterattack",
+    "talisman treasure",
+    "blood light",
+    "bamboo grove",
+    "Yue Country Imperial City"
+  ],
+  "guide_tags": [
+    "Formation Strategy",
+    "Predator-Prey Reversal",
+    "Trap Master Han Li",
+    "Emperor Yue Defeat",
+    "Reversed Five Elements"
+  ],
+  "chapter_seo_title": "Han Li's Reversed Five Elements Formation Traps Emperor Yue Forever",
+  "chapter_meta_description": "Emperor Yue falls right into Han Li's trap! The Reversed Five Elements Formation activates, turning a desperate retreat into an inescapable prison for the demonic emperor.",
+  "og_title": "The Ultimate Trap Springs: Han Li’s Formation Baffles Emperor Yue",
+  "og_description": "Emperor Yue thought he was the hunter, but Han Li just turned the entire bamboo grove into an inescapable cage with the Reversed Five Elements Formation.",
+  "twitter_title": "Han Li's Five Elements Cage: Emperor Yue panics as he can't even fly away!",
+  "twitter_description": "Emperor Yue chased our hero into a bamboo grove. Now he's stuck in a spatial loop created by Han Li's genius formation. It's time for payback!",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "reversed-five-elements-formation",
+      "surfaces": [
+        "Reversed Five Elements Formation"
+      ],
+      "definition": "A legendary minor forbidden array that uses the balance of Wood, Fire, Earth, Metal, and Water to create powerful illusions, spatial traps, and defensive barriers."
+    },
+    {
+      "id": "formation-banner",
+      "surfaces": [
+        "Formation Banner"
+      ],
+      "definition": "A specialized magical tool used to anchor the boundaries of a grand formation and channel its power."
+    },
+    {
+      "id": "formation-disk",
+      "surfaces": [
+        "Formation Disk"
+      ],
+      "definition": "The master controller or \"brain\" of a grand formation, used to activate and manage the entire array."
+    },
+    {
+      "id": "five-colored-radiance",
+      "surfaces": [
+        "Five-Colored"
+      ],
+      "definition": "The visible energy produced by a formation operating on the principle of the Five Elements, immune to singular elemental attacks."
+    },
+    {
+      "id": "talisman-treasure",
+      "surfaces": [
+        "Talisman Treasure"
+      ],
+      "definition": "A one-use or limited-use magical treasure compressed into a talisman format, allowing a weaker cultivator to access its power."
+    },
+    {
+      "id": "protective-demonic-light",
+      "surfaces": [
+        "Protective Demonic Light"
+      ],
+      "definition": "A defensive aura emitted by demonic-path cultivators, often corrosive or toxic in nature."
+    }
+  ]
+}

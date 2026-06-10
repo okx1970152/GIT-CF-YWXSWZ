@@ -1,0 +1,71 @@
+{
+  "chapter_no": "0018",
+  "chapter_code": "0018",
+  "chapter_slug": "The-Legend-of-Fierce-Tiger-Li",
+  "chapter_title_en": "The Legend of Fierce Tiger Li",
+  "chapter_keywords": [
+    "Seven Mysteries Sect",
+    "Li Feiyu",
+    "Fierce Tiger Li",
+    "Little Abacus",
+    "Galloping Thunder Blade",
+    "Willow Flick Sword Art",
+    "Seven Peaks Hall",
+    "Disciple on Probation",
+    "Zhao Ziling",
+    "junior tournament"
+  ],
+  "guide_tags": [
+    "lore dump",
+    "underdog story",
+    "character introduction",
+    "match fight",
+    "tension building",
+    "sect hierarchy"
+  ],
+  "chapter_seo_title": "RMJI Chapter 18: The Rise of Fierce Tiger Li - Legend of a Disciple on Probation",
+  "chapter_meta_description": "Little Abacus recounts Senior Brother Li’s legendary rise from Disciple on Probation to 'Fierce Tiger Li.' A match unfolds, and Han Li’s sharp question reveals a hidden tension in the sect.",
+  "og_title": "Chapter 18: The Legend of Fierce Tiger Li",
+  "og_description": "An underdog’s rise from Disciple on Probation to sect legend. Han Li watches a match and asks a question that makes Little Abacus look uncomfortable.",
+  "twitter_title": "RMJI Ch 18: Fierce Tiger Li’s origin story drops",
+  "twitter_description": "From failed probation to top-three tournament contender—Little Abacus spills the story. Plus, a match and a very loaded question.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "fierce-tiger-li",
+      "surfaces": [
+        "Fierce Tiger Li"
+      ]
+    },
+    {
+      "id": "galloping-thunder-blade",
+      "surfaces": [
+        "Galloping Thunder Blade"
+      ]
+    },
+    {
+      "id": "willow-flick-sword-art",
+      "surfaces": [
+        "Willow Flick Sword Art"
+      ]
+    },
+    {
+      "id": "little-abacus",
+      "surfaces": [
+        "Little Abacus"
+      ]
+    },
+    {
+      "id": "disciple-on-probation",
+      "surfaces": [
+        "Disciple on Probation"
+      ]
+    },
+    {
+      "id": "seven-peaks-hall",
+      "surfaces": [
+        "Seven Peaks Hall"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "chapter_no": "0316",
+  "chapter_code": "0316",
+  "chapter_slug": "Calm-and-Reinforcements",
+  "chapter_title_en": "Calm and Reinforcements",
+  "chapter_keywords": [
+    "Black Fiend Sect Master",
+    "blood sacrifice",
+    "Foundation Establishment cultivators",
+    "Thousand Bamboo School",
+    "Demonic Transformation",
+    "Sect reinforcements",
+    "Han Li's escape protocols",
+    "Four Blood Servants",
+    "Qi Condensation vs Foundation Establishment",
+    "Mid Foundation Establishment breakthrough"
+  ],
+  "guide_tags": [
+    "political calm",
+    "strategic standoff",
+    "sect reinforcements",
+    "foundation establishment",
+    "demonic cultivation",
+    "worldbuilding"
+  ],
+  "chapter_seo_title": "RMJI Ch. 316: Calm & Reinforcements — Han Li Gets Backup From His Sect",
+  "chapter_meta_description": "After a half-month ceasefire, Han Li senses Foundation Establishment cultivators outside—but it's his long-awaited sect reinforcements. The Black Fiend Sect Master also reveals his true strategy.",
+  "og_title": "RMJI Ch. 316: Calm & Reinforcements",
+  "og_description": "A quiet chapter of strategic calculations and long-awaited backup as Han Li reunites with his sect seniors.",
+  "twitter_title": "RMJI Ch. 316",
+  "twitter_description": "Han Li gets his first real backup from the sect, while the Black Fiend Sect Master reveals his coldly pragmatic calculus.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "blood-sacrifice",
+      "surfaces": [
+        "Blood"
+      ],
+      "definition": "A ritual practice in cultivation fiction where a cultivator consumes the life essence of living beings—often cultivators themselves—to accelerate their own breakthrough. It is one of the most efficient but monstrous paths to power."
+    },
+    {
+      "id": "demonic-transformation",
+      "surfaces": [
+        "Demonic"
+      ],
+      "definition": "A forbidden skill that allows a cultivator to temporarily assume a demonic form, gaining massive combat power at the cost of vitality and self-control. It is typically a last-resort technique."
+    },
+    {
+      "id": "talisman-treasure",
+      "surfaces": [
+        "Talisman"
+      ],
+      "definition": "A single-use magical treasure compressed into a talisman format, allowing a lower-level cultivator to access a fraction of a higher-level artifact’s power. Its power varies dramatically based on the original artifact and the skill of its creator."
+    },
+    {
+      "id": "thousand-bamboo-school",
+      "surfaces": [
+        "Thousand"
+      ],
+      "definition": "A sect specializing in puppet arts and mechanical constructs. Their techniques allow a cultivator to control multiple puppets simultaneously, creating a versatile and dangerous combat style."
+    }
+  ]
+}

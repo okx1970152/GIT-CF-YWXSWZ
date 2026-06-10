@@ -1,0 +1,74 @@
+{
+  "chapter_no": "0348",
+  "chapter_code": "0348",
+  "chapter_slug": "The-Top-Three",
+  "chapter_title_en": "The Top Three",
+  "chapter_keywords": [
+    "ji ning",
+    "immortal fortunes assembly",
+    "xia mang zishan",
+    "top three",
+    "daofather crimsonbright",
+    "pure yang true immortal",
+    "battle",
+    "sword-art",
+    "wanxiang adept",
+    "xianxia tournament"
+  ],
+  "guide_tags": [
+    "Immortal Fortunes Assembly",
+    "Ji Ning",
+    "Sword Art",
+    "Xia Mang Zishan",
+    "Top Three",
+    "Pure Yang True Immortal",
+    "Daofather Crimsonbright",
+    "Tournament Arc",
+    "Three Realms",
+    "Grand Xia"
+  ],
+  "chapter_seo_title": "Ji Ning Defeats Xia Mang Zishan – The Top Three of the Immortal Fortunes Assembly",
+  "chapter_meta_description": "Ji Ning enters a godlike flow state and crushes Xia Mang Zishan to claim his place among the top three. Now only one can become a Daofather’s disciple—and the final tests loom.",
+  "og_title": "Ji Ning Enters the Top Three – The Daofather’s Choice Awaits",
+  "og_description": "After a breathtaking battle that pushes Ji Ning into an unconscious state of sword-perfection, the Immortal Fortunes Assembly’s final three are set. The price of victory: a throne, a master, and destiny itself.",
+  "twitter_title": "Ji Ning breaks into the top three at the Immortal Fortunes Assembly!",
+  "twitter_description": "The top three are decided. One will become a Daofather’s disciple. The other two? Pure Yang True Immortals. The final round-robin is coming.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "pure-yang-true-immortal",
+      "surfaces": [
+        "Pure Yang True Immortal"
+      ],
+      "definition": "A high-tier immortal in the Three Realms, second only to Daofathers and above Celestial Immortals; their disciples are considered exceptionally fortunate."
+    },
+    {
+      "id": "daofather",
+      "surfaces": [
+        "Daofather"
+      ],
+      "definition": "The highest known level of Ki Refiner in the Three Realms, a cultivator who has mastered a Heavenly Dao and holds supreme authority."
+    },
+    {
+      "id": "brightmoon-mountains-and-waters-painting",
+      "surfaces": [
+        "Brightmoon Mountains and Waters Painting"
+      ],
+      "definition": "A time-acceleration treasure that compresses one month of cultivation into one hour of external time; a classic Xianxia training item."
+    },
+    {
+      "id": "water-seal-art",
+      "surfaces": [
+        "Water-Seal Art"
+      ],
+      "definition": "A recording technique used by the Xia Emperor to capture the three final battles for Daofather Crimsonbright’s review."
+    },
+    {
+      "id": "nine-lotos",
+      "surfaces": [
+        "Nine Lotos"
+      ],
+      "definition": "A powerful genius of the Lotos clan, Ji Ning’s love interest; her feelings toward Ji Ning shift from romantic hope to quiet blessing as his path diverges from hers."
+    }
+  ]
+}

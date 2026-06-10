@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0358",
+  "chapter_code": "0358",
+  "chapter_slug": "Star-Dust-Pavilion",
+  "chapter_title_en": "Star Dust Pavilion",
+  "chapter_keywords": [
+    "Star Dust Pavilion",
+    "Grade Four demon beast materials",
+    "Shopkeeper Xu",
+    "Foundation Establishment cultivator",
+    "Yuanwu Nation war market",
+    "market strategy",
+    "tool refining",
+    "Heavenly Star Sect",
+    "Mortal Stream economy",
+    "NPC trading"
+  ],
+  "guide_tags": [
+    "War Economy",
+    "Market Politics",
+    "Preparation Arc",
+    "Resource Management",
+    "Social Maneuvering"
+  ],
+  "chapter_seo_title": "Fan Ren Zhi Shang Chapter 358: Han Li Commissions Grade Four Demon Beast Tools & Visits the Star Dust Pavilion",
+  "chapter_meta_description": "Han Li commissions custom tools from Grade Four demon beast materials and navigates the war-driven panic market, heading to the Heavenly Star Sect's Star Dust Pavilion for real treasures.",
+  "og_title": "Chapter 358: Han Li’s Market Mastery",
+  "og_description": "Han Li turns battlefield spoils into custom weapons and navigates a war-torn market in this masterclass of mortal-stream preparation.",
+  "twitter_title": "The Quiet Before the Storm",
+  "twitter_description": "Han Li plays the market, commissioning rare weapons and scouting the Star Dust Pavilion’s social battlefield.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "grade-four-demon-beast",
+      "surfaces": [
+        "Grade"
+      ],
+      "definition": "A classification of demon beasts in the Mortal Stream, representing significantly more powerful entities than low-grade beasts; materials from them are exceedingly rare and valuable."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation"
+      ],
+      "definition": "The second major realm in cultivation, marking a cultivator as a true member of the higher tiers of the sect, with access to greater resources, duties, and respect."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core"
+      ],
+      "definition": "The third major realm, representing a leap in power and lifespan; Core Formation cultivators are figures of immense authority, often forming the highest leadership of major sects."
+    },
+    {
+      "id": "tool-refinement",
+      "surfaces": [
+        "Tool"
+      ],
+      "definition": "The specialized art of a cultivation craftsman who forges and imbues materials into magical tools and artifacts; top-tier refiners are highly sought-after assets."
+    }
+  ]
+}

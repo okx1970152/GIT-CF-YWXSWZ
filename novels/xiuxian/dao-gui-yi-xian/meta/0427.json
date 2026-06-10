@@ -1,0 +1,63 @@
+{
+  "chapter_no": "0427",
+  "chapter_code": "0427",
+  "chapter_slug": "Friend",
+  "chapter_title_en": "Friend",
+  "chapter_keywords": [
+    "li huowang",
+    "zhuge yuan",
+    "friend",
+    "zuowandao",
+    "calligraphy sorcery",
+    "name alteration",
+    "fish and bear paw",
+    "great qi",
+    "great liang",
+    "confucian relationships",
+    "identity masking"
+  ],
+  "guide_tags": [
+    "emotional depth",
+    "lore heavy",
+    "friendship",
+    "quiet character moment",
+    "mourning both worlds"
+  ],
+  "chapter_seo_title": "“Friend” – Li Huowang Asks Zhuge Yuan the One Question No One Else Can Answer",
+  "chapter_meta_description": "Li Huowang unburdens his deepest fear to Zhuge Yuan: is the other world real? A quiet chapter about tea, ink, and the unbearable weight of having two truths.",
+  "og_title": "“Is the Other World Real?” – Li Huowang’s Confession to Zhuge Yuan",
+  "og_description": "A brushstroke changes a name. A friend listens to a confession no one else can hear. This is the bond that holds the Dao-Twisted World together.",
+  "twitter_title": "Li Huowang finally asks the question that scares him most",
+  "twitter_description": "Zhuge Yuan doesn’t give him an answer. He gives him company—and a calligraphy trick to hide his name.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "fish-and-bear-s-paw",
+      "surfaces": [
+        "Fish"
+      ],
+      "definition": "A famous metaphor from the Confucian philosopher Mencius, originally used to argue that when forced to choose between life and righteousness, one must choose the nobler path. Here, Zhuge Yuan subverts it to make a point about the impossibility of having two contradictory worlds both be true."
+    },
+    {
+      "id": "friend",
+      "surfaces": [
+        "Friend"
+      ],
+      "definition": "One of the Five Cardinal Relationships in Confucian ethics, representing a bond of mutual recognition and goodwill. Li Huowang explicitly invokes this role, asking Zhuge to act as a “friend” rather than a tactical ally."
+    },
+    {
+      "id": "ji-zai",
+      "surfaces": [
+        "Ji"
+      ],
+      "definition": "The new name Zhuge Yuan writes on Li Huowang’s palm, formed by modifying the strokes of his original name. “Ji” means “season”; “Zai” means “calamity” or “disaster.”"
+    },
+    {
+      "id": "great-liang",
+      "surfaces": [
+        "Great Liang"
+      ],
+      "definition": "The “other world” Zhuge Yuan comes from, where a beloved woman of his existed as a talented, full-person. In Great Qi, she was merely a rich man’s concubine, forcing Zhuge to confront the same type of truth-collapse Li Huowang faces."
+    }
+  ]
+}

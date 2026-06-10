@@ -1,0 +1,91 @@
+{
+  "chapter_no": "0336",
+  "chapter_code": "0336",
+  "chapter_slug": "The-Bone-Buddha-Temple",
+  "chapter_title_en": "The Bone Buddha Temple",
+  "chapter_keywords": [
+    "daoguixian",
+    "dao-twisted world",
+    "li huowang",
+    "zuowandao",
+    "bone buddha temple",
+    "facai",
+    "flesh-bone bodhisattva",
+    "vow of silence",
+    "telepathy",
+    "three elements"
+  ],
+  "guide_tags": [
+    "body horror",
+    "folk horror",
+    "mind games",
+    "team assembly",
+    "horror",
+    "xianxia"
+  ],
+  "chapter_seo_title": "Bone Buddha Temple: Li Huowang Faces a Mute Monk and a Deadly Dilemma | Dao Gui Yi Xian",
+  "chapter_meta_description": "Li Huowang and the team enter the Bone Buddha Temple. A silent monk with telepathy is their only defense as they hunt the Zuowandao master Facai. But even fail-safes can fail.",
+  "og_title": "Bone Buddha Temple: The Temple of Relics and Ruin",
+  "og_description": "A new mission begins. Touching down at a temple built around a mummified Buddha, Li Huowang faces Zuowandao's Facai. But the real danger might be the cold logic of a kill order.",
+  "twitter_title": "Chapter 336: Enter the Temple of Flesh and Bones",
+  "twitter_description": "Li Huowang is sent on a mission with a quiet monk and a golden abacus. The rules for surviving Zuowandao just got a little bit bloodier.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "flesh-bone-bodhisattva",
+      "surfaces": [
+        "Flesh-Bone"
+      ],
+      "definition": "A Buddhist monk's preserved body, venerated as a living relic after death. In the Dao-Twisted World, such mummies are enshrined in temples, but their twisted, dried-out appearance carries a ghoulish overtone."
+    },
+    {
+      "id": "vow-of-silence",
+      "surfaces": [
+        "Vow"
+      ],
+      "definition": "A Buddhist ascetic practice of renouncing speech to achieve spiritual discipline. Chan Master Xinchi uses this to remain immune to Zuowandao's verbal tricks."
+    },
+    {
+      "id": "telepathy",
+      "surfaces": [
+        "Telepathy"
+      ],
+      "definition": "One of the Six Supernatural Powers in Buddhism; the ability to read or communicate with the mind of another. Here, it allows the mute monk to issue commands directly into Li Huowang's thoughts."
+    },
+    {
+      "id": "three-elements",
+      "surfaces": [
+        "Three"
+      ],
+      "definition": "The three highest-ranking members of Zuowandao. Facai (发财, \"Get Rich\") is confirmed as one of them, positioning her as an elite adversary alongside the mysterious North Wind (北风)."
+    },
+    {
+      "id": "chief-recorder",
+      "surfaces": [
+        "Chief"
+      ],
+      "definition": "A high-ranking eunuch official of the Supervisory Heavenly Office. He exudes the powdered, theatrical authority of a Ming court official, one who mixes bureaucratic grandeur with a faint air of physical decay."
+    },
+    {
+      "id": "facai",
+      "surfaces": [
+        "Facai"
+      ],
+      "definition": "Literally \"Get Rich,\" one of Zuowandao's Three Elements. A master manipulator whose words are a labyrinth of traps. The Chief Recorder's survival tactic: believe three-tenths, doubt three-tenths, and ignore three-tenths."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is the Bone Buddha Temple?",
+      "a": "A temple in Langzhong City that enshrines a \"Flesh-Bone Bodhisattva\"—a mummified monk venerated as a living Buddha. It has been compromised by Zuowandao."
+    },
+    {
+      "q": "Why can't Facai trick Chan Master Xinchi?",
+      "a": "Because Xinchi cultivates the Vow of Silence (闭口禅), he does not speak. Since he cannot be drawn into a verbal exchange, Facai's lies and illusions cannot take hold of him."
+    },
+    {
+      "q": "Is the civilian Li Huowang killed actually a Zuowandao?",
+      "a": "No. Chan Master Xinchi admitted he \"made a mistake.\" This suggests that even with perfect immunity to deception, discerning the enemy's identity is fraught with risk."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "chapter_no": "0272",
+  "chapter_code": "0272",
+  "chapter_slug": "Blood-Red",
+  "chapter_title_en": "Blood Red",
+  "chapter_keywords": [
+    "white spider",
+    "blood red",
+    "talisman treasure",
+    "backstab",
+    "betrayal",
+    "forbidden land",
+    "survival",
+    "mortal stream",
+    "xianxia",
+    "foundation establishment"
+  ],
+  "guide_tags": [
+    "betrayal",
+    "monster fight",
+    "tactical combat",
+    "ambush",
+    "spider",
+    "forbidden land"
+  ],
+  "chapter_seo_title": "RMJI Ch. 272: The White Spider's Bloody Rampage and a Cultivator's Betrayal",
+  "chapter_meta_description": "The White Spider breaks free, turning the cave into a bloodbath. As the party is reduced to three, Lü Tianmeng makes a deadly play for the Great Shift Token, but a final twist shocks everyone.",
+  "og_title": "RMJI Ch. 272: Blood Red",
+  "og_description": "A brutal fight against a demonic spider turns into a three-way ambush. Who will be the sparrow in this deadly game?",
+  "twitter_title": "RMJI Ch. 272: Blood Red",
+  "twitter_description": "The White Spider is on a rampage. When a cultivator betrays his allies for a token, the tables turn in a way no one expected.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "talisman-treasure",
+      "surfaces": [
+        "Talisman Treasure"
+      ],
+      "definition": "A portion of a true magic treasure's power sealed into a talisman, allowing a lower-level cultivator to use it."
+    },
+    {
+      "id": "foundation-establishment",
+      "surfaces": [
+        "Foundation Establishment"
+      ],
+      "definition": "The second major cultivation realm; cultivators at this stage have a stable foundation and can use higher-tier artifacts."
+    },
+    {
+      "id": "demon-beast",
+      "surfaces": [
+        "Demon"
+      ],
+      "definition": "A general term for magical creatures and monsters that have awakened spiritual intelligence or possess inherent demonic power."
+    },
+    {
+      "id": "great-shift-token",
+      "surfaces": [
+        "Great Shift Token"
+      ],
+      "definition": "A key item that likely allows its bearer to teleport or pass through a spatial barrier."
+    },
+    {
+      "id": "seven-mysteries-sect",
+      "surfaces": [
+        "Seven"
+      ],
+      "definition": "The martial sect where the story began; a Jianghu organization with inner and outer halls."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "What is a Talisman Treasure?",
+      "a": "A consumable talisman that seals a fraction of a true magic treasure's power, allowing a weaker cultivator to use it for limited attacks."
+    },
+    {
+      "q": "Why did the spider turn red?",
+      "a": "It signifies a rage transformation, boosting its speed and power, turning it from a simple beast into a hyper-efficient killer."
+    },
+    {
+      "q": "What is the 'kill the goose' economy?",
+      "a": "In a zero-sum trial, it is often more efficient to kill other cultivators for their resources than to compete for the same prize."
+    },
+    {
+      "q": "Who died in this chapter?",
+      "a": "Zhong Wu, two unnamed cultivators, and Lü Tianmeng are all killed during the spider's rampage and the final betrayal."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "chapter_no": "0428",
+  "chapter_code": "0428",
+  "chapter_slug": "The-Vice-Supervisor",
+  "chapter_title_en": "The Vice Supervisor",
+  "chapter_keywords": [
+    "li huowang",
+    "supervisory heavenly office",
+    "vice supervisor",
+    "zuowandao crackdown",
+    "capital curfew",
+    "infiltrator exposure",
+    "mahjong face",
+    "iron hook",
+    "qingqiu branch",
+    "sima lan"
+  ],
+  "guide_tags": [
+    "atmospheric setup",
+    "institutional horror",
+    "power display",
+    "zuowandao",
+    "office hierarchy",
+    "folk horror"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 427: The Vice Supervisor Unleashes the Office’s Power",
+  "chapter_meta_description": "The Supervisory Heavenly Office gathers its forces for a crackdown on the Zuowandao. Before speaking a word, the Vice Supervisor neutralizes five infiltrators with chilling efficiency.",
+  "og_title": "The Vice Supervisor’s First Move",
+  "og_description": "A moonlit glow, a crushing pressure, and five Zuowandao exposed by iron hooks. The Office is coming for them.",
+  "twitter_title": "The Office’s Hunt Begins",
+  "twitter_description": "The Vice Supervisor demonstrates his power by collapsing five Zuowandao infiltrators before giving a single order.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "vice-supervisor-si-tian-shao-jian",
+      "surfaces": [
+        "Vice"
+      ],
+      "definition": "A high-ranking official in the Supervisory Heavenly Office. There are five Vice Supervisors, and they report to the single Supervisor (司天监). Their authority is both bureaucratic and supernatural."
+    },
+    {
+      "id": "supervisor-si-tian-jian",
+      "surfaces": [
+        "Supervisor"
+      ],
+      "definition": "The highest-ranking official of the Supervisory Heavenly Office. The title is borrowed from the historical Imperial Directorate for Astronomy, but here it governs an agency that polices supernatural threats."
+    },
+    {
+      "id": "iron-hook",
+      "surfaces": [
+        "Iron"
+      ],
+      "definition": "A small tool used by Office agents to peel back the facial skin of collapsed individuals, revealing the mahjong-patterned faces of disguised Zuowandao infiltrators. A visceral method of unmasking liars."
+    },
+    {
+      "id": "curfew",
+      "surfaces": [
+        "Curfew"
+      ],
+      "definition": "An official restriction on nighttime movement, imposed by the capital authorities during the buildup to the Office’s operation. Historically used by Chinese dynasties to maintain order during unrest."
+    }
+  ]
+}

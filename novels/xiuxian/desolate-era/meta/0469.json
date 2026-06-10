@@ -1,0 +1,95 @@
+{
+  "chapter_no": "0469",
+  "chapter_code": "0469",
+  "chapter_slug": "The-Emperor-s-Awakening",
+  "chapter_title_en": "The Emperor's Awakening",
+  "chapter_keywords": [
+    "Broken Horn World",
+    "Ji Ning",
+    "Three Realms",
+    "human race",
+    "Chaos Dao",
+    "Nuwa",
+    "Endless Continent",
+    "Hall of Elders",
+    "Mother Queen",
+    "Golden Eye",
+    "Saint Lord",
+    "Daofather",
+    "True God",
+    "Primordial War",
+    "Void Tidal Surge",
+    "Heaven-grade",
+    "Earth-grade",
+    "Frontier Army",
+    "Special Action Squad",
+    "Emperor",
+    "Daomerge"
+  ],
+  "guide_tags": [
+    "cosmic lore",
+    "worldbuilding",
+    "ancient history",
+    "power dynamics",
+    "tension escalation",
+    "perspective shift"
+  ],
+  "chapter_seo_title": "Broken Horn World: The Terrifying Truth About Ji Ning's Human Race",
+  "chapter_meta_description": "The leaders of the Broken Horn World learn the terrifying history of the Three Realms. Ji Ning is identified as a human—the boogeyman of their primordial nightmares.",
+  "og_title": "The Endless Continent’s Hidden Shame",
+  "og_description": "The Nine Elders of the Broken Horn World discover a \"foreign race.\" But their Emperor reveals a terrifying truth: this tiny being is a human, a child of the legendary Nuwa, and the master of their greatest enemy.",
+  "twitter_title": "The Boogeyman of the Endless Continent is Ji Ning",
+  "twitter_description": "The Broken Horn World’s rulers are terrified. They just learned that every bedtime story about the terrifying humans is true, and one of them is right outside their door.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "chaos-dao",
+      "surfaces": [
+        "Chaos"
+      ],
+      "definition": "The supreme, universal Dao that functions in all realities born from the primordial chaos, regardless of local laws. It is the only metaphysical system that works across different worlds."
+    },
+    {
+      "id": "broken-horn-world",
+      "surfaces": [
+        "Broken"
+      ],
+      "definition": "One of the pocket worlds within the chaotic Endless Continent. It is inhabited by a race of powerful, horned, scale-armored warriors ruled by a collective of 'Mother Queens'."
+    },
+    {
+      "id": "endless-continent",
+      "surfaces": [
+        "Endless"
+      ],
+      "definition": "The fragmented, unstable landmass formed from the aftermath of an ancient, cataclysmic war that shattered the primordial chaos."
+    },
+    {
+      "id": "saint-lord",
+      "surfaces": [
+        "Saint"
+      ],
+      "definition": "The highest known cultivation level within the Endless Continent's hierarchy, equivalent to a Daofather or True God within the Three Realms."
+    },
+    {
+      "id": "nuwa",
+      "surfaces": [
+        "Nuwa"
+      ],
+      "definition": "A legendary figure in the Three Realms, credited with creating the human race and possessing the power to instantly kill Saint Lords, making her a figure of terror to the Broken Horn World's rulers."
+    },
+    {
+      "id": "third-void-circle",
+      "surfaces": [
+        "Third"
+      ],
+      "definition": "A specific territorial perimeter within the void surrounding the Broken Horn World, now fully activated to prevent Ji Ning's escape."
+    },
+    {
+      "id": "special-action-squad",
+      "surfaces": [
+        "Special"
+      ],
+      "definition": "An elite squad of the Broken Horn World dispatched for high-value capture missions."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "chapter_no": "0116",
+  "chapter_code": "0116",
+  "chapter_slug": "Dog",
+  "chapter_title_en": "Dog",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "ao-jing sect",
+    "stray dog",
+    "psychological horror",
+    "hallucination",
+    "full moon",
+    "Chinese folk horror",
+    "xianxia deconstruction",
+    "anxi nunnery"
+  ],
+  "guide_tags": [
+    "Psychological horror",
+    "Loneliness",
+    "Folk horror",
+    "Character study",
+    "Slow burn",
+    "Creepy calm"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch. 116: Dog – A Quiet Horror of a Man Talking to the Moon",
+  "chapter_meta_description": "Li Huowang walks alone toward the Ao-Jing Sect’s mountain lair, but his worst enemy isn’t a monster—it’s a stray dog, a full moon, and the terrifying gaps in his own memory.",
+  "og_title": "The Dog That Saw Li Huowang Break",
+  "og_description": "A starving stray dog, a moonlit road, and a man who can't tell his parents from hallucinations. Chapter 116 is a quiet, devastating portrait of Li Huowang's unraveling.",
+  "twitter_title": "And then he woke up holding the dog.",
+  "twitter_description": "Li Huowang tries to travel alone. The stray dog is just hungry. The real horror is what he does when nobody's watching.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "thousand-greats-record",
+      "surfaces": [
+        "Thousand"
+      ]
+    },
+    {
+      "id": "ao-jing-sect",
+      "surfaces": [
+        "Ao-Jing"
+      ]
+    },
+    {
+      "id": "anci-nunnery",
+      "surfaces": [
+        "Anci"
+      ]
+    },
+    {
+      "id": "bronze-daoist-bell",
+      "surfaces": [
+        "Bronze"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0379",
+  "chapter_code": "0379",
+  "chapter_slug": "Sima-Lan",
+  "chapter_title_en": "Sima Lan",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "li huowang",
+    "sima lan",
+    "supervisory heavenly office",
+    "mohism",
+    "qi mo",
+    "liang mo",
+    "heart-element",
+    "north wind",
+    "bamboo spider"
+  ],
+  "guide_tags": [
+    "worldbuilding",
+    "bureaucracy horror",
+    "investigation",
+    "setup",
+    "dialogue-heavy"
+  ],
+  "chapter_seo_title": "Sima Lan (Ch. 378): Li Huowang Infiltrates the Supervisory Heavenly Office",
+  "chapter_meta_description": "Li Huowang enters the Supervisory Heavenly Office and learns of the Mohist split, a moldy intelligence spider, and the self-selection assignment system that could be his key to finding the North Wind.",
+  "og_title": "The Moldy Bureaucracy: Li Huowang's First Day at the Supervisory Heavenly Office",
+  "og_description": "In a hall of shadowy screens and a decaying bamboo intelligence network, Li Huowang takes his first active steps toward manipulating the Office to hunt the North Wind.",
+  "twitter_title": "Dao-Twisted Chapter 378: Learning the Office's Moldy Ropes",
+  "twitter_description": "Li Huowang gets a crash course in Mohist politics, a tour of a fungal intelligence hub, and the key to choosing his own assignments.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "The novel’s imperial supernormal law enforcement body; a bureaucratic entity that polices rogue cultivators and supernatural disasters."
+    },
+    {
+      "id": "mohism",
+      "surfaces": [
+        "Mohism"
+      ],
+      "definition": "An ancient Chinese philosophical school founded by Mozi, emphasizing universal love, meritocracy, and frugality; in the novel, it has split into orthodox (Qi) and heretical (Liang) branches."
+    },
+    {
+      "id": "qi-mohism",
+      "surfaces": [
+        "Qi"
+      ],
+      "definition": "The orthodox branch of the Mohist school, which remained loyal to the original teachings of the Grand Master and the Great Liang Empire."
+    },
+    {
+      "id": "liang-mohism",
+      "surfaces": [
+        "Liang"
+      ],
+      "definition": "A heretical branch of Mohism that twisted the original doctrines, allied with the Eastern Quake Hall (东震堂), and became monstrous."
+    },
+    {
+      "id": "eastern-quake-hall",
+      "surfaces": [
+        "Eastern"
+      ],
+      "definition": "A faction aligned with the heretical Liang Mohism; its name implies a sect tied to the trigram for “Thunder” (震)."
+    },
+    {
+      "id": "astral-secretary",
+      "surfaces": [
+        "Astral"
+      ],
+      "definition": "An official title in the Office responsible for registering new members and managing watch assignments."
+    },
+    {
+      "id": "erniu",
+      "surfaces": [
+        "Erniu"
+      ],
+      "definition": "The Chief Recorder’s informal name, mentioned by Nangong; Li Huowang notes the connection."
+    }
+  ]
+}

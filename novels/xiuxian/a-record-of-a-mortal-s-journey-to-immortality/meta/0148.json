@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0148",
+  "chapter_code": "0148",
+  "chapter_slug": "The-Gray-Clothed-Elder",
+  "chapter_title_en": "The Gray-Clothed Elder",
+  "chapter_keywords": [
+    "Yellow Maple Valley",
+    "Ascension Token",
+    "Gray-Clothed Elder",
+    "storage pouch",
+    "Foundation Establishment Pill",
+    "standard equipment",
+    "sect politics",
+    "logistical horror",
+    "cultivation society"
+  ],
+  "guide_tags": [
+    "supplies",
+    "sect life",
+    "world-building",
+    "logistics",
+    "storage pouch",
+    "Ascension Token",
+    "Foundation Establishment Pill",
+    "craft"
+  ],
+  "chapter_seo_title": "The Gray-Clothed Elder: Han Li’s First Lesson in Yellow Maple Valley Logistics",
+  "chapter_meta_description": "Han Li enters Yellow Maple Valley and meets a reclusive craftsman. He receives his standard equipment, learns the harsh rules of storage pouches, and faces a cold reminder that institutional favor, not merit, often rules the sect.",
+  "og_title": "The Gray-Clothed Elder: Han Li Enters the Valley",
+  "og_description": "A quiet chapter of system and supply. Han Li meets a bitter craftsman, learns storage pouch survival rules, and is forced to accept his place in a sect that values its tokens over its people.",
+  "twitter_title": "The Gray-Clothed Elder: Logistics Lesson",
+  "twitter_description": "New chapter: Han Li learns the hard truths about storage pouches and sect politics. Even a Foundation Establishment Pill can be a trap.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "ascension-token",
+      "surfaces": [
+        "Ascension Token"
+      ]
+    },
+    {
+      "id": "foundation-establishment-pill",
+      "surfaces": [
+        "Foundation Establishment Pill"
+      ]
+    },
+    {
+      "id": "storage-pouch",
+      "surfaces": [
+        "Storage Pouch"
+      ]
+    },
+    {
+      "id": "green-leaf-magic-tool",
+      "surfaces": [
+        "Green Leaf Magic Tool"
+      ]
+    },
+    {
+      "id": "yellow-maple-valley",
+      "surfaces": [
+        "Yellow Maple Valley"
+      ]
+    },
+    {
+      "id": "spirit-herb-cultivation-duty",
+      "surfaces": [
+        "Spirit"
+      ]
+    },
+    {
+      "id": "foundation-establishment-cultivators",
+      "surfaces": [
+        "Foundation"
+      ]
+    }
+  ]
+}

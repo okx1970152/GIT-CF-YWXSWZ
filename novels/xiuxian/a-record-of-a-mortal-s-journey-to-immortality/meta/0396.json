@@ -1,0 +1,76 @@
+{
+  "chapter_no": "0396",
+  "chapter_code": "0396",
+  "chapter_slug": "Stirrings-Overseas-the-Giant-City",
+  "chapter_title_en": "Stirrings Overseas, the Giant City",
+  "chapter_keywords": [
+    "heaven star city",
+    "chaotic star sea",
+    "han li",
+    "qi condensation",
+    "foundation establishment",
+    "core formation",
+    "spirit stone economy",
+    "mortal guide",
+    "xianxia worldbuilding",
+    "cultivation city hub"
+  ],
+  "guide_tags": [
+    "Worldbuilding Deep Dive",
+    "Han Li Arrives",
+    "New Hub City",
+    "Mortal Stream Economy",
+    "Chapter Analysis"
+  ],
+  "chapter_seo_title": "RMJI Chapter 396: Han Li's First Look at the Epic Heaven Star City",
+  "chapter_meta_description": "Han Li arrives at the legendary Heaven Star City, the colossal hub of the Chaotic Star Sea. He navigates its unique entry system and hires a mortal guide, marking a new phase in his cultivation journey.",
+  "og_title": "A Record of a Mortal's Journey to Immortality Ch. 396 - The Giant City Revealed",
+  "og_description": "Experience the awe-inspiring scale of Heaven Star City as Han Li steps into the largest cultivation hub in the Chaotic Star Sea. A new city, new rules, and new opportunities await.",
+  "twitter_title": "RMJI Ch 396: Han Li hits the big city.",
+  "twitter_description": "Han Li finally arrives at Heaven Star City. Giant walls, spirit stone bureaucracy, and a hired mortal guide. The cultivation world just got a lot bigger.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "heaven-star-city",
+      "surfaces": [
+        "Heaven Star City"
+      ],
+      "definition": "The number one city and central hub of the Chaotic Star Sea, built in spirals around a towering central mountain on a massive island. It functions as a neutral ground for cultivators of all factions."
+    },
+    {
+      "id": "divine-wind-boat",
+      "surfaces": [
+        "Divine Wind Boat"
+      ],
+      "definition": "A speed-focused flying artifact owned by Han Li, crafted from Ink Flood Dragon materials."
+    },
+    {
+      "id": "spirit-stone-economy",
+      "surfaces": [
+        "Spirit"
+      ],
+      "definition": "The financial system of the cultivation world where spirit stones serve as both currency and energy source. Prices in a major hub like Heaven Star City highlight the vast wealth disparity between cultivator classes."
+    },
+    {
+      "id": "core-formation",
+      "surfaces": [
+        "Core Formation"
+      ],
+      "definition": "The third major realm of cultivation in RMJI, signifying a massive leap in power, status, and lifespan. Cultivators at this level are treated with automatic respect and privilege in most cities."
+    },
+    {
+      "id": "identity-ring",
+      "surfaces": [
+        "Identity Ring"
+      ],
+      "definition": "A magical token issued by Heaven Star City to track residents and visitors. Blue rings are for temporary stays; red rings are for permanent residents and are bound to the owner's blood essence."
+    },
+    {
+      "id": "mortal-guide",
+      "surfaces": [
+        "Mortal"
+      ],
+      "definition": "A common sight in cultivation cities, these are ordinary humans who earn spirit stones by providing local knowledge and navigation services to visiting cultivators."
+    }
+  ]
+}

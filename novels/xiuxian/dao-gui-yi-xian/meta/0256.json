@@ -1,0 +1,57 @@
+{
+  "chapter_no": "0256",
+  "chapter_code": "0256",
+  "chapter_slug": "The-Patron",
+  "chapter_title_en": "The Patron",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Lü Zhuangyuan",
+    "Lü Family Troupe",
+    "opera troupe",
+    "patron",
+    "debtor",
+    "IOU",
+    "Great Liang",
+    "Qingqiu",
+    "Calamities come in pairs",
+    "war and plague",
+    "folk economics"
+  ],
+  "guide_tags": [
+    "Character Drama",
+    "World-Building",
+    "Father-Son Conflict",
+    "Folk Economics",
+    "Pacing Break"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 256 – The Patron: A Quiet Masterclass in Folk Survival",
+  "chapter_meta_description": "Li Huowang becomes the patron of the Lü Family Troupe, but the real drama is a father's bitter wisdom against his son's dreams. War, plague, and the cost of survival.",
+  "og_title": "Dao Gui Yi Xian Ch 256 – The Patron",
+  "og_description": "Li Huowang gains an opera troupe as an asset. But is he a master or a servant? Lü Zhuangyuan knows the answer.",
+  "twitter_title": "DGYX Ch 256: The Patron",
+  "twitter_description": "Ever since when do servants get to eat meat every day? A chapter of quiet, brutal folk wisdom.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "patron-d-ngji",
+      "surfaces": [
+        "Patron"
+      ],
+      "definition": "In historical China, a wealthy sponsor of a traveling opera troupe. The patron provides capital and protection in exchange for a share of future earnings. It's a debt-bound social contract, not outright slavery."
+    },
+    {
+      "id": "iou",
+      "surfaces": [
+        "IOU"
+      ],
+      "definition": "A handwritten, thumbprinted loan document common among illiterate commoners. A thumbprint was considered legally binding by local custom even if the signer could not read the terms."
+    },
+    {
+      "id": "calamities-come-in-pairs",
+      "surfaces": [
+        "Calamities"
+      ],
+      "definition": "A Chinese folk saying that disasters do not arrive alone. Lü Zhuangyuan's speech describes the brutal cycle of war, plague, and famine that historically followed conflict in pre-modern China."
+    }
+  ]
+}

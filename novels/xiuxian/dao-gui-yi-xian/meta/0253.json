@@ -1,0 +1,78 @@
+{
+  "chapter_no": "0253",
+  "chapter_code": "0253",
+  "chapter_slug": "A-Thread",
+  "chapter_title_en": "A Thread",
+  "chapter_keywords": [
+    "dao gui yi xian",
+    "daofather",
+    "grotesque xianxia",
+    "chinese horror",
+    "supernatural bureaucracy",
+    "heart-element",
+    "north wind",
+    "zuowandao",
+    "supervisory heavenly office",
+    "celestial capital seal",
+    "luojiao sect"
+  ],
+  "guide_tags": [
+    "Horror",
+    "Xianxia",
+    "Dark Fantasy",
+    "Character Development",
+    "Strategy",
+    "Slow Burn"
+  ],
+  "chapter_seo_title": "A Thread – Li Huowang Plans to Infiltrate the Supervisory Heavenly Office | Chapter 253",
+  "chapter_meta_description": "After a long interrogation of the Luojiao Nascent Soul, Li Huowang devises a bold plan: join the Supervisory Heavenly Office to find the Heart-Element North Wind and escape his cursed bewilderment.",
+  "og_title": "A Thread – Chapter 253",
+  "og_description": "Li Huowang has a new strategy: infiltrate the very institution that hunts his kind.",
+  "twitter_title": "A Thread – Li Huowang's Plan",
+  "twitter_description": "Li Huowang finally has a lead—and it involves joining the enemy's own ranks.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "celestial-capital-seal",
+      "surfaces": [
+        "Celestial Capital Seal"
+      ],
+      "definition": "A technique from the Luojiao Sect in the Dao-Twisted World, required to wield the Seven Star Sword. Not a casual art—its acquisition involved a night of brutal interrogation."
+    },
+    {
+      "id": "luojiao-nascent-soul",
+      "surfaces": [
+        "Luojiao Nascent Soul"
+      ],
+      "definition": "A rogue Nascent Soul once belonging to the Luojiao disciple Han Fu. It is terrified, talkative, and bargaining for its life, offering the Celestial Capital Seal in exchange for survival."
+    },
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory Heavenly Office"
+      ],
+      "definition": "The massive, politically ruthless bureaucracy tasked with policing supernatural threats and countering the Zuowandao’s influence. They recruit disciples from across the underworld as disposable assets."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution that makes its bearer valuable as an alchemical ingredient and a target for supernatural exploitation. Li Huowang’s primary curse and identity."
+    },
+    {
+      "id": "north-wind",
+      "surfaces": [
+        "North Wind"
+      ],
+      "definition": "A Heart-Element mentioned by the Nascent Soul as one who has escaped bewilderment—possibly a Zuowandao member, possibly a former prisoner. Verifying his existence is Li Huowang’s new priority."
+    },
+    {
+      "id": "seven-star-sword",
+      "surfaces": [
+        "Seven Star Sword"
+      ],
+      "definition": "A ritual blade tied to Luojiao techniques; its true wielding method was the prize Li Huowang sought from the Nascent Soul."
+    }
+  ]
+}

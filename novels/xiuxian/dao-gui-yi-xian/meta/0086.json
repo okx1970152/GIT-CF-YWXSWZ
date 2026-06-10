@@ -1,0 +1,61 @@
+{
+  "chapter_no": "0086",
+  "chapter_code": "0086",
+  "chapter_slug": "Departure",
+  "chapter_title_en": "Departure",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Bai Lingmiao",
+    "Chun Xiaoman",
+    "Anci Nunnery",
+    "gold donation",
+    "sword practice",
+    "human ingredient",
+    "Leaf Cards",
+    "departure",
+    "character growth"
+  ],
+  "guide_tags": [
+    "slow burn",
+    "emotional depth",
+    "character study",
+    "folk horror",
+    "xianxia",
+    "travel arc",
+    "female agency",
+    "psychological"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 86: Li Huowang Gives Away the Gold & Xiaoman Takes Up the Sword",
+  "chapter_meta_description": "In Chapter 86 of Dao Gui Yi Xian, Li Huowang returns from the mountain and gives away all the gold. Xiaoman begins sword training, while Bai Lingmiao’s devotion is laid bare. A calm-before-the-storm chapter.",
+  "og_title": "Dao Gui Yi Xian Ch 86 – Departure",
+  "og_description": "Li Huowang sacrifices the group’s fortune in a mysterious move, while Xiaoman trains with a sword and Bai Lingmiao’s love is tested.",
+  "twitter_title": "Ch 86: Gold Gone, Swords Drawn",
+  "twitter_description": "Li Huowang gives away the gold to Anci Nunnery. Xiaoman takes up the blade. The group marches into the unknown.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "anci-nunnery",
+      "surfaces": [
+        "Anci Nunnery"
+      ]
+    },
+    {
+      "id": "leaf-cards",
+      "surfaces": [
+        "Leaf"
+      ]
+    },
+    {
+      "id": "human-ingredient",
+      "surfaces": [
+        "Human"
+      ]
+    },
+    {
+      "id": "sword-manual",
+      "surfaces": [
+        "Sword"
+      ]
+    }
+  ]
+}

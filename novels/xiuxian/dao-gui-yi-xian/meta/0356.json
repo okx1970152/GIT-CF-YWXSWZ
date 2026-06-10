@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0356",
+  "chapter_code": "0356",
+  "chapter_slug": "The-Manifestation",
+  "chapter_title_en": "The Manifestation",
+  "chapter_keywords": [
+    "Heart-Turbid",
+    "xin zhuo",
+    "daoguixian",
+    "li huowang",
+    "Shentu Gang",
+    "sympathetic magic",
+    "body horror",
+    "chinese xianxia",
+    "web novel",
+    "folklore ritual"
+  ],
+  "guide_tags": [
+    "body horror",
+    "tactical battle",
+    "lore drop",
+    "ritual magic",
+    "dark fantasy"
+  ],
+  "chapter_seo_title": "Chapter 355 - The Manifestation - Daoguixian Translation",
+  "chapter_meta_description": "The Heart-Turbid manifests! Li Huowang must use his own flesh and bone to link his pain to his enemy's in a terrifying display of tactical body horror. Will it be enough?",
+  "og_title": "Daoguixian Ch. 355: A Battle of Pain and Erasure",
+  "og_description": "Faced with an enemy who can hide everything, Li Huowang resorts to a gruesome solution: linking their pains through self-mutilation. A tactical masterpiece of body horror.",
+  "twitter_title": "Dao Gui Xian Ch. 355: The Heart-Turbid Appears",
+  "twitter_description": "Li Huowang breaks his own ribs to create a pain-link with the elusive Heart-Turbid. The most visceral battle yet!",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "heart-turbid",
+      "surfaces": [
+        "Heart-Turbid"
+      ],
+      "definition": "A type of twisted entity or cultivator whose ability is to \"hide\" or \"erase\" concepts, objects, or memories from existence. A counterpart to the Heart-Element."
+    },
+    {
+      "id": "copper-coin-sword",
+      "surfaces": [
+        "Copper coin sword"
+      ],
+      "definition": "A ritual Daoist weapon made from coins strung on red cord; can be used as both a solid sword and a segmented whip."
+    },
+    {
+      "id": "chief-recorder",
+      "surfaces": [
+        "Chief Recorder"
+      ],
+      "definition": "A high-ranking eunuch official in the Supervisory Heavenly Office; their power is both bureaucratic and supernatural, often wielded through a deceptively genial demeanor."
+    },
+    {
+      "id": "eight-immortals",
+      "surfaces": [
+        "Eight Immortals"
+      ],
+      "definition": "A group of legendary xian (immortals) in Chinese mythology, often invoked in religious and ritual contexts for exorcism and protection."
+    }
+  ]
+}

@@ -40,12 +40,14 @@ import {
   buildChapterBreadcrumbJsonLd,
   buildChapterFaqJsonLd,
   buildChapterReadingGraph,
+  buildEncyclopediaEntryJsonLd,
   markdownToPlainTextForSchema
 } from "@/lib/seo/structured-data";
 import { toAbsoluteUrl } from "@/lib/seo";
 
 export const revalidate = 3600;
 export const dynamicParams = false;
+export const dynamic = "force-static";
 
 type Props = { params: Promise<{ category: string; novelId: string; chapterNo: string }> };
 
@@ -206,9 +208,28 @@ export default async function ChapterPage({ params }: Props) {
       currentIndex >= 0 && currentIndex < volume.entries.length - 1
         ? volume.entries[currentIndex + 1]
         : null;
+    const entryRecord = typeof entry.entry === "object" && entry.entry !== null ? (entry.entry as Record<string, unknown>) : {};
+    const hook = typeof entryRecord.hook === "string" ? entryRecord.hook.trim() : entrySummary.hook;
+    const faqItems = (Array.isArray(entry.faq_entries) ? entry.faq_entries : [])
+      .map((item) => (typeof item === "object" && item !== null ? (item as Record<string, unknown>) : {}))
+      .map((item) => ({
+        q: typeof item.question === "string" ? item.question.trim() : "",
+        a: typeof item.answer === "string" ? item.answer.trim() : ""
+      }))
+      .filter((item) => item.q && item.a);
+    const encyclopediaJsonLd = buildEncyclopediaEntryJsonLd({
+      pageUrl: toAbsoluteUrl(`/novels/${category}/${novelId}/chapters/${chapterNo}`),
+      collectionUrl: toAbsoluteUrl(`/novels/${category}/${novelId}`),
+      collectionName: volume.titleEn,
+      termName: entrySummary.titleEn,
+      description: hook || entrySummary.titleEn,
+      siteName: SITE_NAME,
+      faqItems
+    });
 
     return (
       <>
+        <JsonLd id="ld-json-encyclopedia-entry" data={encyclopediaJsonLd} />
         <EncyclopediaEntryPage
           volume={volume}
           entrySummary={entrySummary}

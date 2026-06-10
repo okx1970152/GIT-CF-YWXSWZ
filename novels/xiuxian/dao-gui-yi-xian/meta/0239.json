@@ -1,0 +1,62 @@
+{
+  "chapter_no": "0239",
+  "chapter_code": "0239",
+  "chapter_slug": "Delivered-to-the-End",
+  "chapter_title_en": "Delivered to the End",
+  "chapter_keywords": [
+    "noose-son",
+    "folk horror",
+    "chinese folklore",
+    "eating the heirless inheritance",
+    "li huowang",
+    "han fu",
+    "luo sect",
+    "dao-twisted world",
+    "social horror",
+    "xuan yang"
+  ],
+  "guide_tags": [
+    "Folk Horror",
+    "Dao-Twisted World",
+    "Social Commentary",
+    "Psychological Horror",
+    "Character Introduction"
+  ],
+  "chapter_seo_title": "The Noose-Son: A Chilling Chapter of Folk Horror in the Dao-Twisted World",
+  "chapter_meta_description": "Li Huowang meets the Noose-Son and learns the cruel truth of 'eating the heirless inheritance'—a terrifying take on a dark folk tradition.",
+  "og_title": "Delivered to the End: The Noose-Son's Cruel Grip",
+  "og_description": "A masterclass in slow horror: Li Huowang confronts a system of community-sanctioned cruelty, not just a monster.",
+  "twitter_title": "The Noose-Son & the Horror of 'Eating the Heirless Inheritance'",
+  "twitter_description": "Li Huowang learns about the dreaded Noose-Son—a creature that serves as a cruel alibi for a village to discard its elderly.",
+  "updated_at": "2026-05-06",
+  "lore_anchors": [
+    {
+      "id": "noose-son",
+      "surfaces": [
+        "Noose-Son"
+      ],
+      "definition": "A folk-horror entity in the Dao-Twisted World used as a ritualistic means to dispose of elderly people who are considered a burden, allowing neighbors to inherit their property under the guise of 'sending them off.'"
+    },
+    {
+      "id": "eating-the-heirless-inheritance",
+      "surfaces": [
+        "Eating"
+      ],
+      "definition": "A historical and folk practice where, upon the death of a childless person, the community would divide their property amongst themselves. In the novel, it is the brutal reality disguised by the Noose-Son ritual."
+    },
+    {
+      "id": "luo-sect",
+      "surfaces": [
+        "Luo"
+      ],
+      "definition": "A significant Chinese folk religious sect that emerged in the Ming Dynasty, blending elements of Buddhism, Daoism, and Confucianism. Han Fu's introduction suggests a complex and potentially dangerous background."
+    },
+    {
+      "id": "han-fu",
+      "surfaces": [
+        "Han"
+      ],
+      "definition": "A seemingly friendly but disconcerting Daoist who saves Li Huowang's group. He is marked by his grotesque, rotten teeth and his cynical, realistic view of the world's cruelty."
+    }
+  ]
+}

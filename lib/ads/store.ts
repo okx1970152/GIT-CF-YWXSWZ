@@ -65,6 +65,19 @@ export async function getAds(): Promise<AdsJson> {
   }
 }
 
+export function getStaticAds(): AdsJson {
+  try {
+    if (!fs.existsSync(ADS_PATH)) {
+      return defaultAdsJson();
+    }
+    const raw = fs.readFileSync(ADS_PATH, "utf8");
+    const parsed = JSON.parse(raw) as unknown;
+    return normalizeAdsJson(parsed);
+  } catch {
+    return defaultAdsJson();
+  }
+}
+
 async function readAdsFromGithub(): Promise<AdsJson | null> {
   const repo = process.env.APP_GITHUB_REPO ?? process.env.GITHUB_REPO;
   const branch = process.env.APP_GITHUB_BRANCH ?? process.env.GITHUB_BRANCH ?? "main";

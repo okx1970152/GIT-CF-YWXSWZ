@@ -1,0 +1,90 @@
+{
+  "chapter_no": "0400",
+  "chapter_code": "0400",
+  "chapter_slug": "A-Quiet-Frontier",
+  "chapter_title_en": "A Quiet Frontier",
+  "chapter_keywords": [
+    "condensing jade island",
+    "fengle merchant alliance",
+    "outer star seas",
+    "demon beast island economy",
+    "nautical chart price",
+    "hao yuantian recruitment",
+    "coral island",
+    "han li arrival"
+  ],
+  "guide_tags": [
+    "Worldbuilding",
+    "Frontier Economy",
+    "Isolated Island",
+    "Tense Calm",
+    "Market Interaction",
+    "Genuine Worldbuilding Feast",
+    "Quiet Chapter"
+  ],
+  "chapter_seo_title": "Han Li Arrives at the Outer Star Seas — A Frontier Economy of Charts and Recruits",
+  "chapter_meta_description": "Han Li lands on Condensing Jade Island in the Outer Star Seas, buys an overpriced chart, declines a hunting invitation, and sets off alone toward a beautiful, red coral island.",
+  "og_title": "A Record of a Mortal's Journey to Immortality — The Frontier Economy",
+  "og_description": "Han Li explores the Outer Star Seas, where charts cost a fortune, Core Formation cultivators recruit aggressively, and the sea itself is a predator.",
+  "twitter_title": "Frontier Log: Charts, Recruits, Coral",
+  "twitter_description": "Han Li analyzes the Outer Star Seas' market dynamic before flying alone toward a red coral island.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "condensing-jade-island",
+      "surfaces": [
+        "Condensing Jade Island"
+      ],
+      "definition": "A small, frontier demon-beast island in the Outer Star Seas, serving as a base for Core Formation and late Foundation Establishment cultivators."
+    },
+    {
+      "id": "fengle-merchant-alliance",
+      "surfaces": [
+        "Fengle Merchant Alliance"
+      ],
+      "definition": "One of the four great merchant alliances, running the Fengle Auction House in Heaven Star City; they operate a general store and purchasing depot on Condensing Jade Island."
+    },
+    {
+      "id": "hao-yuantian",
+      "surfaces": [
+        "Hao Yuantian"
+      ],
+      "definition": "A Core Formation cultivator on Condensing Jade Island who loudly recruits Han Li for a hunting group; he represents the island’s active, transparently strategic social scene."
+    },
+    {
+      "id": "azure-phosphorus-fish-demon",
+      "surfaces": [
+        "Azure Phosphorus Fish Demon"
+      ],
+      "definition": "A rank demon beast with cyan scales, a snake-like head, and claws; its core has been removed, leaving a gaping wound on its back."
+    },
+    {
+      "id": "divine-wind-boat",
+      "surfaces": [
+        "Divine Wind Boat"
+      ],
+      "definition": "Han Li’s primary flying artifact, refined from Ink Flood Dragon material; fast but lacks defensive or passenger capacity."
+    },
+    {
+      "id": "outer-star-seas",
+      "surfaces": [
+        "Outer Star Seas"
+      ],
+      "definition": "The frontier region of the Starfall Sea, infested with high-grade demon beasts; a high-risk, high-reward hunting ground for cultivators."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Han Li pay the inflated price for the sea chart without haggling?",
+      "a": "He recognizes the Fengle Alliance's monopoly power and knows arguing with a shopkeeper on a remote island is a waste of energy; he pays to preserve his anonymity and avoid scrutiny."
+    },
+    {
+      "q": "What is the \"forbidden all-island hunt\" the text mentions?",
+      "a": "A historical incident where an entire island's cultivators organized a massive hunt, which attracted a swarm of rank-seven and above demon beasts that destroyed the island; this event codified the taboo against large cooperative groups in the Outer Star Seas."
+    },
+    {
+      "q": "What’s the deal with the red coral island at the end?",
+      "a": "Its appearance, striking beauty, and the chapter’s ending on a note of delight signal that this is likely Han Li’s planned target for his personal operation—a place with valuable resources or strategic significance."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "chapter_no": "0382",
+  "chapter_code": "0382",
+  "chapter_slug": "The-Storyteller",
+  "chapter_title_en": "The Storyteller",
+  "chapter_keywords": [
+    "Li Huowang",
+    "Zhuge Yuan",
+    "Storyteller",
+    "Zuowandao",
+    "Sima Lan",
+    "Supervisory Heavenly Office",
+    "Western Sea",
+    "Heart-Turbid",
+    "Little New Year",
+    "Xianxia lore"
+  ],
+  "guide_tags": [
+    "Strategy",
+    "Lore Drop",
+    "Psychological Horror",
+    "Character Study",
+    "Travel Prep"
+  ],
+  "chapter_seo_title": "Dao Gui Yi Xian Ch 381 - Li Huowang searches for the Storyteller Zhuge Yuan.",
+  "chapter_meta_description": "Li Huowang learns the Storyteller is at war with the Zuowandao. He must decide whether to trust an old promise or a world of lies.",
+  "og_title": "The Storyteller’s Secret War",
+  "og_description": "Li Huowang discovers an old ally is battling the Zuowandao. But in a world built on lies, can he trust the promise of help?",
+  "twitter_title": "Searching for the Storyteller",
+  "twitter_description": "Is Zhuge Yuan a savior or a trap? Li Huowang must decide if he can trust a legend.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "storyteller",
+      "surfaces": [
+        "Storyteller"
+      ],
+      "definition": "A recurring immortal archetype in the Dao-Twisted World, not a single person. They always appear during great upheavals, and their tales are considered a threat by the empire."
+    },
+    {
+      "id": "heart-element",
+      "surfaces": [
+        "Heart-Element"
+      ],
+      "definition": "A rare human constitution that can turn belief into reality. This makes its bearer a walking treasure, both immensely valuable and a target for alchemists and cultivators."
+    },
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government bureau that monitors and manages supernatural threats. They operate with near-total autonomy and prioritize stability over morality."
+    },
+    {
+      "id": "three-yuan",
+      "surfaces": [
+        "Three"
+      ],
+      "definition": "The highest echelon of the Zuowandao sect. Their names are Facai (Payday), Kuaile (Happiness), and Ping'an (Safety). Their deaths are a major event."
+    },
+    {
+      "id": "little-new-year",
+      "surfaces": [
+        "Little"
+      ],
+      "definition": "A festival in China marking the start of the New Year preparations. The capital's lack of a curfew signifies its importance."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why is the emperor so afraid of a storyteller?",
+      "a": "Because the Storyteller's ability is to shape public narrative. In a world where belief can alter reality, a story that \"deludes the masses\" is a threat to the state's control over truth and power."
+    },
+    {
+      "q": "What is Li Huowang’s dangerous idea at the end?",
+      "a": "He's considering using his own unique constitution as raw material for a magical tool or alchemical refinement, essentially weaponizing his own existence as a Heart-Element."
+    },
+    {
+      "q": "Is Zhuge Yuan a good guy?",
+      "a": "The novel deliberately leaves this ambiguous. He has helped Li Huowang, but the pattern of the \"Storyteller\" archetype suggests his motives may be tied to grand cosmic narratives, not personal friendship."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "chapter_no": "0483",
+  "chapter_code": "0483",
+  "chapter_slug": "A-Condition-He-Cannot-Refuse",
+  "chapter_title_en": "A Condition He Cannot Refuse",
+  "chapter_keywords": [
+    "li huowang",
+    "lian zhibei",
+    "immortal lifespan",
+    "celestial immortal",
+    "bai lingmiao",
+    "spirit-dancer",
+    "second spirit",
+    "ten emotions and eight sufferings",
+    "supervisory heavenly office",
+    "chinese folk religion",
+    "dao-twisted world"
+  ],
+  "guide_tags": [
+    "New Character",
+    "Deal-Making",
+    "Folk Horror",
+    "Bureaucratic Horror",
+    "Character Secret Revealed",
+    "Plot Twist",
+    "Emotional Manipulation",
+    "Power Dynamics"
+  ],
+  "chapter_seo_title": "Li Huowang Strikes a Deal to Save Bai Lingmiao from the Celestial Immortal",
+  "chapter_meta_description": "Li Huowang learns the Celestial Immortal has been threatening Bai Lingmiao and trades five years of Immaculate Lifespan for her freedom.",
+  "og_title": "The One Thing Li Huowang Can’t Refuse",
+  "og_description": "A deal that exposes a hidden threat, a secret kept too long, and a mother’s plea that rings true.",
+  "twitter_title": "Li Huowang’s Worst Bargain Yet",
+  "twitter_description": "He’ll trade the Immaculate Lifespan, but only if it frees Miaomiao from the Celestial Immortal.",
+  "updated_at": "2026-05-07",
+  "lore_anchors": [
+    {
+      "id": "ten-emotions-and-eight-sufferings",
+      "surfaces": [
+        "Ten"
+      ],
+      "definition": "A twisted expansion of the Buddhist Eight Sufferings used in the Dao-Twisted World, allowing the bearer to perceive the truth behind a person’s emotional state."
+    },
+    {
+      "id": "immaculate-lifespan",
+      "surfaces": [
+        "Immaculate"
+      ],
+      "definition": "A purified, transferable form of Lifespan used as currency in supernatural trade; highly valuable because it can be used to extend another person’s life without contamination."
+    },
+    {
+      "id": "celestial-immortal",
+      "surfaces": [
+        "Celestial"
+      ],
+      "definition": "In northeastern Chinese folk religion, an animal spirit (fox, weasel, etc.) that chooses a human host; grants power but demands lifelong servitude and ritual practice."
+    },
+    {
+      "id": "spirit-dancer",
+      "surfaces": [
+        "Spirit-dancer"
+      ],
+      "definition": "A ritual practitioner who acts as a medium for a Celestial Immortal; the dance is a form of possession and performance, often forced upon the host."
+    },
+    {
+      "id": "supervisory-heavenly-office",
+      "surfaces": [
+        "Supervisory"
+      ],
+      "definition": "A government-sponsored supernormal law enforcement body that polices rogue cultivators and supernatural disasters; its reputation for corruption is well-founded."
+    },
+    {
+      "id": "spirit-blight",
+      "surfaces": [
+        "Spirit-Blight"
+      ],
+      "definition": "A dangerous supernatural entity that causes corrosive, rapidly spreading lesions on anyone not protected by a specific ritual."
+    },
+    {
+      "id": "second-spirit",
+      "surfaces": [
+        "Second"
+      ],
+      "definition": "The silent assistant or second medium in a spirit-dance ritual; often acts independently of the lead spirit-dancer."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Li Huowang suddenly agree to the deal?",
+      "a": "Because the Second Spirit reveals that the Celestial Immortal has been threatening Bai Lingmiao and forcing her to perform spirit-dances—a much more urgent threat than he knew."
+    },
+    {
+      "q": "What does Lian Zhibei want with the Immaculate Lifespan?",
+      "a": "She wants it to extend her mother's remaining Lifespan, a desire she claims is genuine (confirmed by Li Huowang’s Ten Emotions and Eight Sufferings)."
+    },
+    {
+      "q": "Is the Celestial Immortal removable?",
+      "a": "Lian Zhibei claims she has a method, and Li Huowang’s ability to read emotional truth confirms she isn’t lying."
+    }
+  ]
+}

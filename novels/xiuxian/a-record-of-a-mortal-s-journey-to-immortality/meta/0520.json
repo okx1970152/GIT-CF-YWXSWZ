@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0520",
+  "chapter_code": "0520",
+  "chapter_slug": "A-New-Paradise-on-the-Outer-Star-Seas",
+  "chapter_title_en": "A New Paradise on the Outer Star Seas",
+  "chapter_keywords": [
+    "mortal stream xianxia",
+    "black stone city",
+    "qiyuan island",
+    "star palace",
+    "xu yun",
+    "han li observation",
+    "demon beast island",
+    "outer star seas",
+    "fabricated intel",
+    "forbidden city"
+  ],
+  "guide_tags": [
+    "xianxia",
+    "worldbuilding",
+    "new environment",
+    "power dynamics",
+    "survival"
+  ],
+  "chapter_seo_title": "Black Stone City: The Cultivation Paradise Even Star Palace Avoids",
+  "chapter_meta_description": "Han Li and his stranded companions arrive at Black Stone City on Qiyuan Island, only to learn everything they knew was a lie. A Nascent Soul elder watches over this lawless paradise.",
+  "og_title": "Black Stone City: A Paradise of Spirit Stones and Secrets",
+  "og_description": "Stranded cultivators discover a city of forbidden trade, fabricated intel, and a Nascent Soul guardian—welcome to the Outer Star Seas' strangest sanctuary.",
+  "twitter_title": "Even Star Palace stays out of Black Stone City. Why?",
+  "twitter_description": "Han Li lands in a city where every rule is inverted and a Nascent Soul elder ensures nobody breaks the peace. The Outer Star Seas just got complicated.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "black-stone-city",
+      "surfaces": [
+        "Black Stone City"
+      ],
+      "definition": "A single fortified city on Qiyuan Island, built from black stone and protected by a white light barrier. It operates under strict, non-negotiable rules enforced by a stationed Nascent Soul cultivator."
+    },
+    {
+      "id": "nascent-soul",
+      "surfaces": [
+        "Nascent"
+      ],
+      "definition": "The fourth major realm of cultivation in xianxia. A cultivator at this stage condenses their spiritual essence into a new, independent entity—a miniature version of themselves—that can survive even the destruction of their physical body. Their presence alone stabilizes or terrorizes entire regions."
+    },
+    {
+      "id": "information-monopoly",
+      "surfaces": [
+        "Information"
+      ],
+      "definition": "A tactic where a powerful local faction deliberately spreads false or incomplete intelligence about a region to control who can access its resources. Anyone who knows the true situation either paid a high price or is part of the ruling group."
+    },
+    {
+      "id": "outer-star-seas",
+      "surfaces": [
+        "Outer"
+      ],
+      "definition": "The dangerous frontier area beyond the safer human-settled islands of the Chaotic Star Sea. It's populated by powerful demon beasts and lawless cultivators who either seek rare resources or are fleeing the authority of the Star Palace."
+    }
+  ],
+  "cultural_notes_faq": [
+    {
+      "q": "Why does Black Stone City have fabricated intelligence?",
+      "a": "Its ruling power controls access to the island to monopolize resources. Anyone who comes here must learn the real rules the hard way—or pay a local guide like Xu Yun."
+    },
+    {
+      "q": "Is Black Stone City safe for Han Li?",
+      "a": "Only as long as he follows its non-negotiable law against dueling. A Nascent Soul elder watches over the city, and rule-breakers are killed on the spot—no exceptions. Inside the walls, the danger is social and economic, not martial."
+    }
+  ]
+}

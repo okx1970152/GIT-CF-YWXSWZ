@@ -1,0 +1,72 @@
+{
+  "chapter_no": "0531",
+  "chapter_code": "0531",
+  "chapter_slug": "The-Weight-of-Peace",
+  "chapter_title_en": "The Weight of Peace",
+  "chapter_keywords": [
+    "ji ning",
+    "yu wei",
+    "northsea legion",
+    "eight dragons cloud city",
+    "xingtian formation",
+    "empyrean god puppets",
+    "xia emperor",
+    "arcane art",
+    "dao of the sword",
+    "heartforge tribulation",
+    "seamless gate",
+    "three realms war"
+  ],
+  "guide_tags": [
+    "war arc",
+    "domestic fluff",
+    "cultivation grind",
+    "lore exposition",
+    "puppet technology",
+    "emotional anchor"
+  ],
+  "chapter_seo_title": "Desolate Era Ch. 531 — Ji Ning's Vow to Protect His Family & The Empyrean Puppet Lore Bomb",
+  "chapter_meta_description": "Ji Ning returns from battle to a home prepared by Yu Wei, swears to protect her and their unborn child, and receives shocking intelligence from the Xia Emperor about the Seamless Gate's unbeatable puppet technology.",
+  "og_title": "The Calm Before the Storm — A Vow in the War of the Three Realms",
+  "og_description": "Against the backdrop of an interstellar war, Ji Ning finds stillness at Yu Wei's side—and learns that the Seamless Gate holds an unbeatable advantage in war machines.",
+  "twitter_title": "Home, Heart, and Horror — Ji Ning's Quietest Chapter",
+  "twitter_description": "A warm meal, a silent vow, and a terrifying lore drop about Empyrean God puppets. The calm before the storm has never felt so heavy.",
+  "updated_at": "2026-05-08",
+  "lore_anchors": [
+    {
+      "id": "xingtian-formation",
+      "surfaces": [
+        "Xingtian"
+      ],
+      "definition": "A massive war formation requiring 100,000 Loose Immortals as a foundation and 1,000 Celestial Immortals as a framework, manifesting a temporary divine spirit of god-tier durability; bestowed by Xingtian the True God."
+    },
+    {
+      "id": "empyrean-god-puppets",
+      "surfaces": [
+        "Empyrean God puppets"
+      ],
+      "definition": "Celestial Immortal-controlled mechanical war-gods that are nearly as powerful as a Xingtian formation but require far fewer immortals (150) to operate at peak efficiency."
+    },
+    {
+      "id": "arcane-art",
+      "surfaces": [
+        "Arcane Art"
+      ],
+      "definition": "The supreme divine ability beneath the True God level, trained by mastering nine cycles of body refinement; requires enormous treasure resources to advance but provides indestructibility without consuming divine power."
+    },
+    {
+      "id": "ten-thousand-demons-cave",
+      "surfaces": [
+        "Ten"
+      ],
+      "definition": "A specialized faction within the Seamless Gate solely dedicated to the forbidden art of puppet-forging; its core formation diagrams are so well-guarded that even True Gods and Daofathers of the Nuwa Alliance have failed to steal them."
+    },
+    {
+      "id": "grand-empyrean-pill",
+      "surfaces": [
+        "Grand"
+      ],
+      "definition": "A legendary, high-grade immortal pill used to fuel the breakthrough of the Arcane Art; requires a fifth-cycle foundation to withstand its medicinal power."
+    }
+  ]
+}
