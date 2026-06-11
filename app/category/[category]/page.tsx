@@ -18,7 +18,6 @@ const RANKING_AGGREGATE_SLUG = "ranking";
 
 export const revalidate = 3600;
 export const dynamicParams = false;
-export const dynamic = "force-static";
 
 type Props = { params: Promise<{ category: string }> };
 
