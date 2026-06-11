@@ -6,6 +6,7 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDir, "..");
 
 const targets = [
+  path.join(projectRoot, "public", "__novel_static_assets__"),
   path.join(projectRoot, "public", "__encyclopedia_assets__"),
   path.join(projectRoot, "public", "category"),
   path.join(projectRoot, "public", "novels")
