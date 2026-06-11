@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { SideAdsLayout } from "@/components/ads/SideAdsLayout";
 import { SectionRail } from "@/components/novel/SectionRail";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -12,7 +11,6 @@ import { getAllNovels, getNovelsByCategory, sortNovelsByRankingThenUpdated } fro
 import { getEncyclopediaVolumes } from "@/lib/encyclopedia/index";
 import { SITE_NAME, absoluteOgUrl, baseOpenGraph, publicRobots } from "@/lib/seo-metadata";
 import { toAbsoluteUrl } from "@/lib/seo";
-import { buildCollectionPageJsonLd } from "@/lib/seo/structured-data";
 
 const RANKING_AGGREGATE_SLUG = "ranking";
 
@@ -133,21 +131,9 @@ export default async function CategoryPage({ params }: Props) {
   const railTopTitle = isRanking ? "Top ranked (site-wide)" : `Popular in ${label}`;
   const railLatestTitle = isRanking ? "Recently updated (site-wide)" : `Latest in ${label}`;
   const gridHeading = isRanking ? "All novels by rank" : `All ${label} Novels`;
-  const collectionJsonLd = buildCollectionPageJsonLd({
-    name: isRanking ? "Site Ranking & Leaderboard" : `${label} Novels`,
-    description: isRanking
-      ? `Top-ranked novels across every shelf on ${SITE_NAME}.`
-      : `Browse English ${label} novels with crawlable directories and chapter links.`,
-    pageUrl: toAbsoluteUrl(`/category/${category}`),
-    items: novelsSorted.slice(0, 24).map((item) => ({
-      name: item.title,
-      url: toAbsoluteUrl(`/novels/${item.categorySlug}/${item.novelId}`)
-    }))
-  });
 
   return (
     <>
-      <JsonLd id="ld-json-collection-page" data={collectionJsonLd} />
       <SideAdsLayout page="category">
         <div className="mx-auto w-full max-w-[1400px] px-3 pb-16 pt-4 sm:px-4 sm:pb-20 sm:pt-6">
           <section aria-label={`${label} category semantic summary`} className="sr-only">
