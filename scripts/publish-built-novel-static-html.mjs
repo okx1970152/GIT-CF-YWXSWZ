@@ -17,27 +17,10 @@ function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
-function copyTextFile(sourcePath, targetPath) {
-  ensureDir(path.dirname(targetPath));
-  fs.copyFileSync(sourcePath, targetPath);
-}
-
-function stripNextRuntime(html) {
-  return html
-    .replace(/<script\b(?:(?!type="application\/ld\+json")[^>])*?>[\s\S]*?<\/script>/gi, "")
-    .replace(/<script\b(?:(?!type='application\/ld\+json')[^>])*?>[\s\S]*?<\/script>/gi, "")
-    .replace(/<link[^>]+rel="preload"[^>]+as="script"[^>]*>/gi, "")
-    .replace(/<link[^>]+rel='preload'[^>]+as='script'[^>]*>/gi, "")
-    .replace(/\sdata-next-page="[^"]*"/gi, "")
-    .replace(/\sdata-next-page='[^']*'/gi, "");
-}
-
 function writeStaticHtmlFromBuilt(sourcePath, targetPath) {
   if (!fs.existsSync(sourcePath)) return false;
-  const html = fs.readFileSync(sourcePath, "utf8");
-  const cleaned = stripNextRuntime(html);
   ensureDir(path.dirname(targetPath));
-  fs.writeFileSync(targetPath, cleaned, "utf8");
+  fs.copyFileSync(sourcePath, targetPath);
   return true;
 }
 
